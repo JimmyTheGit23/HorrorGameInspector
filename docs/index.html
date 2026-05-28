@@ -168,6 +168,27 @@
                     <div class="text-gray-500">加载中...</div>
                 </div>
             </div>
+
+            <!-- 社区舆情 -->
+            <div class="bg-dark-800 rounded-lg p-5 border border-gray-800 mt-6">
+                <h3 class="text-sm font-semibold mb-3 text-accent-light">💬 社区舆情</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <!-- TapTap论坛 -->
+                    <div>
+                        <h4 class="text-xs font-semibold text-gray-400 mb-2 uppercase tracking-wider">TapTap 论坛</h4>
+                        <div id="czr-taptap-forum" class="space-y-1.5 text-sm">
+                            <div class="text-gray-500">加载中...</div>
+                        </div>
+                    </div>
+                    <!-- 百度贴吧 -->
+                    <div>
+                        <h4 class="text-xs font-semibold text-gray-400 mb-2 uppercase tracking-wider">百度贴吧</h4>
+                        <div id="czr-tieba" class="space-y-1.5 text-sm">
+                            <div class="text-gray-500">加载中...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- ========== R.E.P.O. 页 ========== -->
@@ -467,6 +488,48 @@
                 `).join('');
             } else {
                 newsEl.innerHTML = '<div class="text-gray-500">暂无官网新闻数据</div>';
+            }
+
+            // 社区舆情 - TapTap论坛
+            const forumEl = document.getElementById('czr-taptap-forum');
+            const community = czr.community || {};
+            const taptapForum = community.taptap_forum || [];
+            if (taptapForum.length > 0) {
+                forumEl.innerHTML = taptapForum.map(p => {
+                    const sentimentColor = p.sentiment === 'negative' ? 'text-red-400' : p.sentiment === 'positive' ? 'text-green-400' : 'text-gray-500';
+                    const sentimentLabel = p.sentiment === 'negative' ? '☹' : p.sentiment === 'positive' ? '☺' : '—';
+                    return `<div class="py-1 border-b border-gray-800 last:border-0 flex items-start gap-1.5">
+                        <span class="text-xs ${sentimentColor} mt-0.5 shrink-0">${sentimentLabel}</span>
+                        <div class="min-w-0">
+                            ${p.url ? `<a href="${p.url}" target="_blank" class="text-gray-300 hover:text-accent-light hover:underline text-xs leading-snug">${p.title}</a>` : `<span class="text-gray-300 text-xs">${p.title}</span>`}
+                        </div>
+                    </div>`;
+                }).join('');
+            } else {
+                forumEl.innerHTML = '<div class="text-gray-500 text-xs">暂无论坛数据</div>';
+            }
+
+            // 社区舆情 - 百度贴吧
+            const tiebaEl = document.getElementById('czr-tieba');
+            const tieba = community.tieba || {};
+            const tiebaPosts = tieba.hot_posts || [];
+            if (tiebaPosts.length > 0) {
+                tiebaEl.innerHTML = tiebaPosts.map(p => {
+                    const sentimentColor = p.sentiment === 'negative' ? 'text-red-400' : p.sentiment === 'positive' ? 'text-green-400' : 'text-gray-500';
+                    const sentimentLabel = p.sentiment === 'negative' ? '☹' : p.sentiment === 'positive' ? '☺' : '—';
+                    return `<div class="py-1 border-b border-gray-800 last:border-0 flex items-start gap-1.5">
+                        <span class="text-xs ${sentimentColor} mt-0.5 shrink-0">${sentimentLabel}</span>
+                        <div class="min-w-0">
+                            ${p.url ? `<a href="${p.url}" target="_blank" class="text-gray-300 hover:text-accent-light hover:underline text-xs leading-snug">${p.title}</a>` : `<span class="text-gray-300 text-xs">${p.title}</span>`}
+                            <span class="text-xs text-gray-600 ml-1">${p.replies ? p.replies + '回复' : ''}</span>
+                        </div>
+                    </div>`;
+                }).join('');
+            } else if (tieba.url) {
+                tiebaEl.innerHTML = `<a href="${tieba.url}" target="_blank" class="text-accent-light hover:underline text-xs">前往百度贴吧 →</a>
+                    <div class="text-gray-600 text-xs mt-1">${tieba.note || ''}</div>`;
+            } else {
+                tiebaEl.innerHTML = '<div class="text-gray-500 text-xs">暂无贴吧数据</div>';
             }
         }
 

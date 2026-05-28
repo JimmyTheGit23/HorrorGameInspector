@@ -212,7 +212,88 @@ def get_official_news():
     return news_items
 
 
-def get_tomb_busters_info():
+def get_taptap_forum_posts(app_id=714123, max_posts=10):
+    """从TapTap论坛获取帖子列表（解析HTML中的moment链接+标题span）"""
+    url = f"https://www.taptap.cn/app/{app_id}/topic"
+    html = fetch_html(url)
+    if not html:
+        return []
+
+    posts = []
+    seen_ids = set()
+    # 找所有/moment/{id}链接，在链接附近上下文中提取标题span
+    for m in re.finditer(r'href="(/moment/(\d+))"', html):
+        moment_id = m.group(2)
+        if moment_id in seen_ids:
+            continue
+        seen_ids.add(moment_id)
+
+        # 在链接前后500字符范围内找标题span
+        start = max(0, m.start() - 200)
+        end = min(len(html), m.end() + 500)
+        context = html[start:end]
+
+        title_match = re.search(r'<span[^>]*class="[^"]*title[^"]*"[^>]*>([^<]+)</span>', context)
+        if title_match:
+            title = title_match.group(1).strip()
+            # 过滤非帖子标题
+            if title in ['默认排序', '最新排序', '最热排序']:
+                continue
+            posts.append({
+                "title": title,
+                "source": "TapTap论坛",
+                "url": f"https://www.taptap.cn{m.group(1)}",
+            })
+            if len(posts) >= max_posts:
+                break
+
+    # 备用: 仅用title span提取（无moment链接时）
+    if not posts:
+        skip_titles = {'默认排序', '最新排序', '最热排序'}
+        title_pattern = re.compile(r'<span[^>]*class="[^"]*title[^"]*"[^>]*>([^<]+)</span>')
+        seen = set()
+        for match in title_pattern.finditer(html):
+            title = match.group(1).strip()
+            if title and title not in skip_titles and title not in seen and len(title) > 1:
+                seen.add(title)
+                posts.append({
+                    "title": title,
+                    "source": "TapTap论坛",
+                    "url": f"https://www.taptap.cn/app/{app_id}/topic",
+                })
+                if len(posts) >= max_posts:
+                    break
+
+    return posts
+
+
+def get_tieba_hot_posts(kw="超自然行动组", max_posts=10):
+    """从百度贴吧获取热帖（贴吧反爬严格，使用web_search间接获取）"""
+    # 贴吧直接爬取会被403，这里返回提示信息
+    # 实际数据通过GitHub Actions中的web_search或手动更新
+    tieba_url = f"https://tieba.baidu.com/f?kw={urllib.parse.quote(kw)}"
+    return {
+        "source": "百度贴吧",
+        "url": tieba_url,
+        "note": "贴吧反爬严格(403)，数据需手动或通过搜索引擎间接更新",
+        "hot_posts": []
+    }
+
+
+def simple_sentiment(title):
+    """简易情感分析（基于关键词）"""
+    negative_words = ['垃圾', '退坑', '坑', '破防', '怒', '骂', '垃圾', '氪金', '骗', '差', '烂',
+                      '掉', '崩', '卡', 'bug', 'Bug', 'BUG', '恨', '惨', '亏', '坑爹', '离谱',
+                      '黑', '号价', '出号', '退游', '不玩了', '骂了', '举报', '投诉']
+    positive_words = ['好评', '喜欢', '赞', '棒', '开心', '福利', '免费', '爽', '良心', '精彩',
+                      '厉害', '好看', '漂亮', '帅', '牛', '白嫖', '终于', '等到了']
+    neg_score = sum(1 for w in negative_words if w in title)
+    pos_score = sum(1 for w in positive_words if w in title)
+    if neg_score > pos_score:
+        return "negative"
+    elif pos_score > neg_score:
+        return "positive"
+    return "neutral"
     """获取海外版Tomb Busters基础信息"""
     return {
         "name": "Tomb Busters",
@@ -244,11 +325,29 @@ def crawl_chaoziran():
     official_news = get_official_news()
     print(f"  获取到 {len(official_news)} 条官网新闻")
 
+    time.sleep(2)
+
+    print("[超自然行动组] 采集TapTap论坛帖子...")
+    taptap_forum = get_taptap_forum_posts()
+    print(f"  获取到 {len(taptap_forum)} 条论坛帖子")
+
+    print("[超自然行动组] 采集百度贴吧数据...")
+    tieba_data = get_tieba_hot_posts()
+    print(f"  贴吧数据: {tieba_data['note']}")
+
+    # 为论坛帖子添加情感标签
+    for post in taptap_forum:
+        post["sentiment"] = simple_sentiment(post["title"])
+
     result = {
         "chaoziran": {
             "bwiki_updates": bwiki_updates,
             "taptap": taptap_data,
             "official_news": official_news,
+            "community": {
+                "taptap_forum": taptap_forum,
+                "tieba": tieba_data,
+            },
             "tomb_busters": get_tomb_busters_info(),
             "crawled_at": datetime.now().isoformat(),
         }

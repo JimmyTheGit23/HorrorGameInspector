@@ -21,6 +21,32 @@
       {"title": "阿念重做登场！", "source": "官网", "url": "https://www.chaoziran.com/news/538"},
       {"title": "新怪物【鸭子】实机展示，追上了命都给你哦", "source": "官网", "url": "https://www.chaoziran.com/news/535"}
     ],
+    "community": {
+      "taptap_forum": [
+        {"title": "找兔子咯！", "source": "TapTap论坛", "url": "https://www.taptap.cn/moment/808793478677923512", "sentiment": "neutral"},
+        {"title": "爆炸弓【心弦所向】皮肤爆料，一箭桃花动，满弓皆春来", "source": "TapTap论坛", "url": "https://www.taptap.cn/moment/808402389924056917", "sentiment": "positive"},
+        {"title": "版更速递！亲密关系解除新增【冷静期】，小黄加强，农场焕新！", "source": "TapTap论坛", "url": "https://www.taptap.cn/moment/806596895563581454", "sentiment": "neutral"},
+        {"title": "玩PC端电脑推荐", "source": "TapTap论坛", "url": "https://www.taptap.cn/moment/808751529203863252", "sentiment": "neutral"},
+        {"title": "有没有摸金靠山啊", "source": "TapTap论坛", "url": "https://www.taptap.cn/moment/808596616243056342", "sentiment": "neutral"}
+      ],
+      "tieba": {
+        "source": "百度贴吧",
+        "url": "https://tieba.baidu.com/f?kw=%E8%B6%85%E8%87%AA%E7%84%B6%E8%A1%8C%E5%8A%A8%E7%BB%84",
+        "note": "贴吧反爬严格(403)，数据需手动或通过搜索引擎间接更新",
+        "hot_posts": [
+          {"title": "双人棺如何分到底怎么（我真的没招了吧）", "sentiment": "negative"},
+          {"title": "想问问大家是如何看待固玩关系（顺带避雷）", "sentiment": "neutral"},
+          {"title": "出了圣杯朋友直接撕破脸", "sentiment": "negative"},
+          {"title": "讨论一下爆率问题", "sentiment": "negative"},
+          {"title": "超自然爆率我恨你", "sentiment": "negative"},
+          {"title": "号价怎么掉这么快，氪了两千三的号按行情也就3-4百", "sentiment": "negative"},
+          {"title": "何意味，发了删，还拉黑", "sentiment": "negative"},
+          {"title": "有人玩六星连珠和九星连珠吗", "sentiment": "neutral"},
+          {"title": "开出传国但是我的轩辕神龙何在", "sentiment": "neutral"},
+          {"title": "找个四队靠山", "sentiment": "neutral"}
+        ]
+      }
+    },
     "tomb_busters": {
       "name": "Tomb Busters",
       "regions": [
