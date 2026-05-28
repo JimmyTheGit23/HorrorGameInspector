@@ -64,7 +64,7 @@ def update_history(steam_data, history_path):
 
 def main():
     print("=" * 50)
-    print(f"品类情报看板 - 数据采集开始 {datetime.now().isoformat()}")
+    print(f"GRC恐怖多人品类情报 - 数据采集开始 {datetime.now().isoformat()}")
     print("=" * 50)
 
     # 1. 采集Steam数据
