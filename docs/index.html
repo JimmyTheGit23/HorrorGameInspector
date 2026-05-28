@@ -1130,8 +1130,12 @@
                                 <p class="text-[12px] text-gray-400 leading-relaxed line-clamp-2 mb-2.5 group-hover:text-gray-300 transition-colors">${info.intro}</p>
                                 <!-- 底栏 -->
                                 <div class="flex items-center justify-between pt-2 border-t border-gray-700/40">
-                                    <span class="text-[11px] text-gray-600 truncate">${info.dev}</span>
-                                    <span class="text-[11px] text-gray-600 font-mono">${info.release}</span>
+                                    <div class="flex items-center gap-2 min-w-0">
+                                        <span class="text-[11px] text-gray-600 truncate">${info.dev}</span>
+                                        <span class="text-[11px] text-gray-600">·</span>
+                                        <span class="text-[11px] text-gray-600 font-mono">${info.release}</span>
+                                    </div>
+                                    <span class="text-[11px] text-accent-light/60 group-hover:text-accent-light transition-colors shrink-0 ml-2">↗ 商店</span>
                                 </div>
                             </div>
                         </div>
