@@ -592,10 +592,12 @@
                 tiebaEl.innerHTML = tiebaPosts.map(p => {
                     const sc = p.sentiment === 'negative' ? 'text-red-400' : p.sentiment === 'positive' ? 'text-green-400' : 'text-gray-600';
                     const sl = p.sentiment === 'negative' ? '☹' : p.sentiment === 'positive' ? '☺' : '·';
+                    const searchUrl = `https://www.baidu.com/s?wd=${encodeURIComponent('超自然行动组 ' + p.title)}`;
+                    const link = p.url ? p.url : searchUrl;
                     return `<div class="py-1 border-b border-gray-800 last:border-0 flex items-start gap-2">
                         <span class="text-xs ${sc} mt-0.5 shrink-0 w-3 text-center">${sl}</span>
                         <div class="min-w-0 flex-1">
-                            ${p.url ? `<a href="${p.url}" target="_blank" class="text-gray-300 hover:text-accent-light hover:underline text-sm leading-snug line-clamp-2">${p.title}</a>` : `<span class="text-gray-300 text-sm">${p.title}</span>`}
+                            <a href="${link}" target="_blank" class="text-gray-300 hover:text-accent-light hover:underline text-sm leading-snug line-clamp-2">${p.title}</a>
                             ${p.replies ? `<span class="text-xs text-gray-600 ml-1">${p.replies}回复</span>` : ''}
                         </div>
                     </div>`;
