@@ -969,7 +969,8 @@
                 price: '¥ 33.00',
                 ccu: '~8,000',
                 rate: 92,
-                reviews_total: '35,000+'
+                reviews_total: '35,000+',
+                headerImage: 'https://cdn.akamai.steamstatic.com/steam/apps/3527290/header.jpg'
             },
             // 捉鬼调查赛道
             'Phasmophobia': {
@@ -992,7 +993,8 @@
                 price: '¥ 58.00',
                 ccu: '~1,500',
                 rate: 76,
-                reviews_total: '18,000+'
+                reviews_total: '18,000+',
+                headerImage: 'https://cdn.akamai.steamstatic.com/steam/apps/1929610/header.jpg'
             },
             // PvPvE猎杀赛道
             'The Outlast Trials': {
@@ -1006,7 +1008,8 @@
                 price: '¥ 136.00',
                 ccu: '~3,200',
                 rate: 84,
-                reviews_total: '42,000+'
+                reviews_total: '42,000+',
+                headerImage: 'https://cdn.akamai.steamstatic.com/steam/apps/1304930/header.jpg'
             },
             'Hunt: Showdown 1896': {
                 category: 'PvPvE猎杀',
@@ -1019,7 +1022,8 @@
                 price: '¥ 98.00',
                 ccu: '~12,000',
                 rate: 85,
-                reviews_total: '120,000+'
+                reviews_total: '120,000+',
+                headerImage: 'https://cdn.akamai.steamstatic.com/steam/apps/594650/header.jpg'
             },
             // 即将上线 / Wishlist
             '灰境行者': {
@@ -1076,7 +1080,7 @@
                     const ccu = spy.ccu || null;
                     const price = store.price || info.price || '--';
                     const totalReviews = reviews.total_reviews || info.reviews_total || 0;
-                    const headerImg = store.header_image || null;
+                    const headerImg = store.header_image || info.headerImage || null;
 
                     const statusBadge = info.status === 'EA'
                         ? '<span class="px-1.5 py-0.5 bg-yellow-900/50 text-yellow-300 rounded text-xs">EA</span>'
@@ -1182,7 +1186,7 @@
                 const ccu = spy.ccu || null;
                 const price = store.price || info.price || '--';
                 const totalReviews = reviews.total_reviews || info.reviews_total || 0;
-                const headerImg = store.header_image || null;
+                const headerImg = store.header_image || info.headerImage || null;
 
                 const rateColor = rate >= 80 ? 'text-green-400' : rate >= 60 ? 'text-yellow-400' : 'text-red-400';
                 const statusBadge = info.status === 'WISHLIST'
