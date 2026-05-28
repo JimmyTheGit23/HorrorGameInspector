@@ -429,8 +429,9 @@
             // TapTap数据
             if (czr.taptap) {
                 const t = czr.taptap;
-                document.getElementById('taptap-score').textContent = t.score ? t.score.toFixed(1) : '--';
-                document.getElementById('taptap-rating').textContent = t.rating_count ? t.rating_count.toLocaleString() : '--';
+                const scoreVal = parseFloat(t.score_display || t.rating_value || t.score);
+                document.getElementById('taptap-score').textContent = !isNaN(scoreVal) ? scoreVal.toFixed(1) : '--';
+                document.getElementById('taptap-rating').textContent = t.review_count ? t.review_count.toLocaleString() : '--';
                 document.getElementById('taptap-download').textContent = t.download_count ? t.download_count.toLocaleString() : '--';
                 document.getElementById('taptap-fans').textContent = t.fans_count ? t.fans_count.toLocaleString() : '--';
             }
