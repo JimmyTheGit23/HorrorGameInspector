@@ -929,7 +929,8 @@
                 release: '2025-02-26',
                 players: '1~6人',
                 intro: '物理引擎驱动拾荒合作恐怖，玩家在高物理交互场景中搜刮物品并撤离。物理论坛效果带来大量笑点，"搜打撤"品类2025年最大黑马。',
-                steamKey: 'R.E.P.O.'
+                steamKey: 'R.E.P.O.',
+                storeUrl: 'https://store.steampowered.com/app/3241660/'
             },
             'Lethal Company': {
                 category: '恐怖撤离',
@@ -938,7 +939,8 @@
                 release: '2023-10-24',
                 players: '1~4人',
                 intro: '合作恐怖拾荒品类奠基之作。玩家在废弃卫星搜刮废料卖给公司，程序化地图+低多边形画风，直播效果极强，定义了"搜打撤"公式。',
-                steamKey: 'Lethal Company'
+                steamKey: 'Lethal Company',
+                storeUrl: 'https://store.steampowered.com/app/1966720/'
             },
             'Content Warning': {
                 category: '恐怖撤离',
@@ -947,7 +949,8 @@
                 release: '2024-04-01',
                 players: '2~4人',
                 intro: '录制恐怖视频上传"幽哩幽哩"社交平台的合作恐怖游戏。搜打撤+内容创作双重驱动，首日免费领取620万份，Landfall发行。',
-                steamKey: 'Content Warning'
+                steamKey: 'Content Warning',
+                storeUrl: 'https://store.steampowered.com/app/2881650/'
             },
             'FEEDERS': {
                 category: '恐怖撤离',
@@ -956,7 +959,8 @@
                 release: '2026-03-30',
                 players: '1~4人',
                 intro: '末日地表搜打撤，物品重量影响移速，近距语音分头行动断联。12种自适应AI怪物会学习团队打法，第二局比第一局更难。2026年品类新秀。',
-                steamKey: 'FEEDERS'
+                steamKey: 'FEEDERS',
+                storeUrl: 'https://store.steampowered.com/app/4408510/'
             },
             'Peak': {
                 category: '恐怖撤离',
@@ -970,7 +974,8 @@
                 ccu: '~8,000',
                 rate: 92,
                 reviews_total: '35,000+',
-                headerImage: 'https://cdn.akamai.steamstatic.com/steam/apps/3527290/header.jpg'
+                headerImage: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3527290/31bac6b2eccf09b368f5e95ce510bae2baf3cfcd/header.jpg?t=1775581133',
+                storeUrl: 'https://store.steampowered.com/app/3527290/'
             },
             // 捉鬼调查赛道
             'Phasmophobia': {
@@ -980,7 +985,8 @@
                 release: '2020-09-18',
                 players: '1~4人',
                 intro: '捉鬼调查类合作恐怖标杆。近距离语音+空间音频营造沉浸恐惧，支持VR。用各种仪器收集灵异证据判断鬼魂类型，节奏偏慢但氛围极强。',
-                steamKey: 'Phasmophobia'
+                steamKey: 'Phasmophobia',
+                storeUrl: 'https://store.steampowered.com/app/739630/'
             },
             'Demonologist': {
                 category: '捉鬼调查',
@@ -994,7 +1000,8 @@
                 ccu: '~1,500',
                 rate: 76,
                 reviews_total: '18,000+',
-                headerImage: 'https://cdn.akamai.steamstatic.com/steam/apps/1929610/header.jpg'
+                headerImage: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1929610/header.jpg?t=1761136310',
+                storeUrl: 'https://store.steampowered.com/app/1929610/'
             },
             // PvPvE猎杀赛道
             'The Outlast Trials': {
@@ -1009,7 +1016,8 @@
                 ccu: '~3,200',
                 rate: 84,
                 reviews_total: '42,000+',
-                headerImage: 'https://cdn.akamai.steamstatic.com/steam/apps/1304930/header.jpg'
+                headerImage: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1304930/5A49938B6562464D06A9B7155BAE9C435BB71093/HEADER_ALT_ASSETS_2.JPG?T=1779221190',
+                storeUrl: 'https://store.steampowered.com/app/1304930/'
             },
             'Hunt: Showdown 1896': {
                 category: 'PvPvE猎杀',
@@ -1023,7 +1031,8 @@
                 ccu: '~12,000',
                 rate: 85,
                 reviews_total: '120,000+',
-                headerImage: 'https://cdn.akamai.steamstatic.com/steam/apps/594650/header.jpg'
+                headerImage: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/594650/header.jpg?t=1779201260',
+                storeUrl: 'https://store.steampowered.com/app/594650/'
             },
             // 即将上线 / Wishlist
             '灰境行者': {
@@ -1038,7 +1047,8 @@
                 ccu: null,
                 rate: null,
                 reviews_total: null,
-                isWishlist: true
+                isWishlist: true,
+                storeUrl: 'https://hj.qq.com/'
             }
         };
 
@@ -1089,7 +1099,7 @@
                     const rateColor = rate >= 80 ? 'text-green-400' : rate >= 60 ? 'text-yellow-400' : 'text-red-400';
 
                     html += `
-                        <div class="bg-dark-800 rounded-lg border border-gray-800 card-hover transition-all overflow-hidden">
+                        <div class="bg-dark-800 rounded-lg border border-gray-800 card-hover transition-all overflow-hidden cursor-pointer" onclick="window.open('${info.storeUrl}', '_blank')">
                             <div class="flex gap-3 p-3">
                                 <!-- 图标 -->
                                 <div class="shrink-0">
@@ -1120,6 +1130,7 @@
                                     <span>${info.players}</span>
                                     <span>·</span>
                                     <span>${info.release}</span>
+                                    <span class="ml-auto text-accent-light">↗ 访问商店</span>
                                 </div>
                             </div>
                         </div>
@@ -1142,7 +1153,7 @@
 
                 wishlistItems.forEach(([name, info]) => {
                     html += `
-                        <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-lg border border-purple-700/40 card-hover transition-all overflow-hidden">
+                        <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-lg border border-purple-700/40 card-hover transition-all overflow-hidden cursor-pointer" onclick="window.open('${info.storeUrl}', '_blank')">
                             <div class="flex gap-3 p-3">
                                 <div class="shrink-0">
                                     <div class="w-20 h-10 rounded bg-purple-900/40 flex items-center justify-center text-lg border border-purple-700/30">🔮</div>
@@ -1162,6 +1173,7 @@
                                 <div class="text-xs text-gray-400 leading-relaxed">${info.intro}</div>
                                 <div class="flex items-center gap-2 mt-2 text-xs text-gray-500">
                                     <span>发售：${info.release}</span>
+                                    <span class="ml-auto text-purple-300">↗ 访问官网</span>
                                     <span>·</span>
                                     <span>${info.price}</span>
                                 </div>
