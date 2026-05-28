@@ -1,0 +1,42 @@
+{
+  "R.E.P.O.": [
+    {
+      "date": "2026-05-28",
+      "ccu": 42307,
+      "positive_rate": 92.9,
+      "total_reviews": 14368
+    }
+  ],
+  "Lethal Company": [
+    {
+      "date": "2026-05-28",
+      "ccu": 5659,
+      "positive_rate": 93.0,
+      "total_reviews": 17577
+    }
+  ],
+  "Phasmophobia": [
+    {
+      "date": "2026-05-28",
+      "ccu": 10977,
+      "positive_rate": 90.7,
+      "total_reviews": 26671
+    }
+  ],
+  "Content Warning": [
+    {
+      "date": "2026-05-28",
+      "ccu": 1085,
+      "positive_rate": 89.9,
+      "total_reviews": 6814
+    }
+  ],
+  "FEEDERS": [
+    {
+      "date": "2026-05-28",
+      "ccu": 0,
+      "positive_rate": 0.0,
+      "total_reviews": 0
+    }
+  ]
+}

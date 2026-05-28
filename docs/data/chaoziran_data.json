@@ -1,0 +1,69 @@
+{
+  "chaoziran": {
+    "bwiki_updates": [
+      {
+        "title": "游戏内公告",
+        "source": "BWIKI"
+      },
+      {
+        "title": "WIKI站公告",
+        "source": "BWIKI"
+      },
+      {
+        "title": "游戏内公告",
+        "source": "BWIKI"
+      },
+      {
+        "title": "WIKI站公告",
+        "source": "BWIKI"
+      },
+      {
+        "title": "2026年2月26日更新公告",
+        "source": "BWIKI"
+      },
+      {
+        "title": "2026年2月13日更新公告",
+        "source": "BWIKI"
+      },
+      {
+        "title": "2026年2月10日更新公告",
+        "source": "BWIKI"
+      },
+      {
+        "title": "2026年2月7日更新公告",
+        "source": "BWIKI"
+      },
+      {
+        "title": "2026年2月5日更新公告",
+        "source": "BWIKI"
+      },
+      {
+        "title": "2026年1月29日更新公告",
+        "source": "BWIKI"
+      }
+    ],
+    "taptap": {
+      "name": "首页",
+      "score": 348.0,
+      "rating_count": 0,
+      "source": "webpage_fallback"
+    },
+    "official_news": [],
+    "tomb_busters": {
+      "name": "Tomb Busters",
+      "regions": [
+        "美国",
+        "日本",
+        "韩国"
+      ],
+      "launch_date": "2026-05-27",
+      "platforms": [
+        "iOS",
+        "Android",
+        "PC"
+      ],
+      "note": "巨人网络海外发行，港澳台试点已进入免费榜前三"
+    },
+    "crawled_at": "2026-05-28T11:11:22.859342"
+  }
+}

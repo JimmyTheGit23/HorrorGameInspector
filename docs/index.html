@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>品类情报看板 - 恐怖撤离/非对称竞技</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+        body { font-family: 'Noto Sans SC', sans-serif; }
+        .glow { text-shadow: 0 0 10px rgba(139, 92, 246, 0.5); }
+        .card-hover:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(139, 92, 246, 0.15); }
+        .pulse-dot { animation: pulse 2s infinite; }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+        .tab-active { border-bottom: 2px solid #8b5cf6; color: #8b5cf6; }
+        .fade-in { animation: fadeIn 0.3s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-thumb { background: #4b5563; border-radius: 3px; }
+        ::-webkit-scrollbar-track { background: #1f2937; }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: { 900: '#0f0f1a', 800: '#1a1a2e', 700: '#252540', 600: '#323258' },
+                        accent: { DEFAULT: '#8b5cf6', light: '#a78bfa', dark: '#7c3aed' },
+                        horror: { red: '#dc2626', green: '#059669', orange: '#d97706' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-900 text-gray-200 min-h-screen">
+
+    <!-- 顶部导航 -->
+    <nav class="bg-dark-800 border-b border-gray-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <span class="text-2xl">👻</span>
+                <h1 class="text-lg font-bold glow text-accent-light">品类情报看板</h1>
+                <span class="text-xs text-gray-500 hidden sm:inline">恐怖撤离 / 非对称竞技</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-1.5 text-xs text-gray-400">
+                    <span class="pulse-dot w-2 h-2 bg-green-500 rounded-full inline-block"></span>
+                    <span id="last-update">加载中...</span>
+                </div>
+                <button onclick="refreshData()" class="text-xs bg-dark-600 hover:bg-dark-700 px-3 py-1 rounded transition">刷新</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 标签页导航 -->
+    <div class="max-w-7xl mx-auto px-4 pt-4">
+        <div class="flex gap-6 border-b border-gray-800 text-sm">
+            <button class="tab-btn tab-active pb-2 px-1 transition" data-tab="overview" onclick="switchTab('overview')">总览</button>
+            <button class="tab-btn text-gray-500 hover:text-gray-300 pb-2 px-1 transition" data-tab="chaoziran" onclick="switchTab('chaoziran')">超自然行动组</button>
+            <button class="tab-btn text-gray-500 hover:text-gray-300 pb-2 px-1 transition" data-tab="repo" onclick="switchTab('repo')">R.E.P.O.</button>
+            <button class="tab-btn text-gray-500 hover:text-gray-300 pb-2 px-1 transition" data-tab="competitors" onclick="switchTab('competitors')">竞品对比</button>
+        </div>
+    </div>
+
+    <!-- 主内容区 -->
+    <main class="max-w-7xl mx-auto px-4 py-6">
+
+        <!-- ========== 总览页 ========== -->
+        <div id="tab-overview" class="tab-content fade-in">
+            <!-- 核心指标卡片 -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                <div class="bg-dark-800 rounded-lg p-4 card-hover transition-all border border-gray-800">
+                    <div class="text-xs text-gray-500 mb-1">超自然行动组 DAU</div>
+                    <div class="text-2xl font-bold text-accent-light">1,000万+</div>
+                    <div class="text-xs text-green-500 mt-1">海外版Tomb Busters已上线</div>
+                </div>
+                <div class="bg-dark-800 rounded-lg p-4 card-hover transition-all border border-gray-800">
+                    <div class="text-xs text-gray-500 mb-1">R.E.P.O. 当前在线</div>
+                    <div class="text-2xl font-bold text-horror-green" id="repo-ccu">--</div>
+                    <div class="text-xs text-gray-500 mt-1" id="repo-review-count">评测数加载中</div>
+                </div>
+                <div class="bg-dark-800 rounded-lg p-4 card-hover transition-all border border-gray-800">
+                    <div class="text-xs text-gray-500 mb-1">追踪竞品数</div>
+                    <div class="text-2xl font-bold text-horror-orange">5</div>
+                    <div class="text-xs text-gray-500 mt-1">Steam恐怖撤离品类</div>
+                </div>
+                <div class="bg-dark-800 rounded-lg p-4 card-hover transition-all border border-gray-800">
+                    <div class="text-xs text-gray-500 mb-1">数据更新频率</div>
+                    <div class="text-2xl font-bold text-gray-300">每日</div>
+                    <div class="text-xs text-gray-500 mt-1">UTC 00:00 自动采集</div>
+                </div>
+            </div>
+
+            <!-- 双栏：最新动态 + 竞品在线人数 -->
+            <div class="grid lg:grid-cols-2 gap-6">
+                <div class="bg-dark-800 rounded-lg p-5 border border-gray-800">
+                    <h3 class="text-sm font-semibold mb-3 text-accent-light">📡 最新动态</h3>
+                    <div id="latest-news" class="space-y-2 text-sm">
+                        <div class="text-gray-500">加载中...</div>
+                    </div>
+                </div>
+                <div class="bg-dark-800 rounded-lg p-5 border border-gray-800">
+                    <h3 class="text-sm font-semibold mb-3 text-accent-light">📊 Steam 在线人数对比</h3>
+                    <canvas id="ccu-chart" height="200"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 超自然行动组页 ========== -->
+        <div id="tab-chaoziran" class="tab-content hidden fade-in">
+            <div class="grid lg:grid-cols-3 gap-6">
+                <!-- 基本信息 -->
+                <div class="bg-dark-800 rounded-lg p-5 border border-gray-800">
+                    <h3 class="text-sm font-semibold mb-3 text-accent-light">🎮 基本信息</h3>
+                    <div class="space-y-3 text-sm" id="czr-info">
+                        <div class="flex justify-between"><span class="text-gray-500">开发商</span><span>巨人网络</span></div>
+                        <div class="flex justify-between"><span class="text-gray-500">类型</span><span>多人欢乐恐怖</span></div>
+                        <div class="flex justify-between"><span class="text-gray-500">平台</span><span>iOS / Android</span></div>
+                        <div class="flex justify-between"><span class="text-gray-500">DAU</span><span class="text-green-400">1,000万+</span></div>
+                        <div class="flex justify-between"><span class="text-gray-500">海外版</span><span>Tomb Busters</span></div>
+                        <div class="flex justify-between"><span class="text-gray-500">海外上线</span><span>2026-05-27</span></div>
+                        <div class="flex justify-between"><span class="text-gray-500">海外地区</span><span>美/日/韩</span></div>
+                    </div>
+                </div>
+
+                <!-- TapTap数据 -->
+                <div class="bg-dark-800 rounded-lg p-5 border border-gray-800">
+                    <h3 class="text-sm font-semibold mb-3 text-accent-light">📱 TapTap 数据</h3>
+                    <div class="space-y-3 text-sm" id="czr-taptap">
+                        <div class="flex justify-between"><span class="text-gray-500">评分</span><span id="taptap-score">--</span></div>
+                        <div class="flex justify-between"><span class="text-gray-500">评分人数</span><span id="taptap-rating">--</span></div>
+                        <div class="flex justify-between"><span class="text-gray-500">下载量</span><span id="taptap-download">--</span></div>
+                        <div class="flex justify-between"><span class="text-gray-500">关注数</span><span id="taptap-fans">--</span></div>
+                    </div>
+                </div>
+
+                <!-- 海外版Tomb Busters -->
+                <div class="bg-dark-800 rounded-lg p-5 border border-gray-800">
+                    <h3 class="text-sm font-semibold mb-3 text-accent-light">🌍 Tomb Busters 海外版</h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between"><span class="text-gray-500">发行商</span><span>巨人网络海外团队</span></div>
+                        <div class="flex justify-between"><span class="text-gray-500">上线日期</span><span>2026-05-27</span></div>
+                        <div class="flex justify-between"><span class="text-gray-500">覆盖地区</span><span>美/日/韩</span></div>
+                        <div class="flex justify-between"><span class="text-gray-500">平台</span><span>iOS/Android/PC</span></div>
+                        <div class="flex justify-between"><span class="text-gray-500">港澳台试点</span><span class="text-green-400">免费榜前三</span></div>
+                        <div class="mt-3 text-xs text-gray-500">未大规模推广即入前三，数据亮眼</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 更新公告 -->
+            <div class="bg-dark-800 rounded-lg p-5 border border-gray-800 mt-6">
+                <h3 class="text-sm font-semibold mb-3 text-accent-light">📋 更新公告</h3>
+                <div id="czr-updates" class="space-y-2 text-sm">
+                    <div class="text-gray-500">加载中...</div>
+                </div>
+            </div>
+
+            <!-- 官网新闻 -->
+            <div class="bg-dark-800 rounded-lg p-5 border border-gray-800 mt-6">
+                <h3 class="text-sm font-semibold mb-3 text-accent-light">📰 官网新闻</h3>
+                <div id="czr-official-news" class="space-y-2 text-sm">
+                    <div class="text-gray-500">加载中...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== R.E.P.O. 页 ========== -->
+        <div id="tab-repo" class="tab-content hidden fade-in">
+            <div class="grid lg:grid-cols-3 gap-6">
+                <div class="bg-dark-800 rounded-lg p-5 border border-gray-800">
+                    <h3 class="text-sm font-semibold mb-3 text-accent-light">🎮 基本信息</h3>
+                    <div class="space-y-3 text-sm" id="repo-info">
+                        <div class="text-gray-500">加载中...</div>
+                    </div>
+                </div>
+                <div class="bg-dark-800 rounded-lg p-5 border border-gray-800">
+                    <h3 class="text-sm font-semibold mb-3 text-accent-light">📊 玩家数据</h3>
+                    <div class="space-y-3 text-sm" id="repo-players">
+                        <div class="text-gray-500">加载中...</div>
+                    </div>
+                </div>
+                <div class="bg-dark-800 rounded-lg p-5 border border-gray-800">
+                    <h3 class="text-sm font-semibold mb-3 text-accent-light">⭐ 评测数据</h3>
+                    <div class="space-y-3 text-sm" id="repo-reviews">
+                        <div class="text-gray-500">加载中...</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-dark-800 rounded-lg p-5 border border-gray-800 mt-6">
+                <h3 class="text-sm font-semibold mb-3 text-accent-light">🏷️ 玩家标签</h3>
+                <div id="repo-tags" class="flex flex-wrap gap-2 text-sm">
+                    <div class="text-gray-500">加载中...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 竞品对比页 ========== -->
+        <div id="tab-competitors" class="tab-content hidden fade-in">
+            <!-- 对比表格 -->
+            <div class="bg-dark-800 rounded-lg p-5 border border-gray-800 mb-6">
+                <h3 class="text-sm font-semibold mb-3 text-accent-light">📊 竞品数据对比</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="text-gray-500 border-b border-gray-700">
+                                <th class="text-left py-2 pr-4">游戏</th>
+                                <th class="text-right py-2 px-4">当前在线</th>
+                                <th class="text-right py-2 px-4">好评率</th>
+                                <th class="text-right py-2 px-4">评测总数</th>
+                                <th class="text-right py-2 px-4">预估拥有量</th>
+                                <th class="text-right py-2 pl-4">价格</th>
+                            </tr>
+                        </thead>
+                        <tbody id="competitors-table">
+                            <tr><td colspan="6" class="py-4 text-gray-500 text-center">加载中...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 在线人数趋势图 -->
+            <div class="bg-dark-800 rounded-lg p-5 border border-gray-800">
+                <h3 class="text-sm font-semibold mb-3 text-accent-light">📈 在线人数趋势（14天）</h3>
+                <canvas id="trend-chart" height="250"></canvas>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="max-w-7xl mx-auto px-4 py-6 text-center text-xs text-gray-600 border-t border-gray-800 mt-8">
+        品类情报看板 · 数据每日自动采集 · 仅供内部分析参考 · 数据来源：Steam / TapTap / BWIKI
+    </footer>
+
+    <script>
+        // ========== 数据加载 ==========
+        let steamData = {};
+        let chaoziranData = {};
+        let historyData = {};
+
+        async function loadData() {
+            try {
+                const steamResp = await fetch('data/steam_data.json');
+                steamData = await steamResp.json();
+            } catch(e) {
+                console.warn('Steam数据加载失败:', e);
+            }
+
+            try {
+                const czrResp = await fetch('data/chaoziran_data.json');
+                chaoziranData = await czrResp.json();
+            } catch(e) {
+                console.warn('超自然行动组数据加载失败:', e);
+            }
+
+            try {
+                const histResp = await fetch('data/history.json');
+                historyData = await histResp.json();
+            } catch(e) {
+                console.warn('历史数据加载失败:', e);
+            }
+
+            renderAll();
+        }
+
+        function refreshData() {
+            location.reload();
+        }
+
+        // ========== 标签页切换 ==========
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(el => {
+                el.classList.remove('tab-active');
+                el.classList.add('text-gray-500');
+            });
+            document.getElementById('tab-' + tabName).classList.remove('hidden');
+            document.querySelector(`[data-tab="${tabName}"]`).classList.add('tab-active');
+            document.querySelector(`[data-tab="${tabName}"]`).classList.remove('text-gray-500');
+        }
+
+        // ========== 渲染函数 ==========
+        function renderAll() {
+            renderLastUpdate();
+            renderOverview();
+            renderChaoziran();
+            renderRepo();
+            renderCompetitors();
+        }
+
+        function renderLastUpdate() {
+            let latest = '';
+            if (steamData && Object.keys(steamData).length > 0) {
+                const first = Object.values(steamData)[0];
+                if (first && first.crawled_at) latest = first.crawled_at;
+            }
+            if (!latest && chaoziranData && chaoziranData.chaoziran) {
+                latest = chaoziranData.chaoziran.crawled_at || '';
+            }
+            if (latest) {
+                const d = new Date(latest);
+                document.getElementById('last-update').textContent =
+                    `更新于 ${d.getMonth()+1}/${d.getDate()} ${d.getHours()}:${String(d.getMinutes()).padStart(2,'0')}`;
+            }
+        }
+
+        function renderOverview() {
+            // R.E.P.O. CCU
+            const repo = steamData['R.E.P.O.'];
+            if (repo && repo.steamspy) {
+                document.getElementById('repo-ccu').textContent = repo.steamspy.ccu.toLocaleString();
+            }
+
+            // 最新动态
+            const newsEl = document.getElementById('latest-news');
+            let newsItems = [];
+
+            // 从超自然行动组取新闻
+            if (chaoziranData.chaoziran) {
+                const czr = chaoziranData.chaoziran;
+                if (czr.bwiki_updates) {
+                    czr.bwiki_updates.slice(0, 3).forEach(u => {
+                        newsItems.push({ tag: '超自然行动组', title: u.title, source: u.source });
+                    });
+                }
+                if (czr.official_news) {
+                    czr.official_news.slice(0, 3).forEach(n => {
+                        newsItems.push({ tag: '超自然行动组', title: n.title, source: '官网', url: n.url });
+                    });
+                }
+            }
+
+            // 从Steam取更新信息
+            Object.entries(steamData).forEach(([name, data]) => {
+                if (data.store) {
+                    newsItems.push({
+                        tag: name,
+                        title: `${name} - ${data.store.release_date}发售`,
+                        source: 'Steam'
+                    });
+                }
+            });
+
+            if (newsItems.length === 0) {
+                newsEl.innerHTML = '<div class="text-gray-500">暂无动态数据</div>';
+            } else {
+                newsEl.innerHTML = newsItems.slice(0, 8).map(n => `
+                    <div class="flex items-start gap-2 py-1.5 border-b border-gray-800 last:border-0">
+                        <span class="text-xs bg-dark-600 text-accent-light px-1.5 py-0.5 rounded shrink-0">${n.tag}</span>
+                        <span class="text-gray-300">${n.title}</span>
+                        <span class="text-xs text-gray-600 ml-auto shrink-0">${n.source}</span>
+                    </div>
+                `).join('');
+            }
+
+            // CCU图表
+            renderCCUChart();
+        }
+
+        function renderCCUChart() {
+            const ctx = document.getElementById('ccu-chart');
+            if (!ctx) return;
+
+            const labels = [];
+            const datasets = [];
+            const colors = ['#8b5cf6', '#dc2626', '#059669', '#d97706', '#3b82f6'];
+
+            let idx = 0;
+            Object.entries(steamData).forEach(([name, data]) => {
+                if (data.steamspy) {
+                    labels.push(name);
+                    if (idx === 0) {
+                        // 第一个游戏初始化labels
+                    }
+                }
+                idx++;
+            });
+
+            // 简单柱状图：当前在线人数
+            const ccuData = [];
+            const names = [];
+            Object.entries(steamData).forEach(([name, data]) => {
+                if (data.steamspy) {
+                    names.push(name);
+                    ccuData.push(data.steamspy.ccu || 0);
+                }
+            });
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: names,
+                    datasets: [{
+                        label: '当前在线人数',
+                        data: ccuData,
+                        backgroundColor: colors.slice(0, names.length),
+                        borderRadius: 4,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false },
+                    },
+                    scales: {
+                        x: {
+                            ticks: { color: '#9ca3af', font: { size: 11 } },
+                            grid: { display: false },
+                        },
+                        y: {
+                            ticks: { color: '#6b7280', font: { size: 10 } },
+                            grid: { color: '#1f2937' },
+                        }
+                    }
+                }
+            });
+        }
+
+        function renderChaoziran() {
+            if (!chaoziranData.chaoziran) return;
+            const czr = chaoziranData.chaoziran;
+
+            // TapTap数据
+            if (czr.taptap) {
+                const t = czr.taptap;
+                document.getElementById('taptap-score').textContent = t.score ? t.score.toFixed(1) : '--';
+                document.getElementById('taptap-rating').textContent = t.rating_count ? t.rating_count.toLocaleString() : '--';
+                document.getElementById('taptap-download').textContent = t.download_count ? t.download_count.toLocaleString() : '--';
+                document.getElementById('taptap-fans').textContent = t.fans_count ? t.fans_count.toLocaleString() : '--';
+            }
+
+            // 更新公告
+            const updatesEl = document.getElementById('czr-updates');
+            if (czr.bwiki_updates && czr.bwiki_updates.length > 0) {
+                updatesEl.innerHTML = czr.bwiki_updates.map(u => `
+                    <div class="py-1.5 border-b border-gray-800 last:border-0 text-gray-300">
+                        ${u.title}
+                        <span class="text-xs text-gray-600 ml-2">${u.source}</span>
+                    </div>
+                `).join('');
+            } else {
+                updatesEl.innerHTML = '<div class="text-gray-500">暂无更新公告数据（BWIKI页面结构变化可能导致采集失败）</div>';
+            }
+
+            // 官网新闻
+            const newsEl = document.getElementById('czr-official-news');
+            if (czr.official_news && czr.official_news.length > 0) {
+                newsEl.innerHTML = czr.official_news.map(n => `
+                    <div class="py-1.5 border-b border-gray-800 last:border-0">
+                        <a href="${n.url}" target="_blank" class="text-accent-light hover:underline">${n.title}</a>
+                        <span class="text-xs text-gray-600 ml-2">${n.source}</span>
+                    </div>
+                `).join('');
+            } else {
+                newsEl.innerHTML = '<div class="text-gray-500">暂无官网新闻数据</div>';
+            }
+        }
+
+        function renderRepo() {
+            const repo = steamData['R.E.P.O.'];
+            if (!repo) return;
+
+            // 基本信息
+            const infoEl = document.getElementById('repo-info');
+            if (repo.store) {
+                const s = repo.store;
+                infoEl.innerHTML = `
+                    <div class="flex justify-between"><span class="text-gray-500">名称</span><span>${s.name}</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">开发商</span><span>${s.developers.join(', ')}</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">发行商</span><span>${s.publishers.join(', ')}</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">价格</span><span>${s.price}</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">发售日</span><span>${s.release_date}</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">类型</span><span>${s.genres.join(', ')}</span></div>
+                    <div class="mt-2 text-xs text-gray-500">${s.short_description}</div>
+                `;
+            }
+
+            // 玩家数据
+            const playersEl = document.getElementById('repo-players');
+            if (repo.steamspy) {
+                const sp = repo.steamspy;
+                playersEl.innerHTML = `
+                    <div class="flex justify-between"><span class="text-gray-500">当前在线</span><span class="text-green-400 font-bold">${sp.ccu.toLocaleString()}</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">两周活跃玩家</span><span>${sp.players_2weeks.toLocaleString()}</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">两周平均游玩</span><span>${Math.round(sp.average_2weeks / 60)}小时</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">预估拥有量</span><span>${sp.owners_estimate}</span></div>
+                `;
+            }
+
+            // 评测数据
+            const reviewsEl = document.getElementById('repo-reviews');
+            if (repo.reviews) {
+                const r = repo.reviews;
+                reviewsEl.innerHTML = `
+                    <div class="flex justify-between"><span class="text-gray-500">总评测数</span><span>${r.total_reviews.toLocaleString()}</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">好评</span><span class="text-green-400">${r.positive.toLocaleString()}</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">差评</span><span class="text-red-400">${r.negative.toLocaleString()}</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">好评率</span><span class="font-bold ${r.positive_rate >= 80 ? 'text-green-400' : 'text-yellow-400'}">${r.positive_rate}%</span></div>
+                `;
+            } else if (repo.steamspy) {
+                const sp = repo.steamspy;
+                reviewsEl.innerHTML = `
+                    <div class="flex justify-between"><span class="text-gray-500">好评</span><span class="text-green-400">${sp.positive.toLocaleString()}</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">差评</span><span class="text-red-400">${sp.negative.toLocaleString()}</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">好评率</span><span class="font-bold text-green-400">${sp.positive_rate}%</span></div>
+                `;
+            }
+
+            // 标签
+            const tagsEl = document.getElementById('repo-tags');
+            if (repo.steamspy && repo.steamspy.tags) {
+                tagsEl.innerHTML = Object.entries(repo.steamspy.tags).map(([tag, count]) =>
+                    `<span class="bg-dark-600 text-gray-300 px-2.5 py-1 rounded text-xs">${tag} <span class="text-gray-500">${count}</span></span>`
+                ).join('');
+            }
+        }
+
+        function renderCompetitors() {
+            const tbody = document.getElementById('competitors-table');
+            const rows = [];
+
+            Object.entries(steamData).forEach(([name, data]) => {
+                const store = data.store || {};
+                const spy = data.steamspy || {};
+                const reviews = data.reviews || {};
+
+                rows.push(`
+                    <tr class="border-b border-gray-800 hover:bg-dark-700 transition">
+                        <td class="py-2.5 pr-4 font-medium">${name}</td>
+                        <td class="text-right py-2.5 px-4 ${spy.ccu > 10000 ? 'text-green-400' : ''}">${spy.ccu ? spy.ccu.toLocaleString() : '--'}</td>
+                        <td class="text-right py-2.5 px-4">
+                            <span class="${(reviews.positive_rate || spy.positive_rate) >= 80 ? 'text-green-400' : 'text-yellow-400'}">
+                                ${(reviews.positive_rate || spy.positive_rate || '--')}%
+                            </span>
+                        </td>
+                        <td class="text-right py-2.5 px-4">${(reviews.total_reviews || (spy.positive + spy.negative) || 0).toLocaleString()}</td>
+                        <td class="text-right py-2.5 px-4">${spy.owners_estimate || '--'}</td>
+                        <td class="text-right py-2.5 pl-4">${store.price || '--'}</td>
+                    </tr>
+                `);
+            });
+
+            tbody.innerHTML = rows.length > 0 ? rows.join('') : '<tr><td colspan="6" class="py-4 text-gray-500 text-center">暂无竞品数据</td></tr>';
+
+            // 趋势图
+            renderTrendChart();
+        }
+
+        function renderTrendChart() {
+            const ctx = document.getElementById('trend-chart');
+            if (!ctx) return;
+
+            const colors = ['#8b5cf6', '#dc2626', '#059669', '#d97706', '#3b82f6'];
+            const datasets = [];
+            let idx = 0;
+
+            Object.entries(steamData).forEach(([name, data]) => {
+                // 从历史数据中取趋势
+                const trend = historyData[name] || [];
+                if (trend.length > 0) {
+                    datasets.push({
+                        label: name,
+                        data: trend.map(t => t.ccu),
+                        borderColor: colors[idx % colors.length],
+                        backgroundColor: colors[idx % colors.length] + '20',
+                        fill: false,
+                        tension: 0.3,
+                        pointRadius: 2,
+                    });
+                }
+                idx++;
+            });
+
+            if (datasets.length === 0) {
+                // 无历史数据时显示提示
+                datasets.push({
+                    label: '暂无历史数据（需积累多日采集）',
+                    data: [],
+                    borderColor: '#4b5563',
+                });
+            }
+
+            // 生成日期标签
+            const maxLen = Math.max(...datasets.map(d => d.data.length), 0);
+            const dateLabels = [];
+            const now = new Date();
+            for (let i = maxLen - 1; i >= 0; i--) {
+                const d = new Date(now);
+                d.setDate(d.getDate() - i);
+                dateLabels.push(`${d.getMonth()+1}/${d.getDate()}`);
+            }
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: dateLabels,
+                    datasets: datasets,
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            labels: { color: '#9ca3af', font: { size: 11 } }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: { color: '#6b7280', font: { size: 10 } },
+                            grid: { color: '#1f2937' },
+                        },
+                        y: {
+                            ticks: { color: '#6b7280', font: { size: 10 } },
+                            grid: { color: '#1f2937' },
+                        }
+                    }
+                }
+            });
+        }
+
+        // ========== 启动 ==========
+        loadData();
+    </script>
+</body>
+</html>
