@@ -1267,8 +1267,8 @@
                     const headerImg = store.header_image || info.headerImage || null;
 
                     const statusBadge = info.status === 'EA'
-                        ? '<span class="px-1.5 py-0.5 bg-yellow-500/15 text-yellow-400 border border-yellow-500/25 rounded text-[10px] font-bold tracking-wide">EA</span>'
-                        : '<span class="px-1.5 py-0.5 bg-emerald-500/15 text-emerald-400 border border-emerald-500/25 rounded text-[10px] font-bold tracking-wide">已发售</span>';
+                        ? '<span class="px-1.5 py-0.5 bg-amber-500/15 text-amber-400 border border-amber-500/25 rounded text-[10px] font-bold tracking-wide shrink-0 whitespace-nowrap">EA</span>'
+                        : '<span class="px-1.5 py-0.5 bg-sky-500/15 text-sky-400 border border-sky-500/25 rounded text-[10px] font-bold tracking-wide shrink-0 whitespace-nowrap">已发售</span>';
 
                     const rateBadgeColor = rate >= 85 ? 'bg-emerald-500/15 text-emerald-400 border-emerald-500/25' : rate >= 60 ? 'bg-amber-500/15 text-amber-400 border-amber-500/25' : 'bg-red-500/15 text-red-400 border-red-500/25';
 
