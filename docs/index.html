@@ -438,15 +438,22 @@
 
             // 更新公告
             const updatesEl = document.getElementById('czr-updates');
+            let updatesItems = [];
             if (czr.bwiki_updates && czr.bwiki_updates.length > 0) {
-                updatesEl.innerHTML = czr.bwiki_updates.map(u => `
-                    <div class="py-1.5 border-b border-gray-800 last:border-0 text-gray-300">
-                        ${u.title}
+                updatesItems = czr.bwiki_updates;
+            } else if (czr.official_news && czr.official_news.length > 0) {
+                updatesItems = czr.official_news.filter(n => /版更|更新|重做|新怪物|联动|公告|上线|赛季|优化|削弱/.test(n.title));
+                if (updatesItems.length === 0) updatesItems = czr.official_news.slice(0, 3);
+            }
+            if (updatesItems.length > 0) {
+                updatesEl.innerHTML = updatesItems.map(u => `
+                    <div class="py-1.5 border-b border-gray-800 last:border-0">
+                        ${u.url ? `<a href="${u.url}" target="_blank" class="text-accent-light hover:underline">${u.title}</a>` : `<span class="text-gray-300">${u.title}</span>`}
                         <span class="text-xs text-gray-600 ml-2">${u.source}</span>
                     </div>
                 `).join('');
             } else {
-                updatesEl.innerHTML = '<div class="text-gray-500">暂无更新公告数据（BWIKI页面结构变化可能导致采集失败）</div>';
+                updatesEl.innerHTML = '<div class="text-gray-500">暂无更新公告数据</div>';
             }
 
             // 官网新闻
