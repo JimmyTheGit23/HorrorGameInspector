@@ -1274,7 +1274,7 @@
                     const displayName = info.cnName ? `${name}（${info.cnName}）` : name;
 
                     html += `
-                        <div class="comp-card group bg-dark-800/80 rounded-lg border border-gray-700/50 overflow-hidden cursor-pointer hover:border-gray-500/40 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:shadow-purple-900/10" data-url="${info.storeUrl}" data-name="${name}" data-cn="${info.cnName||''}" data-dev="${info.dev}" data-release="${info.release}" data-players="${info.players}" data-rate="${rate}" data-ccu="${ccu||(info.ccu||'')}" data-price="${price}" data-intro="${info.intro.replace(/"/g,'&quot;')}" data-img="${headerImg||''}" data-status="${info.status}" data-store="${info.storeUrl}">
+                        <div class="comp-card group bg-dark-800/80 rounded-lg border border-gray-700/50 overflow-hidden cursor-pointer hover:border-gray-500/40 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:shadow-purple-900/10" onclick="window.open('${info.storeUrl}','_blank')" data-url="${info.storeUrl}" data-name="${name}" data-cn="${info.cnName||''}" data-dev="${info.dev}" data-release="${info.release}" data-players="${info.players}" data-rate="${rate}" data-ccu="${ccu||(info.ccu||'')}" data-price="${price}" data-intro="${info.intro.replace(/"/g,'&quot;')}" data-img="${headerImg||''}" data-status="${info.status}" data-store="${info.storeUrl}">
                             <!-- 封面Banner -->
                             <div class="relative h-[48px] overflow-hidden">
                                 ${headerImg
@@ -1329,7 +1329,7 @@
                     const wishImg = info.headerImage || null;
                     const displayName = info.cnName ? `${name}（${info.cnName}）` : name;
                     html += `
-                        <div class="comp-card group bg-gradient-to-br from-purple-900/20 to-dark-800/80 rounded-lg border border-purple-500/20 overflow-hidden cursor-pointer hover:border-purple-400/40 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:shadow-purple-900/10" data-url="${info.storeUrl}" data-name="${name}" data-cn="${info.cnName||''}" data-dev="${info.dev}" data-release="${info.release}" data-players="${info.players}" data-rate="" data-ccu="" data-price="${info.price}" data-intro="${info.intro.replace(/"/g,'&quot;')}" data-img="${wishImg||''}" data-status="WISHLIST" data-store="${info.storeUrl}">
+                        <div class="comp-card group bg-gradient-to-br from-purple-900/20 to-dark-800/80 rounded-lg border border-purple-500/20 overflow-hidden cursor-pointer hover:border-purple-400/40 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:shadow-purple-900/10" onclick="window.open('${info.storeUrl}','_blank')" data-url="${info.storeUrl}" data-name="${name}" data-cn="${info.cnName||''}" data-dev="${info.dev}" data-release="${info.release}" data-players="${info.players}" data-rate="" data-ccu="" data-price="${info.price}" data-intro="${info.intro.replace(/"/g,'&quot;')}" data-img="${wishImg||''}" data-status="WISHLIST" data-store="${info.storeUrl}">
                             <div class="relative h-[48px] overflow-hidden">
                                 ${wishImg
                                     ? `<img src="${wishImg}" alt="${name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">`
