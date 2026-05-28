@@ -107,8 +107,8 @@
                     <div class="w-8 h-8 rounded-md bg-dark-600 flex items-center justify-center text-lg shrink-0">👻</div>
                     <div class="min-w-0">
                         <div class="text-xs text-gray-500 mb-1">追踪竞品数</div>
-                        <div class="text-2xl font-bold text-horror-orange">5</div>
-                        <div class="text-xs text-gray-500 mt-1">Steam恐怖撤离</div>
+                        <div class="text-2xl font-bold text-horror-orange">10</div>
+                        <div class="text-xs text-gray-500 mt-1">含1款Wishlist</div>
                     </div>
                 </div>
                 <div class="bg-dark-800 rounded-lg p-4 card-hover transition-all border border-gray-800 flex gap-3">
@@ -512,8 +512,8 @@
 
         <!-- ========== 竞品对比页 ========== -->
         <div id="tab-competitors" class="tab-content hidden fade-in">
-            <!-- 竞品卡片网格 -->
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-6" id="competitor-cards"></div>
+            <!-- 竞品全景 - 由JS动态渲染 -->
+            <div id="competitor-landscape"></div>
 
             <!-- 对比表格 -->
             <div class="bg-dark-800 rounded-lg p-5 border border-gray-800 mb-6">
@@ -523,15 +523,16 @@
                         <thead>
                             <tr class="text-gray-500 border-b border-gray-700">
                                 <th class="text-left py-2 pr-4">游戏</th>
-                                <th class="text-right py-2 px-4">当前在线</th>
-                                <th class="text-right py-2 px-4">好评率</th>
-                                <th class="text-right py-2 px-4">评测总数</th>
-                                <th class="text-right py-2 px-4">预估拥有量</th>
-                                <th class="text-right py-2 pl-4">价格</th>
+                                <th class="text-center py-2 px-3">赛道</th>
+                                <th class="text-right py-2 px-3">状态</th>
+                                <th class="text-right py-2 px-3">当前在线</th>
+                                <th class="text-right py-2 px-3">好评率</th>
+                                <th class="text-right py-2 px-3">评测数</th>
+                                <th class="text-right py-2 px-3">价格</th>
                             </tr>
                         </thead>
                         <tbody id="competitors-table">
-                            <tr><td colspan="6" class="py-4 text-gray-500 text-center">加载中...</td></tr>
+                            <tr><td colspan="7" class="py-4 text-gray-500 text-center">加载中...</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -918,60 +919,305 @@
             }
         }
 
+        // ========== 竞品全景数据 ==========
+        const competitorInfo = {
+            // 恐怖撤离/搜打撤赛道
+            'R.E.P.O.': {
+                category: '恐怖撤离',
+                status: 'EA',
+                dev: 'semiwork',
+                release: '2025-02-26',
+                players: '1~6人',
+                intro: '物理引擎驱动拾荒合作恐怖，玩家在高物理交互场景中搜刮物品并撤离。物理论坛效果带来大量笑点，"搜打撤"品类2025年最大黑马。',
+                steamKey: 'R.E.P.O.'
+            },
+            'Lethal Company': {
+                category: '恐怖撤离',
+                status: 'EA',
+                dev: 'Zeekerss',
+                release: '2023-10-24',
+                players: '1~4人',
+                intro: '合作恐怖拾荒品类奠基之作。玩家在废弃卫星搜刮废料卖给公司，程序化地图+低多边形画风，直播效果极强，定义了"搜打撤"公式。',
+                steamKey: 'Lethal Company'
+            },
+            'Content Warning': {
+                category: '恐怖撤离',
+                status: '已发售',
+                dev: 'Zorro / Wilnyl / Philip',
+                release: '2024-04-01',
+                players: '2~4人',
+                intro: '录制恐怖视频上传"幽哩幽哩"社交平台的合作恐怖游戏。搜打撤+内容创作双重驱动，首日免费领取620万份，Landfall发行。',
+                steamKey: 'Content Warning'
+            },
+            'FEEDERS': {
+                category: '恐怖撤离',
+                status: 'EA',
+                dev: 'Luvi Technologies',
+                release: '2026-03-30',
+                players: '1~4人',
+                intro: '末日地表搜打撤，物品重量影响移速，近距语音分头行动断联。12种自适应AI怪物会学习团队打法，第二局比第一局更难。2026年品类新秀。',
+                steamKey: 'FEEDERS'
+            },
+            'Peak': {
+                category: '恐怖撤离',
+                status: '已发售',
+                dev: 'Aggro Crab + Landfall',
+                release: '2025-06',
+                players: '1~4人',
+                intro: '将合作恐怖搬到垂直维度的登山游戏，海拔攀升带来持续紧迫感。Aggro Crab x Landfall联手打造，200万销量，成本不到20万美元的独立奇迹。',
+                steamKey: null,
+                price: '¥ 33.00',
+                ccu: '~8,000',
+                rate: 92,
+                reviews_total: '35,000+'
+            },
+            // 捉鬼调查赛道
+            'Phasmophobia': {
+                category: '捉鬼调查',
+                status: 'EA',
+                dev: 'Kinetic Games',
+                release: '2020-09-18',
+                players: '1~4人',
+                intro: '捉鬼调查类合作恐怖标杆。近距离语音+空间音频营造沉浸恐惧，支持VR。用各种仪器收集灵异证据判断鬼魂类型，节奏偏慢但氛围极强。',
+                steamKey: 'Phasmophobia'
+            },
+            'Demonologist': {
+                category: '捉鬼调查',
+                status: 'EA',
+                dev: 'Clock Wizard Games',
+                release: '2023-03',
+                players: '1~4人',
+                intro: 'UE5引擎打造的捉鬼类合作恐怖，画面质量领先同类。玩法与恐鬼症类似但更侧重驱魔仪式，地图细节丰富，但内容更新节奏偏慢。',
+                steamKey: null,
+                price: '¥ 58.00',
+                ccu: '~1,500',
+                rate: 76,
+                reviews_total: '18,000+'
+            },
+            // PvPvE猎杀赛道
+            'The Outlast Trials': {
+                category: 'PvPvE猎杀',
+                status: '已发售',
+                dev: 'Red Barrels',
+                release: '2024-03-05',
+                players: '1~4人',
+                intro: '4人合作心理恐怖，玩家无法攻击只能潜行和躲闪。冷战背景下的穆尔科夫设施试验，氛围极度压抑。逃生IP正统多人作品。',
+                steamKey: null,
+                price: '¥ 136.00',
+                ccu: '~3,200',
+                rate: 84,
+                reviews_total: '42,000+'
+            },
+            'Hunt: Showdown 1896': {
+                category: 'PvPvE猎杀',
+                status: '已发售',
+                dev: 'Crytek',
+                release: '2019-08',
+                players: '1~3人',
+                intro: 'PvPvE赏金狩猎，玩家在怪物横行的沼泽中猎杀Boss并提取赏金，同时要防备其他玩家伏击。高风险高回报，画面逼真，硬核向。',
+                steamKey: null,
+                price: '¥ 98.00',
+                ccu: '~12,000',
+                rate: 85,
+                reviews_total: '120,000+'
+            },
+            // 即将上线 / Wishlist
+            '灰境行者': {
+                category: 'PvPvE猎杀',
+                status: 'WISHLIST',
+                dev: '腾讯北极光',
+                release: '未公布',
+                players: '3人小队',
+                intro: 'UE5引擎PvEvP猎杀夺宝FPS。三人仿生体小队深入神秘区域，搜刮→遭遇怪物→对抗其他玩家小队。2025年10月首曝PV，与猎杀:对决同赛道但更偏中式美学。超自然行动组在手游端的直接竞品。',
+                steamKey: null,
+                price: '未公布',
+                ccu: null,
+                rate: null,
+                reviews_total: null,
+                isWishlist: true
+            }
+        };
+
         function renderCompetitors() {
+            const landscape = document.getElementById('competitor-landscape');
             const tbody = document.getElementById('competitors-table');
-            const rows = [];
-            const cardsEl = document.getElementById('competitor-cards');
-            const cards = [];
 
-            Object.entries(steamData).forEach(([name, data]) => {
-                const store = data.store || {};
-                const spy = data.steamspy || {};
-                const reviews = data.reviews || {};
-                const rate = reviews.positive_rate || spy.positive_rate || 0;
+            // 按赛道分组
+            const categories = [
+                { key: '恐怖撤离', label: '🎯 恐怖撤离 / 搜打撤', desc: '核心赛道：搜刮→撤离→配额压力' },
+                { key: '捉鬼调查', label: '🔮 捉鬼调查', desc: '相邻赛道：证据收集→灵异判断' },
+                { key: 'PvPvE猎杀', label: '⚔️ PvPvE 猎杀夺宝', desc: '扩展赛道：搜刮→遭遇怪物→对抗玩家' },
+            ];
+            const wishlistItems = Object.entries(competitorInfo).filter(([, v]) => v.isWishlist);
+            const releasedItems = Object.entries(competitorInfo).filter(([, v]) => !v.isWishlist);
 
-                // 竞品卡片
-                cards.push(`
-                    <div class="bg-dark-800 rounded-lg overflow-hidden border border-gray-800 card-hover transition-all group">
-                        <div class="relative h-24 overflow-hidden">
-                            ${store.header_image ? `<img src="${store.header_image}" alt="${name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">` : '<div class="w-full h-full bg-dark-700 flex items-center justify-center text-2xl">🎮</div>'}
-                            <div class="absolute inset-0 bg-gradient-to-t from-dark-800 to-transparent"></div>
-                            ${spy.ccu ? `<div class="absolute top-2 right-2 bg-dark-900/80 text-xs px-1.5 py-0.5 rounded text-green-400 font-mono">${spy.ccu.toLocaleString()} 在线</div>` : ''}
+            let html = '';
+
+            // 已上线竞品 - 按赛道渲染
+            categories.forEach(cat => {
+                const items = releasedItems.filter(([, v]) => v.category === cat.key);
+                if (items.length === 0) return;
+
+                html += `
+                    <div class="mb-6">
+                        <div class="flex items-center gap-2 mb-1">
+                            <h3 class="text-sm font-bold text-white">${cat.label}</h3>
+                            <span class="text-xs text-gray-500">${cat.desc}</span>
                         </div>
-                        <div class="p-3 -mt-4 relative">
-                            <div class="text-sm font-semibold truncate">${name}</div>
-                            <div class="flex items-center gap-2 mt-1">
-                                <span class="text-xs ${rate >= 80 ? 'text-green-400' : rate >= 60 ? 'text-yellow-400' : 'text-red-400'}">${rate}%</span>
-                                <span class="text-xs text-gray-500">${store.price || '--'}</span>
+                        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                `;
+
+                items.forEach(([name, info]) => {
+                    const steam = info.steamKey ? steamData[info.steamKey] : null;
+                    const store = steam ? (steam.store || {}) : {};
+                    const spy = steam ? (steam.steamspy || {}) : {};
+                    const reviews = steam ? (steam.reviews || {}) : {};
+                    const rate = reviews.positive_rate || info.rate || 0;
+                    const ccu = spy.ccu || null;
+                    const price = store.price || info.price || '--';
+                    const totalReviews = reviews.total_reviews || info.reviews_total || 0;
+                    const headerImg = store.header_image || null;
+
+                    const statusBadge = info.status === 'EA'
+                        ? '<span class="px-1.5 py-0.5 bg-yellow-900/50 text-yellow-300 rounded text-xs">EA</span>'
+                        : '<span class="px-1.5 py-0.5 bg-green-900/50 text-green-300 rounded text-xs">已发售</span>';
+
+                    const rateColor = rate >= 80 ? 'text-green-400' : rate >= 60 ? 'text-yellow-400' : 'text-red-400';
+
+                    html += `
+                        <div class="bg-dark-800 rounded-lg border border-gray-800 card-hover transition-all overflow-hidden">
+                            <div class="flex gap-3 p-3">
+                                <!-- 图标 -->
+                                <div class="shrink-0">
+                                    ${headerImg
+                                        ? `<img src="${headerImg}" alt="${name}" class="w-20 h-10 rounded object-cover border border-gray-700" referrerpolicy="no-referrer">`
+                                        : `<div class="w-20 h-10 rounded bg-dark-700 flex items-center justify-center text-lg border border-gray-700">🎮</div>`
+                                    }
+                                </div>
+                                <!-- 名称+指标 -->
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center gap-2">
+                                        <span class="font-semibold text-sm text-white truncate">${name}</span>
+                                        ${statusBadge}
+                                    </div>
+                                    <div class="flex items-center gap-3 mt-1 text-xs">
+                                        ${rate ? `<span class="${rateColor} font-bold">${rate}%</span>` : ''}
+                                        ${ccu ? `<span class="text-green-400">${ccu.toLocaleString()} 在线</span>` : (info.ccu ? `<span class="text-gray-400">${info.ccu} 在线</span>` : '')}
+                                        <span class="text-gray-500">${price}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 简介 -->
+                            <div class="px-3 pb-3">
+                                <div class="text-xs text-gray-400 leading-relaxed">${info.intro}</div>
+                                <div class="flex items-center gap-2 mt-2 text-xs text-gray-500">
+                                    <span>${info.dev}</span>
+                                    <span>·</span>
+                                    <span>${info.players}</span>
+                                    <span>·</span>
+                                    <span>${info.release}</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                `);
+                    `;
+                });
 
-                // 表格行（加图标）
+                html += '</div></div>';
+            });
+
+            // 即将上线 / Wishlist 区域
+            if (wishlistItems.length > 0) {
+                html += `
+                    <div class="mb-6">
+                        <div class="flex items-center gap-2 mb-1">
+                            <h3 class="text-sm font-bold text-white">🚀 即将上线 / Wishlist</h3>
+                            <span class="text-xs text-gray-500">尚未发售，值得关注的新入局者</span>
+                        </div>
+                        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                `;
+
+                wishlistItems.forEach(([name, info]) => {
+                    html += `
+                        <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-lg border border-purple-700/40 card-hover transition-all overflow-hidden">
+                            <div class="flex gap-3 p-3">
+                                <div class="shrink-0">
+                                    <div class="w-20 h-10 rounded bg-purple-900/40 flex items-center justify-center text-lg border border-purple-700/30">🔮</div>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center gap-2">
+                                        <span class="font-semibold text-sm text-white truncate">${name}</span>
+                                        <span class="px-1.5 py-0.5 bg-purple-800/60 text-purple-300 rounded text-xs font-bold">WISHLIST</span>
+                                    </div>
+                                    <div class="flex items-center gap-3 mt-1 text-xs">
+                                        <span class="text-gray-400">${info.dev}</span>
+                                        <span class="text-gray-500">${info.players}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="px-3 pb-3">
+                                <div class="text-xs text-gray-400 leading-relaxed">${info.intro}</div>
+                                <div class="flex items-center gap-2 mt-2 text-xs text-gray-500">
+                                    <span>发售：${info.release}</span>
+                                    <span>·</span>
+                                    <span>${info.price}</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                html += '</div></div>';
+            }
+
+            landscape.innerHTML = html;
+
+            // 对比表格 - 包含所有竞品
+            const rows = [];
+            Object.entries(competitorInfo).forEach(([name, info]) => {
+                const steam = info.steamKey ? steamData[info.steamKey] : null;
+                const store = steam ? (steam.store || {}) : {};
+                const spy = steam ? (steam.steamspy || {}) : {};
+                const reviews = steam ? (steam.reviews || {}) : {};
+                const rate = reviews.positive_rate || info.rate || 0;
+                const ccu = spy.ccu || null;
+                const price = store.price || info.price || '--';
+                const totalReviews = reviews.total_reviews || info.reviews_total || 0;
+                const headerImg = store.header_image || null;
+
+                const rateColor = rate >= 80 ? 'text-green-400' : rate >= 60 ? 'text-yellow-400' : 'text-red-400';
+                const statusBadge = info.status === 'WISHLIST'
+                    ? '<span class="px-1.5 py-0.5 bg-purple-900/50 text-purple-300 rounded text-xs">WISHLIST</span>'
+                    : info.status === 'EA'
+                    ? '<span class="px-1.5 py-0.5 bg-yellow-900/50 text-yellow-300 rounded text-xs">EA</span>'
+                    : '<span class="px-1.5 py-0.5 bg-green-900/50 text-green-300 rounded text-xs">已发售</span>';
+
+                const catLabel = {
+                    '恐怖撤离': '🎯 撤离',
+                    '捉鬼调查': '🔮 捉鬼',
+                    'PvPvE猎杀': '⚔️ PvPvE'
+                }[info.category] || info.category;
+
                 rows.push(`
                     <tr class="border-b border-gray-800 hover:bg-dark-700 transition">
                         <td class="py-2.5 pr-4 font-medium">
                             <div class="flex items-center gap-2">
-                                ${store.header_image ? `<img src="${store.header_image}" alt="${name}" class="w-8 h-4 rounded-sm object-cover">` : ''}
+                                ${headerImg ? `<img src="${headerImg}" alt="${name}" class="w-8 h-4 rounded-sm object-cover" referrerpolicy="no-referrer">` : '<span class="text-xs">🎮</span>'}
                                 <span>${name}</span>
                             </div>
                         </td>
-                        <td class="text-right py-2.5 px-4 ${spy.ccu > 10000 ? 'text-green-400' : ''}">${spy.ccu ? spy.ccu.toLocaleString() : '--'}</td>
-                        <td class="text-right py-2.5 px-4">
-                            <span class="${rate >= 80 ? 'text-green-400' : rate >= 60 ? 'text-yellow-400' : 'text-red-400'}">
-                                ${rate ? rate + '%' : '--'}
-                            </span>
+                        <td class="text-center py-2.5 px-3 text-xs text-gray-400">${catLabel}</td>
+                        <td class="text-center py-2.5 px-3">${statusBadge}</td>
+                        <td class="text-right py-2.5 px-3 ${ccu > 10000 ? 'text-green-400 font-bold' : 'text-gray-300'}">${ccu ? ccu.toLocaleString() : (info.ccu || '--')}</td>
+                        <td class="text-right py-2.5 px-3">
+                            <span class="${rateColor}">${rate ? rate + '%' : '--'}</span>
                         </td>
-                        <td class="text-right py-2.5 px-4">${(reviews.total_reviews || (spy.positive + spy.negative) || 0).toLocaleString()}</td>
-                        <td class="text-right py-2.5 px-4">${spy.owners_estimate || '--'}</td>
-                        <td class="text-right py-2.5 pl-4">${store.price || '--'}</td>
+                        <td class="text-right py-2.5 px-3 text-gray-400">${typeof totalReviews === 'number' ? totalReviews.toLocaleString() : totalReviews}</td>
+                        <td class="text-right py-2.5 px-3">${price}</td>
                     </tr>
                 `);
             });
 
-            cardsEl.innerHTML = cards.join('');
-            tbody.innerHTML = rows.length > 0 ? rows.join('') : '<tr><td colspan="6" class="py-4 text-gray-500 text-center">暂无竞品数据</td></tr>';
+            tbody.innerHTML = rows.length > 0 ? rows.join('') : '<tr><td colspan="7" class="py-4 text-gray-500 text-center">暂无竞品数据</td></tr>';
 
             // 趋势图
             renderTrendChart();
