@@ -46,7 +46,6 @@
         .card-tooltip .tt-meta { font-size: 11px; color: #9ca3af; margin-bottom: 6px; }
         .card-tooltip .tt-intro { font-size: 11px; color: #d1d5db; line-height: 1.5; margin-bottom: 6px; }
         .card-tooltip .tt-stats { display: flex; gap: 10px; font-size: 11px; }
-        .card-tooltip .tt-store { font-size: 10px; color: #a78bfa; margin-top: 6px; }
     </style>
     <script>
         tailwind.config = {
@@ -575,7 +574,6 @@
             <div id="tt-meta" class="tt-meta"></div>
             <div id="tt-intro" class="tt-intro"></div>
             <div id="tt-stats" class="tt-stats"></div>
-            <div id="tt-store" class="tt-store"></div>
         </div>
     </div>
 
@@ -1499,7 +1497,6 @@
         const ttMeta = document.getElementById('tt-meta');
         const ttIntro = document.getElementById('tt-intro');
         const ttStats = document.getElementById('tt-stats');
-        const ttStore = document.getElementById('tt-store');
         let tooltipTimer = null;
 
         // 事件委托：点击卡片跳转商店
@@ -1561,8 +1558,6 @@
             if (d.price && d.price !== '--') statsHtml += `<span style="color:#9ca3af">${d.price}</span>`;
             ttStats.innerHTML = statsHtml;
             // Store
-            ttStore.textContent = '↗ 访问商店页';
-
             tooltip.classList.add('visible');
             positionTooltip(e.clientX, e.clientY);
         }
