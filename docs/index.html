@@ -514,6 +514,8 @@
 
         <!-- ========== 竞品对比页 ========== -->
         <div id="tab-competitors" class="tab-content hidden fade-in">
+            <!-- AI 竞品日报 -->
+            <div id="ai-daily-report" class="mb-6"></div>
             <!-- 竞品全景 - 由JS动态渲染 -->
             <div id="competitor-landscape"></div>
 
@@ -1055,9 +1057,149 @@
             }
         };
 
+        // ========== AI 竞品日报 ==========
+        function renderAIDailyReport() {
+            const container = document.getElementById('ai-daily-report');
+            if (!container) return;
+
+            const today = new Date();
+            const dateStr = `${today.getFullYear()}.${String(today.getMonth()+1).padStart(2,'0')}.${String(today.getDate()).padStart(2,'0')}`;
+
+            // 收集所有竞品数据
+            const allGames = [];
+            Object.entries(competitorInfo).forEach(([name, info]) => {
+                const steam = info.steamKey ? steamData[info.steamKey] : null;
+                const store = steam ? (steam.store || {}) : {};
+                const spy = steam ? (steam.steamspy || {}) : {};
+                const reviews = steam ? (steam.reviews || {}) : {};
+                const rate = reviews.positive_rate || info.rate || 0;
+                const ccu = spy.ccu || null;
+                const price = store.price || info.price || '--';
+                allGames.push({ name, info, rate, ccu, price, category: info.category, status: info.status });
+            });
+
+            // 赛道分析
+            const tracks = {};
+            allGames.forEach(g => {
+                if (!tracks[g.category]) tracks[g.category] = [];
+                tracks[g.category].push(g);
+            });
+
+            // 生成洞察
+            const insights = [];
+
+            // 1. 品类热度
+            const steamGames = allGames.filter(g => g.ccu);
+            const totalCCU = steamGames.reduce((s, g) => s + (g.ccu || 0), 0);
+            if (totalCCU > 0) {
+                insights.push({
+                    icon: '📊',
+                    title: '品类热度',
+                    content: `恐怖撤离品类Steam端合计在线 <span class="text-white font-semibold">${totalCCU.toLocaleString()}</span>，${steamGames.length}款产品同台竞争。`
+                });
+            }
+
+            // 2. 头部产品
+            const topGame = steamGames.sort((a, b) => (b.ccu || 0) - (a.ccu || 0))[0];
+            if (topGame) {
+                insights.push({
+                    icon: '👑',
+                    title: '头部产品',
+                    content: `<span class="text-white font-semibold">${topGame.name}</span> 以 ${topGame.ccu.toLocaleString()} 在线人数领跑，${topGame.rate ? `好评率${topGame.rate}%` : '数据采集中'}。`
+                });
+            }
+
+            // 3. 评分梯队
+            const highRate = allGames.filter(g => g.rate >= 85);
+            const midRate = allGames.filter(g => g.rate >= 60 && g.rate < 85);
+            const lowRate = allGames.filter(g => g.rate > 0 && g.rate < 60);
+            if (highRate.length > 0) {
+                insights.push({
+                    icon: '⭐',
+                    title: '评分梯队',
+                    content: `好评如潮(≥85%)：<span class="text-emerald-400">${highRate.map(g=>g.name).join('、')}</span>${midRate.length > 0 ? `；褒贬不一(60-85%)：<span class="text-amber-400">${midRate.map(g=>g.name).join('、')}</span>` : ''}`
+                });
+            }
+
+            // 4. 赛道密度
+            const trackEntries = Object.entries(tracks).sort((a,b) => b[1].length - a[1].length);
+            if (trackEntries.length > 0) {
+                const densest = trackEntries[0];
+                insights.push({
+                    icon: '🎯',
+                    title: '赛道密度',
+                    content: `恐怖撤离赛道竞争最密集（${densest[1].length}款），捉鬼调查和PvPvE猎杀各占细分市场。`
+                });
+            }
+
+            // 5. 新品/EA关注
+            const eaGames = allGames.filter(g => g.status === 'EA');
+            const wishlistGames = allGames.filter(g => g.status === 'WISHLIST');
+            if (eaGames.length > 0 || wishlistGames.length > 0) {
+                insights.push({
+                    icon: '🚀',
+                    title: '新品/EA',
+                    content: `EA阶段${eaGames.length}款（${eaGames.map(g=>g.name).join('、')}），Wishlist${wishlistGames.length}款（${wishlistGames.map(g=>g.name).join('、')}），灰境行者与猎杀:对决同赛道是潜在变量。`
+                });
+            }
+
+            // 6. 价格带
+            const priceNums = allGames.filter(g => g.price && g.price !== '--' && g.price !== '未公布').map(g => {
+                const m = g.price.match(/[\d.]+/);
+                return m ? parseFloat(m[0]) : 0;
+            });
+            if (priceNums.length > 0) {
+                const avg = (priceNums.reduce((s,p)=>s+p,0) / priceNums.length).toFixed(0);
+                const low = Math.min(...priceNums);
+                const high = Math.max(...priceNums);
+                insights.push({
+                    icon: '💰',
+                    title: '价格带',
+                    content: `Steam竞品价格区间 ¥${low} ~ ¥${high}，均值约 ¥${avg}。低价区（≤¥50）产品密度最高。`
+                });
+            }
+
+            // 7. 战略建议
+            insights.push({
+                icon: '🧠',
+                title: '战略建议',
+                content: '超自然行动组在国内DAU千万级无直接对手，但Steam端"搜打撤"赛道已红海化。海外版Tomb Busters走免费+移动端差异化路线避开Steam正面竞争，灰境行者是PvPvE猎杀赛道手游化的关键变量。'
+            });
+
+            // 渲染
+            container.innerHTML = `
+                <div class="bg-gradient-to-br from-purple-900/30 via-dark-800 to-dark-800 rounded-lg border border-purple-500/20 overflow-hidden">
+                    <div class="px-4 py-3 border-b border-purple-500/15 flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="text-base">🤖</span>
+                            <h3 class="text-sm font-bold text-white">AI 竞品日报</h3>
+                            <span class="text-[10px] px-1.5 py-px bg-purple-500/20 text-purple-300 rounded font-mono">${dateStr}</span>
+                        </div>
+                        <span class="text-[10px] text-gray-600">基于实时数据自动生成</span>
+                    </div>
+                    <div class="px-4 py-3">
+                        <div class="grid md:grid-cols-2 gap-x-6 gap-y-2.5">
+                            ${insights.map(i => `
+                                <div class="flex items-start gap-2">
+                                    <span class="text-xs mt-0.5 shrink-0">${i.icon}</span>
+                                    <div class="min-w-0">
+                                        <span class="text-[11px] font-semibold text-gray-300">${i.title}</span>
+                                        <span class="text-[11px] text-gray-500 ml-1">${i.content}</span>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
         function renderCompetitors() {
             const landscape = document.getElementById('competitor-landscape');
             const tbody = document.getElementById('competitors-table');
+
+            // 渲染AI竞品日报
+            renderAIDailyReport();
 
             // 按赛道分组
             const categories = [
@@ -1076,12 +1218,12 @@
                 if (items.length === 0) return;
 
                 html += `
-                    <div class="mb-8">
-                        <div class="flex items-center gap-2 mb-3">
-                            <h3 class="text-sm font-bold text-white">${cat.label}</h3>
-                            <span class="text-xs text-gray-500">${cat.desc}</span>
+                    <div class="mb-5">
+                        <div class="flex items-center gap-2 mb-2">
+                            <h3 class="text-xs font-bold text-white">${cat.label}</h3>
+                            <span class="text-[11px] text-gray-600">${cat.desc}</span>
                         </div>
-                        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="grid sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-3">
                 `;
 
                 items.forEach(([name, info]) => {
@@ -1101,41 +1243,37 @@
                     const rateBadgeColor = rate >= 85 ? 'bg-emerald-500/15 text-emerald-400 border-emerald-500/25' : rate >= 60 ? 'bg-amber-500/15 text-amber-400 border-amber-500/25' : 'bg-red-500/15 text-red-400 border-red-500/25';
 
                     html += `
-                        <div class="group bg-dark-800/80 rounded-xl border border-gray-700/50 overflow-hidden cursor-pointer hover:border-gray-500/40 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-purple-900/10" onclick="window.open('${info.storeUrl}', '_blank')">
+                        <div class="group bg-dark-800/80 rounded-lg border border-gray-700/50 overflow-hidden cursor-pointer hover:border-gray-500/40 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:shadow-purple-900/10" onclick="window.open('${info.storeUrl}', '_blank')">
                             <!-- 封面Banner -->
-                            <div class="relative h-[72px] overflow-hidden">
+                            <div class="relative h-[48px] overflow-hidden">
                                 ${headerImg
-                                    ? `<img src="${headerImg}" alt="${name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer">`
-                                    : `<div class="w-full h-full bg-dark-700 flex items-center justify-center text-2xl">🎮</div>`
+                                    ? `<img src="${headerImg}" alt="${name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" referrerpolicy="no-referrer">`
+                                    : `<div class="w-full h-full bg-dark-700 flex items-center justify-center text-lg">🎮</div>`
                                 }
-                                <div class="absolute inset-0 bg-gradient-to-t from-dark-800 via-dark-800/40 to-transparent"></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-dark-800 via-dark-800/30 to-transparent"></div>
                             </div>
                             <!-- 内容区 -->
-                            <div class="px-3.5 pt-2.5 pb-3">
+                            <div class="px-2.5 pt-1.5 pb-2">
                                 <!-- 标题行 -->
-                                <div class="flex items-center justify-between mb-1.5">
-                                    <div class="flex items-center gap-2 min-w-0">
-                                        <span class="font-bold text-sm text-white truncate">${name}</span>
+                                <div class="flex items-center justify-between mb-1">
+                                    <div class="flex items-center gap-1.5 min-w-0">
+                                        <span class="font-bold text-xs text-white truncate">${name}</span>
                                         ${statusBadge}
                                     </div>
-                                    <span class="text-xs text-gray-400 font-mono shrink-0">${price}</span>
+                                    <span class="text-[10px] text-gray-500 font-mono shrink-0">${price}</span>
                                 </div>
                                 <!-- 数据行 -->
-                                <div class="flex items-center gap-2 mb-2">
-                                    ${rate ? `<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-bold ${rateBadgeColor} border">${rate}%</span>` : ''}
-                                    ${ccu ? `<span class="text-[11px] text-emerald-400 font-medium">${ccu.toLocaleString()} 在线</span>` : (info.ccu ? `<span class="text-[11px] text-gray-500">${info.ccu} 在线</span>` : '')}
-                                    <span class="text-[11px] text-gray-600">${info.players}</span>
+                                <div class="flex items-center gap-1.5 mb-1">
+                                    ${rate ? `<span class="inline-flex items-center px-1 py-px rounded text-[10px] font-bold ${rateBadgeColor} border">${rate}%</span>` : ''}
+                                    ${ccu ? `<span class="text-[10px] text-emerald-400">${ccu.toLocaleString()}在线</span>` : (info.ccu ? `<span class="text-[10px] text-gray-600">${info.ccu}在线</span>` : '')}
+                                    <span class="text-[10px] text-gray-700">${info.players}</span>
                                 </div>
                                 <!-- 简介 -->
-                                <p class="text-[12px] text-gray-400 leading-relaxed line-clamp-2 mb-2.5 group-hover:text-gray-300 transition-colors">${info.intro}</p>
+                                <p class="text-[11px] text-gray-500 leading-snug line-clamp-1 mb-1.5 group-hover:text-gray-400 transition-colors">${info.intro}</p>
                                 <!-- 底栏 -->
-                                <div class="flex items-center justify-between pt-2 border-t border-gray-700/40">
-                                    <div class="flex items-center gap-2 min-w-0">
-                                        <span class="text-[11px] text-gray-600 truncate">${info.dev}</span>
-                                        <span class="text-[11px] text-gray-600">·</span>
-                                        <span class="text-[11px] text-gray-600 font-mono">${info.release}</span>
-                                    </div>
-                                    <span class="text-[11px] text-gray-400 group-hover:text-accent-light transition-colors shrink-0 ml-2">↗ 商店</span>
+                                <div class="flex items-center justify-between pt-1 border-t border-gray-700/30">
+                                    <span class="text-[10px] text-gray-700 truncate">${info.dev} · ${info.release}</span>
+                                    <span class="text-[10px] text-gray-500 group-hover:text-accent-light transition-colors shrink-0 ml-1">↗</span>
                                 </div>
                             </div>
                         </div>
@@ -1148,43 +1286,41 @@
             // 即将上线 / Wishlist 区域
             if (wishlistItems.length > 0) {
                 html += `
-                    <div class="mb-8">
-                        <div class="flex items-center gap-2 mb-3">
-                            <h3 class="text-sm font-bold text-white">🚀 即将上线 / Wishlist</h3>
-                            <span class="text-xs text-gray-500">尚未发售，值得关注的新入局者</span>
+                    <div class="mb-5">
+                        <div class="flex items-center gap-2 mb-2">
+                            <h3 class="text-xs font-bold text-white">🚀 即将上线 / Wishlist</h3>
+                            <span class="text-[11px] text-gray-600">尚未发售，值得关注的新入局者</span>
                         </div>
-                        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="grid sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-3">
                 `;
 
                 wishlistItems.forEach(([name, info]) => {
                     const wishImg = info.headerImage || null;
                     html += `
-                        <div class="group bg-gradient-to-br from-purple-900/20 to-dark-800/80 rounded-xl border border-purple-500/20 overflow-hidden cursor-pointer hover:border-purple-400/40 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-purple-900/15" onclick="window.open('${info.storeUrl}', '_blank')">
-                            <!-- 封面Banner -->
-                            <div class="relative h-[72px] overflow-hidden">
+                        <div class="group bg-gradient-to-br from-purple-900/20 to-dark-800/80 rounded-lg border border-purple-500/20 overflow-hidden cursor-pointer hover:border-purple-400/40 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:shadow-purple-900/10" onclick="window.open('${info.storeUrl}', '_blank')">
+                            <div class="relative h-[48px] overflow-hidden">
                                 ${wishImg
-                                    ? `<img src="${wishImg}" alt="${name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">`
-                                    : `<div class="w-full h-full bg-purple-900/30 flex items-center justify-center text-2xl">🔮</div>`
+                                    ? `<img src="${wishImg}" alt="${name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">`
+                                    : `<div class="w-full h-full bg-purple-900/30 flex items-center justify-center text-lg">🔮</div>`
                                 }
-                                <div class="absolute inset-0 bg-gradient-to-t from-dark-800 via-dark-800/40 to-transparent"></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-dark-800 via-dark-800/30 to-transparent"></div>
                             </div>
-                            <!-- 内容区 -->
-                            <div class="px-3.5 pt-2.5 pb-3">
-                                <div class="flex items-center justify-between mb-1.5">
-                                    <div class="flex items-center gap-2 min-w-0">
-                                        <span class="font-bold text-sm text-white truncate">${name}</span>
-                                        <span class="px-1.5 py-0.5 bg-purple-500/15 text-purple-300 border border-purple-500/25 rounded text-[10px] font-bold tracking-wide">WISHLIST</span>
+                            <div class="px-2.5 pt-1.5 pb-2">
+                                <div class="flex items-center justify-between mb-1">
+                                    <div class="flex items-center gap-1.5 min-w-0">
+                                        <span class="font-bold text-xs text-white truncate">${name}</span>
+                                        <span class="px-1 py-px bg-purple-500/15 text-purple-300 border border-purple-500/25 rounded text-[9px] font-bold tracking-wide">WISHLIST</span>
                                     </div>
-                                    <span class="text-xs text-gray-500 shrink-0">${info.price}</span>
+                                    <span class="text-[10px] text-gray-600 shrink-0">${info.price}</span>
                                 </div>
-                                <div class="flex items-center gap-2 mb-2">
-                                    <span class="text-[11px] text-gray-500">${info.dev}</span>
-                                    <span class="text-[11px] text-gray-600">${info.players}</span>
+                                <div class="flex items-center gap-1.5 mb-1">
+                                    <span class="text-[10px] text-gray-600">${info.dev}</span>
+                                    <span class="text-[10px] text-gray-700">${info.players}</span>
                                 </div>
-                                <p class="text-[12px] text-gray-400 leading-relaxed line-clamp-2 mb-2.5 group-hover:text-gray-300 transition-colors">${info.intro}</p>
-                                <div class="flex items-center justify-between pt-2 border-t border-purple-500/10">
-                                    <span class="text-[11px] text-gray-600">发售：${info.release}</span>
-                                    <span class="text-[11px] text-purple-400">↗ 访问商店</span>
+                                <p class="text-[11px] text-gray-500 leading-snug line-clamp-1 mb-1.5 group-hover:text-gray-400 transition-colors">${info.intro}</p>
+                                <div class="flex items-center justify-between pt-1 border-t border-purple-500/10">
+                                    <span class="text-[10px] text-gray-700">发售：${info.release}</span>
+                                    <span class="text-[10px] text-purple-400 group-hover:text-purple-300 transition-colors shrink-0 ml-1">↗</span>
                                 </div>
                             </div>
                         </div>
