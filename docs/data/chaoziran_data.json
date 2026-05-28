@@ -49,19 +49,39 @@
     },
     "tomb_busters": {
       "name": "Tomb Busters",
-      "regions": [
-        "美国",
-        "日本",
-        "韩国"
-      ],
       "launch_date": "2026-05-27",
-      "platforms": [
-        "iOS",
-        "Android",
-        "PC"
+      "platforms": ["iOS", "Android", "PC"],
+      "regions": ["美国", "日本", "韩国", "港澳台"],
+      "app_store_id": 6755951087,
+      "app_store_rating": 4.5,
+      "app_store_reviews": 2,
+      "website": "https://www.tombbusters.net/",
+      "ranking": {
+        "hong_kong_taiwan": "免费榜前三（试点期，未大规模推广）",
+        "us_jp_kr": "5月27日刚上线，排名数据采集中"
+      },
+      "media_quotes": [
+        {"source": "MMOBomb", "quote": "The premise looks pretty fun — scary alone, funny with friends", "url": "https://www.mmobomb.com/news/popular-horror-extraction-game-tomb-busters-launches-west"},
+        {"source": "GamingOnPhone", "quote": "I like how the gameplay changes based on team size — from horror to comedy", "url": "https://gamingonphone.com/news/tomb-busters-blends-horror-treasure-hunting-and-comedy-in-a-unique-co-op-adventure-arriving-globally-on-mobile-on-may-27-2026/"},
+        {"source": "DroidGamers", "quote": "The unique thing about the game is that it changes tone depending on how many players are involved", "url": "https://www.droidgamers.com/news/tomb-busters/"}
       ],
-      "note": "巨人网络海外发行，港澳台试点已进入免费榜前三"
+      "overseas_reddit": {
+        "status": "刚上线1天，Reddit暂无大规模讨论",
+        "subreddits_to_watch": ["r/mobilegaming", "r/iosgaming", "r/horrorgaming"]
+      }
     },
-    "crawled_at": "2026-05-28T11:39:27.522486"
+    "domestic_summary": {
+      "ai_note": "AI基于已采集数据整理，截至2026-05-28",
+      "core_metrics": {
+        "dau": "1,000万+",
+        "registered_users": "2亿+",
+        "cumulative_revenue": "50亿+",
+        "peak_concurrent": "100万+",
+        "social_views": "1,400亿次"
+      },
+      "sentiment_overview": "国内社区舆情两极分化：TapTap论坛偏中性正面（版本更新、皮肤爆料讨论为主），百度贴吧负面情绪集中（爆率过低、号价暴跌、固玩纠纷为核心投诉点）。TapTap评分6.8属中等偏低，但DAU持续千万级说明核心用户粘性极强。",
+      "financial_impact": "巨人网络2026Q1营收23.29亿元（同比+221.7%），净利润10.80亿元（同比+210.6%），超自然行动组为关键增长引擎。"
+    },
+    "crawled_at": "2026-05-28T16:25:00.000000"
   }
 }
