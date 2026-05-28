@@ -168,19 +168,20 @@ def crawl_steam():
         store_data = get_steam_app_data(appid)
         time.sleep(1.5)
 
-        # 当前在线人数：优先Steam API，备用SteamSpy
+        # 当前在线人数：Steam官方API
         ccu = get_steamcharts_ccu(appid)
         time.sleep(1)
 
-        # SteamSpy数据(可能失败)
-        spy_data = get_steamspy_data(appid)
-        time.sleep(1.5)
-
-        # 如果Steam API拿到ccu但SteamSpy没拿到，用API的值
-        if spy_data and ccu > 0:
-            spy_data["ccu"] = ccu
-        elif not spy_data and ccu > 0:
+        # SteamSpy数据(已知403，仅在需要时尝试)
+        spy_data = None
+        if ccu > 0:
             spy_data = {"ccu": ccu}
+        else:
+            # CCU为0时尝试SteamSpy备用
+            spy_data = get_steamspy_data(appid)
+            time.sleep(1.5)
+            if spy_data and spy_data.get("ccu", 0) > 0:
+                ccu = spy_data["ccu"]
 
         review_data = get_steam_reviews(appid)
         time.sleep(1.5)

@@ -39,7 +39,7 @@
       ]
     },
     "steamspy": {
-      "ccu": 42307
+      "ccu": 40801
     },
     "reviews": {
       "total_reviews": 14368,
@@ -47,8 +47,8 @@
       "negative": 1022,
       "positive_rate": 92.9
     },
-    "ccu": 42307,
-    "crawled_at": "2026-05-28T11:10:25.115259"
+    "ccu": 40801,
+    "crawled_at": "2026-05-28T11:38:52.208180"
   },
   "Lethal Company": {
     "appid": 1966720,
@@ -64,7 +64,7 @@
         "Zeekerss"
       ],
       "price": "¥ 27.30",
-      "release_date": "2023 年 10 月 23 日",
+      "release_date": "2023 年 10 月 24 日",
       "metacritic": null,
       "recommendations": 409262,
       "platforms": {
@@ -90,7 +90,7 @@
       ]
     },
     "steamspy": {
-      "ccu": 5659
+      "ccu": 5612
     },
     "reviews": {
       "total_reviews": 17577,
@@ -98,8 +98,8 @@
       "negative": 1235,
       "positive_rate": 93.0
     },
-    "ccu": 5659,
-    "crawled_at": "2026-05-28T11:10:35.560070"
+    "ccu": 5612,
+    "crawled_at": "2026-05-28T11:38:58.054450"
   },
   "Phasmophobia": {
     "appid": 739630,
@@ -150,7 +150,7 @@
       ]
     },
     "steamspy": {
-      "ccu": 10977
+      "ccu": 10527
     },
     "reviews": {
       "total_reviews": 26671,
@@ -158,8 +158,8 @@
       "negative": 2476,
       "positive_rate": 90.7
     },
-    "ccu": 10977,
-    "crawled_at": "2026-05-28T11:10:46.150586"
+    "ccu": 10527,
+    "crawled_at": "2026-05-28T11:39:03.642856"
   },
   "Content Warning": {
     "appid": 2881650,
@@ -181,7 +181,7 @@
       "price": "¥ 33.00",
       "release_date": "2024 年 4 月 1 日",
       "metacritic": null,
-      "recommendations": 68901,
+      "recommendations": 68902,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -202,7 +202,7 @@
       ]
     },
     "steamspy": {
-      "ccu": 1085
+      "ccu": 1094
     },
     "reviews": {
       "total_reviews": 6814,
@@ -210,8 +210,8 @@
       "negative": 686,
       "positive_rate": 89.9
     },
-    "ccu": 1085,
-    "crawled_at": "2026-05-28T11:10:56.953333"
+    "ccu": 1094,
+    "crawled_at": "2026-05-28T11:39:09.095352"
   },
   "FEEDERS": {
     "appid": 4408510,
@@ -259,6 +259,6 @@
       "positive_rate": 0.0
     },
     "ccu": 0,
-    "crawled_at": "2026-05-28T11:11:07.670367"
+    "crawled_at": "2026-05-28T11:39:19.527064"
   }
 }

@@ -1,52 +1,15 @@
 {
   "chaoziran": {
-    "bwiki_updates": [
-      {
-        "title": "游戏内公告",
-        "source": "BWIKI"
-      },
-      {
-        "title": "WIKI站公告",
-        "source": "BWIKI"
-      },
-      {
-        "title": "游戏内公告",
-        "source": "BWIKI"
-      },
-      {
-        "title": "WIKI站公告",
-        "source": "BWIKI"
-      },
-      {
-        "title": "2026年2月26日更新公告",
-        "source": "BWIKI"
-      },
-      {
-        "title": "2026年2月13日更新公告",
-        "source": "BWIKI"
-      },
-      {
-        "title": "2026年2月10日更新公告",
-        "source": "BWIKI"
-      },
-      {
-        "title": "2026年2月7日更新公告",
-        "source": "BWIKI"
-      },
-      {
-        "title": "2026年2月5日更新公告",
-        "source": "BWIKI"
-      },
-      {
-        "title": "2026年1月29日更新公告",
-        "source": "BWIKI"
-      }
-    ],
+    "bwiki_updates": [],
     "taptap": {
-      "name": "首页",
-      "score": 348.0,
-      "rating_count": 0,
-      "source": "webpage_fallback"
+      "app_id": 714123,
+      "source": "taptap_webpage",
+      "fans_count": 11136270,
+      "review_count": 29946,
+      "score": "6.8",
+      "description": "超自然行动组是一款合作游戏，TapTap 提供超自然行动组最新版官方正版下载，一个人玩是恐怖游戏，两个人玩是冒险游戏，三个人玩是寻宝游戏，...",
+      "score_display": 6.8,
+      "rating_value": 6.8
     },
     "official_news": [],
     "tomb_busters": {
@@ -64,6 +27,6 @@
       ],
       "note": "巨人网络海外发行，港澳台试点已进入免费榜前三"
     },
-    "crawled_at": "2026-05-28T11:11:22.859342"
+    "crawled_at": "2026-05-28T11:39:27.522486"
   }
 }
