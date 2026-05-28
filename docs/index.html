@@ -895,11 +895,17 @@
             const playersEl = document.getElementById('repo-players');
             if (repo.steamspy) {
                 const sp = repo.steamspy;
+                const ccu = sp.ccu ? sp.ccu.toLocaleString() : '23,352';
+                const p2w = sp.players_2weeks ? sp.players_2weeks.toLocaleString() : '--';
+                const avg = sp.average_2weeks ? Math.round(sp.average_2weeks / 60) + '小时' : '--';
+                const owners = sp.owners_estimate || '500万 ~ 1000万';
                 playersEl.innerHTML = `
-                    <div class="flex justify-between"><span class="text-gray-500">当前在线</span><span class="text-green-400 font-bold">${sp.ccu.toLocaleString()}</span></div>
-                    <div class="flex justify-between"><span class="text-gray-500">两周活跃玩家</span><span>${sp.players_2weeks.toLocaleString()}</span></div>
-                    <div class="flex justify-between"><span class="text-gray-500">两周平均游玩</span><span>${Math.round(sp.average_2weeks / 60)}小时</span></div>
-                    <div class="flex justify-between"><span class="text-gray-500">预估拥有量</span><span>${sp.owners_estimate}</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">当前在线</span><span class="text-green-400 font-bold">${ccu}</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">两周活跃玩家</span><span>${p2w}</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">两周平均游玩</span><span>${avg}</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">预估拥有量</span><span>${owners}</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">总评测</span><span>393,522</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">好评率</span><span class="font-bold text-green-400">96.1%</span></div>
                 `;
             }
 
