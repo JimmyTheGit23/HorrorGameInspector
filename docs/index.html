@@ -974,7 +974,7 @@
                 ccu: '~8,000',
                 rate: 92,
                 reviews_total: '35,000+',
-                headerImage: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3527290/31bac6b2eccf09b368f5e95ce510bae2baf3cfcd/header.jpg?t=1775581133',
+                headerImage: 'images/peak-header.jpg',
                 storeUrl: 'https://store.steampowered.com/app/3527290/'
             },
             // 捉鬼调查赛道
@@ -1000,7 +1000,7 @@
                 ccu: '~1,500',
                 rate: 76,
                 reviews_total: '18,000+',
-                headerImage: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1929610/header.jpg?t=1761136310',
+                headerImage: 'images/demonologist-header.jpg',
                 storeUrl: 'https://store.steampowered.com/app/1929610/'
             },
             // PvPvE猎杀赛道
@@ -1016,7 +1016,7 @@
                 ccu: '~3,200',
                 rate: 84,
                 reviews_total: '42,000+',
-                headerImage: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1304930/5A49938B6562464D06A9B7155BAE9C435BB71093/HEADER_ALT_ASSETS_2.JPG?T=1779221190',
+                headerImage: 'images/outlast-header.jpg',
                 storeUrl: 'https://store.steampowered.com/app/1304930/'
             },
             'Hunt: Showdown 1896': {
@@ -1031,7 +1031,7 @@
                 ccu: '~12,000',
                 rate: 85,
                 reviews_total: '120,000+',
-                headerImage: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/594650/header.jpg?t=1779201260',
+                headerImage: 'images/hunt-header.jpg',
                 storeUrl: 'https://store.steampowered.com/app/594650/'
             },
             // 即将上线 / Wishlist
@@ -1048,7 +1048,8 @@
                 rate: null,
                 reviews_total: null,
                 isWishlist: true,
-                storeUrl: 'https://hj.qq.com/'
+                headerImage: 'images/huijing-header.jpg',
+                storeUrl: 'https://store.steampowered.com/app/3978820/'
             }
         };
 
@@ -1152,11 +1153,15 @@
                 `;
 
                 wishlistItems.forEach(([name, info]) => {
+                    const wishImg = info.headerImage || null;
                     html += `
                         <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-lg border border-purple-700/40 card-hover transition-all overflow-hidden cursor-pointer" onclick="window.open('${info.storeUrl}', '_blank')">
                             <div class="flex gap-3 p-3">
                                 <div class="shrink-0">
-                                    <div class="w-20 h-10 rounded bg-purple-900/40 flex items-center justify-center text-lg border border-purple-700/30">🔮</div>
+                                    ${wishImg
+                                        ? `<img src="${wishImg}" alt="${name}" class="w-20 h-10 rounded object-cover border border-purple-700/30">`
+                                        : `<div class="w-20 h-10 rounded bg-purple-900/40 flex items-center justify-center text-lg border border-purple-700/30">🔮</div>`
+                                    }
                                 </div>
                                 <div class="flex-1 min-w-0">
                                     <div class="flex items-center gap-2">
@@ -1173,7 +1178,7 @@
                                 <div class="text-xs text-gray-400 leading-relaxed">${info.intro}</div>
                                 <div class="flex items-center gap-2 mt-2 text-xs text-gray-500">
                                     <span>发售：${info.release}</span>
-                                    <span class="ml-auto text-purple-300">↗ 访问官网</span>
+                                    <span class="ml-auto text-purple-300">↗ 访问商店</span>
                                     <span>·</span>
                                     <span>${info.price}</span>
                                 </div>
