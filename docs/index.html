@@ -246,21 +246,21 @@
 
         async function loadData() {
             try {
-                const steamResp = await fetch('data/steam_data.json');
+                const steamResp = await fetch('./data/steam_data.json');
                 steamData = await steamResp.json();
             } catch(e) {
                 console.warn('Steam数据加载失败:', e);
             }
 
             try {
-                const czrResp = await fetch('data/chaoziran_data.json');
+                const czrResp = await fetch('./data/chaoziran_data.json');
                 chaoziranData = await czrResp.json();
             } catch(e) {
                 console.warn('超自然行动组数据加载失败:', e);
             }
 
             try {
-                const histResp = await fetch('data/history.json');
+                const histResp = await fetch('./data/history.json');
                 historyData = await histResp.json();
             } catch(e) {
                 console.warn('历史数据加载失败:', e);
