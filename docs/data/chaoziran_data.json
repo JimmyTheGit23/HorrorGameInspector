@@ -61,11 +61,11 @@
         "us_jp_kr": "5月27日刚上线，排名数据采集中"
       },
       "domestic_ranking": {
-        "ios_grossing": "Top 10",
-        "ios_free": "Top 5",
-        "android_grossing": "Top 10",
-        "android_free": "Top 5",
-        "note": "数据来源：iOS App Store / 安卓应用商店，持续更新中"
+        "ios_grossing": "#23",
+        "ios_free": "Top 30",
+        "android_grossing": "Top 30",
+        "android_free": "Top 20",
+        "note": "数据来源：iOS App Store / 安卓应用商店，2026-05-29更新；畅销榜峰值#4"
       },
       "media_quotes": [
         {"source": "MMOBomb", "quote": "The premise looks pretty fun — scary alone, funny with friends", "url": "https://www.mmobomb.com/news/popular-horror-extraction-game-tomb-busters-launches-west"},
