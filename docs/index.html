@@ -258,6 +258,11 @@
                         <div class="flex justify-between"><span class="text-gray-500">累计流水</span><span class="text-yellow-400 font-semibold">50亿+</span></div>
                         <div class="flex justify-between"><span class="text-gray-500">社媒浏览</span><span class="text-white font-semibold">1,400亿次</span></div>
                         <div class="flex justify-between"><span class="text-gray-500">TapTap关注</span><span id="taptap-fans" class="text-accent-light font-semibold">--</span></div>
+                        <div class="border-t border-gray-700/50 pt-3 mt-1">
+                            <div class="flex justify-between"><span class="text-gray-500">畅销榜</span><span class="text-yellow-400 font-semibold">Top 10</span></div>
+                            <div class="flex justify-between"><span class="text-gray-500">免费榜</span><span class="text-green-400 font-semibold">Top 5</span></div>
+                            <div class="text-[10px] text-gray-600 mt-1">数据来源：iOS App Store / 安卓应用商店</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1072,6 +1077,22 @@
                 headerImage: 'images/hunt-header.jpg',
                 storeUrl: 'https://store.steampowered.com/app/594650/'
             },
+            // 搜打撤/摸金赛道
+            '永劫无间': {
+                category: '搜打撤/摸金',
+                cnName: '摸金模式',
+                status: '已发售',
+                dev: '24 Entertainment（网易）',
+                release: '2021-08-12',
+                players: '1~60人',
+                intro: '武侠冷兵器"搜砍撤"模式（漠海夺金/无间镖客），玩家搜集遗珍→冷兵器近战→生门撤离。与超自然行动组同为"搜打撤"赛道，但以武侠格斗为核心差异，DAU百万级。手游版同步上线摸金模式。',
+                steamKey: 'NARAKA: BLADEPOINT',
+                price: '免费',
+                ccu: '~80,000',
+                rate: 72,
+                reviews_total: '300,000+',
+                storeUrl: 'https://store.steampowered.com/app/1203220/'
+            },
             // 即将上线 / Wishlist
             '灰境行者': {
                 category: 'PvPvE猎杀',
@@ -1162,7 +1183,7 @@
                 insights.push({
                     icon: '🎯',
                     title: '赛道密度',
-                    content: `恐怖撤离赛道竞争最密集（${densest[1].length}款），捉鬼调查和PvPvE猎杀各占细分市场。`
+                    content: `恐怖撤离赛道竞争最密集（${densest[1].length}款），搜打撤/摸金赛道永劫无间DAU百万级是超自然行动组直接对手，捉鬼调查和PvPvE猎杀各占细分市场。`
                 });
             }
 
@@ -1197,7 +1218,7 @@
             insights.push({
                 icon: '🧠',
                 title: '战略建议',
-                content: '超自然行动组在国内DAU千万级无直接对手，但Steam端"搜打撤"赛道已红海化。海外版Tomb Busters走免费+移动端差异化路线避开Steam正面竞争，灰境行者是PvPvE猎杀赛道手游化的关键变量。'
+                content: '超自然行动组在国内DAU千万级，但永劫无间摸金模式以武侠格斗差异化切入"搜打撤"赛道，Steam端同类已红海化。海外版Tomb Busters走免费+移动端差异化路线避开Steam正面竞争，灰境行者是PvPvE猎杀赛道手游化的关键变量。'
             });
 
             // 渲染

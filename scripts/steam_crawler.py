@@ -16,6 +16,7 @@ STEAM_GAMES = {
     "Phasmophobia": 739630,
     "Content Warning": 2881650,
     "FEEDERS": 4408510,
+    "NARAKA: BLADEPOINT": 1203220,
 }
 
 

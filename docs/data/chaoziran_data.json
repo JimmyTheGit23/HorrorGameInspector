@@ -60,6 +60,13 @@
         "hong_kong_taiwan": "免费榜前三（试点期，未大规模推广）",
         "us_jp_kr": "5月27日刚上线，排名数据采集中"
       },
+      "domestic_ranking": {
+        "ios_grossing": "Top 10",
+        "ios_free": "Top 5",
+        "android_grossing": "Top 10",
+        "android_free": "Top 5",
+        "note": "数据来源：iOS App Store / 安卓应用商店，持续更新中"
+      },
       "media_quotes": [
         {"source": "MMOBomb", "quote": "The premise looks pretty fun — scary alone, funny with friends", "url": "https://www.mmobomb.com/news/popular-horror-extraction-game-tomb-busters-launches-west"},
         {"source": "GamingOnPhone", "quote": "I like how the gameplay changes based on team size — from horror to comedy", "url": "https://gamingonphone.com/news/tomb-busters-blends-horror-treasure-hunting-and-comedy-in-a-unique-co-op-adventure-arriving-globally-on-mobile-on-may-27-2026/"},
