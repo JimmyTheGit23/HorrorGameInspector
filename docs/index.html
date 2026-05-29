@@ -85,11 +85,11 @@
     <!-- 标签页导航 -->
     <div class="max-w-7xl mx-auto px-4 pt-4">
         <div class="accent-line mb-3"></div>
-        <div class="flex gap-6 border-b border-gray-800 text-sm">
-            <button class="tab-btn tab-active pb-2 px-1 transition" data-tab="overview" onclick="switchTab('overview')">总览</button>
-            <button class="tab-btn text-gray-500 hover:text-gray-300 pb-2 px-1 transition" data-tab="chaoziran" onclick="switchTab('chaoziran')">超自然行动组</button>
-            <button class="tab-btn text-gray-500 hover:text-gray-300 pb-2 px-1 transition" data-tab="repo" onclick="switchTab('repo')">R.E.P.O.</button>
-            <button class="tab-btn text-gray-500 hover:text-gray-300 pb-2 px-1 transition" data-tab="competitors" onclick="switchTab('competitors')">竞品对比</button>
+        <div class="flex gap-4 sm:gap-6 border-b border-gray-800 text-sm overflow-x-auto whitespace-nowrap -mb-px">
+            <button class="tab-btn tab-active pb-2 px-1 transition shrink-0" data-tab="overview" onclick="switchTab('overview')">总览</button>
+            <button class="tab-btn text-gray-500 hover:text-gray-300 pb-2 px-1 transition shrink-0" data-tab="chaoziran" onclick="switchTab('chaoziran')">超自然行动组</button>
+            <button class="tab-btn text-gray-500 hover:text-gray-300 pb-2 px-1 transition shrink-0" data-tab="repo" onclick="switchTab('repo')">R.E.P.O.</button>
+            <button class="tab-btn text-gray-500 hover:text-gray-300 pb-2 px-1 transition shrink-0" data-tab="competitors" onclick="switchTab('competitors')">竞品对比</button>
         </div>
     </div>
 
@@ -101,7 +101,9 @@
             <!-- 核心指标卡片 -->
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
                 <div class="bg-dark-800 rounded-lg p-4 card-hover transition-all border border-gray-800 flex gap-3">
-                    <img src="images/czr-icon-sm.png" alt="超自然" class="game-icon-sm shrink-0 mt-0.5">
+                    <div class="w-8 h-8 rounded-md bg-purple-900/40 flex items-center justify-center shrink-0 overflow-hidden">
+                        <img src="images/czr-icon-sm.png" alt="超自然" class="w-full h-full object-cover">
+                    </div>
                     <div class="min-w-0">
                         <div class="text-xs text-gray-500 mb-1">超自然行动组 DAU</div>
                         <div class="text-2xl font-bold text-accent-light">1,000万+</div>
@@ -109,7 +111,10 @@
                     </div>
                 </div>
                 <div class="bg-dark-800 rounded-lg p-4 card-hover transition-all border border-gray-800 flex gap-3">
-                    <img id="repo-icon" src="" alt="" class="game-icon-sm shrink-0 mt-0.5 hidden">
+                    <div class="w-8 h-8 rounded-md bg-green-900/40 flex items-center justify-center shrink-0 overflow-hidden">
+                        <img id="repo-icon-overview" src="" alt="" class="w-full h-full object-cover hidden">
+                        <span id="repo-icon-emoji" class="text-lg">🟢</span>
+                    </div>
                     <div class="min-w-0">
                         <div class="text-xs text-gray-500 mb-1">R.E.P.O. 当前在线</div>
                         <div class="text-2xl font-bold text-horror-green" id="repo-ccu">--</div>
@@ -117,7 +122,7 @@
                     </div>
                 </div>
                 <div class="bg-dark-800 rounded-lg p-4 card-hover transition-all border border-gray-800 flex gap-3">
-                    <div class="w-8 h-8 rounded-md bg-dark-600 flex items-center justify-center text-lg shrink-0">👻</div>
+                    <div class="w-8 h-8 rounded-md bg-orange-900/40 flex items-center justify-center text-lg shrink-0">👻</div>
                     <div class="min-w-0">
                         <div class="text-xs text-gray-500 mb-1">追踪竞品数</div>
                         <div class="text-2xl font-bold text-horror-orange">10</div>
@@ -125,7 +130,7 @@
                     </div>
                 </div>
                 <div class="bg-dark-800 rounded-lg p-4 card-hover transition-all border border-gray-800 flex gap-3">
-                    <div class="w-8 h-8 rounded-md bg-dark-600 flex items-center justify-center text-lg shrink-0">📡</div>
+                    <div class="w-8 h-8 rounded-md bg-blue-900/40 flex items-center justify-center text-lg shrink-0">📡</div>
                     <div class="min-w-0">
                         <div class="text-xs text-gray-500 mb-1">数据更新频率</div>
                         <div class="text-2xl font-bold text-gray-300">每日</div>
@@ -144,7 +149,8 @@
                 </div>
                 <div class="bg-dark-800 rounded-lg p-5 border border-gray-800">
                     <h3 class="text-sm font-semibold mb-3 text-accent-light">📊 Steam 在线人数对比</h3>
-                    <canvas id="ccu-chart" height="200"></canvas>
+                    <canvas id="ccu-chart" height="200" class="transition-opacity duration-300 opacity-0"></canvas>
+                    <div id="ccu-chart-placeholder" class="h-[200px] flex items-center justify-center text-gray-600 text-sm">📊 加载中...</div>
                 </div>
             </div>
         </div>
@@ -152,24 +158,25 @@
         <!-- ========== 超自然行动组页 ========== -->
         <div id="tab-chaoziran" class="tab-content hidden fade-in">
             <!-- 顶部标题栏 -->
-            <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-6 pt-2">
-                <div class="flex items-center gap-3">
-                    <img src="images/czr-icon-sm.png" alt="超自然行动组" class="game-icon shadow-xl shrink-0">
-                    <div>
-                        <h2 class="text-2xl font-bold text-white whitespace-nowrap">超自然行动组</h2>
-                        <p class="text-sm text-gray-400 mt-1">巨人网络 · 多人欢乐恐怖</p>
+            <div class="flex flex-col gap-3 mb-4 pt-2">
+                <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
+                    <div class="flex items-center gap-3">
+                        <img src="images/czr-icon-sm.png" alt="超自然行动组" class="game-icon shadow-xl shrink-0">
+                        <div>
+                            <h2 class="text-2xl font-bold text-white whitespace-nowrap">超自然行动组</h2>
+                            <p class="text-sm text-gray-400 mt-1">巨人网络 · 多人欢乐恐怖</p>
+                        </div>
                     </div>
-                </div>
-                <!-- 游戏简介 -->
-                <div class="hidden sm:flex flex-1 items-center justify-center mx-2">
-                    <div class="bg-dark-800/60 border border-gray-700/50 rounded-lg px-4 py-2.5 max-w-lg">
-                        <p class="text-xs text-gray-400 leading-relaxed">
-                            <span class="text-accent-light font-medium">核心玩法：</span>多人组队前往千年古迹，对抗怪物、寻找宝藏。一个人是恐怖游戏，一群人是搞笑狂欢。
-                            <span class="text-gray-500 ml-1">iOS / Android / PC 三端互通，主打"欢乐恐怖+社交摸金"。</span>
-                        </p>
+                    <!-- 游戏简介 - 桌面端行内 -->
+                    <div class="hidden sm:flex flex-1 items-center justify-center mx-2">
+                        <div class="bg-dark-800/60 border border-gray-700/50 rounded-lg px-4 py-2.5 max-w-lg">
+                            <p class="text-xs text-gray-400 leading-relaxed">
+                                <span class="text-accent-light font-medium">核心玩法：</span>多人组队前往千年古迹，对抗怪物、寻找宝藏。一个人是恐怖游戏，一群人是搞笑狂欢。
+                                <span class="text-gray-500 ml-1">iOS / Android / PC 三端互通，主打"欢乐恐怖+社交摸金"。</span>
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="flex gap-4 sm:gap-6 sm:ml-auto">
+                    <div class="flex gap-4 sm:gap-6 sm:ml-auto">
                     <div class="text-left sm:text-right">
                         <div class="text-xs text-gray-500">TapTap</div>
                         <div id="hero-taptap-score" class="text-2xl font-bold text-accent-light">--</div>
@@ -184,67 +191,18 @@
                         <div class="text-xs text-green-400">▼ 0.71%</div>
                     </div>
                 </div>
+                <!-- 游戏简介 - 移动端独立行 -->
+                <div class="sm:hidden">
+                    <div class="bg-dark-800/60 border border-gray-700/50 rounded-lg px-3 py-2">
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            <span class="text-accent-light font-medium">核心玩法：</span>多人组队前往千年古迹，对抗怪物、寻找宝藏。一个人是恐怖游戏，一群人是搞笑狂欢。三端互通，欢乐恐怖+社交摸金。
+                        </p>
+                    </div>
+                </div>
             </div>
             <div class="accent-line mb-6"></div>
 
-            <!-- 🌍 海外Tomb Busters 重点区域 -->
-            <div class="bg-gradient-to-br from-purple-900/40 to-red-900/30 rounded-lg p-5 border border-purple-700/50 mb-6">
-                <div class="flex items-center gap-2 mb-4">
-                    <span class="text-lg">🌍</span>
-                    <h3 class="text-base font-bold text-white">Tomb Busters 海外版 — 排行榜 & 趋势</h3>
-                    <span class="ml-auto text-xs text-gray-400">5月27日全球上线</span>
-                </div>
-                <!-- 核心指标 -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
-                    <div class="bg-dark-900/60 rounded-lg p-3 text-center">
-                        <div class="text-xs text-gray-500 mb-1">覆盖地区</div>
-                        <div class="text-sm font-bold text-white">美 / 日 / 韩</div>
-                    </div>
-                    <div class="bg-dark-900/60 rounded-lg p-3 text-center">
-                        <div class="text-xs text-gray-500 mb-1">平台</div>
-                        <div class="text-sm font-bold text-white">iOS / Android / PC</div>
-                    </div>
-                    <div class="bg-dark-900/60 rounded-lg p-3 text-center">
-                        <div class="text-xs text-gray-500 mb-1">港澳台试点</div>
-                        <div class="text-sm font-bold text-green-400">免费榜前三 ⬆️</div>
-                    </div>
-                    <div class="bg-dark-900/60 rounded-lg p-3 text-center">
-                        <div class="text-xs text-gray-500 mb-1">App Store评分</div>
-                        <div class="text-sm font-bold text-yellow-400">⭐ 4.5</div>
-                        <div class="text-xs text-gray-600">2条评价</div>
-                    </div>
-                </div>
-                <!-- 排名趋势 -->
-                <div class="bg-dark-900/60 rounded-lg p-3 mb-4">
-                    <div class="text-xs text-gray-400 mb-2">📊 排名动态</div>
-                    <div class="text-sm text-gray-300">
-                        <span class="text-green-400">✅ 港澳台</span>：免费榜前三（试点期，零推广）<br>
-                        <span class="text-yellow-400">🔄 美/日/韩</span>：5月27日刚上线，排名数据采集中 — 预注册量超预期，首日表现待跟踪
-                    </div>
-                </div>
-                <!-- 海外媒体评价 -->
-                <div class="text-xs text-gray-400 mb-2">📰 海外媒体评价</div>
-                <div class="space-y-2" id="czr-overseas-media">
-                    <div class="bg-dark-900/60 rounded-lg p-3">
-                        <a href="https://www.mmobomb.com/news/popular-horror-extraction-game-tomb-busters-launches-west" target="_blank" rel="noopener" class="text-accent-light font-semibold underline underline-offset-2 hover:text-white transition-colors">MMOBomb ↗</a>
-                        <p class="text-sm text-gray-300 mt-1">"The premise looks pretty fun — scary alone, funny with friends"</p>
-                    </div>
-                    <div class="bg-dark-900/60 rounded-lg p-3">
-                        <a href="https://gamingonphone.com/news/tomb-busters-blends-horror-treasure-hunting-and-comedy-in-a-unique-co-op-adventure-arriving-globally-on-mobile-on-may-27-2026/" target="_blank" rel="noopener" class="text-accent-light font-semibold underline underline-offset-2 hover:text-white transition-colors">GamingOnPhone ↗</a>
-                        <p class="text-sm text-gray-300 mt-1">"I like how the gameplay changes based on team size — from horror to comedy"</p>
-                    </div>
-                    <div class="bg-dark-900/60 rounded-lg p-3">
-                        <a href="https://www.droidgamers.com/news/tomb-busters/" target="_blank" rel="noopener" class="text-accent-light font-semibold underline underline-offset-2 hover:text-white transition-colors">DroidGamers ↗</a>
-                        <p class="text-sm text-gray-300 mt-1">"The unique thing is it changes tone depending on how many players are involved"</p>
-                    </div>
-                </div>
-                <!-- Reddit -->
-                <div class="mt-3 text-xs text-gray-500">
-                    💬 Reddit：刚上线1天，暂无大规模讨论 · 关注板块：<span class="text-gray-400">r/mobilegaming</span> <span class="text-gray-400">r/horrorgaming</span>
-                </div>
-            </div>
-
-            <!-- 国内数据 + AI摘要 -->
+            <!-- 国内数据 + AI摘要（优先展示） -->
             <div class="grid lg:grid-cols-3 gap-6 mb-6">
                 <!-- AI洞察摘要 -->
                 <div class="bg-dark-800 rounded-lg p-5 border border-accent/30 lg:col-span-2">
@@ -292,6 +250,66 @@
                 </div>
             </div>
 
+            <!-- 🌍 海外Tomb Busters 可折叠区域 -->
+            <div class="mb-6">
+                <button onclick="toggleTombBusters()" class="w-full bg-gradient-to-br from-purple-900/40 to-red-900/30 rounded-lg p-4 border border-purple-700/50 flex items-center gap-2 hover:border-purple-500/50 transition-colors">
+                    <span class="text-lg">🌍</span>
+                    <h3 class="text-sm font-bold text-white">Tomb Busters 海外版 — 排行榜 & 趋势</h3>
+                    <span class="text-xs text-gray-400 ml-2">5月27日全球上线</span>
+                    <span id="tb-toggle-icon" class="ml-auto text-gray-400 transition-transform">▼</span>
+                </button>
+                <div id="tomb-busters-detail" class="hidden bg-gradient-to-br from-purple-900/20 to-red-900/15 border border-t-0 border-purple-700/30 rounded-b-lg p-5">
+                    <!-- 核心指标 -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+                        <div class="bg-dark-900/60 rounded-lg p-3 text-center">
+                            <div class="text-xs text-gray-500 mb-1">覆盖地区</div>
+                            <div class="text-sm font-bold text-white">美 / 日 / 韩</div>
+                        </div>
+                        <div class="bg-dark-900/60 rounded-lg p-3 text-center">
+                            <div class="text-xs text-gray-500 mb-1">平台</div>
+                            <div class="text-sm font-bold text-white">iOS / Android / PC</div>
+                        </div>
+                        <div class="bg-dark-900/60 rounded-lg p-3 text-center">
+                            <div class="text-xs text-gray-500 mb-1">港澳台试点</div>
+                            <div class="text-sm font-bold text-green-400">免费榜前三 ⬆️</div>
+                        </div>
+                        <div class="bg-dark-900/60 rounded-lg p-3 text-center">
+                            <div class="text-xs text-gray-500 mb-1">App Store评分</div>
+                            <div class="text-sm font-bold text-yellow-400">⭐ 4.5</div>
+                            <div class="text-xs text-gray-600">2条评价</div>
+                        </div>
+                    </div>
+                    <!-- 排名趋势 -->
+                    <div class="bg-dark-900/60 rounded-lg p-3 mb-4">
+                        <div class="text-xs text-gray-400 mb-2">📊 排名动态</div>
+                        <div class="text-sm text-gray-300">
+                            <span class="text-green-400">✅ 港澳台</span>：免费榜前三（试点期，零推广）<br>
+                            <span class="text-yellow-400">🔄 美/日/韩</span>：5月27日刚上线，排名数据采集中 — 预注册量超预期，首日表现待跟踪
+                        </div>
+                    </div>
+                    <!-- 海外媒体评价 -->
+                    <div class="text-xs text-gray-400 mb-2">📰 海外媒体评价</div>
+                    <div class="space-y-2" id="czr-overseas-media">
+                        <div class="bg-dark-900/60 rounded-lg p-3">
+                            <a href="https://www.mmobomb.com/news/popular-horror-extraction-game-tomb-busters-launches-west" target="_blank" rel="noopener" class="text-accent-light font-semibold underline underline-offset-2 hover:text-white transition-colors">MMOBomb ↗</a>
+                            <p class="text-sm text-gray-300 mt-1">"The premise looks pretty fun — scary alone, funny with friends"</p>
+                        </div>
+                        <div class="bg-dark-900/60 rounded-lg p-3">
+                            <a href="https://gamingonphone.com/news/tomb-busters-blends-horror-treasure-hunting-and-comedy-in-a-unique-co-op-adventure-arriving-globally-on-mobile-on-may-27-2026/" target="_blank" rel="noopener" class="text-accent-light font-semibold underline underline-offset-2 hover:text-white transition-colors">GamingOnPhone ↗</a>
+                            <p class="text-sm text-gray-300 mt-1">"I like how the gameplay changes based on team size — from horror to comedy"</p>
+                        </div>
+                        <div class="bg-dark-900/60 rounded-lg p-3">
+                            <a href="https://www.droidgamers.com/news/tomb-busters/" target="_blank" rel="noopener" class="text-accent-light font-semibold underline underline-offset-2 hover:text-white transition-colors">DroidGamers ↗</a>
+                            <p class="text-sm text-gray-300 mt-1">"The unique thing is it changes tone depending on how many players are involved"</p>
+                        </div>
+                    </div>
+                    <!-- Reddit -->
+                    <div class="mt-3 text-xs text-gray-500">
+                        💬 Reddit：刚上线1天，暂无大规模讨论 · 关注板块：<span class="text-gray-400">r/mobilegaming</span> <span class="text-gray-400">r/horrorgaming</span>
+                    </div>
+                </div>
+            </div>
+
             <!-- 社区舆情 -->
             <div class="bg-dark-800 rounded-lg p-5 border border-gray-800">
                 <h3 class="text-sm font-semibold mb-3 text-accent-light">💬 社区舆情</h3>
@@ -315,31 +333,41 @@
         <!-- ========== R.E.P.O. 页 ========== -->
         <div id="tab-repo" class="tab-content hidden fade-in">
             <!-- 顶部标题栏 -->
-            <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-6 pt-2">
-                <div class="flex items-center gap-3">
-                    <img id="repo-icon" src="" alt="" class="game-icon shadow-xl hidden shrink-0">
-                    <div>
-                        <h2 class="text-2xl font-bold text-white whitespace-nowrap">R.E.P.O.</h2>
-                        <p class="text-sm text-gray-400 mt-1" id="repo-hero-subtitle">semiwork · 在线合作恐怖</p>
+            <div class="flex flex-col gap-3 mb-4 pt-2">
+                <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
+                    <div class="flex items-center gap-3">
+                        <img id="repo-icon" src="" alt="" class="game-icon shadow-xl hidden shrink-0">
+                        <div>
+                            <h2 class="text-2xl font-bold text-white whitespace-nowrap">R.E.P.O.</h2>
+                            <p class="text-sm text-gray-400 mt-1" id="repo-hero-subtitle">semiwork · 在线合作恐怖</p>
+                        </div>
+                    </div>
+                    <!-- 游戏简介 - 桌面端行内 -->
+                    <div class="hidden sm:flex flex-1 items-center justify-center mx-2">
+                        <div class="bg-dark-800/60 border border-gray-700/50 rounded-lg px-4 py-2.5 max-w-lg">
+                            <p class="text-xs text-gray-400 leading-relaxed">
+                                <span class="text-horror-green font-medium">核心玩法：</span>物理驱动的多人合作恐怖游戏。利用真实物理机制搬运物品、协作解谜，在阴森环境中求生。
+                                <span class="text-gray-500 ml-1">Steam好评如潮，支持2-6人在线合作，Steam独占。</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 sm:gap-6 sm:ml-auto">
+                        <div class="text-left sm:text-right">
+                            <div class="text-xs text-gray-500">Steam好评率</div>
+                            <div id="repo-hero-score" class="text-2xl font-bold text-horror-green">96%</div>
+                        </div>
+                        <div class="text-left sm:text-right">
+                            <div class="text-xs text-gray-500">当前在线</div>
+                            <div id="repo-ccu-hero" class="text-2xl font-bold text-green-400">--</div>
+                        </div>
                     </div>
                 </div>
-                <!-- 游戏简介 -->
-                <div class="hidden sm:flex flex-1 items-center justify-center mx-2">
-                    <div class="bg-dark-800/60 border border-gray-700/50 rounded-lg px-4 py-2.5 max-w-lg">
+                <!-- 游戏简介 - 移动端独立行 -->
+                <div class="sm:hidden">
+                    <div class="bg-dark-800/60 border border-gray-700/50 rounded-lg px-3 py-2">
                         <p class="text-xs text-gray-400 leading-relaxed">
-                            <span class="text-horror-green font-medium">核心玩法：</span>物理驱动的多人合作恐怖游戏。利用真实物理机制搬运物品、协作解谜，在阴森环境中求生。
-                            <span class="text-gray-500 ml-1">Steam好评如潮，支持2-6人在线合作，Steam独占。</span>
+                            <span class="text-horror-green font-medium">核心玩法：</span>物理驱动的多人合作恐怖游戏。真实物理搬运+协作解谜，2-6人Steam在线合作。
                         </p>
-                    </div>
-                </div>
-                <div class="flex gap-4 sm:gap-6 sm:ml-auto">
-                    <div class="text-left sm:text-right">
-                        <div class="text-xs text-gray-500">Steam好评率</div>
-                        <div id="repo-hero-score" class="text-2xl font-bold text-horror-green">96%</div>
-                    </div>
-                    <div class="text-left sm:text-right">
-                        <div class="text-xs text-gray-500">当前在线</div>
-                        <div id="repo-ccu-hero" class="text-2xl font-bold text-green-400">--</div>
                     </div>
                 </div>
             </div>
@@ -415,15 +443,15 @@
                         <div class="grid grid-cols-3 gap-2 text-center">
                             <div class="bg-dark-900/60 rounded p-2">
                                 <div class="text-xs text-gray-500">总评测</div>
-                                <div class="text-base font-bold text-white">393,522</div>
+                                <div class="text-base font-bold text-white" id="repo-total-reviews">--</div>
                             </div>
                             <div class="bg-dark-900/60 rounded p-2">
                                 <div class="text-xs text-gray-500">好评</div>
-                                <div class="text-base font-bold text-green-400">378,243</div>
+                                <div class="text-base font-bold text-green-400" id="repo-positive-reviews">--</div>
                             </div>
                             <div class="bg-dark-900/60 rounded p-2">
                                 <div class="text-xs text-gray-500">差评</div>
-                                <div class="text-base font-bold text-red-400">15,279</div>
+                                <div class="text-base font-bold text-red-400" id="repo-negative-reviews">--</div>
                             </div>
                         </div>
                         <div class="bg-dark-900/60 rounded p-3">
@@ -583,7 +611,8 @@
             <!-- 在线人数趋势图 -->
             <div class="bg-dark-800 rounded-lg p-5 border border-gray-800">
                 <h3 class="text-sm font-semibold mb-3 text-accent-light">📈 在线人数趋势（14天）</h3>
-                <canvas id="trend-chart" height="250"></canvas>
+                <canvas id="trend-chart" height="250" class="transition-opacity duration-300 opacity-0"></canvas>
+                <div id="trend-chart-placeholder" class="h-[250px] flex items-center justify-center text-gray-600 text-sm">📈 加载中...</div>
             </div>
         </div>
 
@@ -635,6 +664,18 @@
             }
 
             renderAll();
+        }
+
+        function toggleTombBusters() {
+            const detail = document.getElementById('tomb-busters-detail');
+            const icon = document.getElementById('tb-toggle-icon');
+            if (detail.classList.contains('hidden')) {
+                detail.classList.remove('hidden');
+                icon.textContent = '▲';
+            } else {
+                detail.classList.add('hidden');
+                icon.textContent = '▼';
+            }
         }
 
         async function refreshData() {
@@ -696,10 +737,12 @@
             }
             // 总览页R.E.P.O.图标
             if (repo && repo.store && repo.store.header_image) {
-                const repoIcon = document.getElementById('repo-icon');
+                const repoIcon = document.getElementById('repo-icon-overview');
                 repoIcon.src = repo.store.header_image;
                 repoIcon.alt = 'R.E.P.O.';
                 repoIcon.classList.remove('hidden');
+                const repoEmoji = document.getElementById('repo-icon-emoji');
+                if (repoEmoji) repoEmoji.classList.add('hidden');
             }
 
             // 最新动态
@@ -810,6 +853,10 @@
                     }
                 }
             });
+            // 显示图表，隐藏占位
+            ctx.classList.remove('opacity-0');
+            const ph = document.getElementById('ccu-chart-placeholder');
+            if (ph) ph.classList.add('hidden');
         }
 
         function renderChaoziran() {
@@ -964,14 +1011,25 @@
                 const p2w = sp.players_2weeks ? sp.players_2weeks.toLocaleString() : '--';
                 const avg = sp.average_2weeks ? Math.round(sp.average_2weeks / 60) + '小时' : '--';
                 const owners = sp.owners_estimate || '500万 ~ 1000万';
+                const totalReviews = sp.total_reviews ? sp.total_reviews.toLocaleString() : '393,522';
+                const positiveReviews = sp.positive ? sp.positive.toLocaleString() : '378,243';
+                const negativeReviews = sp.negative ? sp.negative.toLocaleString() : '15,279';
+                const positiveRate = sp.total_reviews ? (sp.positive / sp.total_reviews * 100).toFixed(1) + '%' : '96.1%';
                 playersEl.innerHTML = `
                     <div class="flex justify-between"><span class="text-gray-500">当前在线</span><span class="text-green-400 font-bold">${ccu}</span></div>
                     <div class="flex justify-between"><span class="text-gray-500">两周活跃玩家</span><span>${p2w}</span></div>
                     <div class="flex justify-between"><span class="text-gray-500">两周平均游玩</span><span>${avg}</span></div>
                     <div class="flex justify-between"><span class="text-gray-500">预估拥有量</span><span>${owners}</span></div>
-                    <div class="flex justify-between"><span class="text-gray-500">总评测</span><span>393,522</span></div>
-                    <div class="flex justify-between"><span class="text-gray-500">好评率</span><span class="font-bold text-green-400">96.1%</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">总评测</span><span>${totalReviews}</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">好评率</span><span class="font-bold text-green-400">${positiveRate}</span></div>
                 `;
+                // 同步填充静态区的评测卡片
+                const totalEl = document.getElementById('repo-total-reviews');
+                const posEl = document.getElementById('repo-positive-reviews');
+                const negEl = document.getElementById('repo-negative-reviews');
+                if (totalEl) totalEl.textContent = totalReviews;
+                if (posEl) posEl.textContent = positiveReviews;
+                if (negEl) negEl.textContent = negativeReviews;
             }
 
             // 标签（动态覆盖静态标签）
@@ -1351,15 +1409,15 @@
                                 <!-- 数据行 -->
                                 <div class="flex items-center gap-1.5 mb-1">
                                     ${rate ? `<span class="inline-flex items-center px-1 py-px rounded text-[10px] font-bold ${rateBadgeColor} border">${rate}%</span>` : ''}
-                                    ${ccu ? `<span class="text-[10px] text-emerald-400">${ccu.toLocaleString()}在线</span>` : (info.ccu ? `<span class="text-[10px] text-gray-600">${info.ccu}在线</span>` : '')}
-                                    <span class="text-[10px] text-gray-700">${info.players}</span>
+                                    ${ccu ? `<span class="text-[11px] text-emerald-400">${ccu.toLocaleString()}在线</span>` : (info.ccu ? `<span class="text-[11px] text-gray-600">${info.ccu}在线</span>` : '')}
+                                    <span class="text-[11px] text-gray-600">${info.players}</span>
                                 </div>
                                 <!-- 简介 -->
-                                <p class="text-[11px] text-gray-500 leading-snug line-clamp-1 mb-1.5 group-hover:text-gray-400 transition-colors">${info.intro}</p>
+                                <p class="text-xs text-gray-500 leading-snug line-clamp-1 mb-1.5 group-hover:text-gray-400 transition-colors">${info.intro}</p>
                                 <!-- 底栏 -->
                                 <div class="flex items-center justify-between pt-1 border-t border-gray-700/30">
-                                    <span class="text-[10px] text-gray-700 truncate">${info.dev} · ${info.release}</span>
-                                    <span class="text-[10px] text-gray-400 group-hover:text-accent-light transition-colors shrink-0 ml-1">↗ 商店</span>
+                                    <span class="text-[11px] text-gray-500 truncate">${info.dev} · ${info.release}</span>
+                                    <span class="text-[11px] text-gray-400 group-hover:text-accent-light transition-colors shrink-0 ml-1">↗ 商店</span>
                                 </div>
                             </div>
                         </a>
@@ -1404,10 +1462,10 @@
                                     <span class="text-[10px] text-gray-600">${info.dev}</span>
                                     <span class="text-[10px] text-gray-700">${info.players}</span>
                                 </div>
-                                <p class="text-[11px] text-gray-500 leading-snug line-clamp-1 mb-1.5 group-hover:text-gray-400 transition-colors">${info.intro}</p>
+                                <p class="text-xs text-gray-500 leading-snug line-clamp-1 mb-1.5 group-hover:text-gray-400 transition-colors">${info.intro}</p>
                                 <div class="flex items-center justify-between pt-1 border-t border-purple-500/10">
-                                    <span class="text-[10px] text-gray-700">发售：${info.release}</span>
-                                    <span class="text-[10px] text-purple-400 group-hover:text-purple-300 transition-colors shrink-0 ml-1">↗ 商店</span>
+                                    <span class="text-[11px] text-gray-500">发售：${info.release}</span>
+                                    <span class="text-[11px] text-purple-400 group-hover:text-purple-300 transition-colors shrink-0 ml-1">↗ 商店</span>
                                 </div>
                             </div>
                         </a>
@@ -1540,9 +1598,11 @@
                     }
                 }
             });
+            // 显示图表，隐藏占位
+            ctx.classList.remove('opacity-0');
+            const ph = document.getElementById('trend-chart-placeholder');
+            if (ph) ph.classList.add('hidden');
         }
-
-        // ========== 启动 ==========
         loadData();
 
         // ========== 竞品卡片事件委托 + Tooltip ==========
@@ -1626,6 +1686,25 @@
             tooltip.style.left = x + 'px';
             tooltip.style.top = y + 'px';
         }
+    </script>
+
+    <!-- 回到顶部按钮 -->
+    <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"
+        class="fixed bottom-6 right-6 z-50 w-10 h-10 bg-dark-800 border border-gray-700 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:border-accent transition-all opacity-0 pointer-events-none shadow-lg"
+        style="transition: opacity 0.3s, border-color 0.3s, color 0.3s;">
+        ▲
+    </button>
+    <script>
+        window.addEventListener('scroll', () => {
+            const btn = document.getElementById('back-to-top');
+            if (window.scrollY > 400) {
+                btn.classList.remove('opacity-0', 'pointer-events-none');
+                btn.classList.add('opacity-100');
+            } else {
+                btn.classList.add('opacity-0', 'pointer-events-none');
+                btn.classList.remove('opacity-100');
+            }
+        });
     </script>
 </body>
 </html>
