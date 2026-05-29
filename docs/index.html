@@ -77,7 +77,7 @@
                     <span class="pulse-dot w-2 h-2 bg-green-500 rounded-full inline-block"></span>
                     <span id="last-update">加载中...</span>
                 </div>
-                <button onclick="refreshData()" class="text-xs bg-dark-600 hover:bg-dark-700 px-3 py-1 rounded transition">刷新</button>
+                <button id="refresh-btn" onclick="refreshData()" class="text-xs bg-dark-600 hover:bg-dark-700 px-3 py-1 rounded transition flex items-center gap-1">↻ 刷新数据</button>
             </div>
         </div>
     </nav>
@@ -593,23 +593,24 @@
         let chaoziranData = {};
         let historyData = {};
 
-        async function loadData() {
+        async function loadData(bustCache = false) {
+            const suffix = bustCache ? `?t=${Date.now()}` : '';
             try {
-                const steamResp = await fetch('./data/steam_data.json');
+                const steamResp = await fetch('./data/steam_data.json' + suffix);
                 steamData = await steamResp.json();
             } catch(e) {
                 console.warn('Steam数据加载失败:', e);
             }
 
             try {
-                const czrResp = await fetch('./data/chaoziran_data.json');
+                const czrResp = await fetch('./data/chaoziran_data.json' + suffix);
                 chaoziranData = await czrResp.json();
             } catch(e) {
                 console.warn('超自然行动组数据加载失败:', e);
             }
 
             try {
-                const histResp = await fetch('./data/history.json');
+                const histResp = await fetch('./data/history.json' + suffix);
                 historyData = await histResp.json();
             } catch(e) {
                 console.warn('历史数据加载失败:', e);
@@ -618,8 +619,18 @@
             renderAll();
         }
 
-        function refreshData() {
-            location.reload();
+        async function refreshData() {
+            const btn = document.getElementById('refresh-btn');
+            btn.disabled = true;
+            btn.innerHTML = '⟳ 刷新中...';
+            btn.classList.add('opacity-50');
+            try {
+                await loadData(true);
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '↻ 刷新数据';
+                btn.classList.remove('opacity-50');
+            }
         }
 
         // ========== 标签页切换 ==========
@@ -655,7 +666,7 @@
             if (latest) {
                 const d = new Date(latest);
                 document.getElementById('last-update').textContent =
-                    `更新于 ${d.getMonth()+1}/${d.getDate()} ${d.getHours()}:${String(d.getMinutes()).padStart(2,'0')}`;
+                    `采集于 ${d.getMonth()+1}/${d.getDate()} ${d.getHours()}:${String(d.getMinutes()).padStart(2,'0')}`;
             }
         }
 
