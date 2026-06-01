@@ -50,6 +50,56 @@ def fetch_json(url, retries=3):
                 return None
 
 
+def validate_url(url, app_id="714123"):
+    """
+    验证TapTap moment链接是否有效。
+    返回 (is_valid, final_url)
+    - is_valid: True/False
+    - final_url: 有效返回原url，无效返回百度搜索fallback
+    """
+    # 非moment链接直接跳过验证
+    if "/moment/" not in url:
+        return True, url
+
+    for attempt in range(2):
+        try:
+            req = urllib.request.Request(url, method="HEAD", headers={
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
+                "Referer": "https://www.taptap.cn/",
+            })
+            # 使用自定义opener来获取重定向后的URL
+            opener = urllib.request.build_opener()
+            with opener.open(req, timeout=8) as resp:
+                final_url = resp.geturl()
+                status = resp.getcode()
+
+                # 检查是否被重定向到论坛首页（帖子被删除后的行为）
+                forum_home_patterns = [
+                    f"/app/{app_id}/topic",
+                    f"/app/{app_id}/",
+                ]
+                is_redirected_home = any(p in final_url for p in forum_home_patterns) and "/moment/" not in final_url
+
+                if status in (200, 301, 302, 307, 308) and not is_redirected_home:
+                    return True, url
+                else:
+                    return False, final_url
+        except urllib.error.HTTPError as e:
+            if e.code == 404:
+                return False, None
+            # 其他HTTP错误（403/500等）保守处理为失效
+            return False, None
+        except Exception as e:
+            if attempt < 1:
+                time.sleep(1)
+            else:
+                # 超时等网络错误，保守处理为未知（不修改）
+                return True, url
+    return True, url
+
+
 def get_bwiki_updates():
     """从BWIKI获取超自然行动组更新公告"""
     url = "https://wiki.biligame.com/chaoziran/%E6%9B%B4%E6%96%B0%E5%85%AC%E5%91%8A"
@@ -338,7 +388,30 @@ def get_taptap_forum_posts(app_id=714123, max_posts=10, official_only=False):
             seen_titles.add(title)
             filtered.append(p)
 
-    return filtered[:max_posts]
+    # ===== 链接有效性验证 + 失效降级 =====
+    verified = []
+    for p in filtered[:max_posts]:
+        moment_url = p.get("url", "")
+        if "/moment/" in moment_url:
+            is_valid, _ = validate_url(moment_url, app_id=str(app_id))
+            if is_valid:
+                p["link_status"] = "valid"
+                verified.append(p)
+            else:
+                # 失效降级：百度搜索该标题
+                search_query = urllib.parse.quote(f"{p['title']} site:taptap.cn")
+                p["url"] = f"https://www.baidu.com/s?wd={search_query}"
+                p["link_status"] = "fallback"
+                p["original_url"] = moment_url  # 保留原始URL用于调试
+                verified.append(p)
+        else:
+            # 没有moment链接（论坛首页URL）→ 也降级为百度搜索该标题
+            search_query = urllib.parse.quote(f"{p['title']} site:taptap.cn")
+            p["url"] = f"https://www.baidu.com/s?wd={search_query}"
+            p["link_status"] = "fallback"
+            verified.append(p)
+
+    return verified
 
 
 def get_tieba_hot_posts(kw="超自然行动组", max_posts=8):

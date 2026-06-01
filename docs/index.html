@@ -892,12 +892,21 @@
                 if (updatesItems.length === 0) updatesItems = czr.official_news.slice(0, 3);
             }
             if (updatesItems.length > 0) {
-                updatesEl.innerHTML = updatesItems.map(u => `
+                updatesEl.innerHTML = updatesItems.map(u => {
+                    const status = u.link_status;
+                    const isFallback = status === 'fallback';
+                    const icon = status === 'valid' ? '<span class="inline-block w-1.5 h-1.5 rounded-full bg-green-500 mr-1.5 align-middle"></span>' :
+                                 isFallback ? '<span class="text-gray-500 mr-1" title="原帖可能已删除，通过搜索查找">🔍</span>' : '';
+                    const linkClass = isFallback
+                        ? 'text-gray-400 hover:text-gray-300 hover:underline text-sm'
+                        : 'text-gray-300 hover:text-accent-light hover:underline text-sm';
+                    return `
                     <div class="py-1 border-b border-gray-800 last:border-0">
-                        ${u.url ? `<a href="${u.url}" target="_blank" class="text-gray-300 hover:text-accent-light hover:underline text-sm">${u.title}</a>` : `<span class="text-gray-300 text-sm">${u.title}</span>`}
+                        ${u.url ? `<a href="${u.url}" target="_blank" class="${linkClass}">${icon}${u.title}</a>` : `<span class="text-gray-300 text-sm">${u.title}</span>`}
                         <span class="text-xs text-gray-600 ml-2">${u.source}</span>
                     </div>
-                `).join('');
+                    `;
+                }).join('');
             } else {
                 updatesEl.innerHTML = '<div class="text-gray-500">暂无更新公告数据</div>';
             }
