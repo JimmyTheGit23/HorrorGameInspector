@@ -45,8 +45,8 @@
     "taptap": {
       "app_id": 714123,
       "source": "taptap_webpage",
-      "fans_count": 11191124,
-      "review_count": 30196,
+      "fans_count": 11191337,
+      "review_count": 30198,
       "score": "6.8",
       "description": "超自然行动组是一款合作游戏，TapTap 提供超自然行动组最新版官方正版下载，一个人玩是恐怖游戏，两个人玩是冒险游戏，三个人玩是寻宝游戏，...",
       "score_display": 6.8,
@@ -97,21 +97,9 @@
     "community": {
       "taptap_forum": [
         {
-          "title": "全新【钓鱼玩法】爆料抢先看，下周四晚更新后上线啦~",
+          "title": "虽然我在网上是个喷子，但这件事我必须夸",
           "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/809786761940043519",
-          "sentiment": "neutral"
-        },
-        {
-          "title": "找兔子或固玩",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/810298764379032926",
-          "sentiment": "neutral"
-        },
-        {
-          "title": "找固玩，真心的",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/810453592652647794",
+          "url": "https://www.taptap.cn/moment/809478348299305568",
           "sentiment": "neutral"
         },
         {
@@ -121,15 +109,9 @@
           "sentiment": "neutral"
         },
         {
-          "title": "什么都d",
+          "title": "dd四队固玩/靠山",
           "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/810326740176998349",
-          "sentiment": "neutral"
-        },
-        {
-          "title": "你是否在找……",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/810312084054082013",
+          "url": "https://www.taptap.cn/moment/809721558456075981",
           "sentiment": "neutral"
         }
       ],
@@ -158,6 +140,6 @@
       "website": "https://www.tombbusters.net/",
       "note": "数据需手动更新"
     },
-    "crawled_at": "2026-06-01T11:09:39.112559"
+    "crawled_at": "2026-06-01T11:14:01.008270"
   }
 }

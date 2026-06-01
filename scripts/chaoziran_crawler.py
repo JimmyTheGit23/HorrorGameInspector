@@ -294,13 +294,18 @@ def simple_sentiment(title):
     elif pos_score > neg_score:
         return "positive"
     return "neutral"
-    """获取海外版Tomb Busters基础信息"""
+
+
+def get_tomb_busters_info():
+    """Tomb Busters 海外版数据 - 目前手动维护"""
     return {
         "name": "Tomb Busters",
-        "regions": ["美国", "日本", "韩国"],
         "launch_date": "2026-05-27",
         "platforms": ["iOS", "Android", "PC"],
-        "note": "巨人网络海外发行，港澳台试点已进入免费榜前三",
+        "regions": ["美国", "日本", "韩国", "港澳台"],
+        "app_store_rating": 4.5,
+        "website": "https://www.tombbusters.net/",
+        "note": "数据需手动更新"
     }
 
 
@@ -338,18 +343,6 @@ def crawl_chaoziran():
     # 为论坛帖子添加情感标签
     for post in taptap_forum:
         post["sentiment"] = simple_sentiment(post["title"])
-
-    def get_tomb_busters_info():
-        """Tomb Busters 海外版数据 - 目前手动维护"""
-        return {
-            "name": "Tomb Busters",
-            "launch_date": "2026-05-27",
-            "platforms": ["iOS", "Android", "PC"],
-            "regions": ["美国", "日本", "韩国", "港澳台"],
-            "app_store_rating": 4.5,
-            "website": "https://www.tombbusters.net/",
-            "note": "数据需手动更新"
-        }
 
     result = {
         "chaoziran": {

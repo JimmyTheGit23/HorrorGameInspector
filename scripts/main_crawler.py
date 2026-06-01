@@ -62,6 +62,42 @@ def update_history(steam_data, history_path):
     return history
 
 
+def merge_chaoziran_data(new_data, old_data):
+    """增量合并超自然行动组数据：新采集数据为空时保留旧数据"""
+    if not old_data or "chaoziran" not in old_data:
+        return new_data
+    if "chaoziran" not in new_data:
+        return new_data
+
+    new_czr = new_data["chaoziran"]
+    old_czr = old_data["chaoziran"]
+
+    # 需要增量合并的字段：如果新数据为空，保留旧数据
+    merge_fields = ["official_news", "bwiki_updates"]
+    for field in merge_fields:
+        new_items = new_czr.get(field, [])
+        old_items = old_czr.get(field, [])
+        if len(new_items) == 0 and len(old_items) > 0:
+            new_czr[field] = old_items
+            print(f"   [MERGE] {field}: 新采集为空，保留旧数据({len(old_items)}条)")
+        elif len(new_items) > 0:
+            print(f"   [MERGE] {field}: 新数据({len(new_items)}条)")
+
+    # 社区数据也类似处理
+    for sub_field in ["taptap_forum"]:
+        new_community = new_czr.get("community", {})
+        old_community = old_czr.get("community", {})
+        new_items = new_community.get(sub_field, [])
+        old_items = old_community.get(sub_field, [])
+        if len(new_items) == 0 and len(old_items) > 0:
+            if "community" not in new_czr:
+                new_czr["community"] = {}
+            new_czr["community"][sub_field] = old_items
+            print(f"   [MERGE] community.{sub_field}: 新采集为空，保留旧数据({len(old_items)}条)")
+
+    return new_data
+
+
 def main():
     print("=" * 50)
     print(f"GRC恐怖多人品类情报 - 数据采集开始 {datetime.now().isoformat()}")
@@ -81,7 +117,11 @@ def main():
     print("\n[2/2] 采集超自然行动组数据...")
     try:
         czr_data = crawl_chaoziran()
-        save_json(czr_data, os.path.join(DATA_DIR, "chaoziran_data.json"))
+        # 增量合并：新数据为空时保留旧数据
+        czr_path = os.path.join(DATA_DIR, "chaoziran_data.json")
+        old_czr_data = load_json(czr_path)
+        czr_data = merge_chaoziran_data(czr_data, old_czr_data)
+        save_json(czr_data, czr_path)
         print("   超自然行动组数据采集完成")
     except Exception as e:
         print(f"   超自然行动组数据采集失败: {e}")
