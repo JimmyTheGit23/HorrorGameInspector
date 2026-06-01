@@ -746,33 +746,35 @@
                 if (repoEmoji) repoEmoji.classList.add('hidden');
             }
 
-            // 最新动态
+            // 最新动态 — 只显示官方内容（官网新闻+Steam发售信息）
             const newsEl = document.getElementById('latest-news');
             let newsItems = [];
 
-            // 从超自然行动组取新闻
+            // 从超自然行动组官网取官方新闻
             if (chaoziranData.chaoziran) {
                 const czr = chaoziranData.chaoziran;
                 const czrIcon = 'images/czr-icon-sm.png';
-                if (czr.bwiki_updates) {
-                    czr.bwiki_updates.slice(0, 3).forEach(u => {
-                        newsItems.push({ tag: '超自然行动组', title: u.title, source: u.source, header_image: czrIcon });
-                    });
-                }
                 if (czr.official_news) {
-                    czr.official_news.slice(0, 3).forEach(n => {
-                        newsItems.push({ tag: '超自然行动组', title: n.title, source: '官网', url: n.url, header_image: czrIcon });
+                    czr.official_news.slice(0, 5).forEach(n => {
+                        newsItems.push({
+                            tag: '超自然行动组',
+                            title: n.title,
+                            source: n.source || '官网',
+                            url: n.url,
+                            header_image: czrIcon
+                        });
                     });
                 }
             }
 
-            // 从Steam取更新信息
+            // 从Steam取发售信息
             Object.entries(steamData).forEach(([name, data]) => {
                 if (data.store) {
                     newsItems.push({
                         tag: name,
                         title: `${name} - ${data.store.release_date}发售`,
                         source: 'Steam',
+                        url: data.store.store_url || `https://store.steampowered.com/search/?term=${encodeURIComponent(name)}`,
                         header_image: data.store.header_image || null
                     });
                 }
@@ -783,10 +785,13 @@
             } else {
                 newsEl.innerHTML = newsItems.slice(0, 8).map(n => {
                     const icon = n.header_image ? `<img src="${n.header_image}" class="game-icon-sm shrink-0" referrerpolicy="no-referrer">` : `<span class="text-xs bg-dark-600 text-accent-light px-1.5 py-0.5 rounded shrink-0">${n.tag}</span>`;
+                    const titleHtml = n.url
+                        ? `<a href="${n.url}" target="_blank" class="text-gray-300 hover:text-accent-light hover:underline text-sm">${n.title}</a>`
+                        : `<span class="text-gray-300 text-sm">${n.title}</span>`;
                     return `<div class="flex items-start gap-2 py-1.5 border-b border-gray-800 last:border-0">
                         ${icon}
                         <div class="min-w-0 flex-1">
-                            <span class="text-gray-300 text-sm">${n.title}</span>
+                            ${titleHtml}
                             <span class="text-xs text-gray-600 ml-2">${n.source}</span>
                         </div>
                     </div>`;
@@ -933,13 +938,13 @@
             const tiebaEl = document.getElementById('czr-tieba');
             const tieba = community.tieba || {};
             const tiebaPosts = tieba.hot_posts || [];
-            const tiebaTopics = tieba.hot_topics || [];
             if (tiebaPosts.length > 0) {
                 tiebaEl.innerHTML = tiebaPosts.map(p => {
                     const sc = p.sentiment === 'negative' ? 'text-red-400' : p.sentiment === 'positive' ? 'text-green-400' : 'text-gray-600';
                     const sl = p.sentiment === 'negative' ? '☹' : p.sentiment === 'positive' ? '☺' : '·';
+                    // 有URL直接跳转，没有则用百度搜索该标题
                     const searchUrl = `https://www.baidu.com/s?wd=${encodeURIComponent('超自然行动组 ' + p.title)}`;
-                    const link = p.url ? p.url : searchUrl;
+                    const link = p.url || searchUrl;
                     return `<div class="py-1 border-b border-gray-800 last:border-0 flex items-start gap-2">
                         <span class="text-xs ${sc} mt-0.5 shrink-0 w-3 text-center">${sl}</span>
                         <div class="min-w-0 flex-1">
@@ -947,17 +952,9 @@
                             ${p.replies ? `<span class="text-xs text-gray-600 ml-1">${p.replies}回复</span>` : ''}
                         </div>
                     </div>`;
-                }).join('');
-            } else if (tiebaTopics.length > 0) {
-                // 显示热门话题
-                tiebaEl.innerHTML = tiebaTopics.map(t => {
-                    const searchUrl = `https://www.baidu.com/s?wd=${encodeURIComponent('超自然行动组贴吧 ' + t.topic)}`;
-                    return `<div class="py-1.5 border-b border-gray-800 last:border-0">
-                        <a href="${searchUrl}" target="_blank" class="text-gray-300 hover:text-accent-light hover:underline text-sm">${t.topic}</a>
-                        ${t.note ? `<span class="text-xs text-gray-600 ml-2">${t.note}</span>` : ''}
-                    </div>`;
                 }).join('') + `
-                    <div class="mt-2 pt-2 border-t border-gray-800">
+                    <div class="mt-2 pt-2 border-t border-gray-800 flex items-center justify-between">
+                        <span class="text-[10px] text-gray-600">${tieba.note || ''}</span>
                         <a href="${tieba.url || 'https://tieba.baidu.com/f?kw=%E8%B6%85%E8%87%AA%E7%84%B6%E8%A1%8C%E5%8A%A8%E7%BB%84'}" target="_blank" class="text-accent-light hover:underline text-xs">前往百度贴吧 →</a>
                     </div>`;
             } else if (tieba.url) {
