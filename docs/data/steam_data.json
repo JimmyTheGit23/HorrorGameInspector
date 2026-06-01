@@ -15,7 +15,7 @@
       "price": "¥ 35.00",
       "release_date": "2025 年 2 月 26 日",
       "metacritic": null,
-      "recommendations": 316278,
+      "recommendations": 317738,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -39,16 +39,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 40801
+      "ccu": 44815
     },
     "reviews": {
-      "total_reviews": 14368,
-      "positive": 13346,
-      "negative": 1022,
+      "total_reviews": 14450,
+      "positive": 13422,
+      "negative": 1028,
       "positive_rate": 92.9
     },
-    "ccu": 40801,
-    "crawled_at": "2026-05-28T11:38:52.208180"
+    "ccu": 44815,
+    "crawled_at": "2026-06-01T10:21:20.559397"
   },
   "Lethal Company": {
     "appid": 1966720,
@@ -63,10 +63,10 @@
       "publishers": [
         "Zeekerss"
       ],
-      "price": "¥ 27.30",
-      "release_date": "2023 年 10 月 24 日",
+      "price": "¥ 42.00",
+      "release_date": "2023 年 10 月 23 日",
       "metacritic": null,
-      "recommendations": 409262,
+      "recommendations": 409492,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -90,16 +90,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 5612
+      "ccu": 5881
     },
     "reviews": {
-      "total_reviews": 17577,
-      "positive": 16342,
-      "negative": 1235,
+      "total_reviews": 17591,
+      "positive": 16351,
+      "negative": 1240,
       "positive_rate": 93.0
     },
-    "ccu": 5612,
-    "crawled_at": "2026-05-28T11:38:58.054450"
+    "ccu": 5881,
+    "crawled_at": "2026-06-01T10:21:26.860669"
   },
   "Phasmophobia": {
     "appid": 739630,
@@ -117,7 +117,7 @@
       "price": "¥ 68.00",
       "release_date": "2020 年 9 月 18 日",
       "metacritic": null,
-      "recommendations": 675951,
+      "recommendations": 676325,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -150,16 +150,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 10527
+      "ccu": 12136
     },
     "reviews": {
-      "total_reviews": 26671,
-      "positive": 24195,
-      "negative": 2476,
+      "total_reviews": 26701,
+      "positive": 24214,
+      "negative": 2487,
       "positive_rate": 90.7
     },
-    "ccu": 10527,
-    "crawled_at": "2026-05-28T11:39:03.642856"
+    "ccu": 12136,
+    "crawled_at": "2026-06-01T10:21:32.865633"
   },
   "Content Warning": {
     "appid": 2881650,
@@ -178,10 +178,10 @@
       "publishers": [
         "Evil Landfall?"
       ],
-      "price": "¥ 33.00",
+      "price": "¥ 20.46",
       "release_date": "2024 年 4 月 1 日",
       "metacritic": null,
-      "recommendations": 68902,
+      "recommendations": 69028,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -202,16 +202,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 1094
+      "ccu": 1477
     },
     "reviews": {
-      "total_reviews": 6814,
-      "positive": 6128,
-      "negative": 686,
+      "total_reviews": 6820,
+      "positive": 6133,
+      "negative": 687,
       "positive_rate": 89.9
     },
-    "ccu": 1094,
-    "crawled_at": "2026-05-28T11:39:09.095352"
+    "ccu": 1477,
+    "crawled_at": "2026-06-01T10:21:38.461826"
   },
   "FEEDERS": {
     "appid": 4408510,
@@ -259,6 +259,57 @@
       "positive_rate": 0.0
     },
     "ccu": 0,
-    "crawled_at": "2026-05-28T11:39:19.527064"
+    "crawled_at": "2026-06-01T10:21:48.944296"
+  },
+  "NARAKA: BLADEPOINT": {
+    "appid": 1203220,
+    "store": {
+      "name": "永劫无间",
+      "type": "game",
+      "short_description": "风靡全球的中式竞技大作！来这里舞利刃、端火枪，享受远近结合的华丽战斗！驾驭风沙、机甲，化身野兽、大佛，体验风格迥异的英雄能力！",
+      "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1203220/eab492b9f38afc2bd34537d2ecd327552c5fa3e4/header_schinese.jpg?t=1778037276",
+      "developers": [
+        "24 Entertainment"
+      ],
+      "publishers": [
+        "NetEase Games "
+      ],
+      "price": "免费",
+      "release_date": "2021 年 8 月 11 日",
+      "metacritic": null,
+      "recommendations": 197675,
+      "platforms": {
+        "windows": true,
+        "mac": false,
+        "linux": false
+      },
+      "categories": [
+        "多人",
+        "玩家对战",
+        "线上玩家对战",
+        "Steam 成就",
+        "Steam 集换式卡牌",
+        "应用内购买",
+        "部分支持控制器",
+        "可用 HDR"
+      ],
+      "genres": [
+        "动作",
+        "冒险",
+        "大型多人在线",
+        "免费开玩"
+      ]
+    },
+    "steamspy": {
+      "ccu": 9927
+    },
+    "reviews": {
+      "total_reviews": 250340,
+      "positive": 180228,
+      "negative": 70112,
+      "positive_rate": 72.0
+    },
+    "ccu": 9927,
+    "crawled_at": "2026-06-01T10:21:54.800018"
   }
 }

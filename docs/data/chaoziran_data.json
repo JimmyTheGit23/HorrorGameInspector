@@ -4,91 +4,54 @@
     "taptap": {
       "app_id": 714123,
       "source": "taptap_webpage",
-      "fans_count": 11136270,
-      "review_count": 29946,
+      "fans_count": 11190992,
+      "review_count": 30195,
       "score": "6.8",
       "description": "超自然行动组是一款合作游戏，TapTap 提供超自然行动组最新版官方正版下载，一个人玩是恐怖游戏，两个人玩是冒险游戏，三个人玩是寻宝游戏，...",
       "score_display": 6.8,
       "rating_value": 6.8
     },
-    "official_news": [
-      {"title": "《超自然行动组》日活跃用户突破一千万啦！", "source": "官网", "url": "https://www.chaoziran.com/news/343"},
-      {"title": "【阿念-寻星记】局内细节展示！", "source": "官网", "url": "https://www.chaoziran.com/news/549"},
-      {"title": "小熊猫荧光棒皮肤爆料~", "source": "官网", "url": "https://www.chaoziran.com/news/548"},
-      {"title": "六一儿童节福利放送！", "source": "官网", "url": "https://www.chaoziran.com/news/547"},
-      {"title": "爆炸弓【心弦所向】皮肤爆料！", "source": "官网", "url": "https://www.chaoziran.com/news/546"},
-      {"title": "版更速递！亲密关系解除新增【冷静期】！", "source": "官网", "url": "https://www.chaoziran.com/news/540"},
-      {"title": "阿念重做登场！", "source": "官网", "url": "https://www.chaoziran.com/news/538"},
-      {"title": "新怪物【鸭子】实机展示，追上了命都给你哦", "source": "官网", "url": "https://www.chaoziran.com/news/535"}
-    ],
+    "official_news": [],
     "community": {
       "taptap_forum": [
-        {"title": "找兔子咯！", "source": "TapTap论坛", "url": "https://www.taptap.cn/moment/808793478677923512", "sentiment": "neutral"},
-        {"title": "爆炸弓【心弦所向】皮肤爆料，一箭桃花动，满弓皆春来", "source": "TapTap论坛", "url": "https://www.taptap.cn/moment/808402389924056917", "sentiment": "positive"},
-        {"title": "版更速递！亲密关系解除新增【冷静期】，小黄加强，农场焕新！", "source": "TapTap论坛", "url": "https://www.taptap.cn/moment/806596895563581454", "sentiment": "neutral"},
-        {"title": "玩PC端电脑推荐", "source": "TapTap论坛", "url": "https://www.taptap.cn/moment/808751529203863252", "sentiment": "neutral"},
-        {"title": "有没有摸金靠山啊", "source": "TapTap论坛", "url": "https://www.taptap.cn/moment/808596616243056342", "sentiment": "neutral"}
+        {
+          "title": "虽然我在网上是个喷子，但这件事我必须夸",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/moment/809478348299305568",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "找四队靠山",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/moment/810347074439610440",
+          "sentiment": "neutral"
+        }
       ],
       "tieba": {
         "source": "百度贴吧",
         "url": "https://tieba.baidu.com/f?kw=%E8%B6%85%E8%87%AA%E7%84%B6%E8%A1%8C%E5%8A%A8%E7%BB%84",
         "note": "贴吧反爬严格(403)，数据需手动或通过搜索引擎间接更新",
-        "hot_posts": [
-          {"title": "双人棺如何分到底怎么（我真的没招了吧）", "sentiment": "negative"},
-          {"title": "想问问大家是如何看待固玩关系（顺带避雷）", "sentiment": "neutral"},
-          {"title": "出了圣杯朋友直接撕破脸", "sentiment": "negative"},
-          {"title": "讨论一下爆率问题", "sentiment": "negative"},
-          {"title": "超自然爆率我恨你", "sentiment": "negative"},
-          {"title": "号价怎么掉这么快，氪了两千三的号按行情也就3-4百", "sentiment": "negative"},
-          {"title": "何意味，发了删，还拉黑", "sentiment": "negative"},
-          {"title": "有人玩六星连珠和九星连珠吗", "sentiment": "neutral"},
-          {"title": "开出传国但是我的轩辕神龙何在", "sentiment": "neutral"},
-          {"title": "找个四队靠山", "sentiment": "neutral"}
-        ]
+        "hot_posts": []
       }
     },
     "tomb_busters": {
       "name": "Tomb Busters",
       "launch_date": "2026-05-27",
-      "platforms": ["iOS", "Android", "PC"],
-      "regions": ["美国", "日本", "韩国", "港澳台"],
-      "app_store_id": 6755951087,
-      "app_store_rating": 4.5,
-      "app_store_reviews": 2,
-      "website": "https://www.tombbusters.net/",
-      "ranking": {
-        "hong_kong_taiwan": "免费榜前三（试点期，未大规模推广）",
-        "us_jp_kr": "5月27日刚上线，排名数据采集中"
-      },
-      "domestic_ranking": {
-        "ios_grossing": "#23",
-        "ios_free": "Top 30",
-        "android_grossing": "Top 30",
-        "android_free": "Top 20",
-        "note": "数据来源：iOS App Store / 安卓应用商店，2026-05-29更新；畅销榜峰值#4"
-      },
-      "media_quotes": [
-        {"source": "MMOBomb", "quote": "The premise looks pretty fun — scary alone, funny with friends", "url": "https://www.mmobomb.com/news/popular-horror-extraction-game-tomb-busters-launches-west"},
-        {"source": "GamingOnPhone", "quote": "I like how the gameplay changes based on team size — from horror to comedy", "url": "https://gamingonphone.com/news/tomb-busters-blends-horror-treasure-hunting-and-comedy-in-a-unique-co-op-adventure-arriving-globally-on-mobile-on-may-27-2026/"},
-        {"source": "DroidGamers", "quote": "The unique thing about the game is that it changes tone depending on how many players are involved", "url": "https://www.droidgamers.com/news/tomb-busters/"}
+      "platforms": [
+        "iOS",
+        "Android",
+        "PC"
       ],
-      "overseas_reddit": {
-        "status": "刚上线1天，Reddit暂无大规模讨论",
-        "subreddits_to_watch": ["r/mobilegaming", "r/iosgaming", "r/horrorgaming"]
-      }
+      "regions": [
+        "美国",
+        "日本",
+        "韩国",
+        "港澳台"
+      ],
+      "app_store_rating": 4.5,
+      "website": "https://www.tombbusters.net/",
+      "note": "数据需手动更新"
     },
-    "domestic_summary": {
-      "ai_note": "AI基于已采集数据整理，截至2026-05-28",
-      "core_metrics": {
-        "dau": "1,000万+",
-        "registered_users": "2亿+",
-        "cumulative_revenue": "50亿+",
-        "peak_concurrent": "100万+",
-        "social_views": "1,400亿次"
-      },
-      "sentiment_overview": "国内社区舆情两极分化：TapTap论坛偏中性正面（版本更新、皮肤爆料讨论为主），百度贴吧负面情绪集中（爆率过低、号价暴跌、固玩纠纷为核心投诉点）。TapTap评分6.8属中等偏低，但DAU持续千万级说明核心用户粘性极强。",
-      "financial_impact": "巨人网络2026Q1营收23.29亿元（同比+221.7%），净利润10.80亿元（同比+210.6%），超自然行动组为关键增长引擎。"
-    },
-    "crawled_at": "2026-05-28T16:25:00.000000"
+    "crawled_at": "2026-06-01T10:22:06.354993"
   }
 }
