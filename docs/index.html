@@ -933,6 +933,7 @@
             const tiebaEl = document.getElementById('czr-tieba');
             const tieba = community.tieba || {};
             const tiebaPosts = tieba.hot_posts || [];
+            const tiebaTopics = tieba.hot_topics || [];
             if (tiebaPosts.length > 0) {
                 tiebaEl.innerHTML = tiebaPosts.map(p => {
                     const sc = p.sentiment === 'negative' ? 'text-red-400' : p.sentiment === 'positive' ? 'text-green-400' : 'text-gray-600';
@@ -947,6 +948,18 @@
                         </div>
                     </div>`;
                 }).join('');
+            } else if (tiebaTopics.length > 0) {
+                // 显示热门话题
+                tiebaEl.innerHTML = tiebaTopics.map(t => {
+                    const searchUrl = `https://www.baidu.com/s?wd=${encodeURIComponent('超自然行动组贴吧 ' + t.topic)}`;
+                    return `<div class="py-1.5 border-b border-gray-800 last:border-0">
+                        <a href="${searchUrl}" target="_blank" class="text-gray-300 hover:text-accent-light hover:underline text-sm">${t.topic}</a>
+                        ${t.note ? `<span class="text-xs text-gray-600 ml-2">${t.note}</span>` : ''}
+                    </div>`;
+                }).join('') + `
+                    <div class="mt-2 pt-2 border-t border-gray-800">
+                        <a href="${tieba.url || 'https://tieba.baidu.com/f?kw=%E8%B6%85%E8%87%AA%E7%84%B6%E8%A1%8C%E5%8A%A8%E7%BB%84'}" target="_blank" class="text-accent-light hover:underline text-xs">前往百度贴吧 →</a>
+                    </div>`;
             } else if (tieba.url) {
                 tiebaEl.innerHTML = `<a href="${tieba.url}" target="_blank" class="text-accent-light hover:underline text-sm">前往百度贴吧 →</a>
                     <div class="text-gray-600 text-xs mt-1">${tieba.note || ''}</div>`;

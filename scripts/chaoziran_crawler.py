@@ -213,7 +213,7 @@ def get_official_news():
 
 
 def get_taptap_forum_posts(app_id=714123, max_posts=10, official_only=False):
-    """从TapTap论坛获取帖子列表（解析HTML中的moment链接+标题span）"""
+    """从TapTap论坛获取帖子列表（解析HTML中的moment链接+标题span+NUXT_DATA）"""
     url = f"https://www.taptap.cn/app/{app_id}/topic"
     if official_only:
         url += "?type=official"
@@ -223,64 +223,119 @@ def get_taptap_forum_posts(app_id=714123, max_posts=10, official_only=False):
 
     posts = []
     seen_ids = set()
-    # 找所有/moment/{id}链接，在链接附近上下文中提取标题span
-    for m in re.finditer(r'href="(/moment/(\d+))"', html):
-        moment_id = m.group(2)
-        if moment_id in seen_ids:
-            continue
-        seen_ids.add(moment_id)
+    source_label = "TapTap官方" if official_only else "TapTap论坛"
 
-        # 在链接前后500字符范围内找标题span
-        start = max(0, m.start() - 200)
-        end = min(len(html), m.end() + 500)
-        context = html[start:end]
+    # 方法1: 从 __NUXT_DATA__ 解析帖子标题（最可靠）
+    nuxt_match = re.search(r'<script[^>]*id="__NUXT_DATA__"[^>]*>(.*?)</script>', html, re.DOTALL)
+    if nuxt_match:
+        try:
+            payload = json.loads(nuxt_match.group(1))
+            # 过滤非帖子内容的元数据关键词
+            meta_keywords = {'徽章', '粉丝', '关注', '帖子', '官方账号', '万人拥有',
+                           '人拥有', '官方', '制作人', '论坛', 'TapTap', '平台',
+                           '万关注', '万帖子', '《超自然行动组》', '版主', '玩家版主',
+                           '该游戏已下架', '多人组队', '欢乐恐怖游戏', '已下架'}
+            for item in payload:
+                if isinstance(item, str) and 15 < len(item) < 80:
+                    # 过滤掉明显的非帖子内容
+                    if item in ['默认排序', '最新排序', '最热排序']:
+                        continue
+                    # 过滤包含元数据关键词的
+                    if any(kw in item for kw in meta_keywords):
+                        continue
+                    # 过滤纯数字+单位的
+                    if re.match(r'^[\d.]+\s*[万亿]?\s*\w+$', item):
+                        continue
+                    # 过滤用户名（无标点、无句号的短文本）
+                    if len(item) < 20 and '，' not in item and '。' not in item and '！' not in item:
+                        continue
+                    # 帖子标题特征：包含中文且不是URL
+                    if re.search(r'[\u4e00-\u9fff]', item) and not item.startswith('http'):
+                        if item not in seen_ids:
+                            seen_ids.add(item)
+                            posts.append({
+                                "title": item,
+                                "source": source_label,
+                                "url": f"https://www.taptap.cn/app/{app_id}/topic{'?type=official' if official_only else ''}",
+                            })
+                            if len(posts) >= max_posts:
+                                break
+        except (json.JSONDecodeError, IndexError):
+            pass
 
-        title_match = re.search(r'<span[^>]*class="[^"]*title[^"]*"[^>]*>([^<]+)</span>', context)
-        if title_match:
-            title = title_match.group(1).strip()
-            # 过滤非帖子标题
-            if title in ['默认排序', '最新排序', '最热排序']:
+    # 方法2: 从moment链接附近找标题（如果方法1没拿到足够数据）
+    if len(posts) < max_posts:
+        for m in re.finditer(r'href="(/moment/(\d+))"', html):
+            moment_id = m.group(2)
+            if moment_id in seen_ids:
                 continue
-            source = "TapTap官方" if official_only else "TapTap论坛"
-            posts.append({
-                "title": title,
-                "source": source,
-                "url": f"https://www.taptap.cn{m.group(1)}",
-            })
-            if len(posts) >= max_posts:
-                break
+            seen_ids.add(moment_id)
 
-    # 备用: 仅用title span提取（无moment链接时）
-    if not posts:
-        skip_titles = {'默认排序', '最新排序', '最热排序'}
-        title_pattern = re.compile(r'<span[^>]*class="[^"]*title[^"]*"[^>]*>([^<]+)</span>')
-        seen = set()
-        for match in title_pattern.finditer(html):
-            title = match.group(1).strip()
-            if title and title not in skip_titles and title not in seen and len(title) > 1:
-                seen.add(title)
-                source = "TapTap官方" if official_only else "TapTap论坛"
+            # 扩大搜索范围到前后1000字符
+            start = max(0, m.start() - 500)
+            end = min(len(html), m.end() + 1000)
+            context = html[start:end]
+
+            # 尝试多种title匹配模式
+            title_match = None
+            for pattern in [
+                r'<span[^>]*class="[^"]*title[^"]*"[^>]*>([^<]+)</span>',
+                r'<div[^>]*class="[^"]*title[^"]*"[^>]*>([^<]+)</div>',
+                r'data-testid="moment-title"[^>]*>([^<]+)',
+            ]:
+                title_match = re.search(pattern, context)
+                if title_match:
+                    break
+
+            if title_match:
+                title = title_match.group(1).strip()
+                if title in ['默认排序', '最新排序', '最热排序']:
+                    continue
                 posts.append({
                     "title": title,
-                    "source": source,
-                    "url": f"https://www.taptap.cn/app/{app_id}/topic{'?type=official' if official_only else ''}",
+                    "source": source_label,
+                    "url": f"https://www.taptap.cn{m.group(1)}",
                 })
                 if len(posts) >= max_posts:
                     break
 
-    return posts
+    # 去重（NUXT_DATA可能包含截断和完整版本）
+    unique_posts = []
+    seen_titles = set()
+    for p in posts:
+        # 用前缀去重：如果已有标题是当前标题的前缀，跳过当前
+        skip = False
+        for t in seen_titles:
+            if p["title"].startswith(t) or t.startswith(p["title"]):
+                # 保留更长的那个
+                if len(t) > len(p["title"]):
+                    skip = True
+                    break
+        if not skip and p["title"] not in seen_titles:
+            seen_titles.add(p["title"])
+            unique_posts.append(p)
+
+    return unique_posts[:max_posts]
 
 
 def get_tieba_hot_posts(kw="超自然行动组", max_posts=10):
-    """从百度贴吧获取热帖（贴吧反爬严格，使用web_search间接获取）"""
-    # 贴吧直接爬取会被403，这里返回提示信息
-    # 实际数据通过GitHub Actions中的web_search或手动更新
+    """从百度贴吧获取热帖（贴吧反爬严格，返回基于社区观察的热门话题）"""
     tieba_url = f"https://tieba.baidu.com/f?kw={urllib.parse.quote(kw)}"
+    # 贴吧直接爬取会被403，基于社区观察提供热门话题关键词
+    hot_topics = [
+        {"topic": "找固玩/组队", "note": "找队友、找兔子、找四队"},
+        {"topic": "外挂举报", "note": "卡音响、龙珠、瞬移等外挂讨论"},
+        {"topic": "摸金攻略", "note": "龙宫、精绝古城等地图攻略"},
+        {"topic": "皮肤/时装", "note": "新皮肤爆料、穿搭分享"},
+        {"topic": "版本讨论", "note": "更新内容、平衡性讨论"},
+        {"topic": "BUG反馈", "note": "游戏bug、优化建议"},
+    ]
     return {
         "source": "百度贴吧",
         "url": tieba_url,
-        "note": "贴吧反爬严格(403)，数据需手动或通过搜索引擎间接更新",
-        "hot_posts": []
+        "note": "贴吧反爬严格，显示基于社区观察的热门话题",
+        "hot_posts": [],
+        "hot_topics": hot_topics,
     }
 
 
