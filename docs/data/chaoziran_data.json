@@ -52,7 +52,48 @@
       "score_display": 6.8,
       "rating_value": 6.8
     },
-    "official_news": [],
+    "official_news": [
+      {
+        "title": "《超自然行动组》日活跃用户突破一千万啦！",
+        "source": "官网",
+        "url": "https://www.chaoziran.com/news/343"
+      },
+      {
+        "title": "【阿念-寻星记】局内细节展示！",
+        "source": "官网",
+        "url": "https://www.chaoziran.com/news/549"
+      },
+      {
+        "title": "小熊猫荧光棒皮肤爆料~",
+        "source": "官网",
+        "url": "https://www.chaoziran.com/news/548"
+      },
+      {
+        "title": "六一儿童节福利放送！",
+        "source": "官网",
+        "url": "https://www.chaoziran.com/news/547"
+      },
+      {
+        "title": "爆炸弓【心弦所向】皮肤爆料！",
+        "source": "官网",
+        "url": "https://www.chaoziran.com/news/546"
+      },
+      {
+        "title": "版更速递！亲密关系解除新增【冷静期】！",
+        "source": "官网",
+        "url": "https://www.chaoziran.com/news/540"
+      },
+      {
+        "title": "阿念重做登场！",
+        "source": "官网",
+        "url": "https://www.chaoziran.com/news/538"
+      },
+      {
+        "title": "新怪物【鸭子】实机展示，追上了命都给你哦",
+        "source": "官网",
+        "url": "https://www.chaoziran.com/news/535"
+      }
+    ],
     "community": {
       "taptap_forum": [
         {
@@ -117,6 +158,6 @@
       "website": "https://www.tombbusters.net/",
       "note": "数据需手动更新"
     },
-    "crawled_at": "2026-06-01T02:43:04.087008"
+    "crawled_at": "2026-06-01T11:09:39.112559"
   }
 }
