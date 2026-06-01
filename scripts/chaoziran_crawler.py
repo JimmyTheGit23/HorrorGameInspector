@@ -398,16 +398,16 @@ def get_taptap_forum_posts(app_id=714123, max_posts=10, official_only=False):
                 p["link_status"] = "valid"
                 verified.append(p)
             else:
-                # 失效降级：百度搜索该标题
-                search_query = urllib.parse.quote(f"{p['title']} site:taptap.cn")
-                p["url"] = f"https://www.baidu.com/s?wd={search_query}"
+                # 失效降级：TapTap论坛搜索该标题
+                search_query = urllib.parse.quote(p['title'][:30])
+                p["url"] = f"https://www.taptap.cn/search/posts?q={search_query}"
                 p["link_status"] = "fallback"
                 p["original_url"] = moment_url  # 保留原始URL用于调试
                 verified.append(p)
         else:
-            # 没有moment链接（论坛首页URL）→ 也降级为百度搜索该标题
-            search_query = urllib.parse.quote(f"{p['title']} site:taptap.cn")
-            p["url"] = f"https://www.baidu.com/s?wd={search_query}"
+            # 没有moment链接（论坛首页URL）→ 也降级为TapTap搜索该标题
+            search_query = urllib.parse.quote(p['title'][:30])
+            p["url"] = f"https://www.taptap.cn/search/posts?q={search_query}"
             p["link_status"] = "fallback"
             verified.append(p)
 
