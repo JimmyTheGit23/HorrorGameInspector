@@ -22,10 +22,20 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Run data crawler
+      - name: Run Steam data crawler
         run: |
           cd scripts
           python main_crawler.py
+
+      - name: Run Chaoziran data crawler
+        run: |
+          cd scripts
+          python chaoziran_crawler.py
+
+      - name: Validate links
+        run: |
+          cd scripts
+          python validate_links.py
 
       - name: Commit and push data
         run: |

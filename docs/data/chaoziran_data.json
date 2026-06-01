@@ -6,73 +6,119 @@
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/moment/810481057399835050",
         "moment_id": "810481057399835050",
-        "link_status": "valid"
+        "link_status": "valid",
+        "category": "pr",
+        "content_tags": [
+          "公益活动"
+        ],
+        "priority": "low"
       },
       {
         "title": "全新【钓鱼玩法】爆料抢先看，下周四晚更新后上线啦~",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/moment/809786761940043519",
         "moment_id": "809786761940043519",
-        "link_status": "valid"
+        "link_status": "valid",
+        "category": "new_content",
+        "content_tags": [
+          "新玩法",
+          "钓鱼",
+          "新服"
+        ],
+        "priority": "high"
       },
       {
         "title": "「小爱求助#2」疑难BUG悬赏令！帮帮我们QAQ",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/moment/793134290320752775",
         "moment_id": "793134290320752775",
-        "link_status": "valid"
+        "link_status": "valid",
+        "category": "patch",
+        "content_tags": [
+          "BUG修复"
+        ],
+        "priority": "low"
       },
       {
         "title": "【阿念-寻星记】特殊彩蛋爆料，抱起小熊猫时能一键换装？！",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/moment/809043188944734812",
         "moment_id": "809043188944734812",
-        "link_status": "valid"
+        "link_status": "valid",
+        "category": "cosmetic",
+        "content_tags": [
+          "彩蛋"
+        ],
+        "priority": "medium"
       },
       {
         "title": "爆炸弓【心弦所向】皮肤爆料，一箭桃花动，满弓皆春来",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/moment/808402389924056917",
         "moment_id": "808402389924056917",
-        "link_status": "valid"
+        "link_status": "valid",
+        "category": "cosmetic",
+        "content_tags": [
+          "新皮肤"
+        ],
+        "priority": "medium"
       },
       {
         "title": "【阿念-寻星记】局内演示爆料！",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/moment/808782718543334671",
         "moment_id": "808782718543334671",
-        "link_status": "valid"
+        "link_status": "valid",
+        "category": "other",
+        "content_tags": [],
+        "priority": "low"
       },
       {
         "title": "这个六一儿童节我们走进了三所贫困小学。\n以工友们的名义，为孩子们送上一份儿童节礼物！",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/app/714123/topic?type=official",
-        "link_status": "unknown"
+        "link_status": "unknown",
+        "category": "event",
+        "content_tags": [],
+        "priority": "medium"
       },
       {
         "title": "超自然每周趣闻速递！撸猫潮席卷全公司，花弓转场还能这么玩？！",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/app/714123/topic?type=official",
-        "link_status": "unknown"
+        "link_status": "unknown",
+        "category": "patch",
+        "content_tags": [
+          "版本更新"
+        ],
+        "priority": "low"
       },
       {
         "title": "超自然行动组 x 荆州博物馆 限定时装联动预热。",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/app/714123/topic?type=official",
-        "link_status": "unknown"
+        "link_status": "unknown",
+        "category": "cosmetic",
+        "content_tags": [
+          "新时装"
+        ],
+        "priority": "medium"
       },
       {
         "title": "两位员工化身楚文化传承者，6月5日0点，为工友们共演一曲楚韵风华。",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/app/714123/topic?type=official",
-        "link_status": "unknown"
+        "link_status": "unknown",
+        "category": "other",
+        "content_tags": [],
+        "priority": "low"
       }
     ],
     "taptap": {
       "app_id": 714123,
       "source": "taptap_webpage",
-      "fans_count": 11193914,
-      "review_count": 30176,
+      "fans_count": 11194663,
+      "review_count": 30181,
       "score": "6.8",
       "description": "超自然行动组是一款合作游戏，TapTap 提供超自然行动组最新版官方正版下载，一个人玩是恐怖游戏，两个人玩是冒险游戏，三个人玩是寻宝游戏，...",
       "score_display": 6.8,
@@ -82,59 +128,103 @@
       {
         "title": "《超自然行动组》日活跃用户突破一千万啦！",
         "source": "官网",
-        "url": "https://www.chaoziran.com/news/343"
+        "url": "https://www.chaoziran.com/news/343",
+        "category": "other",
+        "content_tags": [],
+        "priority": "low",
+        "link_status": "valid"
       },
       {
         "title": "【阿念-寻星记】局内细节展示！",
         "source": "官网",
-        "url": "https://www.chaoziran.com/news/549"
+        "url": "https://www.chaoziran.com/news/549",
+        "category": "cosmetic",
+        "content_tags": [],
+        "priority": "medium",
+        "link_status": "valid"
       },
       {
         "title": "小熊猫荧光棒皮肤爆料~",
         "source": "官网",
-        "url": "https://www.chaoziran.com/news/548"
+        "url": "https://www.chaoziran.com/news/548",
+        "category": "cosmetic",
+        "content_tags": [
+          "新皮肤"
+        ],
+        "priority": "medium",
+        "link_status": "valid"
       },
       {
         "title": "六一儿童节福利放送！",
         "source": "官网",
-        "url": "https://www.chaoziran.com/news/547"
+        "url": "https://www.chaoziran.com/news/547",
+        "category": "event",
+        "content_tags": [
+          "福利活动"
+        ],
+        "priority": "medium",
+        "link_status": "valid"
       },
       {
         "title": "爆炸弓【心弦所向】皮肤爆料！",
         "source": "官网",
-        "url": "https://www.chaoziran.com/news/546"
+        "url": "https://www.chaoziran.com/news/546",
+        "category": "cosmetic",
+        "content_tags": [
+          "新皮肤"
+        ],
+        "priority": "medium",
+        "link_status": "valid"
       },
       {
         "title": "版更速递！亲密关系解除新增【冷静期】！",
         "source": "官网",
-        "url": "https://www.chaoziran.com/news/540"
+        "url": "https://www.chaoziran.com/news/540",
+        "category": "patch",
+        "content_tags": [
+          "版本更新"
+        ],
+        "priority": "low",
+        "link_status": "valid"
       },
       {
         "title": "阿念重做登场！",
         "source": "官网",
-        "url": "https://www.chaoziran.com/news/538"
+        "url": "https://www.chaoziran.com/news/538",
+        "category": "new_content",
+        "content_tags": [
+          "角色重做"
+        ],
+        "priority": "high",
+        "link_status": "valid"
       },
       {
         "title": "新怪物【鸭子】实机展示，追上了命都给你哦",
         "source": "官网",
-        "url": "https://www.chaoziran.com/news/535"
+        "url": "https://www.chaoziran.com/news/535",
+        "category": "new_content",
+        "content_tags": [
+          "新怪物"
+        ],
+        "priority": "high",
+        "link_status": "valid"
       }
     ],
     "community": {
       "taptap_forum": [
         {
-          "title": "超自然新玩法爆料！钓鱼佬永不空军",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/810481838152745900",
-          "moment_id": "810481838152745900",
-          "link_status": "valid",
-          "sentiment": "neutral"
-        },
-        {
           "title": "全新【钓鱼玩法】爆料抢先看，下周四晚更新后上线啦~",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/moment/809786761940043519",
           "moment_id": "809786761940043519",
+          "link_status": "valid",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "超自然新玩法爆料！钓鱼佬永不空军",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/moment/810481838152745900",
+          "moment_id": "810481838152745900",
           "link_status": "valid",
           "sentiment": "neutral"
         },
@@ -181,18 +271,18 @@
           "sentiment": "neutral"
         },
         {
-          "title": "游戏圈记者上线，带#今天游戏圈发生了啥 话题分享游戏新鲜事，万元奖池等你瓜分！详情可加入资讯记者2群：1103610961",
+          "title": "我可以氪条2000+，话可多可少名字:狐笙奈",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral"
         },
         {
-          "title": "救命！这恐怖游戏笑到我头掉，摸金节福利",
+          "title": "#滴兔子 找独身兔，要会电人、卡音响和鞭子音响，氪不氪无所谓不卡皮肤、性别、段位、年龄，摸金大小金全...",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
-          "sentiment": "neutral"
+          "sentiment": "negative"
         }
       ],
       "tieba": {
@@ -270,6 +360,34 @@
       "website": "https://www.tombbusters.net/",
       "note": "数据需手动更新"
     },
-    "crawled_at": "2026-06-01T16:02:12.257507"
+    "new_content_tracker": [
+      {
+        "id": "新玩法",
+        "name": "新玩法",
+        "status": "live",
+        "first_seen": "2026-06-01",
+        "launch_date": null,
+        "tags": [
+          "新玩法",
+          "钓鱼",
+          "新服"
+        ],
+        "announcements": [
+          {
+            "title": "全新【钓鱼玩法】爆料抢先看，下周四晚更新后上线啦~",
+            "date": "2026-06-01",
+            "source": "TapTap官方",
+            "url": "https://www.taptap.cn/moment/809786761940043519",
+            "link_status": "valid"
+          }
+        ],
+        "player_reactions": {
+          "positive": 0,
+          "neutral": 0,
+          "negative": 0
+        }
+      }
+    ],
+    "crawled_at": "2026-06-01T17:23:57.026174"
   }
 }

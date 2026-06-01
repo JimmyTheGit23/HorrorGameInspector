@@ -485,6 +485,183 @@ def get_tomb_busters_info():
     }
 
 
+def classify_announcement(title):
+    """
+    根据标题关键词对公告进行分类。
+    返回 (category, content_tags, priority)
+    - category: new_content | event | pr | cosmetic | patch | other
+    - content_tags: 具体内容标签列表（如 ["新玩法","钓鱼"]）
+    - priority: high | medium | low
+    """
+    # 分类关键词规则（按优先级从高到低匹配）
+    rules = [
+        # cosmetic: 皮肤/外观（优先于new_content，因为"皮肤爆料"不是新玩法）
+        {
+            "category": "cosmetic",
+            "keywords": ["皮肤", "时装", "外观", "换装",
+                        "荧光棒", "心弦所向"],
+            "tag_rules": [
+                (["皮肤"], ["新皮肤"]),
+                (["时装"], ["新时装"]),
+                (["换装"], ["彩蛋"]),
+            ],
+            "priority": "medium",
+        },
+        # new_content: 新玩法/新内容
+        {
+            "category": "new_content",
+            "keywords": ["新玩法", "新地图", "新怪物", "新角色", "新职业", "新模式",
+                        "重做", "实机展示", "实机", "登场", "全新",
+                        "新副本", "新关卡", "新BOSS", "新boss"],
+            "tag_rules": [
+                (["新玩法", "玩法"], ["新玩法"]),
+                (["新地图", "地图", "精绝古城", "龙宫"], ["新地图"]),
+                (["新怪物", "怪物", "鸭子"], ["新怪物"]),
+                (["重做", "阿念"], ["角色重做"]),
+                (["钓鱼"], ["新玩法", "钓鱼"]),
+                (["鬼吹灯"], ["IP联动"]),
+                (["国际服", "上线"], ["新服"]),
+            ],
+            "priority": "high",
+        },
+        # event: 限时活动
+        {
+            "category": "event",
+            "keywords": ["活动", "福利", "限时", "兑换码", "节日", "摸金节",
+                        "儿童节", "周年庆", "春节", "双十一", "六一",
+                        "免费", "赠送", "签到", "奖池"],
+            "tag_rules": [
+                (["福利", "免费", "赠送", "兑换码"], ["福利活动"]),
+                (["限时"], ["限时活动"]),
+                (["摸金节"], ["限时活动", "摸金节"]),
+            ],
+            "priority": "medium",
+        },
+        # pr: PR/品牌
+        {
+            "category": "pr",
+            "keywords": ["联动", "公益", "博物馆", "合作", "授权", "品牌",
+                        "正版", "官方授权", "爱心", "慈善", "跨界",
+                        "博物馆", "荆州"],
+            "tag_rules": [
+                (["联动", "博物馆", "荆州"], ["品牌联动"]),
+                (["公益", "爱心", "慈善", "贫困"], ["公益活动"]),
+                (["授权", "正版", "鬼吹灯"], ["IP授权"]),
+            ],
+            "priority": "low",
+        },
+        # patch: 版本/修复
+        {
+            "category": "patch",
+            "keywords": ["版更", "优化", "修复", "BUG", "bug", "Bug",
+                        "悬赏", "速递", "更新后", "解除", "冷静期",
+                        "求助"],
+            "tag_rules": [
+                (["版更", "更新", "速递"], ["版本更新"]),
+                (["修复", "BUG", "bug", "优化"], ["BUG修复"]),
+            ],
+            "priority": "low",
+        },
+    ]
+
+    for rule in rules:
+        if any(kw in title for kw in rule["keywords"]):
+            # 提取content_tags
+            tags = []
+            for triggers, tag_list in rule.get("tag_rules", []):
+                if any(t in title for t in triggers):
+                    tags.extend(tag_list)
+            # 去重保序
+            seen = set()
+            unique_tags = []
+            for t in tags:
+                if t not in seen:
+                    seen.add(t)
+                    unique_tags.append(t)
+            return rule["category"], unique_tags, rule["priority"]
+
+    return "other", [], "low"
+
+
+def build_content_tracker(announcements, official_news):
+    """
+    从公告和官网新闻中提取新玩法/新内容追踪项。
+    返回 new_content_tracker 列表。
+    """
+    tracker = []
+    seen_ids = set()
+
+    # 合并所有来源
+    all_items = []
+    for a in announcements:
+        all_items.append({**a, "_source_type": "announcement"})
+    for n in official_news:
+        all_items.append({**n, "_source_type": "official_news"})
+
+    # 筛选 new_content 类
+    for item in all_items:
+        title = item.get("title", "")
+        category, tags, priority = classify_announcement(title)
+        if category != "new_content":
+            continue
+
+        # 生成追踪ID（基于主要标签）
+        if not tags:
+            continue
+        tracker_id = tags[0].lower().replace(" ", "_")
+
+        # 查找是否已有同ID追踪项
+        existing = None
+        for t in tracker:
+            if t["id"] == tracker_id:
+                existing = t
+                break
+
+        # 如果没有，根据标签生成新的
+        if not existing:
+            # 推断状态
+            status = "announced"
+            if any(kw in title for kw in ["上线", "更新后上线", "已上线"]):
+                status = "live"
+            elif any(kw in title for kw in ["预热", "预告", "即将"]):
+                status = "teased"
+            elif any(kw in title for kw in ["实机", "演示", "展示"]):
+                status = "teased"
+
+            # 提取名称（取第一个tag）
+            name = tags[0] if tags else title[:10]
+
+            existing = {
+                "id": tracker_id,
+                "name": name,
+                "status": status,
+                "first_seen": datetime.now().strftime("%Y-%m-%d"),
+                "launch_date": None,
+                "tags": tags,
+                "announcements": [],
+                "player_reactions": {"positive": 0, "neutral": 0, "negative": 0},
+            }
+            tracker.append(existing)
+
+        # 添加关联公告
+        ann_entry = {
+            "title": title,
+            "date": datetime.now().strftime("%Y-%m-%d"),
+            "source": item.get("source", ""),
+            "url": item.get("url", ""),
+        }
+        existing["announcements"].append(ann_entry)
+
+        # 更新状态（如果新公告暗示更晚阶段）
+        if any(kw in title for kw in ["上线", "更新后上线"]):
+            existing["status"] = "live"
+        elif any(kw in title for kw in ["实机", "演示", "展示", "爆料抢先看"]):
+            if existing["status"] not in ("live",):
+                existing["status"] = "teased"
+
+    return tracker
+
+
 def filter_bwiki_updates(updates):
     """过滤BWIKI中的导航标题等脏数据"""
     skip_titles = {'游戏内公告', 'WIKI站公告', 'BWIKI', ''}
@@ -548,6 +725,30 @@ def crawl_chaoziran():
     elif bwiki_updates:
         print(f"  [SOURCE] 使用BWIKI更新公告({len(bwiki_updates)}条)")
 
+    # ===== 公告分类打标签 =====
+    print("[超自然行动组] 对公告进行分类打标签...")
+    for item in update_announcements:
+        cat, tags, prio = classify_announcement(item.get("title", ""))
+        item["category"] = cat
+        item["content_tags"] = tags
+        item["priority"] = prio
+    for item in official_news:
+        cat, tags, prio = classify_announcement(item.get("title", ""))
+        item["category"] = cat
+        item["content_tags"] = tags
+        item["priority"] = prio
+
+    cat_counts = {}
+    for item in update_announcements + official_news:
+        c = item.get("category", "other")
+        cat_counts[c] = cat_counts.get(c, 0) + 1
+    print(f"  分类统计: {cat_counts}")
+
+    # ===== 新玩法专题追踪 =====
+    print("[超自然行动组] 构建新玩法追踪...")
+    content_tracker = build_content_tracker(update_announcements, official_news)
+    print(f"  追踪到 {len(content_tracker)} 个新玩法/新内容项目")
+
     result = {
         "chaoziran": {
             "bwiki_updates": update_announcements,
@@ -558,6 +759,7 @@ def crawl_chaoziran():
                 "tieba": tieba_data,
             },
             "tomb_busters": get_tomb_busters_info(),
+            "new_content_tracker": content_tracker,
             "crawled_at": datetime.now().isoformat(),
         }
     }
@@ -578,6 +780,13 @@ if __name__ == "__main__":
             if old_news and not data.get("chaoziran", {}).get("official_news"):
                 data["chaoziran"]["official_news"] = old_news
                 print(f"  [MERGE] 保留旧数据中的 {len(old_news)} 条官网新闻")
+                # 对合并的旧官网新闻也打分类标签
+                for item in old_news:
+                    if "category" not in item:
+                        cat, tags, prio = classify_announcement(item.get("title", ""))
+                        item["category"] = cat
+                        item["content_tags"] = tags
+                        item["priority"] = prio
     except Exception as e:
         print(f"  [WARN] 合并旧数据失败: {e}")
 
