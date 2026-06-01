@@ -212,9 +212,11 @@ def get_official_news():
     return news_items
 
 
-def get_taptap_forum_posts(app_id=714123, max_posts=10):
+def get_taptap_forum_posts(app_id=714123, max_posts=10, official_only=False):
     """从TapTap论坛获取帖子列表（解析HTML中的moment链接+标题span）"""
     url = f"https://www.taptap.cn/app/{app_id}/topic"
+    if official_only:
+        url += "?type=official"
     html = fetch_html(url)
     if not html:
         return []
@@ -239,9 +241,10 @@ def get_taptap_forum_posts(app_id=714123, max_posts=10):
             # 过滤非帖子标题
             if title in ['默认排序', '最新排序', '最热排序']:
                 continue
+            source = "TapTap官方" if official_only else "TapTap论坛"
             posts.append({
                 "title": title,
-                "source": "TapTap论坛",
+                "source": source,
                 "url": f"https://www.taptap.cn{m.group(1)}",
             })
             if len(posts) >= max_posts:
@@ -256,10 +259,11 @@ def get_taptap_forum_posts(app_id=714123, max_posts=10):
             title = match.group(1).strip()
             if title and title not in skip_titles and title not in seen and len(title) > 1:
                 seen.add(title)
+                source = "TapTap官方" if official_only else "TapTap论坛"
                 posts.append({
                     "title": title,
-                    "source": "TapTap论坛",
-                    "url": f"https://www.taptap.cn/app/{app_id}/topic",
+                    "source": source,
+                    "url": f"https://www.taptap.cn/app/{app_id}/topic{'?type=official' if official_only else ''}",
                 })
                 if len(posts) >= max_posts:
                     break
@@ -309,11 +313,32 @@ def get_tomb_busters_info():
     }
 
 
+def filter_bwiki_updates(updates):
+    """过滤BWIKI中的导航标题等脏数据"""
+    skip_titles = {'游戏内公告', 'WIKI站公告', 'BWIKI', ''}
+    filtered = []
+    seen = set()
+    for u in updates:
+        title = u.get('title', '').strip()
+        if title in skip_titles or title in seen:
+            continue
+        seen.add(title)
+        filtered.append(u)
+    return filtered
+
+
 def crawl_chaoziran():
     """主爬虫：采集超自然行动组全部数据"""
     print("[超自然行动组] 采集BWIKI更新公告...")
     bwiki_updates = get_bwiki_updates()
-    print(f"  获取到 {len(bwiki_updates)} 条更新公告")
+    bwiki_updates = filter_bwiki_updates(bwiki_updates)
+    print(f"  获取到 {len(bwiki_updates)} 条BWIKI更新公告（已过滤脏数据）")
+
+    time.sleep(2)
+
+    print("[超自然行动组] 采集TapTap官方论坛公告...")
+    taptap_official = get_taptap_forum_posts(official_only=True, max_posts=10)
+    print(f"  获取到 {len(taptap_official)} 条TapTap官方公告")
 
     time.sleep(2)
 
@@ -344,9 +369,16 @@ def crawl_chaoziran():
     for post in taptap_forum:
         post["sentiment"] = simple_sentiment(post["title"])
 
+    # 优先使用TapTap官方论坛公告作为更新公告数据源
+    update_announcements = taptap_official if taptap_official else bwiki_updates
+    if taptap_official:
+        print(f"  [SOURCE] 使用TapTap官方论坛公告({len(taptap_official)}条)")
+    elif bwiki_updates:
+        print(f"  [SOURCE] 使用BWIKI更新公告({len(bwiki_updates)}条)")
+
     result = {
         "chaoziran": {
-            "bwiki_updates": bwiki_updates,
+            "bwiki_updates": update_announcements,
             "taptap": taptap_data,
             "official_news": official_news,
             "community": {

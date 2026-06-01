@@ -8,7 +8,7 @@
     },
     {
       "date": "2026-06-01",
-      "ccu": 42692,
+      "ccu": 41696,
       "positive_rate": 92.9,
       "total_reviews": 14450
     }
@@ -22,7 +22,7 @@
     },
     {
       "date": "2026-06-01",
-      "ccu": 6096,
+      "ccu": 5736,
       "positive_rate": 93.0,
       "total_reviews": 17591
     }
@@ -36,7 +36,7 @@
     },
     {
       "date": "2026-06-01",
-      "ccu": 11497,
+      "ccu": 11313,
       "positive_rate": 90.7,
       "total_reviews": 26701
     }
@@ -50,7 +50,7 @@
     },
     {
       "date": "2026-06-01",
-      "ccu": 1484,
+      "ccu": 1371,
       "positive_rate": 89.9,
       "total_reviews": 6820
     }
@@ -72,7 +72,7 @@
   "NARAKA: BLADEPOINT": [
     {
       "date": "2026-06-01",
-      "ccu": 12518,
+      "ccu": 12987,
       "positive_rate": 72.0,
       "total_reviews": 250340
     }

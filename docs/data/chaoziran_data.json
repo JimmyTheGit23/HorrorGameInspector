@@ -2,50 +2,45 @@
   "chaoziran": {
     "bwiki_updates": [
       {
-        "title": "游戏内公告",
-        "source": "BWIKI"
+        "title": "全新【钓鱼玩法】爆料抢先看，下周四晚更新后上线啦~",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/moment/809786761940043519"
       },
       {
-        "title": "WIKI站公告",
-        "source": "BWIKI"
+        "title": "「小爱求助#2」疑难BUG悬赏令！帮帮我们QAQ",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/moment/793134290320752775"
       },
       {
-        "title": "游戏内公告",
-        "source": "BWIKI"
+        "title": "【阿念-寻星记】特殊彩蛋爆料，抱起小熊猫时能一键换装？！",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/moment/809043188944734812"
       },
       {
-        "title": "WIKI站公告",
-        "source": "BWIKI"
+        "title": "爆炸弓【心弦所向】皮肤爆料，一箭桃花动，满弓皆春来",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/moment/808402389924056917"
       },
       {
-        "title": "2026年2月26日更新公告",
-        "source": "BWIKI"
+        "title": "版更速递！",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/moment/809105725279176655"
       },
       {
-        "title": "2026年2月13日更新公告",
-        "source": "BWIKI"
+        "title": "【阿念-寻星记】局内演示爆料！",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/moment/808782718543334671"
       },
       {
-        "title": "2026年2月10日更新公告",
-        "source": "BWIKI"
-      },
-      {
-        "title": "2026年2月7日更新公告",
-        "source": "BWIKI"
-      },
-      {
-        "title": "2026年2月5日更新公告",
-        "source": "BWIKI"
-      },
-      {
-        "title": "2026年1月29日更新公告",
-        "source": "BWIKI"
+        "title": "【版本爆料】全新PVPVE模式来辣！",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/moment/607008778696526578"
       }
     ],
     "taptap": {
       "app_id": 714123,
       "source": "taptap_webpage",
-      "fans_count": 11191337,
+      "fans_count": 11191406,
       "review_count": 30198,
       "score": "6.8",
       "description": "超自然行动组是一款合作游戏，TapTap 提供超自然行动组最新版官方正版下载，一个人玩是恐怖游戏，两个人玩是冒险游戏，三个人玩是寻宝游戏，...",
@@ -107,12 +102,6 @@
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/moment/810347074439610440",
           "sentiment": "neutral"
-        },
-        {
-          "title": "dd四队固玩/靠山",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/809721558456075981",
-          "sentiment": "neutral"
         }
       ],
       "tieba": {
@@ -140,6 +129,6 @@
       "website": "https://www.tombbusters.net/",
       "note": "数据需手动更新"
     },
-    "crawled_at": "2026-06-01T11:14:01.008270"
+    "crawled_at": "2026-06-01T11:23:22.303111"
   }
 }
