@@ -882,31 +882,19 @@
                 }
             }
 
-            // 更新公告
+            // 更新公告 — 只显示有准确链接的帖子（link_status === 'valid'）
             const updatesEl = document.getElementById('czr-updates');
             let updatesItems = [];
             if (czr.bwiki_updates && czr.bwiki_updates.length > 0) {
-                updatesItems = czr.bwiki_updates;
-            } else if (czr.official_news && czr.official_news.length > 0) {
-                updatesItems = czr.official_news.filter(n => /版更|更新|重做|新怪物|联动|公告|上线|赛季|优化|削弱/.test(n.title));
-                if (updatesItems.length === 0) updatesItems = czr.official_news.slice(0, 3);
+                updatesItems = czr.bwiki_updates.filter(u => u.link_status === 'valid');
             }
             if (updatesItems.length > 0) {
-                updatesEl.innerHTML = updatesItems.map(u => {
-                    const status = u.link_status;
-                    const isFallback = status === 'fallback';
-                    const icon = status === 'valid' ? '<span class="inline-block w-1.5 h-1.5 rounded-full bg-green-500 mr-1.5 align-middle"></span>' :
-                                 isFallback ? '<span class="text-gray-500 mr-1" title="原帖可能已删除，通过搜索查找">🔍</span>' : '';
-                    const linkClass = isFallback
-                        ? 'text-gray-400 hover:text-gray-300 hover:underline text-sm'
-                        : 'text-gray-300 hover:text-accent-light hover:underline text-sm';
-                    return `
+                updatesEl.innerHTML = updatesItems.map(u => `
                     <div class="py-1 border-b border-gray-800 last:border-0">
-                        ${u.url ? `<a href="${u.url}" target="_blank" class="${linkClass}">${icon}${u.title}</a>` : `<span class="text-gray-300 text-sm">${u.title}</span>`}
+                        <a href="${u.url}" target="_blank" class="text-gray-300 hover:text-accent-light hover:underline text-sm">${u.title}</a>
                         <span class="text-xs text-gray-600 ml-2">${u.source}</span>
                     </div>
-                    `;
-                }).join('');
+                `).join('');
             } else {
                 updatesEl.innerHTML = '<div class="text-gray-500">暂无更新公告数据</div>';
             }

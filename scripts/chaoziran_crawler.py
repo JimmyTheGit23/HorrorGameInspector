@@ -276,8 +276,8 @@ def get_taptap_forum_posts(app_id=714123, max_posts=10, official_only=False):
     seen_ids = set()
     source_label = "TapTap官方" if official_only else "TapTap论坛"
 
-    # ===== 方法1: 从 moment 链接 + 附近文本提取（有准确URL）=====
-    # 先收集所有 moment 链接位置
+    # ===== 方法1: 从 moment 链接 + 附近文本提取（边验证边收集）=====
+    # 只保留链接有效的帖子，失效的直接跳过，继续找别的帖子
     moment_matches = list(re.finditer(r'href="(/moment/(\d+))"', html))
 
     for m in moment_matches:
@@ -287,13 +287,17 @@ def get_taptap_forum_posts(app_id=714123, max_posts=10, official_only=False):
 
         moment_url = f"https://www.taptap.cn{m.group(1)}"
 
-        # 在moment链接附近搜索标题（扩大范围到前后600字符）
+        # 先验证链接有效性
+        is_valid, _ = validate_url(moment_url, app_id=str(app_id))
+        if not is_valid:
+            continue  # 失效的跳过，继续找别的帖子
+
+        # 在moment链接附近搜索标题
         start = max(0, m.start() - 100)
         end = min(len(html), m.end() + 600)
         context = html[start:end]
 
         title = None
-        # 尝试多种标题匹配模式（按优先级）
         for pattern in [
             r'<span[^>]*class="[^"]*title[^"]*"[^>]*>([^<]+)</span>',
             r'<div[^>]*class="[^"]*title[^"]*"[^>]*>([^<]+)</div>',
@@ -316,11 +320,12 @@ def get_taptap_forum_posts(app_id=714123, max_posts=10, official_only=False):
             "source": source_label,
             "url": moment_url,
             "moment_id": moment_id,
+            "link_status": "valid",
         })
-        if len(posts) >= max_posts * 3:
+        if len(posts) >= max_posts:
             break
 
-    # ===== 方法2: 从 __NUXT_DATA__ 补充标题（仅用于找额外标题，URL用搜索页）=====
+    # ===== 方法2: 从 __NUXT_DATA__ 补充标题（仅用于找额外标题，也过滤验证）=====
     if len(posts) < max_posts:
         nuxt_match = re.search(r'<script[^>]*id="__NUXT_DATA__"[^>]*>(.*?)</script>', html, re.DOTALL)
         if nuxt_match:
@@ -353,12 +358,11 @@ def get_taptap_forum_posts(app_id=714123, max_posts=10, official_only=False):
             except (json.JSONDecodeError, IndexError):
                 pass
 
-    # ===== 过滤非官方帖子 =====
+    # ===== 过滤非官方帖子 + 去重 =====
     player_keywords = ['圈钱', '不修', '不管', '退坑', '垃圾', '找固玩', '找队友',
                       '组队', '本人女', '本人男', '氪条', '骗氪', '必须圈', 'bug是不修的',
                       '挂是不管的', '福利是不给的', '钱是必须', '该夸夸该骂骂',
                       '对得起他们', '对不起我们', '让人失望', '洗白', '额……']
-    # 官方内容特征（用于辅助判断）
     official_markers = ['爆料', '联动', '时装', '皮肤', '玩法', '优化', '修复',
                        '活动', '福利', '版本', '预告', '预热', '展示', '实机',
                        '登场', '攻略', '速递', '趣闻', '求助', '公告', '更新']
@@ -371,7 +375,7 @@ def get_taptap_forum_posts(app_id=714123, max_posts=10, official_only=False):
         is_player = any(kw in title for kw in player_keywords)
         if official_only and is_player:
             continue
-        # 额外过滤：official_only模式下，无官方关键词且含负面情绪的也排除
+        # official_only模式下，无官方关键词且含负面情绪的也排除
         if official_only:
             has_official_marker = any(m in title for m in official_markers)
             negative_words = ['但是', '不能', '对不起', '失望', '骂']
@@ -386,32 +390,12 @@ def get_taptap_forum_posts(app_id=714123, max_posts=10, official_only=False):
                 break
         if not dup and title not in seen_titles:
             seen_titles.add(title)
+            # 给已有link_status的保留，没有的标记为unknown（NUXT_DATA来源无moment链接）
+            if "link_status" not in p:
+                p["link_status"] = "unknown"
             filtered.append(p)
 
-    # ===== 链接有效性验证 + 失效降级 =====
-    verified = []
-    for p in filtered[:max_posts]:
-        moment_url = p.get("url", "")
-        if "/moment/" in moment_url:
-            is_valid, _ = validate_url(moment_url, app_id=str(app_id))
-            if is_valid:
-                p["link_status"] = "valid"
-                verified.append(p)
-            else:
-                # 失效降级：TapTap论坛搜索该标题
-                search_query = urllib.parse.quote(p['title'][:30])
-                p["url"] = f"https://www.taptap.cn/search/posts?q={search_query}"
-                p["link_status"] = "fallback"
-                p["original_url"] = moment_url  # 保留原始URL用于调试
-                verified.append(p)
-        else:
-            # 没有moment链接（论坛首页URL）→ 也降级为TapTap搜索该标题
-            search_query = urllib.parse.quote(p['title'][:30])
-            p["url"] = f"https://www.taptap.cn/search/posts?q={search_query}"
-            p["link_status"] = "fallback"
-            verified.append(p)
-
-    return verified
+    return filtered[:max_posts]
 
 
 def get_tieba_hot_posts(kw="超自然行动组", max_posts=8):
