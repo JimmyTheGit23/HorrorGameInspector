@@ -88,15 +88,13 @@
         "priority": "medium"
       },
       {
-        "title": "我看官方每次公告都是出皮肤，这么圈你们超自然玩家这么有钱吗？",
+        "title": "隔壁同类型新游戏7月就出来了，超自然你就这么搞吧，我已经准备好跑路转线了",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/app/714123/topic?type=official",
         "link_status": "unknown",
-        "category": "cosmetic",
-        "content_tags": [
-          "新皮肤"
-        ],
-        "priority": "medium"
+        "category": "other",
+        "content_tags": [],
+        "priority": "low"
       },
       {
         "title": "这个六一儿童节我们走进了三所贫困小学。\n以工友们的名义，为孩子们送上一份儿童节礼物！",
@@ -120,8 +118,8 @@
     "taptap": {
       "app_id": 714123,
       "source": "taptap_webpage",
-      "fans_count": 11198937,
-      "review_count": 30147,
+      "fans_count": 11199147,
+      "review_count": 30148,
       "score": "6.8",
       "description": "超自然行动组是一款合作游戏，TapTap 提供超自然行动组最新版官方正版下载，一个人玩是恐怖游戏，两个人玩是冒险游戏，三个人玩是寻宝游戏，...",
       "score_display": 6.8,
@@ -232,6 +230,14 @@
           "sentiment": "neutral"
         },
         {
+          "title": "【怪物投稿】蚀影驿卒",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/moment/809836013886114827",
+          "moment_id": "809836013886114827",
+          "link_status": "valid",
+          "sentiment": "neutral"
+        },
+        {
           "title": "盗墓探险题材原创头部IP《鬼吹灯》官方正版授权合作，海量全新内容，我们七月见！",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
@@ -239,7 +245,7 @@
           "sentiment": "neutral"
         },
         {
-          "title": "我看官方每次公告都是出皮肤，这么圈你们超自然玩家这么有钱吗？",
+          "title": "隔壁同类型新游戏7月就出来了，超自然你就这么搞吧，我已经准备好跑路转线了",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
@@ -279,13 +285,6 @@
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral"
-        },
-        {
-          "title": "卡长期主动 氪条1k往上 不忘本 会卡二次音响 四队飞天半青手感好能清图 龙宫会背一点图只要你不忘本不蠢要求你都能提 熟了送魔盒",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "negative"
         }
       ],
       "tieba": {
@@ -391,6 +390,6 @@
         }
       }
     ],
-    "crawled_at": "2026-06-02T09:07:22.980039"
+    "crawled_at": "2026-06-02T02:41:44.473317"
   }
 }
