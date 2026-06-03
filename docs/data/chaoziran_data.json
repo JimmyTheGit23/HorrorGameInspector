@@ -121,7 +121,7 @@
     "taptap": {
       "app_id": 714123,
       "source": "taptap_webpage",
-      "fans_count": 11204599,
+      "fans_count": 11204610,
       "review_count": 30089,
       "score": "6.8",
       "description": "超自然行动组是一款合作游戏，TapTap 提供超自然行动组最新版官方正版下载，一个人玩是恐怖游戏，两个人玩是冒险游戏，三个人玩是寻宝游戏，...",
@@ -217,50 +217,26 @@
     "community": {
       "taptap_forum": [
         {
-          "title": "w氪找萌新兔子，包魔盒日保200w",
+          "title": "虽然我在网上是个喷子，但这件事我必须夸",
           "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/811179541392264768",
-          "moment_id": "811179541392264768",
+          "url": "https://www.taptap.cn/moment/809478348299305568",
+          "moment_id": "809478348299305568",
           "link_status": "valid",
           "sentiment": "neutral"
         },
         {
-          "title": "月【云台鹗】与兰【扈江离】联动时装模型展示",
+          "title": "哦不不不，不应该是这样的",
           "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/810593692699067915",
-          "moment_id": "810593692699067915",
+          "url": "https://www.taptap.cn/moment/811023423189812177",
+          "moment_id": "811023423189812177",
           "link_status": "valid",
           "sentiment": "neutral"
         },
         {
-          "title": "【月-云台鹗】时装设计细节展示",
+          "title": "木偶是不是给喂太胖，直接给我撞下去了",
           "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/810966373529291845",
-          "moment_id": "810966373529291845",
-          "link_status": "valid",
-          "sentiment": "neutral"
-        },
-        {
-          "title": "超自然行动组收徒 找cp 找背包",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/811180951060090654",
-          "moment_id": "811180951060090654",
-          "link_status": "valid",
-          "sentiment": "neutral"
-        },
-        {
-          "title": "楚文化联动限定回收物【人骑骆驼灯】与【楚辞天书】爆料",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/810937278263199673",
-          "moment_id": "810937278263199673",
-          "link_status": "valid",
-          "sentiment": "neutral"
-        },
-        {
-          "title": "全新【钓鱼玩法】爆料抢先看，下周四晚更新后上线啦~",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/809786761940043519",
-          "moment_id": "809786761940043519",
+          "url": "https://www.taptap.cn/moment/809887983535653267",
+          "moment_id": "809887983535653267",
           "link_status": "valid",
           "sentiment": "neutral"
         },
@@ -272,25 +248,39 @@
           "sentiment": "neutral"
         },
         {
-          "title": "我是靠山，只要萌新莉莉。日保两百万包魔盒，时间长可以送金，后续包你所有魔盒。 稳定送p2 \n莉莉要求...",
+          "title": "可以带我一起摸金的就行，其他不卡",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "negative"
+        },
+        {
+          "title": "想找一个靠山自己一个人打太累了，求૮ ᴗ͈ˬᴗ͈ෆა",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral"
         },
         {
-          "title": "#角色投稿 第一张是AI辅助后的样子\n第二张是初稿，角色名：西尔\n背景故事：从小对医学和调制出药剂有...",
+          "title": "我一般晚上10点多上线，玩的话加我",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral"
         },
         {
-          "title": "你这个角色我感觉还不如我的6个符。还有这个角色上限太低，操作缺陷很大。",
+          "title": "16女生 慢热 人机 脾气温和 除非你先惹我 氪条4100+ 熟了话很多 住宿 玩原创 爱看番日漫韩...",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral"
+        },
+        {
+          "title": "【不忘本+不卡男女+会卡音箱龙珠+不乱跑】",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "negative"
         }
       ],
       "tieba": {
@@ -375,7 +365,7 @@
       "prev_close": 25.63,
       "change_pct": 0.51,
       "change_amt": 0.13,
-      "updated": "2026-06-03 11:55"
+      "updated": "2026-06-03 11:58"
     },
     "new_content_tracker": [
       {
@@ -404,6 +394,6 @@
         }
       }
     ],
-    "crawled_at": "2026-06-03T11:55:30.386259"
+    "crawled_at": "2026-06-03T11:58:13.866046"
   }
 }
