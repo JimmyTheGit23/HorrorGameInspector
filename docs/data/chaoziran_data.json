@@ -2,16 +2,28 @@
   "chaoziran": {
     "bwiki_updates": [
       {
-        "title": "月【云台鹗】与兰【扈江离】联动时装模型展示",
+        "title": "【月-云台鹗】时装设计细节展示",
         "source": "TapTap官方",
-        "url": "https://www.taptap.cn/moment/810593692699067915",
-        "moment_id": "810593692699067915",
+        "url": "https://www.taptap.cn/moment/810966373529291845",
+        "moment_id": "810966373529291845",
         "link_status": "valid",
         "category": "cosmetic",
         "content_tags": [
           "新时装"
         ],
         "priority": "medium"
+      },
+      {
+        "title": "楚文化联动限定回收物【人骑骆驼灯】与【楚辞天书】爆料",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/moment/810937278263199673",
+        "moment_id": "810937278263199673",
+        "link_status": "valid",
+        "category": "pr",
+        "content_tags": [
+          "品牌联动"
+        ],
+        "priority": "low"
       },
       {
         "title": "超自然爱心公益项目第二弹",
@@ -26,14 +38,14 @@
         "priority": "low"
       },
       {
-        "title": "【更名福利】舞蹈降价啦！还免费赠送永久新舞蹈！",
+        "title": "月【云台鹗】与兰【扈江离】联动时装模型展示",
         "source": "TapTap官方",
-        "url": "https://www.taptap.cn/moment/631288109278955289",
-        "moment_id": "631288109278955289",
+        "url": "https://www.taptap.cn/moment/810593692699067915",
+        "moment_id": "810593692699067915",
         "link_status": "valid",
-        "category": "event",
+        "category": "cosmetic",
         "content_tags": [
-          "福利活动"
+          "新时装"
         ],
         "priority": "medium"
       },
@@ -76,19 +88,19 @@
         "priority": "medium"
       },
       {
-        "title": "爆炸弓【心弦所向】皮肤爆料，一箭桃花动，满弓皆春来",
+        "title": "【更名福利】舞蹈降价啦！还免费赠送永久新舞蹈！",
         "source": "TapTap官方",
-        "url": "https://www.taptap.cn/moment/808402389924056917",
-        "moment_id": "808402389924056917",
+        "url": "https://www.taptap.cn/moment/631288109278955289",
+        "moment_id": "631288109278955289",
         "link_status": "valid",
-        "category": "cosmetic",
+        "category": "event",
         "content_tags": [
-          "新皮肤"
+          "福利活动"
         ],
         "priority": "medium"
       },
       {
-        "title": "隔壁同类型新游戏7月就出来了，超自然你就这么搞吧，我已经准备好跑路转线了",
+        "title": "这次，我们将楚文化舞蹈里“翘袖折腰，刚柔并济”的特色融入到了游戏中。6月5日0点，珍宝阁见啦",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/app/714123/topic?type=official",
         "link_status": "unknown",
@@ -97,16 +109,7 @@
         "priority": "low"
       },
       {
-        "title": "这个六一儿童节我们走进了三所贫困小学。\n以工友们的名义，为孩子们送上一份儿童节礼物！",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/app/714123/topic?type=official",
-        "link_status": "unknown",
-        "category": "event",
-        "content_tags": [],
-        "priority": "medium"
-      },
-      {
-        "title": "都是都是好几个月前的了哎，好怀念当时的环境",
+        "title": "集齐即领限定头像，6月5日起登录还送限定永驻家具与头像框！",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/app/714123/topic?type=official",
         "link_status": "unknown",
@@ -118,8 +121,8 @@
     "taptap": {
       "app_id": 714123,
       "source": "taptap_webpage",
-      "fans_count": 11199147,
-      "review_count": 30148,
+      "fans_count": 11204411,
+      "review_count": 30088,
       "score": "6.8",
       "description": "超自然行动组是一款合作游戏，TapTap 提供超自然行动组最新版官方正版下载，一个人玩是恐怖游戏，两个人玩是冒险游戏，三个人玩是寻宝游戏，...",
       "score_display": 6.8,
@@ -214,10 +217,34 @@
     "community": {
       "taptap_forum": [
         {
+          "title": "超自然行动组收徒 找cp 找背包",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/moment/811180951060090654",
+          "moment_id": "811180951060090654",
+          "link_status": "valid",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "w氪找萌新兔子，包魔盒日保200w",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/moment/811179541392264768",
+          "moment_id": "811179541392264768",
+          "link_status": "valid",
+          "sentiment": "neutral"
+        },
+        {
           "title": "月【云台鹗】与兰【扈江离】联动时装模型展示",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/moment/810593692699067915",
           "moment_id": "810593692699067915",
+          "link_status": "valid",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "【月-云台鹗】时装设计细节展示",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/moment/810966373529291845",
+          "moment_id": "810966373529291845",
           "link_status": "valid",
           "sentiment": "neutral"
         },
@@ -230,10 +257,10 @@
           "sentiment": "neutral"
         },
         {
-          "title": "【怪物投稿】蚀影驿卒",
+          "title": "楚文化联动限定回收物【人骑骆驼灯】与【楚辞天书】爆料",
           "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/809836013886114827",
-          "moment_id": "809836013886114827",
+          "url": "https://www.taptap.cn/moment/810937278263199673",
+          "moment_id": "810937278263199673",
           "link_status": "valid",
           "sentiment": "neutral"
         },
@@ -245,42 +272,21 @@
           "sentiment": "neutral"
         },
         {
-          "title": "隔壁同类型新游戏7月就出来了，超自然你就这么搞吧，我已经准备好跑路转线了",
+          "title": "#超自然行动组 收徒非公益 教小抄打怪 可以让你单刷炼狱噩梦\ncp卡成年 卡有麦 卡非学生 所有东西平半分\n背包 卡听指挥 大剑及以下平半分",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
-          "sentiment": "neutral"
+          "sentiment": "negative"
         },
         {
-          "title": "找固玩可以吗，打四队很菜（别嫌弃…），摸金什么图都会，龙宫不是很熟练，有小抄，微氪，本人女比较抽象（想一起玩的人留ID呀）嘎嘎嘎天天开心 #超自然行动组",
+          "title": "#超自然行动组 收徒非公益 教小抄打怪 可以让你单刷炼狱噩梦\ncp卡成年 卡有麦 卡非学生 所有东西...",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
-          "sentiment": "positive"
+          "sentiment": "negative"
         },
         {
-          "title": "找固玩可以吗，打四队很菜（别嫌弃…），摸金什么图都会，龙宫不是很熟练，有小抄，微氪，本人女比较抽象（...",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral"
-        },
-        {
-          "title": "超自然行动组国际服上线！超详细iOS设备下载方式分享",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral"
-        },
-        {
-          "title": "iPad、iPhone如何下载超自然行动组国际服？看这里！\n#超自然行动组 #超自然行动组国际服 #超自然行动组国际服下载教程 #ios",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral"
-        },
-        {
-          "title": "iPad、iPhone如何下载超自然行动组国际服？看这里！\n#超自然行动组 #超自然行动组国际服 #...",
+          "title": "#角色投稿 第一张是AI辅助后的样子\n第二张是初稿，角色名：西尔\n背景故事：从小对医学和调制出药剂有...",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
@@ -367,7 +373,7 @@
         "id": "新玩法",
         "name": "新玩法",
         "status": "live",
-        "first_seen": "2026-06-02",
+        "first_seen": "2026-06-03",
         "launch_date": null,
         "tags": [
           "新玩法",
@@ -377,7 +383,7 @@
         "announcements": [
           {
             "title": "全新【钓鱼玩法】爆料抢先看，下周四晚更新后上线啦~",
-            "date": "2026-06-02",
+            "date": "2026-06-03",
             "source": "TapTap官方",
             "url": "https://www.taptap.cn/moment/809786761940043519",
             "link_status": "valid"
@@ -390,6 +396,6 @@
         }
       }
     ],
-    "crawled_at": "2026-06-02T02:41:44.473317"
+    "crawled_at": "2026-06-03T02:50:13.468106"
   }
 }
