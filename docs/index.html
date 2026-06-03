@@ -309,9 +309,16 @@
                     </div>
                     <!-- 各区评分 -->
                     <div class="grid grid-cols-3 md:grid-cols-5 gap-2 mb-4" id="tb-regions-grid"></div>
-                    <!-- 排名趋势 -->
+                    <!-- 海外排名 -->
                     <div class="bg-dark-900/60 rounded-lg p-3 mb-4">
-                        <div class="text-xs text-gray-400 mb-2">📊 排名动态</div>
+                        <div class="text-xs text-gray-400 mb-2">📊 App Store 排名 <span class="text-gray-600" id="tb-ranking-updated"></span></div>
+                        <div id="tb-ranking-grid" class="space-y-2">
+                            <div class="text-xs text-gray-600">🔄 数据采集中...</div>
+                        </div>
+                    </div>
+                    <!-- 排名洞察 -->
+                    <div class="bg-dark-900/60 rounded-lg p-3 mb-4">
+                        <div class="text-xs text-gray-400 mb-2">💡 排名洞察</div>
                         <div class="text-sm text-gray-300" id="tb-ranking-note">
                             <span class="text-yellow-400">🔄</span> 数据采集中...
                         </div>
@@ -1089,20 +1096,85 @@
                         </div>`;
                     }
                 }
-                // 排名动态文字
-                const rankEl = document.getElementById('tb-ranking-note');
-                if (rankEl) {
-                    const jpCount = tb.regions_data.jp ? tb.regions_data.jp.rating_count : 0;
-                    const usCount = tb.regions_data.us ? tb.regions_data.us.rating_count : 0;
-                    const parts = [];
-                    if (jpCount > 500) parts.push('<span class="text-green-400">✅ 日本</span>：评价数破千，市场接受度高');
-                    else if (jpCount > 0) parts.push('<span class="text-yellow-400">🔄 日本</span>：评价增长中');
-                    if (usCount > 100) parts.push('<span class="text-green-400">✅ 美国</span>：免费榜上线，评价持续增长');
-                    else if (usCount > 0) parts.push('<span class="text-yellow-400">🔄 美国</span>：上线初期，数据采集中');
-                    const krData = tb.regions_data.kr;
-                    if (krData && krData.rating && krData.rating < 4) parts.push('<span class="text-red-400">⚠️ 韩国</span>：评分偏低(' + krData.rating.toFixed(1) + ')，需关注用户反馈');
-                    if (!parts.length) parts.push('<span class="text-yellow-400">🔄</span> 数据采集中...');
-                    rankEl.innerHTML = parts.join('<br>');
+                // 排名数据网格
+                const rankGridEl = document.getElementById('tb-ranking-grid');
+                const rankNoteEl = document.getElementById('tb-ranking-note');
+                const rankUpdEl = document.getElementById('tb-ranking-updated');
+                if (czr.app_store_rankings && rankGridEl) {
+                    const rankings = czr.app_store_rankings;
+                    rankGridEl.innerHTML = '';
+                    // 表头
+                    rankGridEl.innerHTML += `<div class="grid grid-cols-5 gap-1 text-[10px] text-gray-500 mb-1">
+                        <div>地区</div><div>免费总榜</div><div>免费游戏榜</div><div>畅销总榜</div><div>畅销游戏榜</div>
+                    </div>`;
+                    // 每行一个地区
+                    for (const [code, rk] of Object.entries(rankings)) {
+                        const rankColor = (v) => {
+                            if (!v) return 'text-gray-600';
+                            if (v <= 10) return 'text-green-400 font-bold';
+                            if (v <= 50) return 'text-green-300';
+                            if (v <= 100) return 'text-yellow-400';
+                            if (v <= 200) return 'text-orange-400';
+                            return 'text-gray-600';
+                        };
+                        const rankText = (v) => v ? '#' + v : '200+';
+                        rankGridEl.innerHTML += `<div class="grid grid-cols-5 gap-1 text-xs">
+                            <div class="text-gray-300 font-medium">${rk.name}</div>
+                            <div class="${rankColor(rk.free_overall)}">${rankText(rk.free_overall)}</div>
+                            <div class="${rankColor(rk.free_games)}">${rankText(rk.free_games)}</div>
+                            <div class="${rankColor(rk.grossing_overall)}">${rankText(rk.grossing_overall)}</div>
+                            <div class="${rankColor(rk.grossing_games)}">${rankText(rk.grossing_games)}</div>
+                        </div>`;
+                    }
+                    // 更新时间
+                    if (rankUpdEl) {
+                        const firstRegion = Object.values(rankings)[0];
+                        if (firstRegion && firstRegion.updated) rankUpdEl.textContent = '(' + firstRegion.updated + ')';
+                    }
+                    // 排名洞察
+                    if (rankNoteEl) {
+                        const parts = [];
+                        for (const [code, rk] of Object.entries(rankings)) {
+                            const highlights = [];
+                            if (rk.free_games && rk.free_games <= 50) highlights.push('免费游戏榜#' + rk.free_games);
+                            if (rk.grossing_games && rk.grossing_games <= 50) highlights.push('畅销游戏榜#' + rk.grossing_games);
+                            if (rk.free_overall && rk.free_overall <= 100) highlights.push('免费总榜#' + rk.free_overall);
+                            if (rk.grossing_overall && rk.grossing_overall <= 100) highlights.push('畅销总榜#' + rk.grossing_overall);
+                            if (highlights.length > 0) {
+                                parts.push(`<span class="text-green-400">✅ ${rk.name}</span>：${highlights.join('、')}`);
+                            } else if (rk.free_games || rk.grossing_games) {
+                                parts.push(`<span class="text-yellow-400">🔄 ${rk.name}</span>：排名200+，增长空间大`);
+                            } else {
+                                parts.push(`<span class="text-gray-500">⏳ ${rk.name}</span>：未进入Top200`);
+                            }
+                        }
+                        // 额外洞察：结合评分
+                        const jpRating = tb.regions_data.jp ? tb.regions_data.jp.rating : 0;
+                        const usRating = tb.regions_data.us ? tb.regions_data.us.rating : 0;
+                        const krRating = tb.regions_data.kr ? tb.regions_data.kr.rating : 0;
+                        if (jpRating >= 4 && rankings.jp && rankings.jp.free_games && rankings.jp.free_games <= 50) {
+                            parts.push('<span class="text-cyan-400">🎯</span> 日本市场表现强劲：高评分+排名靠前，建议加大本地化投入');
+                        }
+                        if (krRating < 4 && krRating > 0) {
+                            parts.push('<span class="text-red-400">⚠️ 韩国</span>：评分偏低(' + krRating.toFixed(1) + ')，需关注韩语社区反馈');
+                        }
+                        rankNoteEl.innerHTML = parts.join('<br>');
+                    }
+                } else {
+                    // 无排名数据时，保留旧的评分洞察逻辑
+                    if (rankNoteEl) {
+                        const jpCount = tb.regions_data.jp ? tb.regions_data.jp.rating_count : 0;
+                        const usCount = tb.regions_data.us ? tb.regions_data.us.rating_count : 0;
+                        const parts = [];
+                        if (jpCount > 500) parts.push('<span class="text-green-400">✅ 日本</span>：评价数破千，市场接受度高');
+                        else if (jpCount > 0) parts.push('<span class="text-yellow-400">🔄 日本</span>：评价增长中');
+                        if (usCount > 100) parts.push('<span class="text-green-400">✅ 美国</span>：免费榜上线，评价持续增长');
+                        else if (usCount > 0) parts.push('<span class="text-yellow-400">🔄 美国</span>：上线初期，数据采集中');
+                        const krData = tb.regions_data.kr;
+                        if (krData && krData.rating && krData.rating < 4) parts.push('<span class="text-red-400">⚠️ 韩国</span>：评分偏低(' + krData.rating.toFixed(1) + ')，需关注用户反馈');
+                        if (!parts.length) parts.push('<span class="text-yellow-400">🔄</span> 数据采集中...');
+                        rankNoteEl.innerHTML = parts.join('<br>');
+                    }
                 }
             }
 

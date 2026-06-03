@@ -121,7 +121,7 @@
     "taptap": {
       "app_id": 714123,
       "source": "taptap_webpage",
-      "fans_count": 11205637,
+      "fans_count": 11205683,
       "review_count": 30065,
       "score": "6.8",
       "description": "超自然行动组是一款合作游戏，TapTap 提供超自然行动组最新版官方正版下载，一个人玩是恐怖游戏，两个人玩是冒险游戏，三个人玩是寻宝游戏，...",
@@ -217,14 +217,6 @@
     "community": {
       "taptap_forum": [
         {
-          "title": "【精绝古城极限】┫型全地图小抄（5.9更新）",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/686599826762106666",
-          "moment_id": "686599826762106666",
-          "link_status": "valid",
-          "sentiment": "neutral"
-        },
-        {
           "title": "哦不不不，不应该是这样的",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/moment/811023423189812177",
@@ -233,28 +225,23 @@
           "sentiment": "neutral"
         },
         {
+          "title": "【昆仑秘境极限】侧门在右 全地图小抄（4.3更新）",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/moment/704657700742497225",
+          "moment_id": "704657700742497225",
+          "link_status": "valid",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "想试试当摸金陪玩怎么整？",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/moment/811212961027719766",
+          "moment_id": "811212961027719766",
+          "link_status": "valid",
+          "sentiment": "neutral"
+        },
+        {
           "title": "盗墓探险题材原创头部IP《鬼吹灯》官方正版授权合作，海量全新内容，我们七月见！",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral"
-        },
-        {
-          "title": "┫型全地图小抄，分为下左2种，共9张\n顺序：下P1-6，左P7-9\n相同地图有地道或无地道，按照无地...",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral"
-        },
-        {
-          "title": "可以带我一起摸金的就行，其他不卡",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "negative"
-        },
-        {
-          "title": "我一般晚上10点多上线，玩的话加我",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
@@ -268,25 +255,39 @@
           "sentiment": "neutral"
         },
         {
-          "title": "超自然行动组 x 荆州博物馆 限定时装联动预热。",
+          "title": "我一般晚上10点多上线，玩的话加我",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral"
         },
         {
-          "title": "两位员工化身楚文化传承者，6月5日0点，为工友们共演一曲楚韵风华。",
+          "title": "16女生 慢热 人机 脾气温和 除非你先惹我 氪条4100+ 熟了话很多 住宿 玩原创 爱看番日漫韩...",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral"
         },
         {
-          "title": "继续圈才出个皮肤又出一个，bug是不修的，挂是不管的，福利是不给的，钱是必须圈的",
+          "title": "【不忘本+不卡男女+会卡音箱龙珠+不乱跑】",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "negative"
+        },
+        {
+          "title": "非原创，来源网络，还在持续更新完善中\n侧门在【右】全地图小抄，共51张\n上右1-22/ 下右23-3...",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral"
+        },
+        {
+          "title": "很多朋友反映说遇不到这个图的小抄，我碰见了一把卡时间极限找到了6个棺材，主要是我兄弟玩了这个图没凑够金额死了才给我的经验哈哈哈，小抄放这里了",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "negative"
         }
       ],
       "tieba": {
@@ -367,8 +368,8 @@
         },
         "jp": {
           "name": "日本",
-          "rating": 4.37,
-          "rating_count": 994,
+          "rating": 4.38,
+          "rating_count": 1012,
           "current_version": "1.29.17",
           "price": "無料",
           "genre": "Games"
@@ -393,8 +394,50 @@
         }
       },
       "app_store_rating": 4.2,
-      "total_ratings": 1524,
-      "updated": "2026-06-03 16:26"
+      "total_ratings": 1542,
+      "updated": "2026-06-03 16:39"
+    },
+    "app_store_rankings": {
+      "us": {
+        "name": "美国",
+        "free_overall": null,
+        "free_games": null,
+        "grossing_overall": null,
+        "grossing_games": null,
+        "updated": "2026-06-03 16:38"
+      },
+      "jp": {
+        "name": "日本",
+        "free_overall": null,
+        "free_games": 30,
+        "grossing_overall": null,
+        "grossing_games": null,
+        "updated": "2026-06-03 16:38"
+      },
+      "kr": {
+        "name": "韩国",
+        "free_overall": null,
+        "free_games": 51,
+        "grossing_overall": null,
+        "grossing_games": null,
+        "updated": "2026-06-03 16:38"
+      },
+      "tw": {
+        "name": "台湾",
+        "free_overall": null,
+        "free_games": null,
+        "grossing_overall": null,
+        "grossing_games": null,
+        "updated": "2026-06-03 16:38"
+      },
+      "hk": {
+        "name": "香港",
+        "free_overall": null,
+        "free_games": null,
+        "grossing_overall": null,
+        "grossing_games": null,
+        "updated": "2026-06-03 16:38"
+      }
     },
     "stock_price": {
       "code": "SZ002558",
@@ -403,7 +446,7 @@
       "prev_close": 25.63,
       "change_pct": -0.16,
       "change_amt": -0.04,
-      "updated": "2026-06-03 16:26"
+      "updated": "2026-06-03 16:38"
     },
     "new_content_tracker": [
       {
@@ -432,6 +475,6 @@
         }
       }
     ],
-    "crawled_at": "2026-06-03T16:26:25.183535"
+    "crawled_at": "2026-06-03T16:39:00.808808"
   }
 }

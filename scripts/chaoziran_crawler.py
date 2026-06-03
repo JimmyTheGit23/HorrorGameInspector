@@ -573,6 +573,79 @@ def get_tomb_busters_info():
     return result
 
 
+def get_app_store_rankings():
+    """
+    从iTunes RSS排行榜获取Tomb Busters在各地区的免费榜/畅销榜排名。
+    每个区拉取Top 200免费+Top 200畅销，按app_id匹配位置。
+    同时获取Games分类(6014)的排名。
+    """
+    app_id = 6755951087
+    target_id = str(app_id)
+    regions = {
+        "us": "美国",
+        "jp": "日本",
+        "kr": "韩国",
+        "tw": "台湾",
+        "hk": "香港",
+    }
+    # Games分类ID
+    games_genre_id = 6014
+
+    result = {}
+
+    for code, name in regions.items():
+        region_rank = {
+            "name": name,
+            "free_overall": None,
+            "free_games": None,
+            "grossing_overall": None,
+            "grossing_games": None,
+        }
+
+        # 4个维度：免费总榜、免费游戏榜、畅销总榜、畅销游戏榜
+        charts = [
+            ("free_overall", f"https://itunes.apple.com/rss/topfreeapplications/limit=200/json?cc={code}"),
+            ("free_games", f"https://itunes.apple.com/rss/topfreeapplications/limit=200/genre={games_genre_id}/json?cc={code}"),
+            ("grossing_overall", f"https://itunes.apple.com/rss/topgrossingapplications/limit=200/json?cc={code}"),
+            ("grossing_games", f"https://itunes.apple.com/rss/topgrossingapplications/limit=200/genre={games_genre_id}/json?cc={code}"),
+        ]
+
+        for chart_key, url in charts:
+            try:
+                data = fetch_json(url)
+                if not data:
+                    continue
+                entries = data.get("feed", {}).get("entry", [])
+                for idx, entry in enumerate(entries):
+                    entry_id = entry.get("id", {})
+                    if isinstance(entry_id, dict):
+                        eid = entry_id.get("attributes", {}).get("im:id", "")
+                    else:
+                        eid = str(entry_id)
+                    if eid == target_id:
+                        region_rank[chart_key] = idx + 1
+                        break
+            except Exception as e:
+                print(f"    {name} {chart_key} 排名获取失败: {e}")
+
+        # 输出日志
+        parts = []
+        for key in ["free_overall", "free_games", "grossing_overall", "grossing_games"]:
+            v = region_rank[key]
+            label = {"free_overall": "免费总榜", "free_games": "免费游戏榜",
+                     "grossing_overall": "畅销总榜", "grossing_games": "畅销游戏榜"}[key]
+            if v:
+                parts.append(f"{label}#{v}")
+            else:
+                parts.append(f"{label}200+")
+        print(f"  {name}(iOS): {', '.join(parts)}")
+
+        region_rank["updated"] = datetime.now().strftime("%Y-%m-%d %H:%M")
+        result[code] = region_rank
+
+    return result
+
+
 def classify_announcement(title):
     """
     根据标题关键词对公告进行分类。
@@ -839,6 +912,10 @@ def crawl_chaoziran():
         cat_counts[c] = cat_counts.get(c, 0) + 1
     print(f"  分类统计: {cat_counts}")
 
+    # ===== 海外App Store排名 =====
+    print("[超自然行动组] 获取海外App Store排名...")
+    app_store_rankings = get_app_store_rankings()
+
     # ===== 新玩法专题追踪 =====
     print("[超自然行动组] 构建新玩法追踪...")
     content_tracker = build_content_tracker(update_announcements, official_news)
@@ -854,6 +931,7 @@ def crawl_chaoziran():
                 "tieba": tieba_data,
             },
             "tomb_busters": get_tomb_busters_info(),
+            "app_store_rankings": app_store_rankings,
             "stock_price": stock_data,
             "new_content_tracker": content_tracker,
             "crawled_at": datetime.now().isoformat(),
@@ -889,6 +967,12 @@ if __name__ == "__main__":
                 if old_stock:
                     data["chaoziran"]["stock_price"] = old_stock
                     print(f"  [MERGE] 保留旧股价数据: {old_stock.get('price', '?')}元")
+            # 排名获取失败时保留旧数据
+            if not data["chaoziran"].get("app_store_rankings"):
+                old_rankings = old_data.get("chaoziran", {}).get("app_store_rankings")
+                if old_rankings:
+                    data["chaoziran"]["app_store_rankings"] = old_rankings
+                    print(f"  [MERGE] 保留旧App Store排名数据")
     except Exception as e:
         print(f"  [WARN] 合并旧数据失败: {e}")
 
