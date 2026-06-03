@@ -121,7 +121,7 @@
     "taptap": {
       "app_id": 714123,
       "source": "taptap_webpage",
-      "fans_count": 11204610,
+      "fans_count": 11204626,
       "review_count": 30089,
       "score": "6.8",
       "description": "超自然行动组是一款合作游戏，TapTap 提供超自然行动组最新版官方正版下载，一个人玩是恐怖游戏，两个人玩是冒险游戏，三个人玩是寻宝游戏，...",
@@ -217,10 +217,10 @@
     "community": {
       "taptap_forum": [
         {
-          "title": "虽然我在网上是个喷子，但这件事我必须夸",
+          "title": "【精绝古城极限】┫型全地图小抄（5.9更新）",
           "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/809478348299305568",
-          "moment_id": "809478348299305568",
+          "url": "https://www.taptap.cn/moment/686599826762106666",
+          "moment_id": "686599826762106666",
           "link_status": "valid",
           "sentiment": "neutral"
         },
@@ -229,14 +229,6 @@
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/moment/811023423189812177",
           "moment_id": "811023423189812177",
-          "link_status": "valid",
-          "sentiment": "neutral"
-        },
-        {
-          "title": "木偶是不是给喂太胖，直接给我撞下去了",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/809887983535653267",
-          "moment_id": "809887983535653267",
           "link_status": "valid",
           "sentiment": "neutral"
         },
@@ -262,25 +254,39 @@
           "sentiment": "neutral"
         },
         {
+          "title": "┫型全地图小抄，分为下左2种，共9张\n顺序：下P1-6，左P7-9\n相同地图有地道或无地道，按照无地...",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "超自然行动组 x 荆州博物馆 限定时装联动预热。",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "两位员工化身楚文化传承者，6月5日0点，为工友们共演一曲楚韵风华。",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "继续圈才出个皮肤又出一个，bug是不修的，挂是不管的，福利是不给的，钱是必须圈的",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "neutral"
+        },
+        {
           "title": "我一般晚上10点多上线，玩的话加我",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral"
-        },
-        {
-          "title": "16女生 慢热 人机 脾气温和 除非你先惹我 氪条4100+ 熟了话很多 住宿 玩原创 爱看番日漫韩...",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral"
-        },
-        {
-          "title": "【不忘本+不卡男女+会卡音箱龙珠+不乱跑】",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "negative"
         }
       ],
       "tieba": {
@@ -365,7 +371,7 @@
       "prev_close": 25.63,
       "change_pct": 0.51,
       "change_amt": 0.13,
-      "updated": "2026-06-03 11:58"
+      "updated": "2026-06-03 12:02"
     },
     "new_content_tracker": [
       {
@@ -394,6 +400,6 @@
         }
       }
     ],
-    "crawled_at": "2026-06-03T11:58:13.866046"
+    "crawled_at": "2026-06-03T12:02:55.180504"
   }
 }

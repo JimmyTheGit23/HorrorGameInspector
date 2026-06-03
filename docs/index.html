@@ -853,12 +853,19 @@
 
         function renderLastUpdate() {
             let latest = '';
+            // 取所有数据源中最新的 crawled_at
+            const timestamps = [];
             if (steamData && Object.keys(steamData).length > 0) {
-                const first = Object.values(steamData)[0];
-                if (first && first.crawled_at) latest = first.crawled_at;
+                for (const g of Object.values(steamData)) {
+                    if (g && g.crawled_at) timestamps.push(g.crawled_at);
+                }
             }
-            if (!latest && chaoziranData && chaoziranData.chaoziran) {
-                latest = chaoziranData.chaoziran.crawled_at || '';
+            if (chaoziranData && chaoziranData.chaoziran && chaoziranData.chaoziran.crawled_at) {
+                timestamps.push(chaoziranData.chaoziran.crawled_at);
+            }
+            if (timestamps.length > 0) {
+                timestamps.sort((a, b) => new Date(b) - new Date(a));
+                latest = timestamps[0];
             }
             if (latest) {
                 const d = new Date(latest);

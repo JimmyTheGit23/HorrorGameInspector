@@ -15,7 +15,7 @@
       "price": "¥ 35.00",
       "release_date": "2025 年 2 月 26 日",
       "metacritic": null,
-      "recommendations": 318013,
+      "recommendations": 318350,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -39,16 +39,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 34225
+      "ccu": 37085
     },
     "reviews": {
-      "total_reviews": 14456,
-      "positive": 13428,
-      "negative": 1028,
+      "total_reviews": 14467,
+      "positive": 13436,
+      "negative": 1031,
       "positive_rate": 92.9
     },
-    "ccu": 34225,
-    "crawled_at": "2026-06-02T09:02:58.292575"
+    "ccu": 37085,
+    "crawled_at": "2026-06-03T12:01:58.011344"
   },
   "Lethal Company": {
     "appid": 1966720,
@@ -66,7 +66,7 @@
       "price": "¥ 42.00",
       "release_date": "2023 年 10 月 23 日",
       "metacritic": null,
-      "recommendations": 409509,
+      "recommendations": 409553,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -90,16 +90,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 4304
+      "ccu": 4607
     },
     "reviews": {
-      "total_reviews": 17591,
-      "positive": 16351,
-      "negative": 1240,
-      "positive_rate": 93.0
+      "total_reviews": 17594,
+      "positive": 16352,
+      "negative": 1242,
+      "positive_rate": 92.9
     },
-    "ccu": 4304,
-    "crawled_at": "2026-06-02T09:03:04.014267"
+    "ccu": 4607,
+    "crawled_at": "2026-06-03T12:02:03.723324"
   },
   "Phasmophobia": {
     "appid": 739630,
@@ -107,7 +107,7 @@
       "name": "Phasmophobia 恐鬼症",
       "type": "game",
       "short_description": "Phasmophobia is a 4 player online co-op psychological horror. Paranormal activity is on the rise and it’s up to you and your team to use all the ghost-hunting equipment at your disposal in order to gather as much evidence as you can.",
-      "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/739630/0a424398a10445bbb922b45771dab7118fe139d2/header_alt_assets_10.jpg?t=1778659672",
+      "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/739630/c227a2855aba60f3657bc0c3a46515b8c41fb2b6/header.jpg?t=1780397989",
       "developers": [
         "Kinetic Games"
       ],
@@ -117,7 +117,7 @@
       "price": "¥ 68.00",
       "release_date": "2020 年 9 月 18 日",
       "metacritic": null,
-      "recommendations": 676407,
+      "recommendations": 676623,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -150,16 +150,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 9912
+      "ccu": 8461
     },
     "reviews": {
-      "total_reviews": 26707,
-      "positive": 24220,
-      "negative": 2487,
+      "total_reviews": 26719,
+      "positive": 24230,
+      "negative": 2489,
       "positive_rate": 90.7
     },
-    "ccu": 9912,
-    "crawled_at": "2026-06-02T09:03:09.756593"
+    "ccu": 8461,
+    "crawled_at": "2026-06-03T12:02:09.464795"
   },
   "Content Warning": {
     "appid": 2881650,
@@ -181,7 +181,7 @@
       "price": "¥ 20.46",
       "release_date": "2024 年 4 月 1 日",
       "metacritic": null,
-      "recommendations": 69054,
+      "recommendations": 69094,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -202,55 +202,20 @@
       ]
     },
     "steamspy": {
-      "ccu": 1255
+      "ccu": 1249
     },
     "reviews": {
-      "total_reviews": 6820,
+      "total_reviews": 6821,
       "positive": 6133,
-      "negative": 687,
+      "negative": 688,
       "positive_rate": 89.9
     },
-    "ccu": 1255,
-    "crawled_at": "2026-06-02T09:03:15.390333"
+    "ccu": 1249,
+    "crawled_at": "2026-06-03T12:02:15.361953"
   },
   "FEEDERS": {
     "appid": 4408510,
-    "store": {
-      "name": "FEEDERS",
-      "type": "game",
-      "short_description": "2079年。太阳爆炸了。有钱人逃到地底。你被送到最顶层，那里的天空在燃烧。他们叫你顶楼老鼠。下去那些废墟，里面爬满了独特怪物。发出声音，一种来追你。保持沉默，另一种找到你。1-4人合作恐怖游戏。",
-      "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4408510/989cbd9100fe7246a3b6241dc7df43fece58e74a/header.jpg?t=1779542430",
-      "developers": [
-        "Luvi Technologies"
-      ],
-      "publishers": [
-        "Luvi Technologies"
-      ],
-      "price": "¥ 26.00",
-      "release_date": "2026 年 3 月 30 日",
-      "metacritic": null,
-      "recommendations": 0,
-      "platforms": {
-        "windows": true,
-        "mac": false,
-        "linux": false
-      },
-      "categories": [
-        "单人",
-        "多人",
-        "合作",
-        "在线合作",
-        "立体声",
-        "环绕声",
-        "家庭共享"
-      ],
-      "genres": [
-        "动作",
-        "冒险",
-        "独立",
-        "抢先体验"
-      ]
-    },
+    "store": null,
     "steamspy": null,
     "reviews": {
       "total_reviews": 0,
@@ -259,7 +224,7 @@
       "positive_rate": 0.0
     },
     "ccu": 0,
-    "crawled_at": "2026-06-02T09:03:26.100319"
+    "crawled_at": "2026-06-03T12:02:29.388280"
   },
   "NARAKA: BLADEPOINT": {
     "appid": 1203220,
@@ -301,15 +266,15 @@
       ]
     },
     "steamspy": {
-      "ccu": 6649
+      "ccu": 13717
     },
     "reviews": {
-      "total_reviews": 250347,
-      "positive": 180234,
-      "negative": 70113,
+      "total_reviews": 250362,
+      "positive": 180241,
+      "negative": 70121,
       "positive_rate": 72.0
     },
-    "ccu": 6649,
-    "crawled_at": "2026-06-02T09:03:31.868553"
+    "ccu": 13717,
+    "crawled_at": "2026-06-03T12:02:36.452526"
   }
 }
