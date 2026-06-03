@@ -121,8 +121,8 @@
     "taptap": {
       "app_id": 714123,
       "source": "taptap_webpage",
-      "fans_count": 11204411,
-      "review_count": 30088,
+      "fans_count": 11204599,
+      "review_count": 30089,
       "score": "6.8",
       "description": "超自然行动组是一款合作游戏，TapTap 提供超自然行动组最新版官方正版下载，一个人玩是恐怖游戏，两个人玩是冒险游戏，三个人玩是寻宝游戏，...",
       "score_display": 6.8,
@@ -217,14 +217,6 @@
     "community": {
       "taptap_forum": [
         {
-          "title": "超自然行动组收徒 找cp 找背包",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/811180951060090654",
-          "moment_id": "811180951060090654",
-          "link_status": "valid",
-          "sentiment": "neutral"
-        },
-        {
           "title": "w氪找萌新兔子，包魔盒日保200w",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/moment/811179541392264768",
@@ -249,10 +241,10 @@
           "sentiment": "neutral"
         },
         {
-          "title": "全新【钓鱼玩法】爆料抢先看，下周四晚更新后上线啦~",
+          "title": "超自然行动组收徒 找cp 找背包",
           "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/809786761940043519",
-          "moment_id": "809786761940043519",
+          "url": "https://www.taptap.cn/moment/811180951060090654",
+          "moment_id": "811180951060090654",
           "link_status": "valid",
           "sentiment": "neutral"
         },
@@ -265,6 +257,14 @@
           "sentiment": "neutral"
         },
         {
+          "title": "全新【钓鱼玩法】爆料抢先看，下周四晚更新后上线啦~",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/moment/809786761940043519",
+          "moment_id": "809786761940043519",
+          "link_status": "valid",
+          "sentiment": "neutral"
+        },
+        {
           "title": "盗墓探险题材原创头部IP《鬼吹灯》官方正版授权合作，海量全新内容，我们七月见！",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
@@ -272,21 +272,21 @@
           "sentiment": "neutral"
         },
         {
-          "title": "#超自然行动组 收徒非公益 教小抄打怪 可以让你单刷炼狱噩梦\ncp卡成年 卡有麦 卡非学生 所有东西平半分\n背包 卡听指挥 大剑及以下平半分",
+          "title": "我是靠山，只要萌新莉莉。日保两百万包魔盒，时间长可以送金，后续包你所有魔盒。 稳定送p2 \n莉莉要求...",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
-          "sentiment": "negative"
-        },
-        {
-          "title": "#超自然行动组 收徒非公益 教小抄打怪 可以让你单刷炼狱噩梦\ncp卡成年 卡有麦 卡非学生 所有东西...",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "negative"
+          "sentiment": "neutral"
         },
         {
           "title": "#角色投稿 第一张是AI辅助后的样子\n第二张是初稿，角色名：西尔\n背景故事：从小对医学和调制出药剂有...",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "你这个角色我感觉还不如我的6个符。还有这个角色上限太低，操作缺陷很大。",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
@@ -368,6 +368,15 @@
       "website": "https://www.tombbusters.net/",
       "note": "数据需手动更新"
     },
+    "stock_price": {
+      "code": "SZ002558",
+      "name": "巨人网络",
+      "price": 25.76,
+      "prev_close": 25.63,
+      "change_pct": 0.51,
+      "change_amt": 0.13,
+      "updated": "2026-06-03 11:55"
+    },
     "new_content_tracker": [
       {
         "id": "新玩法",
@@ -385,8 +394,7 @@
             "title": "全新【钓鱼玩法】爆料抢先看，下周四晚更新后上线啦~",
             "date": "2026-06-03",
             "source": "TapTap官方",
-            "url": "https://www.taptap.cn/moment/809786761940043519",
-            "link_status": "valid"
+            "url": "https://www.taptap.cn/moment/809786761940043519"
           }
         ],
         "player_reactions": {
@@ -396,6 +404,6 @@
         }
       }
     ],
-    "crawled_at": "2026-06-03T02:50:13.468106"
+    "crawled_at": "2026-06-03T11:55:30.386259"
   }
 }
