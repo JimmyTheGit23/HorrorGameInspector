@@ -515,16 +515,62 @@ def get_stock_price(code="sz002558"):
 
 
 def get_tomb_busters_info():
-    """Tomb Busters 海外版数据 - 目前手动维护"""
-    return {
+    """
+    从App Store iTunes API获取Tomb Busters海外版实时数据。
+    覆盖美/日/韩/港/台五个区服的评分和评价数。
+    """
+    app_id = 6755951087
+    regions = {
+        "us": "美国",
+        "jp": "日本",
+        "kr": "韩国",
+        "tw": "台湾",
+        "hk": "香港",
+    }
+    result = {
         "name": "Tomb Busters",
+        "app_id": app_id,
         "launch_date": "2026-05-27",
         "platforms": ["iOS", "Android", "PC"],
-        "regions": ["美国", "日本", "韩国", "港澳台"],
-        "app_store_rating": 4.5,
         "website": "https://www.tombbusters.net/",
-        "note": "数据需手动更新"
+        "regions_data": {},
     }
+
+    for code, name in regions.items():
+        try:
+            url = f"https://itunes.apple.com/lookup?id={app_id}&country={code}"
+            req = urllib.request.Request(url, headers={
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+            })
+            with urllib.request.urlopen(req, timeout=10) as resp:
+                data = json.loads(resp.read().decode("utf-8"))
+            apps = data.get("results", [])
+            if apps:
+                app = apps[0]
+                result["regions_data"][code] = {
+                    "name": name,
+                    "rating": round(app.get("averageUserRating", 0), 2),
+                    "rating_count": app.get("userRatingCount", 0),
+                    "current_version": app.get("version", ""),
+                    "price": app.get("formattedPrice", ""),
+                    "genre": app.get("primaryGenreName", ""),
+                }
+                print(f"  {name}(iOS): {app.get('averageUserRating', 0):.2f} ({app.get('userRatingCount', 0)}评)")
+            else:
+                result["regions_data"][code] = {"name": name, "rating": None, "rating_count": 0}
+                print(f"  {name}(iOS): 未上架")
+        except Exception as e:
+            result["regions_data"][code] = {"name": name, "rating": None, "rating_count": 0}
+            print(f"  {name}(iOS): 获取失败 - {e}")
+
+    # 汇总
+    valid_ratings = [v["rating"] for v in result["regions_data"].values() if v.get("rating")]
+    if valid_ratings:
+        result["app_store_rating"] = round(sum(valid_ratings) / len(valid_ratings), 2)
+        result["total_ratings"] = sum(v.get("rating_count", 0) for v in result["regions_data"].values())
+    result["updated"] = datetime.now().strftime("%Y-%m-%d %H:%M")
+
+    return result
 
 
 def classify_announcement(title):

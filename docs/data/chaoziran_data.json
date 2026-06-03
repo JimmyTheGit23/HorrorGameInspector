@@ -109,7 +109,7 @@
         "priority": "low"
       },
       {
-        "title": "集齐即领限定头像，6月5日起登录还送限定永驻家具与头像框！",
+        "title": "咱就是说讨厌人家就别玩，评论那些有什么意思？搁这膈应谁呢",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/app/714123/topic?type=official",
         "link_status": "unknown",
@@ -121,8 +121,8 @@
     "taptap": {
       "app_id": 714123,
       "source": "taptap_webpage",
-      "fans_count": 11204626,
-      "review_count": 30089,
+      "fans_count": 11205637,
+      "review_count": 30065,
       "score": "6.8",
       "description": "超自然行动组是一款合作游戏，TapTap 提供超自然行动组最新版官方正版下载，一个人玩是恐怖游戏，两个人玩是冒险游戏，三个人玩是寻宝游戏，...",
       "score_display": 6.8,
@@ -240,6 +240,13 @@
           "sentiment": "neutral"
         },
         {
+          "title": "┫型全地图小抄，分为下左2种，共9张\n顺序：下P1-6，左P7-9\n相同地图有地道或无地道，按照无地...",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "neutral"
+        },
+        {
           "title": "可以带我一起摸金的就行，其他不卡",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
@@ -247,14 +254,14 @@
           "sentiment": "negative"
         },
         {
-          "title": "想找一个靠山自己一个人打太累了，求૮ ᴗ͈ˬᴗ͈ෆა",
+          "title": "我一般晚上10点多上线，玩的话加我",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral"
         },
         {
-          "title": "┫型全地图小抄，分为下左2种，共9张\n顺序：下P1-6，左P7-9\n相同地图有地道或无地道，按照无地...",
+          "title": "想找一个靠山自己一个人打太累了，求૮ ᴗ͈ˬᴗ͈ෆა",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
@@ -276,13 +283,6 @@
         },
         {
           "title": "继续圈才出个皮肤又出一个，bug是不修的，挂是不管的，福利是不给的，钱是必须圈的",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral"
-        },
-        {
-          "title": "我一般晚上10点多上线，玩的话加我",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
@@ -348,30 +348,62 @@
     },
     "tomb_busters": {
       "name": "Tomb Busters",
+      "app_id": 6755951087,
       "launch_date": "2026-05-27",
       "platforms": [
         "iOS",
         "Android",
         "PC"
       ],
-      "regions": [
-        "美国",
-        "日本",
-        "韩国",
-        "港澳台"
-      ],
-      "app_store_rating": 4.5,
       "website": "https://www.tombbusters.net/",
-      "note": "数据需手动更新"
+      "regions_data": {
+        "us": {
+          "name": "美国",
+          "rating": 4.49,
+          "rating_count": 370,
+          "current_version": "1.29.17",
+          "price": "Free",
+          "genre": "Games"
+        },
+        "jp": {
+          "name": "日本",
+          "rating": 4.37,
+          "rating_count": 994,
+          "current_version": "1.29.17",
+          "price": "無料",
+          "genre": "Games"
+        },
+        "kr": {
+          "name": "韩国",
+          "rating": 3.73,
+          "rating_count": 160,
+          "current_version": "1.29.17",
+          "price": "무료",
+          "genre": "Games"
+        },
+        "tw": {
+          "name": "台湾",
+          "rating": null,
+          "rating_count": 0
+        },
+        "hk": {
+          "name": "香港",
+          "rating": null,
+          "rating_count": 0
+        }
+      },
+      "app_store_rating": 4.2,
+      "total_ratings": 1524,
+      "updated": "2026-06-03 16:26"
     },
     "stock_price": {
       "code": "SZ002558",
       "name": "巨人网络",
-      "price": 25.76,
+      "price": 25.59,
       "prev_close": 25.63,
-      "change_pct": 0.51,
-      "change_amt": 0.13,
-      "updated": "2026-06-03 12:02"
+      "change_pct": -0.16,
+      "change_amt": -0.04,
+      "updated": "2026-06-03 16:26"
     },
     "new_content_tracker": [
       {
@@ -400,6 +432,6 @@
         }
       }
     ],
-    "crawled_at": "2026-06-03T12:02:55.180504"
+    "crawled_at": "2026-06-03T16:26:25.183535"
   }
 }

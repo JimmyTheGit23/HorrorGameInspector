@@ -290,28 +290,30 @@
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
                         <div class="bg-dark-900/60 rounded-lg p-3 text-center">
                             <div class="text-xs text-gray-500 mb-1" data-i18n="tb_regions">覆盖地区</div>
-                            <div class="text-sm font-bold text-white" data-i18n="tb_regions_val">美 / 日 / 韩</div>
+                            <div class="text-sm font-bold text-white" id="tb-regions-val">美 / 日 / 韩</div>
                         </div>
                         <div class="bg-dark-900/60 rounded-lg p-3 text-center">
                             <div class="text-xs text-gray-500 mb-1" data-i18n="tb_platform">平台</div>
                             <div class="text-sm font-bold text-white">iOS / Android / PC</div>
                         </div>
                         <div class="bg-dark-900/60 rounded-lg p-3 text-center">
-                            <div class="text-xs text-gray-500 mb-1" data-i18n="tb_hk_pilot">港澳台试点</div>
-                            <div class="text-sm font-bold text-green-400" data-i18n="tb_hk_top3">免费榜前三 ⬆️</div>
+                            <div class="text-xs text-gray-500 mb-1">App Store</div>
+                            <div class="text-sm font-bold text-yellow-400" id="tb-appstore-rating">--</div>
+                            <div class="text-xs text-gray-600" id="tb-total-ratings">--</div>
                         </div>
                         <div class="bg-dark-900/60 rounded-lg p-3 text-center">
-                            <div class="text-xs text-gray-500 mb-1" data-i18n="tb_appstore_score">App Store评分</div>
-                            <div class="text-sm font-bold text-yellow-400">⭐ 4.5</div>
-                            <div class="text-xs text-gray-600" data-i18n="tb_reviews_count">2条评价</div>
+                            <div class="text-xs text-gray-500 mb-1">版本</div>
+                            <div class="text-sm font-bold text-white" id="tb-version">--</div>
+                            <div class="text-xs text-gray-600" id="tb-updated">--</div>
                         </div>
                     </div>
+                    <!-- 各区评分 -->
+                    <div class="grid grid-cols-3 md:grid-cols-5 gap-2 mb-4" id="tb-regions-grid"></div>
                     <!-- 排名趋势 -->
                     <div class="bg-dark-900/60 rounded-lg p-3 mb-4">
                         <div class="text-xs text-gray-400 mb-2">📊 排名动态</div>
-                        <div class="text-sm text-gray-300">
-                            <span class="text-green-400">✅ 港澳台</span>：免费榜前三（试点期，零推广）<br>
-                            <span class="text-yellow-400">🔄 美/日/韩</span>：5月27日刚上线，排名数据采集中 — 预注册量超预期，首日表现待跟踪
+                        <div class="text-sm text-gray-300" id="tb-ranking-note">
+                            <span class="text-yellow-400">🔄</span> 数据采集中...
                         </div>
                     </div>
                     <!-- 海外媒体评价 -->
@@ -1041,6 +1043,66 @@
                         changeEl.textContent = arrow + ' ' + Math.abs(s.change_pct).toFixed(2) + '%';
                         changeEl.className = 'text-xs ' + colorClass;
                     }
+                }
+            }
+
+            // Tomb Busters 海外数据
+            if (czr.tomb_busters && czr.tomb_busters.regions_data) {
+                const tb = czr.tomb_busters;
+                // 总评分
+                const ratingEl = document.getElementById('tb-appstore-rating');
+                if (ratingEl && tb.app_store_rating) {
+                    ratingEl.textContent = '⭐ ' + tb.app_store_rating.toFixed(1);
+                }
+                const totalEl = document.getElementById('tb-total-ratings');
+                if (totalEl && tb.total_ratings) {
+                    totalEl.textContent = tb.total_ratings.toLocaleString() + '条评价';
+                }
+                // 版本
+                const verEl = document.getElementById('tb-version');
+                if (verEl) {
+                    const usData = tb.regions_data.us;
+                    verEl.textContent = usData && usData.current_version ? 'v' + usData.current_version : '--';
+                }
+                const updEl = document.getElementById('tb-updated');
+                if (updEl && tb.updated) {
+                    updEl.textContent = tb.updated;
+                }
+                // 覆盖地区
+                const liveRegions = Object.entries(tb.regions_data).filter(([k,v]) => v.rating !== null);
+                const regionsEl = document.getElementById('tb-regions-val');
+                if (regionsEl && liveRegions.length > 0) {
+                    regionsEl.textContent = liveRegions.map(([k,v]) => v.name).join(' / ');
+                }
+                // 各区评分网格
+                const gridEl = document.getElementById('tb-regions-grid');
+                if (gridEl) {
+                    gridEl.innerHTML = '';
+                    for (const [code, rd] of Object.entries(tb.regions_data)) {
+                        const color = rd.rating >= 4 ? 'text-green-400' : rd.rating >= 3 ? 'text-yellow-400' : rd.rating ? 'text-red-400' : 'text-gray-600';
+                        const ratingText = rd.rating ? rd.rating.toFixed(1) : '--';
+                        const countText = rd.rating_count ? rd.rating_count.toLocaleString() + '评' : '未上架';
+                        gridEl.innerHTML += `<div class="bg-dark-900/60 rounded-lg p-2 text-center">
+                            <div class="text-xs text-gray-500">${rd.name}</div>
+                            <div class="text-sm font-bold ${color}">${ratingText}</div>
+                            <div class="text-[10px] text-gray-600">${countText}</div>
+                        </div>`;
+                    }
+                }
+                // 排名动态文字
+                const rankEl = document.getElementById('tb-ranking-note');
+                if (rankEl) {
+                    const jpCount = tb.regions_data.jp ? tb.regions_data.jp.rating_count : 0;
+                    const usCount = tb.regions_data.us ? tb.regions_data.us.rating_count : 0;
+                    const parts = [];
+                    if (jpCount > 500) parts.push('<span class="text-green-400">✅ 日本</span>：评价数破千，市场接受度高');
+                    else if (jpCount > 0) parts.push('<span class="text-yellow-400">🔄 日本</span>：评价增长中');
+                    if (usCount > 100) parts.push('<span class="text-green-400">✅ 美国</span>：免费榜上线，评价持续增长');
+                    else if (usCount > 0) parts.push('<span class="text-yellow-400">🔄 美国</span>：上线初期，数据采集中');
+                    const krData = tb.regions_data.kr;
+                    if (krData && krData.rating && krData.rating < 4) parts.push('<span class="text-red-400">⚠️ 韩国</span>：评分偏低(' + krData.rating.toFixed(1) + ')，需关注用户反馈');
+                    if (!parts.length) parts.push('<span class="text-yellow-400">🔄</span> 数据采集中...');
+                    rankEl.innerHTML = parts.join('<br>');
                 }
             }
 
