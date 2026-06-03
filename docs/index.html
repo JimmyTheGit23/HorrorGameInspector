@@ -190,8 +190,8 @@
                     </div>
                     <div class="text-left sm:text-right sm:border-l sm:border-gray-700 sm:pl-6">
                         <div class="text-xs text-gray-500">002558.SZ</div>
-                        <div class="text-2xl font-bold text-green-400">¥26.38</div>
-                        <div class="text-xs text-green-400">▼ 0.71%</div>
+                        <div id="hero-stock-price" class="text-2xl font-bold text-green-400">--</div>
+                        <div id="hero-stock-change" class="text-xs text-green-400">--</div>
                     </div>
                 </div>
                 </div>
@@ -1016,6 +1016,24 @@
                 if (heroScore && !isNaN(scoreVal)) {
                     heroScore.textContent = scoreVal.toFixed(1);
                     heroScore.className = 'text-2xl font-bold ' + (scoreVal >= 7 ? 'text-green-400' : scoreVal >= 5 ? 'text-yellow-400' : 'text-red-400');
+                }
+            }
+
+            // 股价数据
+            if (czr.stock_price) {
+                const s = czr.stock_price;
+                const priceEl = document.getElementById('hero-stock-price');
+                const changeEl = document.getElementById('hero-stock-change');
+                if (priceEl) {
+                    priceEl.textContent = '¥' + s.price.toFixed(2);
+                    const isUp = s.change_pct >= 0;
+                    const colorClass = isUp ? 'text-red-400' : 'text-green-400';
+                    priceEl.className = 'text-2xl font-bold ' + colorClass;
+                    if (changeEl) {
+                        const arrow = isUp ? '▲' : '▼';
+                        changeEl.textContent = arrow + ' ' + Math.abs(s.change_pct).toFixed(2) + '%';
+                        changeEl.className = 'text-xs ' + colorClass;
+                    }
                 }
             }
 

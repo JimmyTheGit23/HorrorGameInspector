@@ -472,6 +472,48 @@ def simple_sentiment(title):
     return "neutral"
 
 
+def get_stock_price(code="sz002558"):
+    """
+    从腾讯财经接口获取A股实时股价。
+    返回 dict: {code, name, price, change_pct, change_amt, prev_close, updated}
+    失败返回 None。
+    """
+    url = f"https://qt.gtimg.cn/q={code}"
+    try:
+        req = urllib.request.Request(url, headers={
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+            "Referer": "https://gu.qq.com/",
+        })
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            raw = resp.read().decode("gbk", errors="replace")
+        # 格式: v_sz002558="1~巨人网络~002558~25.51~26.35~..."
+        match = re.search(r'v_%s="(.+)"' % code, raw)
+        if not match:
+            print(f"  [WARN] 股价数据解析失败: {code}")
+            return None
+        fields = match.group(1).split("~")
+        if len(fields) < 35:
+            print(f"  [WARN] 股价数据字段不足: {len(fields)}")
+            return None
+        name = fields[1]
+        current_price = float(fields[3])
+        prev_close = float(fields[4])
+        change_pct = float(fields[32])
+        change_amt = float(fields[31])
+        return {
+            "code": code.upper(),
+            "name": name,
+            "price": current_price,
+            "prev_close": prev_close,
+            "change_pct": round(change_pct, 2),
+            "change_amt": round(change_amt, 2),
+            "updated": datetime.now().strftime("%Y-%m-%d %H:%M"),
+        }
+    except Exception as e:
+        print(f"  [WARN] 股价获取失败: {e}")
+        return None
+
+
 def get_tomb_busters_info():
     """Tomb Busters 海外版数据 - 目前手动维护"""
     return {
@@ -714,6 +756,13 @@ def crawl_chaoziran():
     tieba_data = get_tieba_hot_posts()
     print(f"  贴吧数据: {tieba_data['note']}")
 
+    print("[超自然行动组] 获取巨人网络股价...")
+    stock_data = get_stock_price("sz002558")
+    if stock_data:
+        print(f"  股价: {stock_data['price']}元 ({stock_data['change_pct']:+.2f}%)")
+    else:
+        print("  股价获取失败，将使用旧数据")
+
     # 为论坛帖子添加情感标签
     for post in taptap_forum:
         post["sentiment"] = simple_sentiment(post["title"])
@@ -759,6 +808,7 @@ def crawl_chaoziran():
                 "tieba": tieba_data,
             },
             "tomb_busters": get_tomb_busters_info(),
+            "stock_price": stock_data,
             "new_content_tracker": content_tracker,
             "crawled_at": datetime.now().isoformat(),
         }
@@ -787,6 +837,12 @@ if __name__ == "__main__":
                         item["category"] = cat
                         item["content_tags"] = tags
                         item["priority"] = prio
+            # 股价获取失败时保留旧数据
+            if not data["chaoziran"].get("stock_price"):
+                old_stock = old_data.get("chaoziran", {}).get("stock_price")
+                if old_stock:
+                    data["chaoziran"]["stock_price"] = old_stock
+                    print(f"  [MERGE] 保留旧股价数据: {old_stock.get('price', '?')}元")
     except Exception as e:
         print(f"  [WARN] 合并旧数据失败: {e}")
 
