@@ -15,7 +15,7 @@
       "price": "¥ 35.00",
       "release_date": "2025 年 2 月 26 日",
       "metacritic": null,
-      "recommendations": 318350,
+      "recommendations": 318627,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -39,16 +39,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 37085
+      "ccu": 34816
     },
     "reviews": {
-      "total_reviews": 14467,
-      "positive": 13436,
-      "negative": 1031,
+      "total_reviews": 14485,
+      "positive": 13450,
+      "negative": 1035,
       "positive_rate": 92.9
     },
-    "ccu": 37085,
-    "crawled_at": "2026-06-03T12:01:58.011344"
+    "ccu": 34816,
+    "crawled_at": "2026-06-04T09:01:58.565253"
   },
   "Lethal Company": {
     "appid": 1966720,
@@ -66,7 +66,7 @@
       "price": "¥ 42.00",
       "release_date": "2023 年 10 月 23 日",
       "metacritic": null,
-      "recommendations": 409553,
+      "recommendations": 409581,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -90,16 +90,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 4607
+      "ccu": 4115
     },
     "reviews": {
-      "total_reviews": 17594,
-      "positive": 16352,
+      "total_reviews": 17596,
+      "positive": 16354,
       "negative": 1242,
       "positive_rate": 92.9
     },
-    "ccu": 4607,
-    "crawled_at": "2026-06-03T12:02:03.723324"
+    "ccu": 4115,
+    "crawled_at": "2026-06-04T09:02:04.702165"
   },
   "Phasmophobia": {
     "appid": 739630,
@@ -117,7 +117,7 @@
       "price": "¥ 68.00",
       "release_date": "2020 年 9 月 18 日",
       "metacritic": null,
-      "recommendations": 676623,
+      "recommendations": 676756,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -150,16 +150,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 8461
+      "ccu": 8804
     },
     "reviews": {
-      "total_reviews": 26719,
-      "positive": 24230,
-      "negative": 2489,
+      "total_reviews": 26731,
+      "positive": 24238,
+      "negative": 2493,
       "positive_rate": 90.7
     },
-    "ccu": 8461,
-    "crawled_at": "2026-06-03T12:02:09.464795"
+    "ccu": 8804,
+    "crawled_at": "2026-06-04T09:02:10.995342"
   },
   "Content Warning": {
     "appid": 2881650,
@@ -181,7 +181,7 @@
       "price": "¥ 20.46",
       "release_date": "2024 年 4 月 1 日",
       "metacritic": null,
-      "recommendations": 69094,
+      "recommendations": 69123,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -202,7 +202,7 @@
       ]
     },
     "steamspy": {
-      "ccu": 1249
+      "ccu": 1423
     },
     "reviews": {
       "total_reviews": 6821,
@@ -210,12 +210,47 @@
       "negative": 688,
       "positive_rate": 89.9
     },
-    "ccu": 1249,
-    "crawled_at": "2026-06-03T12:02:15.361953"
+    "ccu": 1423,
+    "crawled_at": "2026-06-04T09:02:17.197507"
   },
   "FEEDERS": {
     "appid": 4408510,
-    "store": null,
+    "store": {
+      "name": "FEEDERS",
+      "type": "game",
+      "short_description": "2079年。太阳爆炸了。有钱人逃到地底。你被送到最顶层，那里的天空在燃烧。他们叫你顶楼老鼠。下去那些废墟，里面爬满了独特怪物。发出声音，一种来追你。保持沉默，另一种找到你。1-4人合作恐怖游戏。",
+      "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4408510/989cbd9100fe7246a3b6241dc7df43fece58e74a/header.jpg?t=1779542430",
+      "developers": [
+        "Luvi Technologies"
+      ],
+      "publishers": [
+        "Luvi Technologies"
+      ],
+      "price": "¥ 26.00",
+      "release_date": "2026 年 3 月 30 日",
+      "metacritic": null,
+      "recommendations": 0,
+      "platforms": {
+        "windows": true,
+        "mac": false,
+        "linux": false
+      },
+      "categories": [
+        "单人",
+        "多人",
+        "合作",
+        "在线合作",
+        "立体声",
+        "环绕声",
+        "家庭共享"
+      ],
+      "genres": [
+        "动作",
+        "冒险",
+        "独立",
+        "抢先体验"
+      ]
+    },
     "steamspy": null,
     "reviews": {
       "total_reviews": 0,
@@ -224,7 +259,7 @@
       "positive_rate": 0.0
     },
     "ccu": 0,
-    "crawled_at": "2026-06-03T12:02:29.388280"
+    "crawled_at": "2026-06-04T09:02:29.166643"
   },
   "NARAKA: BLADEPOINT": {
     "appid": 1203220,
@@ -242,7 +277,7 @@
       "price": "免费",
       "release_date": "2021 年 8 月 11 日",
       "metacritic": null,
-      "recommendations": 197672,
+      "recommendations": 197675,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -266,15 +301,15 @@
       ]
     },
     "steamspy": {
-      "ccu": 13717
+      "ccu": 6383
     },
     "reviews": {
-      "total_reviews": 250362,
-      "positive": 180241,
-      "negative": 70121,
+      "total_reviews": 250375,
+      "positive": 180256,
+      "negative": 70119,
       "positive_rate": 72.0
     },
-    "ccu": 13717,
-    "crawled_at": "2026-06-03T12:02:36.452526"
+    "ccu": 6383,
+    "crawled_at": "2026-06-04T09:02:35.301856"
   }
 }

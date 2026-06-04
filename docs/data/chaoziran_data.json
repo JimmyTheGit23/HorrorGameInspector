@@ -2,16 +2,6 @@
   "chaoziran": {
     "bwiki_updates": [
       {
-        "title": "百变小刘鸭，快乐你我他！【腰包】【粘液球】这次都变身超萌鸭鸭",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/moment/813482839424109363",
-        "moment_id": "813482839424109363",
-        "link_status": "valid",
-        "category": "other",
-        "content_tags": [],
-        "priority": "low"
-      },
-      {
         "title": "【兰-扈江离】联动限定时装细节展示，对楚地巫风美学的别样诠释",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/moment/811312604164131672",
@@ -24,14 +14,50 @@
         "priority": "medium"
       },
       {
-        "title": "版本更新——怪物农场钓鱼玩法上线！荆州博物馆联动限定内容来啦",
+        "title": "【阿念-寻星记】特殊彩蛋爆料，抱起小熊猫时能一键换装？！",
         "source": "TapTap官方",
-        "url": "https://www.taptap.cn/moment/811648122982761996",
-        "moment_id": "811648122982761996",
+        "url": "https://www.taptap.cn/moment/809043188944734812",
+        "moment_id": "809043188944734812",
+        "link_status": "valid",
+        "category": "cosmetic",
+        "content_tags": [
+          "彩蛋"
+        ],
+        "priority": "medium"
+      },
+      {
+        "title": "【月-云台鹗】时装设计细节展示",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/moment/810966373529291845",
+        "moment_id": "810966373529291845",
+        "link_status": "valid",
+        "category": "cosmetic",
+        "content_tags": [
+          "新时装"
+        ],
+        "priority": "medium"
+      },
+      {
+        "title": "楚文化联动限定回收物【人骑骆驼灯】与【楚辞天书】爆料",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/moment/810937278263199673",
+        "moment_id": "810937278263199673",
         "link_status": "valid",
         "category": "pr",
         "content_tags": [
           "品牌联动"
+        ],
+        "priority": "low"
+      },
+      {
+        "title": "超自然爱心公益项目第二弹",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/moment/810481057399835050",
+        "moment_id": "810481057399835050",
+        "link_status": "valid",
+        "category": "pr",
+        "content_tags": [
+          "公益活动"
         ],
         "priority": "low"
       },
@@ -48,34 +74,42 @@
         "priority": "medium"
       },
       {
-        "title": "卸载重下也没用，修复也没用，电脑重启也没用，换盘也没用，开加速器也没用，打开就重复下载几次更新然后卡在这里",
+        "title": "全新【钓鱼玩法】爆料抢先看，下周四晚更新后上线啦~",
         "source": "TapTap官方",
-        "url": "https://www.taptap.cn/app/714123/topic?type=official",
-        "link_status": "unknown",
+        "url": "https://www.taptap.cn/moment/809786761940043519",
+        "moment_id": "809786761940043519",
+        "link_status": "valid",
+        "category": "new_content",
+        "content_tags": [
+          "新玩法",
+          "钓鱼",
+          "新服"
+        ],
+        "priority": "high"
+      },
+      {
+        "title": "「小爱求助#2」疑难BUG悬赏令！帮帮我们QAQ",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/moment/793134290320752775",
+        "moment_id": "793134290320752775",
+        "link_status": "valid",
         "category": "patch",
         "content_tags": [
-          "版本更新",
           "BUG修复"
         ],
         "priority": "low"
       },
       {
-        "title": "大家一起为你准备了蛋糕，来许个愿吧（记得看紧小熊猫，它最馋嘴了",
+        "title": "【更名福利】舞蹈降价啦！还免费赠送永久新舞蹈！",
         "source": "TapTap官方",
-        "url": "https://www.taptap.cn/app/714123/topic?type=official",
-        "link_status": "unknown",
-        "category": "other",
-        "content_tags": [],
-        "priority": "low"
-      },
-      {
-        "title": "【零-角色PV预热】——被计划的生命，长出计划外的灵魂",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/app/714123/topic?type=official",
-        "link_status": "unknown",
-        "category": "other",
-        "content_tags": [],
-        "priority": "low"
+        "url": "https://www.taptap.cn/moment/631288109278955289",
+        "moment_id": "631288109278955289",
+        "link_status": "valid",
+        "category": "event",
+        "content_tags": [
+          "福利活动"
+        ],
+        "priority": "medium"
       },
       {
         "title": "就头上两个妙脆角好看，其他的，一言难尽，浅评一下，就像未来的人做现在的皮肤，然后皮肤上画上蒸笼，就说 这是21世纪的风格。",
@@ -87,37 +121,17 @@
           "新皮肤"
         ],
         "priority": "medium"
-      },
-      {
-        "title": "这次请到了专业的动作老师指导，还原最原汁原味的楚韵！",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/app/714123/topic?type=official",
-        "link_status": "unknown",
-        "category": "other",
-        "content_tags": [],
-        "priority": "low"
-      },
-      {
-        "title": "【怪物农场】钓鱼玩法来啦！工友们都能钓到多大的鱼呢？\n超自然行动组 x 荆州博物馆，楚文化联动限定时...",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/app/714123/topic?type=official",
-        "link_status": "unknown",
-        "category": "pr",
-        "content_tags": [
-          "品牌联动"
-        ],
-        "priority": "low"
       }
     ],
     "taptap": {
       "app_id": 714123,
       "source": "taptap_webpage",
-      "fans_count": 11277506,
-      "review_count": 30546,
-      "score": "6.9",
+      "fans_count": 11209440,
+      "review_count": 30084,
+      "score": "6.8",
       "description": "超自然行动组是一款合作游戏，TapTap 提供超自然行动组最新版官方正版下载，一个人玩是恐怖游戏，两个人玩是冒险游戏，三个人玩是寻宝游戏，...",
-      "score_display": 6.9,
-      "rating_value": 6.9
+      "score_display": 6.8,
+      "rating_value": 6.8
     },
     "official_news": [
       {
@@ -208,34 +222,58 @@
     "community": {
       "taptap_forum": [
         {
-          "title": "百变小刘鸭，快乐你我他！【腰包】【粘液球】这次都变身超萌鸭鸭",
+          "title": "【兰-扈江离】联动限定时装细节展示，对楚地巫风美学的别样诠释",
           "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/813482839424109363",
-          "moment_id": "813482839424109363",
+          "url": "https://www.taptap.cn/moment/811312604164131672",
+          "moment_id": "811312604164131672",
           "link_status": "valid",
           "sentiment": "neutral"
         },
         {
-          "title": "玩快两个月了，就没有出过飞天",
+          "title": "超自然×荆州博物馆 兰-扈江离楚风时装绝美",
           "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/813336235035591770",
-          "moment_id": "813336235035591770",
+          "url": "https://www.taptap.cn/moment/811495093511916954",
+          "moment_id": "811495093511916954",
           "link_status": "valid",
           "sentiment": "neutral"
         },
         {
-          "title": "没金像也可以百万撤离吗",
+          "title": "在超自然中当钓鱼佬的一天",
           "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/812795493246569633",
-          "moment_id": "812795493246569633",
+          "url": "https://www.taptap.cn/moment/811285143988734590",
+          "moment_id": "811285143988734590",
           "link_status": "valid",
           "sentiment": "neutral"
         },
         {
-          "title": "第一次碰到能把自己摔死的鱼",
+          "title": "w氪找萌新兔子，包魔盒日保200w",
           "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/813530416764945300",
-          "moment_id": "813530416764945300",
+          "url": "https://www.taptap.cn/moment/811179541392264768",
+          "moment_id": "811179541392264768",
+          "link_status": "valid",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "月【云台鹗】与兰【扈江离】联动时装模型展示",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/moment/810593692699067915",
+          "moment_id": "810593692699067915",
+          "link_status": "valid",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "【月-云台鹗】时装设计细节展示",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/moment/810966373529291845",
+          "moment_id": "810966373529291845",
+          "link_status": "valid",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "全新【钓鱼玩法】爆料抢先看，下周四晚更新后上线啦~",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/moment/809786761940043519",
+          "moment_id": "809786761940043519",
           "link_status": "valid",
           "sentiment": "neutral"
         },
@@ -247,35 +285,14 @@
           "sentiment": "neutral"
         },
         {
-          "title": "【零-角色PV预热】——被计划的生命，长出计划外的灵魂",
+          "title": "就头上两个妙脆角好看，其他的，一言难尽，浅评一下，就像未来的人做现在的皮肤，然后皮肤上画上蒸笼，就说 这是21世纪的风格。",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
-          "sentiment": "neutral"
+          "sentiment": "positive"
         },
         {
-          "title": "卸载重下也没用，修复也没用，电脑重启也没用，换盘也没用，开加速器也没用，打开就重复下载几次更新然后卡在这里",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "negative"
-        },
-        {
-          "title": "求问大佬们，摸飞天有什么(๑•̀ω•́๑)❓技巧吗？",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral"
-        },
-        {
-          "title": "上把3诅咒4高级加起来就20万气得直接跳了，这一把4诅咒2高级，又吃美了[表情_吐舌头]",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral"
-        },
-        {
-          "title": "1.昨天和人一起玩超自然。\n2.她开局就说，，这局她抓怪。这没啥问题，因为我们是三人组队玩游戏。\n3...",
+          "title": "游戏圈记者上线，带#今天游戏圈发生了啥 话题分享游戏新鲜事，万元奖池等你瓜分！详情可加入资讯记者2群：1103610961",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
@@ -352,25 +369,25 @@
       "regions_data": {
         "us": {
           "name": "美国",
-          "rating": 4.5,
-          "rating_count": 553,
-          "current_version": "1.29.26",
+          "rating": 4.48,
+          "rating_count": 392,
+          "current_version": "1.29.17",
           "price": "Free",
           "genre": "Games"
         },
         "jp": {
           "name": "日本",
-          "rating": 4.41,
-          "rating_count": 1375,
-          "current_version": "1.29.26",
+          "rating": 4.39,
+          "rating_count": 1066,
+          "current_version": "1.29.17",
           "price": "無料",
           "genre": "Games"
         },
         "kr": {
           "name": "韩国",
-          "rating": 3.82,
-          "rating_count": 213,
-          "current_version": "1.29.26",
+          "rating": 3.73,
+          "rating_count": 160,
+          "current_version": "1.29.17",
           "price": "무료",
           "genre": "Games"
         },
@@ -385,9 +402,9 @@
           "rating_count": 0
         }
       },
-      "app_store_rating": 4.24,
-      "total_ratings": 2141,
-      "updated": "2026-06-10 02:32"
+      "app_store_rating": 4.2,
+      "total_ratings": 1618,
+      "updated": "2026-06-04 09:05"
     },
     "app_store_rankings": {
       "us": {
@@ -396,23 +413,23 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-10 02:32"
+        "updated": "2026-06-04 09:05"
       },
       "jp": {
         "name": "日本",
         "free_overall": null,
-        "free_games": 85,
+        "free_games": 29,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-10 02:32"
+        "updated": "2026-06-04 09:05"
       },
       "kr": {
         "name": "韩国",
         "free_overall": null,
-        "free_games": null,
+        "free_games": 53,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-10 02:32"
+        "updated": "2026-06-04 09:05"
       },
       "tw": {
         "name": "台湾",
@@ -420,7 +437,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-10 02:32"
+        "updated": "2026-06-04 09:05"
       },
       "hk": {
         "name": "香港",
@@ -428,19 +445,46 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-10 02:32"
+        "updated": "2026-06-04 09:05"
       }
     },
     "stock_price": {
       "code": "SZ002558",
       "name": "巨人网络",
-      "price": 24.3,
-      "prev_close": 24.74,
-      "change_pct": -1.78,
-      "change_amt": -0.44,
-      "updated": "2026-06-10 02:32"
+      "price": 25.59,
+      "prev_close": 25.63,
+      "change_pct": -0.16,
+      "change_amt": -0.04,
+      "updated": "2026-06-04 09:05"
     },
-    "new_content_tracker": [],
-    "crawled_at": "2026-06-10T02:32:35.175819"
+    "new_content_tracker": [
+      {
+        "id": "新玩法",
+        "name": "新玩法",
+        "status": "live",
+        "first_seen": "2026-06-04",
+        "launch_date": null,
+        "tags": [
+          "新玩法",
+          "钓鱼",
+          "新服"
+        ],
+        "announcements": [
+          {
+            "title": "全新【钓鱼玩法】爆料抢先看，下周四晚更新后上线啦~",
+            "date": "2026-06-04",
+            "source": "TapTap官方",
+            "url": "https://www.taptap.cn/moment/809786761940043519",
+            "link_status": "valid"
+          }
+        ],
+        "player_reactions": {
+          "positive": 0,
+          "neutral": 0,
+          "negative": 0
+        }
+      }
+    ],
+    "crawled_at": "2026-06-04T09:05:48.930087"
   }
 }
