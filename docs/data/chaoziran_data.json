@@ -2,6 +2,30 @@
   "chaoziran": {
     "bwiki_updates": [
       {
+        "title": "【兰-扈江离】联动限定时装细节展示，对楚地巫风美学的别样诠释",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/moment/811312604164131672",
+        "moment_id": "811312604164131672",
+        "link_status": "valid",
+        "category": "cosmetic",
+        "content_tags": [
+          "新时装"
+        ],
+        "priority": "medium"
+      },
+      {
+        "title": "【阿念-寻星记】特殊彩蛋爆料，抱起小熊猫时能一键换装？！",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/moment/809043188944734812",
+        "moment_id": "809043188944734812",
+        "link_status": "valid",
+        "category": "cosmetic",
+        "content_tags": [
+          "彩蛋"
+        ],
+        "priority": "medium"
+      },
+      {
         "title": "【月-云台鹗】时装设计细节展示",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/moment/810966373529291845",
@@ -76,18 +100,6 @@
         "priority": "low"
       },
       {
-        "title": "【阿念-寻星记】特殊彩蛋爆料，抱起小熊猫时能一键换装？！",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/moment/809043188944734812",
-        "moment_id": "809043188944734812",
-        "link_status": "valid",
-        "category": "cosmetic",
-        "content_tags": [
-          "彩蛋"
-        ],
-        "priority": "medium"
-      },
-      {
         "title": "【更名福利】舞蹈降价啦！还免费赠送永久新舞蹈！",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/moment/631288109278955289",
@@ -100,29 +112,22 @@
         "priority": "medium"
       },
       {
-        "title": "这次，我们将楚文化舞蹈里“翘袖折腰，刚柔并济”的特色融入到了游戏中。6月5日0点，珍宝阁见啦",
+        "title": "就头上两个妙脆角好看，其他的，一言难尽，浅评一下，就像未来的人做现在的皮肤，然后皮肤上画上蒸笼，就说 这是21世纪的风格。",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/app/714123/topic?type=official",
         "link_status": "unknown",
-        "category": "other",
-        "content_tags": [],
-        "priority": "low"
-      },
-      {
-        "title": "咱就是说讨厌人家就别玩，评论那些有什么意思？搁这膈应谁呢",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/app/714123/topic?type=official",
-        "link_status": "unknown",
-        "category": "other",
-        "content_tags": [],
-        "priority": "low"
+        "category": "cosmetic",
+        "content_tags": [
+          "新皮肤"
+        ],
+        "priority": "medium"
       }
     ],
     "taptap": {
       "app_id": 714123,
       "source": "taptap_webpage",
-      "fans_count": 11205683,
-      "review_count": 30065,
+      "fans_count": 11209620,
+      "review_count": 30087,
       "score": "6.8",
       "description": "超自然行动组是一款合作游戏，TapTap 提供超自然行动组最新版官方正版下载，一个人玩是恐怖游戏，两个人玩是冒险游戏，三个人玩是寻宝游戏，...",
       "score_display": 6.8,
@@ -217,26 +222,58 @@
     "community": {
       "taptap_forum": [
         {
-          "title": "哦不不不，不应该是这样的",
+          "title": "月【云台鹗】与兰【扈江离】联动时装模型展示",
           "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/811023423189812177",
-          "moment_id": "811023423189812177",
+          "url": "https://www.taptap.cn/moment/810593692699067915",
+          "moment_id": "810593692699067915",
           "link_status": "valid",
           "sentiment": "neutral"
         },
         {
-          "title": "【昆仑秘境极限】侧门在右 全地图小抄（4.3更新）",
+          "title": "【月-云台鹗】时装设计细节展示",
           "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/704657700742497225",
-          "moment_id": "704657700742497225",
+          "url": "https://www.taptap.cn/moment/810966373529291845",
+          "moment_id": "810966373529291845",
           "link_status": "valid",
           "sentiment": "neutral"
         },
         {
-          "title": "想试试当摸金陪玩怎么整？",
+          "title": "在超自然中当钓鱼佬的一天",
           "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/811212961027719766",
-          "moment_id": "811212961027719766",
+          "url": "https://www.taptap.cn/moment/811285143988734590",
+          "moment_id": "811285143988734590",
+          "link_status": "valid",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "w氪找萌新兔子，包魔盒日保200w",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/moment/811179541392264768",
+          "moment_id": "811179541392264768",
+          "link_status": "valid",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "楚文化联动限定回收物【人骑骆驼灯】与【楚辞天书】爆料",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/moment/810937278263199673",
+          "moment_id": "810937278263199673",
+          "link_status": "valid",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "【兰-扈江离】联动限定时装细节展示，对楚地巫风美学的别样诠释",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/moment/811312604164131672",
+          "moment_id": "811312604164131672",
+          "link_status": "valid",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "全新【钓鱼玩法】爆料抢先看，下周四晚更新后上线啦~",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/moment/809786761940043519",
+          "moment_id": "809786761940043519",
           "link_status": "valid",
           "sentiment": "neutral"
         },
@@ -248,46 +285,18 @@
           "sentiment": "neutral"
         },
         {
-          "title": "想找一个靠山自己一个人打太累了，求૮ ᴗ͈ˬᴗ͈ෆა",
+          "title": "我看官方每次公告都是出皮肤，这么圈你们超自然玩家这么有钱吗？",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral"
         },
         {
-          "title": "我一般晚上10点多上线，玩的话加我",
+          "title": "这次，我们将楚文化舞蹈里“翘袖折腰，刚柔并济”的特色融入到了游戏中。6月5日0点，珍宝阁见啦",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral"
-        },
-        {
-          "title": "16女生 慢热 人机 脾气温和 除非你先惹我 氪条4100+ 熟了话很多 住宿 玩原创 爱看番日漫韩...",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral"
-        },
-        {
-          "title": "【不忘本+不卡男女+会卡音箱龙珠+不乱跑】",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "negative"
-        },
-        {
-          "title": "非原创，来源网络，还在持续更新完善中\n侧门在【右】全地图小抄，共51张\n上右1-22/ 下右23-3...",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral"
-        },
-        {
-          "title": "很多朋友反映说遇不到这个图的小抄，我碰见了一把卡时间极限找到了6个棺材，主要是我兄弟玩了这个图没凑够金额死了才给我的经验哈哈哈，小抄放这里了",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "negative"
         }
       ],
       "tieba": {
@@ -360,24 +369,24 @@
       "regions_data": {
         "us": {
           "name": "美国",
-          "rating": 4.49,
-          "rating_count": 370,
+          "rating": 4.5,
+          "rating_count": 412,
           "current_version": "1.29.17",
           "price": "Free",
           "genre": "Games"
         },
         "jp": {
           "name": "日本",
-          "rating": 4.38,
-          "rating_count": 1012,
+          "rating": 4.39,
+          "rating_count": 1066,
           "current_version": "1.29.17",
           "price": "無料",
           "genre": "Games"
         },
         "kr": {
           "name": "韩国",
-          "rating": 3.73,
-          "rating_count": 160,
+          "rating": 3.72,
+          "rating_count": 165,
           "current_version": "1.29.17",
           "price": "무료",
           "genre": "Games"
@@ -394,8 +403,8 @@
         }
       },
       "app_store_rating": 4.2,
-      "total_ratings": 1542,
-      "updated": "2026-06-03 16:39"
+      "total_ratings": 1643,
+      "updated": "2026-06-04 02:45"
     },
     "app_store_rankings": {
       "us": {
@@ -404,7 +413,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-03 16:38"
+        "updated": "2026-06-04 02:45"
       },
       "jp": {
         "name": "日本",
@@ -412,15 +421,15 @@
         "free_games": 30,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-03 16:38"
+        "updated": "2026-06-04 02:45"
       },
       "kr": {
         "name": "韩国",
         "free_overall": null,
-        "free_games": 51,
+        "free_games": 53,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-03 16:38"
+        "updated": "2026-06-04 02:45"
       },
       "tw": {
         "name": "台湾",
@@ -428,7 +437,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-03 16:38"
+        "updated": "2026-06-04 02:45"
       },
       "hk": {
         "name": "香港",
@@ -436,24 +445,24 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-03 16:38"
+        "updated": "2026-06-04 02:45"
       }
     },
     "stock_price": {
       "code": "SZ002558",
       "name": "巨人网络",
-      "price": 25.59,
-      "prev_close": 25.63,
-      "change_pct": -0.16,
-      "change_amt": -0.04,
-      "updated": "2026-06-03 16:38"
+      "price": 25.29,
+      "prev_close": 25.59,
+      "change_pct": -1.17,
+      "change_amt": -0.3,
+      "updated": "2026-06-04 02:45"
     },
     "new_content_tracker": [
       {
         "id": "新玩法",
         "name": "新玩法",
         "status": "live",
-        "first_seen": "2026-06-03",
+        "first_seen": "2026-06-04",
         "launch_date": null,
         "tags": [
           "新玩法",
@@ -463,9 +472,10 @@
         "announcements": [
           {
             "title": "全新【钓鱼玩法】爆料抢先看，下周四晚更新后上线啦~",
-            "date": "2026-06-03",
+            "date": "2026-06-04",
             "source": "TapTap官方",
-            "url": "https://www.taptap.cn/moment/809786761940043519"
+            "url": "https://www.taptap.cn/moment/809786761940043519",
+            "link_status": "valid"
           }
         ],
         "player_reactions": {
@@ -475,6 +485,6 @@
         }
       }
     ],
-    "crawled_at": "2026-06-03T16:39:00.808808"
+    "crawled_at": "2026-06-04T02:45:51.822257"
   }
 }
