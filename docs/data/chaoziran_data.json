@@ -2,6 +2,52 @@
   "chaoziran": {
     "bwiki_updates": [
       {
+        "title": "版本更新——怪物农场钓鱼玩法上线！荆州博物馆联动限定内容来啦",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/moment/811648122982761996",
+        "moment_id": "811648122982761996",
+        "link_status": "valid",
+        "category": "pr",
+        "content_tags": [
+          "品牌联动"
+        ],
+        "priority": "low"
+      },
+      {
+        "title": "【月-云台鹗】时装设计细节展示",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/moment/810966373529291845",
+        "moment_id": "810966373529291845",
+        "link_status": "valid",
+        "category": "cosmetic",
+        "content_tags": [
+          "新时装"
+        ],
+        "priority": "medium"
+      },
+      {
+        "title": "超自然爱心公益项目第二弹",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/moment/810481057399835050",
+        "moment_id": "810481057399835050",
+        "link_status": "valid",
+        "category": "pr",
+        "content_tags": [
+          "公益活动"
+        ],
+        "priority": "low"
+      },
+      {
+        "title": "九级亲密动作【比心】爆料！",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/moment/806208164285385233",
+        "moment_id": "806208164285385233",
+        "link_status": "valid",
+        "category": "other",
+        "content_tags": [],
+        "priority": "low"
+      },
+      {
         "title": "月【云台鹗】与兰【扈江离】联动时装模型展示",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/moment/810593692699067915",
@@ -26,35 +72,10 @@
         "priority": "medium"
       },
       {
-        "title": "超自然爱心公益项目第二弹",
+        "title": "【怪物农场】钓鱼玩法来啦！工友们都能钓到多大的鱼呢？\n超自然行动组 x 荆州博物馆，楚文化联动限定时...",
         "source": "TapTap官方",
-        "url": "https://www.taptap.cn/moment/810481057399835050",
-        "moment_id": "810481057399835050",
-        "link_status": "valid",
-        "category": "pr",
-        "content_tags": [
-          "公益活动"
-        ],
-        "priority": "low"
-      },
-      {
-        "title": "【月-云台鹗】时装设计细节展示",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/moment/810966373529291845",
-        "moment_id": "810966373529291845",
-        "link_status": "valid",
-        "category": "cosmetic",
-        "content_tags": [
-          "新时装"
-        ],
-        "priority": "medium"
-      },
-      {
-        "title": "版本更新——怪物农场钓鱼玩法上线！荆州博物馆联动限定内容来啦",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/moment/811648122982761996",
-        "moment_id": "811648122982761996",
-        "link_status": "valid",
+        "url": "https://www.taptap.cn/app/714123/topic?type=official",
+        "link_status": "unknown",
         "category": "pr",
         "content_tags": [
           "品牌联动"
@@ -62,31 +83,18 @@
         "priority": "low"
       },
       {
-        "title": "【阿念-寻星记】特殊彩蛋爆料，抱起小熊猫时能一键换装？！",
+        "title": "盗墓探险题材原创头部IP《鬼吹灯》官方正版授权合作，海量全新内容，我们七月见！",
         "source": "TapTap官方",
-        "url": "https://www.taptap.cn/moment/809043188944734812",
-        "moment_id": "809043188944734812",
-        "link_status": "valid",
-        "category": "cosmetic",
+        "url": "https://www.taptap.cn/app/714123/topic?type=official",
+        "link_status": "unknown",
+        "category": "new_content",
         "content_tags": [
-          "彩蛋"
+          "IP联动"
         ],
-        "priority": "medium"
+        "priority": "high"
       },
       {
-        "title": "楚文化联动限定回收物【人骑骆驼灯】与【楚辞天书】爆料",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/moment/810937278263199673",
-        "moment_id": "810937278263199673",
-        "link_status": "valid",
-        "category": "pr",
-        "content_tags": [
-          "品牌联动"
-        ],
-        "priority": "low"
-      },
-      {
-        "title": "这次请到了专业的动作老师指导，还原最原汁原味的楚韵！",
+        "title": "官方你。到底是要出什么？一会儿鬼迷戏中，一会又什么江南。一会儿又鬼灭灯。然后又一个都不上",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/app/714123/topic?type=official",
         "link_status": "unknown",
@@ -95,33 +103,20 @@
         "priority": "low"
       },
       {
-        "title": "我看官方每次公告都是出皮肤，这么圈你们超自然玩家这么有钱吗？",
+        "title": "这次，我们将楚文化舞蹈里“翘袖折腰，刚柔并济”的特色融入到了游戏中。6月5日0点，珍宝阁见啦",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/app/714123/topic?type=official",
         "link_status": "unknown",
-        "category": "cosmetic",
-        "content_tags": [
-          "新皮肤"
-        ],
-        "priority": "medium"
-      },
-      {
-        "title": "就头上两个妙脆角好看，其他的，一言难尽，浅评一下，就像未来的人做现在的皮肤，然后皮肤上画上蒸笼，就说 这是21世纪的风格。",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/app/714123/topic?type=official",
-        "link_status": "unknown",
-        "category": "cosmetic",
-        "content_tags": [
-          "新皮肤"
-        ],
-        "priority": "medium"
+        "category": "other",
+        "content_tags": [],
+        "priority": "low"
       }
     ],
     "taptap": {
       "app_id": 714123,
       "source": "taptap_webpage",
-      "fans_count": 11215078,
-      "review_count": 30119,
+      "fans_count": 11225879,
+      "review_count": 30198,
       "score": "6.8",
       "description": "超自然行动组是一款合作游戏，TapTap 提供超自然行动组最新版官方正版下载，一个人玩是恐怖游戏，两个人玩是冒险游戏，三个人玩是寻宝游戏，...",
       "score_display": 6.8,
@@ -216,50 +211,18 @@
     "community": {
       "taptap_forum": [
         {
-          "title": "版本更新——怪物农场钓鱼玩法上线！荆州博物馆联动限定内容来啦",
+          "title": "【昆仑秘境极限】侧门在下 全地图小抄（4.3更新）",
           "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/811648122982761996",
-          "moment_id": "811648122982761996",
+          "url": "https://www.taptap.cn/moment/704654736518810795",
+          "moment_id": "704654736518810795",
           "link_status": "valid",
           "sentiment": "neutral"
         },
         {
-          "title": "月【云台鹗】与兰【扈江离】联动时装模型展示",
+          "title": "经常出神龙和圣杯的人真的有吗？",
           "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/810593692699067915",
-          "moment_id": "810593692699067915",
-          "link_status": "valid",
-          "sentiment": "neutral"
-        },
-        {
-          "title": "【月-云台鹗】时装设计细节展示",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/810966373529291845",
-          "moment_id": "810966373529291845",
-          "link_status": "valid",
-          "sentiment": "neutral"
-        },
-        {
-          "title": "w氪找萌新兔子，包魔盒日保200w",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/811179541392264768",
-          "moment_id": "811179541392264768",
-          "link_status": "valid",
-          "sentiment": "neutral"
-        },
-        {
-          "title": "全新【钓鱼玩法】爆料抢先看，下周四晚更新后上线啦~",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/809786761940043519",
-          "moment_id": "809786761940043519",
-          "link_status": "valid",
-          "sentiment": "neutral"
-        },
-        {
-          "title": "在超自然中当钓鱼佬的一天",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/811285143988734590",
-          "moment_id": "811285143988734590",
+          "url": "https://www.taptap.cn/moment/811862960212282982",
+          "moment_id": "811862960212282982",
           "link_status": "valid",
           "sentiment": "neutral"
         },
@@ -271,21 +234,28 @@
           "sentiment": "neutral"
         },
         {
-          "title": "这次请到了专业的动作老师指导，还原最原汁原味的楚韵！",
+          "title": "非原创，来源网络，还在持续更新完善中\n侧门在【下】全地图小抄，共52张\n上下1-3 / 上下右4-1...",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral"
         },
         {
-          "title": "摸金，抓怪，古蜀四队，种菜膜拜偷菜，都可以。\n淡游，不会龙宫/龙宫多队/双队。可以学。昆仑熟练度较低...",
+          "title": "俺这得大金条件有点独特？\n只能说超自然又发力了，\n非常不错，感谢超自然的独特暴率",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral"
         },
         {
-          "title": "【怪物农场】钓鱼玩法来啦！工友们都能钓到多大的鱼呢？\n超自然行动组 x 荆州博物馆，楚文化联动限定时...",
+          "title": "《精绝古城》极限 \n▌：* * * https://www.taptap.cn/moment/686...",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "#超自然行动组 #超自然找靠山 兔子蹲专属固玩靠山！不许同时养别的兔子：找零当靠山也可以一块摸金、抓...",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
@@ -362,25 +332,25 @@
       "regions_data": {
         "us": {
           "name": "美国",
-          "rating": 4.5,
-          "rating_count": 412,
-          "current_version": "1.29.17",
+          "rating": 4.48,
+          "rating_count": 460,
+          "current_version": "1.29.26",
           "price": "Free",
           "genre": "Games"
         },
         "jp": {
           "name": "日本",
-          "rating": 4.39,
-          "rating_count": 1066,
-          "current_version": "1.29.17",
+          "rating": 4.4,
+          "rating_count": 1168,
+          "current_version": "1.29.26",
           "price": "無料",
           "genre": "Games"
         },
         "kr": {
           "name": "韩国",
-          "rating": 3.72,
-          "rating_count": 165,
-          "current_version": "1.29.17",
+          "rating": 3.77,
+          "rating_count": 178,
+          "current_version": "1.29.26",
           "price": "무료",
           "genre": "Games"
         },
@@ -395,9 +365,9 @@
           "rating_count": 0
         }
       },
-      "app_store_rating": 4.2,
-      "total_ratings": 1643,
-      "updated": "2026-06-05 02:33"
+      "app_store_rating": 4.22,
+      "total_ratings": 1806,
+      "updated": "2026-06-06 02:11"
     },
     "app_store_rankings": {
       "us": {
@@ -406,23 +376,23 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-05 02:32"
+        "updated": "2026-06-06 02:11"
       },
       "jp": {
         "name": "日本",
         "free_overall": null,
-        "free_games": 32,
+        "free_games": 36,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-05 02:32"
+        "updated": "2026-06-06 02:11"
       },
       "kr": {
         "name": "韩国",
         "free_overall": null,
-        "free_games": 53,
+        "free_games": 61,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-05 02:32"
+        "updated": "2026-06-06 02:11"
       },
       "tw": {
         "name": "台湾",
@@ -430,7 +400,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-05 02:32"
+        "updated": "2026-06-06 02:11"
       },
       "hk": {
         "name": "香港",
@@ -438,19 +408,43 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-05 02:32"
+        "updated": "2026-06-06 02:11"
       }
     },
     "stock_price": {
       "code": "SZ002558",
       "name": "巨人网络",
-      "price": 25.58,
+      "price": 25.79,
       "prev_close": 25.25,
-      "change_pct": 1.31,
-      "change_amt": 0.33,
-      "updated": "2026-06-05 02:32"
+      "change_pct": 2.14,
+      "change_amt": 0.54,
+      "updated": "2026-06-06 02:11"
     },
-    "new_content_tracker": [],
-    "crawled_at": "2026-06-05T02:33:00.005999"
+    "new_content_tracker": [
+      {
+        "id": "ip联动",
+        "name": "IP联动",
+        "status": "announced",
+        "first_seen": "2026-06-06",
+        "launch_date": null,
+        "tags": [
+          "IP联动"
+        ],
+        "announcements": [
+          {
+            "title": "盗墓探险题材原创头部IP《鬼吹灯》官方正版授权合作，海量全新内容，我们七月见！",
+            "date": "2026-06-06",
+            "source": "TapTap官方",
+            "url": "https://www.taptap.cn/app/714123/topic?type=official"
+          }
+        ],
+        "player_reactions": {
+          "positive": 0,
+          "neutral": 0,
+          "negative": 0
+        }
+      }
+    ],
+    "crawled_at": "2026-06-06T02:11:32.833239"
   }
 }
