@@ -26,19 +26,25 @@
         "priority": "medium"
       },
       {
-        "title": "【兰-扈江离】联动限定时装细节展示，对楚地巫风美学的别样诠释",
+        "title": "大家一起为你准备了蛋糕，来许个愿吧（记得看紧小熊猫，它最馋嘴了",
         "source": "TapTap官方",
-        "url": "https://www.taptap.cn/moment/811312604164131672",
-        "moment_id": "811312604164131672",
-        "link_status": "valid",
-        "category": "cosmetic",
-        "content_tags": [
-          "新时装"
-        ],
-        "priority": "medium"
+        "url": "https://www.taptap.cn/app/714123/topic?type=official",
+        "link_status": "unknown",
+        "category": "other",
+        "content_tags": [],
+        "priority": "low"
       },
       {
         "title": "【零-角色PV预热】——被计划的生命，长出计划外的灵魂",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/app/714123/topic?type=official",
+        "link_status": "unknown",
+        "category": "other",
+        "content_tags": [],
+        "priority": "low"
+      },
+      {
+        "title": "这次请到了专业的动作老师指导，还原最原汁原味的楚韵！",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/app/714123/topic?type=official",
         "link_status": "unknown",
@@ -58,7 +64,7 @@
         "priority": "low"
       },
       {
-        "title": "钓鱼为什么要有上限？你是觉得几分钟一条鱼卖两块很赚钱吗？",
+        "title": "一进农场，怎么全是那个加载界面的声音，更新不好就不要着急更新呀！",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/app/714123/topic?type=official",
         "link_status": "unknown",
@@ -78,16 +84,7 @@
         "priority": "high"
       },
       {
-        "title": "好官方，好官方，我想进测试服，段位王牌，胜率50多，平常挺爱上线的。",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/app/714123/topic?type=official",
-        "link_status": "unknown",
-        "category": "other",
-        "content_tags": [],
-        "priority": "low"
-      },
-      {
-        "title": "这次请到了专业的动作老师指导，还原最原汁原味的楚韵！",
+        "title": "官方你。到底是要出什么？一会儿鬼迷戏中，一会又什么江南。一会儿又鬼灭灯。然后又一个都不上",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/app/714123/topic?type=official",
         "link_status": "unknown",
@@ -110,8 +107,8 @@
     "taptap": {
       "app_id": 714123,
       "source": "taptap_webpage",
-      "fans_count": 11262145,
-      "review_count": 30429,
+      "fans_count": 11270319,
+      "review_count": 30425,
       "score": "6.9",
       "description": "超自然行动组是一款合作游戏，TapTap 提供超自然行动组最新版官方正版下载，一个人玩是恐怖游戏，两个人玩是冒险游戏，三个人玩是寻宝游戏，...",
       "score_display": 6.9,
@@ -206,12 +203,20 @@
     "community": {
       "taptap_forum": [
         {
-          "title": "找靠山&amp;搭子",
+          "title": "【兰-扈江离】联动限定时装细节展示，对楚地巫风美学的别样诠释",
           "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/812861629162064903",
-          "moment_id": "812861629162064903",
+          "url": "https://www.taptap.cn/moment/811312604164131672",
+          "moment_id": "811312604164131672",
           "link_status": "valid",
           "sentiment": "neutral"
+        },
+        {
+          "title": "这是最贵的鱼吗？第一天新手福利出的",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/moment/813175983300412668",
+          "moment_id": "813175983300412668",
+          "link_status": "valid",
+          "sentiment": "positive"
         },
         {
           "title": "没金像也可以百万撤离吗",
@@ -229,6 +234,13 @@
           "sentiment": "neutral"
         },
         {
+          "title": "大家一起为你准备了蛋糕，来许个愿吧（记得看紧小熊猫，它最馋嘴了",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "neutral"
+        },
+        {
           "title": "【零-角色PV预热】——被计划的生命，长出计划外的灵魂",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
@@ -236,46 +248,32 @@
           "sentiment": "neutral"
         },
         {
-          "title": "想找一个时间和自己差不多的 主摸金吧 也能耍四队 我也爱耍好吧 我住宿生一般周末有时间玩 晚上基本到...",
+          "title": "就头上两个妙脆角好看，其他的，一言难尽，浅评一下，就像未来的人做现在的皮肤，然后皮肤上画上蒸笼，就说 这是21世纪的风格。",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "positive"
+        },
+        {
+          "title": "每周趣闻速递第四期：鸭鸭惨当移动靶，阿念居然在四队打篮球？",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "negative"
         },
         {
-          "title": "每张地图都有多个撤离点，有的需要解谜激活，有的在固定时间开放，你得在倒计时结束前赶到，这种紧迫感比单纯的跑到终点有意思多了。",
+          "title": "官方您好，反馈秦陵地图玩法优化建议：",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral"
         },
         {
-          "title": "每张地图都有多个撤离点，有的需要解谜激活，有的在固定时间开放，你得在倒计时结束前赶到，这种紧迫感比单...",
+          "title": "2. 适当小幅下调4队部分武器强度，当前长枪、爆炸弓、电击背包强度偏高，大量玩家蹲点偷袭6队，6队开荒、开棺、挑战BOSS生存环境太差，阵营对战平衡性失衡。",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
-          "sentiment": "neutral"
-        },
-        {
-          "title": "上把3诅咒4高级加起来就20万气得直接跳了，这一把4诅咒2高级，又吃美了[表情_吐舌头]",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral"
-        },
-        {
-          "title": "想要个时间多一点的，周一到周日晚上都有时间的四队搭子呀，跑刀可能幼偏青吧，飞天也是幼年，希望16+，...",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral"
-        },
-        {
-          "title": "本人只会摸金 想找几个搭子一起玩 很想很想摸个神龙啊",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral"
+          "sentiment": "negative"
         }
       ],
       "tieba": {
@@ -349,23 +347,23 @@
         "us": {
           "name": "美国",
           "rating": 4.51,
-          "rating_count": 508,
+          "rating_count": 534,
           "current_version": "1.29.26",
           "price": "Free",
           "genre": "Games"
         },
         "jp": {
           "name": "日本",
-          "rating": 4.4,
-          "rating_count": 1269,
+          "rating": 4.41,
+          "rating_count": 1335,
           "current_version": "1.29.26",
           "price": "無料",
           "genre": "Games"
         },
         "kr": {
           "name": "韩国",
-          "rating": 3.8,
-          "rating_count": 203,
+          "rating": 3.82,
+          "rating_count": 213,
           "current_version": "1.29.26",
           "price": "무료",
           "genre": "Games"
@@ -381,9 +379,9 @@
           "rating_count": 0
         }
       },
-      "app_store_rating": 4.24,
-      "total_ratings": 1980,
-      "updated": "2026-06-08 08:53"
+      "app_store_rating": 4.25,
+      "total_ratings": 2082,
+      "updated": "2026-06-09 08:54"
     },
     "app_store_rankings": {
       "us": {
@@ -392,23 +390,23 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-08 08:53"
+        "updated": "2026-06-09 08:54"
       },
       "jp": {
         "name": "日本",
         "free_overall": null,
-        "free_games": 47,
+        "free_games": 60,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-08 08:53"
+        "updated": "2026-06-09 08:54"
       },
       "kr": {
         "name": "韩国",
         "free_overall": null,
-        "free_games": 94,
+        "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-08 08:53"
+        "updated": "2026-06-09 08:54"
       },
       "tw": {
         "name": "台湾",
@@ -416,7 +414,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-08 08:53"
+        "updated": "2026-06-09 08:54"
       },
       "hk": {
         "name": "香港",
@@ -424,24 +422,24 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-08 08:53"
+        "updated": "2026-06-09 08:54"
       }
     },
     "stock_price": {
       "code": "SZ002558",
       "name": "巨人网络",
-      "price": 25.79,
-      "prev_close": 25.25,
-      "change_pct": 2.14,
-      "change_amt": 0.54,
-      "updated": "2026-06-08 08:53"
+      "price": 24.87,
+      "prev_close": 25.79,
+      "change_pct": -3.57,
+      "change_amt": -0.92,
+      "updated": "2026-06-09 08:54"
     },
     "new_content_tracker": [
       {
         "id": "ip联动",
         "name": "IP联动",
         "status": "announced",
-        "first_seen": "2026-06-08",
+        "first_seen": "2026-06-09",
         "launch_date": null,
         "tags": [
           "IP联动"
@@ -449,7 +447,7 @@
         "announcements": [
           {
             "title": "盗墓探险题材原创头部IP《鬼吹灯》官方正版授权合作，海量全新内容，我们七月见！",
-            "date": "2026-06-08",
+            "date": "2026-06-09",
             "source": "TapTap官方",
             "url": "https://www.taptap.cn/app/714123/topic?type=official"
           }
@@ -461,6 +459,6 @@
         }
       }
     ],
-    "crawled_at": "2026-06-08T08:53:37.756191"
+    "crawled_at": "2026-06-09T08:54:47.437809"
   }
 }
