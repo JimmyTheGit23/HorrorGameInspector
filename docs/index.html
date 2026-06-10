@@ -872,7 +872,10 @@
                 const annList = (item.announcements || []).slice(0, 3).map(a => `
                     <div class="text-[11px] text-gray-500 flex items-start gap-1.5">
                         <span class="text-gray-700 shrink-0">•</span>
-                        <a href="${a.url || '#'}" target="_blank" class="hover:text-accent-light transition line-clamp-2">${a.title}</a>
+                        <div class="min-w-0 flex-1">
+                            <a href="${a.url || '#'}" target="_blank" class="hover:text-accent-light transition line-clamp-2">${a.title}</a>
+                            ${a.date ? `<span class="text-[10px] text-gray-600 ml-1">(${a.date})</span>` : ''}
+                        </div>
                     </div>
                 `).join('');
                 return `<div class="bg-dark-900/60 rounded-lg p-3 border border-gray-700/40">
