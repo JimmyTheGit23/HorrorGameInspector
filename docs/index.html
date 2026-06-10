@@ -1712,19 +1712,14 @@
         }
 
         // ========== 竞品实时排行 ==========
-        let rankingSortKey = 'release'; // release | ccu | rate | reviews
-
-        function renderCompetitorRanking(sortKey) {
-            if (sortKey) rankingSortKey = sortKey;
+        function renderCompetitorRanking() {
             const container = document.getElementById('competitor-ranking');
             if (!container) return;
 
             // 只收集PC/Steam竞品（排除纯手游）
             const allGames = [];
             Object.entries(competitorInfo).forEach(([name, info]) => {
-                // 排除非竞品（永劫无间是竞品但不列入PC排行）
                 if (name === '永劫无间') return;
-                // 只要有Steam商店链接的算PC游戏
                 if (!info.storeUrl || !info.storeUrl.includes('steampowered.com')) return;
                 const steam = info.steamKey ? steamData[info.steamKey] : null;
                 const store = steam ? (steam.store || {}) : {};
@@ -1738,6 +1733,7 @@
                     dev: info.dev,
                     release: info.release,
                     players: info.players,
+                    intro: info.intro || '',
                     ccu: spy.ccu || null,
                     rate: reviews.positive_rate || info.rate || null,
                     reviews_total: reviews.total_reviews || info.reviews_total || null,
@@ -1747,41 +1743,20 @@
                 });
             });
 
-            // 排序：发售时间默认降序（最新在前）
-            const sortKeys = {
-                release: (a, b) => {
-                    const parseDate = s => { if (!s || s === '未公布') return 0; const d = new Date(s); return isNaN(d) ? 0 : d.getTime(); };
-                    return parseDate(b.release) - parseDate(a.release);
-                },
-                ccu: (a, b) => (b.ccu || 0) - (a.ccu || 0),
-                rate: (a, b) => (b.rate || 0) - (a.rate || 0),
-                reviews: (a, b) => (b.reviews_total || 0) - (a.reviews_total || 0)
-            };
-            allGames.sort(sortKeys[rankingSortKey] || sortKeys.release);
+            // 分组：未发售优先 → 已发售按时间降序
+            const parseDate = s => { if (!s || s === '未公布') return 0; const d = new Date(s); return isNaN(d) ? 0 : d.getTime(); };
+            const upcoming = allGames.filter(g => g.isWishlist || !g.release || g.release === '未公布');
+            const released = allGames.filter(g => !g.isWishlist && g.release && g.release !== '未公布').sort((a, b) => parseDate(b.release) - parseDate(a.release));
 
-            const sortBtns = [
-                { key: 'release', label: i18nDict.sort_release[currentLang], icon: '📅' },
-                { key: 'ccu', label: i18nDict.sort_ccu[currentLang], icon: '👥' },
-                { key: 'rate', label: i18nDict.sort_rate[currentLang], icon: '⭐' },
-                { key: 'reviews', label: i18nDict.sort_reviews[currentLang], icon: '📝' }
-            ];
-
-            const rankingGridStyle = 'grid-template-columns: 42px minmax(260px, 1fr) 110px 92px 88px 92px 92px 72px;';
+            const rankingGridStyle = 'grid-template-columns: 42px minmax(260px, 1fr) 110px 92px 88px 72px;';
 
             let html = `
                 <div class="bg-dark-800 rounded-lg border border-gray-800 overflow-hidden">
                     <div class="px-4 py-3 border-b border-gray-700/50 flex items-center justify-between">
                         <div class="flex items-center gap-2">
-                            <span class="text-base">🏆</span>
+                            <span class="text-base">🔭</span>
                             <h3 class="text-sm font-bold text-white" data-i18n="ranking_title">${i18nDict.ranking_title[currentLang]}</h3>
-                            <span class="text-[10px] px-1.5 py-px bg-amber-500/20 text-amber-300 rounded font-mono">PC · Steam</span>
-                        </div>
-                        <div class="flex items-center gap-1">
-                            ${sortBtns.map(s => `
-                                <button onclick="renderCompetitorRanking('${s.key}')" class="px-2 py-1 text-[11px] rounded transition ${rankingSortKey === s.key ? 'bg-accent/20 text-accent border border-accent/30' : 'text-gray-500 hover:text-gray-300 border border-transparent hover:border-gray-700'}">
-                                    ${s.icon} ${s.label}
-                                </button>
-                            `).join('')}
+                            <span class="text-[10px] px-1.5 py-px bg-purple-500/20 text-purple-300 rounded font-mono">PC · Steam</span>
                         </div>
                     </div>
                     <div class="px-4 py-2 border-b border-gray-800/80 text-[10px] text-gray-500 uppercase tracking-wide">
@@ -1791,64 +1766,91 @@
                             <div class="text-right">${i18nDict.release_date[currentLang]}</div>
                             <div class="text-right">${i18nDict.th_status[currentLang]}</div>
                             <div class="text-right">${i18nDict.th_pos_rate[currentLang]}</div>
-                            <div class="text-right">${i18nDict.th_reviews[currentLang]}</div>
-                            <div class="text-right">${i18nDict.th_online[currentLang]}</div>
                             <div class="text-right">${i18nDict.th_price[currentLang]}</div>
                         </div>
                     </div>
                     <div class="divide-y divide-gray-800/60 overflow-x-auto">
             `;
 
-            allGames.forEach((g, idx) => {
-                const rank = idx + 1;
+            let rank = 0;
 
-                let rankBadge;
-                if (rank === 1) rankBadge = '<span class="text-amber-400 font-black text-lg">🥇</span>';
-                else if (rank === 2) rankBadge = '<span class="text-gray-300 font-black text-lg">🥈</span>';
-                else if (rank === 3) rankBadge = '<span class="text-amber-600 font-black text-lg">🥉</span>';
-                else rankBadge = `<span class="text-gray-600 font-mono text-sm">${rank}</span>`;
-
-                const rateColor = !g.rate ? 'text-gray-600' : g.rate >= 85 ? 'text-emerald-400' : g.rate >= 60 ? 'text-amber-400' : 'text-red-400';
-                const rateBg = !g.rate ? '' : g.rate >= 85 ? 'bg-emerald-500/10 border-emerald-500/20' : g.rate >= 60 ? 'bg-amber-500/10 border-amber-500/20' : 'bg-red-500/10 border-red-500/20';
-
-                const statusBadge = g.isWishlist
-                    ? '<span class="inline-flex justify-center min-w-[72px] px-1.5 py-0.5 bg-purple-500/15 text-purple-400 border border-purple-500/25 rounded text-[10px] font-bold">WISHLIST</span>'
-                    : g.status === 'EA'
-                    ? '<span class="inline-flex justify-center min-w-[72px] px-1.5 py-0.5 bg-amber-500/15 text-amber-400 border border-amber-500/25 rounded text-[10px] font-bold">EA</span>'
-                    : `<span class="inline-flex justify-center min-w-[72px] px-1.5 py-0.5 bg-sky-500/15 text-sky-400 border border-sky-500/25 rounded text-[10px] font-bold">${i18nDict.released[currentLang]}</span>`;
-
+            // ── 未发售/潜在竞品 ──
+            upcoming.forEach((g) => {
+                rank++;
                 const catColors = { '恐怖撤离': 'text-red-400', '捉鬼调查': 'text-violet-400', 'PvPvE猎杀': 'text-orange-400', '搜打撤/摸金': 'text-cyan-400' };
                 const catColor = catColors[g.category] || 'text-gray-400';
-
                 const displayName = g.cnName ? `${g.name}（${g.cnName}）` : g.name;
-                const releaseDisplay = g.isWishlist || !g.release || g.release === '未公布' ? i18nDict.not_released[currentLang] : g.release;
-                const ccuDisplay = g.ccu ? g.ccu.toLocaleString() : '--';
+
+                html += `
+                    <a href="${g.storeUrl}" target="_blank" rel="noopener" class="block px-4 py-3.5 hover:bg-dark-700/50 transition-colors group border-l-4 border-purple-500 bg-purple-500/5">
+                        <div class="grid gap-3 items-center" style="${rankingGridStyle}">
+                            <div class="text-center shrink-0"><span class="text-purple-400 font-bold text-sm">${rank}</span></div>
+                            <div class="min-w-0">
+                                <div class="flex items-center gap-1.5 mb-0.5 min-w-0">
+                                    <span class="font-bold text-sm text-white truncate group-hover:text-accent-light transition-colors">${displayName}</span>
+                                    <span class="text-[10px] ${catColor} shrink-0">${g.category}</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-[11px] min-w-0 text-gray-400">
+                                    <span class="truncate">${g.dev}</span>
+                                    <span class="text-gray-600 shrink-0">·</span>
+                                    <span class="shrink-0">${g.players}</span>
+                                </div>
+                                ${g.intro ? `<div class="mt-1 text-[10px] text-gray-500 line-clamp-1">${g.intro}</div>` : ''}
+                            </div>
+                            <div class="text-right text-[11px] text-purple-300 font-mono">${i18nDict.not_released[currentLang]}</div>
+                            <div class="text-right"><span class="inline-flex justify-center min-w-[72px] px-1.5 py-0.5 bg-purple-500/15 text-purple-400 border border-purple-500/25 rounded text-[10px] font-bold">WISHLIST</span></div>
+                            <div class="text-right"><span class="text-gray-700 text-[11px]">--</span></div>
+                            <div class="text-right text-[11px] text-gray-500 font-mono">${g.price}</div>
+                        </div>
+                    </a>
+                `;
+            });
+
+            // ── 分隔线 ──
+            if (upcoming.length > 0 && released.length > 0) {
+                html += `
+                    <div class="px-4 py-1.5 bg-dark-900/50 flex items-center gap-2">
+                        <div class="flex-1 h-px bg-gray-800"></div>
+                        <span class="text-[10px] text-gray-600 tracking-wider">${i18nDict.released_ref[currentLang]}</span>
+                        <div class="flex-1 h-px bg-gray-800"></div>
+                    </div>
+                `;
+            }
+
+            // ── 已发售竞品（弱化展示） ──
+            released.forEach((g) => {
+                rank++;
+                const catColors = { '恐怖撤离': 'text-red-400', '捉鬼调查': 'text-violet-400', 'PvPvE猎杀': 'text-orange-400', '搜打撤/摸金': 'text-cyan-400' };
+                const catColor = catColors[g.category] || 'text-gray-400';
+                const displayName = g.cnName ? `${g.name}（${g.cnName}）` : g.name;
+                const rateColor = !g.rate ? 'text-gray-700' : g.rate >= 85 ? 'text-emerald-500/70' : g.rate >= 60 ? 'text-amber-500/70' : 'text-red-500/70';
+                const rateBg = !g.rate ? '' : g.rate >= 85 ? 'bg-emerald-500/5 border-emerald-500/10' : g.rate >= 60 ? 'bg-amber-500/5 border-amber-500/10' : 'bg-red-500/5 border-red-500/10';
+                const statusBadge = g.status === 'EA'
+                    ? '<span class="inline-flex justify-center min-w-[72px] px-1.5 py-0.5 bg-amber-500/10 text-amber-400/70 border border-amber-500/15 rounded text-[10px] font-bold">EA</span>'
+                    : `<span class="inline-flex justify-center min-w-[72px] px-1.5 py-0.5 bg-sky-500/10 text-sky-400/70 border border-sky-500/15 rounded text-[10px] font-bold">${i18nDict.released[currentLang]}</span>`;
                 const rateDisplay = g.rate
                     ? `<span class="inline-flex items-center justify-center min-w-[40px] px-1.5 py-px rounded text-[11px] font-bold ${rateBg} border ${rateColor}">${g.rate}%</span>`
                     : '<span class="text-gray-700 text-[11px]">--</span>';
-                const reviewsDisplay = g.reviews_total ? g.reviews_total.toLocaleString() : '--';
 
                 html += `
-                    <a href="${g.storeUrl}" target="_blank" rel="noopener" class="block px-4 py-2.5 hover:bg-dark-700/50 transition-colors group">
+                    <a href="${g.storeUrl}" target="_blank" rel="noopener" class="block px-4 py-2 hover:bg-dark-700/30 transition-colors group opacity-60">
                         <div class="grid gap-3 items-center" style="${rankingGridStyle}">
-                            <div class="text-center shrink-0">${rankBadge}</div>
+                            <div class="text-center shrink-0"><span class="text-gray-600 font-mono text-xs">${rank}</span></div>
                             <div class="min-w-0">
-                                <div class="flex items-center gap-1.5 mb-0.5 min-w-0">
-                                    <span class="font-bold text-xs text-white truncate group-hover:text-accent-light transition-colors">${displayName}</span>
-                                    <span class="text-[10px] ${catColor} shrink-0">${g.category}</span>
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="font-medium text-[11px] text-gray-300 truncate group-hover:text-gray-100 transition-colors">${displayName}</span>
+                                    <span class="text-[9px] ${catColor} opacity-60 shrink-0">${g.category}</span>
                                 </div>
-                                <div class="flex items-center gap-2 text-[11px] min-w-0 text-gray-600">
+                                <div class="flex items-center gap-2 text-[10px] min-w-0 text-gray-600">
                                     <span class="truncate">${g.dev}</span>
                                     <span class="text-gray-700 shrink-0">·</span>
                                     <span class="shrink-0">${g.players}</span>
                                 </div>
                             </div>
-                            <div class="text-right text-[11px] text-gray-400 font-mono">${releaseDisplay}</div>
+                            <div class="text-right text-[10px] text-gray-500 font-mono">${g.release}</div>
                             <div class="text-right">${statusBadge}</div>
                             <div class="text-right">${rateDisplay}</div>
-                            <div class="text-right text-[11px] ${rankingSortKey === 'reviews' ? 'text-white font-semibold' : 'text-gray-400'}">${reviewsDisplay}</div>
-                            <div class="text-right text-[11px] ${rankingSortKey === 'ccu' ? 'text-white font-semibold' : 'text-gray-400'}">${ccuDisplay}</div>
-                            <div class="text-right text-[11px] text-gray-500 font-mono">${g.price}</div>
+                            <div class="text-right text-[10px] text-gray-600 font-mono">${g.price}</div>
                         </div>
                     </a>
                 `;
@@ -1862,9 +1864,8 @@
             const landscape = document.getElementById('competitor-landscape');
             const tbody = document.getElementById('competitors-table');
 
-            // 渲染竞品排行 — 默认按发售时间排序
-            rankingSortKey = 'release';
-            renderCompetitorRanking('release');
+            // 渲染竞品排行
+            renderCompetitorRanking();
 
             // 渲染AI竞品日报
             renderAIDailyReport();
@@ -2213,7 +2214,7 @@
             positive_rate: { zh: '好评率', en: 'Positive Rate' },
             steam_pos_rate: { zh: 'Steam好评率', en: 'Steam Positive Rate' },
             // 竞品排行
-            ranking_title: { zh: '恐怖多人竞品实时排行', en: 'Horror Multiplayer Live Ranking' },
+            ranking_title: { zh: '潜在竞品雷达', en: 'Upcoming Competitor Radar' },
             ranking_realtime: { zh: '实时数据', en: 'Live Data' },
             sort_release: { zh: '发售时间', en: 'Release' },
             sort_ccu: { zh: '在线人数', en: 'Online' },
@@ -2231,6 +2232,7 @@
             th_price: { zh: '价格', en: 'Price' },
             released: { zh: '已发售', en: 'Released' },
             not_released: { zh: '未发售', en: 'Unreleased' },
+            released_ref: { zh: '已上线竞品（参考）', en: 'Released Competitors (Ref.)' },
             replies: { zh: '回复', en: ' replies' },
             online_suffix: { zh: '在线', en: ' online' },
             // 页脚
