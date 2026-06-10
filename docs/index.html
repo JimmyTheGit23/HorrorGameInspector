@@ -1321,26 +1321,11 @@
                             </div>
                         </div>
                     </a>`;
-                }).join('') + `
-                    <div class="mt-2 pt-2 border-t border-gray-800 flex items-center justify-between">
-                        <div class="flex gap-3">
-                            <a href="https://www.kuaishou.com/search/video?searchKey=${encodeURIComponent('超自然行动组')}" target="_blank" class="text-[10px] text-orange-400 hover:underline">🔥 快手搜索 →</a>
-                            <a href="https://www.douyin.com/search/超自然行动组?type=video" target="_blank" class="text-[10px] text-cyan-400 hover:underline">🎵 抖音搜索 →</a>
-                        </div>
-                        <a href="${bilibili.url || 'https://search.bilibili.com/video?keyword=' + encodeURIComponent('超自然行动组')}" target="_blank" class="text-accent-light hover:underline text-xs">${i18nDict.go_bilibili[currentLang]}</a>
-                    </div>`;
+                }).join('');
             } else if (bilibili.url) {
-                bilibiliEl.innerHTML = `<a href="${bilibili.url}" target="_blank" class="text-accent-light hover:underline text-sm">${i18nDict.go_bilibili[currentLang]}</a>
-                    <div class="mt-2 flex gap-3">
-                        <a href="https://www.kuaishou.com/search/video?searchKey=${encodeURIComponent('超自然行动组')}" target="_blank" class="text-[10px] text-orange-400 hover:underline">🔥 快手搜索 →</a>
-                        <a href="https://www.douyin.com/search/超自然行动组?type=video" target="_blank" class="text-[10px] text-cyan-400 hover:underline">🎵 抖音搜索 →</a>
-                    </div>`;
+                bilibiliEl.innerHTML = '';
             } else {
-                bilibiliEl.innerHTML = `<div class="text-gray-500 text-sm">${i18nDict.no_bilibili[currentLang]}</div>
-                    <div class="mt-2 flex gap-3">
-                        <a href="https://www.kuaishou.com/search/video?searchKey=${encodeURIComponent('超自然行动组')}" target="_blank" class="text-[10px] text-orange-400 hover:underline">🔥 快手搜索 →</a>
-                        <a href="https://www.douyin.com/search/超自然行动组?type=video" target="_blank" class="text-[10px] text-cyan-400 hover:underline">🎵 抖音搜索 →</a>
-                    </div>`;
+                bilibiliEl.innerHTML = `<div class="text-gray-500 text-sm">${i18nDict.no_bilibili[currentLang]}</div>`;
             }
         }
 
@@ -2246,7 +2231,6 @@
             th_price: { zh: '价格', en: 'Price' },
             released: { zh: '已发售', en: 'Released' },
             not_released: { zh: '未发售', en: 'Unreleased' },
-            go_bilibili: { zh: 'B站搜索更多 →', en: 'More on Bilibili →' },
             replies: { zh: '回复', en: ' replies' },
             online_suffix: { zh: '在线', en: ' online' },
             // 页脚
