@@ -456,6 +456,100 @@ def get_tieba_hot_posts(kw="超自然行动组", max_posts=8):
     }
 
 
+def get_bilibili_hot_videos(keyword="超自然行动组", max_videos=6, order="click"):
+    """获取B站高热度视频（WBI签名搜索API）"""
+    from functools import reduce
+
+    mixin_key_enc_tab = [
+        46,47,18,2,53,8,23,32,15,50,10,31,58,3,45,35,
+        27,43,5,49,33,9,42,19,29,28,14,39,12,38,41,16,
+        55,44,6,20,36,34,48,25,51,21,56,37,7,52,17,24,
+        0,13,22,30,57,4,11,26,1,40,59,54,62,61,60,63
+    ]
+
+    def get_mixin_key(orig):
+        return reduce(lambda s, i: s + orig[i], mixin_key_enc_tab, '')[:32]
+
+    def sign_wbi(params, img_key, sub_key):
+        mixin_key = get_mixin_key(img_key + sub_key)
+        params = dict(params)  # copy
+        params['wts'] = int(time.time())
+        query = '&'.join(f'{k}={urllib.parse.quote(str(params[k]), safe="")}' for k in sorted(params.keys()))
+        params['w_rid'] = hashlib.md5((query + mixin_key).encode()).hexdigest()
+        return params
+
+    try:
+        import hashlib
+    except ImportError:
+        hashlib = __import__('hashlib')
+
+    try:
+        # Step 1: 获取WBI keys
+        nav_req = urllib.request.Request("https://api.bilibili.com/x/web-interface/nav", headers={
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36',
+            'Referer': 'https://www.bilibili.com',
+        })
+        with urllib.request.urlopen(nav_req, timeout=10) as resp:
+            nav_data = json.loads(resp.read().decode('utf-8'))
+
+        wbi_img = nav_data.get('data', {}).get('wbi_img', {})
+        img_key = wbi_img.get('img_url', '').split('/')[-1].split('.')[0]
+        sub_key = wbi_img.get('sub_url', '').split('/')[-1].split('.')[0]
+        if not img_key or not sub_key:
+            raise ValueError("WBI keys missing")
+
+        # Step 2: 签名搜索
+        params = sign_wbi({
+            'keyword': keyword,
+            'search_type': 'video',
+            'order': order,
+            'page': 1,
+            'page_size': max_videos,
+        }, img_key, sub_key)
+
+        search_url = "https://api.bilibili.com/x/web-interface/wbi/search/type?" + urllib.parse.urlencode(params)
+        search_req = urllib.request.Request(search_url, headers={
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36',
+            'Referer': 'https://www.bilibili.com',
+        })
+        with urllib.request.urlopen(search_req, timeout=10) as resp:
+            search_data = json.loads(resp.read().decode('utf-8'))
+
+        results = search_data.get('data', {}).get('result', [])
+        videos = []
+        for v in results[:max_videos]:
+            clean_title = re.sub(r'<[^>]+>', '', v.get('title', ''))
+            pic = v.get('pic', '')
+            if pic and not pic.startswith('http'):
+                pic = 'https:' + pic
+            pub_ts = v.get('pubdate', 0)
+            pub_date = datetime.fromtimestamp(pub_ts).strftime('%Y-%m-%d') if pub_ts else ''
+            videos.append({
+                "title": clean_title,
+                "bvid": v.get('bvid', ''),
+                "url": f"https://www.bilibili.com/video/{v.get('bvid', '')}",
+                "play": v.get('play', 0),
+                "like": v.get('like', 0),
+                "danmaku": v.get('video_review', 0),
+                "author": v.get('author', ''),
+                "duration": v.get('duration', ''),
+                "pic": pic,
+                "pubdate": pub_date,
+            })
+
+        return {
+            "source": "B站",
+            "keyword": keyword,
+            "order": order,
+            "url": f"https://search.bilibili.com/video?keyword={urllib.parse.quote(keyword)}&order={order}",
+            "videos": videos,
+        }
+
+    except Exception as e:
+        print(f"  [B站] 搜索失败: {e}")
+        return {"source": "B站", "keyword": keyword, "url": f"https://search.bilibili.com/video?keyword={urllib.parse.quote(keyword)}", "videos": []}
+
+
 def simple_sentiment(title):
     """简易情感分析（基于关键词）"""
     negative_words = ['垃圾', '退坑', '坑', '破防', '怒', '骂', '垃圾', '氪金', '骗', '差', '烂',
@@ -871,9 +965,9 @@ def crawl_chaoziran():
     taptap_forum = get_taptap_forum_posts()
     print(f"  获取到 {len(taptap_forum)} 条论坛帖子")
 
-    print("[超自然行动组] 采集百度贴吧数据...")
-    tieba_data = get_tieba_hot_posts()
-    print(f"  贴吧数据: {tieba_data['note']}")
+    print("[超自然行动组] 采集B站热门视频...")
+    bilibili_data = get_bilibili_hot_videos()
+    print(f"  B站视频: {len(bilibili_data.get('videos', []))} 条")
 
     print("[超自然行动组] 获取巨人网络股价...")
     stock_data = get_stock_price("sz002558")
@@ -928,7 +1022,7 @@ def crawl_chaoziran():
             "official_news": official_news,
             "community": {
                 "taptap_forum": taptap_forum,
-                "tieba": tieba_data,
+                "bilibili": bilibili_data,
             },
             "tomb_busters": get_tomb_busters_info(),
             "app_store_rankings": app_store_rankings,

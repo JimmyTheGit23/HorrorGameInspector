@@ -212,7 +212,7 @@
                 <div class="bg-dark-800 rounded-lg p-5 border border-accent/30 lg:col-span-2">
                     <h3 class="text-sm font-semibold mb-3 text-accent-light" data-i18n="ai_insight">🧠 AI 洞察摘要</h3>
                     <div class="space-y-3 text-sm text-gray-300" id="czr-ai-summary">
-                        <p>国内社区舆情<span class="text-yellow-400">两极分化</span>：TapTap论坛偏中性正面（版本更新、皮肤爆料讨论为主），百度贴吧<span class="text-red-400">负面情绪集中</span>（爆率过低、号价暴跌、固玩纠纷为核心投诉点）。</p>
+                        <p>国内社区舆情<span class="text-yellow-400">两极分化</span>：TapTap论坛偏中性正面（版本更新、皮肤爆料讨论为主），B站高热度视频以攻略/怪物图鉴为主（播放量百万级），快手抖音短视频传播活跃但数据不可直接抓取。</p>
                         <p>TapTap评分6.8属中等偏低，但DAU持续千万级说明<span class="text-green-400">核心用户粘性极强</span>。海外版Tomb Busters媒体评价正面，聚焦"恐怖+喜剧"的差异化玩法。</p>
                         <div class="bg-dark-900/60 rounded p-2 text-xs text-gray-400">
                             💰 巨人网络2026Q1营收23.29亿元（同比+221.7%），净利润10.80亿元（同比+210.6%），超自然行动组为关键增长引擎
@@ -357,8 +357,8 @@
                         </div>
                     </div>
                     <div>
-                        <h4 class="text-xs font-semibold text-gray-400 mb-2 uppercase tracking-wider" data-i18n="tieba">百度贴吧</h4>
-                        <div id="czr-tieba" class="space-y-1.5 text-sm">
+                        <h4 class="text-xs font-semibold text-gray-400 mb-2 uppercase tracking-wider" data-i18n="bilibili_hot">B站热门视频</h4>
+                        <div id="czr-bilibili" class="space-y-1.5 text-sm">
                             <div class="text-gray-500">加载中...</div>
                         </div>
                     </div>
@@ -1296,34 +1296,51 @@
                 forumEl.innerHTML = `<div class="text-gray-500 text-sm">${i18nDict.no_forum[currentLang]}</div>`;
             }
 
-            // 社区舆情 - 百度贴吧
-            const tiebaEl = document.getElementById('czr-tieba');
-            const tieba = community.tieba || {};
-            const tiebaPosts = tieba.hot_posts || [];
-            if (tiebaPosts.length > 0) {
-                tiebaEl.innerHTML = tiebaPosts.map(p => {
-                    const sc = p.sentiment === 'negative' ? 'text-red-400' : p.sentiment === 'positive' ? 'text-green-400' : 'text-gray-600';
-                    const sl = p.sentiment === 'negative' ? '☹' : p.sentiment === 'positive' ? '☺' : '·';
-                    // 有URL直接跳转，没有则用百度搜索该标题
-                    const searchUrl = `https://www.baidu.com/s?wd=${encodeURIComponent('超自然行动组 ' + p.title)}`;
-                    const link = p.url || searchUrl;
-                    return `<div class="py-1 border-b border-gray-800 last:border-0 flex items-start gap-2">
-                        <span class="text-xs ${sc} mt-0.5 shrink-0 w-3 text-center">${sl}</span>
-                        <div class="min-w-0 flex-1">
-                            <a href="${link}" target="_blank" class="text-gray-300 hover:text-accent-light hover:underline text-sm leading-snug line-clamp-2">${p.title}</a>
-                            ${p.replies ? `<span class="text-xs text-gray-600 ml-1">${p.replies}${i18nDict.replies[currentLang]}</span>` : ''}
+            // 社区舆情 - B站热门视频
+            const bilibiliEl = document.getElementById('czr-bilibili');
+            const bilibili = community.bilibili || {};
+            const biliVideos = bilibili.videos || [];
+            const formatNum = (n) => {
+                if (!n) return '--';
+                if (n >= 10000) return (n / 10000).toFixed(1) + '万';
+                return n.toLocaleString();
+            };
+            if (biliVideos.length > 0) {
+                bilibiliEl.innerHTML = biliVideos.map(v => {
+                    return `<a href="${v.url}" target="_blank" class="block py-1.5 border-b border-gray-800 last:border-0 hover:bg-dark-700/30 transition-colors group">
+                        <div class="flex gap-2">
+                            ${v.pic ? `<img src="${v.pic}" alt="" class="w-24 h-14 object-cover rounded shrink-0 bg-dark-900" loading="lazy" onerror="this.style.display='none'">` : ''}
+                            <div class="min-w-0 flex-1">
+                                <div class="text-gray-300 group-hover:text-accent-light text-xs leading-snug line-clamp-2 transition-colors">${v.title}</div>
+                                <div class="flex items-center gap-2 mt-1 text-[10px] text-gray-500">
+                                    <span>▶ ${formatNum(v.play)}</span>
+                                    <span>👍 ${formatNum(v.like)}</span>
+                                    <span>${v.author}</span>
+                                </div>
+                                <div class="text-[10px] text-gray-600">${v.pubdate || ''} ${v.duration || ''}</div>
+                            </div>
                         </div>
-                    </div>`;
+                    </a>`;
                 }).join('') + `
                     <div class="mt-2 pt-2 border-t border-gray-800 flex items-center justify-between">
-                        <span class="text-[10px] text-gray-600">${tieba.note || ''}</span>
-                        <a href="${tieba.url || 'https://tieba.baidu.com/f?kw=%E8%B6%85%E8%87%AA%E7%84%B6%E8%A1%8C%E5%8A%A8%E7%BB%84'}" target="_blank" class="text-accent-light hover:underline text-xs">${i18nDict.go_tieba[currentLang]}</a>
+                        <div class="flex gap-3">
+                            <a href="https://www.kuaishou.com/search/video?searchKey=${encodeURIComponent('超自然行动组')}" target="_blank" class="text-[10px] text-orange-400 hover:underline">🔥 快手搜索 →</a>
+                            <a href="https://www.douyin.com/search/超自然行动组?type=video" target="_blank" class="text-[10px] text-cyan-400 hover:underline">🎵 抖音搜索 →</a>
+                        </div>
+                        <a href="${bilibili.url || 'https://search.bilibili.com/video?keyword=' + encodeURIComponent('超自然行动组')}" target="_blank" class="text-accent-light hover:underline text-xs">${i18nDict.go_bilibili[currentLang]}</a>
                     </div>`;
-            } else if (tieba.url) {
-                tiebaEl.innerHTML = `<a href="${tieba.url}" target="_blank" class="text-accent-light hover:underline text-sm">${i18nDict.go_tieba[currentLang]}</a>
-                    <div class="text-gray-600 text-xs mt-1">${tieba.note || ''}</div>`;
+            } else if (bilibili.url) {
+                bilibiliEl.innerHTML = `<a href="${bilibili.url}" target="_blank" class="text-accent-light hover:underline text-sm">${i18nDict.go_bilibili[currentLang]}</a>
+                    <div class="mt-2 flex gap-3">
+                        <a href="https://www.kuaishou.com/search/video?searchKey=${encodeURIComponent('超自然行动组')}" target="_blank" class="text-[10px] text-orange-400 hover:underline">🔥 快手搜索 →</a>
+                        <a href="https://www.douyin.com/search/超自然行动组?type=video" target="_blank" class="text-[10px] text-cyan-400 hover:underline">🎵 抖音搜索 →</a>
+                    </div>`;
             } else {
-                tiebaEl.innerHTML = `<div class="text-gray-500 text-sm">${i18nDict.no_tieba[currentLang]}</div>`;
+                bilibiliEl.innerHTML = `<div class="text-gray-500 text-sm">${i18nDict.no_bilibili[currentLang]}</div>
+                    <div class="mt-2 flex gap-3">
+                        <a href="https://www.kuaishou.com/search/video?searchKey=${encodeURIComponent('超自然行动组')}" target="_blank" class="text-[10px] text-orange-400 hover:underline">🔥 快手搜索 →</a>
+                        <a href="https://www.douyin.com/search/超自然行动组?type=video" target="_blank" class="text-[10px] text-cyan-400 hover:underline">🎵 抖音搜索 →</a>
+                    </div>`;
             }
         }
 
@@ -2154,7 +2171,7 @@
             no_updates: { zh: '暂无更新公告数据', en: 'No update announcements' },
             no_official_news: { zh: '暂无官网新闻数据', en: 'No official news data' },
             no_forum: { zh: '暂无论坛数据', en: 'No forum data' },
-            no_tieba: { zh: '暂无贴吧数据', en: 'No Tieba data' },
+            no_bilibili: { zh: '暂无B站视频数据', en: 'No Bilibili video data' },
             no_competitors: { zh: '暂无竞品数据', en: 'No competitor data' },
             no_tracker: { zh: '近3个月暂无玩法更新', en: 'No content updates in last 3 months' },
             // 公告分类
@@ -2187,7 +2204,7 @@
             tb_launch_date: { zh: '5月27日全球上线', en: 'Global launch May 27' },
             community_sentiment: { zh: '💬 社区舆情', en: '💬 Community Sentiment' },
             taptap_forum: { zh: 'TapTap 论坛', en: 'TapTap Forum' },
-            tieba: { zh: '百度贴吧', en: 'Baidu Tieba' },
+            bilibili_hot: { zh: 'B站热门视频', en: 'Bilibili Hot Videos' },
             // R.E.P.O. 页
             repo_genre: { zh: '在线合作恐怖', en: 'Online Co-op Horror' },
             review_trend: { zh: '📊 评测 & 舆论趋势', en: '📊 Review & Sentiment Trend' },
@@ -2228,7 +2245,7 @@
             th_price: { zh: '价格', en: 'Price' },
             released: { zh: '已发售', en: 'Released' },
             not_released: { zh: '未发售', en: 'Unreleased' },
-            go_tieba: { zh: '前往百度贴吧 →', en: 'Go to Tieba →' },
+            go_bilibili: { zh: 'B站搜索更多 →', en: 'More on Bilibili →' },
             replies: { zh: '回复', en: ' replies' },
             online_suffix: { zh: '在线', en: ' online' },
             // 页脚
