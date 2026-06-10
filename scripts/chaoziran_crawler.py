@@ -961,6 +961,13 @@ if __name__ == "__main__":
                         item["category"] = cat
                         item["content_tags"] = tags
                         item["priority"] = prio
+                # 官网新闻被旧数据兜底后，重建新玩法追踪（否则tracker会丢失official_news来源）
+                rebuilt = build_content_tracker(
+                    data["chaoziran"].get("bwiki_updates", []), old_news
+                )
+                if rebuilt:
+                    data["chaoziran"]["new_content_tracker"] = rebuilt
+                    print(f"  [MERGE] 重建新玩法追踪: {len(rebuilt)} 项")
             # 股价获取失败时保留旧数据
             if not data["chaoziran"].get("stock_price"):
                 old_stock = old_data.get("chaoziran", {}).get("stock_price")

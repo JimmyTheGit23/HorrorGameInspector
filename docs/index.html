@@ -270,7 +270,7 @@
                 </div>
                 <!-- 新玩法追踪（占1列） -->
                 <div class="bg-dark-800 rounded-lg p-5 border border-accent/20">
-                    <h3 class="text-sm font-semibold mb-3 text-accent-light" data-i18n="content_tracker">🎯 新玩法追踪</h3>
+                    <h3 class="text-sm font-semibold mb-3 text-accent-light" data-i18n="content_tracker">🎯 近3个月玩法更新</h3>
                     <div id="czr-content-tracker" class="space-y-3 text-sm">
                         <div class="text-gray-500" data-i18n="loading">加载中...</div>
                     </div>
@@ -616,6 +616,8 @@
 
         <!-- ========== 竞品对比页 ========== -->
         <div id="tab-competitors" class="tab-content hidden fade-in">
+            <!-- 竞品实时排行 -->
+            <div id="competitor-ranking" class="mb-6"></div>
             <!-- AI 竞品日报 -->
             <div id="ai-daily-report" class="mb-6"></div>
             <!-- 竞品全景 - 由JS动态渲染 -->
@@ -792,9 +794,72 @@
             settled:   { label_zh: '稳定运营', label_en: 'Settled', color: 'text-gray-400 bg-gray-500/20' },
         };
 
+        // 前端兜底：从公告/官网新闻中现场构建新玩法追踪项
+        function buildTrackerFromAnnouncements(czr) {
+            const sources = [];
+            (czr.bwiki_updates || []).forEach(a => sources.push(a));
+            (czr.official_news || []).forEach(n => sources.push(n));
+
+            const map = {};
+            sources.forEach(item => {
+                if ((item.category || 'other') !== 'new_content') return;
+                const tags = item.content_tags && item.content_tags.length ? item.content_tags : ['新内容'];
+                const id = tags[0];
+                const title = item.title || '';
+
+                // 推断状态
+                let status = 'announced';
+                if (/已上线|上线|更新后/.test(title)) status = 'live';
+                else if (/预热|预告|即将/.test(title)) status = 'teased';
+                else if (/实机|演示|展示/.test(title)) status = 'teased';
+
+                if (!map[id]) {
+                    map[id] = {
+                        id,
+                        name: id,
+                        status,
+                        first_seen: item.date || null,
+                        tags,
+                        announcements: [],
+                    };
+                }
+                // 状态升级
+                if (status === 'live') map[id].status = 'live';
+                else if (status === 'teased' && map[id].status !== 'live') map[id].status = 'teased';
+
+                map[id].announcements.push({
+                    title,
+                    date: item.date || null,
+                    source: item.source || '',
+                    url: item.url || '#',
+                });
+            });
+            return Object.values(map);
+        }
+
         function renderContentTracker(czr) {
             const el = document.getElementById('czr-content-tracker');
-            const tracker = czr.new_content_tracker || [];
+            let tracker = czr.new_content_tracker || [];
+
+            // 兜底：tracker 为空时，直接从公告 + 官网新闻里筛 new_content 类玩法更新
+            if (!tracker.length) {
+                tracker = buildTrackerFromAnnouncements(czr);
+            }
+
+            // 只保留近3个月（基于 first_seen / 公告日期）
+            const now = new Date();
+            const threeMonthsAgo = new Date(now.getFullYear(), now.getMonth() - 3, now.getDate());
+            const inRange = (dateStr) => {
+                if (!dateStr) return true; // 无日期默认保留
+                const d = new Date(dateStr);
+                return isNaN(d) ? true : d >= threeMonthsAgo;
+            };
+            tracker = tracker.filter(item => {
+                const annDates = (item.announcements || []).map(a => a.date).filter(Boolean);
+                const refDate = annDates.sort((a, b) => new Date(b) - new Date(a))[0] || item.first_seen;
+                return inRange(refDate);
+            });
+
             if (!tracker.length) {
                 el.innerHTML = `<div class="text-gray-500 text-sm" data-i18n="no_tracker">${i18nDict.no_tracker[currentLang]}</div>`;
                 return;
@@ -1641,9 +1706,159 @@
             `;
         }
 
+        // ========== 竞品实时排行 ==========
+        let rankingSortKey = 'release'; // release | ccu | rate | reviews
+
+        function renderCompetitorRanking(sortKey) {
+            if (sortKey) rankingSortKey = sortKey;
+            const container = document.getElementById('competitor-ranking');
+            if (!container) return;
+
+            // 只收集PC/Steam竞品（排除纯手游）
+            const allGames = [];
+            Object.entries(competitorInfo).forEach(([name, info]) => {
+                // 排除非竞品（永劫无间是竞品但不列入PC排行）
+                if (name === '永劫无间') return;
+                // 只要有Steam商店链接的算PC游戏
+                if (!info.storeUrl || !info.storeUrl.includes('steampowered.com')) return;
+                const steam = info.steamKey ? steamData[info.steamKey] : null;
+                const store = steam ? (steam.store || {}) : {};
+                const spy = steam ? (steam.steamspy || {}) : {};
+                const reviews = steam ? (steam.reviews || {}) : {};
+                allGames.push({
+                    name: name,
+                    cnName: info.cnName || '',
+                    category: info.category,
+                    status: info.status,
+                    dev: info.dev,
+                    release: info.release,
+                    players: info.players,
+                    ccu: spy.ccu || null,
+                    rate: reviews.positive_rate || info.rate || null,
+                    reviews_total: reviews.total_reviews || info.reviews_total || null,
+                    price: store.price || info.price || '--',
+                    isWishlist: info.isWishlist || false,
+                    storeUrl: info.storeUrl || '#'
+                });
+            });
+
+            // 排序：发售时间默认降序（最新在前）
+            const sortKeys = {
+                release: (a, b) => {
+                    const parseDate = s => { if (!s || s === '未公布') return 0; const d = new Date(s); return isNaN(d) ? 0 : d.getTime(); };
+                    return parseDate(b.release) - parseDate(a.release);
+                },
+                ccu: (a, b) => (b.ccu || 0) - (a.ccu || 0),
+                rate: (a, b) => (b.rate || 0) - (a.rate || 0),
+                reviews: (a, b) => (b.reviews_total || 0) - (a.reviews_total || 0)
+            };
+            allGames.sort(sortKeys[rankingSortKey] || sortKeys.release);
+
+            const sortBtns = [
+                { key: 'release', label: i18nDict.sort_release[currentLang], icon: '📅' },
+                { key: 'ccu', label: i18nDict.sort_ccu[currentLang], icon: '👥' },
+                { key: 'rate', label: i18nDict.sort_rate[currentLang], icon: '⭐' },
+                { key: 'reviews', label: i18nDict.sort_reviews[currentLang], icon: '📝' }
+            ];
+
+            const rankingGridStyle = 'grid-template-columns: 42px minmax(260px, 1fr) 110px 92px 88px 92px 92px 72px;';
+
+            let html = `
+                <div class="bg-dark-800 rounded-lg border border-gray-800 overflow-hidden">
+                    <div class="px-4 py-3 border-b border-gray-700/50 flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="text-base">🏆</span>
+                            <h3 class="text-sm font-bold text-white" data-i18n="ranking_title">${i18nDict.ranking_title[currentLang]}</h3>
+                            <span class="text-[10px] px-1.5 py-px bg-amber-500/20 text-amber-300 rounded font-mono">PC · Steam</span>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            ${sortBtns.map(s => `
+                                <button onclick="renderCompetitorRanking('${s.key}')" class="px-2 py-1 text-[11px] rounded transition ${rankingSortKey === s.key ? 'bg-accent/20 text-accent border border-accent/30' : 'text-gray-500 hover:text-gray-300 border border-transparent hover:border-gray-700'}">
+                                    ${s.icon} ${s.label}
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>
+                    <div class="px-4 py-2 border-b border-gray-800/80 text-[10px] text-gray-500 uppercase tracking-wide">
+                        <div class="grid gap-3 items-center" style="${rankingGridStyle}">
+                            <div class="text-center">#</div>
+                            <div>${i18nDict.th_game[currentLang]}</div>
+                            <div class="text-right">${i18nDict.release_date[currentLang]}</div>
+                            <div class="text-right">${i18nDict.th_status[currentLang]}</div>
+                            <div class="text-right">${i18nDict.th_pos_rate[currentLang]}</div>
+                            <div class="text-right">${i18nDict.th_reviews[currentLang]}</div>
+                            <div class="text-right">${i18nDict.th_online[currentLang]}</div>
+                            <div class="text-right">${i18nDict.th_price[currentLang]}</div>
+                        </div>
+                    </div>
+                    <div class="divide-y divide-gray-800/60 overflow-x-auto">
+            `;
+
+            allGames.forEach((g, idx) => {
+                const rank = idx + 1;
+
+                let rankBadge;
+                if (rank === 1) rankBadge = '<span class="text-amber-400 font-black text-lg">🥇</span>';
+                else if (rank === 2) rankBadge = '<span class="text-gray-300 font-black text-lg">🥈</span>';
+                else if (rank === 3) rankBadge = '<span class="text-amber-600 font-black text-lg">🥉</span>';
+                else rankBadge = `<span class="text-gray-600 font-mono text-sm">${rank}</span>`;
+
+                const rateColor = !g.rate ? 'text-gray-600' : g.rate >= 85 ? 'text-emerald-400' : g.rate >= 60 ? 'text-amber-400' : 'text-red-400';
+                const rateBg = !g.rate ? '' : g.rate >= 85 ? 'bg-emerald-500/10 border-emerald-500/20' : g.rate >= 60 ? 'bg-amber-500/10 border-amber-500/20' : 'bg-red-500/10 border-red-500/20';
+
+                const statusBadge = g.isWishlist
+                    ? '<span class="inline-flex justify-center min-w-[72px] px-1.5 py-0.5 bg-purple-500/15 text-purple-400 border border-purple-500/25 rounded text-[10px] font-bold">WISHLIST</span>'
+                    : g.status === 'EA'
+                    ? '<span class="inline-flex justify-center min-w-[72px] px-1.5 py-0.5 bg-amber-500/15 text-amber-400 border border-amber-500/25 rounded text-[10px] font-bold">EA</span>'
+                    : `<span class="inline-flex justify-center min-w-[72px] px-1.5 py-0.5 bg-sky-500/15 text-sky-400 border border-sky-500/25 rounded text-[10px] font-bold">${i18nDict.released[currentLang]}</span>`;
+
+                const catColors = { '恐怖撤离': 'text-red-400', '捉鬼调查': 'text-violet-400', 'PvPvE猎杀': 'text-orange-400', '搜打撤/摸金': 'text-cyan-400' };
+                const catColor = catColors[g.category] || 'text-gray-400';
+
+                const displayName = g.cnName ? `${g.name}（${g.cnName}）` : g.name;
+                const releaseDisplay = g.isWishlist || !g.release || g.release === '未公布' ? i18nDict.not_released[currentLang] : g.release;
+                const ccuDisplay = g.ccu ? g.ccu.toLocaleString() : '--';
+                const rateDisplay = g.rate
+                    ? `<span class="inline-flex items-center justify-center min-w-[40px] px-1.5 py-px rounded text-[11px] font-bold ${rateBg} border ${rateColor}">${g.rate}%</span>`
+                    : '<span class="text-gray-700 text-[11px]">--</span>';
+                const reviewsDisplay = g.reviews_total ? g.reviews_total.toLocaleString() : '--';
+
+                html += `
+                    <a href="${g.storeUrl}" target="_blank" rel="noopener" class="block px-4 py-2.5 hover:bg-dark-700/50 transition-colors group">
+                        <div class="grid gap-3 items-center" style="${rankingGridStyle}">
+                            <div class="text-center shrink-0">${rankBadge}</div>
+                            <div class="min-w-0">
+                                <div class="flex items-center gap-1.5 mb-0.5 min-w-0">
+                                    <span class="font-bold text-xs text-white truncate group-hover:text-accent-light transition-colors">${displayName}</span>
+                                    <span class="text-[10px] ${catColor} shrink-0">${g.category}</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-[11px] min-w-0 text-gray-600">
+                                    <span class="truncate">${g.dev}</span>
+                                    <span class="text-gray-700 shrink-0">·</span>
+                                    <span class="shrink-0">${g.players}</span>
+                                </div>
+                            </div>
+                            <div class="text-right text-[11px] text-gray-400 font-mono">${releaseDisplay}</div>
+                            <div class="text-right">${statusBadge}</div>
+                            <div class="text-right">${rateDisplay}</div>
+                            <div class="text-right text-[11px] ${rankingSortKey === 'reviews' ? 'text-white font-semibold' : 'text-gray-400'}">${reviewsDisplay}</div>
+                            <div class="text-right text-[11px] ${rankingSortKey === 'ccu' ? 'text-white font-semibold' : 'text-gray-400'}">${ccuDisplay}</div>
+                            <div class="text-right text-[11px] text-gray-500 font-mono">${g.price}</div>
+                        </div>
+                    </a>
+                `;
+            });
+
+            html += '</div></div>';
+            container.innerHTML = html;
+        }
+
         function renderCompetitors() {
             const landscape = document.getElementById('competitor-landscape');
             const tbody = document.getElementById('competitors-table');
+
+            // 渲染竞品排行
+            renderCompetitorRanking();
 
             // 渲染AI竞品日报
             renderAIDailyReport();
@@ -1938,7 +2153,7 @@
             no_forum: { zh: '暂无论坛数据', en: 'No forum data' },
             no_tieba: { zh: '暂无贴吧数据', en: 'No Tieba data' },
             no_competitors: { zh: '暂无竞品数据', en: 'No competitor data' },
-            no_tracker: { zh: '暂无新玩法追踪数据', en: 'No new content tracking data' },
+            no_tracker: { zh: '近3个月暂无玩法更新', en: 'No content updates in last 3 months' },
             // 公告分类
             cat_all: { zh: '全部', en: 'All' },
             cat_new_content: { zh: '新玩法', en: 'New Content' },
@@ -1946,7 +2161,7 @@
             cat_pr: { zh: 'PR', en: 'PR' },
             cat_cosmetic: { zh: '皮肤', en: 'Cosmetics' },
             cat_patch: { zh: '修复', en: 'Patches' },
-            content_tracker: { zh: '🎯 新玩法追踪', en: '🎯 New Content Tracker' },
+            content_tracker: { zh: '🎯 近3个月玩法更新', en: '🎯 Content Updates (3 Months)' },
             // 超自然行动组页
             czr_genre: { zh: '巨人网络 · 多人欢乐恐怖', en: 'Giant Network · Multiplayer Fun Horror' },
             core_gameplay: { zh: '核心玩法：', en: 'Core Gameplay: ' },
@@ -1991,6 +2206,13 @@
             total_reviews: { zh: '总评测', en: 'Total Reviews' },
             positive_rate: { zh: '好评率', en: 'Positive Rate' },
             steam_pos_rate: { zh: 'Steam好评率', en: 'Steam Positive Rate' },
+            // 竞品排行
+            ranking_title: { zh: '恐怖多人竞品实时排行', en: 'Horror Multiplayer Live Ranking' },
+            ranking_realtime: { zh: '实时数据', en: 'Live Data' },
+            sort_release: { zh: '发售时间', en: 'Release' },
+            sort_ccu: { zh: '在线人数', en: 'Online' },
+            sort_rate: { zh: '好评率', en: 'Pos. Rate' },
+            sort_reviews: { zh: '评测数', en: 'Reviews' },
             // 竞品对比
             competitor_compare: { zh: '📊 竞品数据对比', en: '📊 Competitor Comparison' },
             online_trend: { zh: '📈 在线人数趋势（14天）', en: '📈 Online Trend (14 Days)' },
@@ -2002,6 +2224,7 @@
             th_reviews: { zh: '评测数', en: 'Reviews' },
             th_price: { zh: '价格', en: 'Price' },
             released: { zh: '已发售', en: 'Released' },
+            not_released: { zh: '未发售', en: 'Unreleased' },
             go_tieba: { zh: '前往百度贴吧 →', en: 'Go to Tieba →' },
             replies: { zh: '回复', en: ' replies' },
             online_suffix: { zh: '在线', en: ' online' },
