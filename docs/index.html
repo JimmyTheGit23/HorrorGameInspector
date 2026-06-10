@@ -1877,8 +1877,9 @@
             const landscape = document.getElementById('competitor-landscape');
             const tbody = document.getElementById('competitors-table');
 
-            // 渲染竞品排行
-            renderCompetitorRanking();
+            // 渲染竞品排行 — 默认按发售时间排序
+            rankingSortKey = 'release';
+            renderCompetitorRanking('release');
 
             // 渲染AI竞品日报
             renderAIDailyReport();
