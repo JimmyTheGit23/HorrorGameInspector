@@ -7,659 +7,931 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
-        body { font-family: 'Noto Sans SC', sans-serif; }
-        .glow { text-shadow: 0 0 10px rgba(139, 92, 246, 0.5); }
-        .card-hover:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(139, 92, 246, 0.15); }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+        
+        /* ══════════════════════════════════════════════════════════
+           DESIGN TOKENS — Premium Analytics Light Mode
+           Minimalist · Sleek & Professional
+           Background: #F4F5F7  Card: #FFFFFF  Border: rgba(0,0,0,0.06)
+           Accent: Dark Wine Red #991B1B  Metric: #0F172A
+           Text: #1E293B / #334155 / #64748B
+        ══════════════════════════════════════════════════════════ */
+        :root {
+            --bg-base: #F4F5F7;
+            --bg-nav: #0F172A;
+            --card-bg: #FFFFFF;
+            --card-border: rgba(0,0,0,0.06);
+            --card-hover-border: rgba(0,0,0,0.12);
+            --card-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            --card-glass: rgba(255,255,255,0.92);
+            --accent: #991B1B;              /* Dark Wine Red — 克制暗示恐怖 */
+            --accent-light: #B91C1C;
+            --accent-dim: rgba(153,27,27,0.06);
+            --accent-glow: rgba(153,27,27,0.10);
+            --gold: #0F172A;                /* Dark Charcoal — 核心数据色 */
+            --gold-dim: rgba(15,23,42,0.04);
+            --text-primary: #1E293B;
+            --text-secondary: #334155;
+            --text-muted: #64748B;
+            --text-ghost: #94A3B8;
+            --scroll-thumb: #CBD5E1;
+            --scroll-track: #F1F5F9;
+            --divider: rgba(0,0,0,0.06);
+            --data-red: #DC2626;
+            --data-green: #16A34A;
+            --data-amber: #D97706;
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-pill: 9999px;
+        }
+
+        body { 
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, sans-serif; 
+            background-color: var(--bg-base) !important;
+            color: var(--text-primary) !important;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        /* Component Card — Subtle & Clean */
+        .glass-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
+            transition: box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+        .glass-card:hover {
+            border-color: var(--card-hover-border);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        /* 指标卡 — 大数字在上，小标签在下 */
+        .metric-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
+            transition: box-shadow 0.25s ease, transform 0.25s ease;
+        }
+        .metric-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+        }
+
+        /* Muted Crimson 左边框 Callout */
+        .callout-crimson {
+            border-left: 3px solid var(--accent);
+            background: var(--accent-dim);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 12px 16px;
+            color: var(--text-muted);
+        }
+
+        /* Rounded Pill Badge */
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 2px 10px;
+            border-radius: var(--radius-pill);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            gap: 4px;
+        }
+
+        /* Active Tab — Subtle Crimson Underline */
+        .tab-active { 
+            border-bottom: 2px solid var(--accent) !important;
+            color: var(--text-primary) !important; 
+            font-weight: 600;
+        }
+        
+        .fade-in { animation: fadeIn 0.3s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+        
         .pulse-dot { animation: pulse 2s infinite; }
         @keyframes pulse {
             0%, 100% { opacity: 1; }
-            50% { opacity: 0.4; }
+            50% { opacity: 0.3; }
         }
-        .tab-active { border-bottom: 2px solid #8b5cf6; color: #8b5cf6; }
-        .fade-in { animation: fadeIn 0.3s ease-in; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-thumb { background: #4b5563; border-radius: 3px; }
-        ::-webkit-scrollbar-track { background: #1f2937; }
 
-        .hero-banner { position: relative; border-radius: 0.75rem; overflow: hidden; min-height: 200px; display: flex; align-items: flex-end; }
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-thumb { background: var(--scroll-thumb); border-radius: 3px; transition: background 0.3s; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+        ::-webkit-scrollbar-track { background: var(--scroll-track); }
+
+        /* Hero Banner */
+        .hero-banner { position: relative; border-radius: var(--radius-md); overflow: hidden; min-height: 200px; display: flex; align-items: flex-end; }
         .hero-banner img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; }
-        .hero-banner .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, #0f0f1a 0%, rgba(15,15,26,0.75) 50%, rgba(15,15,26,0.2) 100%); }
+        .hero-banner .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, #0F172A 0%, rgba(15,23,42,0.5) 100%); }
         .hero-banner .hero-content { position: relative; z-index: 1; padding: 1.5rem; width: 100%; }
-        .game-icon { width: 48px; height: 48px; border-radius: 10px; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.4); border: 2px solid rgba(139,92,246,0.3); }
-        .game-icon-sm { width: 32px; height: 32px; border-radius: 6px; object-fit: cover; border: 1px solid rgba(139,92,246,0.2); }
-        .accent-line { height: 2px; background: linear-gradient(90deg, #8b5cf6, #dc2626, transparent); }
-        .score-badge { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 6px; font-weight: 700; font-size: 1.25rem; }
-        .cat-tab { cursor: pointer; }
-        .cat-tab.active { background: #8b5cf6 !important; color: #fff !important; }
-        .score-high { background: rgba(5,150,105,0.2); color: #34d399; }
-        .score-mid { background: rgba(217,119,6,0.2); color: #fbbf24; }
-        .score-low { background: rgba(220,38,38,0.2); color: #f87171; }
+        
+        /* Game Icon */
+        .game-icon { width: 44px; height: 44px; border-radius: var(--radius-sm); object-fit: cover; border: 1px solid var(--card-border); transition: border-color 0.3s; }
+        .game-icon-sm { width: 28px; height: 28px; border-radius: 6px; object-fit: cover; border: 1px solid var(--card-border); }
+        
+        /* Category Tab */
+        .cat-tab { cursor: pointer; transition: all 0.15s ease; border-radius: var(--radius-pill); }
+        .cat-tab.active { background: var(--accent) !important; color: #fff !important; border-color: var(--accent) !important; }
+        
+        /* Score Badges */
+        .score-high { background: rgba(22,163,74,0.08); color: var(--data-green); }
+        .score-mid { background: rgba(15,23,42,0.04); color: var(--text-primary); }
+        .score-low { background: rgba(220,38,38,0.08); color: var(--data-red); }
+        
         .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
         .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-        /* 竞品卡片悬浮详情 */
-        .card-tooltip { position: fixed; z-index: 9999; pointer-events: none; max-width: 340px; min-width: 260px; background: #1e1e38; border: 1px solid rgba(139,92,246,0.3); border-radius: 10px; box-shadow: 0 12px 40px rgba(0,0,0,0.6); overflow: hidden; opacity: 0; transform: translateY(6px); transition: opacity 0.15s, transform 0.15s; }
+        
+        /* 竞品卡片 Tooltip */
+        .card-tooltip { position: fixed; z-index: 9999; pointer-events: none; max-width: 340px; min-width: 260px; background: #FFFFFF; border: 1px solid rgba(0,0,0,0.08); border-radius: var(--radius-md); box-shadow: 0 8px 30px rgba(0,0,0,0.12); overflow: hidden; opacity: 0; transform: translateY(6px); transition: opacity 0.15s, transform 0.15s; }
         a.comp-card, a.comp-card:hover { text-decoration: none; color: inherit; }
         .card-tooltip.visible { opacity: 1; transform: translateY(0); }
         .card-tooltip img.tt-banner { width: 100%; height: 90px; object-fit: cover; }
-        .card-tooltip .tt-body { padding: 10px 12px; }
-        .card-tooltip .tt-title { font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 4px; }
-        .card-tooltip .tt-cn { font-size: 11px; color: #a78bfa; margin-left: 6px; }
-        .card-tooltip .tt-meta { font-size: 11px; color: #9ca3af; margin-bottom: 6px; }
-        .card-tooltip .tt-intro { font-size: 11px; color: #d1d5db; line-height: 1.5; margin-bottom: 6px; }
+        .card-tooltip .tt-body { padding: 12px; }
+        .card-tooltip .tt-title { font-size: 13px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+        .card-tooltip .tt-cn { font-size: 11px; color: var(--accent); margin-left: 6px; }
+        .card-tooltip .tt-meta { font-size: 11px; color: var(--text-muted); margin-bottom: 6px; }
+        .card-tooltip .tt-intro { font-size: 11px; color: var(--text-muted); line-height: 1.6; margin-bottom: 6px; }
         .card-tooltip .tt-stats { display: flex; gap: 10px; font-size: 11px; }
-    </style>
+
+        /* Section Title — Off-white, Clean */
+        .section-title {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            color: var(--text-primary);
+            text-transform: uppercase;
+        }
+    
+        /* ══════════════════════════════════════════════════
+           LEFT SIDEBAR LAYOUT
+           Fixed 260px sidebar + scrollable content
+        ══════════════════════════════════════════════════ */
+        :root {
+            --sidebar-w: 260px;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: var(--sidebar-w);
+            height: 100vh;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            background: #FFFFFF;
+            border-right: 1px solid rgba(0,0,0,0.04);
+            box-shadow: 1px 0 4px rgba(0,0,0,0.02);
+        }
+
+        .sidebar-header {
+            background: var(--bg-nav);
+            padding: 20px 20px 16px;
+            flex-shrink: 0;
+        }
+
+        .sidebar-body {
+            flex: 1;
+            padding: 16px 0;
+            overflow-y: auto;
+        }
+
+        .sidebar-section-label {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-ghost);
+            padding: 8px 20px 6px;
+        }
+
+        .sidebar-nav-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 11px 20px;
+            font-size: 13px;
+            font-weight: 400;
+            color: #4B5563;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border-left: 3px solid transparent;
+            margin: 1px 0;
+            background: transparent;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-family: inherit;
+        }
+
+        .sidebar-nav-item:hover {
+            color: #1E293B;
+            background: rgba(0,0,0,0.02);
+        }
+
+        .sidebar-nav-item.active {
+            color: #0F172A;
+            font-weight: 600;
+            background: rgba(153,27,27,0.04);
+            border-left-color: var(--accent);
+        }
+
+        .sidebar-nav-item .nav-icon {
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            opacity: 0.6;
+            flex-shrink: 0;
+        }
+
+        .sidebar-nav-item.active .nav-icon {
+            opacity: 1;
+        }
+
+        .sidebar-footer {
+            padding: 12px 20px;
+            border-top: 1px solid rgba(0,0,0,0.04);
+            flex-shrink: 0;
+        }
+
+        .main-content {
+            margin-left: var(--sidebar-w);
+            width: calc(100% - var(--sidebar-w));
+            min-height: 100vh;
+            box-sizing: border-box;
+            overflow-x: hidden;
+        }
+
+        /* Hide the old top nav and tab bar */
+
+        .content-section {
+            padding-top: 0;
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+
+        .metric-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        @media (min-width: 1024px) {
+            .metric-grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+        }
+
+        .top-nav-bar, .top-tab-bar { display: none !important; }
+
+</style>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        dark: { 900: '#0f0f1a', 800: '#1a1a2e', 700: '#252540', 600: '#323258' },
-                        accent: { DEFAULT: '#8b5cf6', light: '#a78bfa', dark: '#7c3aed' },
-                        horror: { red: '#dc2626', green: '#059669', orange: '#d97706' }
+                        dark: { 
+                            900: '#F4F5F7', 
+                            800: '#FFFFFF', 
+                            700: '#F8FAFC', 
+                            600: '#0F172A' 
+                        },
+                        gray: {
+                            800: 'rgba(0,0,0,0.06)',
+                            700: 'rgba(0,0,0,0.12)',
+                            200: 'rgba(0,0,0,0.04)'
+                        },
+                        accent: { 
+                            DEFAULT: '#991B1B', 
+                            light: '#B91C1C', 
+                            dark: '#7F1D1D' 
+                        },
+                        gold: { DEFAULT: '#0F172A', dim: 'rgba(15,23,42,0.04)' },
+                        horror: { red: '#DC2626', green: '#16A34A', orange: '#0F172A', amber: '#0F172A' }
                     }
                 }
             }
         }
     </script>
 </head>
-<body class="bg-dark-900 text-gray-200 min-h-screen">
+<body class="min-h-screen" style="color:var(--text-primary);">
 
-    <!-- 顶部导航 -->
-    <nav class="bg-dark-800 border-b border-gray-800 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <span class="text-2xl">👻</span>
-                <h1 class="text-lg font-bold glow text-accent-light" data-i18n="title">GRC恐怖多人品类情报</h1>
-                <span class="text-xs text-gray-500 hidden sm:inline" data-i18n="subtitle">恐怖撤离 / 非对称竞技</span>
+
+    <!-- ═════════════════════ LEFT SIDEBAR ═════════════════════ -->
+    <aside class="sidebar">
+        <!-- Dark Header Anchor -->
+        <div class="sidebar-header">
+            <div class="flex items-center gap-2.5 mb-1">
+                <div class="w-2 h-2 rounded-full" style="background:#991B1B;"></div>
+                <h1 class="text-sm font-bold tracking-wide" style="color:#F8FAFC;" data-i18n="title">GRC恐怖多人品类情报</h1>
             </div>
-            <div class="flex items-center gap-4">
-                <div class="flex items-center gap-1.5 text-xs text-gray-400">
-                    <span class="pulse-dot w-2 h-2 bg-green-500 rounded-full inline-block"></span>
-                    <span id="last-update">加载中...</span>
+            <p class="text-[10px] tracking-widest ml-[18px]" style="color:#94A3B8;" data-i18n="subtitle">恐怖撤离 / 非对称竞技</p>
+            <div class="flex items-center gap-1.5 text-[11px] mt-2 ml-[18px]" style="color:#94A3B8;">
+                <span class="pulse-dot w-1.5 h-1.5 rounded-full inline-block" style="background:var(--data-green);"></span>
+                <span id="sidebar-last-update">--</span>
+            </div>
+        </div>
+
+        <!-- White Navigation Body -->
+        <div class="sidebar-body">
+            <div class="sidebar-section-label" data-i18n="sidebar_nav">导航</div>
+
+            <button class="sidebar-nav-item active" data-nav="overview" onclick="navTo('overview')">
+                <span class="nav-icon">◈</span>
+                <span data-i18n="tab_overview">总览</span>
+            </button>
+            <button class="sidebar-nav-item" data-nav="chaoziran" onclick="navTo('chaoziran')">
+                <span class="nav-icon" style="color:var(--accent);">◆</span>
+                <span data-i18n="tab_chaoziran">超自然行动组</span>
+            </button>
+            <button class="sidebar-nav-item" data-nav="repo" onclick="navTo('repo')">
+                <span class="nav-icon">◈</span>
+                <span>R.E.P.O.</span>
+            </button>
+            <button class="sidebar-nav-item" data-nav="competitors" onclick="navTo('competitors')">
+                <span class="nav-icon">◈</span>
+                <span data-i18n="tab_competitors">竞品对比</span>
+            </button>
+        </div>
+
+        <!-- Sidebar Footer: Language + Refresh -->
+        <div class="sidebar-footer">
+            <div class="flex items-center gap-2">
+                <button id="lang-toggle" onclick="toggleLang()" class="pill flex-1 justify-center" style="color:var(--text-muted);background:rgba(0,0,0,0.03);border:1px solid rgba(0,0,0,0.06);" title="Switch Language">EN</button>
+                <button id="refresh-btn" onclick="refreshData()" class="pill flex-1 justify-center" style="color:var(--text-muted);background:rgba(0,0,0,0.03);border:1px solid rgba(0,0,0,0.06);">↻ <span data-i18n="refresh">刷新</span></button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- ═════════════════════ MAIN CONTENT ═════════════════════ -->
+    <div class="main-content">
+
+    <!-- 顶部导航 (hidden, kept for data refs) -->
+    <nav class="top-nav-bar sticky top-0 z-50" style="background:var(--bg-nav);border-bottom:1px solid rgba(255,255,255,0.08);">
+        <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-2 h-2 rounded-full" style="background:#991B1B;"></div>
+                <div>
+                    <h1 class="text-sm font-bold tracking-wide" style="color:#0F172A;" data-i18n="title">GRC恐怖多人品类情报</h1>
+                    <p class="text-[10px] tracking-widest mt-0.5" style="color:#94A3B8;" data-i18n="subtitle">恐怖撤离 / 非对称竞技</p>
                 </div>
-                <button id="lang-toggle" onclick="toggleLang()" class="text-xs bg-dark-600 hover:bg-dark-700 px-2.5 py-1 rounded transition font-medium" title="Switch Language">EN</button>
-                <button id="refresh-btn" onclick="refreshData()" class="text-xs bg-dark-600 hover:bg-dark-700 px-3 py-1 rounded transition flex items-center gap-1">↻ <span data-i18n="refresh">刷新数据</span></button>
+            </div>
+            <div class="flex items-center gap-3">
+                <div class="flex items-center gap-1.5 text-xs" style="color:var(--text-muted);">
+                    <span class="pulse-dot w-1.5 h-1.5 rounded-full inline-block" style="background:var(--data-green);"></span>
+                    <span class="text-[11px]">--</span>
+                </div>
+                <!-- buttons moved to sidebar -->
+            
             </div>
         </div>
     </nav>
 
-    <!-- 标签页导航 -->
-    <div class="max-w-7xl mx-auto px-4 pt-4">
-        <div class="accent-line mb-3"></div>
-        <div class="flex gap-4 sm:gap-6 border-b border-gray-800 text-sm overflow-x-auto whitespace-nowrap -mb-px">
-            <button class="tab-btn tab-active pb-2 px-1 transition shrink-0" data-tab="overview" onclick="switchTab('overview')" data-i18n="tab_overview">总览</button>
-            <button class="tab-btn text-gray-500 hover:text-gray-300 pb-2 px-1 transition shrink-0" data-tab="chaoziran" onclick="switchTab('chaoziran')" data-i18n="tab_chaoziran">超自然行动组</button>
-            <button class="tab-btn text-gray-500 hover:text-gray-300 pb-2 px-1 transition shrink-0" data-tab="repo" onclick="switchTab('repo')">R.E.P.O.</button>
-            <button class="tab-btn text-gray-500 hover:text-gray-300 pb-2 px-1 transition shrink-0" data-tab="competitors" onclick="switchTab('competitors')" data-i18n="tab_competitors">竞品对比</button>
+    <!-- 标签页导航 — Rounded Pills + Crimson Underline -->
+    <div class="top-tab-bar max-w-7xl mx-auto px-6 pt-5">
+        <div class="flex gap-1 border-b" style="border-color:var(--card-border);">
+            <button class="tab-btn tab-active pb-3 px-4 text-xs transition shrink-0 font-medium rounded-t-lg" data-tab="overview" onclick="switchTab('overview')" data-i18n="tab_overview">总览</button>
+            <button class="tab-btn pb-3 px-4 text-xs transition shrink-0 font-medium rounded-t-lg" style="color:var(--text-muted);" data-tab="chaoziran" onclick="switchTab('chaoziran')" data-i18n="tab_chaoziran">超自然行动组</button>
+            <button class="tab-btn pb-3 px-4 text-xs transition shrink-0 font-medium rounded-t-lg" style="color:var(--text-muted);" data-tab="repo" onclick="switchTab('repo')">R.E.P.O.</button>
+            <button class="tab-btn pb-3 px-4 text-xs transition shrink-0 font-medium rounded-t-lg" style="color:var(--text-muted);" data-tab="competitors" onclick="switchTab('competitors')" data-i18n="tab_competitors">竞品对比</button>
         </div>
     </div>
 
     <!-- 主内容区 -->
-    <main class="max-w-7xl mx-auto px-4 py-6">
+    <div class="px-12 py-8 w-full max-w-[1400px] mx-auto">
 
         <!-- ========== 总览页 ========== -->
-        <div id="tab-overview" class="tab-content fade-in">
-            <!-- 核心指标卡片 -->
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-                <div class="bg-dark-800 rounded-lg p-4 card-hover transition-all border border-gray-800 flex gap-3">
-                    <div class="w-8 h-8 rounded-md bg-purple-900/40 flex items-center justify-center shrink-0 overflow-hidden">
-                        <img src="images/czr-icon-sm.png" alt="超自然" class="w-full h-full object-cover">
+        <section id="section-overview" class="content-section active fade-in" data-section="overview">
+            <!-- 核心指标 — Metric Cards -->
+            <div class="metric-grid grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                <div class="metric-card">
+                    <div class="flex items-center gap-3 mb-3">
+                        <img src="images/czr-icon-sm.png" alt="超自然" class="game-icon">
+                        <span class="text-xs" style="color:var(--text-muted);" data-i18n="czr_dau">超自然行动组 DAU</span>
                     </div>
-                    <div class="min-w-0">
-                        <div class="text-xs text-gray-500 mb-1" data-i18n="czr_dau">超自然行动组 DAU</div>
-                        <div class="text-2xl font-bold text-accent-light">1,000万+</div>
-                        <div class="text-xs text-green-500 mt-1" data-i18n="overseas_live">海外版已上线</div>
-                    </div>
+                    <div class="text-3xl font-bold" style="color:#0F172A;">1,000<span class="text-lg font-medium" style="color:#64748B;">万+</span></div>
+                    <div class="text-[11px] mt-1.5" style="color:var(--data-green);" data-i18n="overseas_live">海外版已上线</div>
                 </div>
-                <div class="bg-dark-800 rounded-lg p-4 card-hover transition-all border border-gray-800 flex gap-3">
-                    <div class="w-8 h-8 rounded-md bg-green-900/40 flex items-center justify-center shrink-0 overflow-hidden">
-                        <img id="repo-icon-overview" src="" alt="" class="w-full h-full object-cover hidden">
-                        <span id="repo-icon-emoji" class="text-lg">🟢</span>
+                <div class="metric-card">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="game-icon flex items-center justify-center" style="background:#F1F5F9;">
+                            <img id="repo-icon-overview" src="" alt="" class="w-full h-full object-cover rounded-lg hidden">
+                            <span id="repo-icon-emoji" class="text-sm" style="color:#64748B;">◈</span>
+                        </div>
+                        <span class="text-xs" style="color:var(--text-muted);" data-i18n="repo_online">R.E.P.O. 当前在线</span>
                     </div>
-                    <div class="min-w-0">
-                        <div class="text-xs text-gray-500 mb-1" data-i18n="repo_online">R.E.P.O. 当前在线</div>
-                        <div class="text-2xl font-bold text-horror-green" id="repo-ccu">--</div>
-                        <div class="text-xs text-gray-500 mt-1" id="repo-review-count" data-i18n="reviews_loading">评测数加载中</div>
-                    </div>
+                    <div class="text-3xl font-bold" style="color:#0F172A;" id="repo-ccu">--</div>
+                    <div class="text-[11px] mt-1.5" style="color:var(--text-muted);" id="repo-review-count" data-i18n="reviews_loading">评测数加载中</div>
                 </div>
-                <div class="bg-dark-800 rounded-lg p-4 card-hover transition-all border border-gray-800 flex gap-3">
-                    <div class="w-8 h-8 rounded-md bg-orange-900/40 flex items-center justify-center text-lg shrink-0">👻</div>
-                    <div class="min-w-0">
-                        <div class="text-xs text-gray-500 mb-1" data-i18n="tracking_count">追踪竞品数</div>
-                        <div class="text-2xl font-bold text-horror-orange">10</div>
-                        <div class="text-xs text-gray-500 mt-1" data-i18n="incl_wishlist">含1款Wishlist</div>
-                    </div>
+                <div class="metric-card">
+                    <span class="text-xs" style="color:var(--text-muted);" data-i18n="tracking_count">追踪竞品数</span>
+                    <div class="text-3xl font-bold mt-3" style="color:#0F172A;">10</div>
+                    <div class="text-[11px] mt-1.5" style="color:var(--text-muted);" data-i18n="incl_wishlist">含1款Wishlist</div>
                 </div>
-                <div class="bg-dark-800 rounded-lg p-4 card-hover transition-all border border-gray-800 flex gap-3">
-                    <div class="w-8 h-8 rounded-md bg-blue-900/40 flex items-center justify-center text-lg shrink-0">📡</div>
-                    <div class="min-w-0">
-                        <div class="text-xs text-gray-500 mb-1" data-i18n="update_freq">数据更新频率</div>
-                        <div class="text-2xl font-bold text-gray-300" data-i18n="daily">每日</div>
-                        <div class="text-xs text-gray-500 mt-1" data-i18n="utc_auto">UTC 00:00 自动采集</div>
-                    </div>
+                <div class="metric-card">
+                    <span class="text-xs" style="color:var(--text-muted);" data-i18n="update_freq">数据更新频率</span>
+                    <div class="text-3xl font-bold mt-3" style="color:#0F172A;" data-i18n="daily">每日</div>
+                    <div class="text-[11px] mt-1.5" style="color:var(--text-muted);" data-i18n="utc_auto">UTC 00:00 自动采集</div>
                 </div>
             </div>
 
-            <!-- 双栏：最新动态 + 竞品在线人数 -->
-            <div class="grid lg:grid-cols-2 gap-6">
-                <div class="bg-dark-800 rounded-lg p-5 border border-gray-800">
-                    <h3 class="text-sm font-semibold mb-3 text-accent-light" data-i18n="latest_news">📡 最新动态</h3>
-                    <div id="latest-news" class="space-y-2 text-sm">
-                        <div class="text-gray-500" data-i18n="loading">加载中...</div>
+            <!-- 双栏 -->
+            <div class="grid lg:grid-cols-2 gap-4">
+                <div class="glass-card">
+                    <div class="flex items-center gap-2 mb-4">
+                        <h3 class="section-title" data-i18n="latest_news">最新动态</h3>
+                    </div>
+                    <div id="latest-news" class="space-y-2 text-sm" style="color:var(--text-muted);">
+                        <div data-i18n="loading">加载中...</div>
                     </div>
                 </div>
-                <div class="bg-dark-800 rounded-lg p-5 border border-gray-800">
-                    <h3 class="text-sm font-semibold mb-3 text-accent-light" data-i18n="steam_ccu_compare">📊 Steam 在线人数对比</h3>
-                    <canvas id="ccu-chart" height="200" class="transition-opacity duration-300 opacity-0"></canvas>
-                    <div id="ccu-chart-placeholder" class="h-[200px] flex items-center justify-center text-gray-600 text-sm">📊 加载中...</div>
+                <div class="glass-card">
+                    <div class="flex items-center gap-2 mb-4">
+                        <h3 class="section-title" data-i18n="steam_ccu_compare">Steam 在线人数对比</h3>
+                    </div>
+                    <div style="position:relative;height:240px;width:100%;">
+                        <canvas id="ccu-chart" class="transition-opacity duration-300 opacity-0"></canvas>
+                        <div id="ccu-chart-placeholder" class="absolute inset-0 flex items-center justify-center text-xs" style="color:var(--text-muted);">LOADING...</div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- ========== 超自然行动组页 ========== -->
-        <div id="tab-chaoziran" class="tab-content hidden fade-in">
+        <section id="section-chaoziran" class="content-section fade-in" data-section="chaoziran">
             <!-- 顶部标题栏 -->
-            <div class="flex flex-col gap-3 mb-4 pt-2">
-                <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
-                    <div class="flex items-center gap-3">
-                        <img src="images/czr-icon-sm.png" alt="超自然行动组" class="game-icon shadow-xl shrink-0">
-                        <div>
-                            <h2 class="text-2xl font-bold text-white whitespace-nowrap">超自然行动组</h2>
-                            <p class="text-sm text-gray-400 mt-1" data-i18n="czr_genre">巨人网络 · 多人欢乐恐怖</p>
+            <div class="mb-6 pt-2">
+                <div class="flex items-center gap-4 mb-4">
+                    <img src="images/czr-icon-sm.png" alt="超自然行动组" class="game-icon" style="border-color:var(--accent);">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3">
+                            <h2 class="text-xl font-bold">超自然行动组</h2>
+                            <span class="pill" style="background:var(--accent-dim);color:var(--accent);">FILE-001</span>
+                        </div>
+                        <p class="text-xs mt-1" style="color:var(--text-muted);" data-i18n="czr_genre">巨人网络 · 多人欢乐恐怖</p>
+                    </div>
+                    <div class="hidden sm:flex gap-6">
+                        <div class="text-right">
+                            <div class="text-[10px] tracking-wider" style="color:var(--text-muted);" data-i18n="taptap">TAPTAP</div>
+                            <div id="hero-taptap-score" class="text-xl font-bold" style="color:var(--gold);">--</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-[10px] tracking-wider" style="color:var(--text-muted);">DAU</div>
+                            <div class="text-xl font-bold" style="color:#0F172A;">1000万+</div>
+                        </div>
+                        <div class="text-right pl-6" style="border-left:1px solid var(--divider);">
+                            <div class="text-[10px] tracking-wider" style="color:var(--text-muted);">002558.SZ</div>
+                            <div id="hero-stock-price" class="text-xl font-bold" style="color:var(--data-red);">--</div>
+                            <div id="hero-stock-change" class="text-[10px]" style="color:var(--data-red);">--</div>
                         </div>
                     </div>
-                    <!-- 游戏简介 - 桌面端行内 -->
-                    <div class="hidden sm:flex flex-1 items-center justify-center mx-2">
-                        <div class="bg-dark-800/60 border border-gray-700/50 rounded-lg px-4 py-2.5 max-w-lg">
-                            <p class="text-xs text-gray-400 leading-relaxed">
-                                <span class="text-accent-light font-medium" data-i18n="core_gameplay">核心玩法：</span><span data-i18n="czr_desc1">多人组队前往千年古迹，对抗怪物、寻找宝藏。一个人是恐怖游戏，一群人是搞笑狂欢。</span>
-                                <span class="text-gray-500 ml-1" data-i18n="czr_desc2">iOS / Android / PC 三端互通，主打"欢乐恐怖+社交摸金"。</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="flex gap-4 sm:gap-6 sm:ml-auto">
-                    <div class="text-left sm:text-right">
-                        <div class="text-xs text-gray-500" data-i18n="taptap">TapTap</div>
-                        <div id="hero-taptap-score" class="text-2xl font-bold text-accent-light">--</div>
-                    </div>
-                    <div class="text-left sm:text-right">
-                        <div class="text-xs text-gray-500">DAU</div>
-                        <div class="text-2xl font-bold text-green-400">1000万+</div>
-                    </div>
-                    <div class="text-left sm:text-right sm:border-l sm:border-gray-700 sm:pl-6">
-                        <div class="text-xs text-gray-500">002558.SZ</div>
-                        <div id="hero-stock-price" class="text-2xl font-bold text-green-400">--</div>
-                        <div id="hero-stock-change" class="text-xs text-green-400">--</div>
-                    </div>
                 </div>
-                </div>
-                <!-- 游戏简介 - 移动端独立行 -->
-                <div class="sm:hidden">
-                    <div class="bg-dark-800/60 border border-gray-700/50 rounded-lg px-3 py-2">
-                        <p class="text-xs text-gray-400 leading-relaxed">
-                            <span class="text-accent-light font-medium">核心玩法：</span>多人组队前往千年古迹，对抗怪物、寻找宝藏。一个人是恐怖游戏，一群人是搞笑狂欢。三端互通，欢乐恐怖+社交摸金。
-                        </p>
-                    </div>
+                <!-- 游戏简介 -->
+                <div class="glass-card p-3 text-xs leading-relaxed" style="color:var(--text-muted);">
+                    <span style="color:var(--accent);" class="font-medium" data-i18n="core_gameplay">核心玩法：</span>
+                    <span data-i18n="czr_desc1">多人组队前往千年古迹，对抗怪物、寻找宝藏。一个人是恐怖游戏，一群人是搞笑狂欢。</span>
+                    <span style="color:var(--text-muted);" class="ml-1" data-i18n="czr_desc2">iOS / Android / PC 三端互通，主打"欢乐恐怖+社交摸金"。</span>
                 </div>
             </div>
-            <div class="accent-line mb-6"></div>
 
-            <!-- 国内数据 + AI摘要（优先展示） -->
-            <div class="grid lg:grid-cols-3 gap-6 mb-6">
-                <!-- AI洞察摘要 -->
-                <div class="bg-dark-800 rounded-lg p-5 border border-accent/30 lg:col-span-2">
-                    <h3 class="text-sm font-semibold mb-3 text-accent-light" data-i18n="ai_insight">🧠 AI 洞察摘要</h3>
-                    <div class="space-y-3 text-sm text-gray-300" id="czr-ai-summary">
-                        <p>国内社区舆情<span class="text-yellow-400">两极分化</span>：TapTap论坛偏中性正面（版本更新、皮肤爆料讨论为主），B站高热度视频以攻略/怪物图鉴为主（播放量百万级），快手抖音短视频传播活跃但数据不可直接抓取。</p>
-                        <p>TapTap评分6.8属中等偏低，但DAU持续千万级说明<span class="text-green-400">核心用户粘性极强</span>。海外版Tomb Busters媒体评价正面，聚焦"恐怖+喜剧"的差异化玩法。</p>
-                        <div class="bg-dark-900/60 rounded p-2 text-xs text-gray-400">
+            <!-- AI洞察 + 核心指标 -->
+            <div class="grid lg:grid-cols-3 gap-4 mb-6">
+                <div class="glass-card lg:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <h3 class="section-title" data-i18n="ai_insight">AI 洞察摘要</h3>
+                    </div>
+                    <div class="space-y-3 text-sm" style="color:var(--text-muted);line-height:1.6;" id="czr-ai-summary">
+                        <p>国内社区舆情两极分化：TapTap论坛偏中性正面（版本更新、皮肤爆料讨论为主），B站高热度视频以攻略/怪物图鉴为主（播放量百万级），快手抖音短视频传播活跃但数据不可直接抓取。</p>
+                        <p>TapTap评分6.8属中等偏低，但DAU持续千万级说明核心用户粘性极强。海外版Tomb Busters媒体评价正面，聚焦"恐怖+喜剧"的差异化玩法。</p>
+                        <div class="callout-crimson text-xs" style="color:var(--text-muted);">
                             💰 巨人网络2026Q1营收23.29亿元（同比+221.7%），净利润10.80亿元（同比+210.6%），超自然行动组为关键增长引擎
                         </div>
                     </div>
                 </div>
-                <!-- 核心指标 -->
-                <div class="bg-dark-800 rounded-lg p-5 border border-gray-800">
-                    <h3 class="text-sm font-semibold mb-3 text-accent-light" data-i18n="cn_core_metrics">📊 国内核心指标</h3>
-                    <div class="space-y-3 text-sm">
-                        <div class="flex justify-between"><span class="text-gray-500" data-i18n="reg_users">注册用户</span><span class="text-white font-semibold">2亿+</span></div>
-                        <div class="flex justify-between"><span class="text-gray-500">DAU</span><span class="text-green-400 font-semibold">1,000万+</span></div>
-                        <div class="flex justify-between"><span class="text-gray-500" data-i18n="peak_concurrent">峰值并发</span><span class="text-white font-semibold">100万+</span></div>
-                        <div class="flex justify-between"><span class="text-gray-500" data-i18n="total_revenue">累计流水</span><span class="text-yellow-400 font-semibold">50亿+</span></div>
-                        <div class="flex justify-between"><span class="text-gray-500" data-i18n="social_views">社媒浏览</span><span class="text-white font-semibold">1,400亿次</span></div>
-                        <div class="flex justify-between"><span class="text-gray-500" data-i18n="taptap_followers">TapTap关注</span><span id="taptap-fans" class="text-accent-light font-semibold">--</span></div>
-                        <div class="border-t border-gray-700/50 pt-3 mt-1">
-                            <div class="flex justify-between"><span class="text-gray-500" data-i18n="ios_top_grossing">iOS畅销榜</span><span class="text-yellow-400 font-semibold">#23 <span class="text-gray-600 text-xs" data-i18n="peak4">（峰值#4）</span></span></div>
-                            <div class="flex justify-between"><span class="text-gray-500" data-i18n="ios_free">iOS免费榜</span><span class="text-green-400 font-semibold">Top 30</span></div>
-                            <div class="text-[10px] text-gray-600 mt-1" data-i18n="updated_appstore">更新于 2026-05-29 · 来源：iOS App Store</div>
+                <div class="glass-card">
+                    <div class="flex items-center gap-2 mb-4">
+                        <h3 class="section-title" data-i18n="cn_core_metrics">国内核心指标</h3>
+                    </div>
+                    <div class="space-y-2.5 text-sm">
+                        <div class="flex justify-between"><span style="color:var(--text-muted);" data-i18n="reg_users">注册用户</span><span class="font-semibold" style="color:#0F172A;">2亿+</span></div>
+                        <div class="flex justify-between"><span style="color:var(--text-muted);">DAU</span><span class="font-semibold" style="color:#0F172A;">1,000万+</span></div>
+                        <div class="flex justify-between"><span style="color:var(--text-muted);" data-i18n="peak_concurrent">峰值并发</span><span class="font-semibold" style="color:#0F172A;">100万+</span></div>
+                        <div class="flex justify-between"><span style="color:var(--text-muted);" data-i18n="total_revenue">累计流水</span><span class="font-semibold" style="color:#0F172A;">50亿+</span></div>
+                        <div class="flex justify-between"><span style="color:var(--text-muted);" data-i18n="social_views">社媒浏览</span><span class="font-semibold" style="color:#0F172A;">1,400亿次</span></div>
+                        <div class="flex justify-between"><span style="color:var(--text-muted);" data-i18n="taptap_followers">TapTap关注</span><span id="taptap-fans" class="font-semibold" style="color:var(--accent);">--</span></div>
+                        <div class="pt-2 mt-1" style="border-top:1px solid var(--divider);">
+                            <div class="flex justify-between"><span style="color:var(--text-muted);" data-i18n="ios_top_grossing">iOS畅销榜</span><span class="font-semibold" style="color:#0F172A;">#23 <span style="color:var(--text-muted);" class="text-[10px]" data-i18n="peak4">（峰值#4）</span></span></div>
+                            <div class="flex justify-between"><span style="color:var(--text-muted);" data-i18n="ios_free">iOS免费榜</span><span class="font-semibold" style="color:var(--data-green);">Top 30</span></div>
+                            <div class="text-[10px] mt-1" style="color:var(--text-muted);" data-i18n="updated_appstore">更新于 2026-05-29 · 来源：iOS App Store</div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 更新公告（分类筛选版）+ 新玩法追踪 -->
-            <div class="grid lg:grid-cols-3 gap-6 mb-6">
-                <!-- 公告区（占2列） -->
-                <div class="lg:col-span-2 bg-dark-800 rounded-lg p-5 border border-gray-800">
-                    <div class="flex items-center justify-between mb-3">
-                        <h3 class="text-sm font-semibold text-accent-light" data-i18n="update_announce">📋 更新公告</h3>
+            <!-- 更新公告 + 新玩法追踪 -->
+            <div class="grid lg:grid-cols-3 gap-4 mb-6">
+                <div class="lg:col-span-2 glass-card">
+                    <div class="flex items-center gap-2 mb-4">
+                        <h3 class="section-title" data-i18n="update_announce">更新公告</h3>
                     </div>
-                    <!-- 分类筛选Tab -->
                     <div class="flex gap-2 mb-3 flex-wrap" id="czr-cat-tabs">
-                        <button onclick="filterAnnouncements('all')" class="cat-tab active text-xs px-2.5 py-1 rounded-full transition font-medium" data-cat="all" data-i18n="cat_all">全部</button>
-                        <button onclick="filterAnnouncements('new_content')" class="cat-tab text-xs px-2.5 py-1 rounded-full transition font-medium" data-cat="new_content">🎮 <span data-i18n="cat_new_content">新玩法</span></button>
-                        <button onclick="filterAnnouncements('event')" class="cat-tab text-xs px-2.5 py-1 rounded-full transition font-medium" data-cat="event">🎉 <span data-i18n="cat_event">活动</span></button>
-                        <button onclick="filterAnnouncements('pr')" class="cat-tab text-xs px-2.5 py-1 rounded-full transition font-medium" data-cat="pr">🤝 <span data-i18n="cat_pr">PR</span></button>
-                        <button onclick="filterAnnouncements('cosmetic')" class="cat-tab text-xs px-2.5 py-1 rounded-full transition font-medium" data-cat="cosmetic">👗 <span data-i18n="cat_cosmetic">皮肤</span></button>
-                        <button onclick="filterAnnouncements('patch')" class="cat-tab text-xs px-2.5 py-1 rounded-full transition font-medium" data-cat="patch">🔧 <span data-i18n="cat_patch">修复</span></button>
+                        <button onclick="filterAnnouncements('all')" class="cat-tab active pill text-[10px]" data-cat="all" data-i18n="cat_all">全部</button>
+                        <button onclick="filterAnnouncements('new_content')" class="cat-tab pill text-[10px]" style="color:var(--text-muted);background:var(--card-bg);border:1px solid var(--card-border);" data-cat="new_content">· <span data-i18n="cat_new_content">新玩法</span></button>
+                        <button onclick="filterAnnouncements('event')" class="cat-tab pill text-[10px]" style="color:var(--text-muted);background:var(--card-bg);border:1px solid var(--card-border);" data-cat="event">· <span data-i18n="cat_event">活动</span></button>
+                        <button onclick="filterAnnouncements('pr')" class="cat-tab pill text-[10px]" style="color:var(--text-muted);background:var(--card-bg);border:1px solid var(--card-border);" data-cat="pr">· <span data-i18n="cat_pr">PR</span></button>
+                        <button onclick="filterAnnouncements('cosmetic')" class="cat-tab pill text-[10px]" style="color:var(--text-muted);background:var(--card-bg);border:1px solid var(--card-border);" data-cat="cosmetic">· <span data-i18n="cat_cosmetic">皮肤</span></button>
+                        <button onclick="filterAnnouncements('patch')" class="cat-tab pill text-[10px]" style="color:var(--text-muted);background:var(--card-bg);border:1px solid var(--card-border);" data-cat="patch">· <span data-i18n="cat_patch">修复</span></button>
                     </div>
                     <div id="czr-updates" class="space-y-1 text-sm max-h-80 overflow-y-auto">
-                        <div class="text-gray-500" data-i18n="loading">加载中...</div>
+                        <div style="color:var(--text-muted);" data-i18n="loading">加载中...</div>
                     </div>
-                    <!-- 官网新闻折叠 -->
-                    <div class="mt-4 border-t border-gray-700/50 pt-3">
-                        <button onclick="toggleOfficialNews()" class="flex items-center gap-2 text-xs text-gray-400 hover:text-accent-light transition">
-                            <span data-i18n="official_news">📰 官网新闻</span>
+                    <div class="mt-4 pt-3" style="border-top:1px solid var(--divider);">
+                        <button onclick="toggleOfficialNews()" class="flex items-center gap-2 text-[10px] transition" style="color:var(--text-muted);">
+                            <span data-i18n="official_news">官网新闻</span>
                             <span id="czr-news-toggle-icon" class="transition-transform">▼</span>
                         </button>
                         <div id="czr-official-news-wrap" class="hidden mt-2 space-y-1 text-sm max-h-60 overflow-y-auto">
-                            <div class="text-gray-500" data-i18n="loading">加载中...</div>
+                            <div style="color:var(--text-muted);" data-i18n="loading">加载中...</div>
                         </div>
                     </div>
                 </div>
-                <!-- 新玩法追踪（占1列） -->
-                <div class="bg-dark-800 rounded-lg p-5 border border-accent/20">
-                    <h3 class="text-sm font-semibold mb-3 text-accent-light" data-i18n="content_tracker">🎯 近3个月玩法更新</h3>
+                <div class="glass-card">
+                    <div class="flex items-center gap-2 mb-4">
+                        <h3 class="section-title" data-i18n="content_tracker">近3个月玩法更新</h3>
+                    </div>
                     <div id="czr-content-tracker" class="space-y-3 text-sm">
-                        <div class="text-gray-500" data-i18n="loading">加载中...</div>
+                        <div style="color:var(--text-muted);" data-i18n="loading">加载中...</div>
                     </div>
                 </div>
             </div>
 
-            <!-- 🌍 海外Tomb Busters 可折叠区域 -->
+            <!-- 🌍 海外Tomb Busters -->
             <div class="mb-6">
-                <button onclick="toggleTombBusters()" class="w-full bg-gradient-to-br from-purple-900/40 to-red-900/30 rounded-lg p-4 border border-purple-700/50 flex items-center gap-2 hover:border-purple-500/50 transition-colors">
-                    <span class="text-lg">🌍</span>
-                    <h3 class="text-sm font-bold text-white" data-i18n="tb_overseas">Tomb Busters 海外版 — 排行榜 & 趋势</h3>
-                    <span class="text-xs text-gray-400 ml-2" data-i18n="tb_launch_date">5月27日全球上线</span>
-                    <span id="tb-toggle-icon" class="ml-auto text-gray-400 transition-transform">▼</span>
+                <button onclick="toggleTombBusters()" class="w-full glass-card flex items-center gap-3 transition-colors" style="border-left:3px solid var(--accent);">
+                    <h3 class="text-xs font-bold" style="color:var(--text-primary);" data-i18n="tb_overseas">Tomb Busters 海外版 — 排行榜 & 趋势</h3>
+                    <span class="pill text-[10px]" style="background:var(--accent-dim);color:var(--accent);" data-i18n="tb_launch_date">5月27日全球上线</span>
+                    <span id="tb-toggle-icon" class="ml-auto transition-transform" style="color:var(--text-muted);">▼</span>
                 </button>
-                <div id="tomb-busters-detail" class="hidden bg-gradient-to-br from-purple-900/20 to-red-900/15 border border-t-0 border-purple-700/30 rounded-b-lg p-5">
-                    <!-- 核心指标 -->
+                <div id="tomb-busters-detail" class="hidden glass-card" style="border-top:none;border-radius:0 0 var(--radius-md) var(--radius-md);">
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
-                        <div class="bg-dark-900/60 rounded-lg p-3 text-center">
-                            <div class="text-xs text-gray-500 mb-1" data-i18n="tb_regions">覆盖地区</div>
-                            <div class="text-sm font-bold text-white" id="tb-regions-val">美 / 日 / 韩</div>
+                        <div class="p-3 text-center rounded-lg" style="background:var(--accent-dim);">
+                            <div class="text-[10px] tracking-wider mb-1" style="color:var(--text-muted);" data-i18n="tb_regions">覆盖地区</div>
+                            <div class="text-sm font-bold" style="color:#0F172A;" id="tb-regions-val">US / JP / KR</div>
                         </div>
-                        <div class="bg-dark-900/60 rounded-lg p-3 text-center">
-                            <div class="text-xs text-gray-500 mb-1" data-i18n="tb_platform">平台</div>
-                            <div class="text-sm font-bold text-white">iOS / Android / PC</div>
+                        <div class="p-3 text-center rounded-lg" style="background:var(--accent-dim);">
+                            <div class="text-[10px] tracking-wider mb-1" style="color:var(--text-muted);" data-i18n="tb_platform">平台</div>
+                            <div class="text-sm font-bold" style="color:#0F172A;">iOS / Android / PC</div>
                         </div>
-                        <div class="bg-dark-900/60 rounded-lg p-3 text-center">
-                            <div class="text-xs text-gray-500 mb-1">App Store</div>
-                            <div class="text-sm font-bold text-yellow-400" id="tb-appstore-rating">--</div>
-                            <div class="text-xs text-gray-600" id="tb-total-ratings">--</div>
+                        <div class="p-3 text-center rounded-lg" style="background:var(--accent-dim);">
+                            <div class="text-[10px] tracking-wider mb-1" style="color:var(--text-muted);">APP STORE</div>
+                            <div class="text-sm font-bold" style="color:var(--gold);" id="tb-appstore-rating">--</div>
+                            <div class="text-[10px]" style="color:var(--text-muted);" id="tb-total-ratings">--</div>
                         </div>
-                        <div class="bg-dark-900/60 rounded-lg p-3 text-center">
-                            <div class="text-xs text-gray-500 mb-1">版本</div>
-                            <div class="text-sm font-bold text-white" id="tb-version">--</div>
-                            <div class="text-xs text-gray-600" id="tb-updated">--</div>
+                        <div class="p-3 text-center rounded-lg" style="background:var(--accent-dim);">
+                            <div class="text-[10px] tracking-wider mb-1" style="color:var(--text-muted);">VERSION</div>
+                            <div class="text-sm font-bold" style="color:#0F172A;" id="tb-version">--</div>
+                            <div class="text-[10px]" style="color:var(--text-muted);" id="tb-updated">--</div>
                         </div>
                     </div>
-                    <!-- 各区评分 -->
                     <div class="grid grid-cols-3 md:grid-cols-5 gap-2 mb-4" id="tb-regions-grid"></div>
-                    <!-- 海外排名 -->
-                    <div class="bg-dark-900/60 rounded-lg p-3 mb-4">
-                        <div class="text-xs text-gray-400 mb-2">📊 App Store 排名 <span class="text-gray-600" id="tb-ranking-updated"></span></div>
+                    <div class="p-3 mb-4 rounded-lg" style="background:var(--accent-dim);">
+                        <div class="text-[10px] tracking-wider mb-2" style="color:var(--text-muted);">APP STORE RANKINGS <span style="color:var(--text-ghost);" id="tb-ranking-updated"></span></div>
                         <div id="tb-ranking-grid" class="space-y-2">
-                            <div class="text-xs text-gray-600">🔄 数据采集中...</div>
+                            <div class="text-[10px]" style="color:var(--text-muted);">COLLECTING DATA...</div>
                         </div>
                     </div>
-                    <!-- 排名洞察 -->
-                    <div class="bg-dark-900/60 rounded-lg p-3 mb-4">
-                        <div class="text-xs text-gray-400 mb-2">💡 排名洞察</div>
-                        <div class="text-sm text-gray-300" id="tb-ranking-note">
-                            <span class="text-yellow-400">🔄</span> 数据采集中...
+                    <div class="p-3 mb-4 rounded-lg" style="background:var(--accent-dim);">
+                        <div class="text-[10px] tracking-wider mb-2" style="color:var(--text-muted);">RANKING INSIGHT</div>
+                        <div class="text-sm" style="color:var(--text-muted);" id="tb-ranking-note">
+                            <span style="color:var(--gold);">🔄</span> DATA COLLECTING...
                         </div>
                     </div>
-                    <!-- 海外媒体评价 -->
-                    <div class="text-xs text-gray-400 mb-2">📰 海外媒体评价</div>
+                    <div class="text-[10px] tracking-wider mb-2" style="color:var(--text-muted);">PRESS COVERAGE</div>
                     <div class="space-y-2" id="czr-overseas-media">
-                        <div class="bg-dark-900/60 rounded-lg p-3">
-                            <a href="https://www.mmobomb.com/news/popular-horror-extraction-game-tomb-busters-launches-west" target="_blank" rel="noopener" class="text-accent-light font-semibold underline underline-offset-2 hover:text-white transition-colors">MMOBomb ↗</a>
-                            <p class="text-sm text-gray-300 mt-1">"The premise looks pretty fun — scary alone, funny with friends"</p>
+                        <div class="p-3 rounded-lg" style="background:var(--accent-dim);">
+                            <a href="https://www.mmobomb.com/news/popular-horror-extraction-game-tomb-busters-launches-west" target="_blank" rel="noopener" class="font-semibold underline underline-offset-2 transition-colors" style="color:var(--accent);">MMOBomb ↗</a>
+                            <p class="text-sm mt-1" style="color:var(--text-muted);">"The premise looks pretty fun — scary alone, funny with friends"</p>
                         </div>
-                        <div class="bg-dark-900/60 rounded-lg p-3">
-                            <a href="https://gamingonphone.com/news/tomb-busters-blends-horror-treasure-hunting-and-comedy-in-a-unique-co-op-adventure-arriving-globally-on-mobile-on-may-27-2026/" target="_blank" rel="noopener" class="text-accent-light font-semibold underline underline-offset-2 hover:text-white transition-colors">GamingOnPhone ↗</a>
-                            <p class="text-sm text-gray-300 mt-1">"I like how the gameplay changes based on team size — from horror to comedy"</p>
+                        <div class="p-3 rounded-lg" style="background:var(--accent-dim);">
+                            <a href="https://gamingonphone.com/news/tomb-busters-blends-horror-treasure-hunting-and-comedy-in-a-unique-co-op-adventure-arriving-globally-on-mobile-on-may-27-2026/" target="_blank" rel="noopener" class="font-semibold underline underline-offset-2 transition-colors" style="color:var(--accent);">GamingOnPhone ↗</a>
+                            <p class="text-sm mt-1" style="color:var(--text-muted);">"I like how the gameplay changes based on team size — from horror to comedy"</p>
                         </div>
-                        <div class="bg-dark-900/60 rounded-lg p-3">
-                            <a href="https://www.droidgamers.com/news/tomb-busters/" target="_blank" rel="noopener" class="text-accent-light font-semibold underline underline-offset-2 hover:text-white transition-colors">DroidGamers ↗</a>
-                            <p class="text-sm text-gray-300 mt-1">"The unique thing is it changes tone depending on how many players are involved"</p>
+                        <div class="p-3 rounded-lg" style="background:var(--accent-dim);">
+                            <a href="https://www.droidgamers.com/news/tomb-busters/" target="_blank" rel="noopener" class="font-semibold underline underline-offset-2 transition-colors" style="color:var(--accent);">DroidGamers ↗</a>
+                            <p class="text-sm mt-1" style="color:var(--text-muted);">"The unique thing is it changes tone depending on how many players are involved"</p>
                         </div>
                     </div>
-                    <!-- Reddit -->
-                    <div class="mt-3 text-xs text-gray-500">
-                        💬 Reddit：刚上线1天，暂无大规模讨论 · 关注板块：<span class="text-gray-400">r/mobilegaming</span> <span class="text-gray-400">r/horrorgaming</span>
+                    <div class="mt-3 text-[10px]" style="color:var(--text-muted);">
+                        💬 Reddit：刚上线1天，暂无大规模讨论 · r/mobilegaming · r/horrorgaming
                     </div>
                 </div>
             </div>
 
             <!-- 社区舆情 -->
-            <div class="bg-dark-800 rounded-lg p-5 border border-gray-800">
-                <h3 class="text-sm font-semibold mb-3 text-accent-light" data-i18n="community_sentiment">💬 社区舆情</h3>
+            <div class="glass-card">
+                <div class="flex items-center gap-2 mb-4">
+                    <h3 class="section-title" data-i18n="community_sentiment">社区舆情</h3>
+                </div>
                 <div class="grid md:grid-cols-2 gap-6">
                     <div>
-                        <h4 class="text-xs font-semibold text-gray-400 mb-2 uppercase tracking-wider" data-i18n="taptap_forum">TapTap 论坛</h4>
+                        <h4 class="text-[10px] font-semibold mb-2 uppercase tracking-widest" style="color:var(--text-muted);" data-i18n="taptap_forum">TapTap 论坛</h4>
                         <div id="czr-taptap-forum" class="space-y-1.5 text-sm">
-                            <div class="text-gray-500">加载中...</div>
+                            <div style="color:var(--text-muted);">加载中...</div>
                         </div>
                     </div>
                     <div>
-                        <h4 class="text-xs font-semibold text-gray-400 mb-2 uppercase tracking-wider" data-i18n="bilibili_hot">B站热门视频</h4>
+                        <h4 class="text-[10px] font-semibold mb-2 uppercase tracking-widest" style="color:var(--text-muted);" data-i18n="bilibili_hot">B站热门视频</h4>
                         <div id="czr-bilibili" class="space-y-1.5 text-sm">
-                            <div class="text-gray-500">加载中...</div>
+                            <div style="color:var(--text-muted);">加载中...</div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- ========== R.E.P.O. 页 ========== -->
-        <div id="tab-repo" class="tab-content hidden fade-in">
-            <!-- 顶部标题栏 -->
-            <div class="flex flex-col gap-3 mb-4 pt-2">
-                <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
-                    <div class="flex items-center gap-3">
-                        <img id="repo-icon" src="" alt="" class="game-icon shadow-xl hidden shrink-0">
-                        <div>
-                            <h2 class="text-2xl font-bold text-white whitespace-nowrap">R.E.P.O.</h2>
-                            <p class="text-sm text-gray-400 mt-1" id="repo-hero-subtitle">semiwork · 在线合作恐怖</p>
+        <section id="section-repo" class="content-section fade-in" data-section="repo">
+            <div class="mb-6 pt-2">
+                <div class="flex items-center gap-4 mb-4">
+                    <img id="repo-icon" src="" alt="" class="game-icon hidden" style="border-color:var(--data-green);">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3">
+                            <h2 class="text-xl font-bold">R.E.P.O.</h2>
+                            <span class="pill" style="background:rgba(22,163,74,0.08);color:var(--data-green);">FILE-002</span>
                         </div>
+                        <p class="text-xs mt-1" style="color:var(--text-muted);" id="repo-hero-subtitle">semiwork · 在线合作恐怖</p>
                     </div>
-                    <!-- 游戏简介 - 桌面端行内 -->
-                    <div class="hidden sm:flex flex-1 items-center justify-center mx-2">
-                        <div class="bg-dark-800/60 border border-gray-700/50 rounded-lg px-4 py-2.5 max-w-lg">
-                            <p class="text-xs text-gray-400 leading-relaxed">
-                                <span class="text-horror-green font-medium">核心玩法：</span>物理驱动的多人合作恐怖游戏。利用真实物理机制搬运物品、协作解谜，在阴森环境中求生。
-                                <span class="text-gray-500 ml-1">Steam好评如潮，支持2-6人在线合作，Steam独占。</span>
-                            </p>
+                    <div class="hidden sm:flex gap-6">
+                        <div class="text-right">
+                            <div class="text-[10px] tracking-wider" style="color:var(--text-muted);" data-i18n="steam_pos_rate">好评率</div>
+                            <div id="repo-hero-score" class="text-xl font-bold" style="color:var(--data-green);">96%</div>
                         </div>
-                    </div>
-                    <div class="flex gap-4 sm:gap-6 sm:ml-auto">
-                        <div class="text-left sm:text-right">
-                            <div class="text-xs text-gray-500" data-i18n="steam_pos_rate">Steam好评率</div>
-                            <div id="repo-hero-score" class="text-2xl font-bold text-horror-green">96%</div>
-                        </div>
-                        <div class="text-left sm:text-right">
-                            <div class="text-xs text-gray-500" data-i18n="current_online">当前在线</div>
-                            <div id="repo-ccu-hero" class="text-2xl font-bold text-green-400">--</div>
+                        <div class="text-right">
+                            <div class="text-[10px] tracking-wider" style="color:var(--text-muted);" data-i18n="current_online">在线</div>
+                            <div id="repo-ccu-hero" class="text-xl font-bold" style="color:var(--data-green);">--</div>
                         </div>
                     </div>
                 </div>
-                <!-- 游戏简介 - 移动端独立行 -->
-                <div class="sm:hidden">
-                    <div class="bg-dark-800/60 border border-gray-700/50 rounded-lg px-3 py-2">
-                        <p class="text-xs text-gray-400 leading-relaxed">
-                            <span class="text-horror-green font-medium">核心玩法：</span>物理驱动的多人合作恐怖游戏。真实物理搬运+协作解谜，2-6人Steam在线合作。
-                        </p>
-                    </div>
+                <div class="glass-card p-3 text-xs leading-relaxed" style="color:var(--text-muted);">
+                    <span style="color:var(--data-green);" class="font-medium">核心玩法：</span>物理驱动的多人合作恐怖游戏。利用真实物理机制搬运物品、协作解谜，在阴森环境中求生。Steam好评如潮，2-6人在线合作。
                 </div>
             </div>
-            <div class="accent-line mb-6"></div>
 
-            <!-- 🔥 最新更新 v0.4.0 重点区域 -->
-            <div class="bg-gradient-to-br from-green-900/40 to-emerald-900/30 rounded-lg p-5 border border-green-700/50 mb-6">
+            <!-- v0.4.0 重点区域 -->
+            <div class="glass-card mb-6" style="border-left:3px solid #16A34A;">
                 <div class="flex items-center gap-2 mb-4">
-                    <span class="text-lg">🔥</span>
-                    <h3 class="text-base font-bold text-white">v0.4.0「装饰更新」— 2026年5月7日</h3>
-                    <span class="ml-auto text-xs px-2 py-0.5 bg-green-800/60 text-green-300 rounded">最新</span>
+                    <h3 class="text-xs font-bold" style="color:var(--text-primary);">v0.4.0 DECORATION UPDATE — 2026.05.07</h3>
+                    <span class="pill ml-auto text-[10px]" style="background:rgba(22,163,74,0.08);color:var(--data-green);">LATEST</span>
                 </div>
-                <!-- 核心亮点 -->
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
-                    <div class="bg-dark-900/60 rounded-lg p-3 text-center">
-                        <div class="text-xs text-gray-500 mb-1">装饰部件</div>
-                        <div class="text-lg font-bold text-white">500+</div>
-                        <div class="text-xs text-green-400">全部免费解锁</div>
+                    <div class="p-3 text-center rounded-lg" style="background:rgba(22,163,74,0.06);">
+                        <div class="text-[10px] tracking-wider mb-1" style="color:var(--text-muted);">PARTS</div>
+                        <div class="text-lg font-bold" style="color:#0F172A;">500+</div>
+                        <div class="text-[10px]" style="color:var(--data-green);">全部免费</div>
                     </div>
-                    <div class="bg-dark-900/60 rounded-lg p-3 text-center">
-                        <div class="text-xs text-gray-500 mb-1">新游戏模式</div>
-                        <div class="text-sm font-bold text-white">King of The Losers</div>
-                        <div class="text-xs text-gray-400">竞速赛</div>
+                    <div class="p-3 text-center rounded-lg" style="background:rgba(22,163,74,0.06);">
+                        <div class="text-[10px] tracking-wider mb-1" style="color:var(--text-muted);">NEW MODE</div>
+                        <div class="text-sm font-bold" style="color:#0F172A;">King of The Losers</div>
+                        <div class="text-[10px]" style="color:var(--text-muted);">竞速赛</div>
                     </div>
-                    <div class="bg-dark-900/60 rounded-lg p-3 text-center">
-                        <div class="text-xs text-gray-500 mb-1">新道具</div>
-                        <div class="text-lg font-bold text-white">8种</div>
-                        <div class="text-xs text-gray-400">含3种法杖</div>
+                    <div class="p-3 text-center rounded-lg" style="background:rgba(22,163,74,0.06);">
+                        <div class="text-[10px] tracking-wider mb-1" style="color:var(--text-muted);">NEW ITEMS</div>
+                        <div class="text-lg font-bold" style="color:#0F172A;">8</div>
+                        <div class="text-[10px]" style="color:var(--text-muted);">含3种法杖</div>
                     </div>
-                    <div class="bg-dark-900/60 rounded-lg p-3 text-center">
-                        <div class="text-xs text-gray-500 mb-1">商店重做</div>
-                        <div class="text-sm font-bold text-white">机械店员 + Reroller</div>
-                        <div class="text-xs text-gray-400">刷新升级选项</div>
+                    <div class="p-3 text-center rounded-lg" style="background:rgba(22,163,74,0.06);">
+                        <div class="text-[10px] tracking-wider mb-1" style="color:var(--text-muted);">SHOP REWORK</div>
+                        <div class="text-sm font-bold" style="color:#0F172A;">机械店员 + Reroller</div>
+                        <div class="text-[10px]" style="color:var(--text-muted);">刷新升级选项</div>
                     </div>
                 </div>
-                <!-- 更新详情 -->
                 <div class="grid md:grid-cols-2 gap-4">
                     <div>
-                        <div class="text-xs text-gray-400 mb-2">🆕 新增内容</div>
-                        <div class="text-sm text-gray-300 space-y-1">
-                            <p>• <span class="text-green-400">装扮系统</span>：500+部件，4级稀有度（普通→超稀有），通过装饰箱+税务代币解锁，<span class="text-yellow-400">零微交易</span></p>
-                            <p>• <span class="text-green-400">新模式</span>：King of The Losers 竞速赛</p>
-                            <p>• <span class="text-green-400">8种新道具</span>：Walkies对讲机、Scout侦察者、Hauler搬运者、Defibro除颤器、吹叶机、3种法杖（滚动/零重力/虚空）</p>
-                            <p>• <span class="text-green-400">商店重设计</span>：新环境、机械店员、Reroller刷新机器</p>
-                            <p>• 地图UI升级：显示关卡/月球，倒地可用</p>
-                            <p>• 充电站外观更新</p>
+                        <div class="text-[10px] tracking-wider mb-2" style="color:var(--text-muted);">NEW CONTENT</div>
+                        <div class="text-sm space-y-1" style="color:var(--text-secondary);">
+                            <p>• <span style="color:var(--data-green);">装扮系统</span>：500+部件，4级稀有度，装饰箱+税务代币解锁，<span style="color:var(--gold);">零微交易</span></p>
+                            <p>• <span style="color:var(--data-green);">新模式</span>：King of The Losers 竞速赛</p>
+                            <p>• <span style="color:var(--data-green);">8种新道具</span>：Walkies对讲机、Scout侦察者、Hauler搬运者、Defibro除颤器、吹叶机、3种法杖</p>
+                            <p>• <span style="color:var(--data-green);">商店重设计</span>：新环境、机械店员、Reroller刷新机器</p>
                         </div>
                     </div>
                     <div>
-                        <div class="text-xs text-gray-400 mb-2">⚖️ 平衡 & 修复</div>
-                        <div class="text-sm text-gray-300 space-y-1">
-                            <p>• <span class="text-yellow-400">近战武器重做</span>：滚轮方向挥击 + 高扭矩投掷</p>
-                            <p>• 冲刺能量消耗改为加速度缩放，更省体力</p>
+                        <div class="text-[10px] tracking-wider mb-2" style="color:var(--text-muted);">BALANCE & FIXES</div>
+                        <div class="text-sm space-y-1" style="color:var(--text-secondary);">
+                            <p>• <span style="color:var(--gold);">近战武器重做</span>：滚轮方向挥击 + 高扭矩投掷</p>
+                            <p>• 冲刺能量消耗改为加速度缩放</p>
                             <p>• Shadow Child拉拽时间加长；Tick攻击频率随体型降低</p>
-                            <p>• Cleanup Crew头部被击后短暂停止</p>
-                            <p>• 修复皇冠、穿模、Huntsman穿墙射击等关键Bug</p>
-                            <p>• 使用MOD时版本号旁显示 [MODDED]</p>
-                            <p>• 卡车中退出自动保存进度</p>
+                            <p>• 修复皇冠、穿模、Huntsman穿墙射击等Bug</p>
+                            <p>• 使用MOD时版本号显示 [MODDED]</p>
                         </div>
                     </div>
-                </div>
-                <div class="mt-3 text-xs text-gray-500">
-                    💡 装饰箱会占物品栏，需在「高价值废料」和「永久进度」间权衡 — 开发者鼓励长期游玩而非付费
                 </div>
             </div>
 
-            <!-- 舆论 & 评测趋势 + MOD生态 -->
-            <div class="grid lg:grid-cols-2 gap-6 mb-6">
-                <!-- 舆论趋势 -->
-                <div class="bg-dark-800 rounded-lg p-5 border border-gray-800">
-                    <h3 class="text-sm font-semibold mb-3 text-accent-light" data-i18n="review_trend">📊 评测 & 舆论趋势</h3>
-                    <div class="space-y-3 text-sm text-gray-300">
+            <!-- 舆论 & MOD -->
+            <div class="grid lg:grid-cols-2 gap-4 mb-6">
+                <div class="glass-card">
+                    <div class="flex items-center gap-2 mb-4">
+                        <h3 class="section-title" data-i18n="review_trend">评测 & 舆论趋势</h3>
+                    </div>
+                    <div class="space-y-3 text-sm" style="color:var(--text-secondary);">
                         <div class="grid grid-cols-3 gap-2 text-center">
-                            <div class="bg-dark-900/60 rounded p-2">
-                                <div class="text-xs text-gray-500">总评测</div>
-                                <div class="text-base font-bold text-white" id="repo-total-reviews">--</div>
+                            <div class="p-2 rounded-lg" style="background:var(--accent-dim);">
+                                <div class="text-[10px]" style="color:var(--text-muted);">TOTAL</div>
+                                <div class="font-bold" style="color:var(--text-primary);" id="repo-total-reviews">--</div>
                             </div>
-                            <div class="bg-dark-900/60 rounded p-2">
-                                <div class="text-xs text-gray-500">好评</div>
-                                <div class="text-base font-bold text-green-400" id="repo-positive-reviews">--</div>
+                            <div class="p-2 rounded-lg" style="background:rgba(22,163,74,0.06);">
+                                <div class="text-[10px]" style="color:var(--text-muted);">POSITIVE</div>
+                                <div class="font-bold" style="color:var(--data-green);" id="repo-positive-reviews">--</div>
                             </div>
-                            <div class="bg-dark-900/60 rounded p-2">
-                                <div class="text-xs text-gray-500">差评</div>
-                                <div class="text-base font-bold text-red-400" id="repo-negative-reviews">--</div>
+                            <div class="p-2 rounded-lg" style="background:rgba(220,38,38,0.06);">
+                                <div class="text-[10px]" style="color:var(--text-muted);">NEGATIVE</div>
+                                <div class="font-bold" style="color:var(--data-red);" id="repo-negative-reviews">--</div>
                             </div>
                         </div>
-                        <div class="bg-dark-900/60 rounded p-3">
-                            <div class="text-xs text-gray-400 mb-1">📈 评分走势</div>
-                            <p class="text-xs text-gray-300">首发好评率 <span class="text-green-400">98.1%</span> → 当前 <span class="text-green-400">96.1%</span>（↓2%），月均差评增速略快于好评</p>
-                            <p class="text-xs text-gray-300 mt-1">持续"好评如潮"级，但微降趋势需关注 — 内容迭代节奏和平衡调整是主因</p>
+                        <div class="p-3 rounded-lg" style="background:var(--accent-dim);">
+                            <div class="text-[10px] tracking-wider mb-1" style="color:var(--text-muted);">RATING TREND</div>
+                            <p class="text-xs">首发好评率 <span style="color:var(--data-green);">98.1%</span> → 当前 <span style="color:var(--data-green);">96.1%</span>（↓2%）</p>
+                            <p class="text-xs mt-1">持续"好评如潮"，微降趋势需关注</p>
                         </div>
-                        <div class="bg-dark-900/60 rounded p-3">
-                            <div class="text-xs text-gray-400 mb-1">💬 社区焦点</div>
-                            <p class="text-xs text-gray-300"><span class="text-yellow-400">v0.4.0反馈正面</span>：500+免费装饰品获好评，零微交易策略受赞</p>
-                            <p class="text-xs text-gray-300 mt-1"><span class="text-red-400">核心问题</span>：黑客入侵公开大厅严重，开发者已临时强制「仅好友」模式</p>
-                            <p class="text-xs text-gray-300 mt-1"><span class="text-yellow-400">争议点</span>：近战武器重做后手感两极评价，部分玩家认为法杖类道具平衡待调</p>
+                        <div class="p-3 rounded-lg" style="background:var(--accent-dim);">
+                            <div class="text-[10px] tracking-wider mb-1" style="color:var(--text-muted);">COMMUNITY FOCUS</div>
+                            <p class="text-xs"><span style="color:var(--gold);">v0.4.0反馈正面</span>：500+免费装饰品获好评</p>
+                            <p class="text-xs mt-1"><span style="color:var(--data-red);">核心问题</span>：黑客入侵公开大厅严重</p>
                         </div>
-                        <div class="bg-dark-900/60 rounded p-3">
-                            <div class="text-xs text-gray-400 mb-1">🏷️ 玩家标签画像</div>
+                        <div class="p-3 rounded-lg" style="background:var(--accent-dim);">
+                            <div class="text-[10px] tracking-wider mb-1" style="color:var(--text-muted);">PLAYER TAGS</div>
                             <div id="repo-tags" class="flex flex-wrap gap-1.5 mt-1">
-                                <span class="bg-dark-600 text-gray-300 px-2 py-0.5 rounded text-xs">恐怖</span>
-                                <span class="bg-dark-600 text-gray-300 px-2 py-0.5 rounded text-xs">合作</span>
-                                <span class="bg-dark-600 text-gray-300 px-2 py-0.5 rounded text-xs">喜剧</span>
-                                <span class="bg-dark-600 text-gray-300 px-2 py-0.5 rounded text-xs">物理</span>
-                                <span class="bg-dark-600 text-gray-300 px-2 py-0.5 rounded text-xs">Roguelike</span>
-                                <span class="bg-dark-600 text-gray-300 px-2 py-0.5 rounded text-xs">搜打撤</span>
+                                <span class="pill text-[10px]" style="background:var(--accent-dim);color:var(--text-secondary);border:1px solid var(--card-border);">恐怖</span>
+                                <span class="pill text-[10px]" style="background:var(--accent-dim);color:var(--text-secondary);border:1px solid var(--card-border);">合作</span>
+                                <span class="pill text-[10px]" style="background:var(--accent-dim);color:var(--text-secondary);border:1px solid var(--card-border);">物理</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- MOD生态 -->
-                <div class="bg-dark-800 rounded-lg p-5 border border-gray-800">
-                    <h3 class="text-sm font-semibold mb-3 text-accent-light" data-i18n="mod_eco">🔧 MOD 生态</h3>
-                    <div class="space-y-3 text-sm text-gray-300">
+                <div class="glass-card">
+                    <div class="flex items-center gap-2 mb-4">
+                        <h3 class="section-title" data-i18n="mod_eco">MOD 生态</h3>
+                    </div>
+                    <div class="space-y-3 text-sm" style="color:var(--text-secondary);">
                         <div class="grid grid-cols-2 gap-2 text-center">
-                            <div class="bg-dark-900/60 rounded p-2">
-                                <div class="text-xs text-gray-500">Thunderstore模组包</div>
-                                <div class="text-base font-bold text-white">1,700+</div>
+                            <div class="p-2 rounded-lg" style="background:var(--accent-dim);">
+                                <div class="text-[10px]" style="color:var(--text-muted);">MOD PACKS</div>
+                                <div class="font-bold" style="color:var(--text-primary);">1,700+</div>
                             </div>
-                            <div class="bg-dark-900/60 rounded p-2">
-                                <div class="text-xs text-gray-500">模组管理器下载</div>
-                                <div class="text-base font-bold text-green-400">994万</div>
+                            <div class="p-2 rounded-lg" style="background:rgba(22,163,74,0.06);">
+                                <div class="text-[10px]" style="color:var(--text-muted);">MANAGER DOWNLOADS</div>
+                                <div class="font-bold" style="color:var(--data-green);">994万</div>
                             </div>
                         </div>
-                        <div class="bg-dark-900/60 rounded p-3">
-                            <div class="text-xs text-gray-400 mb-2">🏆 热门模组包 TOP 5</div>
+                        <div class="p-3 rounded-lg" style="background:var(--accent-dim);">
+                            <div class="text-[10px] tracking-wider mb-2" style="color:var(--text-muted);">TOP 5 MOD PACKS</div>
                             <div class="space-y-1 text-xs">
-                                <div class="flex justify-between"><span>Ocarina of Quota (Zelda主题QoL)</span><span class="text-gray-500">21.1万↓</span></div>
-                                <div class="flex justify-between"><span>Moo Modpack (80+模组合集)</span><span class="text-gray-500">18.2万↓</span></div>
-                                <div class="flex justify-between"><span>ElRaphik Modpack</span><span class="text-gray-500">14.3万↓</span></div>
-                                <div class="flex justify-between"><span>Mirage Modpack</span><span class="text-gray-500">3.8万↓</span></div>
-                                <div class="flex justify-between"><span>Daggum</span><span class="text-gray-500">3.1万↓</span></div>
+                                <div class="flex justify-between"><span>Ocarina of Quota</span><span style="color:var(--text-muted);">21.1万↓</span></div>
+                                <div class="flex justify-between"><span>Moo Modpack</span><span style="color:var(--text-muted);">18.2万↓</span></div>
+                                <div class="flex justify-between"><span>ElRaphik Modpack</span><span style="color:var(--text-muted);">14.3万↓</span></div>
+                                <div class="flex justify-between"><span>Mirage Modpack</span><span style="color:var(--text-muted);">3.8万↓</span></div>
+                                <div class="flex justify-between"><span>Daggum</span><span style="color:var(--text-muted);">3.1万↓</span></div>
                             </div>
                         </div>
-                        <div class="bg-dark-900/60 rounded p-3">
-                            <div class="text-xs text-gray-400 mb-2">📂 MOD分类</div>
+                        <div class="p-3 rounded-lg" style="background:var(--accent-dim);">
+                            <div class="text-[10px] tracking-wider mb-2" style="color:var(--text-muted);">CATEGORIES</div>
                             <div class="flex flex-wrap gap-1.5">
-                                <span class="bg-purple-900/40 text-purple-300 px-2 py-0.5 rounded text-xs">武器</span>
-                                <span class="bg-red-900/40 text-red-300 px-2 py-0.5 rounded text-xs">怪物</span>
-                                <span class="bg-blue-900/40 text-blue-300 px-2 py-0.5 rounded text-xs">关卡</span>
-                                <span class="bg-green-900/40 text-green-300 px-2 py-0.5 rounded text-xs">QoL</span>
-                                <span class="bg-yellow-900/40 text-yellow-300 px-2 py-0.5 rounded text-xs">装饰</span>
-                                <span class="bg-cyan-900/40 text-cyan-300 px-2 py-0.5 rounded text-xs">无人机</span>
-                                <span class="bg-pink-900/40 text-pink-300 px-2 py-0.5 rounded text-xs">道具</span>
-                                <span class="bg-indigo-900/40 text-indigo-300 px-2 py-0.5 rounded text-xs">服务端</span>
+                                <span class="pill text-[10px]" style="background:var(--accent-dim);color:var(--text-secondary);border:1px solid var(--card-border);">武器</span>
+                                <span class="pill text-[10px]" style="background:var(--accent-dim);color:var(--text-secondary);border:1px solid var(--card-border);">怪物</span>
+                                <span class="pill text-[10px]" style="background:var(--accent-dim);color:var(--text-secondary);border:1px solid var(--card-border);">关卡</span>
+                                <span class="pill text-[10px]" style="background:var(--accent-dim);color:var(--text-secondary);border:1px solid var(--card-border);">QoL</span>
+                                <span class="pill text-[10px]" style="background:var(--accent-dim);color:var(--text-secondary);border:1px solid var(--card-border);">装饰</span>
+                                <span class="pill text-[10px]" style="background:var(--accent-dim);color:var(--text-secondary);border:1px solid var(--card-border);">道具</span>
                             </div>
                         </div>
-                        <div class="bg-dark-900/60 rounded p-3">
-                            <div class="text-xs text-gray-400 mb-2">🇨🇳 中文支持</div>
-                            <p class="text-xs text-gray-300">简体中文汉化包已上线（by toored），覆盖本体+80+常用MOD翻译</p>
-                            <p class="text-xs text-gray-300 mt-1">国区玩家主要通过游侠网/3DM获取汉化补丁+整合包（100+MOD）</p>
-                        </div>
-                        <div class="text-xs text-gray-500">
-                            ⚠️ Thunderstore要求AI生成MOD标注"AI Generated"标签 · 游戏使用MOD时版本号显示[MODDED]
+                        <div class="p-3 rounded-lg" style="background:var(--accent-dim);">
+                            <div class="text-[10px] tracking-wider mb-2" style="color:var(--text-muted);">CN SUPPORT</div>
+                            <p class="text-xs">简体中文汉化包已上线，覆盖本体+80+常用MOD翻译</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- 基础数据 + 版本时间线 -->
-            <div class="grid lg:grid-cols-3 gap-6 mb-6">
-                <div class="bg-dark-800 rounded-lg p-5 border border-gray-800">
-                    <h3 class="text-sm font-semibold mb-3 text-accent-light" data-i18n="basic_info">🎮 基本信息</h3>
-                    <div class="space-y-3 text-sm" id="repo-info">
-                        <div class="text-gray-500">加载中...</div>
+            <div class="grid lg:grid-cols-3 gap-4 mb-6">
+                <div class="glass-card">
+                    <div class="flex items-center gap-2 mb-4">
+                        <h3 class="section-title" data-i18n="basic_info">基本信息</h3>
+                    </div>
+                    <div class="space-y-2.5 text-sm" id="repo-info">
+                        <div style="color:var(--text-muted);">加载中...</div>
                     </div>
                 </div>
-                <div class="bg-dark-800 rounded-lg p-5 border border-gray-800">
-                    <h3 class="text-sm font-semibold mb-3 text-accent-light" data-i18n="player_data">📊 玩家数据</h3>
-                    <div class="space-y-3 text-sm" id="repo-players">
-                        <div class="text-gray-500">加载中...</div>
+                <div class="glass-card">
+                    <div class="flex items-center gap-2 mb-4">
+                        <h3 class="section-title" data-i18n="player_data">玩家数据</h3>
+                    </div>
+                    <div class="space-y-2.5 text-sm" id="repo-players">
+                        <div style="color:var(--text-muted);">加载中...</div>
                     </div>
                 </div>
-                <div class="bg-dark-800 rounded-lg p-5 border border-gray-800">
-                    <h3 class="text-sm font-semibold mb-3 text-accent-light" data-i18n="version_timeline">📜 版本时间线</h3>
-                    <div class="space-y-2 text-sm">
-                        <div class="flex items-start gap-2">
-                            <span class="text-xs text-green-400 shrink-0 mt-0.5">●</span>
+                <div class="glass-card">
+                    <div class="flex items-center gap-2 mb-4">
+                        <h3 class="section-title" data-i18n="version_timeline">版本时间线</h3>
+                    </div>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-start gap-3">
+                            <span class="text-[10px] shrink-0 mt-0.5" style="color:var(--data-green);">●</span>
                             <div>
-                                <span class="text-white font-semibold">v0.4.0</span> <span class="text-gray-500">2026-05-07</span>
-                                <p class="text-xs text-gray-400">装饰更新 · 500+装饰 · 新竞速模式</p>
+                                <span class="font-semibold" style="color:var(--text-primary);">v0.4.0</span> <span style="color:var(--text-muted);">2026-05-07</span>
+                                <p class="text-xs" style="color:var(--text-muted);">装饰更新 · 500+装饰 · 新竞速模式</p>
                             </div>
                         </div>
-                        <div class="flex items-start gap-2">
-                            <span class="text-xs text-yellow-400 shrink-0 mt-0.5">●</span>
+                        <div class="flex items-start gap-3">
+                            <span class="text-[10px] shrink-0 mt-0.5" style="color:var(--gold);">●</span>
                             <div>
-                                <span class="text-white font-semibold">v0.3.0</span> <span class="text-gray-500">2025-10-30</span>
-                                <p class="text-xs text-gray-400">怪物更新 · 10种新怪物+新AI</p>
+                                <span class="font-semibold" style="color:var(--text-primary);">v0.3.0</span> <span style="color:var(--text-muted);">2025-10-30</span>
+                                <p class="text-xs" style="color:var(--text-muted);">怪物更新 · 10种新怪物+新AI</p>
                             </div>
                         </div>
-                        <div class="flex items-start gap-2">
-                            <span class="text-xs text-gray-500 shrink-0 mt-0.5">●</span>
+                        <div class="flex items-start gap-3">
+                            <span class="text-[10px] shrink-0 mt-0.5" style="color:var(--text-muted);">●</span>
                             <div>
-                                <span class="text-white font-semibold">v0.2.0</span> <span class="text-gray-500">2025年中</span>
-                                <p class="text-xs text-gray-400">内容扩展 · 新关卡+道具+平衡</p>
+                                <span class="font-semibold" style="color:var(--text-primary);">v0.2.0</span> <span style="color:var(--text-muted);">2025年中</span>
+                                <p class="text-xs" style="color:var(--text-muted);">内容扩展 · 新关卡+道具+平衡</p>
                             </div>
                         </div>
-                        <div class="flex items-start gap-2">
-                            <span class="text-xs text-gray-600 shrink-0 mt-0.5">●</span>
+                        <div class="flex items-start gap-3">
+                            <span class="text-[10px] shrink-0 mt-0.5" style="color:var(--text-muted);">●</span>
                             <div>
-                                <span class="text-white font-semibold">EA首发</span> <span class="text-gray-500">2025-02-26</span>
-                                <p class="text-xs text-gray-400">抢先体验上线 · 好评率98%</p>
+                                <span class="font-semibold" style="color:var(--text-primary);">EA首发</span> <span style="color:var(--text-muted);">2025-02-26</span>
+                                <p class="text-xs" style="color:var(--text-muted);">抢先体验上线 · 好评率98%</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- ========== 竞品对比页 ========== -->
-        <div id="tab-competitors" class="tab-content hidden fade-in">
-            <!-- 竞品实时排行 -->
+        <section id="section-competitors" class="content-section fade-in" data-section="competitors">
             <div id="competitor-ranking" class="mb-6"></div>
-            <!-- AI 竞品日报 -->
             <div id="ai-daily-report" class="mb-6"></div>
-            <!-- 竞品全景 - 由JS动态渲染 -->
             <div id="competitor-landscape"></div>
 
             <!-- 对比表格 -->
-            <div class="bg-dark-800 rounded-lg p-5 border border-gray-800 mb-6">
-                <h3 class="text-sm font-semibold mb-3 text-accent-light" data-i18n="competitor_compare">📊 竞品数据对比</h3>
+            <div class="glass-card mb-6">
+                <div class="flex items-center gap-2 mb-4">
+                    <h3 class="section-title" data-i18n="competitor_compare">竞品数据对比</h3>
+                </div>
                 <div class="overflow-x-auto">
                     <table class="w-full text-sm">
                         <thead>
-                            <tr class="text-gray-500 border-b border-gray-700">
-                                <th class="text-left py-2 pr-4" data-i18n="th_game">游戏</th>
-                                <th class="text-center py-2 px-3" data-i18n="th_track">赛道</th>
-                                <th class="text-right py-2 px-3" data-i18n="th_status">状态</th>
-                                <th class="text-right py-2 px-3" data-i18n="th_online">当前在线</th>
-                                <th class="text-right py-2 px-3" data-i18n="th_pos_rate">好评率</th>
-                                <th class="text-right py-2 px-3" data-i18n="th_reviews">评测数</th>
-                                <th class="text-right py-2 px-3" data-i18n="th_price">价格</th>
+                            <tr style="color:var(--text-muted);border-bottom:1px solid var(--card-border);">
+                                <th class="text-left py-2 pr-4 text-[10px] tracking-wider" data-i18n="th_game">游戏</th>
+                                <th class="text-center py-2 px-3 text-[10px] tracking-wider" data-i18n="th_track">赛道</th>
+                                <th class="text-right py-2 px-3 text-[10px] tracking-wider" data-i18n="th_status">状态</th>
+                                <th class="text-right py-2 px-3 text-[10px] tracking-wider" data-i18n="th_online">在线</th>
+                                <th class="text-right py-2 px-3 text-[10px] tracking-wider" data-i18n="th_pos_rate">好评率</th>
+                                <th class="text-right py-2 px-3 text-[10px] tracking-wider" data-i18n="th_reviews">评测数</th>
+                                <th class="text-right py-2 px-3 text-[10px] tracking-wider" data-i18n="th_price">价格</th>
                             </tr>
                         </thead>
                         <tbody id="competitors-table">
-                            <tr><td colspan="7" class="py-4 text-gray-500 text-center">加载中...</td></tr>
+                            <tr><td colspan="7" class="py-4 text-center" style="color:var(--text-muted);">LOADING...</td></tr>
                         </tbody>
                     </table>
                 </div>
             </div>
 
             <!-- 在线人数趋势图 -->
-            <div class="bg-dark-800 rounded-lg p-5 border border-gray-800">
-                <h3 class="text-sm font-semibold mb-3 text-accent-light" data-i18n="online_trend">📈 在线人数趋势（14天）</h3>
-                <canvas id="trend-chart" height="250" class="transition-opacity duration-300 opacity-0"></canvas>
-                <div id="trend-chart-placeholder" class="h-[250px] flex items-center justify-center text-gray-600 text-sm">📈 加载中...</div>
+            <div class="glass-card">
+                <div class="flex items-center gap-2 mb-4">
+                    <h3 class="section-title" data-i18n="online_trend">在线人数趋势（14天）</h3>
+                </div>
+                <div style="position:relative;height:280px;width:100%;">
+                    <canvas id="trend-chart" class="transition-opacity duration-300 opacity-0"></canvas>
+                    <div id="trend-chart-placeholder" class="absolute inset-0 flex items-center justify-center text-xs" style="color:var(--text-muted);">LOADING...</div>
+                </div>
             </div>
-        </div>
+        </section>
 
-    </main>
+    </div>
 
     <!-- 页脚 -->
-    <footer class="max-w-7xl mx-auto px-4 py-6 text-center text-xs text-gray-600 border-t border-gray-800 mt-8">
+    <footer class="px-12 py-8 text-center text-[11px] mt-8" style="color:var(--text-ghost);border-top:1px solid rgba(0,0,0,0.06);">
         <span data-i18n="footer">GRC恐怖多人品类情报 · 数据每日自动采集 · 仅供内部分析参考 · 数据来源：Steam / TapTap / BWIKI</span>
     </footer>
+    </div>
 
     <!-- 竞品卡片悬浮详情 -->
     <div id="card-tooltip" class="card-tooltip">
@@ -673,6 +945,1283 @@
     </div>
 
     <script>
+        <script>
+        // ========== 内联数据（用于 file:// 协议本地查看）==========
+        const INLINE_STEAM_DATA = {
+  "R.E.P.O.": {
+    "appid": 3241660,
+    "store": {
+      "name": "R.E.P.O.",
+      "type": "game",
+      "short_description": "An online co-op horror game with up to 6 players. Locate valuable, fully physics-based objects and handle them with care as you retrieve and extract to satisfy your creator's desires.",
+      "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3241660/a12c92856b71315da885924ea5e1d5290c8025b8/header_alt_assets_2.jpg?t=1778158882",
+      "developers": [
+        "semiwork"
+      ],
+      "publishers": [
+        "semiwork"
+      ],
+      "price": "¥ 24.50",
+      "release_date": "2025 年 2 月 26 日",
+      "metacritic": null,
+      "recommendations": 320755,
+      "platforms": {
+        "windows": true,
+        "mac": false,
+        "linux": false
+      },
+      "categories": [
+        "单人",
+        "多人",
+        "合作",
+        "在线合作",
+        "视角舒适度",
+        "自定义音量控制",
+        "无需应对快速反应事件",
+        "立体声",
+        "Steam 云",
+        "家庭共享"
+      ],
+      "genres": [
+        "动作",
+        "抢先体验"
+      ]
+    },
+    "steamspy": {
+      "ccu": 31069
+    },
+    "reviews": {
+      "total_reviews": 14590,
+      "positive": 13544,
+      "negative": 1046,
+      "positive_rate": 92.8
+    },
+    "ccu": 31069,
+    "crawled_at": "2026-06-11T08:52:41.703176"
+  },
+  "Lethal Company": {
+    "appid": 1966720,
+    "store": {
+      "name": "Lethal Company",
+      "type": "game",
+      "short_description": "A co-op horror about scavenging at abandoned moons to sell scrap to the Company.",
+      "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1966720/header.jpg?t=1775380053",
+      "developers": [
+        "Zeekerss"
+      ],
+      "publishers": [
+        "Zeekerss"
+      ],
+      "price": "¥ 42.00",
+      "release_date": "2023 年 10 月 23 日",
+      "metacritic": null,
+      "recommendations": 409817,
+      "platforms": {
+        "windows": true,
+        "mac": false,
+        "linux": false
+      },
+      "categories": [
+        "单人",
+        "多人",
+        "合作",
+        "在线合作",
+        "自定义音量控制",
+        "立体声",
+        "部分支持控制器",
+        "家庭共享"
+      ],
+      "genres": [
+        "动作",
+        "冒险",
+        "独立",
+        "抢先体验"
+      ]
+    },
+    "steamspy": {
+      "ccu": 3366
+    },
+    "reviews": {
+      "total_reviews": 17604,
+      "positive": 16362,
+      "negative": 1242,
+      "positive_rate": 92.9
+    },
+    "ccu": 3366,
+    "crawled_at": "2026-06-11T08:52:47.468095"
+  },
+  "Phasmophobia": {
+    "appid": 739630,
+    "store": {
+      "name": "Phasmophobia 恐鬼症",
+      "type": "game",
+      "short_description": "Phasmophobia is a 4 player online co-op psychological horror. Paranormal activity is on the rise and it’s up to you and your team to use all the ghost-hunting equipment at your disposal in order to gather as much evidence as you can.",
+      "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/739630/c227a2855aba60f3657bc0c3a46515b8c41fb2b6/header.jpg?t=1780397989",
+      "developers": [
+        "Kinetic Games"
+      ],
+      "publishers": [
+        "Kinetic Games"
+      ],
+      "price": "¥ 68.00",
+      "release_date": "2020 年 9 月 18 日",
+      "metacritic": null,
+      "recommendations": 677320,
+      "platforms": {
+        "windows": true,
+        "mac": false,
+        "linux": false
+      },
+      "categories": [
+        "单人",
+        "多人",
+        "合作",
+        "在线合作",
+        "Steam 成就",
+        "完全支持控制器",
+        "定位控制器支持",
+        "已支持 VR",
+        "Steam 集换式卡牌",
+        "视角舒适度",
+        "可调整难度",
+        "无需应对快速反应事件",
+        "立体声",
+        "环绕声",
+        "Steam 云",
+        "在手机上远程畅玩",
+        "在平板上远程畅玩",
+        "家庭共享"
+      ],
+      "genres": [
+        "动作",
+        "独立",
+        "抢先体验"
+      ]
+    },
+    "steamspy": {
+      "ccu": 7790
+    },
+    "reviews": {
+      "total_reviews": 26753,
+      "positive": 24256,
+      "negative": 2497,
+      "positive_rate": 90.7
+    },
+    "ccu": 7790,
+    "crawled_at": "2026-06-11T08:52:53.133275"
+  },
+  "Content Warning": {
+    "appid": 2881650,
+    "store": {
+      "name": "前方高能",
+      "type": "game",
+      "short_description": "录下好友的惊悚作死镜头，一跃成为“幽哩幽哩”的顶流巨星！（强烈建议开黑游玩）",
+      "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2881650/header_schinese.jpg?t=1775640428",
+      "developers": [
+        "Zorro",
+        "Wilnyl",
+        "Philip",
+        "thePetHen",
+        "Skog"
+      ],
+      "publishers": [
+        "Evil Landfall?"
+      ],
+      "price": "¥ 20.46",
+      "release_date": "2024 年 4 月 1 日",
+      "metacritic": null,
+      "recommendations": 69451,
+      "platforms": {
+        "windows": true,
+        "mac": false,
+        "linux": false
+      },
+      "categories": [
+        "多人",
+        "合作",
+        "在线合作",
+        "部分支持控制器",
+        "Steam 云",
+        "家庭共享"
+      ],
+      "genres": [
+        "动作",
+        "冒险",
+        "独立"
+      ]
+    },
+    "steamspy": {
+      "ccu": 1242
+    },
+    "reviews": {
+      "total_reviews": 6826,
+      "positive": 6134,
+      "negative": 692,
+      "positive_rate": 89.9
+    },
+    "ccu": 1242,
+    "crawled_at": "2026-06-11T08:52:59.163372"
+  },
+  "FEEDERS": {
+    "appid": 4408510,
+    "store": {
+      "name": "FEEDERS",
+      "type": "game",
+      "short_description": "2079年。太阳爆炸了。有钱人逃到地底。你被送到最顶层，那里的天空在燃烧。他们叫你顶楼老鼠。下去那些废墟，里面爬满了独特怪物。发出声音，一种来追你。保持沉默，另一种找到你。1-4人合作恐怖游戏。",
+      "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4408510/989cbd9100fe7246a3b6241dc7df43fece58e74a/header.jpg?t=1779542430",
+      "developers": [
+        "Luvi Technologies"
+      ],
+      "publishers": [
+        "Luvi Technologies"
+      ],
+      "price": "¥ 26.00",
+      "release_date": "2026 年 3 月 30 日",
+      "metacritic": null,
+      "recommendations": 0,
+      "platforms": {
+        "windows": true,
+        "mac": false,
+        "linux": false
+      },
+      "categories": [
+        "单人",
+        "多人",
+        "合作",
+        "在线合作",
+        "立体声",
+        "环绕声",
+        "家庭共享"
+      ],
+      "genres": [
+        "动作",
+        "冒险",
+        "独立",
+        "抢先体验"
+      ]
+    },
+    "steamspy": null,
+    "reviews": {
+      "total_reviews": 0,
+      "positive": 0,
+      "negative": 0,
+      "positive_rate": 0.0
+    },
+    "ccu": 0,
+    "crawled_at": "2026-06-11T08:53:10.114491"
+  },
+  "NARAKA: BLADEPOINT": {
+    "appid": 1203220,
+    "store": {
+      "name": "永劫无间",
+      "type": "game",
+      "short_description": "风靡全球的中式竞技大作！来这里舞利刃、端火枪，享受远近结合的华丽战斗！驾驭风沙、机甲，化身野兽、大佛，体验风格迥异的英雄能力！",
+      "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1203220/eab492b9f38afc2bd34537d2ecd327552c5fa3e4/header_schinese.jpg?t=1778037276",
+      "developers": [
+        "24 Entertainment"
+      ],
+      "publishers": [
+        "NetEase Games "
+      ],
+      "price": "免费",
+      "release_date": "2021 年 8 月 11 日",
+      "metacritic": null,
+      "recommendations": 197702,
+      "platforms": {
+        "windows": true,
+        "mac": false,
+        "linux": false
+      },
+      "categories": [
+        "多人",
+        "玩家对战",
+        "线上玩家对战",
+        "Steam 成就",
+        "Steam 集换式卡牌",
+        "应用内购买",
+        "部分支持控制器",
+        "可用 HDR"
+      ],
+      "genres": [
+        "动作",
+        "冒险",
+        "大型多人在线",
+        "免费开玩"
+      ]
+    },
+    "steamspy": {
+      "ccu": 6925
+    },
+    "reviews": {
+      "total_reviews": 250542,
+      "positive": 180346,
+      "negative": 70196,
+      "positive_rate": 72.0
+    },
+    "ccu": 6925,
+    "crawled_at": "2026-06-11T08:53:16.000591"
+  }
+};
+        const INLINE_CHAOZIRAN_DATA = {
+  "chaoziran": {
+    "bwiki_updates": [
+      {
+        "title": "百变小刘鸭，快乐你我他！【腰包】【粘液球】这次都变身超萌鸭鸭",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/moment/813482839424109363",
+        "moment_id": "813482839424109363",
+        "link_status": "valid",
+        "category": "other",
+        "content_tags": [],
+        "priority": "low"
+      },
+      {
+        "title": "版本更新——怪物农场钓鱼玩法上线！荆州博物馆联动限定内容来啦",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/moment/811648122982761996",
+        "moment_id": "811648122982761996",
+        "link_status": "valid",
+        "category": "pr",
+        "content_tags": [
+          "品牌联动"
+        ],
+        "priority": "low"
+      },
+      {
+        "title": "【兰-扈江离】联动限定时装细节展示，对楚地巫风美学的别样诠释",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/moment/811312604164131672",
+        "moment_id": "811312604164131672",
+        "link_status": "valid",
+        "category": "cosmetic",
+        "content_tags": [
+          "新时装"
+        ],
+        "priority": "medium"
+      },
+      {
+        "title": "版更速递！局内可直接调整键位啦~",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/app/714123/topic?type=official",
+        "link_status": "unknown",
+        "category": "patch",
+        "content_tags": [
+          "版本更新"
+        ],
+        "priority": "low"
+      },
+      {
+        "title": "还有背包满时拾取大金能自动替换低价值回收物，农场植物也上新咯！\n6月11日晚更新后一起来看看吧",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/app/714123/topic?type=official",
+        "link_status": "unknown",
+        "category": "patch",
+        "content_tags": [
+          "版本更新"
+        ],
+        "priority": "low"
+      },
+      {
+        "title": "大家一起为你准备了蛋糕，来许个愿吧（记得看紧小熊猫，它最馋嘴了",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/app/714123/topic?type=official",
+        "link_status": "unknown",
+        "category": "other",
+        "content_tags": [],
+        "priority": "low"
+      },
+      {
+        "title": "其实我感觉可以出一个除颤仪的话唠皮肤，就是就一次人就说  轻轻敲醒你的心灵  复活吧，我的爱人   之类的，感觉会很好玩",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/app/714123/topic?type=official",
+        "link_status": "unknown",
+        "category": "cosmetic",
+        "content_tags": [
+          "新皮肤"
+        ],
+        "priority": "medium"
+      },
+      {
+        "title": "【怪物农场】钓鱼玩法来啦！工友们都能钓到多大的鱼呢？\n超自然行动组 x 荆州博物馆，楚文化联动限定时...",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/app/714123/topic?type=official",
+        "link_status": "unknown",
+        "category": "pr",
+        "content_tags": [
+          "品牌联动"
+        ],
+        "priority": "low"
+      },
+      {
+        "title": "每次都要一个一个喂，几天没上线财神土拨鼠直接被饿死了",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/app/714123/topic?type=official",
+        "link_status": "unknown",
+        "category": "other",
+        "content_tags": [],
+        "priority": "low"
+      },
+      {
+        "title": "【零-角色PV预热】——被计划的生命，长出计划外的灵魂",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/app/714123/topic?type=official",
+        "link_status": "unknown",
+        "category": "other",
+        "content_tags": [],
+        "priority": "low"
+      }
+    ],
+    "taptap": {
+      "app_id": 714123,
+      "source": "taptap_webpage",
+      "fans_count": 11283164,
+      "review_count": 30615,
+      "score": "6.9",
+      "description": "超自然行动组是一款合作游戏，TapTap 提供超自然行动组最新版官方正版下载，一个人玩是恐怖游戏，两个人玩是冒险游戏，三个人玩是寻宝游戏，...",
+      "score_display": 6.9,
+      "rating_value": 6.9
+    },
+    "official_news": [
+      {
+        "title": "《超自然行动组》日活跃用户突破一千万啦！",
+        "source": "官网",
+        "url": "https://www.chaoziran.com/news/343",
+        "category": "other",
+        "content_tags": [],
+        "priority": "low",
+        "link_status": "valid"
+      },
+      {
+        "title": "【阿念-寻星记】局内细节展示！",
+        "source": "官网",
+        "url": "https://www.chaoziran.com/news/549",
+        "category": "cosmetic",
+        "content_tags": [],
+        "priority": "medium",
+        "link_status": "valid"
+      },
+      {
+        "title": "小熊猫荧光棒皮肤爆料~",
+        "source": "官网",
+        "url": "https://www.chaoziran.com/news/548",
+        "category": "cosmetic",
+        "content_tags": [
+          "新皮肤"
+        ],
+        "priority": "medium",
+        "link_status": "valid"
+      },
+      {
+        "title": "六一儿童节福利放送！",
+        "source": "官网",
+        "url": "https://www.chaoziran.com/news/547",
+        "category": "event",
+        "content_tags": [
+          "福利活动"
+        ],
+        "priority": "medium",
+        "link_status": "valid"
+      },
+      {
+        "title": "爆炸弓【心弦所向】皮肤爆料！",
+        "source": "官网",
+        "url": "https://www.chaoziran.com/news/546",
+        "category": "cosmetic",
+        "content_tags": [
+          "新皮肤"
+        ],
+        "priority": "medium",
+        "link_status": "valid"
+      },
+      {
+        "title": "版更速递！亲密关系解除新增【冷静期】！",
+        "source": "官网",
+        "url": "https://www.chaoziran.com/news/540",
+        "category": "patch",
+        "content_tags": [
+          "版本更新"
+        ],
+        "priority": "low",
+        "link_status": "valid"
+      },
+      {
+        "title": "阿念重做登场！",
+        "source": "官网",
+        "url": "https://www.chaoziran.com/news/538",
+        "category": "new_content",
+        "content_tags": [
+          "角色重做"
+        ],
+        "priority": "high",
+        "link_status": "valid"
+      },
+      {
+        "title": "新怪物【鸭子】实机展示，追上了命都给你哦",
+        "source": "官网",
+        "url": "https://www.chaoziran.com/news/535",
+        "category": "new_content",
+        "content_tags": [
+          "新怪物"
+        ],
+        "priority": "high",
+        "link_status": "valid"
+      }
+    ],
+    "community": {
+      "taptap_forum": [
+        {
+          "title": "【精绝古城困难】┓型全地图小抄（6.6更新）",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/moment/686643810008043078",
+          "moment_id": "686643810008043078",
+          "link_status": "valid",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "强烈的建议，加强检测开挂设备",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/moment/813608286724033753",
+          "moment_id": "813608286724033753",
+          "link_status": "valid",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "这是最贵的鱼吗？第一天新手福利出的",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/moment/813175983300412668",
+          "moment_id": "813175983300412668",
+          "link_status": "valid",
+          "sentiment": "positive"
+        },
+        {
+          "title": "超自然联动上线！流水未大涨",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/moment/812429582606010165",
+          "moment_id": "812429582606010165",
+          "link_status": "valid",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "超自然行动组鱼类图鉴",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/moment/812482396178875811",
+          "moment_id": "812482396178875811",
+          "link_status": "valid",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "盗墓探险题材原创头部IP《鬼吹灯》官方正版授权合作，海量全新内容，我们七月见！",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "┓型全地图小抄，分为宽长正3种，共25张\n顺序：宽P1-14，长P15-21，正P22-25\n相同地...",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "@超自然行动组 我给你提个建议，你抓拿着外挂组织你是抓不完的，强烈的建议就是加强检测设备，检测到对局...",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "得了挂是不弄的，玩家必修的这游戏没救了",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "自介：本人女，17岁\n微氪玩家，冷淡慢热，寡言佛系。\n不喜喧闹尬聊，有边界感，不粘人。\n心态稳不甩锅...",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "neutral"
+        }
+      ],
+      "bilibili": {
+        "source": "B站",
+        "keyword": "超自然行动组",
+        "order": "click",
+        "url": "https://search.bilibili.com/video?keyword=%E8%B6%85%E8%87%AA%E7%84%B6%E8%A1%8C%E5%8A%A8%E7%BB%84&order=click",
+        "videos": [
+          {
+            "title": "南瓜入侵，幽魂大运来了！",
+            "bvid": "BV1xCkfBjENz",
+            "url": "https://www.bilibili.com/video/BV1xCkfBjENz",
+            "play": 5786832,
+            "like": 34700,
+            "danmaku": 184,
+            "author": "張某人ZSS",
+            "duration": "1:27",
+            "pic": "https://i2.hdslb.com/bfs/archive/ea07fe0b8e48607d072ec800412f85b811687c92.jpg",
+            "pubdate": "2025-11-10"
+          },
+          {
+            "title": "教会你们如何在超自然找到大佬",
+            "bvid": "BV1d2tGz2E3Z",
+            "url": "https://www.bilibili.com/video/BV1d2tGz2E3Z",
+            "play": 4727880,
+            "like": 31872,
+            "danmaku": 388,
+            "author": "中二的小溢",
+            "duration": "5:45",
+            "pic": "https://i2.hdslb.com/bfs/archive/d70e085a135fbe95fd9d6413a3cde6264ad72960.jpg",
+            "pubdate": "2025-08-04"
+          },
+          {
+            "title": "超自然行动组怪物图鉴第六期「小熊猫」",
+            "bvid": "BV1QCjiz2Evq",
+            "url": "https://www.bilibili.com/video/BV1QCjiz2Evq",
+            "play": 3688775,
+            "like": 16633,
+            "danmaku": 219,
+            "author": "就是黄大毛",
+            "duration": "1:45",
+            "pic": "https://i0.hdslb.com/bfs/archive/4ba15ff6746b6b7de0b85e932c041f18828ca30b.jpg",
+            "pubdate": "2025-05-30"
+          },
+          {
+            "title": "本来想卖掉大鹅、看到眼神心软了",
+            "bvid": "BV1Wv6bBWEmn",
+            "url": "https://www.bilibili.com/video/BV1Wv6bBWEmn",
+            "play": 3487951,
+            "like": 114837,
+            "danmaku": 1671,
+            "author": "虎熊寺",
+            "duration": "1:24",
+            "pic": "https://i0.hdslb.com/bfs/archive/85eb76c39837c40ba46fd54b2eaef7c07194ce6c.jpg",
+            "pubdate": "2026-02-01"
+          },
+          {
+            "title": "为什么幸福的人不会来到超自然行动组？",
+            "bvid": "BV1Zqu4z5ETn",
+            "url": "https://www.bilibili.com/video/BV1Zqu4z5ETn",
+            "play": 2789504,
+            "like": 9003,
+            "danmaku": 146,
+            "author": "白白鸭游戏",
+            "duration": "2:7",
+            "pic": "https://i0.hdslb.com/bfs/archive/4f9763196102d3e49c1cb96b1a85180647b1c8a6.jpg",
+            "pubdate": "2025-07-16"
+          },
+          {
+            "title": "还能这样的吗？",
+            "bvid": "BV19KD1BrEnr",
+            "url": "https://www.bilibili.com/video/BV19KD1BrEnr",
+            "play": 2775740,
+            "like": 94696,
+            "danmaku": 665,
+            "author": "虚拟俱乐部-超自然",
+            "duration": "1:16",
+            "pic": "https://i0.hdslb.com/bfs/archive/17585f3fc75e973cf6056e9fbd06b468a0147744.jpg",
+            "pubdate": "2026-04-12"
+          }
+        ]
+      }
+    },
+    "tomb_busters": {
+      "name": "Tomb Busters",
+      "app_id": 6755951087,
+      "launch_date": "2026-05-27",
+      "platforms": [
+        "iOS",
+        "Android",
+        "PC"
+      ],
+      "website": "https://www.tombbusters.net/",
+      "regions_data": {
+        "us": {
+          "name": "美国",
+          "rating": 4.52,
+          "rating_count": 559,
+          "current_version": "1.29.26",
+          "price": "Free",
+          "genre": "Games"
+        },
+        "jp": {
+          "name": "日本",
+          "rating": 4.41,
+          "rating_count": 1406,
+          "current_version": "1.29.26",
+          "price": "無料",
+          "genre": "Games"
+        },
+        "kr": {
+          "name": "韩国",
+          "rating": 3.83,
+          "rating_count": 218,
+          "current_version": "1.29.26",
+          "price": "무료",
+          "genre": "Games"
+        },
+        "tw": {
+          "name": "台湾",
+          "rating": null,
+          "rating_count": 0
+        },
+        "hk": {
+          "name": "香港",
+          "rating": null,
+          "rating_count": 0
+        }
+      },
+      "app_store_rating": 4.25,
+      "total_ratings": 2183,
+      "updated": "2026-06-11 08:55"
+    },
+    "app_store_rankings": {
+      "us": {
+        "name": "美国",
+        "free_overall": null,
+        "free_games": null,
+        "grossing_overall": null,
+        "grossing_games": null,
+        "updated": "2026-06-11 08:55"
+      },
+      "jp": {
+        "name": "日本",
+        "free_overall": null,
+        "free_games": 94,
+        "grossing_overall": null,
+        "grossing_games": null,
+        "updated": "2026-06-11 08:55"
+      },
+      "kr": {
+        "name": "韩国",
+        "free_overall": null,
+        "free_games": null,
+        "grossing_overall": null,
+        "grossing_games": null,
+        "updated": "2026-06-11 08:55"
+      },
+      "tw": {
+        "name": "台湾",
+        "free_overall": null,
+        "free_games": null,
+        "grossing_overall": null,
+        "grossing_games": null,
+        "updated": "2026-06-11 08:55"
+      },
+      "hk": {
+        "name": "香港",
+        "free_overall": null,
+        "free_games": null,
+        "grossing_overall": null,
+        "grossing_games": null,
+        "updated": "2026-06-11 08:55"
+      }
+    },
+    "stock_price": {
+      "code": "SZ002558",
+      "name": "巨人网络",
+      "price": 24.2,
+      "prev_close": 24.74,
+      "change_pct": -2.18,
+      "change_amt": -0.54,
+      "updated": "2026-06-11 08:55"
+    },
+    "new_content_tracker": [
+      {
+        "id": "角色重做",
+        "name": "角色重做",
+        "status": "announced",
+        "first_seen": "2026-06-11",
+        "launch_date": null,
+        "tags": [
+          "角色重做"
+        ],
+        "announcements": [
+          {
+            "title": "阿念重做登场！",
+            "date": "2026-06-11",
+            "source": "官网",
+            "url": "https://www.chaoziran.com/news/538",
+            "link_status": "valid"
+          }
+        ],
+        "player_reactions": {
+          "positive": 0,
+          "neutral": 0,
+          "negative": 0
+        }
+      },
+      {
+        "id": "新怪物",
+        "name": "新怪物",
+        "status": "teased",
+        "first_seen": "2026-06-11",
+        "launch_date": null,
+        "tags": [
+          "新怪物"
+        ],
+        "announcements": [
+          {
+            "title": "新怪物【鸭子】实机展示，追上了命都给你哦",
+            "date": "2026-06-11",
+            "source": "官网",
+            "url": "https://www.chaoziran.com/news/535",
+            "link_status": "valid"
+          }
+        ],
+        "player_reactions": {
+          "positive": 0,
+          "neutral": 0,
+          "negative": 0
+        }
+      }
+    ],
+    "crawled_at": "2026-06-11T08:55:57.678068"
+  }
+};
+        const INLINE_HISTORY_DATA = {
+  "R.E.P.O.": [
+    {
+      "date": "2026-05-28",
+      "ccu": 40801,
+      "positive_rate": 92.9,
+      "total_reviews": 14368
+    },
+    {
+      "date": "2026-06-01",
+      "ccu": 39940,
+      "positive_rate": 92.9,
+      "total_reviews": 14450
+    },
+    {
+      "date": "2026-06-02",
+      "ccu": 34225,
+      "positive_rate": 92.9,
+      "total_reviews": 14456
+    },
+    {
+      "date": "2026-06-03",
+      "ccu": 37085,
+      "positive_rate": 92.9,
+      "total_reviews": 14467
+    },
+    {
+      "date": "2026-06-04",
+      "ccu": 34816,
+      "positive_rate": 92.9,
+      "total_reviews": 14485
+    },
+    {
+      "date": "2026-06-05",
+      "ccu": 33548,
+      "positive_rate": 92.9,
+      "total_reviews": 14494
+    },
+    {
+      "date": "2026-06-06",
+      "ccu": 38331,
+      "positive_rate": 92.9,
+      "total_reviews": 14510
+    },
+    {
+      "date": "2026-06-07",
+      "ccu": 39517,
+      "positive_rate": 92.8,
+      "total_reviews": 14535
+    },
+    {
+      "date": "2026-06-08",
+      "ccu": 40703,
+      "positive_rate": 92.8,
+      "total_reviews": 14547
+    },
+    {
+      "date": "2026-06-09",
+      "ccu": 33022,
+      "positive_rate": 92.8,
+      "total_reviews": 14567
+    },
+    {
+      "date": "2026-06-10",
+      "ccu": 31228,
+      "positive_rate": 92.8,
+      "total_reviews": 14580
+    },
+    {
+      "date": "2026-06-11",
+      "ccu": 31069,
+      "positive_rate": 92.8,
+      "total_reviews": 14590
+    }
+  ],
+  "Lethal Company": [
+    {
+      "date": "2026-05-28",
+      "ccu": 5612,
+      "positive_rate": 93.0,
+      "total_reviews": 17577
+    },
+    {
+      "date": "2026-06-01",
+      "ccu": 5395,
+      "positive_rate": 93.0,
+      "total_reviews": 17591
+    },
+    {
+      "date": "2026-06-02",
+      "ccu": 4304,
+      "positive_rate": 93.0,
+      "total_reviews": 17591
+    },
+    {
+      "date": "2026-06-03",
+      "ccu": 4607,
+      "positive_rate": 92.9,
+      "total_reviews": 17594
+    },
+    {
+      "date": "2026-06-04",
+      "ccu": 4115,
+      "positive_rate": 92.9,
+      "total_reviews": 17596
+    },
+    {
+      "date": "2026-06-05",
+      "ccu": 3928,
+      "positive_rate": 92.9,
+      "total_reviews": 17596
+    },
+    {
+      "date": "2026-06-06",
+      "ccu": 4382,
+      "positive_rate": 92.9,
+      "total_reviews": 17598
+    },
+    {
+      "date": "2026-06-07",
+      "ccu": 4630,
+      "positive_rate": 92.9,
+      "total_reviews": 17601
+    },
+    {
+      "date": "2026-06-08",
+      "ccu": 4700,
+      "positive_rate": 92.9,
+      "total_reviews": 17603
+    },
+    {
+      "date": "2026-06-09",
+      "ccu": 3781,
+      "positive_rate": 92.9,
+      "total_reviews": 17603
+    },
+    {
+      "date": "2026-06-10",
+      "ccu": 3533,
+      "positive_rate": 92.9,
+      "total_reviews": 17604
+    },
+    {
+      "date": "2026-06-11",
+      "ccu": 3366,
+      "positive_rate": 92.9,
+      "total_reviews": 17604
+    }
+  ],
+  "Phasmophobia": [
+    {
+      "date": "2026-05-28",
+      "ccu": 10527,
+      "positive_rate": 90.7,
+      "total_reviews": 26671
+    },
+    {
+      "date": "2026-06-01",
+      "ccu": 10565,
+      "positive_rate": 90.7,
+      "total_reviews": 26702
+    },
+    {
+      "date": "2026-06-02",
+      "ccu": 9912,
+      "positive_rate": 90.7,
+      "total_reviews": 26707
+    },
+    {
+      "date": "2026-06-03",
+      "ccu": 8461,
+      "positive_rate": 90.7,
+      "total_reviews": 26719
+    },
+    {
+      "date": "2026-06-04",
+      "ccu": 8804,
+      "positive_rate": 90.7,
+      "total_reviews": 26731
+    },
+    {
+      "date": "2026-06-05",
+      "ccu": 8447,
+      "positive_rate": 90.7,
+      "total_reviews": 26735
+    },
+    {
+      "date": "2026-06-06",
+      "ccu": 9549,
+      "positive_rate": 90.7,
+      "total_reviews": 26738
+    },
+    {
+      "date": "2026-06-07",
+      "ccu": 9427,
+      "positive_rate": 90.7,
+      "total_reviews": 26740
+    },
+    {
+      "date": "2026-06-08",
+      "ccu": 10366,
+      "positive_rate": 90.7,
+      "total_reviews": 26745
+    },
+    {
+      "date": "2026-06-09",
+      "ccu": 8591,
+      "positive_rate": 90.7,
+      "total_reviews": 26749
+    },
+    {
+      "date": "2026-06-10",
+      "ccu": 8122,
+      "positive_rate": 90.7,
+      "total_reviews": 26750
+    },
+    {
+      "date": "2026-06-11",
+      "ccu": 7790,
+      "positive_rate": 90.7,
+      "total_reviews": 26753
+    }
+  ],
+  "Content Warning": [
+    {
+      "date": "2026-05-28",
+      "ccu": 1094,
+      "positive_rate": 89.9,
+      "total_reviews": 6814
+    },
+    {
+      "date": "2026-06-01",
+      "ccu": 1274,
+      "positive_rate": 89.9,
+      "total_reviews": 6820
+    },
+    {
+      "date": "2026-06-02",
+      "ccu": 1255,
+      "positive_rate": 89.9,
+      "total_reviews": 6820
+    },
+    {
+      "date": "2026-06-03",
+      "ccu": 1249,
+      "positive_rate": 89.9,
+      "total_reviews": 6821
+    },
+    {
+      "date": "2026-06-04",
+      "ccu": 1423,
+      "positive_rate": 89.9,
+      "total_reviews": 6821
+    },
+    {
+      "date": "2026-06-05",
+      "ccu": 1335,
+      "positive_rate": 89.9,
+      "total_reviews": 6821
+    },
+    {
+      "date": "2026-06-06",
+      "ccu": 1572,
+      "positive_rate": 89.9,
+      "total_reviews": 6822
+    },
+    {
+      "date": "2026-06-07",
+      "ccu": 1477,
+      "positive_rate": 89.9,
+      "total_reviews": 6822
+    },
+    {
+      "date": "2026-06-08",
+      "ccu": 1599,
+      "positive_rate": 89.9,
+      "total_reviews": 6823
+    },
+    {
+      "date": "2026-06-09",
+      "ccu": 1340,
+      "positive_rate": 89.9,
+      "total_reviews": 6828
+    },
+    {
+      "date": "2026-06-10",
+      "ccu": 1180,
+      "positive_rate": 89.9,
+      "total_reviews": 6828
+    },
+    {
+      "date": "2026-06-11",
+      "ccu": 1242,
+      "positive_rate": 89.9,
+      "total_reviews": 6826
+    }
+  ],
+  "FEEDERS": [
+    {
+      "date": "2026-05-28",
+      "ccu": 0,
+      "positive_rate": 0.0,
+      "total_reviews": 0
+    },
+    {
+      "date": "2026-06-01",
+      "ccu": 0,
+      "positive_rate": 0.0,
+      "total_reviews": 0
+    },
+    {
+      "date": "2026-06-02",
+      "ccu": 0,
+      "positive_rate": 0.0,
+      "total_reviews": 0
+    },
+    {
+      "date": "2026-06-03",
+      "ccu": 0,
+      "positive_rate": 0.0,
+      "total_reviews": 0
+    },
+    {
+      "date": "2026-06-04",
+      "ccu": 0,
+      "positive_rate": 0.0,
+      "total_reviews": 0
+    },
+    {
+      "date": "2026-06-05",
+      "ccu": 0,
+      "positive_rate": 0.0,
+      "total_reviews": 0
+    },
+    {
+      "date": "2026-06-06",
+      "ccu": 0,
+      "positive_rate": 0.0,
+      "total_reviews": 0
+    },
+    {
+      "date": "2026-06-07",
+      "ccu": 0,
+      "positive_rate": 0.0,
+      "total_reviews": 0
+    },
+    {
+      "date": "2026-06-08",
+      "ccu": 0,
+      "positive_rate": 0.0,
+      "total_reviews": 0
+    },
+    {
+      "date": "2026-06-09",
+      "ccu": 0,
+      "positive_rate": 0.0,
+      "total_reviews": 0
+    },
+    {
+      "date": "2026-06-10",
+      "ccu": 0,
+      "positive_rate": 0.0,
+      "total_reviews": 0
+    },
+    {
+      "date": "2026-06-11",
+      "ccu": 0,
+      "positive_rate": 0.0,
+      "total_reviews": 0
+    }
+  ],
+  "NARAKA: BLADEPOINT": [
+    {
+      "date": "2026-06-01",
+      "ccu": 13877,
+      "positive_rate": 72.0,
+      "total_reviews": 250340
+    },
+    {
+      "date": "2026-06-02",
+      "ccu": 6649,
+      "positive_rate": 72.0,
+      "total_reviews": 250347
+    },
+    {
+      "date": "2026-06-03",
+      "ccu": 13717,
+      "positive_rate": 72.0,
+      "total_reviews": 250362
+    },
+    {
+      "date": "2026-06-04",
+      "ccu": 6383,
+      "positive_rate": 72.0,
+      "total_reviews": 250375
+    },
+    {
+      "date": "2026-06-05",
+      "ccu": 955,
+      "positive_rate": 72.0,
+      "total_reviews": 250392
+    },
+    {
+      "date": "2026-06-06",
+      "ccu": 8375,
+      "positive_rate": 72.0,
+      "total_reviews": 250429
+    },
+    {
+      "date": "2026-06-07",
+      "ccu": 9840,
+      "positive_rate": 72.0,
+      "total_reviews": 250467
+    },
+    {
+      "date": "2026-06-08",
+      "ccu": 6322,
+      "positive_rate": 72.0,
+      "total_reviews": 250492
+    },
+    {
+      "date": "2026-06-09",
+      "ccu": 5932,
+      "positive_rate": 72.0,
+      "total_reviews": 250511
+    },
+    {
+      "date": "2026-06-10",
+      "ccu": 6177,
+      "positive_rate": 72.0,
+      "total_reviews": 250527
+    },
+    {
+      "date": "2026-06-11",
+      "ccu": 6925,
+      "positive_rate": 72.0,
+      "total_reviews": 250542
+    }
+  ]
+};
+    </script>
+    <script>
         // ========== 数据加载 ==========
         let steamData = {};
         let chaoziranData = {};
@@ -680,11 +2229,14 @@
 
         async function loadData(bustCache = false) {
             const suffix = bustCache ? `?t=${Date.now()}` : '';
+            const isFileProtocol = window.location.protocol === 'file:';
+
             try {
                 const steamResp = await fetch('./data/steam_data.json' + suffix);
                 steamData = await steamResp.json();
             } catch(e) {
                 console.warn('Steam数据加载失败:', e);
+                if (isFileProtocol && typeof INLINE_STEAM_DATA !== 'undefined') steamData = INLINE_STEAM_DATA;
             }
 
             try {
@@ -692,6 +2244,7 @@
                 chaoziranData = await czrResp.json();
             } catch(e) {
                 console.warn('超自然行动组数据加载失败:', e);
+                if (isFileProtocol && typeof INLINE_CHAOZIRAN_DATA !== 'undefined') chaoziranData = INLINE_CHAOZIRAN_DATA;
             }
 
             try {
@@ -699,6 +2252,7 @@
                 historyData = await histResp.json();
             } catch(e) {
                 console.warn('历史数据加载失败:', e);
+                if (isFileProtocol && typeof INLINE_HISTORY_DATA !== 'undefined') historyData = INLINE_HISTORY_DATA;
             }
 
             renderAll();
@@ -730,12 +2284,12 @@
 
         // 公告分类色标配置
         const catColors = {
-            new_content: { bg: 'bg-purple-500/20', text: 'text-purple-400', dot: 'bg-purple-400', label_zh: '新玩法', label_en: 'New' },
-            event:       { bg: 'bg-green-500/20', text: 'text-green-400', dot: 'bg-green-400', label_zh: '活动', label_en: 'Event' },
-            pr:          { bg: 'bg-yellow-500/20', text: 'text-yellow-400', dot: 'bg-yellow-400', label_zh: 'PR', label_en: 'PR' },
-            cosmetic:    { bg: 'bg-pink-500/20', text: 'text-pink-400', dot: 'bg-pink-400', label_zh: '皮肤', label_en: 'Skin' },
-            patch:       { bg: 'bg-gray-500/20', text: 'text-gray-400', dot: 'bg-gray-400', label_zh: '修复', label_en: 'Patch' },
-            other:       { bg: 'bg-gray-500/10', text: 'text-gray-500', dot: 'bg-gray-500', label_zh: '其他', label_en: 'Other' },
+            new_content: { bg: 'bg-amber-50', text: 'text-amber-700', dot: 'bg-amber-400', label_zh: '新玩法', label_en: 'New' },
+            event:       { bg: 'bg-green-50', text: 'text-green-600', dot: 'bg-green-400', label_zh: '活动', label_en: 'Event' },
+            pr:          { bg: 'bg-yellow-50', text: 'text-yellow-600', dot: 'bg-yellow-400', label_zh: 'PR', label_en: 'PR' },
+            cosmetic:    { bg: 'bg-pink-50', text: 'text-pink-400', dot: 'bg-pink-400', label_zh: '皮肤', label_en: 'Skin' },
+            patch:       { bg: 'bg-gray-100', text: 'text-gray-400', dot: 'bg-gray-400', label_zh: '修复', label_en: 'Patch' },
+            other:       { bg: 'bg-gray-50', text: 'text-gray-500', dot: 'bg-gray-500', label_zh: '其他', label_en: 'Other' },
         };
 
         // 当前筛选状态
@@ -751,10 +2305,10 @@
             document.querySelectorAll('#czr-cat-tabs .cat-tab').forEach(btn => {
                 if (btn.dataset.cat === cat) {
                     btn.classList.add('bg-accent', 'text-white');
-                    btn.classList.remove('bg-dark-600', 'text-gray-400');
+                    btn.classList.remove('bg-gray-100', 'text-gray-400');
                 } else {
                     btn.classList.remove('bg-accent', 'text-white');
-                    btn.classList.add('bg-dark-600', 'text-gray-400');
+                    btn.classList.add('bg-gray-100', 'text-gray-400');
                 }
             });
 
@@ -765,17 +2319,17 @@
                     const catLabel = currentLang === 'zh' ? cc.label_zh : cc.label_en;
                     const priorityBadge = u.priority === 'high' ? '<span class="text-[10px] bg-red-500/30 text-red-300 px-1.5 py-0.5 rounded ml-1">★</span>' : '';
                     const tags = (u.content_tags || []).map(t => `<span class="text-[10px] text-gray-500">${t}</span>`).join(' ');
-                    return `<div class="py-1.5 border-b border-gray-800 last:border-0 flex items-start gap-2">
+                    return `<div class="py-1.5 border-b border-gray-200 last:border-0 flex items-start gap-2">
                         <span class="w-1.5 h-1.5 ${cc.dot} rounded-full mt-1.5 shrink-0"></span>
                         <div class="min-w-0 flex-1">
                             <div>
-                                <a href="${u.url}" target="_blank" class="text-gray-300 hover:text-accent-light hover:underline text-sm">${u.title}</a>
+                                <a href="${u.url}" target="_blank" class="text-slate-700 hover:text-accent-light hover:underline text-sm">${u.title}</a>
                                 ${priorityBadge}
                                 <span class="text-[10px] ${cc.text} ${cc.bg} px-1.5 py-0.5 rounded ml-1.5">${catLabel}</span>
                             </div>
                             <div class="flex items-center gap-2 mt-0.5">
                                 <span class="text-[10px] text-gray-600">${u.source}</span>
-                                ${tags ? '<span class="text-[10px] text-gray-700">·</span>' + tags : ''}
+                                ${tags ? '<span class="text-[10px] text-slate-400">·</span>' + tags : ''}
                             </div>
                         </div>
                     </div>`;
@@ -787,11 +2341,11 @@
 
         // 新玩法追踪状态配置
         const trackerStatusConfig = {
-            rumored:   { label_zh: '传闻', label_en: 'Rumored', color: 'text-gray-400 bg-gray-500/20' },
+            rumored:   { label_zh: '传闻', label_en: 'Rumored', color: 'text-gray-400 bg-gray-100' },
             announced: { label_zh: '已官宣', label_en: 'Announced', color: 'text-blue-400 bg-blue-500/20' },
-            teased:    { label_zh: '预热中', label_en: 'Teased', color: 'text-yellow-400 bg-yellow-500/20' },
-            live:      { label_zh: '已上线', label_en: 'Live', color: 'text-green-400 bg-green-500/20' },
-            settled:   { label_zh: '稳定运营', label_en: 'Settled', color: 'text-gray-400 bg-gray-500/20' },
+            teased:    { label_zh: '预热中', label_en: 'Teased', color: 'text-yellow-400 bg-yellow-50' },
+            live:      { label_zh: '已上线', label_en: 'Live', color: 'text-green-400 bg-green-50' },
+            settled:   { label_zh: '稳定运营', label_en: 'Settled', color: 'text-gray-400 bg-gray-100' },
         };
 
         // 前端兜底：从公告/官网新闻中现场构建新玩法追踪项
@@ -868,7 +2422,7 @@
                 const sc = trackerStatusConfig[item.status] || trackerStatusConfig.announced;
                 const statusLabel = currentLang === 'zh' ? sc.label_zh : sc.label_en;
                 const annCount = (item.announcements || []).length;
-                const tagStr = (item.tags || []).map(t => `<span class="text-[10px] bg-purple-500/15 text-purple-300 px-1.5 py-0.5 rounded">${t}</span>`).join(' ');
+                const tagStr = (item.tags || []).map(t => `<span class="text-[10px] bg-amber-50 text-amber-300 px-1.5 py-0.5 rounded">${t}</span>`).join(' ');
                 const annList = (item.announcements || []).slice(0, 3).map(a => `
                     <div class="text-[11px] text-gray-500 flex items-start gap-1.5">
                         <span class="text-gray-700 shrink-0">•</span>
@@ -878,7 +2432,7 @@
                         </div>
                     </div>
                 `).join('');
-                return `<div class="bg-dark-900/60 rounded-lg p-3 border border-gray-700/40">
+                return `<div class="bg-gray-50 rounded-lg p-3 border border-gray-200">
                     <div class="flex items-start justify-between gap-2 mb-1.5">
                         <div class="font-semibold text-white text-sm">${item.name}</div>
                         <span class="text-[10px] px-2 py-0.5 rounded-full ${sc.color} shrink-0">${statusLabel}</span>
@@ -888,7 +2442,7 @@
                         <span class="text-[10px] text-gray-600">${annCount} ${currentLang === 'zh' ? '条公告' : 'posts'}</span>
                     </div>
                     ${item.first_seen ? `<div class="text-[10px] text-gray-600 mb-1.5">${currentLang === 'zh' ? '首次发现' : 'First seen'}: ${item.first_seen}</div>` : ''}
-                    ${annList ? `<div class="space-y-1 border-t border-gray-700/30 pt-1.5">${annList}</div>` : ''}
+                    ${annList ? `<div class="space-y-1 border-t border-gray-200 pt-1.5">${annList}</div>` : ''}
                 </div>`;
             }).join('');
         }
@@ -907,17 +2461,34 @@
             }
         }
 
-        // ========== 标签页切换 ==========
-        function switchTab(tabName) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-            document.querySelectorAll('.tab-btn').forEach(el => {
-                el.classList.remove('tab-active');
-                el.classList.add('text-gray-500');
+        // ========== 侧边栏导航切换 ==========
+        function navTo(section) {
+            document.querySelectorAll('.content-section').forEach(el => {
+                el.classList.remove('active');
             });
-            document.getElementById('tab-' + tabName).classList.remove('hidden');
-            document.querySelector(`[data-tab="${tabName}"]`).classList.add('tab-active');
-            document.querySelector(`[data-tab="${tabName}"]`).classList.remove('text-gray-500');
+            const target = document.getElementById('section-' + section);
+            if (target) {
+                target.classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+            setActiveNav(section);
+            // 切换后重算图表尺寸（解决在 display:none 下初始化导致的尺寸错误）
+            requestAnimationFrame(() => {
+                if (window._ccuChart) window._ccuChart.resize();
+                if (window._trendChart) window._trendChart.resize();
+            });
         }
+
+        function setActiveNav(section) {
+            document.querySelectorAll('.sidebar-nav-item').forEach(el => {
+                el.classList.remove('active');
+            });
+            const target = document.querySelector(`.sidebar-nav-item[data-nav="${section}"]`);
+            if (target) target.classList.add('active');
+        }
+
+        // Keep switchTab as alias for backward compatibility
+        function switchTab(tabName) { navTo(tabName); }
 
         // ========== 渲染函数 ==========
         function renderAll() {
@@ -946,7 +2517,7 @@
             }
             if (latest) {
                 const d = new Date(latest);
-                document.getElementById('last-update').textContent =
+                document.getElementById('sidebar-last-update').textContent =
                     `${i18nDict.crawled_at[currentLang]} ${d.getMonth()+1}/${d.getDate()} ${d.getHours()}:${String(d.getMinutes()).padStart(2,'0')}`;
             }
         }
@@ -1005,11 +2576,11 @@
                 newsEl.innerHTML = `<div class="text-gray-500">${i18nDict.no_news[currentLang]}</div>`;
             } else {
                 newsEl.innerHTML = newsItems.slice(0, 8).map(n => {
-                    const icon = n.header_image ? `<img src="${n.header_image}" class="game-icon-sm shrink-0" referrerpolicy="no-referrer">` : `<span class="text-xs bg-dark-600 text-accent-light px-1.5 py-0.5 rounded shrink-0">${n.tag}</span>`;
+                    const icon = n.header_image ? `<img src="${n.header_image}" class="game-icon-sm shrink-0" referrerpolicy="no-referrer">` : `<span class="text-xs bg-gray-100 text-accent-light px-1.5 py-0.5 rounded shrink-0">${n.tag}</span>`;
                     const titleHtml = n.url
-                        ? `<a href="${n.url}" target="_blank" class="text-gray-300 hover:text-accent-light hover:underline text-sm">${n.title}</a>`
-                        : `<span class="text-gray-300 text-sm">${n.title}</span>`;
-                    return `<div class="flex items-start gap-2 py-1.5 border-b border-gray-800 last:border-0">
+                        ? `<a href="${n.url}" target="_blank" class="text-slate-700 hover:text-accent-light hover:underline text-sm">${n.title}</a>`
+                        : `<span class="text-slate-700 text-sm">${n.title}</span>`;
+                    return `<div class="flex items-start gap-2 py-1.5 border-b border-gray-200 last:border-0">
                         ${icon}
                         <div class="min-w-0 flex-1">
                             ${titleHtml}
@@ -1029,7 +2600,7 @@
 
             const labels = [];
             const datasets = [];
-            const colors = ['#8b5cf6', '#dc2626', '#059669', '#d97706', '#3b82f6'];
+            const colors = ['#991B1B', '#0F172A', '#16A34A', '#B91C1C', '#334155'];
 
             let idx = 0;
             Object.entries(steamData).forEach(([name, data]) => {
@@ -1052,7 +2623,8 @@
                 }
             });
 
-            new Chart(ctx, {
+            if (window._ccuChart) { window._ccuChart.destroy(); }
+            window._ccuChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
                     labels: names,
@@ -1065,17 +2637,18 @@
                 },
                 options: {
                     responsive: true,
+                    maintainAspectRatio: false,
                     plugins: {
                         legend: { display: false },
                     },
                     scales: {
                         x: {
-                            ticks: { color: '#9ca3af', font: { size: 11 } },
+                            ticks: { color: '#94A3B8', font: { size: 10 } },
                             grid: { display: false },
                         },
                         y: {
-                            ticks: { color: '#6b7280', font: { size: 10 } },
-                            grid: { color: '#1f2937' },
+                            ticks: { color: '#94A3B8', font: { size: 9 } },
+                            grid: { color: 'rgba(0,0,0,0.04)' },
                         }
                     }
                 }
@@ -1099,7 +2672,8 @@
                 const heroScore = document.getElementById('hero-taptap-score');
                 if (heroScore && !isNaN(scoreVal)) {
                     heroScore.textContent = scoreVal.toFixed(1);
-                    heroScore.className = 'text-2xl font-bold ' + (scoreVal >= 7 ? 'text-green-400' : scoreVal >= 5 ? 'text-yellow-400' : 'text-red-400');
+                    heroScore.className = 'text-xl font-bold';
+                    heroScore.style.color = scoreVal >= 7 ? 'var(--data-green)' : scoreVal >= 5 ? 'var(--gold)' : 'var(--data-red)';
                 }
             }
 
@@ -1111,12 +2685,14 @@
                 if (priceEl) {
                     priceEl.textContent = '¥' + s.price.toFixed(2);
                     const isUp = s.change_pct >= 0;
-                    const colorClass = isUp ? 'text-red-400' : 'text-green-400';
-                    priceEl.className = 'text-2xl font-bold ' + colorClass;
+                    const colorVal = isUp ? 'var(--data-red)' : 'var(--data-green)';
+                    priceEl.className = 'text-xl font-bold';
+                    priceEl.style.color = colorVal;
                     if (changeEl) {
                         const arrow = isUp ? '▲' : '▼';
                         changeEl.textContent = arrow + ' ' + Math.abs(s.change_pct).toFixed(2) + '%';
-                        changeEl.className = 'text-xs ' + colorClass;
+                        changeEl.style.color = colorVal;
+                        changeEl.className = 'text-[10px]';
                     }
                 }
             }
@@ -1154,10 +2730,10 @@
                 if (gridEl) {
                     gridEl.innerHTML = '';
                     for (const [code, rd] of Object.entries(tb.regions_data)) {
-                        const color = rd.rating >= 4 ? 'text-green-400' : rd.rating >= 3 ? 'text-yellow-400' : rd.rating ? 'text-red-400' : 'text-gray-600';
+                        const color = rd.rating >= 4 ? 'text-green-600' : rd.rating >= 3 ? 'text-yellow-600' : rd.rating ? 'text-red-600' : 'text-gray-600';
                         const ratingText = rd.rating ? rd.rating.toFixed(1) : '--';
                         const countText = rd.rating_count ? rd.rating_count.toLocaleString() + '评' : '未上架';
-                        gridEl.innerHTML += `<div class="bg-dark-900/60 rounded-lg p-2 text-center">
+                        gridEl.innerHTML += `<div class="bg-gray-50 rounded-lg p-2 text-center">
                             <div class="text-xs text-gray-500">${rd.name}</div>
                             <div class="text-sm font-bold ${color}">${ratingText}</div>
                             <div class="text-[10px] text-gray-600">${countText}</div>
@@ -1181,13 +2757,13 @@
                             if (!v) return 'text-gray-600';
                             if (v <= 10) return 'text-green-400 font-bold';
                             if (v <= 50) return 'text-green-300';
-                            if (v <= 100) return 'text-yellow-400';
-                            if (v <= 200) return 'text-orange-400';
+                            if (v <= 100) return 'text-yellow-600';
+                            if (v <= 200) return 'text-orange-600';
                             return 'text-gray-600';
                         };
                         const rankText = (v) => v ? '#' + v : '200+';
                         rankGridEl.innerHTML += `<div class="grid grid-cols-5 gap-1 text-xs">
-                            <div class="text-gray-300 font-medium">${rk.name}</div>
+                            <div class="text-slate-700 font-medium">${rk.name}</div>
                             <div class="${rankColor(rk.free_overall)}">${rankText(rk.free_overall)}</div>
                             <div class="${rankColor(rk.free_games)}">${rankText(rk.free_games)}</div>
                             <div class="${rankColor(rk.grossing_overall)}">${rankText(rk.grossing_overall)}</div>
@@ -1221,10 +2797,10 @@
                         const usRating = tb.regions_data.us ? tb.regions_data.us.rating : 0;
                         const krRating = tb.regions_data.kr ? tb.regions_data.kr.rating : 0;
                         if (jpRating >= 4 && rankings.jp && rankings.jp.free_games && rankings.jp.free_games <= 50) {
-                            parts.push('<span class="text-cyan-400">🎯</span> 日本市场表现强劲：高评分+排名靠前，建议加大本地化投入');
+                            parts.push('<span class="text-cyan-700">🎯</span> 日本市场表现强劲：高评分+排名靠前，建议加大本地化投入');
                         }
                         if (krRating < 4 && krRating > 0) {
-                            parts.push('<span class="text-red-400">⚠️ 韩国</span>：评分偏低(' + krRating.toFixed(1) + ')，需关注韩语社区反馈');
+                            parts.push('<span class="text-red-600">⚠️ 韩国</span>：评分偏低(' + krRating.toFixed(1) + ')，需关注韩语社区反馈');
                         }
                         rankNoteEl.innerHTML = parts.join('<br>');
                     }
@@ -1234,13 +2810,13 @@
                         const jpCount = tb.regions_data.jp ? tb.regions_data.jp.rating_count : 0;
                         const usCount = tb.regions_data.us ? tb.regions_data.us.rating_count : 0;
                         const parts = [];
-                        if (jpCount > 500) parts.push('<span class="text-green-400">✅ 日本</span>：评价数破千，市场接受度高');
-                        else if (jpCount > 0) parts.push('<span class="text-yellow-400">🔄 日本</span>：评价增长中');
-                        if (usCount > 100) parts.push('<span class="text-green-400">✅ 美国</span>：免费榜上线，评价持续增长');
-                        else if (usCount > 0) parts.push('<span class="text-yellow-400">🔄 美国</span>：上线初期，数据采集中');
+                        if (jpCount > 500) parts.push('<span class="text-green-700">✅ 日本</span>：评价数破千，市场接受度高');
+                        else if (jpCount > 0) parts.push('<span class="text-amber-600">🔄 日本</span>：评价增长中');
+                        if (usCount > 100) parts.push('<span class="text-green-700">✅ 美国</span>：免费榜上线，评价持续增长');
+                        else if (usCount > 0) parts.push('<span class="text-amber-600">🔄 美国</span>：上线初期，数据采集中');
                         const krData = tb.regions_data.kr;
-                        if (krData && krData.rating && krData.rating < 4) parts.push('<span class="text-red-400">⚠️ 韩国</span>：评分偏低(' + krData.rating.toFixed(1) + ')，需关注用户反馈');
-                        if (!parts.length) parts.push('<span class="text-yellow-400">🔄</span> 数据采集中...');
+                        if (krData && krData.rating && krData.rating < 4) parts.push('<span class="text-red-600">⚠️ 韩国</span>：评分偏低(' + krData.rating.toFixed(1) + ')，需关注用户反馈');
+                        if (!parts.length) parts.push('<span class="text-amber-600">🔄</span> 数据采集中...');
                         rankNoteEl.innerHTML = parts.join('<br>');
                     }
                 }
@@ -1262,10 +2838,10 @@
                     const cat = n.category || 'other';
                     const cc = catColors[cat] || catColors.other;
                     const catLabel = currentLang === 'zh' ? cc.label_zh : cc.label_en;
-                    return `<div class="py-1 border-b border-gray-800 last:border-0 flex items-start gap-2">
+                    return `<div class="py-1 border-b border-gray-200 last:border-0 flex items-start gap-2">
                         <span class="w-1.5 h-1.5 ${cc.dot} rounded-full mt-1.5 shrink-0"></span>
                         <div class="min-w-0 flex-1">
-                            <a href="${n.url}" target="_blank" class="text-gray-300 hover:text-accent-light hover:underline text-sm">${n.title}</a>
+                            <a href="${n.url}" target="_blank" class="text-slate-700 hover:text-accent-light hover:underline text-sm">${n.title}</a>
                             <span class="text-[10px] ${cc.text} ${cc.bg} px-1.5 py-0.5 rounded ml-2">${catLabel}</span>
                         </div>
                     </div>`;
@@ -1283,12 +2859,12 @@
             const taptapForum = community.taptap_forum || [];
             if (taptapForum.length > 0) {
                 forumEl.innerHTML = taptapForum.map(p => {
-                    const sc = p.sentiment === 'negative' ? 'text-red-400' : p.sentiment === 'positive' ? 'text-green-400' : 'text-gray-600';
+                    const sc = p.sentiment === 'negative' ? 'text-red-600' : p.sentiment === 'positive' ? 'text-green-600' : 'text-gray-600';
                     const sl = p.sentiment === 'negative' ? '☹' : p.sentiment === 'positive' ? '☺' : '·';
-                    return `<div class="py-1 border-b border-gray-800 last:border-0 flex items-start gap-2">
+                    return `<div class="py-1 border-b border-gray-200 last:border-0 flex items-start gap-2">
                         <span class="text-xs ${sc} mt-0.5 shrink-0 w-3 text-center">${sl}</span>
                         <div class="min-w-0 flex-1">
-                            ${p.url ? `<a href="${p.url}" target="_blank" class="text-gray-300 hover:text-accent-light hover:underline text-sm leading-snug line-clamp-2">${p.title}</a>` : `<span class="text-gray-300 text-sm">${p.title}</span>`}
+                            ${p.url ? `<a href="${p.url}" target="_blank" class="text-slate-700 hover:text-accent-light hover:underline text-sm leading-snug line-clamp-2">${p.title}</a>` : `<span class="text-slate-700 text-sm">${p.title}</span>`}
                         </div>
                     </div>`;
                 }).join('');
@@ -1307,11 +2883,11 @@
             };
             if (biliVideos.length > 0) {
                 bilibiliEl.innerHTML = biliVideos.map(v => {
-                    return `<a href="${v.url}" target="_blank" class="block py-1.5 border-b border-gray-800 last:border-0 hover:bg-dark-700/30 transition-colors group">
+                    return `<a href="${v.url}" target="_blank" class="block py-1.5 border-b last:border-0 hover:bg-gray-50 transition-colors group">
                         <div class="flex gap-2">
-                            ${v.pic ? `<img src="${v.pic}" alt="" class="w-24 h-14 object-cover rounded shrink-0 bg-dark-900" loading="lazy" onerror="this.style.display='none'">` : ''}
+                            ${v.pic ? `<img src="${v.pic}" alt="" class="w-24 h-14 object-cover rounded shrink-0 bg-gray-100" loading="lazy" onerror="this.style.display='none'">` : ''}
                             <div class="min-w-0 flex-1">
-                                <div class="text-gray-300 group-hover:text-accent-light text-xs leading-snug line-clamp-2 transition-colors">${v.title}</div>
+                                <div class="text-slate-700 group-hover:text-accent text-xs leading-snug line-clamp-2 transition-colors">${v.title}</div>
                                 <div class="flex items-center gap-2 mt-1 text-[10px] text-gray-500">
                                     <span>▶ ${formatNum(v.play)}</span>
                                     <span>👍 ${formatNum(v.like)}</span>
@@ -1351,7 +2927,8 @@
             if (repo.reviews) {
                 const heroScore = document.getElementById('repo-hero-score');
                 heroScore.textContent = repo.reviews.positive_rate + '%';
-                heroScore.className = 'text-2xl font-bold ' + (repo.reviews.positive_rate >= 80 ? 'text-green-400' : repo.reviews.positive_rate >= 60 ? 'text-yellow-400' : 'text-red-400');
+                heroScore.className = 'text-xl font-bold';
+                heroScore.style.color = repo.reviews.positive_rate >= 80 ? 'var(--data-green)' : repo.reviews.positive_rate >= 60 ? 'var(--gold)' : 'var(--data-red)';
             } else if (repo.steamspy) {
                 const heroScore = document.getElementById('repo-hero-score');
                 heroScore.textContent = repo.steamspy.positive_rate + '%';
@@ -1360,7 +2937,7 @@
             // 当前在线
             if (repo.steamspy) {
                 const ccuHero = document.getElementById('repo-ccu-hero');
-                if (ccuHero) ccuHero.textContent = repo.steamspy.ccu.toLocaleString();
+                if (ccuHero) { ccuHero.textContent = repo.steamspy.ccu.toLocaleString(); ccuHero.style.color = 'var(--data-green)'; }
             }
 
             // 基本信息
@@ -1368,13 +2945,13 @@
             if (repo.store) {
                 const s = repo.store;
                 infoEl.innerHTML = `
-                    <div class="flex justify-between"><span class="text-gray-500">${i18nDict.name_label[currentLang]}</span><span>${s.name}</span></div>
-                    <div class="flex justify-between"><span class="text-gray-500">${i18nDict.developer[currentLang]}</span><span>${s.developers.join(', ')}</span></div>
-                    <div class="flex justify-between"><span class="text-gray-500">${i18nDict.publisher[currentLang]}</span><span>${s.publishers.join(', ')}</span></div>
-                    <div class="flex justify-between"><span class="text-gray-500">${i18nDict.price[currentLang]}</span><span>${s.price}</span></div>
-                    <div class="flex justify-between"><span class="text-gray-500">${i18nDict.release_date[currentLang]}</span><span>${s.release_date}</span></div>
-                    <div class="flex justify-between"><span class="text-gray-500">${i18nDict.genre[currentLang]}</span><span>${s.genres.join(', ')}</span></div>
-                    <div class="mt-2 text-xs text-gray-500">${s.short_description}</div>
+                    <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.name_label[currentLang]}</span><span style="color:var(--text-primary);">${s.name}</span></div>
+                    <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.developer[currentLang]}</span><span style="color:var(--text-secondary);">${s.developers.join(', ')}</span></div>
+                    <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.publisher[currentLang]}</span><span style="color:var(--text-secondary);">${s.publishers.join(', ')}</span></div>
+                    <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.price[currentLang]}</span><span style="color:var(--text-secondary);">${s.price}</span></div>
+                    <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.release_date[currentLang]}</span><span style="color:var(--text-secondary);">${s.release_date}</span></div>
+                    <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.genre[currentLang]}</span><span style="color:var(--text-secondary);">${s.genres.join(', ')}</span></div>
+                    <div class="mt-2 text-xs" style="color:var(--text-muted);">${s.short_description}</div>
                 `;
             }
 
@@ -1391,12 +2968,12 @@
                 const negativeReviews = sp.negative ? sp.negative.toLocaleString() : '15,279';
                 const positiveRate = sp.total_reviews ? (sp.positive / sp.total_reviews * 100).toFixed(1) + '%' : '96.1%';
                 playersEl.innerHTML = `
-                    <div class="flex justify-between"><span class="text-gray-500">${i18nDict.current_online[currentLang]}</span><span class="text-green-400 font-bold">${ccu}</span></div>
-                    <div class="flex justify-between"><span class="text-gray-500">${i18nDict.players_2weeks[currentLang]}</span><span>${p2w}</span></div>
-                    <div class="flex justify-between"><span class="text-gray-500">${i18nDict.avg_playtime[currentLang]}</span><span>${avg}</span></div>
-                    <div class="flex justify-between"><span class="text-gray-500">${i18nDict.owners_est[currentLang]}</span><span>${owners}</span></div>
-                    <div class="flex justify-between"><span class="text-gray-500">${i18nDict.total_reviews[currentLang]}</span><span>${totalReviews}</span></div>
-                    <div class="flex justify-between"><span class="text-gray-500">${i18nDict.positive_rate[currentLang]}</span><span class="font-bold text-green-400">${positiveRate}</span></div>
+                    <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.current_online[currentLang]}</span><span class="font-semibold" style="color:var(--data-green);">${ccu}</span></div>
+                    <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.players_2weeks[currentLang]}</span><span style="color:var(--text-muted);">${p2w}</span></div>
+                    <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.avg_playtime[currentLang]}</span><span style="color:var(--text-muted);">${avg}</span></div>
+                    <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.owners_est[currentLang]}</span><span style="color:var(--text-muted);">${owners}</span></div>
+                    <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.total_reviews[currentLang]}</span><span style="color:var(--text-muted);">${totalReviews}</span></div>
+                    <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.positive_rate[currentLang]}</span><span class="font-semibold" style="color:var(--data-green);">${positiveRate}</span></div>
                 `;
                 // 同步填充静态区的评测卡片
                 const totalEl = document.getElementById('repo-total-reviews');
@@ -1411,7 +2988,7 @@
             const tagsEl = document.getElementById('repo-tags');
             if (repo.steamspy && repo.steamspy.tags) {
                 tagsEl.innerHTML = Object.entries(repo.steamspy.tags).slice(0, 12).map(([tag, count]) =>
-                    `<span class="bg-dark-600 text-gray-300 px-2 py-0.5 rounded text-xs">${tag} <span class="text-gray-500">${count}</span></span>`
+                    `<span class="bg-gray-100 text-slate-700 px-2 py-0.5 rounded text-xs">${tag} <span class="text-gray-500">${count}</span></span>`
                 ).join('');
             }
         }
@@ -1704,7 +3281,7 @@
                 insights.push({
                     icon: '📊',
                     title: '品类热度',
-                    content: `恐怖撤离品类Steam端合计在线 <span class="text-white font-semibold">${totalCCU.toLocaleString()}</span>，${steamGames.length}款产品同台竞争。`
+                    content: `恐怖撤离品类Steam端合计在线 <span class="text-slate-900 font-semibold">${totalCCU.toLocaleString()}</span>，${steamGames.length}款产品同台竞争。`
                 });
             }
 
@@ -1714,7 +3291,7 @@
                 insights.push({
                     icon: '👑',
                     title: '头部产品',
-                    content: `<span class="text-white font-semibold">${topGame.name}</span> 以 ${topGame.ccu.toLocaleString()} 在线人数领跑，${topGame.rate ? `好评率${topGame.rate}%` : '数据采集中'}。`
+                    content: `<span class="text-slate-900 font-semibold">${topGame.name}</span> 以 ${topGame.ccu.toLocaleString()} 在线人数领跑，${topGame.rate ? `好评率${topGame.rate}%` : '数据采集中'}。`
                 });
             }
 
@@ -1726,7 +3303,7 @@
                 insights.push({
                     icon: '⭐',
                     title: '评分梯队',
-                    content: `好评如潮(≥85%)：<span class="text-emerald-400">${highRate.map(g=>g.name).join('、')}</span>${midRate.length > 0 ? `；褒贬不一(60-85%)：<span class="text-amber-400">${midRate.map(g=>g.name).join('、')}</span>` : ''}`
+                    content: `好评如潮(≥85%)：<span class="text-emerald-700">${highRate.map(g=>g.name).join('、')}</span>${midRate.length > 0 ? `；褒贬不一(60-85%)：<span class="text-amber-700">${midRate.map(g=>g.name).join('、')}</span>` : ''}`
                 });
             }
 
@@ -1777,14 +3354,14 @@
 
             // 渲染
             container.innerHTML = `
-                <div class="bg-gradient-to-br from-purple-900/30 via-dark-800 to-dark-800 rounded-lg border border-purple-500/20 overflow-hidden">
-                    <div class="px-4 py-3 border-b border-purple-500/15 flex items-center justify-between">
+                <div class="glass-card overflow-hidden" style="border-left:3px solid var(--accent);">
+                    <div class="px-4 py-3 border-b flex items-center justify-between" style="border-color:var(--divider);">
                         <div class="flex items-center gap-2">
                             <span class="text-base">🤖</span>
-                            <h3 class="text-sm font-bold text-white">${i18nDict.ai_daily[currentLang]}</h3>
-                            <span class="text-[10px] px-1.5 py-px bg-purple-500/20 text-purple-300 rounded font-mono">${dateStr}</span>
+                            <h3 class="text-sm font-bold" style="color:var(--text-primary);">${i18nDict.ai_daily[currentLang]}</h3>
+                            <span class="pill" style="background:var(--accent-dim);color:var(--accent);">${dateStr}</span>
                         </div>
-                        <span class="text-[10px] text-gray-600">${i18nDict.ai_auto_gen[currentLang]}</span>
+                        <span class="text-[10px]" style="color:var(--text-ghost);">${i18nDict.ai_auto_gen[currentLang]}</span>
                     </div>
                     <div class="px-4 py-3">
                         <div class="grid md:grid-cols-2 gap-x-6 gap-y-2.5">
@@ -1792,8 +3369,8 @@
                                 <div class="flex items-start gap-2">
                                     <span class="text-xs mt-0.5 shrink-0">${i.icon}</span>
                                     <div class="min-w-0">
-                                        <span class="text-[11px] font-semibold text-gray-300">${i.title}</span>
-                                        <span class="text-[11px] text-gray-500 ml-1">${i.content}</span>
+                                        <span class="text-[11px] font-semibold" style="color:var(--text-secondary);">${i.title}</span>
+                                        <span class="text-[11px] ml-1" style="color:var(--text-muted);">${i.content}</span>
                                     </div>
                                 </div>
                             `).join('')}
@@ -1843,15 +3420,15 @@
             const rankingGridStyle = 'grid-template-columns: 42px minmax(260px, 1fr) 110px 92px 88px 72px;';
 
             let html = `
-                <div class="bg-dark-800 rounded-lg border border-gray-800 overflow-hidden">
-                    <div class="px-4 py-3 border-b border-gray-700/50 flex items-center justify-between">
+                <div class="glass-card overflow-hidden">
+                    <div class="px-4 py-3 border-b flex items-center justify-between" style="border-color:var(--divider);">
                         <div class="flex items-center gap-2">
                             <span class="text-base">🔭</span>
-                            <h3 class="text-sm font-bold text-white" data-i18n="ranking_title">${i18nDict.ranking_title[currentLang]}</h3>
-                            <span class="text-[10px] px-1.5 py-px bg-purple-500/20 text-purple-300 rounded font-mono">PC · Steam</span>
+                            <h3 class="text-sm font-bold" style="color:var(--text-primary);" data-i18n="ranking_title">${i18nDict.ranking_title[currentLang]}</h3>
+                            <span class="pill" style="background:rgba(15,23,42,0.04);color:#0F172A;">PC · Steam</span>
                         </div>
                     </div>
-                    <div class="px-4 py-2 border-b border-gray-800/80 text-[10px] text-gray-500 uppercase tracking-wide">
+                    <div class="px-4 py-2 border-b text-[10px] uppercase tracking-wide" style="border-color:var(--divider);color:var(--text-muted);">
                         <div class="grid gap-3 items-center" style="${rankingGridStyle}">
                             <div class="text-center">#</div>
                             <div>${i18nDict.th_game[currentLang]}</div>
@@ -1861,7 +3438,7 @@
                             <div class="text-right">${i18nDict.th_price[currentLang]}</div>
                         </div>
                     </div>
-                    <div class="divide-y divide-gray-800/60 overflow-x-auto">
+                    <div class="divide-y overflow-x-auto" style="border-color:var(--divider);">
             `;
 
             let rank = 0;
@@ -1869,17 +3446,17 @@
             // ── 未发售/潜在竞品 ──
             upcoming.forEach((g) => {
                 rank++;
-                const catColors = { '恐怖撤离': 'text-red-400', '捉鬼调查': 'text-violet-400', 'PvPvE猎杀': 'text-orange-400', '搜打撤/摸金': 'text-cyan-400' };
+                const catColors = { '恐怖撤离': 'text-red-600', '捉鬼调查': 'text-violet-600', 'PvPvE猎杀': 'text-orange-600', '搜打撤/摸金': 'text-cyan-600' };
                 const catColor = catColors[g.category] || 'text-gray-400';
                 const displayName = g.cnName ? `${g.name}（${g.cnName}）` : g.name;
 
                 html += `
-                    <a href="${g.storeUrl}" target="_blank" rel="noopener" class="block px-4 py-3.5 hover:bg-dark-700/50 transition-colors group border-l-4 border-purple-500 bg-purple-500/5">
+                    <a href="${g.storeUrl}" target="_blank" rel="noopener" class="block px-4 py-3.5 hover:bg-gray-100 transition-colors group border-l-4 border-purple-500 bg-purple-500/5">
                         <div class="grid gap-3 items-center" style="${rankingGridStyle}">
                             <div class="text-center shrink-0"><span class="text-purple-400 font-bold text-sm">${rank}</span></div>
                             <div class="min-w-0">
                                 <div class="flex items-center gap-1.5 mb-0.5 min-w-0">
-                                    <span class="font-bold text-sm text-white truncate group-hover:text-accent-light transition-colors">${displayName}</span>
+                                    <span class="font-bold text-sm text-slate-900 truncate group-hover:text-accent transition-colors">${displayName}</span>
                                     <span class="text-[10px] ${catColor} shrink-0">${g.category}</span>
                                 </div>
                                 <div class="flex items-center gap-2 text-[11px] min-w-0 text-gray-400">
@@ -1890,7 +3467,7 @@
                                 ${g.intro ? `<div class="mt-1 text-[10px] text-gray-500 line-clamp-1">${g.intro}</div>` : ''}
                             </div>
                             <div class="text-right text-[11px] text-purple-300 font-mono">${i18nDict.not_released[currentLang]}</div>
-                            <div class="text-right"><span class="inline-flex justify-center min-w-[72px] px-1.5 py-0.5 bg-purple-500/15 text-purple-400 border border-purple-500/25 rounded text-[10px] font-bold">WISHLIST</span></div>
+                            <div class="text-right"><span class="inline-flex justify-center min-w-[72px] px-1.5 py-0.5 bg-purple-50 text-purple-400 border border-purple-200 rounded text-[10px] font-bold">WISHLIST</span></div>
                             <div class="text-right"><span class="text-gray-700 text-[11px]">--</span></div>
                             <div class="text-right text-[11px] text-gray-500 font-mono">${g.price}</div>
                         </div>
@@ -1901,10 +3478,10 @@
             // ── 分隔线 ──
             if (upcoming.length > 0 && released.length > 0) {
                 html += `
-                    <div class="px-4 py-1.5 bg-dark-900/50 flex items-center gap-2">
-                        <div class="flex-1 h-px bg-gray-800"></div>
+                    <div class="px-4 py-1.5 bg-gray-100 flex items-center gap-2">
+                        <div class="flex-1 h-px bg-gray-200"></div>
                         <span class="text-[10px] text-gray-600 tracking-wider">${i18nDict.released_ref[currentLang]}</span>
-                        <div class="flex-1 h-px bg-gray-800"></div>
+                        <div class="flex-1 h-px bg-gray-200"></div>
                     </div>
                 `;
             }
@@ -1912,25 +3489,25 @@
             // ── 已发售竞品（弱化展示） ──
             released.forEach((g) => {
                 rank++;
-                const catColors = { '恐怖撤离': 'text-red-400', '捉鬼调查': 'text-violet-400', 'PvPvE猎杀': 'text-orange-400', '搜打撤/摸金': 'text-cyan-400' };
+                const catColors = { '恐怖撤离': 'text-red-600', '捉鬼调查': 'text-violet-600', 'PvPvE猎杀': 'text-orange-600', '搜打撤/摸金': 'text-cyan-600' };
                 const catColor = catColors[g.category] || 'text-gray-400';
                 const displayName = g.cnName ? `${g.name}（${g.cnName}）` : g.name;
                 const rateColor = !g.rate ? 'text-gray-700' : g.rate >= 85 ? 'text-emerald-500/70' : g.rate >= 60 ? 'text-amber-500/70' : 'text-red-500/70';
-                const rateBg = !g.rate ? '' : g.rate >= 85 ? 'bg-emerald-500/5 border-emerald-500/10' : g.rate >= 60 ? 'bg-amber-500/5 border-amber-500/10' : 'bg-red-500/5 border-red-500/10';
+                const rateBg = !g.rate ? '' : g.rate >= 85 ? 'bg-emerald-500/5 border-emerald-200' : g.rate >= 60 ? 'bg-amber-500/5 border-amber-500/10' : 'bg-red-500/5 border-red-500/10';
                 const statusBadge = g.status === 'EA'
-                    ? '<span class="inline-flex justify-center min-w-[72px] px-1.5 py-0.5 bg-amber-500/10 text-amber-400/70 border border-amber-500/15 rounded text-[10px] font-bold">EA</span>'
-                    : `<span class="inline-flex justify-center min-w-[72px] px-1.5 py-0.5 bg-sky-500/10 text-sky-400/70 border border-sky-500/15 rounded text-[10px] font-bold">${i18nDict.released[currentLang]}</span>`;
+                    ? '<span class="inline-flex justify-center min-w-[72px] px-1.5 py-0.5 bg-amber-50 text-amber-700/70 border border-amber-200 rounded text-[10px] font-bold">EA</span>'
+                    : `<span class="inline-flex justify-center min-w-[72px] px-1.5 py-0.5 bg-sky-500/10 text-sky-400/70 border border-sky-200 rounded text-[10px] font-bold">${i18nDict.released[currentLang]}</span>`;
                 const rateDisplay = g.rate
                     ? `<span class="inline-flex items-center justify-center min-w-[40px] px-1.5 py-px rounded text-[11px] font-bold ${rateBg} border ${rateColor}">${g.rate}%</span>`
                     : '<span class="text-gray-700 text-[11px]">--</span>';
 
                 html += `
-                    <a href="${g.storeUrl}" target="_blank" rel="noopener" class="block px-4 py-2 hover:bg-dark-700/30 transition-colors group opacity-60">
+                    <a href="${g.storeUrl}" target="_blank" rel="noopener" class="block px-4 py-2 hover:bg-gray-50 transition-colors group opacity-60">
                         <div class="grid gap-3 items-center" style="${rankingGridStyle}">
                             <div class="text-center shrink-0"><span class="text-gray-600 font-mono text-xs">${rank}</span></div>
                             <div class="min-w-0">
                                 <div class="flex items-center gap-1.5 min-w-0">
-                                    <span class="font-medium text-[11px] text-gray-300 truncate group-hover:text-gray-100 transition-colors">${displayName}</span>
+                                    <span class="font-medium text-[11px] text-slate-700 truncate group-hover:text-slate-800 transition-colors">${displayName}</span>
                                     <span class="text-[9px] ${catColor} opacity-60 shrink-0">${g.category}</span>
                                 </div>
                                 <div class="flex items-center gap-2 text-[10px] min-w-0 text-gray-600">
@@ -1981,7 +3558,7 @@
                 html += `
                     <div class="mb-5">
                         <div class="flex items-center gap-2 mb-2">
-                            <h3 class="text-xs font-bold text-white">${cat.label}</h3>
+                            <h3 class="text-xs font-bold text-slate-900">${cat.label}</h3>
                             <span class="text-[11px] text-gray-600">${cat.desc}</span>
                         </div>
                         <div class="grid sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-3">
@@ -1998,29 +3575,29 @@
                     const headerImg = store.header_image || info.headerImage || null;
 
                     const statusBadge = info.status === 'EA'
-                        ? '<span class="px-1.5 py-0.5 bg-amber-500/15 text-amber-400 border border-amber-500/25 rounded text-[10px] font-bold tracking-wide shrink-0 whitespace-nowrap">EA</span>'
-                        : `<span class="px-1.5 py-0.5 bg-sky-500/15 text-sky-400 border border-sky-500/25 rounded text-[10px] font-bold tracking-wide shrink-0 whitespace-nowrap">${i18nDict.released[currentLang]}</span>`;
+                        ? '<span class="px-1.5 py-0.5 bg-amber-50 text-amber-700 border border-amber-200 rounded text-[10px] font-bold tracking-wide shrink-0 whitespace-nowrap">EA</span>'
+                        : `<span class="px-1.5 py-0.5 bg-sky-50 text-sky-400 border border-sky-500/25 rounded text-[10px] font-bold tracking-wide shrink-0 whitespace-nowrap">${i18nDict.released[currentLang]}</span>`;
 
-                    const rateBadgeColor = rate >= 85 ? 'bg-emerald-500/15 text-emerald-400 border-emerald-500/25' : rate >= 60 ? 'bg-amber-500/15 text-amber-400 border-amber-500/25' : 'bg-red-500/15 text-red-400 border-red-500/25';
+                    const rateBadgeColor = rate >= 85 ? 'bg-emerald-50 text-emerald-700 border-emerald-200' : rate >= 60 ? 'bg-amber-50 text-amber-700 border-amber-200' : 'bg-red-50 text-red-400 border-red-200';
 
                     const displayName = info.cnName ? `${name}（${info.cnName}）` : name;
 
                     html += `
-                        <a href="${info.storeUrl}" target="_blank" rel="noopener" class="comp-card group bg-dark-800/80 rounded-lg border border-gray-700/50 overflow-hidden cursor-pointer hover:border-gray-500/40 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:shadow-purple-900/10 block no-underline" data-url="${info.storeUrl}" data-name="${name}" data-cn="${info.cnName||''}" data-dev="${info.dev}" data-release="${info.release}" data-players="${info.players}" data-rate="${rate}" data-ccu="${ccu||(info.ccu||'')}" data-price="${price}" data-intro="${info.intro.replace(/"/g,'&quot;')}" data-img="${headerImg||''}" data-status="${info.status}" data-store="${info.storeUrl}">
+                        <a href="${info.storeUrl}" target="_blank" rel="noopener" class="comp-card group bg-white rounded-lg border border-gray-200 overflow-hidden cursor-pointer hover:border-gray-500/40 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:shadow-black/5 block no-underline" data-url="${info.storeUrl}" data-name="${name}" data-cn="${info.cnName||''}" data-dev="${info.dev}" data-release="${info.release}" data-players="${info.players}" data-rate="${rate}" data-ccu="${ccu||(info.ccu||'')}" data-price="${price}" data-intro="${info.intro.replace(/"/g,'&quot;')}" data-img="${headerImg||''}" data-status="${info.status}" data-store="${info.storeUrl}">
                             <!-- 封面Banner -->
                             <div class="relative h-[48px] overflow-hidden">
                                 ${headerImg
                                     ? `<img src="${headerImg}" alt="${name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" referrerpolicy="no-referrer">`
                                     : `<div class="w-full h-full bg-dark-700 flex items-center justify-center text-lg">🎮</div>`
                                 }
-                                <div class="absolute inset-0 bg-gradient-to-t from-dark-800 via-dark-800/30 to-transparent"></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-white via-white/30 to-transparent"></div>
                             </div>
                             <!-- 内容区 -->
                             <div class="px-2.5 pt-1.5 pb-2">
                                 <!-- 标题行 -->
                                 <div class="flex items-center justify-between mb-1">
                                     <div class="flex items-center gap-1.5 min-w-0">
-                                        <span class="font-bold text-xs text-white truncate">${displayName}</span>
+                                        <span class="font-bold text-xs text-slate-900 truncate">${displayName}</span>
                                         ${statusBadge}
                                     </div>
                                     <span class="text-[10px] text-gray-500 font-mono shrink-0">${price}</span>
@@ -2028,15 +3605,15 @@
                                 <!-- 数据行 -->
                                 <div class="flex items-center gap-1.5 mb-1">
                                     ${rate ? `<span class="inline-flex items-center px-1 py-px rounded text-[10px] font-bold ${rateBadgeColor} border">${rate}%</span>` : ''}
-                                    ${ccu ? `<span class="text-[11px] text-emerald-400">${ccu.toLocaleString()}${i18nDict.online_suffix[currentLang]}</span>` : (info.ccu ? `<span class="text-[11px] text-gray-600">${info.ccu}${i18nDict.online_suffix[currentLang]}</span>` : '')}
+                                    ${ccu ? `<span class="text-[11px] text-emerald-700">${ccu.toLocaleString()}${i18nDict.online_suffix[currentLang]}</span>` : (info.ccu ? `<span class="text-[11px] text-gray-600">${info.ccu}${i18nDict.online_suffix[currentLang]}</span>` : '')}
                                     <span class="text-[11px] text-gray-600">${info.players}</span>
                                 </div>
                                 <!-- 简介 -->
-                                <p class="text-xs text-gray-500 leading-snug line-clamp-1 mb-1.5 group-hover:text-gray-400 transition-colors">${info.intro}</p>
+                                <p class="text-xs text-gray-500 leading-snug line-clamp-1 mb-1.5 group-hover:text-slate-600 transition-colors">${info.intro}</p>
                                 <!-- 底栏 -->
-                                <div class="flex items-center justify-between pt-1 border-t border-gray-700/30">
+                                <div class="flex items-center justify-between pt-1 border-t border-gray-200">
                                     <span class="text-[11px] text-gray-500 truncate">${info.dev} · ${info.release}</span>
-                                    <span class="text-[11px] text-gray-400 group-hover:text-accent-light transition-colors shrink-0 ml-1">${i18nDict.store_link[currentLang]}</span>
+                                    <span class="text-[11px] text-gray-400 group-hover:text-accent transition-colors shrink-0 ml-1">${i18nDict.store_link[currentLang]}</span>
                                 </div>
                             </div>
                         </a>
@@ -2051,7 +3628,7 @@
                 html += `
                     <div class="mb-5">
                         <div class="flex items-center gap-2 mb-2">
-                            <h3 class="text-xs font-bold text-white">${i18nDict.cat_wishlist[currentLang]}</h3>
+                            <h3 class="text-xs font-bold text-slate-900">${i18nDict.cat_wishlist[currentLang]}</h3>
                             <span class="text-[11px] text-gray-600">${i18nDict.cat_wishlist_desc[currentLang]}</span>
                         </div>
                         <div class="grid sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-3">
@@ -2061,30 +3638,30 @@
                     const wishImg = info.headerImage || null;
                     const displayName = info.cnName ? `${name}（${info.cnName}）` : name;
                     html += `
-                        <a href="${info.storeUrl}" target="_blank" rel="noopener" class="comp-card group bg-gradient-to-br from-purple-900/20 to-dark-800/80 rounded-lg border border-purple-500/20 overflow-hidden cursor-pointer hover:border-purple-400/40 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:shadow-purple-900/10 block no-underline" data-url="${info.storeUrl}" data-name="${name}" data-cn="${info.cnName||''}" data-dev="${info.dev}" data-release="${info.release}" data-players="${info.players}" data-rate="" data-ccu="" data-price="${info.price}" data-intro="${info.intro.replace(/"/g,'&quot;')}" data-img="${wishImg||''}" data-status="WISHLIST" data-store="${info.storeUrl}">
+                        <a href="${info.storeUrl}" target="_blank" rel="noopener" class="comp-card group bg-white rounded-lg border border-purple-200 overflow-hidden cursor-pointer hover:border-purple-300 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:shadow-black/5 block no-underline" data-url="${info.storeUrl}" data-name="${name}" data-cn="${info.cnName||''}" data-dev="${info.dev}" data-release="${info.release}" data-players="${info.players}" data-rate="" data-ccu="" data-price="${info.price}" data-intro="${info.intro.replace(/"/g,'&quot;')}" data-img="${wishImg||''}" data-status="WISHLIST" data-store="${info.storeUrl}">
                             <div class="relative h-[48px] overflow-hidden">
                                 ${wishImg
                                     ? `<img src="${wishImg}" alt="${name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">`
-                                    : `<div class="w-full h-full bg-purple-900/30 flex items-center justify-center text-lg">🔮</div>`
+                                    : `<div class="w-full h-full bg-purple-50 flex items-center justify-center text-lg">🔮</div>`
                                 }
-                                <div class="absolute inset-0 bg-gradient-to-t from-dark-800 via-dark-800/30 to-transparent"></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-white via-white/30 to-transparent"></div>
                             </div>
                             <div class="px-2.5 pt-1.5 pb-2">
                                 <div class="flex items-center justify-between mb-1">
                                     <div class="flex items-center gap-1.5 min-w-0">
-                                        <span class="font-bold text-xs text-white truncate">${displayName}</span>
-                                        <span class="px-1 py-px bg-purple-500/15 text-purple-300 border border-purple-500/25 rounded text-[9px] font-bold tracking-wide">WISHLIST</span>
+                                        <span class="font-bold text-xs text-slate-900 truncate">${displayName}</span>
+                                        <span class="px-1 py-px bg-purple-50 text-purple-300 border border-purple-200 rounded text-[9px] font-bold tracking-wide">WISHLIST</span>
                                     </div>
                                     <span class="text-[10px] text-gray-600 shrink-0">${info.price}</span>
                                 </div>
                                 <div class="flex items-center gap-1.5 mb-1">
                                     <span class="text-[10px] text-gray-600">${info.dev}</span>
-                                    <span class="text-[10px] text-gray-700">${info.players}</span>
+                                    <span class="text-[10px] text-slate-400">${info.players}</span>
                                 </div>
-                                <p class="text-xs text-gray-500 leading-snug line-clamp-1 mb-1.5 group-hover:text-gray-400 transition-colors">${info.intro}</p>
-                                <div class="flex items-center justify-between pt-1 border-t border-purple-500/10">
+                                <p class="text-xs text-gray-500 leading-snug line-clamp-1 mb-1.5 group-hover:text-slate-600 transition-colors">${info.intro}</p>
+                                <div class="flex items-center justify-between pt-1 border-t border-purple-100">
                                     <span class="text-[11px] text-gray-500">发售：${info.release}</span>
-                                    <span class="text-[11px] text-purple-400 group-hover:text-purple-300 transition-colors shrink-0 ml-1">${i18nDict.store_link[currentLang]}</span>
+                                    <span class="text-[11px] text-purple-400 group-hover:text-purple-600 transition-colors shrink-0 ml-1">${i18nDict.store_link[currentLang]}</span>
                                 </div>
                             </div>
                         </a>
@@ -2109,12 +3686,12 @@
                 const totalReviews = reviews.total_reviews || info.reviews_total || 0;
                 const headerImg = store.header_image || info.headerImage || null;
 
-                const rateColor = rate >= 80 ? 'text-green-400' : rate >= 60 ? 'text-yellow-400' : 'text-red-400';
+                const rateColor = rate >= 80 ? 'text-green-600' : rate >= 60 ? 'text-yellow-600' : 'text-red-600';
                 const statusBadge = info.status === 'WISHLIST'
-                    ? '<span class="px-1.5 py-0.5 bg-purple-900/50 text-purple-300 rounded text-xs">WISHLIST</span>'
+                    ? '<span class="px-1.5 py-0.5 bg-purple-50 text-purple-300 rounded text-xs">WISHLIST</span>'
                     : info.status === 'EA'
-                    ? '<span class="px-1.5 py-0.5 bg-yellow-900/50 text-yellow-300 rounded text-xs">EA</span>'
-                    : `<span class="px-1.5 py-0.5 bg-green-900/50 text-green-300 rounded text-xs">${i18nDict.released[currentLang]}</span>`;
+                    ? '<span class="px-1.5 py-0.5 bg-yellow-50 text-yellow-300 rounded text-xs">EA</span>'
+                    : `<span class="px-1.5 py-0.5 bg-green-50 text-green-300 rounded text-xs">${i18nDict.released[currentLang]}</span>`;
 
                 const catLabel = {
                     '恐怖撤离': '🎯 ' + (currentLang === 'en' ? 'Extraction' : '撤离'),
@@ -2123,7 +3700,7 @@
                 }[info.category] || info.category;
 
                 rows.push(`
-                    <tr class="border-b border-gray-800 hover:bg-dark-700 transition">
+                    <tr class="border-b hover:bg-gray-50 transition">
                         <td class="py-2.5 pr-4 font-medium">
                             <div class="flex items-center gap-2">
                                 ${headerImg ? `<img src="${headerImg}" alt="${name}" class="w-8 h-4 rounded-sm object-cover" referrerpolicy="no-referrer">` : '<span class="text-xs">🎮</span>'}
@@ -2132,7 +3709,7 @@
                         </td>
                         <td class="text-center py-2.5 px-3 text-xs text-gray-400">${catLabel}</td>
                         <td class="text-center py-2.5 px-3">${statusBadge}</td>
-                        <td class="text-right py-2.5 px-3 ${ccu > 10000 ? 'text-green-400 font-bold' : 'text-gray-300'}">${ccu ? ccu.toLocaleString() : (info.ccu || '--')}</td>
+                        <td class="text-right py-2.5 px-3 ${ccu > 10000 ? 'text-green-400 font-bold' : 'text-slate-700'}">${ccu ? ccu.toLocaleString() : (info.ccu || '--')}</td>
                         <td class="text-right py-2.5 px-3">
                             <span class="${rateColor}">${rate ? rate + '%' : '--'}</span>
                         </td>
@@ -2152,7 +3729,7 @@
             const ctx = document.getElementById('trend-chart');
             if (!ctx) return;
 
-            const colors = ['#8b5cf6', '#dc2626', '#059669', '#d97706', '#3b82f6'];
+            const colors = ['#991B1B', '#0F172A', '#16A34A', '#B91C1C', '#334155'];
             const datasets = [];
             let idx = 0;
 
@@ -2192,7 +3769,8 @@
                 dateLabels.push(`${d.getMonth()+1}/${d.getDate()}`);
             }
 
-            new Chart(ctx, {
+            if (window._trendChart) { window._trendChart.destroy(); }
+            window._trendChart = new Chart(ctx, {
                 type: 'line',
                 data: {
                     labels: dateLabels,
@@ -2200,19 +3778,20 @@
                 },
                 options: {
                     responsive: true,
+                    maintainAspectRatio: false,
                     plugins: {
                         legend: {
-                            labels: { color: '#9ca3af', font: { size: 11 } }
+                            labels: { color: '#64748B', font: { size: 11 } }
                         }
                     },
                     scales: {
                         x: {
-                            ticks: { color: '#6b7280', font: { size: 10 } },
-                            grid: { color: '#1f2937' },
+                            ticks: { color: '#94A3B8', font: { size: 10 } },
+                            grid: { color: 'rgba(0,0,0,0.04)' },
                         },
                         y: {
-                            ticks: { color: '#6b7280', font: { size: 10 } },
-                            grid: { color: '#1f2937' },
+                            ticks: { color: '#94A3B8', font: { size: 10 } },
+                            grid: { color: 'rgba(0,0,0,0.04)' },
                         }
                     }
                 }
@@ -2244,8 +3823,8 @@
             daily: { zh: '每日', en: 'Daily' },
             utc_auto: { zh: 'UTC 00:00 自动采集', en: 'Auto-crawl at UTC 00:00' },
             // 总览双栏
-            latest_news: { zh: '📡 最新动态', en: '📡 Latest News' },
-            steam_ccu_compare: { zh: '📊 Steam 在线人数对比', en: '📊 Steam CCU Comparison' },
+            latest_news: { zh: '最新动态', en: 'Latest News' },
+            steam_ccu_compare: { zh: 'Steam 在线人数对比', en: 'Steam CCU Comparison' },
             no_news: { zh: '暂无动态数据', en: 'No news data' },
             no_updates: { zh: '暂无更新公告数据', en: 'No update announcements' },
             no_official_news: { zh: '暂无官网新闻数据', en: 'No official news data' },
@@ -2260,14 +3839,14 @@
             cat_pr: { zh: 'PR', en: 'PR' },
             cat_cosmetic: { zh: '皮肤', en: 'Cosmetics' },
             cat_patch: { zh: '修复', en: 'Patches' },
-            content_tracker: { zh: '🎯 近3个月玩法更新', en: '🎯 Content Updates (3 Months)' },
+            content_tracker: { zh: '近3个月玩法更新', en: '🎯 Content Updates (3 Months)' },
             // 超自然行动组页
             czr_genre: { zh: '巨人网络 · 多人欢乐恐怖', en: 'Giant Network · Multiplayer Fun Horror' },
             core_gameplay: { zh: '核心玩法：', en: 'Core Gameplay: ' },
             czr_desc1: { zh: '多人组队前往千年古迹，对抗怪物、寻找宝藏。一个人是恐怖游戏，一群人是搞笑狂欢。', en: 'Team up to explore ancient ruins, fight monsters, and find treasures. Alone it\'s horror; together it\'s comedy.' },
             czr_desc2: { zh: 'iOS / Android / PC 三端互通，主打"欢乐恐怖+社交摸金"。', en: 'Cross-platform iOS/Android/PC. "Fun horror + social treasure hunting".' },
-            ai_insight: { zh: '🧠 AI 洞察摘要', en: '🧠 AI Insight Summary' },
-            cn_core_metrics: { zh: '📊 国内核心指标', en: '📊 CN Core Metrics' },
+            ai_insight: { zh: 'AI 洞察摘要', en: '🧠 AI Insight Summary' },
+            cn_core_metrics: { zh: '国内核心指标', en: 'CN Core Metrics' },
             reg_users: { zh: '注册用户', en: 'Registered Users' },
             peak_concurrent: { zh: '峰值并发', en: 'Peak Concurrent' },
             total_revenue: { zh: '累计流水', en: 'Total Revenue' },
@@ -2277,20 +3856,20 @@
             peak4: { zh: '（峰值#4）', en: '(Peak #4)' },
             ios_free: { zh: 'iOS免费榜', en: 'iOS Free Chart' },
             updated_appstore: { zh: '更新于 2026-05-29 · 来源：iOS App Store', en: 'Updated 2026-05-29 · Source: iOS App Store' },
-            update_announce: { zh: '📋 更新公告', en: '📋 Update Announcements' },
-            official_news: { zh: '📰 官网新闻', en: '📰 Official News' },
+            update_announce: { zh: '更新公告', en: 'Update Announcements' },
+            official_news: { zh: '官网新闻', en: 'Official News' },
             tb_overseas: { zh: 'Tomb Busters 海外版 — 排行榜 & 趋势', en: 'Tomb Busters Overseas — Rankings & Trends' },
             tb_launch_date: { zh: '5月27日全球上线', en: 'Global launch May 27' },
-            community_sentiment: { zh: '💬 社区舆情', en: '💬 Community Sentiment' },
+            community_sentiment: { zh: '社区舆情', en: 'Community Sentiment' },
             taptap_forum: { zh: 'TapTap 论坛', en: 'TapTap Forum' },
             bilibili_hot: { zh: 'B站热门视频', en: 'Bilibili Hot Videos' },
             // R.E.P.O. 页
             repo_genre: { zh: '在线合作恐怖', en: 'Online Co-op Horror' },
-            review_trend: { zh: '📊 评测 & 舆论趋势', en: '📊 Review & Sentiment Trend' },
-            mod_eco: { zh: '🔧 MOD 生态', en: '🔧 MOD Ecosystem' },
-            basic_info: { zh: '🎮 基本信息', en: '🎮 Basic Info' },
-            player_data: { zh: '📊 玩家数据', en: '📊 Player Data' },
-            version_timeline: { zh: '📜 版本时间线', en: '📜 Version Timeline' },
+            review_trend: { zh: '评测 & 舆论趋势', en: 'Review & Sentiment Trend' },
+            mod_eco: { zh: 'MOD 生态', en: 'MOD Ecosystem' },
+            basic_info: { zh: '基本信息', en: 'Basic Info' },
+            player_data: { zh: '玩家数据', en: 'Player Data' },
+            version_timeline: { zh: '版本时间线', en: 'Version Timeline' },
             // R.E.P.O. 玩家数据标签
             name_label: { zh: '名称', en: 'Name' },
             developer: { zh: '开发商', en: 'Developer' },
@@ -2313,8 +3892,8 @@
             sort_rate: { zh: '好评率', en: 'Pos. Rate' },
             sort_reviews: { zh: '评测数', en: 'Reviews' },
             // 竞品对比
-            competitor_compare: { zh: '📊 竞品数据对比', en: '📊 Competitor Comparison' },
-            online_trend: { zh: '📈 在线人数趋势（14天）', en: '📈 Online Trend (14 Days)' },
+            competitor_compare: { zh: '竞品数据对比', en: '📊 Competitor Comparison' },
+            online_trend: { zh: '在线人数趋势（14天）', en: '📈 Online Trend (14 Days)' },
             th_game: { zh: '游戏', en: 'Game' },
             th_track: { zh: '赛道', en: 'Track' },
             th_status: { zh: '状态', en: 'Status' },
@@ -2491,8 +4070,10 @@
 
     <!-- 回到顶部按钮 -->
     <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"
-        class="fixed bottom-6 right-6 z-50 w-10 h-10 bg-dark-800 border border-gray-700 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:border-accent transition-all opacity-0 pointer-events-none shadow-lg"
-        style="transition: opacity 0.3s, border-color 0.3s, color 0.3s;">
+        class="fixed bottom-6 right-6 z-40 w-10 h-10 border rounded-lg flex items-center justify-center transition-all opacity-0 pointer-events-none shadow-lg"
+        style="background:#FFFFFF;box-shadow:0 2px 8px rgba(0,0,0,0.08);border-color:var(--card-border);color:var(--text-muted);transition: opacity 0.3s, border-color 0.3s, color 0.3s;"
+        onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'"
+        onmouseout="this.style.borderColor='var(--card-border)';this.style.color='var(--text-muted)'">
         ▲
     </button>
     <script>
