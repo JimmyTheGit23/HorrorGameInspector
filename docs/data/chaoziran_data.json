@@ -2,6 +2,16 @@
   "chaoziran": {
     "bwiki_updates": [
       {
+        "title": "百变小刘鸭，快乐你我他！【腰包】【粘液球】这次都变身超萌鸭鸭",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/moment/813482839424109363",
+        "moment_id": "813482839424109363",
+        "link_status": "valid",
+        "category": "other",
+        "content_tags": [],
+        "priority": "low"
+      },
+      {
         "title": "版本更新——怪物农场钓鱼玩法上线！荆州博物馆联动限定内容来啦",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/moment/811648122982761996",
@@ -11,16 +21,6 @@
         "content_tags": [
           "品牌联动"
         ],
-        "priority": "low"
-      },
-      {
-        "title": "百变小刘鸭，快乐你我他！【腰包】【粘液球】这次都变身超萌鸭鸭",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/moment/813482839424109363",
-        "moment_id": "813482839424109363",
-        "link_status": "valid",
-        "category": "other",
-        "content_tags": [],
         "priority": "low"
       },
       {
@@ -36,14 +36,44 @@
         "priority": "medium"
       },
       {
-        "title": "月【云台鹗】与兰【扈江离】联动时装模型展示",
+        "title": "版更速递！局内可直接调整键位啦~",
         "source": "TapTap官方",
-        "url": "https://www.taptap.cn/moment/810593692699067915",
-        "moment_id": "810593692699067915",
-        "link_status": "valid",
+        "url": "https://www.taptap.cn/app/714123/topic?type=official",
+        "link_status": "unknown",
+        "category": "patch",
+        "content_tags": [
+          "版本更新"
+        ],
+        "priority": "low"
+      },
+      {
+        "title": "还有背包满时拾取大金能自动替换低价值回收物，农场植物也上新咯！\n6月11日晚更新后一起来看看吧",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/app/714123/topic?type=official",
+        "link_status": "unknown",
+        "category": "patch",
+        "content_tags": [
+          "版本更新"
+        ],
+        "priority": "low"
+      },
+      {
+        "title": "大家一起为你准备了蛋糕，来许个愿吧（记得看紧小熊猫，它最馋嘴了",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/app/714123/topic?type=official",
+        "link_status": "unknown",
+        "category": "other",
+        "content_tags": [],
+        "priority": "low"
+      },
+      {
+        "title": "其实我感觉可以出一个除颤仪的话唠皮肤，就是就一次人就说  轻轻敲醒你的心灵  复活吧，我的爱人   之类的，感觉会很好玩",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/app/714123/topic?type=official",
+        "link_status": "unknown",
         "category": "cosmetic",
         "content_tags": [
-          "新时装"
+          "新皮肤"
         ],
         "priority": "medium"
       },
@@ -59,16 +89,7 @@
         "priority": "low"
       },
       {
-        "title": "感觉好偷懒啊，黏液球几乎没有区别，至少把它改成泡泡吧",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/app/714123/topic?type=official",
-        "link_status": "unknown",
-        "category": "other",
-        "content_tags": [],
-        "priority": "low"
-      },
-      {
-        "title": "大家一起为你准备了蛋糕，来许个愿吧（记得看紧小熊猫，它最馋嘴了",
+        "title": "每次都要一个一个喂，几天没上线财神土拨鼠直接被饿死了",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/app/714123/topic?type=official",
         "link_status": "unknown",
@@ -84,33 +105,13 @@
         "category": "other",
         "content_tags": [],
         "priority": "low"
-      },
-      {
-        "title": "就头上两个妙脆角好看，其他的，一言难尽，浅评一下，就像未来的人做现在的皮肤，然后皮肤上画上蒸笼，就说 这是21世纪的风格。",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/app/714123/topic?type=official",
-        "link_status": "unknown",
-        "category": "cosmetic",
-        "content_tags": [
-          "新皮肤"
-        ],
-        "priority": "medium"
-      },
-      {
-        "title": "这次请到了专业的动作老师指导，还原最原汁原味的楚韵！",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/app/714123/topic?type=official",
-        "link_status": "unknown",
-        "category": "other",
-        "content_tags": [],
-        "priority": "low"
       }
     ],
     "taptap": {
       "app_id": 714123,
       "source": "taptap_webpage",
-      "fans_count": 11279314,
-      "review_count": 30584,
+      "fans_count": 11283164,
+      "review_count": 30615,
       "score": "6.9",
       "description": "超自然行动组是一款合作游戏，TapTap 提供超自然行动组最新版官方正版下载，一个人玩是恐怖游戏，两个人玩是冒险游戏，三个人玩是寻宝游戏，...",
       "score_display": 6.9,
@@ -205,26 +206,42 @@
     "community": {
       "taptap_forum": [
         {
-          "title": "百变小刘鸭，快乐你我他！【腰包】【粘液球】这次都变身超萌鸭鸭",
+          "title": "【精绝古城困难】┓型全地图小抄（6.6更新）",
           "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/813482839424109363",
-          "moment_id": "813482839424109363",
+          "url": "https://www.taptap.cn/moment/686643810008043078",
+          "moment_id": "686643810008043078",
           "link_status": "valid",
           "sentiment": "neutral"
         },
         {
-          "title": "没金像也可以百万撤离吗",
+          "title": "强烈的建议，加强检测开挂设备",
           "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/812795493246569633",
-          "moment_id": "812795493246569633",
+          "url": "https://www.taptap.cn/moment/813608286724033753",
+          "moment_id": "813608286724033753",
           "link_status": "valid",
           "sentiment": "neutral"
         },
         {
-          "title": "第一次碰到能把自己摔死的鱼",
+          "title": "这是最贵的鱼吗？第一天新手福利出的",
           "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/813530416764945300",
-          "moment_id": "813530416764945300",
+          "url": "https://www.taptap.cn/moment/813175983300412668",
+          "moment_id": "813175983300412668",
+          "link_status": "valid",
+          "sentiment": "positive"
+        },
+        {
+          "title": "超自然联动上线！流水未大涨",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/moment/812429582606010165",
+          "moment_id": "812429582606010165",
+          "link_status": "valid",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "超自然行动组鱼类图鉴",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/moment/812482396178875811",
+          "moment_id": "812482396178875811",
           "link_status": "valid",
           "sentiment": "neutral"
         },
@@ -236,42 +253,28 @@
           "sentiment": "neutral"
         },
         {
-          "title": "【零-角色PV预热】——被计划的生命，长出计划外的灵魂",
+          "title": "┓型全地图小抄，分为宽长正3种，共25张\n顺序：宽P1-14，长P15-21，正P22-25\n相同地...",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral"
         },
         {
-          "title": "感觉好偷懒啊，黏液球几乎没有区别，至少把它改成泡泡吧",
+          "title": "@超自然行动组 我给你提个建议，你抓拿着外挂组织你是抓不完的，强烈的建议就是加强检测设备，检测到对局...",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral"
         },
         {
-          "title": "1.昨天和人一起玩超自然。\n2.她开局就说，，这局她抓怪。这没啥问题，因为我们是三人组队玩游戏。\n3...",
+          "title": "得了挂是不弄的，玩家必修的这游戏没救了",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral"
         },
         {
-          "title": "上把3诅咒4高级加起来就20万气得直接跳了，这一把4诅咒2高级，又吃美了[表情_吐舌头]",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral"
-        },
-        {
-          "title": "超自然行动组：《伯虎说dj+最炫民族风+果宝特攻》",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral"
-        },
-        {
-          "title": "#超自然行动组 #伯虎说最炫民族风果宝特攻 #翻唱",
+          "title": "自介：本人女，17岁\n微氪玩家，冷淡慢热，寡言佛系。\n不喜喧闹尬聊，有边界感，不粘人。\n心态稳不甩锅...",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
@@ -288,8 +291,8 @@
             "title": "南瓜入侵，幽魂大运来了！",
             "bvid": "BV1xCkfBjENz",
             "url": "https://www.bilibili.com/video/BV1xCkfBjENz",
-            "play": 5786780,
-            "like": 34699,
+            "play": 5786832,
+            "like": 34700,
             "danmaku": 184,
             "author": "張某人ZSS",
             "duration": "1:27",
@@ -300,7 +303,7 @@
             "title": "教会你们如何在超自然找到大佬",
             "bvid": "BV1d2tGz2E3Z",
             "url": "https://www.bilibili.com/video/BV1d2tGz2E3Z",
-            "play": 4727841,
+            "play": 4727880,
             "like": 31872,
             "danmaku": 388,
             "author": "中二的小溢",
@@ -312,8 +315,8 @@
             "title": "超自然行动组怪物图鉴第六期「小熊猫」",
             "bvid": "BV1QCjiz2Evq",
             "url": "https://www.bilibili.com/video/BV1QCjiz2Evq",
-            "play": 3687957,
-            "like": 16631,
+            "play": 3688775,
+            "like": 16633,
             "danmaku": 219,
             "author": "就是黄大毛",
             "duration": "1:45",
@@ -324,9 +327,9 @@
             "title": "本来想卖掉大鹅、看到眼神心软了",
             "bvid": "BV1Wv6bBWEmn",
             "url": "https://www.bilibili.com/video/BV1Wv6bBWEmn",
-            "play": 3487481,
-            "like": 114820,
-            "danmaku": 1670,
+            "play": 3487951,
+            "like": 114837,
+            "danmaku": 1671,
             "author": "虎熊寺",
             "duration": "1:24",
             "pic": "https://i0.hdslb.com/bfs/archive/85eb76c39837c40ba46fd54b2eaef7c07194ce6c.jpg",
@@ -336,7 +339,7 @@
             "title": "为什么幸福的人不会来到超自然行动组？",
             "bvid": "BV1Zqu4z5ETn",
             "url": "https://www.bilibili.com/video/BV1Zqu4z5ETn",
-            "play": 2789496,
+            "play": 2789504,
             "like": 9003,
             "danmaku": 146,
             "author": "白白鸭游戏",
@@ -348,7 +351,7 @@
             "title": "还能这样的吗？",
             "bvid": "BV19KD1BrEnr",
             "url": "https://www.bilibili.com/video/BV19KD1BrEnr",
-            "play": 2775725,
+            "play": 2775740,
             "like": 94696,
             "danmaku": 665,
             "author": "虚拟俱乐部-超自然",
@@ -372,8 +375,8 @@
       "regions_data": {
         "us": {
           "name": "美国",
-          "rating": 4.5,
-          "rating_count": 550,
+          "rating": 4.52,
+          "rating_count": 559,
           "current_version": "1.29.26",
           "price": "Free",
           "genre": "Games"
@@ -381,15 +384,15 @@
         "jp": {
           "name": "日本",
           "rating": 4.41,
-          "rating_count": 1375,
+          "rating_count": 1406,
           "current_version": "1.29.26",
           "price": "無料",
           "genre": "Games"
         },
         "kr": {
           "name": "韩国",
-          "rating": 3.82,
-          "rating_count": 213,
+          "rating": 3.83,
+          "rating_count": 218,
           "current_version": "1.29.26",
           "price": "무료",
           "genre": "Games"
@@ -405,9 +408,9 @@
           "rating_count": 0
         }
       },
-      "app_store_rating": 4.24,
-      "total_ratings": 2138,
-      "updated": "2026-06-10 17:29"
+      "app_store_rating": 4.25,
+      "total_ratings": 2183,
+      "updated": "2026-06-11 08:55"
     },
     "app_store_rankings": {
       "us": {
@@ -416,15 +419,15 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-10 17:29"
+        "updated": "2026-06-11 08:55"
       },
       "jp": {
         "name": "日本",
         "free_overall": null,
-        "free_games": 95,
+        "free_games": 94,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-10 17:29"
+        "updated": "2026-06-11 08:55"
       },
       "kr": {
         "name": "韩国",
@@ -432,7 +435,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-10 17:29"
+        "updated": "2026-06-11 08:55"
       },
       "tw": {
         "name": "台湾",
@@ -440,7 +443,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-10 17:29"
+        "updated": "2026-06-11 08:55"
       },
       "hk": {
         "name": "香港",
@@ -448,7 +451,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-10 17:29"
+        "updated": "2026-06-11 08:55"
       }
     },
     "stock_price": {
@@ -458,14 +461,14 @@
       "prev_close": 24.74,
       "change_pct": -2.18,
       "change_amt": -0.54,
-      "updated": "2026-06-10 17:29"
+      "updated": "2026-06-11 08:55"
     },
     "new_content_tracker": [
       {
         "id": "角色重做",
         "name": "角色重做",
         "status": "announced",
-        "first_seen": "2026-06-10",
+        "first_seen": "2026-06-11",
         "launch_date": null,
         "tags": [
           "角色重做"
@@ -473,9 +476,10 @@
         "announcements": [
           {
             "title": "阿念重做登场！",
-            "date": "2026-06-10",
+            "date": "2026-06-11",
             "source": "官网",
-            "url": "https://www.chaoziran.com/news/538"
+            "url": "https://www.chaoziran.com/news/538",
+            "link_status": "valid"
           }
         ],
         "player_reactions": {
@@ -488,7 +492,7 @@
         "id": "新怪物",
         "name": "新怪物",
         "status": "teased",
-        "first_seen": "2026-06-10",
+        "first_seen": "2026-06-11",
         "launch_date": null,
         "tags": [
           "新怪物"
@@ -496,9 +500,10 @@
         "announcements": [
           {
             "title": "新怪物【鸭子】实机展示，追上了命都给你哦",
-            "date": "2026-06-10",
+            "date": "2026-06-11",
             "source": "官网",
-            "url": "https://www.chaoziran.com/news/535"
+            "url": "https://www.chaoziran.com/news/535",
+            "link_status": "valid"
           }
         ],
         "player_reactions": {
@@ -508,6 +513,6 @@
         }
       }
     ],
-    "crawled_at": "2026-06-10T17:29:32.479190"
+    "crawled_at": "2026-06-11T08:55:57.678068"
   }
 }
