@@ -11,7 +11,7 @@ from datetime import datetime
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from steam_crawler import crawl_steam
-from chaoziran_crawler import crawl_chaoziran
+from chaoziran_crawler import crawl_chaoziran, enrich_chaoziran_bilingual
 
 
 DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "docs", "data")
@@ -121,6 +121,7 @@ def main():
         czr_path = os.path.join(DATA_DIR, "chaoziran_data.json")
         old_czr_data = load_json(czr_path)
         czr_data = merge_chaoziran_data(czr_data, old_czr_data)
+        czr_data = enrich_chaoziran_bilingual(czr_data)
         save_json(czr_data, czr_path)
         print("   超自然行动组数据采集完成")
     except Exception as e:

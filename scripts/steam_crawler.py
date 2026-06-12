@@ -54,9 +54,8 @@ def fetch_html(url, retries=3):
                 return None
 
 
-def get_steam_app_data(appid):
-    """从Steam Store API获取游戏详情"""
-    url = f"https://store.steampowered.com/api/appdetails?appids={appid}&cc=cn&l=schinese"
+def get_store_payload(appid, lang="schinese"):
+    url = f"https://store.steampowered.com/api/appdetails?appids={appid}&cc=cn&l={lang}"
     data = fetch_json(url)
     if not data or str(appid) not in data:
         return None
@@ -64,22 +63,43 @@ def get_steam_app_data(appid):
     app_data = data[str(appid)]
     if not app_data.get("success"):
         return None
+    return app_data["data"]
 
-    info = app_data["data"]
+
+
+def get_steam_app_data(appid):
+    """从Steam Store API获取游戏详情，同时补齐英文字段供前端切换语言"""
+    zh_info = get_store_payload(appid, "schinese")
+    if not zh_info:
+        return None
+
+    en_info = get_store_payload(appid, "english") or {}
+
+    zh_price = zh_info.get("price_overview", {}).get("final_formatted", "免费")
+    en_price = en_info.get("price_overview", {}).get("final_formatted", zh_price)
+    if en_price == "免费":
+        en_price = "Free To Play"
+
     return {
-        "name": info.get("name", ""),
-        "type": info.get("type", ""),
-        "short_description": info.get("short_description", ""),
-        "header_image": info.get("header_image", ""),
-        "developers": info.get("developers", []),
-        "publishers": info.get("publishers", []),
-        "price": info.get("price_overview", {}).get("final_formatted", "免费"),
-        "release_date": info.get("release_date", {}).get("date", ""),
-        "metacritic": info.get("metacritic", {}).get("score", None),
-        "recommendations": info.get("recommendations", {}).get("total", 0),
-        "platforms": info.get("platforms", {}),
-        "categories": [c["description"] for c in info.get("categories", [])],
-        "genres": [g["description"] for g in info.get("genres", [])],
+        "name": zh_info.get("name", ""),
+        "name_en": en_info.get("name", zh_info.get("name", "")),
+        "type": zh_info.get("type", ""),
+        "short_description": zh_info.get("short_description", ""),
+        "short_description_en": en_info.get("short_description", zh_info.get("short_description", "")),
+        "header_image": zh_info.get("header_image", ""),
+        "developers": zh_info.get("developers", []),
+        "publishers": zh_info.get("publishers", []),
+        "price": zh_price,
+        "price_en": en_price,
+        "release_date": zh_info.get("release_date", {}).get("date", ""),
+        "release_date_en": en_info.get("release_date", {}).get("date", zh_info.get("release_date", {}).get("date", "")),
+        "metacritic": zh_info.get("metacritic", {}).get("score", None),
+        "recommendations": zh_info.get("recommendations", {}).get("total", 0),
+        "platforms": zh_info.get("platforms", {}),
+        "categories": [c["description"] for c in zh_info.get("categories", [])],
+        "categories_en": [c["description"] for c in en_info.get("categories", [])] or [c["description"] for c in zh_info.get("categories", [])],
+        "genres": [g["description"] for g in zh_info.get("genres", [])],
+        "genres_en": [g["description"] for g in en_info.get("genres", [])] or [g["description"] for g in zh_info.get("genres", [])],
     }
 
 

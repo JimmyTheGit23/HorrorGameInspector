@@ -13,6 +13,165 @@ import time
 from datetime import datetime
 
 
+SOURCE_EN_MAP = {
+    "BWIKI": "BWIKI",
+    "官网": "Official Site",
+    "TapTap官方": "TapTap Official",
+    "TapTap论坛": "TapTap Forum",
+    "百度搜索": "Baidu Search",
+    "百度贴吧": "Baidu Tieba",
+    "B站": "Bilibili",
+    "美国": "US",
+    "日本": "Japan",
+    "韩国": "South Korea",
+    "台湾": "Taiwan, China",
+    "香港": "Hong Kong, China",
+    "巨人网络": "Giant Network",
+}
+
+TAG_EN_MAP = {
+    "新皮肤": "New Skin",
+    "新时装": "New Outfit",
+    "品牌联动": "Brand Collab",
+    "版本更新": "Version Update",
+    "角色重做": "Character Rework",
+    "新怪物": "New Monster",
+    "新玩法": "New Mode",
+    "新地图": "New Map",
+    "新服": "New Server",
+    "钓鱼": "Fishing",
+    "IP联动": "IP Collab",
+    "福利活动": "Reward Event",
+    "限时活动": "Limited Event",
+    "摸金节": "Treasure Festival",
+    "公益活动": "CSR Event",
+    "IP授权": "IP License",
+    "BUG修复": "Bug Fix",
+}
+
+TRANSLATION_CACHE = {}
+
+
+
+def translate_text(text, target_lang="en"):
+    if target_lang != "en":
+        return text
+    if not isinstance(text, str):
+        return text
+
+    text = text.strip()
+    if not text:
+        return text
+    if text in TRANSLATION_CACHE:
+        return TRANSLATION_CACHE[text]
+    if text in SOURCE_EN_MAP:
+        TRANSLATION_CACHE[text] = SOURCE_EN_MAP[text]
+        return TRANSLATION_CACHE[text]
+    if text in TAG_EN_MAP:
+        TRANSLATION_CACHE[text] = TAG_EN_MAP[text]
+        return TRANSLATION_CACHE[text]
+    if re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9\s\-_:./,'!?&()%+]*", text):
+        TRANSLATION_CACHE[text] = text
+        return text
+
+    query = urllib.parse.quote(text)
+    url = f"https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl={target_lang}&dt=t&q={query}"
+    try:
+        req = urllib.request.Request(url, headers={
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        })
+        with urllib.request.urlopen(req, timeout=12) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+        translated = "".join(part[0] for part in data[0] if part and part[0]).strip()
+        TRANSLATION_CACHE[text] = translated or text
+    except Exception:
+        TRANSLATION_CACHE[text] = text
+    return TRANSLATION_CACHE[text]
+
+
+
+def translate_list(items):
+    return [translate_text(item) for item in items if item not in (None, "")]
+
+
+
+def add_en_field(item, field):
+    if not isinstance(item, dict) or field not in item:
+        return
+    value = item.get(field)
+    if isinstance(value, str):
+        item[f"{field}_en"] = translate_text(value)
+    elif isinstance(value, list):
+        item[f"{field}_en"] = translate_list(value)
+
+
+
+def enrich_post_list(items):
+    for item in items or []:
+        add_en_field(item, "title")
+        add_en_field(item, "source")
+        add_en_field(item, "content_tags")
+        for ann in item.get("announcements", []) or []:
+            add_en_field(ann, "title")
+            add_en_field(ann, "source")
+            add_en_field(ann, "tags")
+    return items
+
+
+
+def enrich_chaoziran_bilingual(data):
+    czr = (data or {}).get("chaoziran")
+    if not czr:
+        return data
+
+    enrich_post_list(czr.get("bwiki_updates"))
+    enrich_post_list(czr.get("official_news"))
+    enrich_post_list(czr.get("new_content_tracker"))
+
+    taptap = czr.get("taptap") or {}
+    add_en_field(taptap, "source")
+    add_en_field(taptap, "description")
+    add_en_field(taptap, "tags")
+    add_en_field(taptap, "fans_text")
+    add_en_field(taptap, "download_text")
+
+    community = czr.get("community") or {}
+    enrich_post_list(community.get("taptap_forum"))
+
+    bilibili = community.get("bilibili") or {}
+    add_en_field(bilibili, "source")
+    add_en_field(bilibili, "keyword")
+    for video in bilibili.get("videos", []) or []:
+        add_en_field(video, "title")
+
+    tieba = community.get("tieba") or {}
+    add_en_field(tieba, "source")
+    add_en_field(tieba, "note")
+    enrich_post_list(tieba.get("hot_posts"))
+
+    tomb_busters = czr.get("tomb_busters") or {}
+    add_en_field(tomb_busters, "name")
+    for region in (tomb_busters.get("regions_data") or {}).values():
+        add_en_field(region, "name")
+
+    app_store_rankings = czr.get("app_store_rankings") or {}
+    for region in app_store_rankings.values():
+        add_en_field(region, "name")
+
+    stock_price = czr.get("stock_price") or {}
+    add_en_field(stock_price, "name")
+
+    for tracker in czr.get("new_content_tracker", []) or []:
+        add_en_field(tracker, "name")
+        add_en_field(tracker, "tags")
+        for ann in tracker.get("announcements", []) or []:
+            add_en_field(ann, "title")
+            add_en_field(ann, "source")
+
+    return data
+
+
+
 def fetch_html(url, retries=3):
     """带重试的HTML请求"""
     for attempt in range(retries):
@@ -1032,7 +1191,7 @@ def crawl_chaoziran():
         }
     }
 
-    return result
+    return enrich_chaoziran_bilingual(result)
 
 
 if __name__ == "__main__":
@@ -1076,6 +1235,8 @@ if __name__ == "__main__":
                     print(f"  [MERGE] 保留旧App Store排名数据")
     except Exception as e:
         print(f"  [WARN] 合并旧数据失败: {e}")
+
+    data = enrich_chaoziran_bilingual(data)
 
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)

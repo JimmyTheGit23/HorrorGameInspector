@@ -2435,17 +2435,19 @@
                     const cc = catColors[uCat] || catColors.other;
                     const catLabel = currentLang === 'zh' ? cc.label_zh : cc.label_en;
                     const priorityBadge = u.priority === 'high' ? '<span class="text-[10px] bg-red-500/30 text-red-300 px-1.5 py-0.5 rounded ml-1">★</span>' : '';
-                    const tags = (u.content_tags || []).map(t => `<span class="text-[10px] text-gray-500">${t}</span>`).join(' ');
+                    const tags = pickLangList(u, 'content_tags').map(t => `<span class="text-[10px] text-gray-500">${t}</span>`).join(' ');
+                    const title = pickLang(u, 'title', '');
+                    const source = pickLang(u, 'source', '');
                     return `<div class="py-1.5 border-b border-gray-200 last:border-0 flex items-start gap-2">
                         <span class="w-1.5 h-1.5 ${cc.dot} rounded-full mt-1.5 shrink-0"></span>
                         <div class="min-w-0 flex-1">
                             <div>
-                                <a href="${u.url}" target="_blank" class="text-slate-700 hover:text-accent-light hover:underline text-sm">${u.title}</a>
+                                <a href="${u.url}" target="_blank" class="text-slate-700 hover:text-accent-light hover:underline text-sm">${title}</a>
                                 ${priorityBadge}
                                 <span class="text-[10px] ${cc.text} ${cc.bg} px-1.5 py-0.5 rounded ml-1.5">${catLabel}</span>
                             </div>
                             <div class="flex items-center gap-2 mt-0.5">
-                                <span class="text-[10px] text-gray-600">${u.source}</span>
+                                <span class="text-[10px] text-gray-600">${source}</span>
                                 ${tags ? '<span class="text-[10px] text-slate-400">·</span>' + tags : ''}
                             </div>
                         </div>
@@ -2474,23 +2476,30 @@
             const map = {};
             sources.forEach(item => {
                 if ((item.category || 'other') !== 'new_content') return;
-                const tags = item.content_tags && item.content_tags.length ? item.content_tags : ['新内容'];
-                const id = tags[0];
-                const title = item.title || '';
+                const tagsZh = item.content_tags && item.content_tags.length ? item.content_tags : ['新内容'];
+                const tagsEn = item.content_tags_en && item.content_tags_en.length ? item.content_tags_en : ['New Content'];
+                const id = tagsZh[0];
+                const titleZh = item.title || item.title_en || '';
+                const titleEn = item.title_en || item.title || '';
+                const sourceZh = item.source || item.source_en || '';
+                const sourceEn = item.source_en || item.source || '';
+                const statusText = `${titleZh} ${titleEn}`;
 
                 // 推断状态
                 let status = 'announced';
-                if (/已上线|上线|更新后/.test(title)) status = 'live';
-                else if (/预热|预告|即将/.test(title)) status = 'teased';
-                else if (/实机|演示|展示/.test(title)) status = 'teased';
+                if (/已上线|上线|更新后|live|available now/i.test(statusText)) status = 'live';
+                else if (/预热|预告|即将|teaser|coming soon/i.test(statusText)) status = 'teased';
+                else if (/实机|演示|展示|showcase|demo/i.test(statusText)) status = 'teased';
 
                 if (!map[id]) {
                     map[id] = {
                         id,
                         name: id,
+                        name_en: tagsEn[0] || id,
                         status,
                         first_seen: item.date || null,
-                        tags,
+                        tags: tagsZh,
+                        tags_en: tagsEn,
                         announcements: [],
                     };
                 }
@@ -2499,9 +2508,11 @@
                 else if (status === 'teased' && map[id].status !== 'live') map[id].status = 'teased';
 
                 map[id].announcements.push({
-                    title,
+                    title: titleZh,
+                    title_en: titleEn,
                     date: item.date || null,
-                    source: item.source || '',
+                    source: sourceZh,
+                    source_en: sourceEn,
                     url: item.url || '#',
                 });
             });
@@ -2539,19 +2550,20 @@
                 const sc = trackerStatusConfig[item.status] || trackerStatusConfig.announced;
                 const statusLabel = currentLang === 'zh' ? sc.label_zh : sc.label_en;
                 const annCount = (item.announcements || []).length;
-                const tagStr = (item.tags || []).map(t => `<span class="text-[10px] bg-amber-100 text-amber-800 px-1.5 py-0.5 rounded font-medium">${t}</span>`).join(' ');
+                const trackerName = pickLang(item, 'name', item.id || '--');
+                const tagStr = pickLangList(item, 'tags').map(t => `<span class="text-[10px] bg-amber-100 text-amber-800 px-1.5 py-0.5 rounded font-medium">${t}</span>`).join(' ');
                 const annList = (item.announcements || []).slice(0, 3).map(a => `
                     <div class="text-[11px] text-slate-600 flex items-start gap-1.5">
                         <span class="text-slate-700 shrink-0">•</span>
                         <div class="min-w-0 flex-1">
-                            <a href="${a.url || '#'}" target="_blank" class="text-slate-700 hover:text-accent transition line-clamp-2">${a.title}</a>
+                            <a href="${a.url || '#'}" target="_blank" class="text-slate-700 hover:text-accent transition line-clamp-2">${pickLang(a, 'title', '')}</a>
                             ${a.date ? `<span class="text-[10px] text-slate-500 ml-1">(${a.date})</span>` : ''}
                         </div>
                     </div>
                 `).join('');
                 return `<div class="bg-gray-50 rounded-lg p-3 border border-gray-200">
                     <div class="flex items-start justify-between gap-2 mb-1.5">
-                        <div class="font-semibold text-slate-800 text-sm">${item.name}</div>
+                        <div class="font-semibold text-slate-800 text-sm">${trackerName}</div>
                         <span class="text-[10px] px-2 py-0.5 rounded-full ${sc.color} shrink-0 font-semibold">${statusLabel}</span>
                     </div>
                     <div class="flex items-center gap-2 mb-2">
@@ -2670,9 +2682,9 @@
                 if (czr.official_news) {
                     czr.official_news.slice(0, 5).forEach(n => {
                         newsItems.push({
-                            tag: '超自然行动组',
-                            title: n.title,
-                            source: n.source || '官网',
+                            tag: currentLang === 'zh' ? '超自然行动组' : 'Chaoziran',
+                            title: pickLang(n, 'title', ''),
+                            source: pickLang(n, 'source', currentLang === 'zh' ? '官网' : 'Official Site'),
                             url: n.url,
                             header_image: czrIcon
                         });
@@ -2683,9 +2695,11 @@
             // 从Steam取发售信息
             Object.entries(steamData).forEach(([name, data]) => {
                 if (data.store) {
+                    const storeName = pickLang(data.store, 'name', name);
+                    const releaseDate = pickLang(data.store, 'release_date', '');
                     newsItems.push({
-                        tag: name,
-                        title: `${name} - ${data.store.release_date}发售`,
+                        tag: storeName,
+                        title: currentLang === 'zh' ? `${storeName} - ${releaseDate}发售` : `${storeName} launched on ${releaseDate}`,
                         source: 'Steam',
                         url: data.store.store_url || `https://store.steampowered.com/search/?term=${encodeURIComponent(name)}`,
                         header_image: data.store.header_image || null
@@ -2826,7 +2840,7 @@
                 }
                 const totalEl = document.getElementById('tb-total-ratings');
                 if (totalEl && tb.total_ratings) {
-                    totalEl.textContent = tb.total_ratings.toLocaleString() + '条评价';
+                    totalEl.textContent = tb.total_ratings.toLocaleString() + (currentLang === 'zh' ? '条评价' : ' reviews');
                 }
                 // 版本
                 const verEl = document.getElementById('tb-version');
@@ -2842,7 +2856,7 @@
                 const liveRegions = Object.entries(tb.regions_data).filter(([k,v]) => v.rating !== null);
                 const regionsEl = document.getElementById('tb-regions-val');
                 if (regionsEl && liveRegions.length > 0) {
-                    regionsEl.textContent = liveRegions.map(([k,v]) => v.name).join(' / ');
+                    regionsEl.textContent = liveRegions.map(([k,v]) => pickLang(v, 'name', v.name || '')).join(' / ');
                 }
                 // 各区评分网格
                 const gridEl = document.getElementById('tb-regions-grid');
@@ -2851,9 +2865,9 @@
                     for (const [code, rd] of Object.entries(tb.regions_data)) {
                         const color = rd.rating >= 4 ? 'text-green-600' : rd.rating >= 3 ? 'text-yellow-600' : rd.rating ? 'text-red-600' : 'text-gray-600';
                         const ratingText = rd.rating ? rd.rating.toFixed(1) : '--';
-                        const countText = rd.rating_count ? rd.rating_count.toLocaleString() + '评' : '未上架';
+                        const countText = rd.rating_count ? rd.rating_count.toLocaleString() + (currentLang === 'zh' ? '评' : ' reviews') : (currentLang === 'zh' ? '未上架' : 'Not live');
                         gridEl.innerHTML += `<div class="bg-gray-50 rounded-lg p-2 text-center">
-                            <div class="text-xs text-gray-500">${rd.name}</div>
+                            <div class="text-xs text-gray-500">${pickLang(rd, 'name', rd.name || '')}</div>
                             <div class="text-sm font-bold ${color}">${ratingText}</div>
                             <div class="text-[10px] text-gray-600">${countText}</div>
                         </div>`;
@@ -2868,7 +2882,7 @@
                     rankGridEl.innerHTML = '';
                     // 表头
                     rankGridEl.innerHTML += `<div class="grid grid-cols-5 gap-1 text-[10px] text-gray-500 mb-1">
-                        <div>地区</div><div>免费总榜</div><div>免费游戏榜</div><div>畅销总榜</div><div>畅销游戏榜</div>
+                        <div>${currentLang === 'zh' ? '地区' : 'Region'}</div><div>${currentLang === 'zh' ? '免费总榜' : 'Free Overall'}</div><div>${currentLang === 'zh' ? '免费游戏榜' : 'Free Games'}</div><div>${currentLang === 'zh' ? '畅销总榜' : 'Grossing Overall'}</div><div>${currentLang === 'zh' ? '畅销游戏榜' : 'Grossing Games'}</div>
                     </div>`;
                     // 每行一个地区
                     for (const [code, rk] of Object.entries(rankings)) {
@@ -2882,7 +2896,7 @@
                         };
                         const rankText = (v) => v ? '#' + v : '200+';
                         rankGridEl.innerHTML += `<div class="grid grid-cols-5 gap-1 text-xs">
-                            <div class="text-slate-700 font-medium">${rk.name}</div>
+                            <div class="text-slate-700 font-medium">${pickLang(rk, 'name', rk.name || '')}</div>
                             <div class="${rankColor(rk.free_overall)}">${rankText(rk.free_overall)}</div>
                             <div class="${rankColor(rk.free_games)}">${rankText(rk.free_games)}</div>
                             <div class="${rankColor(rk.grossing_overall)}">${rankText(rk.grossing_overall)}</div>
@@ -2898,28 +2912,31 @@
                     if (rankNoteEl) {
                         const parts = [];
                         for (const [code, rk] of Object.entries(rankings)) {
+                            const regionName = pickLang(rk, 'name', rk.name || '');
                             const highlights = [];
-                            if (rk.free_games && rk.free_games <= 50) highlights.push('免费游戏榜#' + rk.free_games);
-                            if (rk.grossing_games && rk.grossing_games <= 50) highlights.push('畅销游戏榜#' + rk.grossing_games);
-                            if (rk.free_overall && rk.free_overall <= 100) highlights.push('免费总榜#' + rk.free_overall);
-                            if (rk.grossing_overall && rk.grossing_overall <= 100) highlights.push('畅销总榜#' + rk.grossing_overall);
+                            if (rk.free_games && rk.free_games <= 50) highlights.push((currentLang === 'zh' ? '免费游戏榜#' : 'Free Games #') + rk.free_games);
+                            if (rk.grossing_games && rk.grossing_games <= 50) highlights.push((currentLang === 'zh' ? '畅销游戏榜#' : 'Grossing Games #') + rk.grossing_games);
+                            if (rk.free_overall && rk.free_overall <= 100) highlights.push((currentLang === 'zh' ? '免费总榜#' : 'Free Overall #') + rk.free_overall);
+                            if (rk.grossing_overall && rk.grossing_overall <= 100) highlights.push((currentLang === 'zh' ? '畅销总榜#' : 'Grossing Overall #') + rk.grossing_overall);
                             if (highlights.length > 0) {
-                                parts.push(`<span class="text-green-400">✅ ${rk.name}</span>：${highlights.join('、')}`);
+                                parts.push(`<span class="text-green-400">✅ ${regionName}</span>${currentLang === 'zh' ? '：' : ': '}${highlights.join(currentLang === 'zh' ? '、' : ', ')}`);
                             } else if (rk.free_games || rk.grossing_games) {
-                                parts.push(`<span class="text-yellow-400">🔄 ${rk.name}</span>：排名200+，增长空间大`);
+                                parts.push(`<span class="text-yellow-400">🔄 ${regionName}</span>${currentLang === 'zh' ? '：排名200+，增长空间大' : ': Around 200+, still has room to grow'}`);
                             } else {
-                                parts.push(`<span class="text-gray-500">⏳ ${rk.name}</span>：未进入Top200`);
+                                parts.push(`<span class="text-gray-500">⏳ ${regionName}</span>${currentLang === 'zh' ? '：未进入Top200' : ': Not in Top 200 yet'}`);
                             }
                         }
-                        // 额外洞察：结合评分
                         const jpRating = tb.regions_data.jp ? tb.regions_data.jp.rating : 0;
-                        const usRating = tb.regions_data.us ? tb.regions_data.us.rating : 0;
                         const krRating = tb.regions_data.kr ? tb.regions_data.kr.rating : 0;
                         if (jpRating >= 4 && rankings.jp && rankings.jp.free_games && rankings.jp.free_games <= 50) {
-                            parts.push('<span class="text-cyan-700">🎯</span> 日本市场表现强劲：高评分+排名靠前，建议加大本地化投入');
+                            parts.push(currentLang === 'zh'
+                                ? '<span class="text-cyan-700">🎯</span> 日本市场表现强劲：高评分 + 排名靠前，建议继续加大本地化投入'
+                                : '<span class="text-cyan-700">🎯</span> Japan is performing well: strong rating plus a solid chart position supports more localization investment');
                         }
                         if (krRating < 4 && krRating > 0) {
-                            parts.push('<span class="text-red-600">⚠️ 韩国</span>：评分偏低(' + krRating.toFixed(1) + ')，需关注韩语社区反馈');
+                            parts.push(currentLang === 'zh'
+                                ? '<span class="text-red-600">⚠️ 韩国</span>：评分偏低(' + krRating.toFixed(1) + ')，需关注韩语社区反馈'
+                                : '<span class="text-red-600">⚠️ South Korea</span>: rating is soft (' + krRating.toFixed(1) + '), so Korean community feedback should be watched closely');
                         }
                         rankNoteEl.innerHTML = parts.join('<br>');
                     }
@@ -2929,13 +2946,13 @@
                         const jpCount = tb.regions_data.jp ? tb.regions_data.jp.rating_count : 0;
                         const usCount = tb.regions_data.us ? tb.regions_data.us.rating_count : 0;
                         const parts = [];
-                        if (jpCount > 500) parts.push('<span class="text-green-700">✅ 日本</span>：评价数破千，市场接受度高');
-                        else if (jpCount > 0) parts.push('<span class="text-amber-600">🔄 日本</span>：评价增长中');
-                        if (usCount > 100) parts.push('<span class="text-green-700">✅ 美国</span>：免费榜上线，评价持续增长');
-                        else if (usCount > 0) parts.push('<span class="text-amber-600">🔄 美国</span>：上线初期，数据采集中');
+                        if (jpCount > 500) parts.push(currentLang === 'zh' ? '<span class="text-green-700">✅ 日本</span>：评价数破千，市场接受度高' : '<span class="text-green-700">✅ Japan</span>: review count is scaling well and market fit looks healthy');
+                        else if (jpCount > 0) parts.push(currentLang === 'zh' ? '<span class="text-amber-600">🔄 日本</span>：评价增长中' : '<span class="text-amber-600">🔄 Japan</span>: reviews are still building');
+                        if (usCount > 100) parts.push(currentLang === 'zh' ? '<span class="text-green-700">✅ 美国</span>：免费榜上线，评价持续增长' : '<span class="text-green-700">✅ US</span>: live in the free charts with reviews still growing');
+                        else if (usCount > 0) parts.push(currentLang === 'zh' ? '<span class="text-amber-600">🔄 美国</span>：上线初期，数据采集中' : '<span class="text-amber-600">🔄 US</span>: still in early-launch data collection');
                         const krData = tb.regions_data.kr;
-                        if (krData && krData.rating && krData.rating < 4) parts.push('<span class="text-red-600">⚠️ 韩国</span>：评分偏低(' + krData.rating.toFixed(1) + ')，需关注用户反馈');
-                        if (!parts.length) parts.push('<span class="text-amber-600">🔄</span> 数据采集中...');
+                        if (krData && krData.rating && krData.rating < 4) parts.push(currentLang === 'zh' ? '<span class="text-red-600">⚠️ 韩国</span>：评分偏低(' + krData.rating.toFixed(1) + ')，需关注用户反馈' : '<span class="text-red-600">⚠️ South Korea</span>: rating is soft (' + krData.rating.toFixed(1) + '), watch player feedback closely');
+                        if (!parts.length) parts.push(currentLang === 'zh' ? '<span class="text-amber-600">🔄</span> 数据采集中...' : '<span class="text-amber-600">🔄</span> Collecting more data...');
                         rankNoteEl.innerHTML = parts.join('<br>');
                     }
                 }
@@ -2960,7 +2977,7 @@
                     return `<div class="py-1 border-b border-gray-200 last:border-0 flex items-start gap-2">
                         <span class="w-1.5 h-1.5 ${cc.dot} rounded-full mt-1.5 shrink-0"></span>
                         <div class="min-w-0 flex-1">
-                            <a href="${n.url}" target="_blank" class="text-slate-700 hover:text-accent-light hover:underline text-sm">${n.title}</a>
+                            <a href="${n.url}" target="_blank" class="text-slate-700 hover:text-accent-light hover:underline text-sm">${pickLang(n, 'title', '')}</a>
                             <span class="text-[10px] ${cc.text} ${cc.bg} px-1.5 py-0.5 rounded ml-2">${catLabel}</span>
                         </div>
                     </div>`;
@@ -2980,10 +2997,11 @@
                 forumEl.innerHTML = taptapForum.map(p => {
                     const sc = p.sentiment === 'negative' ? 'text-red-600' : p.sentiment === 'positive' ? 'text-green-600' : 'text-gray-600';
                     const sl = p.sentiment === 'negative' ? '☹' : p.sentiment === 'positive' ? '☺' : '·';
+                    const title = pickLang(p, 'title', '');
                     return `<div class="py-1 border-b border-gray-200 last:border-0 flex items-start gap-2">
                         <span class="text-xs ${sc} mt-0.5 shrink-0 w-3 text-center">${sl}</span>
                         <div class="min-w-0 flex-1">
-                            ${p.url ? `<a href="${p.url}" target="_blank" class="text-slate-700 hover:text-accent-light hover:underline text-sm leading-snug line-clamp-2">${p.title}</a>` : `<span class="text-slate-700 text-sm">${p.title}</span>`}
+                            ${p.url ? `<a href="${p.url}" target="_blank" class="text-slate-700 hover:text-accent-light hover:underline text-sm leading-snug line-clamp-2">${title}</a>` : `<span class="text-slate-700 text-sm">${title}</span>`}
                         </div>
                     </div>`;
                 }).join('');
@@ -3006,11 +3024,11 @@
                         <div class="flex gap-2">
                             ${v.pic ? `<img src="${v.pic}" alt="" class="w-24 h-14 object-cover rounded shrink-0 bg-gray-100" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">` : ''}
                             <div class="min-w-0 flex-1">
-                                <div class="text-slate-700 group-hover:text-accent text-xs leading-snug line-clamp-2 transition-colors">${v.title}</div>
+                                <div class="text-slate-700 group-hover:text-accent text-xs leading-snug line-clamp-2 transition-colors">${pickLang(v, 'title', '')}</div>
                                 <div class="flex items-center gap-2 mt-1 text-[10px] text-gray-500">
                                     <span>▶ ${formatNum(v.play)}</span>
                                     <span>👍 ${formatNum(v.like)}</span>
-                                    <span>${v.author}</span>
+                                    <span>${pickLang(v, 'author', v.author || '')}</span>
                                 </div>
                                 <div class="text-[10px] text-gray-600">${v.pubdate || ''} ${v.duration || ''}</div>
                             </div>
@@ -3053,8 +3071,10 @@
 
             // 副标题
             if (repo.store) {
+                const repoGenres = pickLangList(repo.store, 'genres').join(', ');
+                const repoPrice = pickLang(repo.store, 'price', '--');
                 document.getElementById('repo-hero-subtitle').textContent =
-                    `${repo.store.developers.join(', ')} · ${repo.store.genres.join(', ')} · ${repo.store.price}`;
+                    `${repo.store.developers.join(', ')} · ${repoGenres} · ${repoPrice}`;
             }
 
             // 好评率
@@ -3079,13 +3099,13 @@
             if (repo.store) {
                 const s = repo.store;
                 infoEl.innerHTML = `
-                    <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.name_label[currentLang]}</span><span style="color:var(--text-primary);">${s.name}</span></div>
+                    <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.name_label[currentLang]}</span><span style="color:var(--text-primary);">${pickLang(s, 'name', '')}</span></div>
                     <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.developer[currentLang]}</span><span style="color:var(--text-secondary);">${s.developers.join(', ')}</span></div>
                     <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.publisher[currentLang]}</span><span style="color:var(--text-secondary);">${s.publishers.join(', ')}</span></div>
-                    <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.price[currentLang]}</span><span style="color:var(--text-secondary);">${s.price}</span></div>
-                    <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.release_date[currentLang]}</span><span style="color:var(--text-secondary);">${s.release_date}</span></div>
-                    <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.genre[currentLang]}</span><span style="color:var(--text-secondary);">${s.genres.join(', ')}</span></div>
-                    <div class="mt-2 text-xs" style="color:var(--text-muted);">${s.short_description}</div>
+                    <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.price[currentLang]}</span><span style="color:var(--text-secondary);">${pickLang(s, 'price', '--')}</span></div>
+                    <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.release_date[currentLang]}</span><span style="color:var(--text-secondary);">${pickLang(s, 'release_date', '--')}</span></div>
+                    <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.genre[currentLang]}</span><span style="color:var(--text-secondary);">${pickLangList(s, 'genres').join(', ')}</span></div>
+                    <div class="mt-2 text-xs" style="color:var(--text-muted);">${pickLang(s, 'short_description', '')}</div>
                 `;
             }
 
@@ -3377,116 +3397,230 @@
             }
         };
 
+        const competitorNameEnMap = {
+            '永劫无间': 'NARAKA: BLADEPOINT',
+            '灰境行者': 'Ashen Walker'
+        };
+
+        const competitorCategoryEnMap = {
+            '恐怖撤离': 'Horror Extraction',
+            '捉鬼调查': 'Ghost Investigation',
+            'PvPvE猎杀': 'PvPvE Hunting',
+            '搜打撤/摸金': 'Extraction Looter'
+        };
+
+        const competitorPlayersEnMap = {
+            '1~6人': '1-6 players',
+            '1~4人': '1-4 players',
+            '2~4人': '2-4 players',
+            '1~3人': '1-3 players',
+            '1~60人': '1-60 players',
+            '3人小队': '3-player squad',
+            '4人': '4 players',
+            '1vN': '1vN',
+            '1v4': '1v4'
+        };
+
+        const competitorDevEnMap = {
+            '24 Entertainment（网易）': '24 Entertainment (NetEase)',
+            '腾讯北极光': 'Tencent Polaris'
+        };
+
+        const competitorIntroEnMap = {
+            'Peak': 'A co-op climbing game that turns altitude into tension. Aggro Crab and Landfall built a breakout indie hit with more than 2 million copies sold on a sub-$200k budget.',
+            'Demonologist': 'A UE5 ghost-investigation co-op horror with stronger visuals than most peers. It leans into exorcism rituals, but its content cadence is slower than genre leaders.',
+            'The Outlast Trials': 'A four-player psychological horror co-op where players can only hide, run, and survive. The Cold War lab setting keeps the tone oppressive and distinct.',
+            'Hunt: Showdown 1896': 'A hardcore PvPvE bounty hunt where teams kill monsters, secure the boss bounty, and extract while fighting rival squads in the same match.',
+            '灰境行者': 'A UE5 PvEvP treasure-hunt FPS built around three-player squads, monster pressure, and PvP extraction fights. It sits close to Hunt, but with a stronger Chinese-style aesthetic.',
+            'Haunted': 'An asymmetrical co-op horror puzzler where an overseer manipulates a dollhouse from outside while up to three explorers survive inside the manor.',
+            'The Reflection': 'A ritual-exorcism co-op horror about investigating cursed houses and completing the correct rite before supernatural activity escalates.',
+            'Radio Decay': 'A post-nuclear co-op survival horror where squads extract radioactive relics from ruined cities while avoiding insectoid monsters and building robot companions.',
+            'In Us': 'A co-op horror deduction game about identifying demonic possession with tools, chants, traps, and hound partners. Wrong accusations can trigger retaliation.',
+            'Carnival Hunt': 'An asymmetrical horror strategy game where a carnival monster hunts wind-up rabbit dolls that must keep each other alive without exposing themselves.',
+            'Halloween: The Game': 'A 1v4 UE5 sandbox adaptation of the Halloween IP. Michael Myers hunts while survivors coordinate NPCs, police pressure, and story-driven scenarios.'
+        };
+
+        function getCompetitorName(name, info = {}, store = {}) {
+            if (currentLang === 'zh') {
+                return info.cnName ? `${name}（${info.cnName}）` : name;
+            }
+            return pickLang(store, 'name', competitorNameEnMap[name] || name);
+        }
+
+        function getCompetitorShortName(name, info = {}, store = {}) {
+            if (currentLang === 'zh') {
+                return info.cnName || name;
+            }
+            return pickLang(store, 'name', competitorNameEnMap[name] || name);
+        }
+
+        function getCompetitorCategory(info = {}) {
+            return currentLang === 'zh' ? info.category : (competitorCategoryEnMap[info.category] || info.category || '--');
+        }
+
+        function getCompetitorPlayers(info = {}) {
+            return currentLang === 'zh' ? (info.players || '--') : (competitorPlayersEnMap[info.players] || info.players || '--');
+        }
+
+        function getCompetitorRelease(info = {}, store = {}) {
+            if (currentLang === 'zh') {
+                return info.release || '--';
+            }
+            return pickLang(store, 'release_date', info.release === '未公布' ? 'TBA' : (info.release || '--'));
+        }
+
+        function getCompetitorDev(info = {}) {
+            return currentLang === 'zh' ? (info.dev || '--') : (competitorDevEnMap[info.dev] || info.dev || '--');
+        }
+
+        function getCompetitorPrice(info = {}, store = {}) {
+            const fallback = !info.price
+                ? '--'
+                : (currentLang === 'en'
+                    ? (info.price === '未公布' ? 'TBA' : (info.price === '免费' ? 'Free To Play' : info.price))
+                    : info.price);
+            return pickLang(store, 'price', fallback);
+        }
+
+        function getCompetitorIntro(name, info = {}, store = {}) {
+            if (currentLang === 'zh') {
+                return info.intro || '';
+            }
+            const officialIntro = pickLang(store, 'short_description', '');
+            if (officialIntro && officialIntro !== '--') {
+                return officialIntro;
+            }
+            return competitorIntroEnMap[name] || info.intro || '';
+        }
+
+        function getCompetitorStatusLabel(info = {}) {
+            if (info.status === 'EA') return 'EA';
+            if (info.status === 'WISHLIST') return currentLang === 'zh' ? 'WISHLIST' : 'Wishlist';
+            return currentLang === 'zh' ? i18nDict.released[currentLang] : 'Released';
+        }
+
         // ========== AI 竞品日报 ==========
         function renderAIDailyReport() {
             const container = document.getElementById('ai-daily-report');
             if (!container) return;
 
             const today = new Date();
-            const dateStr = `${today.getFullYear()}.${String(today.getMonth()+1).padStart(2,'0')}.${String(today.getDate()).padStart(2,'0')}`;
+            const dateStr = `${today.getFullYear()}.${String(today.getMonth() + 1).padStart(2, '0')}.${String(today.getDate()).padStart(2, '0')}`;
+            const joinNames = (items) => items.map(g => g.nameLabel).join(currentLang === 'zh' ? '、' : ', ');
 
-            // 收集所有竞品数据
             const allGames = [];
             Object.entries(competitorInfo).forEach(([name, info]) => {
                 const steam = info.steamKey ? steamData[info.steamKey] : null;
                 const store = steam ? (steam.store || {}) : {};
                 const spy = steam ? (steam.steamspy || {}) : {};
                 const reviews = steam ? (steam.reviews || {}) : {};
-                const rate = reviews.positive_rate || info.rate || 0;
-                const ccu = spy.ccu || null;
-                const price = store.price || info.price || '--';
-                allGames.push({ name, info, rate, ccu, price, category: info.category, status: info.status });
+                allGames.push({
+                    key: name,
+                    nameLabel: getCompetitorShortName(name, info, store),
+                    rate: reviews.positive_rate || info.rate || 0,
+                    ccu: spy.ccu || null,
+                    price: getCompetitorPrice(info, store),
+                    rawPrice: store.price || info.price || '--',
+                    categoryKey: info.category,
+                    statusKey: info.status
+                });
             });
 
-            // 赛道分析
             const tracks = {};
-            allGames.forEach(g => {
-                if (!tracks[g.category]) tracks[g.category] = [];
-                tracks[g.category].push(g);
+            allGames.forEach(game => {
+                if (!tracks[game.categoryKey]) tracks[game.categoryKey] = [];
+                tracks[game.categoryKey].push(game);
             });
 
-            // 生成洞察
             const insights = [];
-
-            // 1. 品类热度
             const steamGames = allGames.filter(g => g.ccu);
-            const totalCCU = steamGames.reduce((s, g) => s + (g.ccu || 0), 0);
+            const totalCCU = steamGames.reduce((sum, game) => sum + (game.ccu || 0), 0);
             if (totalCCU > 0) {
                 insights.push({
                     icon: '📊',
-                    title: '品类热度',
-                    content: `恐怖撤离品类Steam端合计在线 <span class="text-slate-900 font-semibold">${totalCCU.toLocaleString()}</span>，${steamGames.length}款产品同台竞争。`
+                    title: currentLang === 'zh' ? '品类热度' : 'Category Heat',
+                    content: currentLang === 'zh'
+                        ? `当前追踪的恐怖多人竞品在 Steam 端合计在线 <span class="text-slate-900 font-semibold">${totalCCU.toLocaleString()}</span>，共有 ${steamGames.length} 款产品在同场竞争。`
+                        : `Tracked horror multiplayer competitors combine for <span class="text-slate-900 font-semibold">${totalCCU.toLocaleString()}</span> concurrent Steam players across ${steamGames.length} active titles.`
                 });
             }
 
-            // 2. 头部产品
-            const topGame = steamGames.sort((a, b) => (b.ccu || 0) - (a.ccu || 0))[0];
+            const topGame = [...steamGames].sort((a, b) => (b.ccu || 0) - (a.ccu || 0))[0];
             if (topGame) {
                 insights.push({
                     icon: '👑',
-                    title: '头部产品',
-                    content: `<span class="text-slate-900 font-semibold">${topGame.name}</span> 以 ${topGame.ccu.toLocaleString()} 在线人数领跑，${topGame.rate ? `好评率${topGame.rate}%` : '数据采集中'}。`
+                    title: currentLang === 'zh' ? '头部产品' : 'Leader Board',
+                    content: currentLang === 'zh'
+                        ? `<span class="text-slate-900 font-semibold">${topGame.nameLabel}</span> 以 ${topGame.ccu.toLocaleString()} 在线人数领跑，${topGame.rate ? `好评率${topGame.rate}%` : '评分数据采集中'}。`
+                        : `<span class="text-slate-900 font-semibold">${topGame.nameLabel}</span> leads the pack with ${topGame.ccu.toLocaleString()} concurrent players, ${topGame.rate ? `while holding a ${topGame.rate}% review score.` : 'while review data is still being collected.'}`
                 });
             }
 
-            // 3. 评分梯队
             const highRate = allGames.filter(g => g.rate >= 85);
             const midRate = allGames.filter(g => g.rate >= 60 && g.rate < 85);
-            const lowRate = allGames.filter(g => g.rate > 0 && g.rate < 60);
-            if (highRate.length > 0) {
+            if (highRate.length > 0 || midRate.length > 0) {
                 insights.push({
                     icon: '⭐',
-                    title: '评分梯队',
-                    content: `好评如潮(≥85%)：<span class="text-emerald-700">${highRate.map(g=>g.name).join('、')}</span>${midRate.length > 0 ? `；褒贬不一(60-85%)：<span class="text-amber-700">${midRate.map(g=>g.name).join('、')}</span>` : ''}`
+                    title: currentLang === 'zh' ? '评分梯队' : 'Review Tiers',
+                    content: currentLang === 'zh'
+                        ? `${highRate.length ? `高口碑(≥85%)：<span class="text-emerald-700">${joinNames(highRate)}</span>` : ''}${midRate.length ? `${highRate.length ? '；' : ''}中位梯队(60-84%)：<span class="text-amber-700">${joinNames(midRate)}</span>` : ''}`
+                        : `${highRate.length ? `Top tier (85%+): <span class="text-emerald-700">${joinNames(highRate)}</span>` : ''}${midRate.length ? `${highRate.length ? '; ' : ''}Middle tier (60-84%): <span class="text-amber-700">${joinNames(midRate)}</span>` : ''}`
                 });
             }
 
-            // 4. 赛道密度
-            const trackEntries = Object.entries(tracks).sort((a,b) => b[1].length - a[1].length);
+            const trackEntries = Object.entries(tracks).sort((a, b) => b[1].length - a[1].length);
             if (trackEntries.length > 0) {
-                const densest = trackEntries[0];
+                const [densestKey, densestGames] = trackEntries[0];
+                const densestLabel = currentLang === 'zh' ? densestKey : (competitorCategoryEnMap[densestKey] || densestKey);
                 insights.push({
                     icon: '🎯',
-                    title: '赛道密度',
-                    content: `恐怖撤离赛道竞争最密集（${densest[1].length}款），搜打撤/摸金赛道永劫无间DAU百万级是超自然行动组直接对手，捉鬼调查和PvPvE猎杀各占细分市场。`
+                    title: currentLang === 'zh' ? '赛道密度' : 'Crowded Lane',
+                    content: currentLang === 'zh'
+                        ? `${densestLabel}赛道当前最拥挤，共有 ${densestGames.length} 款产品；捉鬼调查、PvPvE 猎杀与搜打撤/摸金仍在持续分流用户注意力。`
+                        : `${densestLabel} is the most crowded lane right now with ${densestGames.length} tracked products, while Ghost Investigation, PvPvE Hunting, and Extraction Looter continue splitting user attention.`
                 });
             }
 
-            // 5. 新品/EA关注
-            const eaGames = allGames.filter(g => g.status === 'EA');
-            const wishlistGames = allGames.filter(g => g.status === 'WISHLIST');
+            const eaGames = allGames.filter(g => g.statusKey === 'EA');
+            const wishlistGames = allGames.filter(g => g.statusKey === 'WISHLIST');
             if (eaGames.length > 0 || wishlistGames.length > 0) {
                 insights.push({
                     icon: '🚀',
-                    title: '新品/EA',
-                    content: `EA阶段${eaGames.length}款（${eaGames.map(g=>g.name).join('、')}），Wishlist${wishlistGames.length}款（${wishlistGames.map(g=>g.name).join('、')}），灰境行者与猎杀:对决同赛道是潜在变量。`
+                    title: currentLang === 'zh' ? '新品 / EA' : 'Newcomers / EA',
+                    content: currentLang === 'zh'
+                        ? `当前有 ${eaGames.length} 款 EA 产品（${eaGames.length ? joinNames(eaGames) : '—'}），${wishlistGames.length} 款 Wishlist 项目（${wishlistGames.length ? joinNames(wishlistGames) : '—'}），新品窗口仍在持续打开。`
+                        : `The board currently tracks ${eaGames.length} EA titles (${eaGames.length ? joinNames(eaGames) : '—'}) and ${wishlistGames.length} wishlist projects (${wishlistGames.length ? joinNames(wishlistGames) : '—'}), so the new-release window is still active.`
                 });
             }
 
-            // 6. 价格带
-            const priceNums = allGames.filter(g => g.price && g.price !== '--' && g.price !== '未公布').map(g => {
-                const m = g.price.match(/[\d.]+/);
-                return m ? parseFloat(m[0]) : 0;
-            });
+            const priceNums = allGames
+                .filter(g => g.rawPrice && !['--', '未公布', 'TBA', '免费', 'Free To Play'].includes(g.rawPrice))
+                .map(g => {
+                    const match = String(g.rawPrice).match(/[\d.]+/);
+                    return match ? parseFloat(match[0]) : 0;
+                })
+                .filter(Boolean);
             if (priceNums.length > 0) {
-                const avg = (priceNums.reduce((s,p)=>s+p,0) / priceNums.length).toFixed(0);
+                const avg = (priceNums.reduce((sum, price) => sum + price, 0) / priceNums.length).toFixed(0);
                 const low = Math.min(...priceNums);
                 const high = Math.max(...priceNums);
                 insights.push({
                     icon: '💰',
-                    title: '价格带',
-                    content: `Steam竞品价格区间 ¥${low} ~ ¥${high}，均值约 ¥${avg}。低价区（≤¥50）产品密度最高。`
+                    title: currentLang === 'zh' ? '价格带' : 'Price Band',
+                    content: currentLang === 'zh'
+                        ? `Steam 竞品价格区间约为 ¥${low} ~ ¥${high}，均值约 ¥${avg}，中低价位仍是主流竞争带。`
+                        : `Steam competitor pricing spans roughly ¥${low} to ¥${high}, with an average near ¥${avg}, keeping the market centered around a mid-to-low price band.`
                 });
             }
 
-            // 7. 战略建议
             insights.push({
                 icon: '🧠',
-                title: '战略建议',
-                content: '超自然行动组在国内DAU千万级，但永劫无间摸金模式以武侠格斗差异化切入"搜打撤"赛道，Steam端同类已红海化。海外版Tomb Busters走免费+移动端差异化路线避开Steam正面竞争，灰境行者是PvPvE猎杀赛道手游化的关键变量。'
+                title: currentLang === 'zh' ? '战略建议' : 'Strategic Take',
+                content: currentLang === 'zh'
+                    ? 'Steam 端恐怖多人赛道已经形成分层竞争：高在线产品负责吸量，EA 与 Wishlist 项目不断补充新品预期。超自然如要继续拉开差距，需要同时观察搜打撤强敌、捉鬼调查头部和 PvPvE 猎杀新品。'
+                    : 'The Steam horror multiplayer lane is now clearly layered: top-live products capture demand while EA and wishlist projects keep replenishing the launch pipeline. Chaoziran should watch extraction leaders, ghost-investigation heads, and incoming PvPvE projects in parallel.'
             });
 
-            // 渲染
             container.innerHTML = `
                 <div class="glass-card overflow-hidden" style="border-left:3px solid var(--accent);">
                     <div class="px-4 py-3 border-b flex items-center justify-between" style="border-color:var(--divider);">
@@ -3519,7 +3653,6 @@
             const container = document.getElementById('competitor-ranking');
             if (!container) return;
 
-            // 只收集PC/Steam竞品（排除纯手游）
             const allGames = [];
             Object.entries(competitorInfo).forEach(([name, info]) => {
                 if (name === '永劫无间') return;
@@ -3529,29 +3662,35 @@
                 const spy = steam ? (steam.steamspy || {}) : {};
                 const reviews = steam ? (steam.reviews || {}) : {};
                 allGames.push({
-                    name: name,
-                    cnName: info.cnName || '',
-                    category: info.category,
-                    status: info.status,
-                    dev: info.dev,
-                    release: info.release,
-                    players: info.players,
-                    intro: info.intro || '',
+                    key: name,
+                    categoryKey: info.category,
+                    statusKey: info.status,
+                    rawRelease: info.release,
+                    displayName: getCompetitorName(name, info, store),
+                    devLabel: getCompetitorDev(info),
+                    releaseLabel: getCompetitorRelease(info, store),
+                    playersLabel: getCompetitorPlayers(info),
+                    introLabel: getCompetitorIntro(name, info, store),
                     ccu: spy.ccu || null,
                     rate: reviews.positive_rate || info.rate || null,
-                    reviews_total: reviews.total_reviews || info.reviews_total || null,
-                    price: store.price || info.price || '--',
+                    priceLabel: getCompetitorPrice(info, store),
                     isWishlist: info.isWishlist || false,
                     storeUrl: info.storeUrl || '#'
                 });
             });
 
-            // 分组：未发售优先 → 已发售按时间降序
-            const parseDate = s => { if (!s || s === '未公布') return 0; const d = new Date(s); return isNaN(d) ? 0 : d.getTime(); };
-            const upcoming = allGames.filter(g => g.isWishlist || !g.release || g.release === '未公布');
-            const released = allGames.filter(g => !g.isWishlist && g.release && g.release !== '未公布').sort((a, b) => parseDate(b.release) - parseDate(a.release));
+            const parseDate = (value) => {
+                if (!value || value === '未公布') return 0;
+                const parsed = new Date(value);
+                return Number.isNaN(parsed.getTime()) ? 0 : parsed.getTime();
+            };
+            const upcoming = allGames.filter(g => g.isWishlist || !g.rawRelease || g.rawRelease === '未公布');
+            const released = allGames
+                .filter(g => !g.isWishlist && g.rawRelease && g.rawRelease !== '未公布')
+                .sort((a, b) => parseDate(b.rawRelease) - parseDate(a.rawRelease));
 
-            const rankingGridStyle = 'grid-template-columns: 42px minmax(260px, 1fr) 110px 92px 88px 72px;';
+            const rankingGridStyle = 'grid-template-columns: 42px minmax(260px, 1fr) 110px 92px 88px 92px;';
+            const catColors = { '恐怖撤离': 'text-red-600', '捉鬼调查': 'text-violet-600', 'PvPvE猎杀': 'text-orange-600', '搜打撤/摸金': 'text-cyan-600' };
 
             let html = `
                 <div class="glass-card overflow-hidden">
@@ -3576,40 +3715,34 @@
             `;
 
             let rank = 0;
-
-            // ── 未发售/潜在竞品 ──
-            upcoming.forEach((g) => {
+            upcoming.forEach((game) => {
                 rank++;
-                const catColors = { '恐怖撤离': 'text-red-600', '捉鬼调查': 'text-violet-600', 'PvPvE猎杀': 'text-orange-600', '搜打撤/摸金': 'text-cyan-600' };
-                const catColor = catColors[g.category] || 'text-gray-400';
-                const displayName = g.cnName ? `${g.name}（${g.cnName}）` : g.name;
-
+                const catColor = catColors[game.categoryKey] || 'text-gray-400';
                 html += `
-                    <a href="${g.storeUrl}" target="_blank" rel="noopener" class="block px-4 py-3.5 hover:bg-gray-100 transition-colors group border-l-4 border-purple-500 bg-purple-500/5">
+                    <a href="${game.storeUrl}" target="_blank" rel="noopener" class="block px-4 py-3.5 hover:bg-gray-100 transition-colors group border-l-4 border-purple-500 bg-purple-500/5">
                         <div class="grid gap-3 items-center" style="${rankingGridStyle}">
                             <div class="text-center shrink-0"><span class="text-purple-400 font-bold text-sm">${rank}</span></div>
                             <div class="min-w-0">
                                 <div class="flex items-center gap-1.5 mb-0.5 min-w-0">
-                                    <span class="font-bold text-sm text-slate-900 truncate group-hover:text-accent transition-colors">${displayName}</span>
-                                    <span class="text-[10px] ${catColor} shrink-0">${g.category}</span>
+                                    <span class="font-bold text-sm text-slate-900 truncate group-hover:text-accent transition-colors">${game.displayName}</span>
+                                    <span class="text-[10px] ${catColor} shrink-0">${currentLang === 'zh' ? game.categoryKey : (competitorCategoryEnMap[game.categoryKey] || game.categoryKey)}</span>
                                 </div>
-                                <div class="flex items-center gap-2 text-[11px] min-w-0 text-gray-400">
-                                    <span class="truncate">${g.dev}</span>
-                                    <span class="text-gray-600 shrink-0">·</span>
-                                    <span class="shrink-0">${g.players}</span>
+                                <div class="flex items-center gap-2 text-[11px] min-w-0 text-gray-500">
+                                    <span class="truncate">${game.devLabel}</span>
+                                    <span class="text-gray-400 shrink-0">·</span>
+                                    <span class="shrink-0">${game.playersLabel}</span>
                                 </div>
-                                ${g.intro ? `<div class="mt-1 text-[10px] text-gray-500 line-clamp-1">${g.intro}</div>` : ''}
+                                ${game.introLabel ? `<div class="mt-1 text-[10px] text-gray-500 line-clamp-1">${game.introLabel}</div>` : ''}
                             </div>
-                            <div class="text-right text-[11px] text-purple-300 font-mono">${i18nDict.not_released[currentLang]}</div>
-                            <div class="text-right"><span class="inline-flex justify-center min-w-[72px] px-1.5 py-0.5 bg-purple-50 text-purple-400 border border-purple-200 rounded text-[10px] font-bold">WISHLIST</span></div>
+                            <div class="text-right text-[11px] text-purple-400 font-mono">${game.releaseLabel}</div>
+                            <div class="text-right"><span class="inline-flex justify-center min-w-[72px] px-1.5 py-0.5 bg-purple-50 text-purple-500 border border-purple-200 rounded text-[10px] font-bold">${currentLang === 'zh' ? 'WISHLIST' : 'Wishlist'}</span></div>
                             <div class="text-right"><span class="text-gray-700 text-[11px]">--</span></div>
-                            <div class="text-right text-[11px] text-gray-500 font-mono">${g.price}</div>
+                            <div class="text-right text-[11px] text-gray-500 font-mono">${game.priceLabel}</div>
                         </div>
                     </a>
                 `;
             });
 
-            // ── 分隔线 ──
             if (upcoming.length > 0 && released.length > 0) {
                 html += `
                     <div class="px-4 py-1.5 bg-gray-100 flex items-center gap-2">
@@ -3620,40 +3753,37 @@
                 `;
             }
 
-            // ── 已发售竞品（弱化展示） ──
-            released.forEach((g) => {
+            released.forEach((game) => {
                 rank++;
-                const catColors = { '恐怖撤离': 'text-red-600', '捉鬼调查': 'text-violet-600', 'PvPvE猎杀': 'text-orange-600', '搜打撤/摸金': 'text-cyan-600' };
-                const catColor = catColors[g.category] || 'text-gray-400';
-                const displayName = g.cnName ? `${g.name}（${g.cnName}）` : g.name;
-                const rateColor = !g.rate ? 'text-gray-700' : g.rate >= 85 ? 'text-emerald-500/70' : g.rate >= 60 ? 'text-amber-500/70' : 'text-red-500/70';
-                const rateBg = !g.rate ? '' : g.rate >= 85 ? 'bg-emerald-500/5 border-emerald-200' : g.rate >= 60 ? 'bg-amber-500/5 border-amber-500/10' : 'bg-red-500/5 border-red-500/10';
-                const statusBadge = g.status === 'EA'
+                const catColor = catColors[game.categoryKey] || 'text-gray-400';
+                const rateColor = !game.rate ? 'text-gray-700' : game.rate >= 85 ? 'text-emerald-500/70' : game.rate >= 60 ? 'text-amber-500/70' : 'text-red-500/70';
+                const rateBg = !game.rate ? '' : game.rate >= 85 ? 'bg-emerald-500/5 border-emerald-200' : game.rate >= 60 ? 'bg-amber-500/5 border-amber-500/10' : 'bg-red-500/5 border-red-500/10';
+                const statusBadge = game.statusKey === 'EA'
                     ? '<span class="inline-flex justify-center min-w-[72px] px-1.5 py-0.5 bg-amber-50 text-amber-700/70 border border-amber-200 rounded text-[10px] font-bold">EA</span>'
-                    : `<span class="inline-flex justify-center min-w-[72px] px-1.5 py-0.5 bg-sky-500/10 text-sky-400/70 border border-sky-200 rounded text-[10px] font-bold">${i18nDict.released[currentLang]}</span>`;
-                const rateDisplay = g.rate
-                    ? `<span class="inline-flex items-center justify-center min-w-[40px] px-1.5 py-px rounded text-[11px] font-bold ${rateBg} border ${rateColor}">${g.rate}%</span>`
+                    : `<span class="inline-flex justify-center min-w-[72px] px-1.5 py-0.5 bg-sky-500/10 text-sky-400/70 border border-sky-200 rounded text-[10px] font-bold">${getCompetitorStatusLabel({ status: game.statusKey })}</span>`;
+                const rateDisplay = game.rate
+                    ? `<span class="inline-flex items-center justify-center min-w-[40px] px-1.5 py-px rounded text-[11px] font-bold ${rateBg} border ${rateColor}">${game.rate}%</span>`
                     : '<span class="text-gray-700 text-[11px]">--</span>';
 
                 html += `
-                    <a href="${g.storeUrl}" target="_blank" rel="noopener" class="block px-4 py-2 hover:bg-gray-50 transition-colors group opacity-60">
+                    <a href="${game.storeUrl}" target="_blank" rel="noopener" class="block px-4 py-2 hover:bg-gray-50 transition-colors group opacity-60">
                         <div class="grid gap-3 items-center" style="${rankingGridStyle}">
                             <div class="text-center shrink-0"><span class="text-gray-600 font-mono text-xs">${rank}</span></div>
                             <div class="min-w-0">
                                 <div class="flex items-center gap-1.5 min-w-0">
-                                    <span class="font-medium text-[11px] text-slate-700 truncate group-hover:text-slate-800 transition-colors">${displayName}</span>
-                                    <span class="text-[9px] ${catColor} opacity-60 shrink-0">${g.category}</span>
+                                    <span class="font-medium text-[11px] text-slate-700 truncate group-hover:text-slate-800 transition-colors">${game.displayName}</span>
+                                    <span class="text-[9px] ${catColor} opacity-60 shrink-0">${currentLang === 'zh' ? game.categoryKey : (competitorCategoryEnMap[game.categoryKey] || game.categoryKey)}</span>
                                 </div>
                                 <div class="flex items-center gap-2 text-[10px] min-w-0 text-gray-600">
-                                    <span class="truncate">${g.dev}</span>
+                                    <span class="truncate">${game.devLabel}</span>
                                     <span class="text-gray-700 shrink-0">·</span>
-                                    <span class="shrink-0">${g.players}</span>
+                                    <span class="shrink-0">${game.playersLabel}</span>
                                 </div>
                             </div>
-                            <div class="text-right text-[10px] text-gray-500 font-mono">${g.release}</div>
+                            <div class="text-right text-[10px] text-gray-500 font-mono">${game.releaseLabel}</div>
                             <div class="text-right">${statusBadge}</div>
                             <div class="text-right">${rateDisplay}</div>
-                            <div class="text-right text-[10px] text-gray-600 font-mono">${g.price}</div>
+                            <div class="text-right text-[10px] text-gray-600 font-mono">${game.priceLabel}</div>
                         </div>
                     </a>
                 `;
@@ -3947,26 +4077,21 @@
             const landscape = document.getElementById('competitor-landscape');
             const tbody = document.getElementById('competitors-table');
 
-            // 渲染竞品排行
             renderCompetitorRanking();
-
-            // 渲染AI竞品日报
             renderAIDailyReport();
 
-            // 按赛道分组
             const categories = [
                 { key: '恐怖撤离', label: i18nDict.cat_extraction[currentLang], desc: i18nDict.cat_extraction_desc[currentLang] },
                 { key: '捉鬼调查', label: i18nDict.cat_ghost[currentLang], desc: i18nDict.cat_ghost_desc[currentLang] },
                 { key: 'PvPvE猎杀', label: i18nDict.cat_pvpve[currentLang], desc: i18nDict.cat_pvpve_desc[currentLang] },
             ];
-            const wishlistItems = Object.entries(competitorInfo).filter(([, v]) => v.isWishlist);
-            const releasedItems = Object.entries(competitorInfo).filter(([, v]) => !v.isWishlist);
+            const wishlistItems = Object.entries(competitorInfo).filter(([, value]) => value.isWishlist);
+            const releasedItems = Object.entries(competitorInfo).filter(([, value]) => !value.isWishlist);
 
             let html = '';
 
-            // 已上线竞品 - 按赛道渲染
             categories.forEach(cat => {
-                const items = releasedItems.filter(([, v]) => v.category === cat.key);
+                const items = releasedItems.filter(([, value]) => value.category === cat.key);
                 if (items.length === 0) return;
 
                 html += `
@@ -3985,48 +4110,45 @@
                     const reviews = steam ? (steam.reviews || {}) : {};
                     const rate = reviews.positive_rate || info.rate || 0;
                     const ccu = spy.ccu || null;
-                    const price = store.price || info.price || '--';
+                    const priceLabel = getCompetitorPrice(info, store);
                     const headerImg = store.header_image || info.headerImage || null;
-
+                    const displayName = getCompetitorName(name, info, store);
+                    const tooltipName = currentLang === 'zh' ? name : getCompetitorShortName(name, info, store);
+                    const tooltipCn = currentLang === 'zh' ? (info.cnName || '') : '';
+                    const devLabel = getCompetitorDev(info);
+                    const releaseLabel = getCompetitorRelease(info, store);
+                    const playersLabel = getCompetitorPlayers(info);
+                    const introLabel = getCompetitorIntro(name, info, store);
                     const statusBadge = info.status === 'EA'
                         ? '<span class="px-1.5 py-0.5 bg-amber-50 text-amber-700 border border-amber-200 rounded text-[10px] font-bold tracking-wide shrink-0 whitespace-nowrap">EA</span>'
-                        : `<span class="px-1.5 py-0.5 bg-sky-50 text-sky-400 border border-sky-500/25 rounded text-[10px] font-bold tracking-wide shrink-0 whitespace-nowrap">${i18nDict.released[currentLang]}</span>`;
-
+                        : `<span class="px-1.5 py-0.5 bg-sky-50 text-sky-400 border border-sky-500/25 rounded text-[10px] font-bold tracking-wide shrink-0 whitespace-nowrap">${getCompetitorStatusLabel(info)}</span>`;
                     const rateBadgeColor = rate >= 85 ? 'bg-emerald-50 text-emerald-700 border-emerald-200' : rate >= 60 ? 'bg-amber-50 text-amber-700 border-amber-200' : 'bg-red-50 text-red-400 border-red-200';
 
-                    const displayName = info.cnName ? `${name}（${info.cnName}）` : name;
-
                     html += `
-                        <a href="${info.storeUrl}" target="_blank" rel="noopener" class="comp-card group bg-white rounded-lg border border-gray-200 overflow-hidden cursor-pointer hover:border-gray-500/40 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:shadow-black/5 block no-underline" data-url="${info.storeUrl}" data-name="${name}" data-cn="${info.cnName||''}" data-dev="${info.dev}" data-release="${info.release}" data-players="${info.players}" data-rate="${rate}" data-ccu="${ccu||(info.ccu||'')}" data-price="${price}" data-intro="${info.intro.replace(/"/g,'&quot;')}" data-img="${headerImg||''}" data-status="${info.status}" data-store="${info.storeUrl}">
-                            <!-- 封面Banner -->
+                        <a href="${info.storeUrl}" target="_blank" rel="noopener" class="comp-card group bg-white rounded-lg border border-gray-200 overflow-hidden cursor-pointer hover:border-gray-500/40 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:shadow-black/5 block no-underline" data-url="${info.storeUrl}" data-name="${tooltipName.replace(/"/g, '&quot;')}" data-cn="${tooltipCn.replace(/"/g, '&quot;')}" data-dev="${devLabel.replace(/"/g, '&quot;')}" data-release="${releaseLabel.replace(/"/g, '&quot;')}" data-players="${playersLabel.replace(/"/g, '&quot;')}" data-rate="${rate}" data-ccu="${ccu || (info.ccu || '')}" data-price="${String(priceLabel).replace(/"/g, '&quot;')}" data-intro="${introLabel.replace(/"/g, '&quot;')}" data-img="${headerImg || ''}" data-status="${info.status}" data-store="${info.storeUrl}">
                             <div class="relative h-[48px] overflow-hidden">
                                 ${headerImg
-                                    ? `<img src="${headerImg}" alt="${name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" referrerpolicy="no-referrer">`
+                                    ? `<img src="${headerImg}" alt="${displayName}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" referrerpolicy="no-referrer">`
                                     : `<div class="w-full h-full bg-dark-700 flex items-center justify-center text-lg">🎮</div>`
                                 }
                                 <div class="absolute inset-0 bg-gradient-to-t from-white via-white/30 to-transparent"></div>
                             </div>
-                            <!-- 内容区 -->
                             <div class="px-2.5 pt-1.5 pb-2">
-                                <!-- 标题行 -->
                                 <div class="flex items-center justify-between mb-1">
                                     <div class="flex items-center gap-1.5 min-w-0">
                                         <span class="font-bold text-xs text-slate-900 truncate">${displayName}</span>
                                         ${statusBadge}
                                     </div>
-                                    <span class="text-[10px] text-gray-500 font-mono shrink-0">${price}</span>
+                                    <span class="text-[10px] text-gray-500 font-mono shrink-0">${priceLabel}</span>
                                 </div>
-                                <!-- 数据行 -->
                                 <div class="flex items-center gap-1.5 mb-1">
                                     ${rate ? `<span class="inline-flex items-center px-1 py-px rounded text-[10px] font-bold ${rateBadgeColor} border">${rate}%</span>` : ''}
                                     ${ccu ? `<span class="text-[11px] text-emerald-700">${ccu.toLocaleString()}${i18nDict.online_suffix[currentLang]}</span>` : (info.ccu ? `<span class="text-[11px] text-gray-600">${info.ccu}${i18nDict.online_suffix[currentLang]}</span>` : '')}
-                                    <span class="text-[11px] text-gray-600">${info.players}</span>
+                                    <span class="text-[11px] text-gray-600">${playersLabel}</span>
                                 </div>
-                                <!-- 简介 -->
-                                <p class="text-xs text-gray-500 leading-snug line-clamp-1 mb-1.5 group-hover:text-slate-600 transition-colors">${info.intro}</p>
-                                <!-- 底栏 -->
+                                <p class="text-xs text-gray-500 leading-snug line-clamp-1 mb-1.5 group-hover:text-slate-600 transition-colors">${introLabel}</p>
                                 <div class="flex items-center justify-between pt-1 border-t border-gray-200">
-                                    <span class="text-[11px] text-gray-500 truncate">${info.dev} · ${info.release}</span>
+                                    <span class="text-[11px] text-gray-500 truncate">${devLabel} · ${releaseLabel}</span>
                                     <span class="text-[11px] text-gray-400 group-hover:text-accent transition-colors shrink-0 ml-1">${i18nDict.store_link[currentLang]}</span>
                                 </div>
                             </div>
@@ -4037,7 +4159,6 @@
                 html += '</div></div>';
             });
 
-            // 即将上线 / Wishlist 区域
             if (wishlistItems.length > 0) {
                 html += `
                     <div class="mb-5">
@@ -4050,12 +4171,19 @@
 
                 wishlistItems.forEach(([name, info]) => {
                     const wishImg = info.headerImage || null;
-                    const displayName = info.cnName ? `${name}（${info.cnName}）` : name;
+                    const displayName = getCompetitorName(name, info, {});
+                    const tooltipName = currentLang === 'zh' ? name : getCompetitorShortName(name, info, {});
+                    const tooltipCn = currentLang === 'zh' ? (info.cnName || '') : '';
+                    const devLabel = getCompetitorDev(info);
+                    const releaseLabel = getCompetitorRelease(info, {});
+                    const playersLabel = getCompetitorPlayers(info);
+                    const introLabel = getCompetitorIntro(name, info, {});
+                    const priceLabel = getCompetitorPrice(info, {});
                     html += `
-                        <a href="${info.storeUrl}" target="_blank" rel="noopener" class="comp-card group bg-white rounded-lg border border-purple-200 overflow-hidden cursor-pointer hover:border-purple-300 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:shadow-black/5 block no-underline" data-url="${info.storeUrl}" data-name="${name}" data-cn="${info.cnName||''}" data-dev="${info.dev}" data-release="${info.release}" data-players="${info.players}" data-rate="" data-ccu="" data-price="${info.price}" data-intro="${info.intro.replace(/"/g,'&quot;')}" data-img="${wishImg||''}" data-status="WISHLIST" data-store="${info.storeUrl}">
+                        <a href="${info.storeUrl}" target="_blank" rel="noopener" class="comp-card group bg-white rounded-lg border border-purple-200 overflow-hidden cursor-pointer hover:border-purple-300 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:shadow-black/5 block no-underline" data-url="${info.storeUrl}" data-name="${tooltipName.replace(/"/g, '&quot;')}" data-cn="${tooltipCn.replace(/"/g, '&quot;')}" data-dev="${devLabel.replace(/"/g, '&quot;')}" data-release="${releaseLabel.replace(/"/g, '&quot;')}" data-players="${playersLabel.replace(/"/g, '&quot;')}" data-rate="" data-ccu="" data-price="${String(priceLabel).replace(/"/g, '&quot;')}" data-intro="${introLabel.replace(/"/g, '&quot;')}" data-img="${wishImg || ''}" data-status="WISHLIST" data-store="${info.storeUrl}">
                             <div class="relative h-[48px] overflow-hidden">
                                 ${wishImg
-                                    ? `<img src="${wishImg}" alt="${name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">`
+                                    ? `<img src="${wishImg}" alt="${displayName}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" referrerpolicy="no-referrer">`
                                     : `<div class="w-full h-full bg-purple-50 flex items-center justify-center text-lg">🔮</div>`
                                 }
                                 <div class="absolute inset-0 bg-gradient-to-t from-white via-white/30 to-transparent"></div>
@@ -4064,17 +4192,17 @@
                                 <div class="flex items-center justify-between mb-1">
                                     <div class="flex items-center gap-1.5 min-w-0">
                                         <span class="font-bold text-xs text-slate-900 truncate">${displayName}</span>
-                                        <span class="px-1 py-px bg-purple-50 text-purple-300 border border-purple-200 rounded text-[9px] font-bold tracking-wide">WISHLIST</span>
+                                        <span class="px-1 py-px bg-purple-50 text-purple-400 border border-purple-200 rounded text-[9px] font-bold tracking-wide">${currentLang === 'zh' ? 'WISHLIST' : 'Wishlist'}</span>
                                     </div>
-                                    <span class="text-[10px] text-gray-600 shrink-0">${info.price}</span>
+                                    <span class="text-[10px] text-gray-600 shrink-0">${priceLabel}</span>
                                 </div>
                                 <div class="flex items-center gap-1.5 mb-1">
-                                    <span class="text-[10px] text-gray-600">${info.dev}</span>
-                                    <span class="text-[10px] text-slate-400">${info.players}</span>
+                                    <span class="text-[10px] text-gray-600">${devLabel}</span>
+                                    <span class="text-[10px] text-slate-400">${playersLabel}</span>
                                 </div>
-                                <p class="text-xs text-gray-500 leading-snug line-clamp-1 mb-1.5 group-hover:text-slate-600 transition-colors">${info.intro}</p>
+                                <p class="text-xs text-gray-500 leading-snug line-clamp-1 mb-1.5 group-hover:text-slate-600 transition-colors">${introLabel}</p>
                                 <div class="flex items-center justify-between pt-1 border-t border-purple-100">
-                                    <span class="text-[11px] text-gray-500">发售：${info.release}</span>
+                                    <span class="text-[11px] text-gray-500">${currentLang === 'zh' ? '发售' : 'Release'}: ${releaseLabel}</span>
                                     <span class="text-[11px] text-purple-400 group-hover:text-purple-600 transition-colors shrink-0 ml-1">${i18nDict.store_link[currentLang]}</span>
                                 </div>
                             </div>
@@ -4087,7 +4215,6 @@
 
             landscape.innerHTML = html;
 
-            // 对比表格 - 包含所有竞品
             const rows = [];
             Object.entries(competitorInfo).forEach(([name, info]) => {
                 const steam = info.steamKey ? steamData[info.steamKey] : null;
@@ -4096,29 +4223,29 @@
                 const reviews = steam ? (steam.reviews || {}) : {};
                 const rate = reviews.positive_rate || info.rate || 0;
                 const ccu = spy.ccu || null;
-                const price = store.price || info.price || '--';
+                const priceLabel = getCompetitorPrice(info, store);
                 const totalReviews = reviews.total_reviews || info.reviews_total || 0;
                 const headerImg = store.header_image || info.headerImage || null;
-
+                const displayName = getCompetitorName(name, info, store);
                 const rateColor = rate >= 80 ? 'text-green-600' : rate >= 60 ? 'text-yellow-600' : 'text-red-600';
                 const statusBadge = info.status === 'WISHLIST'
-                    ? '<span class="px-1.5 py-0.5 bg-purple-50 text-purple-300 rounded text-xs">WISHLIST</span>'
+                    ? `<span class="px-1.5 py-0.5 bg-purple-50 text-purple-400 rounded text-xs">${currentLang === 'zh' ? 'WISHLIST' : 'Wishlist'}</span>`
                     : info.status === 'EA'
-                    ? '<span class="px-1.5 py-0.5 bg-yellow-50 text-yellow-300 rounded text-xs">EA</span>'
-                    : `<span class="px-1.5 py-0.5 bg-green-50 text-green-300 rounded text-xs">${i18nDict.released[currentLang]}</span>`;
-
+                    ? '<span class="px-1.5 py-0.5 bg-yellow-50 text-yellow-400 rounded text-xs">EA</span>'
+                    : `<span class="px-1.5 py-0.5 bg-green-50 text-green-400 rounded text-xs">${getCompetitorStatusLabel(info)}</span>`;
                 const catLabel = {
-                    '恐怖撤离': '🎯 ' + (currentLang === 'en' ? 'Extraction' : '撤离'),
-                    '捉鬼调查': '🔮 ' + (currentLang === 'en' ? 'Ghost' : '捉鬼'),
-                    'PvPvE猎杀': '⚔️ PvPvE'
-                }[info.category] || info.category;
+                    '恐怖撤离': currentLang === 'zh' ? '🎯 撤离' : '🎯 Extraction',
+                    '捉鬼调查': currentLang === 'zh' ? '🔮 捉鬼' : '🔮 Ghost',
+                    'PvPvE猎杀': currentLang === 'zh' ? '⚔️ PvPvE猎杀' : '⚔️ PvPvE',
+                    '搜打撤/摸金': currentLang === 'zh' ? '💎 摸金' : '💎 Looter'
+                }[info.category] || getCompetitorCategory(info);
 
                 rows.push(`
                     <tr class="border-b hover:bg-gray-50 transition">
                         <td class="py-2.5 pr-4 font-medium">
                             <div class="flex items-center gap-2">
-                                ${headerImg ? `<img src="${headerImg}" alt="${name}" class="w-8 h-4 rounded-sm object-cover" referrerpolicy="no-referrer">` : '<span class="text-xs">🎮</span>'}
-                                <span>${name}</span>
+                                ${headerImg ? `<img src="${headerImg}" alt="${displayName}" class="w-8 h-4 rounded-sm object-cover" referrerpolicy="no-referrer">` : '<span class="text-xs">🎮</span>'}
+                                <span>${displayName}</span>
                             </div>
                         </td>
                         <td class="text-center py-2.5 px-3 text-xs text-gray-400">${catLabel}</td>
@@ -4128,14 +4255,12 @@
                             <span class="${rateColor}">${rate ? rate + '%' : '--'}</span>
                         </td>
                         <td class="text-right py-2.5 px-3 text-gray-400">${typeof totalReviews === 'number' ? totalReviews.toLocaleString() : totalReviews}</td>
-                        <td class="text-right py-2.5 px-3">${price}</td>
+                        <td class="text-right py-2.5 px-3">${priceLabel}</td>
                     </tr>
                 `);
             });
 
             tbody.innerHTML = rows.length > 0 ? rows.join('') : `<tr><td colspan="7" class="py-4 text-gray-500 text-center">${i18nDict.no_competitors[currentLang]}</td></tr>`;
-
-            // 趋势图
             renderTrendChart();
         }
 
@@ -4363,6 +4488,29 @@
         };
 
         let currentLang = localStorage.getItem('dashboard-lang') || 'zh';
+
+        function pickLang(item, key, fallback = '--') {
+            if (!item || typeof item !== 'object') return fallback;
+            const candidates = currentLang === 'en'
+                ? [`${key}_en`, `${key}_zh`, key]
+                : [`${key}_zh`, key, `${key}_en`];
+            for (const candidate of candidates) {
+                if (!Object.prototype.hasOwnProperty.call(item, candidate)) continue;
+                const value = item[candidate];
+                if (value === undefined || value === null) continue;
+                if (Array.isArray(value) && value.length === 0) continue;
+                if (typeof value === 'string' && !value.trim()) continue;
+                return value;
+            }
+            return fallback;
+        }
+
+        function pickLangList(item, key) {
+            const value = pickLang(item, key, []);
+            if (Array.isArray(value)) return value;
+            if (value === undefined || value === null || value === '--') return [];
+            return [value];
+        }
 
         function applyLang(lang) {
             currentLang = lang;
