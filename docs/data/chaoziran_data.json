@@ -112,8 +112,8 @@
     "taptap": {
       "app_id": 714123,
       "source": "taptap_webpage",
-      "fans_count": 11289457,
-      "review_count": 30704,
+      "fans_count": 11289772,
+      "review_count": 30710,
       "score": "6.9",
       "description": "超自然行动组是一款合作游戏，TapTap 提供超自然行动组最新版官方正版下载，一个人玩是恐怖游戏，两个人玩是冒险游戏，三个人玩是寻宝游戏，...",
       "score_display": 6.9,
@@ -208,26 +208,18 @@
     "community": {
       "taptap_forum": [
         {
+          "title": "6月11日更新——百变小刘鸭联动道具皮肤上线！",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/moment/814180810818063239",
+          "moment_id": "814180810818063239",
+          "link_status": "valid",
+          "sentiment": "neutral"
+        },
+        {
           "title": "超自然行动组四队惊现三位天才剧情高能反转",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/moment/814368834654831655",
           "moment_id": "814368834654831655",
-          "link_status": "valid",
-          "sentiment": "neutral"
-        },
-        {
-          "title": "我像只鸭鸭在跳舞~【音响】和【急救包】版鸭鸭皮肤都来啦！",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/814218371728932866",
-          "moment_id": "814218371728932866",
-          "link_status": "valid",
-          "sentiment": "neutral"
-        },
-        {
-          "title": "百变小刘鸭，快乐你我他！【腰包】【粘液球】这次都变身超萌鸭鸭",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/813482839424109363",
-          "moment_id": "813482839424109363",
           "link_status": "valid",
           "sentiment": "neutral"
         },
@@ -253,28 +245,35 @@
           "sentiment": "neutral"
         },
         {
-          "title": "游戏圈记者上线，带#今天游戏圈发生了啥 话题分享游戏新鲜事，万元奖池等你瓜分！详情可加入资讯记者2群：1103610961",
+          "title": "1.从现在开始，报名即可直接参与，不用大家一分钱，谢谢大家，有空的时候都会发布一起玩来帮助大家（❤️...",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral"
         },
         {
-          "title": "啊？人家骑着是帮你，不然它乱跑，而且被骑乘状态下也能抓",
+          "title": "月光宝盒那么好出的吗？我都给兔子好几个了，还是没见到水晶的影子",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral"
         },
         {
-          "title": "今日的口令是：一剑封神 招财进宝 福禄双全",
+          "title": "不管是古蜀还是龙宫一直都开不出，是不是我这个号太黑了",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "negative"
+        },
+        {
+          "title": "大家一起为你准备了蛋糕，来许个愿吧（记得看紧小熊猫，它最馋嘴了",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral"
         },
         {
-          "title": "【零-角色PV预热】——被计划的生命，长出计划外的灵魂",
+          "title": "百变小刘鸭，快乐你我他~\n这次【腰包】【粘液球】【音响】和【急救包】4款道具都变身鸭鸭，12号0点，...",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
@@ -291,7 +290,7 @@
             "title": "南瓜入侵，幽魂大运来了！",
             "bvid": "BV1xCkfBjENz",
             "url": "https://www.bilibili.com/video/BV1xCkfBjENz",
-            "play": 5786930,
+            "play": 5786934,
             "like": 34703,
             "danmaku": 184,
             "author": "張某人ZSS",
@@ -303,7 +302,7 @@
             "title": "教会你们如何在超自然找到大佬",
             "bvid": "BV1d2tGz2E3Z",
             "url": "https://www.bilibili.com/video/BV1d2tGz2E3Z",
-            "play": 4727939,
+            "play": 4727941,
             "like": 31872,
             "danmaku": 388,
             "author": "中二的小溢",
@@ -315,7 +314,7 @@
             "title": "超自然行动组怪物图鉴第六期「小熊猫」",
             "bvid": "BV1QCjiz2Evq",
             "url": "https://www.bilibili.com/video/BV1QCjiz2Evq",
-            "play": 3690024,
+            "play": 3690048,
             "like": 16636,
             "danmaku": 219,
             "author": "就是黄大毛",
@@ -327,8 +326,8 @@
             "title": "本来想卖掉大鹅、看到眼神心软了",
             "bvid": "BV1Wv6bBWEmn",
             "url": "https://www.bilibili.com/video/BV1Wv6bBWEmn",
-            "play": 3489126,
-            "like": 114870,
+            "play": 3489220,
+            "like": 114873,
             "danmaku": 1671,
             "author": "虎熊寺",
             "duration": "1:24",
@@ -339,7 +338,7 @@
             "title": "搜打撤黑马？！《超自然行动组》凭什么能爆火？",
             "bvid": "BV11hsheJE5i",
             "url": "https://www.bilibili.com/video/BV11hsheJE5i",
-            "play": 2927974,
+            "play": 2927981,
             "like": 31660,
             "danmaku": 45,
             "author": "白馆长丶",
@@ -351,7 +350,7 @@
             "title": "为什么幸福的人不会来到超自然行动组？",
             "bvid": "BV1Zqu4z5ETn",
             "url": "https://www.bilibili.com/video/BV1Zqu4z5ETn",
-            "play": 2789521,
+            "play": 2789522,
             "like": 9003,
             "danmaku": 146,
             "author": "白白鸭游戏",
@@ -376,7 +375,7 @@
         "us": {
           "name": "美国",
           "rating": 4.52,
-          "rating_count": 567,
+          "rating_count": 572,
           "current_version": "1.29.30",
           "price": "Free",
           "genre": "Games"
@@ -409,8 +408,8 @@
         }
       },
       "app_store_rating": 4.26,
-      "total_ratings": 2225,
-      "updated": "2026-06-12 08:56"
+      "total_ratings": 2230,
+      "updated": "2026-06-12 02:38"
     },
     "app_store_rankings": {
       "us": {
@@ -419,7 +418,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-12 08:55"
+        "updated": "2026-06-12 02:38"
       },
       "jp": {
         "name": "日本",
@@ -427,7 +426,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-12 08:55"
+        "updated": "2026-06-12 02:38"
       },
       "kr": {
         "name": "韩国",
@@ -435,7 +434,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-12 08:56"
+        "updated": "2026-06-12 02:38"
       },
       "tw": {
         "name": "台湾",
@@ -443,7 +442,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-12 08:56"
+        "updated": "2026-06-12 02:38"
       },
       "hk": {
         "name": "香港",
@@ -451,17 +450,17 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-12 08:56"
+        "updated": "2026-06-12 02:38"
       }
     },
     "stock_price": {
       "code": "SZ002558",
       "name": "巨人网络",
-      "price": 23.65,
-      "prev_close": 24.2,
-      "change_pct": -2.27,
-      "change_amt": -0.55,
-      "updated": "2026-06-12 08:55"
+      "price": 23.89,
+      "prev_close": 23.65,
+      "change_pct": 1.01,
+      "change_amt": 0.24,
+      "updated": "2026-06-12 02:38"
     },
     "new_content_tracker": [
       {
@@ -513,6 +512,6 @@
         }
       }
     ],
-    "crawled_at": "2026-06-12T08:56:07.013197"
+    "crawled_at": "2026-06-12T02:38:22.862940"
   }
 }
