@@ -496,9 +496,9 @@
                                 </div>
                                 <p class="text-xs text-slate-300 mb-3" data-i18n="czr_genre">巨人网络 · 多人欢乐恐怖</p>
                                 <div class="flex flex-wrap gap-2">
-                                    <span class="pill" style="background:rgba(255,255,255,0.10);color:#E2E8F0;border:1px solid rgba(255,255,255,0.10);">多人</span>
-                                    <span class="pill" style="background:rgba(255,255,255,0.10);color:#E2E8F0;border:1px solid rgba(255,255,255,0.10);">摸金</span>
-                                    <span class="pill" style="background:rgba(255,255,255,0.10);color:#E2E8F0;border:1px solid rgba(255,255,255,0.10);">欢乐恐怖</span>
+                                    <span id="czr-hero-tag-mode" class="pill" style="background:rgba(255,255,255,0.10);color:#E2E8F0;border:1px solid rgba(255,255,255,0.10);">多人</span>
+                                    <span id="czr-hero-tag-loop" class="pill" style="background:rgba(255,255,255,0.10);color:#E2E8F0;border:1px solid rgba(255,255,255,0.10);">摸金</span>
+                                    <span id="czr-hero-tag-tone" class="pill" style="background:rgba(255,255,255,0.10);color:#E2E8F0;border:1px solid rgba(255,255,255,0.10);">欢乐恐怖</span>
                                     <span class="pill" style="background:rgba(255,255,255,0.10);color:#E2E8F0;border:1px solid rgba(255,255,255,0.10);">iOS / Android / PC</span>
                                 </div>
                             </div>
@@ -509,7 +509,7 @@
                                 </div>
                                 <div class="text-right">
                                     <div class="text-[10px] tracking-wider text-white">DAU</div>
-                                    <div class="text-2xl font-bold text-white">1000万+</div>
+                                    <div id="hero-czr-dau" class="text-2xl font-bold text-white">1000万+</div>
                                 </div>
                                 <div class="text-right">
                                     <div class="text-[10px] tracking-wider text-white">002558.SZ</div>
@@ -546,7 +546,7 @@
                     <div class="flex items-center gap-2 mb-4">
                         <h3 class="section-title" data-i18n="cn_core_metrics">国内核心指标</h3>
                     </div>
-                    <div class="space-y-2.5 text-sm">
+                    <div id="czr-core-metrics" class="space-y-2.5 text-sm">
                         <div class="flex justify-between"><span style="color:var(--text-muted);" data-i18n="reg_users">注册用户</span><span class="font-semibold" style="color:#0F172A;">2亿+</span></div>
                         <div class="flex justify-between"><span style="color:var(--text-muted);">DAU</span><span class="font-semibold" style="color:#0F172A;">1,000万+</span></div>
                         <div class="flex justify-between"><span style="color:var(--text-muted);" data-i18n="peak_concurrent">峰值并发</span><span class="font-semibold" style="color:#0F172A;">100万+</span></div>
@@ -725,13 +725,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="glass-card p-3 text-xs leading-relaxed mt-4" style="color:var(--text-muted);">
+                <div id="repo-core-gameplay" class="glass-card p-3 text-xs leading-relaxed mt-4" style="color:var(--text-muted);">
                     <span style="color:var(--data-green);" class="font-medium">核心玩法：</span>物理驱动的多人合作恐怖游戏。利用真实物理机制搬运物品、协作解谜，在阴森环境中求生。Steam好评如潮，2-6人在线合作。
                 </div>
             </div>
 
             <!-- v0.4.0 重点区域 -->
-            <div class="glass-card mb-6" style="border-left:3px solid #16A34A;">
+            <div id="repo-featured-update" class="glass-card mb-6" style="border-left:3px solid #16A34A;">
                 <div class="flex items-center gap-2 mb-4">
                     <h3 class="text-xs font-bold" style="color:var(--text-primary);">v0.4.0 DECORATION UPDATE — 2026.05.07</h3>
                     <span class="pill ml-auto text-[10px]" style="background:rgba(22,163,74,0.08);color:var(--data-green);">LATEST</span>
@@ -783,7 +783,7 @@
 
             <!-- 舆论 & MOD -->
             <div class="grid lg:grid-cols-2 gap-4 mb-6">
-                <div class="glass-card">
+                <div id="repo-review-card" class="glass-card">
                     <div class="flex items-center gap-2 mb-4">
                         <h3 class="section-title" data-i18n="review_trend">评测 & 舆论趋势</h3>
                     </div>
@@ -823,7 +823,7 @@
                     </div>
                 </div>
 
-                <div class="glass-card">
+                <div id="repo-mod-card" class="glass-card">
                     <div class="flex items-center gap-2 mb-4">
                         <h3 class="section-title" data-i18n="mod_eco">MOD 生态</h3>
                     </div>
@@ -889,7 +889,7 @@
                     <div class="flex items-center gap-2 mb-4">
                         <h3 class="section-title" data-i18n="version_timeline">版本时间线</h3>
                     </div>
-                    <div class="space-y-3 text-sm">
+                    <div id="repo-version-timeline" class="space-y-3 text-sm">
                         <div class="flex items-start gap-3">
                             <span class="text-[10px] shrink-0 mt-0.5" style="color:var(--data-green);">●</span>
                             <div>
@@ -2794,15 +2794,436 @@
             if (ph) ph.classList.add('hidden');
         }
 
+        const chaoziranStaticCopy = {
+            heroTags: {
+                zh: ['多人', '摸金', '欢乐恐怖'],
+                en: ['Multiplayer', 'Extraction', 'Fun Horror']
+            },
+            heroDau: {
+                zh: '1,000万+',
+                en: '10M+'
+            },
+            aiSummary: {
+                zh: [
+                    '国内社区舆情两极分化：TapTap论坛偏中性正面（版本更新、皮肤爆料讨论为主），B站高热度视频以攻略/怪物图鉴为主（播放量百万级），快手抖音短视频传播活跃但数据不可直接抓取。',
+                    'TapTap评分6.9属中等偏低，但DAU持续千万级说明核心用户粘性极强。海外版Tomb Busters媒体评价正面，聚焦“恐怖+喜剧”的差异化玩法。'
+                ],
+                en: [
+                    'Mainland China community sentiment is polarized: TapTap threads skew neutral-to-positive around patches and skin reveals, while Bilibili traffic is driven by guides and monster encyclopedias with million-level views. Short-video spread on Kuaishou and Douyin is active, but the platforms are not directly crawlable.',
+                    'A 6.9 TapTap score is only mid-tier, yet sustained DAU above ten million points to very sticky core users. Overseas coverage for Tomb Busters is more positive and consistently highlights its “horror + comedy” positioning.'
+                ],
+                callout: {
+                    zh: '💰 巨人网络2026Q1营收23.29亿元（同比+221.7%），净利润10.80亿元（同比+210.6%），超自然行动组为关键增长引擎',
+                    en: '💰 Giant Network posted ¥2.329B revenue in 2026 Q1 (+221.7% YoY) and ¥1.080B net profit (+210.6% YoY), with Chaoziran acting as a key growth engine.'
+                }
+            },
+            metrics: {
+                registeredUsers: { zh: '2亿+', en: '200M+' },
+                dau: { zh: '1,000万+', en: '10M+' },
+                peakConcurrent: { zh: '100万+', en: '1M+' },
+                totalRevenue: { zh: '50亿+', en: '¥5B+' },
+                socialViews: { zh: '1,400亿次', en: '140B' },
+                iosTopGrossing: { zh: '#23', en: '#23' },
+                iosTopGrossingPeak: { zh: '（峰值#4）', en: '(Peak #4)' },
+                iosFree: { zh: 'Top 30', en: 'Top 30' },
+                updated: {
+                    zh: '更新于 2026-05-29 · 来源：iOS App Store',
+                    en: 'Updated 2026-05-29 · Source: iOS App Store'
+                }
+            }
+        };
+
+        const repoStaticCopy = {
+            intro: {
+                zh: '物理驱动的多人合作恐怖游戏。利用真实物理机制搬运物品、协作解谜，在阴森环境中求生。Steam好评如潮，2-6人在线合作。',
+                en: 'A physics-driven co-op horror game where players haul fragile loot, coordinate around emergent puzzles, and survive tense extraction runs. Steam sentiment remains overwhelmingly positive, with 2-6 players online.'
+            },
+            featuredUpdate: {
+                title: 'v0.4.0 DECORATION UPDATE — 2026.05.07',
+                badge: { zh: '最新', en: 'LATEST' },
+                stats: [
+                    {
+                        label: 'PARTS',
+                        value: '500+',
+                        sub: { zh: '全部免费', en: 'All free' }
+                    },
+                    {
+                        label: 'NEW MODE',
+                        value: 'King of The Losers',
+                        sub: { zh: '竞速赛', en: 'Race mode' }
+                    },
+                    {
+                        label: 'NEW ITEMS',
+                        value: '8',
+                        sub: { zh: '含3种法杖', en: 'Including 3 wands' }
+                    },
+                    {
+                        label: 'SHOP REWORK',
+                        value: { zh: '机械店员 + Reroller', en: 'Robot Clerk + Reroller' },
+                        sub: { zh: '刷新升级选项', en: 'Refresh upgrade choices' }
+                    }
+                ],
+                newContent: {
+                    title: 'NEW CONTENT',
+                    lines: {
+                        zh: [
+                            '<span style="color:var(--data-green);">装扮系统</span>：500+部件，4级稀有度，装饰箱+税务代币解锁，<span style="color:var(--gold);">零微交易</span>',
+                            '<span style="color:var(--data-green);">新模式</span>：King of The Losers 竞速赛',
+                            '<span style="color:var(--data-green);">8种新道具</span>：Walkies对讲机、Scout侦察者、Hauler搬运者、Defibro除颤器、吹叶机、3种法杖',
+                            '<span style="color:var(--data-green);">商店重设计</span>：新环境、机械店员、Reroller刷新机器'
+                        ],
+                        en: [
+                            '<span style="color:var(--data-green);">Decoration system</span>: 500+ parts across four rarity tiers, unlocked via cosmetic crates and tax tokens, with <span style="color:var(--gold);">zero microtransactions</span>',
+                            '<span style="color:var(--data-green);">New mode</span>: King of The Losers race mode',
+                            '<span style="color:var(--data-green);">8 new items</span>: Walkies, Scout, Hauler, Defibro, a leaf blower, and three wand variants',
+                            '<span style="color:var(--data-green);">Shop rework</span>: new environment, robot clerk, and a Reroller machine for refreshed upgrade options'
+                        ]
+                    }
+                },
+                balance: {
+                    title: 'BALANCE & FIXES',
+                    lines: {
+                        zh: [
+                            '<span style="color:var(--gold);">近战武器重做</span>：滚轮方向挥击 + 高扭矩投掷',
+                            '冲刺能量消耗改为加速度缩放',
+                            'Shadow Child拉拽时间加长；Tick攻击频率随体型降低',
+                            '修复皇冠、穿模、Huntsman穿墙射击等Bug',
+                            '使用MOD时版本号显示 [MODDED]'
+                        ],
+                        en: [
+                            '<span style="color:var(--gold);">Melee combat rework</span>: directional swings with the mouse wheel plus high-torque throws',
+                            'Sprint energy now scales with acceleration rather than a flat drain',
+                            'Shadow Child drag time was extended, while Tick attack frequency now scales down with size',
+                            'Fixed crown, clipping, and Huntsman wall-shot bugs',
+                            'Version labels now show [MODDED] whenever mods are active'
+                        ]
+                    }
+                }
+            },
+            review: {
+                ratingTrend: {
+                    title: 'RATING TREND',
+                    lines: {
+                        zh: [
+                            '首发好评率 <span style="color:var(--data-green);">98.1%</span> → 当前 <span style="color:var(--data-green);">96.1%</span>（↓2%）',
+                            '持续“好评如潮”，微降趋势需关注'
+                        ],
+                        en: [
+                            'Launch positive rate <span style="color:var(--data-green);">98.1%</span> → current <span style="color:var(--data-green);">96.1%</span> (↓2%)',
+                            'Still firmly in the “Overwhelmingly Positive” band, but the slight decline is worth monitoring'
+                        ]
+                    }
+                },
+                communityFocus: {
+                    title: 'COMMUNITY FOCUS',
+                    lines: {
+                        zh: [
+                            '<span style="color:var(--gold);">v0.4.0反馈正面</span>：500+免费装饰品获好评',
+                            '<span style="color:var(--data-red);">核心问题</span>：黑客入侵公开大厅严重'
+                        ],
+                        en: [
+                            '<span style="color:var(--gold);">v0.4.0 reaction is positive</span>: players like the 500+ free decoration items',
+                            '<span style="color:var(--data-red);">Core risk</span>: cheaters in public lobbies remain a serious pain point'
+                        ]
+                    }
+                },
+                tagsTitle: 'PLAYER TAGS',
+                defaultTags: {
+                    zh: ['恐怖', '合作', '物理'],
+                    en: ['Horror', 'Co-op', 'Physics']
+                }
+            },
+            mod: {
+                modPacks: '1,700+',
+                managerDownloads: { zh: '994万', en: '9.94M' },
+                topPacksTitle: 'TOP 5 MOD PACKS',
+                topPacks: [
+                    { name: 'Ocarina of Quota', zh: '21.1万↓', en: '211K ↓' },
+                    { name: 'Moo Modpack', zh: '18.2万↓', en: '182K ↓' },
+                    { name: 'ElRaphik Modpack', zh: '14.3万↓', en: '143K ↓' },
+                    { name: 'Mirage Modpack', zh: '3.8万↓', en: '38K ↓' },
+                    { name: 'Daggum', zh: '3.1万↓', en: '31K ↓' }
+                ],
+                categoriesTitle: 'CATEGORIES',
+                categories: {
+                    zh: ['武器', '怪物', '关卡', 'QoL', '装饰', '道具'],
+                    en: ['Weapons', 'Monsters', 'Levels', 'QoL', 'Cosmetics', 'Items']
+                },
+                cnSupportTitle: 'CN SUPPORT',
+                cnSupport: {
+                    zh: '简体中文汉化包已上线，覆盖本体+80+常用MOD翻译',
+                    en: 'A Simplified Chinese localization pack is available and already covers the base game plus 80+ popular mods.'
+                }
+            },
+            timeline: [
+                {
+                    dot: 'var(--data-green)',
+                    version: { zh: 'v0.4.0', en: 'v0.4.0' },
+                    date: '2026-05-07',
+                    summary: {
+                        zh: '装饰更新 · 500+装饰 · 新竞速模式',
+                        en: 'Decoration update · 500+ cosmetics · new race mode'
+                    }
+                },
+                {
+                    dot: 'var(--gold)',
+                    version: { zh: 'v0.3.0', en: 'v0.3.0' },
+                    date: '2025-10-30',
+                    summary: {
+                        zh: '怪物更新 · 10种新怪物 + 新AI',
+                        en: 'Monster update · 10 new monsters + fresh AI behaviors'
+                    }
+                },
+                {
+                    dot: 'var(--text-muted)',
+                    version: { zh: 'v0.2.0', en: 'v0.2.0' },
+                    date: { zh: '2025年中', en: 'Mid 2025' },
+                    summary: {
+                        zh: '内容扩展 · 新关卡 + 道具 + 平衡',
+                        en: 'Content expansion · new levels, items, and balance work'
+                    }
+                },
+                {
+                    dot: 'var(--text-muted)',
+                    version: { zh: 'EA首发', en: 'Early Access Launch' },
+                    date: '2025-02-26',
+                    summary: {
+                        zh: '抢先体验上线 · 好评率98%',
+                        en: 'Early Access opened with a 98% positive rate'
+                    }
+                }
+            ],
+            ownersEstimate: {
+                zh: '500万 ~ 1000万',
+                en: '5M - 10M'
+            }
+        };
+
+        const steamTagEnMap = {
+            '恐怖': 'Horror',
+            '合作': 'Co-op',
+            '物理': 'Physics',
+            '在线合作': 'Online Co-op',
+            '多人': 'Multiplayer',
+            '单人': 'Single-player',
+            '动作': 'Action',
+            '抢先体验': 'Early Access',
+            '冒险': 'Adventure',
+            '独立': 'Indie',
+            '困难': 'Hard',
+            '欢乐': 'Funny',
+            '搜刮': 'Scavenging',
+            '生存': 'Survival'
+        };
+
+        function formatCompactZh(value) {
+            if (value === undefined || value === null || Number.isNaN(Number(value))) return '--';
+            const num = Number(value);
+            if (num >= 100000000) return `${trimTrailingZero((num / 100000000).toFixed(num >= 1000000000 ? 0 : 1))}亿`;
+            if (num >= 10000) return `${trimTrailingZero((num / 10000).toFixed(num >= 1000000 ? 0 : 1))}万`;
+            return num.toLocaleString('zh-CN');
+        }
+
+        function trimTrailingZero(text) {
+            return String(text).replace(/\.0$/, '');
+        }
+
+        function formatCompactEn(value) {
+            if (value === undefined || value === null || Number.isNaN(Number(value))) return '--';
+            const num = Number(value);
+            if (num >= 1000000000) return `${trimTrailingZero((num / 1000000000).toFixed(num >= 10000000000 ? 0 : 1))}B`;
+            if (num >= 1000000) return `${trimTrailingZero((num / 1000000).toFixed(num >= 10000000 ? 0 : 1))}M`;
+            if (num >= 1000) return `${trimTrailingZero((num / 1000).toFixed(num >= 10000 ? 0 : 1))}K`;
+            return num.toLocaleString('en-US');
+        }
+
+        function translateSteamTag(tag) {
+            return currentLang === 'zh' ? tag : (steamTagEnMap[tag] || tag);
+        }
+
+        function renderChaoziranStaticBlocks(czr) {
+            const heroTags = chaoziranStaticCopy.heroTags[currentLang];
+            const heroModeEl = document.getElementById('czr-hero-tag-mode');
+            const heroLoopEl = document.getElementById('czr-hero-tag-loop');
+            const heroToneEl = document.getElementById('czr-hero-tag-tone');
+            if (heroModeEl) heroModeEl.textContent = heroTags[0];
+            if (heroLoopEl) heroLoopEl.textContent = heroTags[1];
+            if (heroToneEl) heroToneEl.textContent = heroTags[2];
+            const heroDauEl = document.getElementById('hero-czr-dau');
+            if (heroDauEl) heroDauEl.textContent = chaoziranStaticCopy.heroDau[currentLang];
+
+            const summaryEl = document.getElementById('czr-ai-summary');
+            if (summaryEl) {
+                const paragraphs = chaoziranStaticCopy.aiSummary[currentLang]
+                    .map(text => `<p>${text}</p>`)
+                    .join('');
+                summaryEl.innerHTML = `${paragraphs}<div class="callout-crimson text-xs" style="color:var(--text-muted);">${chaoziranStaticCopy.aiSummary.callout[currentLang]}</div>`;
+            }
+
+            const metricsEl = document.getElementById('czr-core-metrics');
+            if (metricsEl) {
+                const taptapFans = czr && czr.taptap && czr.taptap.fans_count
+                    ? (currentLang === 'zh' ? formatCompactZh(czr.taptap.fans_count) : formatCompactEn(czr.taptap.fans_count))
+                    : '--';
+                const metricsCopy = chaoziranStaticCopy.metrics;
+                metricsEl.innerHTML = `
+                    <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.reg_users[currentLang]}</span><span class="font-semibold" style="color:#0F172A;">${metricsCopy.registeredUsers[currentLang]}</span></div>
+                    <div class="flex justify-between"><span style="color:var(--text-muted);">DAU</span><span class="font-semibold" style="color:#0F172A;">${metricsCopy.dau[currentLang]}</span></div>
+                    <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.peak_concurrent[currentLang]}</span><span class="font-semibold" style="color:#0F172A;">${metricsCopy.peakConcurrent[currentLang]}</span></div>
+                    <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.total_revenue[currentLang]}</span><span class="font-semibold" style="color:#0F172A;">${metricsCopy.totalRevenue[currentLang]}</span></div>
+                    <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.social_views[currentLang]}</span><span class="font-semibold" style="color:#0F172A;">${metricsCopy.socialViews[currentLang]}</span></div>
+                    <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.taptap_followers[currentLang]}</span><span id="taptap-fans" class="font-semibold" style="color:var(--accent);">${taptapFans}</span></div>
+                    <div class="pt-2 mt-1" style="border-top:1px solid var(--divider);">
+                        <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.ios_top_grossing[currentLang]}</span><span class="font-semibold" style="color:#0F172A;">${metricsCopy.iosTopGrossing[currentLang]} <span style="color:var(--text-muted);" class="text-[10px]">${metricsCopy.iosTopGrossingPeak[currentLang]}</span></span></div>
+                        <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.ios_free[currentLang]}</span><span class="font-semibold" style="color:var(--data-green);">${metricsCopy.iosFree[currentLang]}</span></div>
+                        <div class="text-[10px] mt-1" style="color:var(--text-muted);">${metricsCopy.updated[currentLang]}</div>
+                    </div>
+                `;
+            }
+        }
+
+        function renderRepoStaticBlocks() {
+            const copy = repoStaticCopy;
+            const introEl = document.getElementById('repo-core-gameplay');
+            if (introEl) {
+                introEl.innerHTML = `<span style="color:var(--data-green);" class="font-medium">${i18nDict.core_gameplay[currentLang]}</span>${copy.intro[currentLang]}`;
+            }
+
+            const featureEl = document.getElementById('repo-featured-update');
+            if (featureEl) {
+                featureEl.innerHTML = `
+                    <div class="flex items-center gap-2 mb-4">
+                        <h3 class="text-xs font-bold" style="color:var(--text-primary);">${copy.featuredUpdate.title}</h3>
+                        <span class="pill ml-auto text-[10px]" style="background:rgba(22,163,74,0.08);color:var(--data-green);">${copy.featuredUpdate.badge[currentLang]}</span>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+                        ${copy.featuredUpdate.stats.map(stat => `
+                            <div class="p-3 text-center rounded-lg" style="background:rgba(22,163,74,0.06);">
+                                <div class="text-[10px] tracking-wider mb-1" style="color:var(--text-muted);">${stat.label}</div>
+                                <div class="${stat.label === 'NEW ITEMS' ? 'text-lg' : 'text-sm'} font-bold" style="color:#0F172A;">${typeof stat.value === 'object' ? stat.value[currentLang] : stat.value}</div>
+                                <div class="text-[10px]" style="color:var(--text-muted);">${stat.sub[currentLang]}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <div class="text-[10px] tracking-wider mb-2" style="color:var(--text-muted);">${copy.featuredUpdate.newContent.title}</div>
+                            <div class="text-sm space-y-1" style="color:var(--text-secondary);">
+                                ${copy.featuredUpdate.newContent.lines[currentLang].map(line => `<p>• ${line}</p>`).join('')}
+                            </div>
+                        </div>
+                        <div>
+                            <div class="text-[10px] tracking-wider mb-2" style="color:var(--text-muted);">${copy.featuredUpdate.balance.title}</div>
+                            <div class="text-sm space-y-1" style="color:var(--text-secondary);">
+                                ${copy.featuredUpdate.balance.lines[currentLang].map(line => `<p>• ${line}</p>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            const reviewEl = document.getElementById('repo-review-card');
+            if (reviewEl) {
+                reviewEl.innerHTML = `
+                    <div class="flex items-center gap-2 mb-4">
+                        <h3 class="section-title">${i18nDict.review_trend[currentLang]}</h3>
+                    </div>
+                    <div class="space-y-3 text-sm" style="color:var(--text-secondary);">
+                        <div class="grid grid-cols-3 gap-2 text-center">
+                            <div class="p-2 rounded-lg" style="background:var(--accent-dim);">
+                                <div class="text-[10px]" style="color:var(--text-muted);">TOTAL</div>
+                                <div class="font-bold" style="color:var(--text-primary);" id="repo-total-reviews">--</div>
+                            </div>
+                            <div class="p-2 rounded-lg" style="background:rgba(22,163,74,0.06);">
+                                <div class="text-[10px]" style="color:var(--text-muted);">POSITIVE</div>
+                                <div class="font-bold" style="color:var(--data-green);" id="repo-positive-reviews">--</div>
+                            </div>
+                            <div class="p-2 rounded-lg" style="background:rgba(220,38,38,0.06);">
+                                <div class="text-[10px]" style="color:var(--text-muted);">NEGATIVE</div>
+                                <div class="font-bold" style="color:var(--data-red);" id="repo-negative-reviews">--</div>
+                            </div>
+                        </div>
+                        <div class="p-3 rounded-lg" style="background:var(--accent-dim);">
+                            <div class="text-[10px] tracking-wider mb-1" style="color:var(--text-muted);">${copy.review.ratingTrend.title}</div>
+                            ${copy.review.ratingTrend.lines[currentLang].map((line, index) => `<p class="text-xs${index === 1 ? ' mt-1' : ''}">${line}</p>`).join('')}
+                        </div>
+                        <div class="p-3 rounded-lg" style="background:var(--accent-dim);">
+                            <div class="text-[10px] tracking-wider mb-1" style="color:var(--text-muted);">${copy.review.communityFocus.title}</div>
+                            ${copy.review.communityFocus.lines[currentLang].map((line, index) => `<p class="text-xs${index === 1 ? ' mt-1' : ''}">${line}</p>`).join('')}
+                        </div>
+                        <div class="p-3 rounded-lg" style="background:var(--accent-dim);">
+                            <div class="text-[10px] tracking-wider mb-1" style="color:var(--text-muted);">${copy.review.tagsTitle}</div>
+                            <div id="repo-tags" class="flex flex-wrap gap-1.5 mt-1">
+                                ${copy.review.defaultTags[currentLang].map(tag => `<span class="pill text-[10px]" style="background:var(--accent-dim);color:var(--text-secondary);border:1px solid var(--card-border);">${tag}</span>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            const modEl = document.getElementById('repo-mod-card');
+            if (modEl) {
+                modEl.innerHTML = `
+                    <div class="flex items-center gap-2 mb-4">
+                        <h3 class="section-title">${i18nDict.mod_eco[currentLang]}</h3>
+                    </div>
+                    <div class="space-y-3 text-sm" style="color:var(--text-secondary);">
+                        <div class="grid grid-cols-2 gap-2 text-center">
+                            <div class="p-2 rounded-lg" style="background:var(--accent-dim);">
+                                <div class="text-[10px]" style="color:var(--text-muted);">MOD PACKS</div>
+                                <div class="font-bold" style="color:var(--text-primary);">${copy.mod.modPacks}</div>
+                            </div>
+                            <div class="p-2 rounded-lg" style="background:rgba(22,163,74,0.06);">
+                                <div class="text-[10px]" style="color:var(--text-muted);">MANAGER DOWNLOADS</div>
+                                <div class="font-bold" style="color:var(--data-green);">${copy.mod.managerDownloads[currentLang]}</div>
+                            </div>
+                        </div>
+                        <div class="p-3 rounded-lg" style="background:var(--accent-dim);">
+                            <div class="text-[10px] tracking-wider mb-2" style="color:var(--text-muted);">${copy.mod.topPacksTitle}</div>
+                            <div class="space-y-1 text-xs">
+                                ${copy.mod.topPacks.map(item => `<div class="flex justify-between"><span>${item.name}</span><span style="color:var(--text-muted);">${item[currentLang]}</span></div>`).join('')}
+                            </div>
+                        </div>
+                        <div class="p-3 rounded-lg" style="background:var(--accent-dim);">
+                            <div class="text-[10px] tracking-wider mb-2" style="color:var(--text-muted);">${copy.mod.categoriesTitle}</div>
+                            <div class="flex flex-wrap gap-1.5">
+                                ${copy.mod.categories[currentLang].map(tag => `<span class="pill text-[10px]" style="background:var(--accent-dim);color:var(--text-secondary);border:1px solid var(--card-border);">${tag}</span>`).join('')}
+                            </div>
+                        </div>
+                        <div class="p-3 rounded-lg" style="background:var(--accent-dim);">
+                            <div class="text-[10px] tracking-wider mb-2" style="color:var(--text-muted);">${copy.mod.cnSupportTitle}</div>
+                            <p class="text-xs">${copy.mod.cnSupport[currentLang]}</p>
+                        </div>
+                    </div>
+                `;
+            }
+
+            const timelineEl = document.getElementById('repo-version-timeline');
+            if (timelineEl) {
+                timelineEl.innerHTML = copy.timeline.map(item => `
+                    <div class="flex items-start gap-3">
+                        <span class="text-[10px] shrink-0 mt-0.5" style="color:${item.dot};">●</span>
+                        <div>
+                            <span class="font-semibold" style="color:var(--text-primary);">${item.version[currentLang]}</span> <span style="color:var(--text-muted);">${typeof item.date === 'object' ? item.date[currentLang] : item.date}</span>
+                            <p class="text-xs" style="color:var(--text-muted);">${item.summary[currentLang]}</p>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
         function renderChaoziran() {
             if (!chaoziranData.chaoziran) return;
             const czr = chaoziranData.chaoziran;
+            renderChaoziranStaticBlocks(czr);
 
             // TapTap数据
             if (czr.taptap) {
                 const t = czr.taptap;
                 const scoreVal = parseFloat(t.score_display || t.rating_value || t.score);
-                document.getElementById('taptap-fans').textContent = t.fans_count ? (t.fans_count / 10000).toFixed(0) + '万' : '--';
+                document.getElementById('taptap-fans').textContent = t.fans_count
+                    ? (currentLang === 'zh' ? formatCompactZh(t.fans_count) : formatCompactEn(t.fans_count))
+                    : '--';
                 // Hero评分
                 const heroScore = document.getElementById('hero-taptap-score');
                 if (heroScore && !isNaN(scoreVal)) {
@@ -3045,6 +3466,7 @@
         function renderRepo() {
             const repo = steamData['R.E.P.O.'];
             if (!repo) return;
+            renderRepoStaticBlocks();
 
             // 顶部横幅：优先使用标准 Steam header，失败时再回退到当前抓到的替代图
             const repoIcon = document.getElementById('repo-icon');
@@ -3116,7 +3538,7 @@
                 const ccu = sp.ccu ? sp.ccu.toLocaleString() : '23,352';
                 const p2w = sp.players_2weeks ? sp.players_2weeks.toLocaleString() : '--';
                 const avg = sp.average_2weeks ? Math.round(sp.average_2weeks / 60) + (currentLang === 'zh' ? '小时' : ' hrs') : '--';
-                const owners = sp.owners_estimate || '500万 ~ 1000万';
+                const owners = sp.owners_estimate || repoStaticCopy.ownersEstimate[currentLang];
                 const totalReviews = sp.total_reviews ? sp.total_reviews.toLocaleString() : '393,522';
                 const positiveReviews = sp.positive ? sp.positive.toLocaleString() : '378,243';
                 const negativeReviews = sp.negative ? sp.negative.toLocaleString() : '15,279';
@@ -3142,7 +3564,7 @@
             const tagsEl = document.getElementById('repo-tags');
             if (repo.steamspy && repo.steamspy.tags) {
                 tagsEl.innerHTML = Object.entries(repo.steamspy.tags).slice(0, 12).map(([tag, count]) =>
-                    `<span class="bg-gray-100 text-slate-700 px-2 py-0.5 rounded text-xs">${tag} <span class="text-gray-500">${count}</span></span>`
+                    `<span class="bg-gray-100 text-slate-700 px-2 py-0.5 rounded text-xs">${translateSteamTag(tag)} <span class="text-gray-500">${count}</span></span>`
                 ).join('');
             }
         }
