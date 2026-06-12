@@ -3004,7 +3004,7 @@
                 bilibiliEl.innerHTML = biliVideos.map(v => {
                     return `<a href="${v.url}" target="_blank" class="block py-1.5 border-b last:border-0 hover:bg-gray-50 transition-colors group">
                         <div class="flex gap-2">
-                            ${v.pic ? `<img src="${v.pic}" alt="" class="w-24 h-14 object-cover rounded shrink-0 bg-gray-100" loading="lazy" onerror="this.style.display='none'">` : ''}
+                            ${v.pic ? `<img src="${v.pic}" alt="" class="w-24 h-14 object-cover rounded shrink-0 bg-gray-100" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">` : ''}
                             <div class="min-w-0 flex-1">
                                 <div class="text-slate-700 group-hover:text-accent text-xs leading-snug line-clamp-2 transition-colors">${v.title}</div>
                                 <div class="flex items-center gap-2 mt-1 text-[10px] text-gray-500">
