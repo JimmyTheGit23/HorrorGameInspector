@@ -453,9 +453,14 @@
                     <div class="text-[11px] mt-1.5" style="color:var(--text-muted);" data-i18n="incl_wishlist">含1款Wishlist</div>
                 </div>
                 <div class="metric-card">
-                    <span class="text-xs" style="color:var(--text-muted);" data-i18n="update_freq">数据更新频率</span>
-                    <div class="text-3xl font-bold mt-3" style="color:#0F172A;" data-i18n="daily">每日</div>
-                    <div class="text-[11px] mt-1.5" style="color:var(--text-muted);" data-i18n="utc_auto">UTC 00:00 自动采集</div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="game-icon overflow-hidden" style="background:#F1F5F9;">
+                            <img src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/381210/header.jpg" alt="Dead by Daylight" class="w-full h-full object-cover rounded-lg" referrerpolicy="no-referrer">
+                        </div>
+                        <span class="text-xs" style="color:var(--text-muted);" data-i18n="dbd_avg_players">DBD 月均在线</span>
+                    </div>
+                    <div class="text-3xl font-bold" style="color:#0F172A;" id="dbd-overview-value">--</div>
+                    <div class="text-[11px] mt-1.5" style="color:var(--text-muted);" id="dbd-overview-subtext">--</div>
                 </div>
             </div>
 
@@ -2672,6 +2677,23 @@
                 if (repoEmoji) repoEmoji.classList.add('hidden');
             }
 
+            // DBD 首页卡片
+            if (DBD_DATA && DBD_DATA.hero) {
+                const dbdHero = DBD_DATA.hero;
+                const dbdValueEl = document.getElementById('dbd-overview-value');
+                const dbdSubtextEl = document.getElementById('dbd-overview-subtext');
+                if (dbdValueEl) {
+                    dbdValueEl.textContent = Number(dbdHero.avg_30d || dbdHero.current_players || 0).toLocaleString();
+                }
+                if (dbdSubtextEl) {
+                    const liveYears = dbdHero.years_live ? (currentLang === 'zh' ? `${dbdHero.years_live}年运营` : `${dbdHero.years_live} years live`) : '';
+                    const currentPlayers = dbdHero.current_players ? Number(dbdHero.current_players).toLocaleString() : '--';
+                    dbdSubtextEl.textContent = currentLang === 'zh'
+                        ? `当前在线 ${currentPlayers} · ${liveYears}`
+                        : `Now ${currentPlayers} · ${liveYears}`;
+                }
+            }
+
             // 最新动态 — 只显示官方内容（官网新闻+Steam发售信息）
             const newsEl = document.getElementById('latest-news');
             let newsItems = [];
@@ -4798,6 +4820,7 @@
             reviews_loading: { zh: '评测数加载中', en: 'Reviews loading' },
             tracking_count: { zh: '追踪竞品数', en: 'Tracked Competitors' },
             incl_wishlist: { zh: '含1款Wishlist', en: 'incl. 1 Wishlist' },
+            dbd_avg_players: { zh: 'DBD 月均在线', en: 'DBD 30D Avg. Players' },
             update_freq: { zh: '数据更新频率', en: 'Update Frequency' },
             daily: { zh: '每日', en: 'Daily' },
             utc_auto: { zh: 'UTC 00:00 自动采集', en: 'Auto-crawl at UTC 00:00' },
@@ -4887,7 +4910,7 @@
             replies: { zh: '回复', en: ' replies' },
             online_suffix: { zh: '在线', en: ' online' },
             // 页脚
-            footer: { zh: 'GRC恐怖多人品类情报 · 数据每日自动采集 · 仅供内部分析参考 · 数据来源：Steam / TapTap / BWIKI', en: 'GRC Horror Multiplayer Intel · Daily auto-crawl · Internal analysis only · Sources: Steam / TapTap / BWIKI' },
+            footer: { zh: 'GRC恐怖多人品类情报 · 竞品与市场观察 · 仅供内部分析参考 · 数据来源：Steam / TapTap / BWIKI', en: 'GRC Horror Multiplayer Intel · Competitor and market watch · Internal analysis only · Sources: Steam / TapTap / BWIKI' },
             // 刷新按钮文案
             refreshing: { zh: '⟳ 刷新中...', en: '⟳ Refreshing...' },
             // 采集时间
