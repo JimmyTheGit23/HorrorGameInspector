@@ -142,6 +142,7 @@
         /* Game Icon */
         .game-icon { width: 44px; height: 44px; border-radius: var(--radius-sm); object-fit: cover; border: 1px solid var(--card-border); transition: border-color 0.3s; }
         .game-icon-sm { width: 28px; height: 28px; border-radius: 6px; object-fit: cover; border: 1px solid var(--card-border); }
+        .ranking-game-icon { width: 36px; height: 36px; border-radius: 8px; object-fit: cover; border: 1px solid rgba(147, 51, 234, 0.18); flex-shrink: 0; background: #F8FAFC; }
         
         /* Category Tab */
         .cat-tab { cursor: pointer; transition: all 0.15s ease; border-radius: var(--radius-pill); }
@@ -3493,7 +3494,7 @@
 
             // 副标题
             if (repo.store) {
-                const repoGenres = pickLangList(repo.store, 'genres').join(', ');
+                const repoGenres = pickLangList(repo.store, 'genres').map(translateSteamTag).join(', ');
                 const repoPrice = pickLang(repo.store, 'price', '--');
                 document.getElementById('repo-hero-subtitle').textContent =
                     `${repo.store.developers.join(', ')} · ${repoGenres} · ${repoPrice}`;
@@ -3921,6 +3922,18 @@
             return currentLang === 'zh' ? i18nDict.released[currentLang] : 'Released';
         }
 
+        function extractSteamAppId(url = '') {
+            const match = String(url).match(/\/app\/(\d+)/);
+            return match ? match[1] : null;
+        }
+
+        function getCompetitorRankIcon(info = {}, store = {}) {
+            if (store && store.header_image) return store.header_image;
+            if (info.iconImage) return info.iconImage;
+            const appid = extractSteamAppId(info.storeUrl || '');
+            return appid ? `images/wishlist-icons/${appid}.jpg` : (info.headerImage || null);
+        }
+
         // ========== AI 竞品日报 ==========
         function renderAIDailyReport() {
             const container = document.getElementById('ai-daily-report');
@@ -4097,7 +4110,8 @@
                     rate: reviews.positive_rate || info.rate || null,
                     priceLabel: getCompetitorPrice(info, store),
                     isWishlist: info.isWishlist || false,
-                    storeUrl: info.storeUrl || '#'
+                    storeUrl: info.storeUrl || '#',
+                    thumbImage: getCompetitorRankIcon(info, store)
                 });
             });
 
@@ -4144,17 +4158,20 @@
                     <a href="${game.storeUrl}" target="_blank" rel="noopener" class="block px-4 py-3.5 hover:bg-gray-100 transition-colors group border-l-4 border-purple-500 bg-purple-500/5">
                         <div class="grid gap-3 items-center" style="${rankingGridStyle}">
                             <div class="text-center shrink-0"><span class="text-purple-400 font-bold text-sm">${rank}</span></div>
-                            <div class="min-w-0">
-                                <div class="flex items-center gap-1.5 mb-0.5 min-w-0">
-                                    <span class="font-bold text-sm text-slate-900 truncate group-hover:text-accent transition-colors">${game.displayName}</span>
-                                    <span class="text-[10px] ${catColor} shrink-0">${currentLang === 'zh' ? game.categoryKey : (competitorCategoryEnMap[game.categoryKey] || game.categoryKey)}</span>
+                            <div class="min-w-0 flex items-start gap-3">
+                                ${game.thumbImage ? `<img src="${game.thumbImage}" alt="${game.displayName}" class="ranking-game-icon">` : ''}
+                                <div class="min-w-0 flex-1">
+                                    <div class="flex items-center gap-1.5 mb-0.5 min-w-0">
+                                        <span class="font-bold text-sm text-slate-900 truncate group-hover:text-accent transition-colors">${game.displayName}</span>
+                                        <span class="text-[10px] ${catColor} shrink-0">${currentLang === 'zh' ? game.categoryKey : (competitorCategoryEnMap[game.categoryKey] || game.categoryKey)}</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-[11px] min-w-0 text-gray-500">
+                                        <span class="truncate">${game.devLabel}</span>
+                                        <span class="text-gray-400 shrink-0">·</span>
+                                        <span class="shrink-0">${game.playersLabel}</span>
+                                    </div>
+                                    ${game.introLabel ? `<div class="mt-1 text-[10px] text-gray-500 line-clamp-1">${game.introLabel}</div>` : ''}
                                 </div>
-                                <div class="flex items-center gap-2 text-[11px] min-w-0 text-gray-500">
-                                    <span class="truncate">${game.devLabel}</span>
-                                    <span class="text-gray-400 shrink-0">·</span>
-                                    <span class="shrink-0">${game.playersLabel}</span>
-                                </div>
-                                ${game.introLabel ? `<div class="mt-1 text-[10px] text-gray-500 line-clamp-1">${game.introLabel}</div>` : ''}
                             </div>
                             <div class="text-right text-[11px] text-purple-400 font-mono">${game.releaseLabel}</div>
                             <div class="text-right"><span class="inline-flex justify-center min-w-[72px] px-1.5 py-0.5 bg-purple-50 text-purple-500 border border-purple-200 rounded text-[10px] font-bold">${currentLang === 'zh' ? 'WISHLIST' : 'Wishlist'}</span></div>
