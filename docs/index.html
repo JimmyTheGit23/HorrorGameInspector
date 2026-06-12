@@ -127,11 +127,17 @@
         ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
         ::-webkit-scrollbar-track { background: var(--scroll-track); }
 
-        /* Hero Banner */
-        .hero-banner { position: relative; border-radius: var(--radius-md); overflow: hidden; min-height: 200px; display: flex; align-items: flex-end; }
-        .hero-banner img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; }
-        .hero-banner .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, #0F172A 0%, rgba(15,23,42,0.5) 100%); }
+        /* Hero Banner — DBD style: full image + dark overlay + white text */
+        .hero-banner { position: relative; border-radius: var(--radius-md); overflow: hidden; min-height: 200px; display: flex; align-items: flex-end; isolation: isolate; }
+        .hero-banner img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+        .hero-banner .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,23,42,0.92) 0%, rgba(15,23,42,0.45) 100%); }
         .hero-banner .hero-content { position: relative; z-index: 1; padding: 1.5rem; width: 100%; }
+        .hero-banner .hero-text-shadow { text-shadow: 0 2px 12px rgba(2,6,23,0.55); }
+        .hero-banner--czr img { object-position: center 38%; }
+        .hero-banner--czr .hero-overlay { background: linear-gradient(90deg, rgba(2,6,23,0.94) 0%, rgba(2,6,23,0.84) 32%, rgba(2,6,23,0.32) 64%, rgba(2,6,23,0.54) 100%); }
+        .hero-banner--repo { background: #0B1120; }
+        .hero-banner--repo img { object-fit: cover; object-position: center top; }
+        .hero-banner--repo .hero-overlay { background: linear-gradient(90deg, rgba(2,6,23,0.94) 0%, rgba(2,6,23,0.78) 40%, rgba(2,6,23,0.24) 72%, rgba(2,6,23,0.40) 100%); }
         
         /* Game Icon */
         .game-icon { width: 44px; height: 44px; border-radius: var(--radius-sm); object-fit: cover; border: 1px solid var(--card-border); transition: border-color 0.3s; }
@@ -360,6 +366,10 @@
                 <span class="nav-icon">◈</span>
                 <span>R.E.P.O.</span>
             </button>
+            <button class="sidebar-nav-item" data-nav="dbd" onclick="navTo('dbd')">
+                <span class="nav-icon">◈</span>
+                <span data-i18n="tab_dbd">Dead by Daylight</span>
+            </button>
             <button class="sidebar-nav-item" data-nav="competitors" onclick="navTo('competitors')">
                 <span class="nav-icon">◈</span>
                 <span data-i18n="tab_competitors">竞品对比</span>
@@ -405,6 +415,7 @@
             <button class="tab-btn tab-active pb-3 px-4 text-xs transition shrink-0 font-medium rounded-t-lg" data-tab="overview" onclick="switchTab('overview')" data-i18n="tab_overview">总览</button>
             <button class="tab-btn pb-3 px-4 text-xs transition shrink-0 font-medium rounded-t-lg" style="color:var(--text-muted);" data-tab="chaoziran" onclick="switchTab('chaoziran')" data-i18n="tab_chaoziran">超自然行动组</button>
             <button class="tab-btn pb-3 px-4 text-xs transition shrink-0 font-medium rounded-t-lg" style="color:var(--text-muted);" data-tab="repo" onclick="switchTab('repo')">R.E.P.O.</button>
+            <button class="tab-btn pb-3 px-4 text-xs transition shrink-0 font-medium rounded-t-lg" style="color:var(--text-muted);" data-tab="dbd" onclick="switchTab('dbd')" data-i18n="tab_dbd">Dead by Daylight</button>
             <button class="tab-btn pb-3 px-4 text-xs transition shrink-0 font-medium rounded-t-lg" style="color:var(--text-muted);" data-tab="competitors" onclick="switchTab('competitors')" data-i18n="tab_competitors">竞品对比</button>
         </div>
     </div>
@@ -437,7 +448,7 @@
                 </div>
                 <div class="metric-card">
                     <span class="text-xs" style="color:var(--text-muted);" data-i18n="tracking_count">追踪竞品数</span>
-                    <div class="text-3xl font-bold mt-3" style="color:#0F172A;">10</div>
+                    <div class="text-3xl font-bold mt-3" style="color:#0F172A;">11</div>
                     <div class="text-[11px] mt-1.5" style="color:var(--text-muted);" data-i18n="incl_wishlist">含1款Wishlist</div>
                 </div>
                 <div class="metric-card">
@@ -471,35 +482,46 @@
 
         <!-- ========== 超自然行动组页 ========== -->
         <section id="section-chaoziran" class="content-section fade-in" data-section="chaoziran">
-            <!-- 顶部标题栏 -->
+            <!-- 顶部横幅 -->
             <div class="mb-6 pt-2">
-                <div class="flex items-center gap-4 mb-4">
-                    <img src="images/czr-icon-sm.png" alt="超自然行动组" class="game-icon" style="border-color:var(--accent);">
-                    <div class="flex-1">
-                        <div class="flex items-center gap-3">
-                            <h2 class="text-xl font-bold">超自然行动组</h2>
-                            <span class="pill" style="background:var(--accent-dim);color:var(--accent);">FILE-001</span>
-                        </div>
-                        <p class="text-xs mt-1" style="color:var(--text-muted);" data-i18n="czr_genre">巨人网络 · 多人欢乐恐怖</p>
-                    </div>
-                    <div class="hidden sm:flex gap-6">
-                        <div class="text-right">
-                            <div class="text-[10px] tracking-wider" style="color:var(--text-muted);" data-i18n="taptap">TAPTAP</div>
-                            <div id="hero-taptap-score" class="text-xl font-bold" style="color:var(--gold);">--</div>
-                        </div>
-                        <div class="text-right">
-                            <div class="text-[10px] tracking-wider" style="color:var(--text-muted);">DAU</div>
-                            <div class="text-xl font-bold" style="color:#0F172A;">1000万+</div>
-                        </div>
-                        <div class="text-right pl-6" style="border-left:1px solid var(--divider);">
-                            <div class="text-[10px] tracking-wider" style="color:var(--text-muted);">002558.SZ</div>
-                            <div id="hero-stock-price" class="text-xl font-bold" style="color:var(--data-red);">--</div>
-                            <div id="hero-stock-change" class="text-[10px]" style="color:var(--data-red);">--</div>
+                <div class="hero-banner hero-banner--czr" style="min-height:220px;">
+                    <img src="images/czr-banner-new.jpg" alt="超自然行动组" referrerpolicy="no-referrer">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <div class="flex items-end justify-between gap-4 flex-wrap">
+                            <div class="hero-text-shadow">
+                                <div class="flex items-center gap-3 mb-2 flex-wrap">
+                                    <h2 class="text-2xl font-bold text-white">超自然行动组</h2>
+                                    <span class="pill" style="background:rgba(153,27,27,0.18);color:#FCA5A5;border:1px solid rgba(252,165,165,0.22);">FILE-001</span>
+                                </div>
+                                <p class="text-xs text-slate-300 mb-3" data-i18n="czr_genre">巨人网络 · 多人欢乐恐怖</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="pill" style="background:rgba(255,255,255,0.10);color:#E2E8F0;border:1px solid rgba(255,255,255,0.10);">多人</span>
+                                    <span class="pill" style="background:rgba(255,255,255,0.10);color:#E2E8F0;border:1px solid rgba(255,255,255,0.10);">摸金</span>
+                                    <span class="pill" style="background:rgba(255,255,255,0.10);color:#E2E8F0;border:1px solid rgba(255,255,255,0.10);">欢乐恐怖</span>
+                                    <span class="pill" style="background:rgba(255,255,255,0.10);color:#E2E8F0;border:1px solid rgba(255,255,255,0.10);">iOS / Android / PC</span>
+                                </div>
+                            </div>
+                            <div class="hero-text-shadow grid grid-cols-3 gap-4 min-w-[320px]">
+                                <div class="text-right">
+                                    <div class="text-[10px] tracking-wider text-white" data-i18n="taptap">TAPTAP</div>
+                                    <div id="hero-taptap-score" class="text-2xl font-bold text-white">--</div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-[10px] tracking-wider text-white">DAU</div>
+                                    <div class="text-2xl font-bold text-white">1000万+</div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-[10px] tracking-wider text-white">002558.SZ</div>
+                                    <div id="hero-stock-price" class="text-2xl font-bold text-white">--</div>
+                                    <div id="hero-stock-change" class="text-[12px] text-white">--</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <!-- 游戏简介 -->
-                <div class="glass-card p-3 text-xs leading-relaxed" style="color:var(--text-muted);">
+                <div class="glass-card p-3 text-xs leading-relaxed mt-4" style="color:var(--text-muted);">
                     <span style="color:var(--accent);" class="font-medium" data-i18n="core_gameplay">核心玩法：</span>
                     <span data-i18n="czr_desc1">多人组队前往千年古迹，对抗怪物、寻找宝藏。一个人是恐怖游戏，一群人是搞笑狂欢。</span>
                     <span style="color:var(--text-muted);" class="ml-1" data-i18n="czr_desc2">iOS / Android / PC 三端互通，主打"欢乐恐怖+社交摸金"。</span>
@@ -664,27 +686,46 @@
         <!-- ========== R.E.P.O. 页 ========== -->
         <section id="section-repo" class="content-section fade-in" data-section="repo">
             <div class="mb-6 pt-2">
-                <div class="flex items-center gap-4 mb-4">
-                    <img id="repo-icon" src="" alt="" class="game-icon hidden" style="border-color:var(--data-green);">
-                    <div class="flex-1">
-                        <div class="flex items-center gap-3">
-                            <h2 class="text-xl font-bold">R.E.P.O.</h2>
-                            <span class="pill" style="background:rgba(22,163,74,0.08);color:var(--data-green);">FILE-002</span>
-                        </div>
-                        <p class="text-xs mt-1" style="color:var(--text-muted);" id="repo-hero-subtitle">semiwork · 在线合作恐怖</p>
-                    </div>
-                    <div class="hidden sm:flex gap-6">
-                        <div class="text-right">
-                            <div class="text-[10px] tracking-wider" style="color:var(--text-muted);" data-i18n="steam_pos_rate">好评率</div>
-                            <div id="repo-hero-score" class="text-xl font-bold" style="color:var(--data-green);">96%</div>
-                        </div>
-                        <div class="text-right">
-                            <div class="text-[10px] tracking-wider" style="color:var(--text-muted);" data-i18n="current_online">在线</div>
-                            <div id="repo-ccu-hero" class="text-xl font-bold" style="color:var(--data-green);">--</div>
+                <div class="hero-banner hero-banner--repo" style="min-height:220px;">
+                    <img id="repo-hero-banner" src="" alt="R.E.P.O." class="hidden" referrerpolicy="no-referrer">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <div class="flex items-end justify-between gap-4 flex-wrap">
+                            <div class="hero-text-shadow">
+                                <div class="flex items-center gap-3 mb-2 flex-wrap">
+                                    <h2 class="text-2xl font-bold text-white">R.E.P.O.</h2>
+                                    <span class="pill" style="background:rgba(22,163,74,0.16);color:#BBF7D0;border:1px solid rgba(187,247,208,0.18);">FILE-002</span>
+                                </div>
+                                <p class="text-xs text-slate-300 mb-3" id="repo-hero-subtitle">semiwork · 在线合作恐怖</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="pill" style="background:rgba(255,255,255,0.10);color:#E2E8F0;border:1px solid rgba(255,255,255,0.10);">Co-op</span>
+                                    <span class="pill" style="background:rgba(255,255,255,0.10);color:#E2E8F0;border:1px solid rgba(255,255,255,0.10);">Physics</span>
+                                    <span class="pill" style="background:rgba(255,255,255,0.10);color:#E2E8F0;border:1px solid rgba(255,255,255,0.10);">Horror</span>
+                                    <span class="pill" style="background:rgba(255,255,255,0.10);color:#E2E8F0;border:1px solid rgba(255,255,255,0.10);">2-6 Players</span>
+                                </div>
+                            </div>
+                            <div class="hero-text-shadow grid grid-cols-2 gap-4 min-w-[280px]">
+                                <div class="text-right">
+                                    <div class="text-[10px] tracking-wider text-white" data-i18n="steam_pos_rate">好评率</div>
+                                    <div id="repo-hero-score" class="text-2xl font-bold text-white">96%</div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-[10px] tracking-wider text-white" data-i18n="current_online">在线</div>
+                                    <div id="repo-ccu-hero" class="text-2xl font-bold text-white">--</div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-[10px] tracking-wider text-white">MODEL</div>
+                                    <div class="text-sm font-semibold text-white">Co-op Horror</div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-[10px] tracking-wider text-white">PLATFORM</div>
+                                    <div class="text-sm font-semibold text-white">Steam / PC</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="glass-card p-3 text-xs leading-relaxed" style="color:var(--text-muted);">
+                <div class="glass-card p-3 text-xs leading-relaxed mt-4" style="color:var(--text-muted);">
                     <span style="color:var(--data-green);" class="font-medium">核心玩法：</span>物理驱动的多人合作恐怖游戏。利用真实物理机制搬运物品、协作解谜，在阴森环境中求生。Steam好评如潮，2-6人在线合作。
                 </div>
             </div>
@@ -882,6 +923,11 @@
             </div>
         </section>
 
+        <!-- ========== Dead by Daylight 页 ========== -->
+        <section id="section-dbd" class="content-section fade-in" data-section="dbd">
+            <div id="dbd-content" style="color:var(--text-muted);">加载中...</div>
+        </section>
+
         <!-- ========== 竞品对比页 ========== -->
         <section id="section-competitors" class="content-section fade-in" data-section="competitors">
             <div id="competitor-ranking" class="mb-6"></div>
@@ -945,7 +991,6 @@
     </div>
 
     <script>
-        <script>
         // ========== 内联数据（用于 file:// 协议本地查看）==========
         const INLINE_STEAM_DATA = {
   "R.E.P.O.": {
@@ -2227,6 +2272,78 @@
         let chaoziranData = {};
         let historyData = {};
 
+        const DBD_DATA = {
+            snapshot_date: '2026-06-12T10:00:00+08:00',
+            store_url: 'https://store.steampowered.com/app/381210/Dead_by_Daylight/',
+            news_url: 'https://deadbydaylight.com/en/news/',
+            patch_url: 'https://forums.bhvr.com/dead-by-daylight/kb/patchnotes',
+            hero: {
+                name: 'Dead by Daylight',
+                subtitle_zh: 'Behaviour Interactive · 4v1 非对称竞技恐怖',
+                subtitle_en: 'Behaviour Interactive · 4v1 Asymmetric Horror',
+                file_tag: 'FILE-003',
+                release_date: '2016-06-14',
+                years_live: 10,
+                current_players: 69933,
+                peak_24h: 74741,
+                avg_30d: 52511,
+                reviews_total: 901367,
+                positive_rate: 79,
+                recent_reviews: 5863,
+                recent_positive_rate: 75,
+                all_time_peak: 120717,
+                price_label: '$19.99',
+                platforms: ['Steam', 'Epic', 'PlayStation', 'Xbox', 'Nintendo Switch'],
+                tags: ['4v1', 'Asymmetric', 'Horror', 'LiveOps', 'Licensed IP']
+            },
+            operations: [
+                { date: '2026-04-01', type_zh: 'Lore', type_en: 'Lore', title: 'Trial by Passion', source: 'Official News', url: 'https://www.deadbydaylight.com/news/?category=lore' },
+                { date: '2026-03-26', type_zh: '活动', type_en: 'Event', title: 'Blood Moon Event 2026', source: 'Official News', url: 'https://deadbydaylight.com/news/blood-moon-event-2026/' },
+                { date: '2026-02-25', type_zh: '更新', type_en: 'Release', title: 'All-Kill: Comeback', source: 'Official News', url: 'https://deadbydaylight.com/news/all-kill-comeback-trickster-map-kwon-tae-young' },
+                { date: '2026-02-06', type_zh: '开发进展', type_en: 'Update', title: 'Grimoire Update: Phase 2, Verse 4 Recap', source: 'Official News', url: 'https://deadbydaylight.com/pt-br/noticias/dbd-grimoire-update-phase-2-verse-4/' },
+                { date: '2026-01-24', type_zh: '章节进展', type_en: 'Chapter', title: 'The Grimoire: Everything To Know So Far', source: 'Official News', url: 'https://deadbydaylight.com/news/dbd-grimoire-chapter-everything-to-know' },
+                { date: '2025-12-17', type_zh: '周年预热', type_en: 'Anniversary', title: '10th Anniversary Announcement', source: 'Official News', url: 'https://deadbydaylight.com/news/10th-anniversary-announcement' }
+            ],
+            patches: [
+                { date: '2026-05-26', version: '10.0.0 PTB', note_zh: 'Jason PTB，重大内容测试', note_en: 'Jason PTB, major content test' },
+                { date: '2026-05-12', version: '9.6.2', note_zh: 'Bugfix Patch，修复稳定性问题', note_en: 'Bugfix Patch focused on stability' },
+                { date: '2026-04-28', version: '9.6.0', note_zh: '正式 Patch，上线系统与平衡更新', note_en: 'Live patch with systems and balance updates' },
+                { date: '2026-04-07', version: '9.6.0 PTB', note_zh: 'PTB 测试 2v8 / 系统迭代', note_en: 'PTB testing 2v8 and system iteration' },
+                { date: '2026-03-31', version: '9.5.2', note_zh: 'Bugfix Patch，持续热修', note_en: 'Ongoing hotfix patch' },
+                { date: '2026-02-24', version: '9.5.0 PTB', note_zh: '新内容 PTB，带动社区预热', note_en: 'New content PTB driving pre-launch buzz' }
+            ],
+            collaborations: [
+                { name: 'Stranger Things', type_zh: '角色 / 章节', type_en: 'Characters / Chapter', note_zh: '高讨论度联动，适合拉新与回流', note_en: 'High-discussion crossover that drives returning users' },
+                { name: 'Resident Evil', type_zh: '角色 / 章节', type_en: 'Characters / Chapter', note_zh: '头部游戏 IP，覆盖动作恐怖用户', note_en: 'Top game IP with action-horror reach' },
+                { name: 'Silent Hill', type_zh: '角色 / 地图', type_en: 'Character / Map', note_zh: '经典恐怖 IP，强化调性认知', note_en: 'Classic horror IP reinforcing brand tone' },
+                { name: 'Halloween', type_zh: '经典电影 IP', type_en: 'Classic movie IP', note_zh: '系列代表性授权，符号价值高', note_en: 'Signature license with strong symbolic value' },
+                { name: 'Alien', type_zh: '角色 / 科幻恐怖', type_en: 'Character / Sci-fi horror', note_zh: '扩展到科幻恐怖受众', note_en: 'Extends reach into sci-fi horror' },
+                { name: 'Chucky', type_zh: '角色 / 影视', type_en: 'Character / Film & TV', note_zh: '话题性强，社媒传播友好', note_en: 'Strong meme/social media spread potential' }
+            ],
+            sentiment: {
+                positives_zh: ['联动矩阵够强', '十周年节点持续造势', '活动回归频繁', '人群基础大、匹配快'],
+                negatives_zh: ['平衡争议长期存在', '单排体验波动', '守尸/蹲守讨论反复出现', 'Bug 与反作弊问题持续被提及'],
+                focus_zh: ['Blood Moon 2026', '2v8 模式回归', 'Grimoire 社区章节', 'Match Details / QoL 更新'],
+                positives_en: ['Strong crossover matrix', 'Anniversary beats keep momentum', 'Events return frequently', 'Large population keeps queues short'],
+                negatives_en: ['Long-term balance debates', 'Solo queue frustration', 'Camping/tunneling discourse repeats', 'Bug and anti-cheat complaints persist'],
+                focus_en: ['Blood Moon 2026', '2v8 returns', 'Grimoire community chapter', 'Match Details / QoL updates']
+            },
+            monetization: {
+                core_zh: ['本体买断 + 章节 DLC', 'Rift Pass / 通行证', '持续上新皮肤与 Collection', '节日节点促销 + 周边 Merch'],
+                core_en: ['Premium base game + chapter DLC', 'Rift Pass / battle pass', 'Ongoing cosmetics & collections', 'Seasonal sales plus merch'],
+                notes_zh: ['Steam 标准版参考价 $19.99', '授权联动通常同时带动角色、皮肤与话题增长'],
+                notes_en: ['Steam standard edition reference price: $19.99', 'Licensed beats often lift both character sales and discussion volume']
+            },
+            trends: [
+                { month: '2026-01', avg_players: 48950, peak_players: 65386 },
+                { month: '2026-02', avg_players: 54679, peak_players: 65386 },
+                { month: '2026-03', avg_players: 46078, peak_players: 84786 },
+                { month: '2026-04', avg_players: 49160, peak_players: 77228 },
+                { month: '2026-05', avg_players: 50863, peak_players: 86004 },
+                { month: '2026-06', avg_players: 52339, peak_players: 75110 }
+            ]
+        };
+
         async function loadData(bustCache = false) {
             const suffix = bustCache ? `?t=${Date.now()}` : '';
             const isFileProtocol = window.location.protocol === 'file:';
@@ -2496,6 +2613,7 @@
             renderOverview();
             renderChaoziran();
             renderRepo();
+            renderDBD();
             renderCompetitors();
         }
 
@@ -2510,6 +2628,9 @@
             }
             if (chaoziranData && chaoziranData.chaoziran && chaoziranData.chaoziran.crawled_at) {
                 timestamps.push(chaoziranData.chaoziran.crawled_at);
+            }
+            if (DBD_DATA && DBD_DATA.snapshot_date) {
+                timestamps.push(DBD_DATA.snapshot_date);
             }
             if (timestamps.length > 0) {
                 timestamps.sort((a, b) => new Date(b) - new Date(a));
@@ -2672,8 +2793,6 @@
                 const heroScore = document.getElementById('hero-taptap-score');
                 if (heroScore && !isNaN(scoreVal)) {
                     heroScore.textContent = scoreVal.toFixed(1);
-                    heroScore.className = 'text-xl font-bold';
-                    heroScore.style.color = scoreVal >= 7 ? 'var(--data-green)' : scoreVal >= 5 ? 'var(--gold)' : 'var(--data-red)';
                 }
             }
 
@@ -2909,12 +3028,27 @@
             const repo = steamData['R.E.P.O.'];
             if (!repo) return;
 
-            // 标题栏icon
+            // 顶部横幅：优先使用标准 Steam header，失败时再回退到当前抓到的替代图
+            const repoIcon = document.getElementById('repo-icon');
+            if (repoIcon) {
+                repoIcon.classList.add('hidden');
+            }
             if (repo.store && repo.store.header_image) {
-                const repoIcon = document.getElementById('repo-icon');
-                repoIcon.src = repo.store.header_image;
-                repoIcon.alt = 'R.E.P.O.';
-                repoIcon.classList.remove('hidden');
+                const repoBanner = document.getElementById('repo-hero-banner');
+                if (repoBanner) {
+                    const canonicalBanner = repo.appid
+                        ? `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${repo.appid}/header.jpg`
+                        : repo.store.header_image;
+                    repoBanner.dataset.fallbackApplied = 'false';
+                    repoBanner.onerror = function() {
+                        if (this.dataset.fallbackApplied === 'true') return;
+                        this.dataset.fallbackApplied = 'true';
+                        this.src = repo.store.header_image;
+                    };
+                    repoBanner.src = canonicalBanner;
+                    repoBanner.alt = 'R.E.P.O.';
+                    repoBanner.classList.remove('hidden');
+                }
             }
 
             // 副标题
@@ -2927,17 +3061,17 @@
             if (repo.reviews) {
                 const heroScore = document.getElementById('repo-hero-score');
                 heroScore.textContent = repo.reviews.positive_rate + '%';
-                heroScore.className = 'text-xl font-bold';
-                heroScore.style.color = repo.reviews.positive_rate >= 80 ? 'var(--data-green)' : repo.reviews.positive_rate >= 60 ? 'var(--gold)' : 'var(--data-red)';
+                heroScore.className = 'text-2xl font-bold text-white';
             } else if (repo.steamspy) {
                 const heroScore = document.getElementById('repo-hero-score');
                 heroScore.textContent = repo.steamspy.positive_rate + '%';
+                heroScore.className = 'text-2xl font-bold text-white';
             }
 
             // 当前在线
             if (repo.steamspy) {
                 const ccuHero = document.getElementById('repo-ccu-hero');
-                if (ccuHero) { ccuHero.textContent = repo.steamspy.ccu.toLocaleString(); ccuHero.style.color = 'var(--data-green)'; }
+                if (ccuHero) { ccuHero.textContent = repo.steamspy.ccu.toLocaleString(); }
             }
 
             // 基本信息
@@ -3529,6 +3663,286 @@
             container.innerHTML = html;
         }
 
+        function renderDBD() {
+            const container = document.getElementById('dbd-content');
+            if (!container) return;
+
+            const d = DBD_DATA;
+            const isZh = currentLang === 'zh';
+            const copy = isZh ? {
+                subtitle: d.hero.subtitle_zh,
+                overview: 'DBD OVERVIEW',
+                operations: 'PATCH & EVENTS',
+                patchCadence: 'PATCH CADENCE',
+                collabs: 'LICENSED COLLABS',
+                sentiment: 'COMMUNITY SENTIMENT',
+                monetization: 'MONETIZATION',
+                trend: 'PLAYER TREND',
+                currentPlayers: '当前在线',
+                peak24h: '24H峰值',
+                avg30d: '30天均值',
+                reviewScore: '总评口碑',
+                recentReviews: '最近评测',
+                allTimePeak: '历史峰值',
+                yearsLive: '运营年限',
+                platforms: '覆盖平台',
+                operationsSummary: '近半年节奏：周年预热 + 活动回归 + PTB/正式服双轨推进。',
+                patchSummary: '版本 cadence 明显偏高：PTB、正式 patch、bugfix 紧密交错，保持社区讨论密度。',
+                positives: '正向主题',
+                negatives: '负向主题',
+                currentFocus: '当前讨论焦点',
+                revenueModel: '付费结构',
+                businessNotes: '商业化观察',
+                trendHint: '2026 年月均在线维持在 4.6 万~5.4 万区间，长线韧性强。',
+                monthAvg: '月均在线',
+                peak: '峰值',
+                source: '数据口径：Steam + 官方新闻 + Patch 节奏整理',
+                latestOps: '近期官方动态',
+                latestPatches: '版本/补丁节奏'
+            } : {
+                subtitle: d.hero.subtitle_en,
+                overview: 'DBD OVERVIEW',
+                operations: 'PATCH & EVENTS',
+                patchCadence: 'PATCH CADENCE',
+                collabs: 'LICENSED COLLABS',
+                sentiment: 'COMMUNITY SENTIMENT',
+                monetization: 'MONETIZATION',
+                trend: 'PLAYER TREND',
+                currentPlayers: 'Players Now',
+                peak24h: '24H Peak',
+                avg30d: '30D Avg',
+                reviewScore: 'Overall Reviews',
+                recentReviews: 'Recent Reviews',
+                allTimePeak: 'All-time Peak',
+                yearsLive: 'Years Live',
+                platforms: 'Platforms',
+                operationsSummary: 'Recent cadence: anniversary warm-up + event returns + PTB/live beats running in parallel.',
+                patchSummary: 'Patch cadence remains dense: PTB, live patches, and bugfixes keep discussion frequency high.',
+                positives: 'Positive Themes',
+                negatives: 'Negative Themes',
+                currentFocus: 'Current Focus',
+                revenueModel: 'Monetization Mix',
+                businessNotes: 'Business Notes',
+                trendHint: 'Average concurrent players held between 46k and 54k in 2026, showing strong long-tail resilience.',
+                monthAvg: 'Avg Players',
+                peak: 'Peak',
+                source: 'Sources: Steam + official news + patch cadence summary',
+                latestOps: 'Recent Official Beats',
+                latestPatches: 'Version / Patch Cadence'
+            };
+
+            const num = (v) => typeof v === 'number' ? v.toLocaleString() : v;
+            const maxAvg = Math.max(...d.trends.map(item => item.avg_players));
+
+            const opsHtml = d.operations.map(item => `
+                <a href="${item.url}" target="_blank" class="block rounded-lg border border-gray-200 bg-gray-50 px-3 py-3 hover:border-gray-300 hover:bg-white transition">
+                    <div class="flex items-center justify-between gap-3 mb-1.5">
+                        <span class="pill" style="background:var(--accent-dim);color:var(--accent);">${isZh ? item.type_zh : item.type_en}</span>
+                        <span class="text-[10px]" style="color:var(--text-ghost);">${item.date}</span>
+                    </div>
+                    <div class="text-sm font-semibold" style="color:var(--text-primary);">${item.title}</div>
+                    <div class="text-[11px] mt-1" style="color:var(--text-muted);">${item.source}</div>
+                </a>
+            `).join('');
+
+            const patchHtml = d.patches.map(item => `
+                <div class="flex items-start gap-3">
+                    <span class="text-[10px] shrink-0 mt-1" style="color:var(--accent);">●</span>
+                    <div class="min-w-0 flex-1">
+                        <div class="flex items-center justify-between gap-2">
+                            <span class="text-sm font-semibold" style="color:var(--text-primary);">${item.version}</span>
+                            <span class="text-[10px] shrink-0" style="color:var(--text-ghost);">${item.date}</span>
+                        </div>
+                        <div class="text-xs mt-1" style="color:var(--text-muted);">${isZh ? item.note_zh : item.note_en}</div>
+                    </div>
+                </div>
+            `).join('');
+
+            const collabHtml = d.collaborations.map(item => `
+                <div class="rounded-lg border border-gray-200 bg-white px-3 py-3">
+                    <div class="flex items-center justify-between gap-2 mb-1.5">
+                        <span class="text-sm font-semibold" style="color:var(--text-primary);">${item.name}</span>
+                        <span class="pill" style="background:rgba(15,23,42,0.04);color:#0F172A;">${isZh ? item.type_zh : item.type_en}</span>
+                    </div>
+                    <div class="text-xs leading-relaxed" style="color:var(--text-muted);">${isZh ? item.note_zh : item.note_en}</div>
+                </div>
+            `).join('');
+
+            const trendHtml = d.trends.map(item => `
+                <div class="grid grid-cols-[64px_1fr_84px] gap-3 items-center">
+                    <span class="text-[11px] font-medium" style="color:var(--text-secondary);">${item.month.replace('2026-','')}</span>
+                    <div>
+                        <div class="h-2 rounded-full overflow-hidden" style="background:rgba(15,23,42,0.06);">
+                            <div class="h-full rounded-full" style="width:${(item.avg_players / maxAvg) * 100}%;background:linear-gradient(90deg, #991B1B 0%, #0F172A 100%);"></div>
+                        </div>
+                        <div class="flex justify-between mt-1 text-[10px]" style="color:var(--text-ghost);">
+                            <span>${copy.monthAvg}</span>
+                            <span>${copy.peak} ${num(item.peak_players)}</span>
+                        </div>
+                    </div>
+                    <span class="text-right text-[11px] font-semibold" style="color:var(--text-primary);">${num(item.avg_players)}</span>
+                </div>
+            `).join('');
+
+            const sentimentPositive = (isZh ? d.sentiment.positives_zh : d.sentiment.positives_en).map(text => `<li>${text}</li>`).join('');
+            const sentimentNegative = (isZh ? d.sentiment.negatives_zh : d.sentiment.negatives_en).map(text => `<li>${text}</li>`).join('');
+            const sentimentFocus = (isZh ? d.sentiment.focus_zh : d.sentiment.focus_en).map(text => `<span class="pill" style="background:rgba(15,23,42,0.04);color:var(--text-secondary);border:1px solid var(--card-border);">${text}</span>`).join('');
+            const monetizationCore = (isZh ? d.monetization.core_zh : d.monetization.core_en).map(text => `<li>${text}</li>`).join('');
+            const monetizationNotes = (isZh ? d.monetization.notes_zh : d.monetization.notes_en).map(text => `<li>${text}</li>`).join('');
+
+            container.innerHTML = `
+                <div class="mb-6 pt-2">
+                    <div class="hero-banner" style="background:#0F172A;min-height:220px;">
+                        <img src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/381210/header.jpg" alt="Dead by Daylight" referrerpolicy="no-referrer">
+                        <div class="hero-overlay"></div>
+                        <div class="hero-content">
+                            <div class="flex items-end justify-between gap-4 flex-wrap">
+                                <div>
+                                    <div class="flex items-center gap-3 mb-2">
+                                        <h2 class="text-2xl font-bold text-white">Dead by Daylight</h2>
+                                        <span class="pill" style="background:rgba(153,27,27,0.18);color:#FCA5A5;border:1px solid rgba(252,165,165,0.22);">${d.hero.file_tag}</span>
+                                    </div>
+                                    <p class="text-xs text-slate-300 mb-3">${copy.subtitle}</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        ${d.hero.tags.map(tag => `<span class="pill" style="background:rgba(255,255,255,0.10);color:#E2E8F0;border:1px solid rgba(255,255,255,0.10);">${tag}</span>`).join('')}
+                                    </div>
+                                </div>
+                            <div class="hero-text-shadow grid grid-cols-2 gap-4 min-w-[280px]">
+                                <div class="text-right">
+                                    <div class="text-[10px] tracking-wider text-white">${copy.currentPlayers}</div>
+                                    <div class="text-2xl font-bold text-white">${num(d.hero.current_players)}</div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-[10px] tracking-wider text-white">${copy.reviewScore}</div>
+                                    <div class="text-2xl font-bold text-white">${d.hero.positive_rate}%</div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-[10px] tracking-wider text-white">${copy.yearsLive}</div>
+                                    <div class="text-lg font-semibold text-white">${d.hero.years_live}</div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-[10px] tracking-wider text-white">${copy.platforms}</div>
+                                    <div class="text-sm font-semibold text-white">${d.hero.platforms.length}</div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metric-grid grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                    <div class="metric-card">
+                        <div class="text-xs mb-3" style="color:var(--text-muted);">${copy.currentPlayers}</div>
+                        <div class="text-3xl font-bold" style="color:#0F172A;">${num(d.hero.current_players)}</div>
+                        <div class="text-[11px] mt-1.5" style="color:var(--text-muted);">Steam App 381210</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="text-xs mb-3" style="color:var(--text-muted);">${copy.peak24h}</div>
+                        <div class="text-3xl font-bold" style="color:#0F172A;">${num(d.hero.peak_24h)}</div>
+                        <div class="text-[11px] mt-1.5" style="color:var(--text-muted);">${copy.allTimePeak} ${num(d.hero.all_time_peak)}</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="text-xs mb-3" style="color:var(--text-muted);">${copy.avg30d}</div>
+                        <div class="text-3xl font-bold" style="color:#0F172A;">${num(d.hero.avg_30d)}</div>
+                        <div class="text-[11px] mt-1.5" style="color:var(--text-muted);">${d.hero.release_date}</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="text-xs mb-3" style="color:var(--text-muted);">${copy.recentReviews}</div>
+                        <div class="text-3xl font-bold" style="color:#0F172A;">${d.hero.recent_positive_rate}%</div>
+                        <div class="text-[11px] mt-1.5" style="color:var(--text-muted);">${num(d.hero.recent_reviews)} reviews</div>
+                    </div>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-4 mb-6">
+                    <div class="glass-card">
+                        <div class="flex items-center justify-between gap-3 mb-4">
+                            <h3 class="section-title">${copy.latestOps}</h3>
+                            <a href="${d.news_url}" target="_blank" class="text-xs hover:underline" style="color:var(--accent);">Official News ↗</a>
+                        </div>
+                        <div class="space-y-2.5">${opsHtml}</div>
+                        <div class="callout-crimson mt-4 text-xs">${copy.operationsSummary}</div>
+                    </div>
+                    <div class="glass-card">
+                        <div class="flex items-center justify-between gap-3 mb-4">
+                            <h3 class="section-title">${copy.latestPatches}</h3>
+                            <a href="${d.patch_url}" target="_blank" class="text-xs hover:underline" style="color:var(--accent);">Patch Notes ↗</a>
+                        </div>
+                        <div class="space-y-3">${patchHtml}</div>
+                        <div class="callout-crimson mt-4 text-xs">${copy.patchSummary}</div>
+                    </div>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-4 mb-6">
+                    <div class="glass-card">
+                        <div class="flex items-center gap-2 mb-4">
+                            <h3 class="section-title">${copy.collabs}</h3>
+                        </div>
+                        <div class="grid sm:grid-cols-2 gap-3">${collabHtml}</div>
+                    </div>
+                    <div class="glass-card">
+                        <div class="flex items-center gap-2 mb-4">
+                            <h3 class="section-title">${copy.sentiment}</h3>
+                        </div>
+                        <div class="grid sm:grid-cols-2 gap-4 text-sm">
+                            <div>
+                                <div class="text-[10px] uppercase tracking-widest mb-2" style="color:var(--text-muted);">${copy.positives}</div>
+                                <ul class="space-y-1.5 list-disc pl-4" style="color:var(--text-secondary);">${sentimentPositive}</ul>
+                            </div>
+                            <div>
+                                <div class="text-[10px] uppercase tracking-widest mb-2" style="color:var(--text-muted);">${copy.negatives}</div>
+                                <ul class="space-y-1.5 list-disc pl-4" style="color:var(--text-secondary);">${sentimentNegative}</ul>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <div class="text-[10px] uppercase tracking-widest mb-2" style="color:var(--text-muted);">${copy.currentFocus}</div>
+                            <div class="flex flex-wrap gap-2">${sentimentFocus}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-4">
+                    <div class="glass-card">
+                        <div class="flex items-center gap-2 mb-4">
+                            <h3 class="section-title">${copy.monetization}</h3>
+                        </div>
+                        <div class="grid sm:grid-cols-2 gap-4 text-sm">
+                            <div>
+                                <div class="text-[10px] uppercase tracking-widest mb-2" style="color:var(--text-muted);">${copy.revenueModel}</div>
+                                <ul class="space-y-1.5 list-disc pl-4" style="color:var(--text-secondary);">${monetizationCore}</ul>
+                            </div>
+                            <div>
+                                <div class="text-[10px] uppercase tracking-widest mb-2" style="color:var(--text-muted);">${copy.businessNotes}</div>
+                                <ul class="space-y-1.5 list-disc pl-4" style="color:var(--text-secondary);">${monetizationNotes}</ul>
+                            </div>
+                        </div>
+                        <div class="grid sm:grid-cols-3 gap-3 mt-4">
+                            <div class="rounded-lg p-3" style="background:rgba(15,23,42,0.04);">
+                                <div class="text-[10px] tracking-wider mb-1" style="color:var(--text-muted);">PRICE</div>
+                                <div class="text-lg font-bold" style="color:#0F172A;">${d.hero.price_label}</div>
+                            </div>
+                            <div class="rounded-lg p-3" style="background:rgba(15,23,42,0.04);">
+                                <div class="text-[10px] tracking-wider mb-1" style="color:var(--text-muted);">REVIEWS</div>
+                                <div class="text-lg font-bold" style="color:#0F172A;">${num(d.hero.reviews_total)}</div>
+                            </div>
+                            <div class="rounded-lg p-3" style="background:rgba(15,23,42,0.04);">
+                                <div class="text-[10px] tracking-wider mb-1" style="color:var(--text-muted);">PLATFORMS</div>
+                                <div class="text-lg font-bold" style="color:#0F172A;">${d.hero.platforms.length}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-card">
+                        <div class="flex items-center gap-2 mb-4">
+                            <h3 class="section-title">${copy.trend}</h3>
+                        </div>
+                        <div class="space-y-3">${trendHtml}</div>
+                        <div class="callout-crimson mt-4 text-xs">${copy.trendHint}</div>
+                    </div>
+                </div>
+
+                <div class="text-[11px] mt-6" style="color:var(--text-ghost);">${copy.source}</div>
+            `;
+        }
+
         function renderCompetitors() {
             const landscape = document.getElementById('competitor-landscape');
             const tbody = document.getElementById('competitors-table');
@@ -3811,6 +4225,7 @@
             // 标签页
             tab_overview: { zh: '总览', en: 'Overview' },
             tab_chaoziran: { zh: '超自然行动组', en: 'Supernatural' },
+            tab_dbd: { zh: 'Dead by Daylight', en: 'Dead by Daylight' },
             tab_competitors: { zh: '竞品对比', en: 'Competitors' },
             // 总览KPI
             czr_dau: { zh: '超自然行动组 DAU', en: 'Supernatural DAU' },
