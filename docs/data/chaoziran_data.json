@@ -2,6 +2,57 @@
   "chaoziran": {
     "bwiki_updates": [
       {
+        "title": "超自然爱心公益项目第二弹",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/moment/810481057399835050",
+        "moment_id": "810481057399835050",
+        "link_status": "valid",
+        "category": "pr",
+        "content_tags": [
+          "公益活动"
+        ],
+        "priority": "low",
+        "title_en": "The second round of the Supernatural Love Charity Project",
+        "source_en": "TapTap Official",
+        "content_tags_en": [
+          "CSR Event"
+        ]
+      },
+      {
+        "title": "【版本爆料】全新PVPVE模式来辣！",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/moment/607008778696526578",
+        "moment_id": "607008778696526578",
+        "link_status": "valid",
+        "category": "new_content",
+        "content_tags": [],
+        "priority": "high",
+        "title_en": "[Version Breaking News] The new PPVVE mode is coming!",
+        "source_en": "TapTap Official",
+        "content_tags_en": []
+      },
+      {
+        "title": "全新【钓鱼玩法】爆料抢先看，下周四晚更新后上线啦~",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/moment/809786761940043519",
+        "moment_id": "809786761940043519",
+        "link_status": "valid",
+        "category": "new_content",
+        "content_tags": [
+          "新玩法",
+          "钓鱼",
+          "新服"
+        ],
+        "priority": "high",
+        "title_en": "The new [Fishing Gameplay] is revealed and will be available for preview. It will be available after the update next Thursday night~",
+        "source_en": "TapTap Official",
+        "content_tags_en": [
+          "New Mode",
+          "Fishing",
+          "New Server"
+        ]
+      },
+      {
         "title": "我像只鸭鸭在跳舞~【音响】和【急救包】版鸭鸭皮肤都来啦！",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/moment/814218371728932866",
@@ -36,73 +87,14 @@
         ]
       },
       {
-        "title": "百变小刘鸭，快乐你我他！【腰包】【粘液球】这次都变身超萌鸭鸭",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/moment/813482839424109363",
-        "moment_id": "813482839424109363",
-        "link_status": "valid",
-        "category": "other",
-        "content_tags": [],
-        "priority": "low",
-        "title_en": "The ever-changing little Liuya, happy for you and me! [Fanny Bag] [Slime Ball] This time, you have transformed into a super cute duck",
-        "source_en": "TapTap Official",
-        "content_tags_en": []
-      },
-      {
-        "title": "版本更新——怪物农场钓鱼玩法上线！荆州博物馆联动限定内容来啦",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/moment/811648122982761996",
-        "moment_id": "811648122982761996",
-        "link_status": "valid",
-        "category": "pr",
-        "content_tags": [
-          "品牌联动"
-        ],
-        "priority": "low",
-        "title_en": "Version update - Monster Farm fishing gameplay is online! Jingzhou Museum linkage limited content is here",
-        "source_en": "TapTap Official",
-        "content_tags_en": [
-          "Brand Collab"
-        ]
-      },
-      {
-        "title": "【兰-扈江离】联动限定时装细节展示，对楚地巫风美学的别样诠释",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/moment/811312604164131672",
-        "moment_id": "811312604164131672",
-        "link_status": "valid",
-        "category": "cosmetic",
-        "content_tags": [
-          "新时装"
-        ],
-        "priority": "medium",
-        "title_en": "[Lan-Hu Jiangli] Linked limited fashion details display, a unique interpretation of the witchcraft aesthetics of Chu region",
-        "source_en": "TapTap Official",
-        "content_tags_en": [
-          "New Outfit"
-        ]
-      },
-      {
-        "title": "百变小刘鸭，快乐你我他~\n这次【腰包】【粘液球】【音响】和【急救包】4款道具都变身鸭鸭，12号0点，...",
+        "title": "这次请到了专业的动作老师指导，还原最原汁原味的楚韵！",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/app/714123/topic?type=official",
         "link_status": "unknown",
         "category": "other",
         "content_tags": [],
         "priority": "low",
-        "title_en": "The ever-changing little Liuya, happy for you and me~\nThis time, the four props [Bum Bag], [Slime Ball], [Sound Speaker] and [First Aid Kit] have all transformed into ducks. At 0:00 on the 12th,...",
-        "source_en": "TapTap Official",
-        "content_tags_en": []
-      },
-      {
-        "title": "你们的怪就没有好看的美女吗？见到帅哥就两个。你们的设计上限就只有这么高了吗？还是说你们也就那样啊？ ",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/app/714123/topic?type=official",
-        "link_status": "unknown",
-        "category": "other",
-        "content_tags": [],
-        "priority": "low",
-        "title_en": "Don’t you monsters have any beautiful beauties? I saw two handsome guys. Is your design limit only this high? Or are you just like that?",
+        "title_en": "This time, a professional action teacher was invited to guide and restore the most authentic Chu Yun!",
         "source_en": "TapTap Official",
         "content_tags_en": []
       },
@@ -119,7 +111,19 @@
         "content_tags_en": []
       },
       {
-        "title": "版更速递！局内可直接调整键位啦~",
+        "title": "这个六一儿童节我们走进了三所贫困小学。\n以工友们的名义，为孩子们送上一份儿童节礼物！",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/app/714123/topic?type=official",
+        "link_status": "unknown",
+        "category": "event",
+        "content_tags": [],
+        "priority": "medium",
+        "title_en": "This Children's Day we visited three impoverished primary schools.\nIn the name of the workers, give the children a Children's Day gift!",
+        "source_en": "TapTap Official",
+        "content_tags_en": []
+      },
+      {
+        "title": "每周趣闻速递第六期！公司突现大批黑发员工，工友精神状态大赏！",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/app/714123/topic?type=official",
         "link_status": "unknown",
@@ -128,34 +132,34 @@
           "版本更新"
         ],
         "priority": "low",
-        "title_en": "Updates delivered quickly! You can adjust the key positions directly within the game~",
+        "title_en": "The sixth issue of weekly interesting news express! A large number of black-haired employees suddenly appeared in the company, and the workers’ mental state was greatly rewarded!",
         "source_en": "TapTap Official",
         "content_tags_en": [
           "Version Update"
         ]
       },
       {
-        "title": "还有背包满时拾取大金能自动替换低价值回收物，农场植物也上新咯！\n6月11日晚更新后一起来看看吧",
+        "title": "超自然公司开启特别行动！“加班加点”只为带来惊喜！\n新模式出没！全新PVPVE模式即将上线，小小爱丽...",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/app/714123/topic?type=official",
         "link_status": "unknown",
-        "category": "patch",
+        "category": "new_content",
         "content_tags": [
-          "版本更新"
+          "新服"
         ],
-        "priority": "low",
-        "title_en": "In addition, when the backpack is full, picking up big gold can automatically replace low-value recycling items, and the farm plants are also new!\nLet’s take a look after the update on the evening of June 11th",
+        "priority": "high",
+        "title_en": "Supernatural Corporation launches special operation! \"Work overtime\" just to bring surprises!\nNew model appears! The new PPVVE mode will be launched soon, Little Ellie...",
         "source_en": "TapTap Official",
         "content_tags_en": [
-          "Version Update"
+          "New Server"
         ]
       }
     ],
     "taptap": {
       "app_id": 714123,
       "source": "taptap_webpage",
-      "fans_count": 11289772,
-      "review_count": 30710,
+      "fans_count": 11301263,
+      "review_count": 30830,
       "score": "6.9",
       "description": "超自然行动组是一款合作游戏，TapTap 提供超自然行动组最新版官方正版下载，一个人玩是恐怖游戏，两个人玩是冒险游戏，三个人玩是寻宝游戏，...",
       "score_display": 6.9,
@@ -288,23 +292,23 @@
     "community": {
       "taptap_forum": [
         {
-          "title": "6月11日更新——百变小刘鸭联动道具皮肤上线！",
+          "title": "【昆仑秘境噩梦】刷棺点位找棺全地图小抄（6.7更新）",
           "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/814180810818063239",
-          "moment_id": "814180810818063239",
+          "url": "https://www.taptap.cn/moment/699685947553352923",
+          "moment_id": "699685947553352923",
           "link_status": "valid",
           "sentiment": "neutral",
-          "title_en": "Updated on June 11th - the ever-changing Little Liu Ya linkage prop skin is online!",
+          "title_en": "[Kunlun Secret Realm Nightmare] Refresh the coffin points to find the coffin map cheat sheet (6.7 update)",
           "source_en": "TapTap Forum"
         },
         {
-          "title": "超自然行动组四队惊现三位天才剧情高能反转",
+          "title": "强烈的建议，加强检测开挂设备",
           "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/moment/814368834654831655",
-          "moment_id": "814368834654831655",
+          "url": "https://www.taptap.cn/moment/813608286724033753",
+          "moment_id": "813608286724033753",
           "link_status": "valid",
           "sentiment": "neutral",
-          "title_en": "The four teams of the supernatural action team unexpectedly discovered three geniuses, and the plot turned out to be a high-energy reversal.",
+          "title_en": "It is strongly recommended to strengthen the detection of cheating equipment.",
           "source_en": "TapTap Forum"
         },
         {
@@ -317,66 +321,66 @@
           "source_en": "TapTap Forum"
         },
         {
-          "title": "怎么说呢 我以为满氪就会有很多人跟我玩 实际上好友越来越少了 以前微氪的好友都淡游了 充到满氪也算任务完成了",
+          "title": "非原创，来源网络\n噩梦的地图是不变的，但棺位随机刷新，所以你等于有了除雾地图去固定房间找棺材\n文件夹...",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral",
-          "title_en": "How should I put it? I thought that if I had enough Krypton, many people would play with me. In fact, I have fewer and fewer friends. My friends who used to spend a lot of money on WeChat have all stopped playing. Once I have enough Krypton, I can consider my mission accomplished.",
+          "title_en": "Not original, source network\nThe map of Nightmare remains unchanged, but the coffin positions are randomly refreshed, so you have the defogging map to find the coffin in a fixed room.\nfolder...",
           "source_en": "TapTap Forum"
         },
         {
-          "title": "怎么说呢 我以为满氪就会有很多人跟我玩 实际上好友越来越少了 以前微氪的好友都淡游了 充到满氪也算任...",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral",
-          "title_en": "How should I put it? I thought there would be a lot of people playing with me if I had enough Krypton. In fact, I have fewer and fewer friends. My friends who used to be on WeChat have all stopped playing. It’s okay to have enough Krypton to make money...",
-          "source_en": "TapTap Forum"
-        },
-        {
-          "title": "1.从现在开始，报名即可直接参与，不用大家一分钱，谢谢大家，有空的时候都会发布一起玩来帮助大家（❤️...",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral",
-          "title_en": "1. From now on, you can participate directly by signing up without spending a penny. Thank you everyone. I will post and play together when I have time to help everyone (❤️...",
-          "source_en": "TapTap Forum"
-        },
-        {
-          "title": "月光宝盒那么好出的吗？我都给兔子好几个了，还是没见到水晶的影子",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral",
-          "title_en": "Is the Moonlight Treasure Box so easy to come out with? I've given several rabbits, but I still haven't seen the shadow of the crystal.",
-          "source_en": "TapTap Forum"
-        },
-        {
-          "title": "不管是古蜀还是龙宫一直都开不出，是不是我这个号太黑了",
+          "title": "每周趣闻速递第六期！公司突现大批黑发员工，工友精神状态大赏！",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "negative",
-          "title_en": "Whether it is Gu Shu or Dragon Palace, I have been unable to open it. Is my account too dark?",
+          "title_en": "The sixth issue of weekly interesting news express! A large number of black-haired employees suddenly appeared in the company, and the workers’ mental state was greatly rewarded!",
           "source_en": "TapTap Forum"
         },
         {
-          "title": "大家一起为你准备了蛋糕，来许个愿吧（记得看紧小熊猫，它最馋嘴了",
+          "title": "前阵子出了阿念池子的那个弓箭金皮，有没有人帮忙估一下呀，就是估着玩玩[表情_微笑]\n顺便还可以猜猜我充了多少",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral",
-          "title_en": "Everyone has prepared a cake for you, come and make a wish (remember to keep an eye on the red panda, it is the most greedy)",
+          "title_en": "The golden skin of the bow and arrow that came out of A Nian Pond a while ago, can anyone help me estimate it? I just did it for fun [expression_smile]\nBy the way, you can also guess how much I charged.",
           "source_en": "TapTap Forum"
         },
         {
-          "title": "百变小刘鸭，快乐你我他~\n这次【腰包】【粘液球】【音响】和【急救包】4款道具都变身鸭鸭，12号0点，...",
+          "title": "前阵子出了阿念池子的那个弓箭金皮，有没有人帮忙估一下呀，就是估着玩玩[表情_微笑]\n顺便还可以猜猜我...",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral",
-          "title_en": "The ever-changing little Liuya, happy for you and me~\nThis time, the four props [Bum Bag], [Slime Ball], [Sound Speaker] and [First Aid Kit] have all transformed into ducks. At 0:00 on the 12th,...",
+          "title_en": "The golden skin of the bow and arrow that came out of A Nian Pond a while ago, can anyone help me estimate it? I just did it for fun [expression_smile]\nBy the way, you can also guess me...",
+          "source_en": "TapTap Forum"
+        },
+        {
+          "title": "没用的，主要是看皮肤，看的还是限定的，我那个朋友充了4000块，三个金皮，一个幻梦才卖了500多",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "neutral",
+          "title_en": "It’s useless. It mainly depends on the skin, which is limited. My friend recharged 4,000 yuan and sold three gold skins and a fantasy for more than 500 yuan.",
+          "source_en": "TapTap Forum"
+        },
+        {
+          "title": "@超自然行动组 我给你提个建议，你抓拿着外挂组织你是抓不完的，强烈的建议就是加强检测设备，检测到对局...",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "neutral",
+          "title_en": "@Supernatural Action Group Let me give you a suggestion. You will never be able to catch all the cheating organizations. My strong suggestion is to strengthen the detection equipment to detect the game...",
+          "source_en": "TapTap Forum"
+        },
+        {
+          "title": "得了挂是不弄的，玩家必修的这游戏没救了",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "neutral",
+          "title_en": "You can't fix it if you get it. It's a game that players must learn. It's hopeless.",
           "source_en": "TapTap Forum"
         }
       ],
@@ -390,22 +394,22 @@
             "title": "南瓜入侵，幽魂大运来了！",
             "bvid": "BV1xCkfBjENz",
             "url": "https://www.bilibili.com/video/BV1xCkfBjENz",
-            "play": 5786934,
-            "like": 34703,
+            "play": 5787117,
+            "like": 34705,
             "danmaku": 184,
             "author": "張某人ZSS",
             "duration": "1:27",
             "pic": "https://i2.hdslb.com/bfs/archive/ea07fe0b8e48607d072ec800412f85b811687c92.jpg",
             "pubdate": "2025-11-10",
-            "title_en": "Pumpkins invade, ghosts have great luck!"
+            "title_en": "The pumpkins invade, and the ghosts have their luck!"
           },
           {
             "title": "教会你们如何在超自然找到大佬",
             "bvid": "BV1d2tGz2E3Z",
             "url": "https://www.bilibili.com/video/BV1d2tGz2E3Z",
-            "play": 4727941,
-            "like": 31872,
-            "danmaku": 388,
+            "play": 4728055,
+            "like": 31874,
+            "danmaku": 389,
             "author": "中二的小溢",
             "duration": "5:45",
             "pic": "https://i2.hdslb.com/bfs/archive/d70e085a135fbe95fd9d6413a3cde6264ad72960.jpg",
@@ -416,8 +420,8 @@
             "title": "超自然行动组怪物图鉴第六期「小熊猫」",
             "bvid": "BV1QCjiz2Evq",
             "url": "https://www.bilibili.com/video/BV1QCjiz2Evq",
-            "play": 3690048,
-            "like": 16636,
+            "play": 3693280,
+            "like": 16642,
             "danmaku": 219,
             "author": "就是黄大毛",
             "duration": "1:45",
@@ -429,8 +433,8 @@
             "title": "本来想卖掉大鹅、看到眼神心软了",
             "bvid": "BV1Wv6bBWEmn",
             "url": "https://www.bilibili.com/video/BV1Wv6bBWEmn",
-            "play": 3489220,
-            "like": 114873,
+            "play": 3490294,
+            "like": 114900,
             "danmaku": 1671,
             "author": "虎熊寺",
             "duration": "1:24",
@@ -442,7 +446,7 @@
             "title": "搜打撤黑马？！《超自然行动组》凭什么能爆火？",
             "bvid": "BV11hsheJE5i",
             "url": "https://www.bilibili.com/video/BV11hsheJE5i",
-            "play": 2927981,
+            "play": 2928022,
             "like": 31660,
             "danmaku": 45,
             "author": "白馆长丶",
@@ -455,7 +459,7 @@
             "title": "为什么幸福的人不会来到超自然行动组？",
             "bvid": "BV1Zqu4z5ETn",
             "url": "https://www.bilibili.com/video/BV1Zqu4z5ETn",
-            "play": 2789522,
+            "play": 2789558,
             "like": 9003,
             "danmaku": 146,
             "author": "白白鸭游戏",
@@ -482,8 +486,8 @@
       "regions_data": {
         "us": {
           "name": "美国",
-          "rating": 4.52,
-          "rating_count": 572,
+          "rating": 4.53,
+          "rating_count": 585,
           "current_version": "1.29.30",
           "price": "Free",
           "genre": "Games",
@@ -492,7 +496,7 @@
         "jp": {
           "name": "日本",
           "rating": 4.42,
-          "rating_count": 1438,
+          "rating_count": 1457,
           "current_version": "1.29.30",
           "price": "無料",
           "genre": "Games",
@@ -501,7 +505,7 @@
         "kr": {
           "name": "韩国",
           "rating": 3.83,
-          "rating_count": 220,
+          "rating_count": 223,
           "current_version": "1.29.30",
           "price": "무료",
           "genre": "Games",
@@ -521,8 +525,8 @@
         }
       },
       "app_store_rating": 4.26,
-      "total_ratings": 2230,
-      "updated": "2026-06-12 02:38",
+      "total_ratings": 2265,
+      "updated": "2026-06-13 02:31",
       "name_en": "Tomb Busters"
     },
     "app_store_rankings": {
@@ -532,16 +536,16 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-12 02:38",
+        "updated": "2026-06-13 02:31",
         "name_en": "US"
       },
       "jp": {
         "name": "日本",
         "free_overall": null,
-        "free_games": null,
+        "free_games": 80,
         "grossing_overall": null,
-        "grossing_games": null,
-        "updated": "2026-06-12 02:38",
+        "grossing_games": 83,
+        "updated": "2026-06-13 02:31",
         "name_en": "Japan"
       },
       "kr": {
@@ -550,7 +554,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-12 02:38",
+        "updated": "2026-06-13 02:31",
         "name_en": "South Korea"
       },
       "tw": {
@@ -559,7 +563,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-12 02:38",
+        "updated": "2026-06-13 02:31",
         "name_en": "Taiwan, China"
       },
       "hk": {
@@ -568,26 +572,89 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-12 02:38",
+        "updated": "2026-06-13 02:31",
         "name_en": "Hong Kong, China"
       }
     },
     "stock_price": {
       "code": "SZ002558",
       "name": "巨人网络",
-      "price": 23.89,
+      "price": 23.44,
       "prev_close": 23.65,
-      "change_pct": 1.01,
-      "change_amt": 0.24,
-      "updated": "2026-06-12 02:38",
+      "change_pct": -0.89,
+      "change_amt": -0.21,
+      "updated": "2026-06-13 02:31",
       "name_en": "Giant Network"
     },
     "new_content_tracker": [
       {
+        "id": "新玩法",
+        "name": "新玩法",
+        "status": "live",
+        "first_seen": "2026-06-13",
+        "launch_date": null,
+        "tags": [
+          "新玩法",
+          "钓鱼",
+          "新服"
+        ],
+        "announcements": [
+          {
+            "title": "全新【钓鱼玩法】爆料抢先看，下周四晚更新后上线啦~",
+            "date": "2026-06-13",
+            "source": "TapTap官方",
+            "url": "https://www.taptap.cn/moment/809786761940043519",
+            "title_en": "The new [Fishing Gameplay] is revealed and will be available for preview. It will be available after the update next Thursday night~",
+            "source_en": "TapTap Official",
+            "link_status": "valid"
+          }
+        ],
+        "player_reactions": {
+          "positive": 0,
+          "neutral": 0,
+          "negative": 0
+        },
+        "name_en": "New Mode",
+        "tags_en": [
+          "New Mode",
+          "Fishing",
+          "New Server"
+        ]
+      },
+      {
+        "id": "新服",
+        "name": "新服",
+        "status": "live",
+        "first_seen": "2026-06-13",
+        "launch_date": null,
+        "tags": [
+          "新服"
+        ],
+        "announcements": [
+          {
+            "title": "超自然公司开启特别行动！“加班加点”只为带来惊喜！\n新模式出没！全新PVPVE模式即将上线，小小爱丽...",
+            "date": "2026-06-13",
+            "source": "TapTap官方",
+            "url": "https://www.taptap.cn/app/714123/topic?type=official",
+            "title_en": "Supernatural Corporation launches special operation! \"Work overtime\" just to bring surprises!\nNew model appears! The new PPVVE mode will be launched soon, Little Ellie...",
+            "source_en": "TapTap Official"
+          }
+        ],
+        "player_reactions": {
+          "positive": 0,
+          "neutral": 0,
+          "negative": 0
+        },
+        "name_en": "New Server",
+        "tags_en": [
+          "New Server"
+        ]
+      },
+      {
         "id": "角色重做",
         "name": "角色重做",
         "status": "announced",
-        "first_seen": "2026-06-12",
+        "first_seen": "2026-06-13",
         "launch_date": null,
         "tags": [
           "角色重做"
@@ -595,12 +662,12 @@
         "announcements": [
           {
             "title": "阿念重做登场！",
-            "date": "2026-06-12",
+            "date": "2026-06-13",
             "source": "官网",
             "url": "https://www.chaoziran.com/news/538",
-            "link_status": "valid",
             "title_en": "A Nian’s rework is here!",
-            "source_en": "Official Site"
+            "source_en": "Official Site",
+            "link_status": "valid"
           }
         ],
         "player_reactions": {
@@ -617,7 +684,7 @@
         "id": "新怪物",
         "name": "新怪物",
         "status": "teased",
-        "first_seen": "2026-06-12",
+        "first_seen": "2026-06-13",
         "launch_date": null,
         "tags": [
           "新怪物"
@@ -625,12 +692,12 @@
         "announcements": [
           {
             "title": "新怪物【鸭子】实机展示，追上了命都给你哦",
-            "date": "2026-06-12",
+            "date": "2026-06-13",
             "source": "官网",
             "url": "https://www.chaoziran.com/news/535",
-            "link_status": "valid",
             "title_en": "The new monster [Duck] is shown in action. If you catch up, you will be given life.",
-            "source_en": "Official Site"
+            "source_en": "Official Site",
+            "link_status": "valid"
           }
         ],
         "player_reactions": {
@@ -644,6 +711,6 @@
         ]
       }
     ],
-    "crawled_at": "2026-06-12T02:38:22.862940"
+    "crawled_at": "2026-06-13T02:31:44.050621"
   }
 }
