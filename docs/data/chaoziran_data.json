@@ -29,7 +29,7 @@
           "新皮肤"
         ],
         "priority": "medium",
-        "title_en": "Supernatural’s most powerful anniversary benefit revealed! Get limited skins for free!",
+        "title_en": "Supernatural’s most powerful anniversary benefits revealed! Get limited skins for free!",
         "source_en": "TapTap Official",
         "content_tags_en": [
           "New Skin"
@@ -50,18 +50,6 @@
         "content_tags_en": [
           "IP Collab"
         ]
-      },
-      {
-        "title": "官方你。到底是要出什么？一会儿鬼迷戏中，一会又什么江南。一会儿又鬼灭灯。然后又一个都不上",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/app/714123/topic?type=official",
-        "link_status": "unknown",
-        "category": "other",
-        "content_tags": [],
-        "priority": "low",
-        "title_en": "Official you. What exactly is going to happen? One moment I was in a ghost show, and the other moment it was Jiangnan. After a while, the ghost disappeared again. Then again no one came",
-        "source_en": "TapTap Official",
-        "content_tags_en": []
       },
       {
         "title": "超自然行动组 x 果宝特攻 联动即将开启",
@@ -99,7 +87,7 @@
         "category": "other",
         "content_tags": [],
         "priority": "low",
-        "title_en": "Why is it so ugly? Chef Allen cried to death in the bathroom, and Chef Alice cried to death on the bed when she saw Fu Rui turned into a peach butt. ——At the same time, the official watched the player who paid the money take two steps to drop a gold bar.",
+        "title_en": "Why is it so ugly? Chef Allen cried to death in the bathroom, and Chef Alice cried to death on the bed when she saw Fu Rui turned into a peach butt. ——At the same time, the official watched as the player who deposited money took two steps to drop a gold bar.",
         "source_en": "TapTap Official",
         "content_tags_en": []
       },
@@ -142,12 +130,28 @@
         "title_en": "Miasma pervades the mountains and fields, and strange and dangerous valleys hide in them.\nAnd there are those four people, traveling across mountains and rivers.\nIt's about fighting strange beasts, breaking evil situations, and looking for treasures.\nIf you want to know what happened next,...",
         "source_en": "TapTap Official",
         "content_tags_en": []
+      },
+      {
+        "title": "超自然快点出新地图，龙宫我都打腻了！",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/app/714123/topic?type=official",
+        "link_status": "unknown",
+        "category": "new_content",
+        "content_tags": [
+          "新地图"
+        ],
+        "priority": "high",
+        "title_en": "Supernatural will release a new map soon, I’m tired of playing Dragon Palace!",
+        "source_en": "TapTap Official",
+        "content_tags_en": [
+          "New Map"
+        ]
       }
     ],
     "taptap": {
       "app_id": 714123,
       "source": "taptap_webpage",
-      "fans_count": 11339429,
+      "fans_count": 11339279,
       "review_count": 31130,
       "score": "6.9",
       "description": "超自然行动组是一款合作游戏，TapTap 提供超自然行动组最新版官方正版下载，一个人玩是恐怖游戏，两个人玩是冒险游戏，三个人玩是寻宝游戏，...",
@@ -301,6 +305,16 @@
           "source_en": "TapTap Forum"
         },
         {
+          "title": "那个土拨鼠你优化就优化吧，但",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/moment/815517598702634342",
+          "moment_id": "815517598702634342",
+          "link_status": "valid",
+          "sentiment": "neutral",
+          "title_en": "Just optimize that prairie dog, but",
+          "source_en": "TapTap Forum"
+        },
+        {
           "title": "盗墓探险题材原创头部IP《鬼吹灯》官方正版授权合作，海量全新内容，我们七月见！",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
@@ -310,30 +324,12 @@
           "source_en": "TapTap Forum"
         },
         {
-          "title": "福利大放送！限定耀世舞蹈【果宝机甲归位】6月18日登录就领！",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "positive",
-          "title_en": "Welfare giveaway! Limited edition Glory Dance [Guobao Mecha Returns] Log in on June 18 to get it!",
-          "source_en": "TapTap Forum"
-        },
-        {
-          "title": "还有限定免费表情、免费新员工，端午节限定回收物等你发现~",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "positive",
-          "title_en": "There are also limited free emoticons, free new employees, and Dragon Boat Festival limited recycling items waiting for you to discover~",
-          "source_en": "TapTap Forum"
-        },
-        {
-          "title": "又想玩，但又要死死了过会又要玩，有一次出大金从楼梯跳下去还摔死了，把我自己都笨笑了，每次都是灰，今天...",
+          "title": "9:15摸出来一把大剑，撤离成功了，出来大厅也不显示可以鉴定，我点开背包也没有",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral",
-          "title_en": "I wanted to play again, but I was so desperate that I wanted to play again later. One time, I jumped down the stairs and fell to my death. It made me laugh stupidly. Every time, I was ashes. Today...",
+          "title_en": "I pulled out a big sword at 9:15, and the evacuation was successful. When I came out of the lobby, it didn’t show that I could identify it. Even when I clicked on my backpack, it didn’t show up.",
           "source_en": "TapTap Forum"
         },
         {
@@ -360,7 +356,7 @@
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "negative",
-          "title_en": "Why is it so ugly? Chef Allen cried to death in the bathroom, and Chef Alice cried to death on the bed when she saw Fu Rui turned into a peach butt. ——At the same time, the official watched the player who paid the money take two steps to drop a gold bar.",
+          "title_en": "Why is it so ugly? Chef Allen cried to death in the bathroom, and Chef Alice cried to death on the bed when she saw Fu Rui turned into a peach butt. ——At the same time, the official watched as the player who deposited money took two steps to drop a gold bar.",
           "source_en": "TapTap Forum"
         },
         {
@@ -370,6 +366,15 @@
           "link_status": "unknown",
           "sentiment": "neutral",
           "title_en": "The latest images of the new map are released, and a lot of content is coming in early July",
+          "source_en": "TapTap Forum"
+        },
+        {
+          "title": "瘴气弥漫遮山野，奇诡凶险谷中藏。\n且有那四人，跋山涉水。\n是斗异兽，破邪局，寻珍宝。\n欲知后事如何，且听下回分解......",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "neutral",
+          "title_en": "Miasma pervades the mountains and fields, and strange and dangerous valleys hide in them.\nAnd there are those four people, traveling across mountains and rivers.\nIt's about fighting strange beasts, breaking evil situations, and looking for treasures.\nIf you want to know what happened next, let’s listen to the explanation next time...",
           "source_en": "TapTap Forum"
         }
       ],
@@ -383,7 +388,7 @@
             "title": "南瓜入侵，幽魂大运来了！",
             "bvid": "BV1xCkfBjENz",
             "url": "https://www.bilibili.com/video/BV1xCkfBjENz",
-            "play": 5787458,
+            "play": 5787454,
             "like": 34705,
             "danmaku": 184,
             "author": "張某人ZSS",
@@ -396,7 +401,7 @@
             "title": "教会你们如何在超自然找到大佬",
             "bvid": "BV1d2tGz2E3Z",
             "url": "https://www.bilibili.com/video/BV1d2tGz2E3Z",
-            "play": 4728389,
+            "play": 4728387,
             "like": 31879,
             "danmaku": 389,
             "author": "中二的小溢",
@@ -409,7 +414,7 @@
             "title": "超自然行动组怪物图鉴第六期「小熊猫」",
             "bvid": "BV1QCjiz2Evq",
             "url": "https://www.bilibili.com/video/BV1QCjiz2Evq",
-            "play": 3698289,
+            "play": 3698276,
             "like": 16655,
             "danmaku": 220,
             "author": "就是黄大毛",
@@ -422,9 +427,9 @@
             "title": "本来想卖掉大鹅、看到眼神心软了",
             "bvid": "BV1Wv6bBWEmn",
             "url": "https://www.bilibili.com/video/BV1Wv6bBWEmn",
-            "play": 3492712,
-            "like": 114983,
-            "danmaku": 1674,
+            "play": 3492676,
+            "like": 114982,
+            "danmaku": 1673,
             "author": "虎熊寺",
             "duration": "1:24",
             "pic": "https://i0.hdslb.com/bfs/archive/85eb76c39837c40ba46fd54b2eaef7c07194ce6c.jpg",
@@ -435,7 +440,7 @@
             "title": "搜打撤黑马？！《超自然行动组》凭什么能爆火？",
             "bvid": "BV11hsheJE5i",
             "url": "https://www.bilibili.com/video/BV11hsheJE5i",
-            "play": 2928089,
+            "play": 2928088,
             "like": 31661,
             "danmaku": 45,
             "author": "白馆长丶",
@@ -485,7 +490,7 @@
         "jp": {
           "name": "日本",
           "rating": 4.42,
-          "rating_count": 1496,
+          "rating_count": 1521,
           "current_version": "1.29.30",
           "price": "無料",
           "genre": "Games",
@@ -493,8 +498,8 @@
         },
         "kr": {
           "name": "韩国",
-          "rating": 3.79,
-          "rating_count": 229,
+          "rating": 3.81,
+          "rating_count": 231,
           "current_version": "1.29.30",
           "price": "무료",
           "genre": "Games",
@@ -513,9 +518,9 @@
           "name_en": "Hong Kong, China"
         }
       },
-      "app_store_rating": 4.25,
-      "total_ratings": 2328,
-      "updated": "2026-06-15 02:47",
+      "app_store_rating": 4.26,
+      "total_ratings": 2355,
+      "updated": "2026-06-15 10:00",
       "name_en": "Tomb Busters"
     },
     "app_store_rankings": {
@@ -525,7 +530,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-15 02:47",
+        "updated": "2026-06-15 09:59",
         "name_en": "US"
       },
       "jp": {
@@ -534,7 +539,7 @@
         "free_games": 80,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-15 02:47",
+        "updated": "2026-06-15 09:59",
         "name_en": "Japan"
       },
       "kr": {
@@ -543,7 +548,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-15 02:47",
+        "updated": "2026-06-15 09:59",
         "name_en": "South Korea"
       },
       "tw": {
@@ -552,7 +557,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-15 02:47",
+        "updated": "2026-06-15 10:00",
         "name_en": "Taiwan, China"
       },
       "hk": {
@@ -561,18 +566,18 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-15 02:47",
+        "updated": "2026-06-15 10:00",
         "name_en": "Hong Kong, China"
       }
     },
     "stock_price": {
       "code": "SZ002558",
       "name": "巨人网络",
-      "price": 24.16,
+      "price": 24.05,
       "prev_close": 23.44,
-      "change_pct": 3.07,
-      "change_amt": 0.72,
-      "updated": "2026-06-15 02:47",
+      "change_pct": 2.6,
+      "change_amt": 0.61,
+      "updated": "2026-06-15 09:59",
       "name_en": "Giant Network"
     },
     "new_content_tracker": [
@@ -622,6 +627,14 @@
             "url": "https://www.taptap.cn/app/714123/topic?type=official",
             "title_en": "The latest images of the new map are released, and a lot of content is coming in early July",
             "source_en": "TapTap Official"
+          },
+          {
+            "title": "超自然快点出新地图，龙宫我都打腻了！",
+            "date": "2026-06-15",
+            "source": "TapTap官方",
+            "url": "https://www.taptap.cn/app/714123/topic?type=official",
+            "title_en": "Supernatural will release a new map soon, I’m tired of playing Dragon Palace!",
+            "source_en": "TapTap Official"
           }
         ],
         "player_reactions": {
@@ -633,68 +646,8 @@
         "tags_en": [
           "New Map"
         ]
-      },
-      {
-        "id": "角色重做",
-        "name": "角色重做",
-        "status": "announced",
-        "first_seen": "2026-06-15",
-        "launch_date": null,
-        "tags": [
-          "角色重做"
-        ],
-        "announcements": [
-          {
-            "title": "阿念重做登场！",
-            "date": "2026-06-15",
-            "source": "官网",
-            "url": "https://www.chaoziran.com/news/538",
-            "title_en": "A Nian’s rework is here!",
-            "source_en": "Official Site",
-            "link_status": "valid"
-          }
-        ],
-        "player_reactions": {
-          "positive": 0,
-          "neutral": 0,
-          "negative": 0
-        },
-        "name_en": "Character Rework",
-        "tags_en": [
-          "Character Rework"
-        ]
-      },
-      {
-        "id": "新怪物",
-        "name": "新怪物",
-        "status": "teased",
-        "first_seen": "2026-06-15",
-        "launch_date": null,
-        "tags": [
-          "新怪物"
-        ],
-        "announcements": [
-          {
-            "title": "新怪物【鸭子】实机展示，追上了命都给你哦",
-            "date": "2026-06-15",
-            "source": "官网",
-            "url": "https://www.chaoziran.com/news/535",
-            "title_en": "The new monster [Duck] is shown in action. If you catch up, you will be given life.",
-            "source_en": "Official Site",
-            "link_status": "valid"
-          }
-        ],
-        "player_reactions": {
-          "positive": 0,
-          "neutral": 0,
-          "negative": 0
-        },
-        "name_en": "New Monster",
-        "tags_en": [
-          "New Monster"
-        ]
       }
     ],
-    "crawled_at": "2026-06-15T02:47:49.369773"
+    "crawled_at": "2026-06-15T10:00:08.268065"
   }
 }
