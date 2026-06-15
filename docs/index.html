@@ -450,7 +450,7 @@
                 <div class="metric-card">
                     <div class="flex items-center gap-3 mb-3">
                         <div class="game-icon overflow-hidden" style="background:#F1F5F9;">
-                            <img src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/381210/header.jpg" alt="Dead by Daylight" class="w-full h-full object-cover rounded-lg" referrerpolicy="no-referrer">
+                            <img src="images/dbd-header.jpg" alt="Dead by Daylight" class="w-full h-full object-cover rounded-lg" onerror="this.src='https://shared.steamstatic.com/store_item_assets/steam/apps/381210/header.jpg'">
                         </div>
                         <span class="text-xs" style="color:var(--text-muted);" data-i18n="dbd_avg_players">DBD 月均在线</span>
                     </div>
@@ -460,7 +460,7 @@
                 <div class="metric-card">
                     <span class="text-xs" style="color:var(--text-muted);" data-i18n="tracking_count">追踪竞品数</span>
                     <div class="text-3xl font-bold mt-3" style="color:#0F172A;">11</div>
-                    <div class="text-[11px] mt-1.5" style="color:var(--text-muted);" data-i18n="incl_wishlist">含1款Wishlist</div>
+                    <div class="text-[11px] mt-1.5" style="color:var(--text-muted);" data-i18n="incl_wishlist">含7款Wishlist</div>
                 </div>
             </div>
 
@@ -693,7 +693,7 @@
         <section id="section-repo" class="content-section fade-in" data-section="repo">
             <div class="mb-6 pt-2">
                 <div class="hero-banner hero-banner--repo" style="min-height:220px;">
-                    <img id="repo-hero-banner" src="" alt="R.E.P.O." class="hidden" referrerpolicy="no-referrer">
+                    <img id="repo-hero-banner" src="images/repo-header.jpg" alt="R.E.P.O." referrerpolicy="no-referrer">
                     <div class="hero-overlay"></div>
                     <div class="hero-content">
                         <div class="flex items-end justify-between gap-4 flex-wrap">
@@ -2627,8 +2627,9 @@ If you want to know what happened next, let’s listen to the explanation next t
         let steamData = {};
         let chaoziranData = {};
         let historyData = {};
+        let steamNewsData = {};
 
-        const DBD_DATA = {
+        let DBD_DATA = {
             "snapshot_date": "2026-06-15T10:02:00+08:00",
             "store_url": "https://store.steampowered.com/app/381210/Dead_by_Daylight/",
             "news_url": "https://deadbydaylight.com/en/news/",
@@ -2726,6 +2727,55 @@ If you want to know what happened next, let’s listen to the explanation next t
             } catch(e) {
                 console.warn('历史数据加载失败:', e);
                 if (isFileProtocol && typeof INLINE_HISTORY_DATA !== 'undefined') historyData = INLINE_HISTORY_DATA;
+            }
+
+            // 加载DBD最新数据（动态部分：CCU/评测/新闻/补丁）
+            try {
+                const dbdResp = await fetch('./data/dbd_data.json' + suffix);
+                const dbdFresh = await dbdResp.json();
+                // 只合并非null的动态字段，保护手工维护的定性数据
+                if (dbdFresh.hero) {
+                    const h = dbdFresh.hero;
+                    // 仅更新有实际值的数值字段
+                    if (h.current_players) DBD_DATA.hero.current_players = h.current_players;
+                    if (h.positive_rate) DBD_DATA.hero.positive_rate = h.positive_rate;
+                    if (h.reviews_total) DBD_DATA.hero.reviews_total = h.reviews_total;
+                    if (h.price_label) DBD_DATA.hero.price_label = h.price_label;
+                }
+                // 转换operations格式：Steam新闻 → renderDBD格式
+                if (dbdFresh.operations && dbdFresh.operations.length > 0) {
+                    DBD_DATA.operations = dbdFresh.operations.map(item => ({
+                        date: item.date,
+                        type_zh: item.feed_type === '官方' ? '官方' : (item.feed_label || '媒体'),
+                        type_en: item.feed_type === '官方' ? 'Official' : (item.feed_label || 'Media'),
+                        title: item.title,
+                        source: item.feed_label || 'Steam',
+                        url: item.url
+                    }));
+                }
+                // 转换patches格式：Steam新闻 → renderDBD格式
+                if (dbdFresh.patches && dbdFresh.patches.length > 0) {
+                    DBD_DATA.patches = dbdFresh.patches.map(item => ({
+                        date: item.date,
+                        version: item.title,
+                        note_zh: item.contents ? item.contents.slice(0, 100) : '',
+                        note_en: item.contents ? item.contents.slice(0, 100) : '',
+                        url: item.url
+                    }));
+                }
+                if (dbdFresh.trends && dbdFresh.trends.length > 0) DBD_DATA.trends = dbdFresh.trends;
+                DBD_DATA.snapshot_date = dbdFresh.snapshot_date || DBD_DATA.snapshot_date;
+            } catch(e) {
+                console.warn('DBD数据加载失败（使用内置数据）:', e);
+            }
+
+            // 加载Steam新闻（所有游戏的更新动向）
+            try {
+                const newsResp = await fetch('./data/steam_news.json' + suffix);
+                steamNewsData = await newsResp.json();
+            } catch(e) {
+                console.warn('Steam新闻加载失败:', e);
+                if (isFileProtocol && typeof INLINE_STEAM_NEWS !== 'undefined') steamNewsData = INLINE_STEAM_NEWS;
             }
 
             renderAll();
@@ -3017,10 +3067,10 @@ If you want to know what happened next, let’s listen to the explanation next t
             if (repo && repo.steamspy) {
                 document.getElementById('repo-ccu').textContent = repo.steamspy.ccu.toLocaleString();
             }
-            // 总览页R.E.P.O.图标
+            // 总览页R.E.P.O.图标 — 优先本地，CDN不可用时自动回退
             if (repo && repo.store && repo.store.header_image) {
                 const repoIcon = document.getElementById('repo-icon-overview');
-                repoIcon.src = repo.store.header_image;
+                repoIcon.src = 'images/repo-header.jpg';
                 repoIcon.alt = 'R.E.P.O.';
                 repoIcon.classList.remove('hidden');
                 const repoEmoji = document.getElementById('repo-icon-emoji');
@@ -3464,35 +3514,89 @@ If you want to know what happened next, let’s listen to the explanation next t
 
             const featureEl = document.getElementById('repo-featured-update');
             if (featureEl) {
-                featureEl.innerHTML = `
-                    <div class="flex items-center gap-2 mb-4">
-                        <h3 class="text-xs font-bold" style="color:var(--text-primary);">${copy.featuredUpdate.title}</h3>
-                        <span class="pill ml-auto text-[10px]" style="background:rgba(22,163,74,0.08);color:var(--data-green);">${copy.featuredUpdate.badge[currentLang]}</span>
-                    </div>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
-                        ${copy.featuredUpdate.stats.map(stat => `
+                // 优先使用Steam News实时数据
+                const repoNews = steamNewsData && steamNewsData['R.E.P.O.'] ? steamNewsData['R.E.P.O.'] : null;
+                const latestPatch = repoNews && repoNews.latest_patch ? repoNews.latest_patch : null;
+                const latestAnnounce = repoNews && repoNews.all ? repoNews.all.find(n => !n.is_patch) : null;
+
+                if (latestPatch) {
+                    // 用实时数据渲染
+                    const nextAnnounce = repoNews.all ? repoNews.all.filter(n => !n.is_patch && n !== latestAnnounce) : [];
+                    featureEl.innerHTML = `
+                        <div class="flex items-center gap-2 mb-4">
+                            <h3 class="text-xs font-bold" style="color:var(--text-primary);">${latestPatch.title}</h3>
+                            <span class="pill ml-auto text-[10px]" style="background:rgba(22,163,74,0.08);color:var(--data-green);">${currentLang === 'zh' ? '最新' : 'LATEST'}</span>
+                        </div>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
                             <div class="p-3 text-center rounded-lg" style="background:rgba(22,163,74,0.06);">
-                                <div class="text-[10px] tracking-wider mb-1" style="color:var(--text-muted);">${stat.label}</div>
-                                <div class="${stat.label === 'NEW ITEMS' ? 'text-lg' : 'text-sm'} font-bold" style="color:#0F172A;">${typeof stat.value === 'object' ? stat.value[currentLang] : stat.value}</div>
-                                <div class="text-[10px]" style="color:var(--text-muted);">${stat.sub[currentLang]}</div>
+                                <div class="text-[10px] tracking-wider mb-1" style="color:var(--text-muted);">DATE</div>
+                                <div class="text-sm font-bold" style="color:#0F172A;">${latestPatch.date}</div>
                             </div>
-                        `).join('')}
-                    </div>
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <div>
-                            <div class="text-[10px] tracking-wider mb-2" style="color:var(--text-muted);">${copy.featuredUpdate.newContent.title}</div>
-                            <div class="text-sm space-y-1" style="color:var(--text-secondary);">
-                                ${copy.featuredUpdate.newContent.lines[currentLang].map(line => `<p>• ${line}</p>`).join('')}
+                            <div class="p-3 text-center rounded-lg" style="background:rgba(22,163,74,0.06);">
+                                <div class="text-[10px] tracking-wider mb-1" style="color:var(--text-muted);">TYPE</div>
+                                <div class="text-sm font-bold" style="color:#0F172A;">${currentLang === 'zh' ? '版本更新' : 'Patch'}</div>
+                            </div>
+                            <div class="p-3 text-center rounded-lg" style="background:rgba(22,163,74,0.06);">
+                                <div class="text-[10px] tracking-wider mb-1" style="color:var(--text-muted);">PATCHES</div>
+                                <div class="text-lg font-bold" style="color:#0F172A;">${repoNews.patches.length}</div>
+                                <div class="text-[10px]" style="color:var(--text-muted);">${currentLang === 'zh' ? '近月' : 'recent'}</div>
+                            </div>
+                            <div class="p-3 text-center rounded-lg" style="background:rgba(22,163,74,0.06);">
+                                <div class="text-[10px] tracking-wider mb-1" style="color:var(--text-muted);">NEWS</div>
+                                <div class="text-lg font-bold" style="color:#0F172A;">${repoNews.announcements.length}</div>
+                                <div class="text-[10px]" style="color:var(--text-muted);">${currentLang === 'zh' ? '动向' : 'updates'}</div>
                             </div>
                         </div>
-                        <div>
-                            <div class="text-[10px] tracking-wider mb-2" style="color:var(--text-muted);">${copy.featuredUpdate.balance.title}</div>
-                            <div class="text-sm space-y-1" style="color:var(--text-secondary);">
-                                ${copy.featuredUpdate.balance.lines[currentLang].map(line => `<p>• ${line}</p>`).join('')}
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <div class="text-[10px] tracking-wider mb-2" style="color:var(--text-muted);">${currentLang === 'zh' ? '最新补丁' : 'LATEST PATCH'}</div>
+                                <div class="text-sm space-y-1" style="color:var(--text-secondary);">
+                                    <p>• ${latestPatch.title}</p>
+                                    ${latestPatch.contents ? `<p class="text-xs" style="color:var(--text-muted);">${latestPatch.contents.slice(0, 150)}</p>` : ''}
+                                    ${latestPatch.url ? `<p><a href="${latestPatch.url}" target="_blank" class="text-[10px] text-green-600 hover:underline">${currentLang === 'zh' ? '查看详情 →' : 'View →'}</a></p>` : ''}
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-[10px] tracking-wider mb-2" style="color:var(--text-muted);">${currentLang === 'zh' ? '最新动向' : 'LATEST NEWS'}</div>
+                                <div class="text-sm space-y-1" style="color:var(--text-secondary);">
+                                    ${nextAnnounce.slice(0, 3).map(n => `<p>• <a href="${n.url}" target="_blank" class="hover:text-accent-light transition-colors">${n.title}</a> <span style="color:var(--text-muted);" class="text-[10px]">${n.date}</span></p>`).join('')}
+                                    ${nextAnnounce.length === 0 ? `<p style="color:var(--text-muted);">${currentLang === 'zh' ? '暂无其他动向' : 'No other news'}</p>` : ''}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                `;
+                    `;
+                } else {
+                    // 回退到硬编码
+                    featureEl.innerHTML = `
+                        <div class="flex items-center gap-2 mb-4">
+                            <h3 class="text-xs font-bold" style="color:var(--text-primary);">${copy.featuredUpdate.title}</h3>
+                            <span class="pill ml-auto text-[10px]" style="background:rgba(22,163,74,0.08);color:var(--data-green);">${copy.featuredUpdate.badge[currentLang]}</span>
+                        </div>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+                            ${copy.featuredUpdate.stats.map(stat => `
+                                <div class="p-3 text-center rounded-lg" style="background:rgba(22,163,74,0.06);">
+                                    <div class="text-[10px] tracking-wider mb-1" style="color:var(--text-muted);">${stat.label}</div>
+                                    <div class="${stat.label === 'NEW ITEMS' ? 'text-lg' : 'text-sm'} font-bold" style="color:#0F172A;">${typeof stat.value === 'object' ? stat.value[currentLang] : stat.value}</div>
+                                    <div class="text-[10px]" style="color:var(--text-muted);">${stat.sub[currentLang]}</div>
+                                </div>
+                            `).join('')}
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <div class="text-[10px] tracking-wider mb-2" style="color:var(--text-muted);">${copy.featuredUpdate.newContent.title}</div>
+                                <div class="text-sm space-y-1" style="color:var(--text-secondary);">
+                                    ${copy.featuredUpdate.newContent.lines[currentLang].map(line => `<p>• ${line}</p>`).join('')}
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-[10px] tracking-wider mb-2" style="color:var(--text-muted);">${copy.featuredUpdate.balance.title}</div>
+                                <div class="text-sm space-y-1" style="color:var(--text-secondary);">
+                                    ${copy.featuredUpdate.balance.lines[currentLang].map(line => `<p>• ${line}</p>`).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
             }
 
             const reviewEl = document.getElementById('repo-review-card');
@@ -3573,15 +3677,53 @@ If you want to know what happened next, let’s listen to the explanation next t
 
             const timelineEl = document.getElementById('repo-version-timeline');
             if (timelineEl) {
-                timelineEl.innerHTML = copy.timeline.map(item => `
-                    <div class="flex items-start gap-3">
+                // 优先使用Steam News实时数据，回退到硬编码版本时间线
+                let timelineItems = [];
+                const repoNews = steamNewsData && steamNewsData['R.E.P.O.'] ? steamNewsData['R.E.P.O.'] : null;
+                if (repoNews && repoNews.patches && repoNews.patches.length > 0) {
+                    // 用Steam News API的最新补丁数据构建时间线
+                    timelineItems = repoNews.patches.slice(0, 6).map((patch, i) => ({
+                        version: patch.title,
+                        date: patch.date,
+                        summary: patch.contents ? patch.contents.slice(0, 100) : '',
+                        dot: i < 2 ? '#16A34A' : '#94A3B8',
+                        url: patch.url
+                    }));
+                    // 如果不足6条，用硬编码数据补充
+                    if (timelineItems.length < 6) {
+                        const remaining = copy.timeline.slice(0, 6 - timelineItems.length);
+                        remaining.forEach(item => {
+                            timelineItems.push({
+                                version: item.version[currentLang],
+                                date: typeof item.date === 'object' ? item.date[currentLang] : item.date,
+                                summary: item.summary[currentLang],
+                                dot: item.dot,
+                                url: null
+                            });
+                        });
+                    }
+                } else {
+                    // 回退到硬编码数据
+                    timelineItems = copy.timeline.map(item => ({
+                        version: item.version[currentLang],
+                        date: typeof item.date === 'object' ? item.date[currentLang] : item.date,
+                        summary: item.summary[currentLang],
+                        dot: item.dot,
+                        url: null
+                    }));
+                }
+                timelineEl.innerHTML = timelineItems.map(item => {
+                    const versionHtml = item.url
+                        ? `<a href="${item.url}" target="_blank" class="font-semibold hover:text-accent-light transition-colors" style="color:var(--text-primary);">${item.version}</a>`
+                        : `<span class="font-semibold" style="color:var(--text-primary);">${item.version}</span>`;
+                    return `<div class="flex items-start gap-3">
                         <span class="text-[10px] shrink-0 mt-0.5" style="color:${item.dot};">●</span>
                         <div>
-                            <span class="font-semibold" style="color:var(--text-primary);">${item.version[currentLang]}</span> <span style="color:var(--text-muted);">${typeof item.date === 'object' ? item.date[currentLang] : item.date}</span>
-                            <p class="text-xs" style="color:var(--text-muted);">${item.summary[currentLang]}</p>
+                            ${versionHtml} <span style="color:var(--text-muted);">${item.date}</span>
+                            ${item.summary ? `<p class="text-xs" style="color:var(--text-muted);">${item.summary}</p>` : ''}
                         </div>
-                    </div>
-                `).join('');
+                    </div>`;
+                }).join('');
             }
         }
 
@@ -3841,7 +3983,7 @@ If you want to know what happened next, let’s listen to the explanation next t
             if (!repo) return;
             renderRepoStaticBlocks();
 
-            // 顶部横幅：优先使用标准 Steam header，失败时再回退到当前抓到的替代图
+            // 顶部横幅：本地图片已作为默认src，尝试加载Steam CDN高清图，失败则保留本地图
             const repoIcon = document.getElementById('repo-icon');
             if (repoIcon) {
                 repoIcon.classList.add('hidden');
@@ -3852,15 +3994,17 @@ If you want to know what happened next, let’s listen to the explanation next t
                     const canonicalBanner = repo.appid
                         ? `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${repo.appid}/header.jpg`
                         : repo.store.header_image;
-                    repoBanner.dataset.fallbackApplied = 'false';
-                    repoBanner.onerror = function() {
-                        if (this.dataset.fallbackApplied === 'true') return;
-                        this.dataset.fallbackApplied = 'true';
-                        this.src = repo.store.header_image;
+                    // 尝试加载CDN高清图，失败时保留本地图片
+                    const cdnImg = new Image();
+                    cdnImg.onload = function() {
+                        repoBanner.src = canonicalBanner;
                     };
-                    repoBanner.src = canonicalBanner;
+                    cdnImg.onerror = function() {
+                        // CDN不可用，保持本地图片 images/repo-header.jpg
+                        console.log('R.E.P.O. CDN header unavailable, using local fallback');
+                    };
+                    cdnImg.src = canonicalBanner;
                     repoBanner.alt = 'R.E.P.O.';
-                    repoBanner.classList.remove('hidden');
                 }
             }
 
@@ -4095,6 +4239,7 @@ If you want to know what happened next, let’s listen to the explanation next t
                 rate: null,
                 reviews_total: null,
                 isWishlist: true,
+                wishlist: 45507,
                 headerImage: 'images/huijing-header.jpg',
                 storeUrl: 'https://store.steampowered.com/app/3978820/'
             },
@@ -4111,6 +4256,7 @@ If you want to know what happened next, let’s listen to the explanation next t
                 rate: null,
                 reviews_total: null,
                 isWishlist: true,
+                wishlist: 131,
                 storeUrl: 'https://store.steampowered.com/app/3850670/'
             },
             'The Reflection': {
@@ -4126,6 +4272,7 @@ If you want to know what happened next, let’s listen to the explanation next t
                 rate: null,
                 reviews_total: null,
                 isWishlist: true,
+                wishlist: 17,
                 storeUrl: 'https://store.steampowered.com/app/4314340/'
             },
             'Radio Decay': {
@@ -4141,6 +4288,7 @@ If you want to know what happened next, let’s listen to the explanation next t
                 rate: null,
                 reviews_total: null,
                 isWishlist: true,
+                wishlist: 382,
                 storeUrl: 'https://store.steampowered.com/app/3956540/'
             },
             'In Us': {
@@ -4156,6 +4304,7 @@ If you want to know what happened next, let’s listen to the explanation next t
                 rate: null,
                 reviews_total: null,
                 isWishlist: true,
+                wishlist: 243,
                 storeUrl: 'https://store.steampowered.com/app/4640600/'
             },
             'Carnival Hunt': {
@@ -4172,6 +4321,7 @@ If you want to know what happened next, let’s listen to the explanation next t
                 rate: null,
                 reviews_total: null,
                 isWishlist: true,
+                wishlist: 25308,
                 storeUrl: 'https://store.steampowered.com/app/1181550/'
             },
             'Halloween: The Game': {
@@ -4188,6 +4338,7 @@ If you want to know what happened next, let’s listen to the explanation next t
                 rate: null,
                 reviews_total: null,
                 isWishlist: true,
+                wishlist: 16548,
                 storeUrl: 'https://store.steampowered.com/app/3219630/'
             }
         };
@@ -4482,6 +4633,7 @@ If you want to know what happened next, let’s listen to the explanation next t
                     rate: reviews.positive_rate || info.rate || null,
                     priceLabel: getCompetitorPrice(info, store),
                     isWishlist: info.isWishlist || false,
+                    wishlistCount: info.wishlist || 0,
                     storeUrl: info.storeUrl || '#',
                     thumbImage: getCompetitorRankIcon(info, store)
                 });
@@ -4492,7 +4644,8 @@ If you want to know what happened next, let’s listen to the explanation next t
                 const parsed = new Date(value);
                 return Number.isNaN(parsed.getTime()) ? 0 : parsed.getTime();
             };
-            const upcoming = allGames.filter(g => g.isWishlist || !g.rawRelease || g.rawRelease === '未公布');
+            const upcoming = allGames.filter(g => g.isWishlist || !g.rawRelease || g.rawRelease === '未公布')
+                .sort((a, b) => b.wishlistCount - a.wishlistCount);
             const released = allGames
                 .filter(g => !g.isWishlist && g.rawRelease && g.rawRelease !== '未公布')
                 .sort((a, b) => parseDate(b.rawRelease) - parseDate(a.rawRelease));
@@ -4546,7 +4699,12 @@ If you want to know what happened next, let’s listen to the explanation next t
                                 </div>
                             </div>
                             <div class="text-right text-[11px] text-purple-400 font-mono">${game.releaseLabel}</div>
-                            <div class="text-right"><span class="inline-flex justify-center min-w-[72px] px-1.5 py-0.5 bg-purple-50 text-purple-500 border border-purple-200 rounded text-[10px] font-bold">${currentLang === 'zh' ? 'WISHLIST' : 'Wishlist'}</span></div>
+                            <div class="text-right">
+                                <div class="flex flex-col items-end gap-0.5">
+                                    <span class="inline-flex justify-center min-w-[72px] px-1.5 py-0.5 bg-purple-50 text-purple-500 border border-purple-200 rounded text-[10px] font-bold">${currentLang === 'zh' ? 'WISHLIST' : 'Wishlist'}</span>
+                                    ${game.wishlistCount > 0 ? `<span class="text-[10px] text-purple-500/70 font-medium">${game.wishlistCount.toLocaleString()} Followers</span>` : ''}
+                                </div>
+                            </div>
                             <div class="text-right"><span class="text-gray-700 text-[11px]">--</span></div>
                             <div class="text-right text-[11px] text-gray-500 font-mono">${game.priceLabel}</div>
                         </div>
@@ -4734,7 +4892,7 @@ If you want to know what happened next, let’s listen to the explanation next t
             container.innerHTML = `
                 <div class="mb-6 pt-2">
                     <div class="hero-banner" style="background:#0F172A;min-height:220px;">
-                        <img src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/381210/header.jpg" alt="Dead by Daylight" referrerpolicy="no-referrer">
+                        <img src="images/dbd-header.jpg" alt="Dead by Daylight" onerror="this.src='https://shared.steamstatic.com/store_item_assets/steam/apps/381210/header.jpg'">
                         <div class="hero-overlay"></div>
                         <div class="hero-content">
                             <div class="flex items-end justify-between gap-4 flex-wrap">
@@ -4896,7 +5054,8 @@ If you want to know what happened next, let’s listen to the explanation next t
                 { key: '捉鬼调查', label: i18nDict.cat_ghost[currentLang], desc: i18nDict.cat_ghost_desc[currentLang] },
                 { key: 'PvPvE猎杀', label: i18nDict.cat_pvpve[currentLang], desc: i18nDict.cat_pvpve_desc[currentLang] },
             ];
-            const wishlistItems = Object.entries(competitorInfo).filter(([, value]) => value.isWishlist);
+            const wishlistItems = Object.entries(competitorInfo).filter(([, value]) => value.isWishlist)
+                .sort((a, b) => (b[1].wishlist || 0) - (a[1].wishlist || 0));
             const releasedItems = Object.entries(competitorInfo).filter(([, value]) => !value.isWishlist);
 
             let html = '';
@@ -4982,6 +5141,7 @@ If you want to know what happened next, let’s listen to the explanation next t
 
                 wishlistItems.forEach(([name, info]) => {
                     const wishImg = info.headerImage || null;
+                    const wishCount = info.wishlist || 0;
                     const displayName = getCompetitorName(name, info, {});
                     const tooltipName = currentLang === 'zh' ? name : getCompetitorShortName(name, info, {});
                     const tooltipCn = currentLang === 'zh' ? (info.cnName || '') : '';
@@ -4990,6 +5150,7 @@ If you want to know what happened next, let’s listen to the explanation next t
                     const playersLabel = getCompetitorPlayers(info);
                     const introLabel = getCompetitorIntro(name, info, {});
                     const priceLabel = getCompetitorPrice(info, {});
+                    const wishCountDisplay = wishCount > 0 ? wishCount.toLocaleString() + (currentLang === 'zh' ? ' 关注' : ' followers') : '';
                     html += `
                         <a href="${info.storeUrl}" target="_blank" rel="noopener" class="comp-card group bg-white rounded-lg border border-purple-200 overflow-hidden cursor-pointer hover:border-purple-300 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:shadow-black/5 block no-underline" data-url="${info.storeUrl}" data-name="${tooltipName.replace(/"/g, '&quot;')}" data-cn="${tooltipCn.replace(/"/g, '&quot;')}" data-dev="${devLabel.replace(/"/g, '&quot;')}" data-release="${releaseLabel.replace(/"/g, '&quot;')}" data-players="${playersLabel.replace(/"/g, '&quot;')}" data-rate="" data-ccu="" data-price="${String(priceLabel).replace(/"/g, '&quot;')}" data-intro="${introLabel.replace(/"/g, '&quot;')}" data-img="${wishImg || ''}" data-status="WISHLIST" data-store="${info.storeUrl}">
                             <div class="relative h-[48px] overflow-hidden">
@@ -5005,7 +5166,7 @@ If you want to know what happened next, let’s listen to the explanation next t
                                         <span class="font-bold text-xs text-slate-900 truncate">${displayName}</span>
                                         <span class="px-1 py-px bg-purple-50 text-purple-400 border border-purple-200 rounded text-[9px] font-bold tracking-wide">${currentLang === 'zh' ? 'WISHLIST' : 'Wishlist'}</span>
                                     </div>
-                                    <span class="text-[10px] text-gray-600 shrink-0">${priceLabel}</span>
+                                    ${wishCountDisplay ? `<span class="text-[10px] text-purple-500 font-semibold shrink-0">${wishCountDisplay}</span>` : `<span class="text-[10px] text-gray-600 shrink-0">${priceLabel}</span>`}
                                 </div>
                                 <div class="flex items-center gap-1.5 mb-1">
                                     <span class="text-[10px] text-gray-600">${devLabel}</span>
@@ -5169,7 +5330,7 @@ If you want to know what happened next, let’s listen to the explanation next t
             repo_online: { zh: 'R.E.P.O. 当前在线', en: 'R.E.P.O. Online Now' },
             reviews_loading: { zh: '评测数加载中', en: 'Reviews loading' },
             tracking_count: { zh: '追踪竞品数', en: 'Tracked Competitors' },
-            incl_wishlist: { zh: '含1款Wishlist', en: 'incl. 1 Wishlist' },
+            incl_wishlist: { zh: '含7款Wishlist', en: 'incl. 7 Wishlist' },
             dbd_avg_players: { zh: 'DBD 月均在线', en: 'DBD 30D Avg. Players' },
             update_freq: { zh: '数据更新频率', en: 'Update Frequency' },
             daily: { zh: '每日', en: 'Daily' },
@@ -5360,6 +5521,28 @@ If you want to know what happened next, let’s listen to the explanation next t
         }
 
         loadData();
+
+        // ========== 全局图片容错：Steam CDN不可用时回退到本地图片 ==========
+        const steamLocalFallback = {
+            '3241660': 'images/repo-header.jpg',
+            '1966720': 'images/lethal-company-header.jpg',
+            '739630': 'images/phasmophobia-header.jpg',
+            '2881650': 'images/content-warning-header.jpg',
+            '4408510': 'images/feeders-header.jpg',
+            '1203220': 'images/naraka-header.jpg',
+            '381210': 'images/dbd-header.jpg'
+        };
+        document.addEventListener('error', function(e) {
+            const img = e.target;
+            if (img.tagName !== 'IMG' || img.dataset.fallbackApplied === 'true') return;
+            const src = img.src || '';
+            // 匹配Steam CDN URL中的appid
+            const match = src.match(/\/apps\/(\d+)\//);
+            if (match && steamLocalFallback[match[1]]) {
+                img.dataset.fallbackApplied = 'true';
+                img.src = steamLocalFallback[match[1]];
+            }
+        }, true);
 
         // ========== 竞品卡片事件委托 + Tooltip ==========
         const tooltip = document.getElementById('card-tooltip');

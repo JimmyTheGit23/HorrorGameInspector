@@ -12,6 +12,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from steam_crawler import crawl_steam
 from chaoziran_crawler import crawl_chaoziran, enrich_chaoziran_bilingual
+from dbd_crawler import crawl_dbd
+from steam_news_crawler import crawl_steam_news
 
 
 DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "docs", "data")
@@ -104,7 +106,7 @@ def main():
     print("=" * 50)
 
     # 1. 采集Steam数据
-    print("\n[1/2] 采集Steam数据...")
+    print("\n[1/5] 采集Steam数据...")
     try:
         steam_data = crawl_steam()
         save_json(steam_data, os.path.join(DATA_DIR, "steam_data.json"))
@@ -114,7 +116,7 @@ def main():
         steam_data = {}
 
     # 2. 采集超自然行动组数据
-    print("\n[2/2] 采集超自然行动组数据...")
+    print("\n[2/5] 采集超自然行动组数据...")
     try:
         czr_data = crawl_chaoziran()
         # 增量合并：新数据为空时保留旧数据
@@ -128,13 +130,31 @@ def main():
         print(f"   超自然行动组数据采集失败: {e}")
         czr_data = {}
 
-    # 3. 更新历史数据
-    print("\n[3/3] 更新历史数据...")
+    # 3. 采集DBD数据（新增）
+    print("\n[3/5] 采集DBD数据...")
+    try:
+        dbd_data = crawl_dbd()
+        save_json(dbd_data, os.path.join(DATA_DIR, "dbd_data.json"))
+        print("   DBD数据采集完成")
+    except Exception as e:
+        print(f"   DBD数据采集失败: {e}")
+
+    # 4. 采集Steam新闻（新增）
+    print("\n[4/5] 采集Steam新闻...")
+    try:
+        news_data = crawl_steam_news()
+        save_json(news_data, os.path.join(DATA_DIR, "steam_news.json"))
+        print(f"   Steam新闻采集完成（{len(news_data)}个游戏）")
+    except Exception as e:
+        print(f"   Steam新闻采集失败: {e}")
+
+    # 5. 更新历史数据
+    print("\n[5/5] 更新历史数据...")
     history_path = os.path.join(DATA_DIR, "history.json")
     history = update_history(steam_data, history_path)
     print(f"   历史数据已更新（{len(history)}个游戏）")
 
-    # 4. 输出摘要
+    # 6. 输出摘要
     print("\n" + "=" * 50)
     print("采集摘要:")
     print("-" * 30)

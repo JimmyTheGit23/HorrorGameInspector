@@ -1,0 +1,192 @@
+{
+  "snapshot_date": "2026-06-15T15:08:23+08:00",
+  "hero": {
+    "name": "黎明杀机",
+    "current_players": 46103,
+    "positive_rate": 78.5,
+    "reviews_total": 903761,
+    "price_label": "¥ 93.75",
+    "release_date": "2016 年 6 月 14 日",
+    "genres": [
+      "动作"
+    ]
+  },
+  "operations": [
+    {
+      "date": "2026-06-15",
+      "timestamp": 1781487048,
+      "title": "As Dead by Daylight turns 10, Behavior unveils game-changing overhaul that will \"make the next ten better than the first\"",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PCGamesN/1835236783568929",
+      "author": "editor@pcgamesn.com",
+      "feed_label": "PCGamesN",
+      "feed_type": "媒体",
+      "is_patch": false,
+      "contents": "It's hard to believe that we've had ten years of Dead by Daylight. From its humble origins with just The Trapper, The Wraith, and The Hillbilly, it now sports a roster of 43 terrors, some of which hai"
+    },
+    {
+      "date": "2026-06-15",
+      "timestamp": 1781462525,
+      "title": "Dead by Daylight | 10th Anniversary Broadcast",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835236783568316",
+      "author": "mahdi.roy",
+      "feed_label": "Community Announcements",
+      "feed_type": "官方",
+      "is_patch": false,
+      "contents": "Celebrate 10 years of Dead by Daylight with our biggest Anniversary broadcast ever. We’re pulling out all the stops with massive reveals, exciting Chapter announcements, incredible special guests, and"
+    },
+    {
+      "date": "2026-06-13",
+      "timestamp": 1781361025,
+      "title": "10 Years. 10 Items. One Limited Release. ",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835236783566010",
+      "author": "CatBHVR",
+      "feed_label": "Community Announcements",
+      "feed_type": "官方",
+      "is_patch": false,
+      "contents": "Ten treasures have emerged from The Fog, waiting to be claimed. In celebration of Dead by Daylight’s milestone 10th Anniversary, we’re unveiling an exclusive limited-edition merch collection, featurin"
+    },
+    {
+      "date": "2026-06-11",
+      "timestamp": 1781110907,
+      "title": "PTB to Live changes: The Slasher",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835236783558218",
+      "author": "Goblin_BHVR",
+      "feed_label": "Community Announcements",
+      "feed_type": "官方",
+      "is_patch": false,
+      "contents": "In late May, we brought the much-anticipated Jason chapter to the Public Test Build (PTB). Since then, we’ve been keeping a close eye on what you, the community, have had to say about it. We’re glad t"
+    },
+    {
+      "date": "2026-05-27",
+      "timestamp": 1779811758,
+      "title": "At long last, Dead by Daylight welcomes Friday the 13th's Jason Voorhees, and he's now available for some beta slashing",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/Rock, Paper, Shotgun/1833334318579881",
+      "author": "",
+      "feed_label": "Rock, Paper, Shotgun",
+      "feed_type": "媒体",
+      "is_patch": false,
+      "contents": "With all of the iconic horror villains <a href=\"https://www.rockpapershotgun.com/games/dead-by-daylight\">Dead by Daylight</a> has featured over the years, the one character's absence has stuck out lik"
+    },
+    {
+      "date": "2026-05-26",
+      "timestamp": 1779805808,
+      "title": "10.0.0 | Jason PTB Patch Notes",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1833334318579520",
+      "author": "Goblin_BHVR",
+      "feed_label": "Community Announcements",
+      "feed_type": "官方",
+      "is_patch": false,
+      "contents": "ReminderAll characters you have unlocked via Steam will be unlocked on the PTB, including any new character(s) introduced in this update.If DLC content has been unlocked via a platform other than Stea"
+    },
+    {
+      "date": "2026-05-26",
+      "timestamp": 1779732308,
+      "title": "'We’re just thrilled the stars aligned': Less than 2 years after his own game fully shut down, Jason Voorhees is coming to Dead by Daylight",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PC Gamer/1833334318577799",
+      "author": "Justin Wagner",
+      "feed_label": "PC Gamer",
+      "feed_type": "媒体",
+      "is_patch": false,
+      "contents": "Saturday, Behaviour Interactive revealed the latest playable killer coming to asymmetrical PvP game Dead by Daylight: Jason Voorhees. If that has you wondering, 'How was he not in that game already?',"
+    },
+    {
+      "date": "2026-05-26",
+      "timestamp": 1779728511,
+      "title": "STATS | Bloodmoon Event 2026",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1833334318577661",
+      "author": "Donnary21st",
+      "feed_label": "Community Announcements",
+      "feed_type": "官方",
+      "is_patch": false,
+      "contents": "Warm greetings, Fog Dwellers. The time has come once more for stats, with a spotlight this time on our 2026 Blood Moon Event! Let’s dive right in.The Blood Moon rose, and you all rose to the occasion "
+    }
+  ],
+  "patches": [
+    {
+      "date": "2026-05-12",
+      "timestamp": 1778596206,
+      "title": "9.6.2 | Bugfix Patch",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1832065502824037",
+      "author": "Goblin_BHVR",
+      "feed_label": "Community Announcements",
+      "feed_type": "官方",
+      "is_patch": true,
+      "contents": "ImportantThe Pig's Amanda's Letter add-on has been re-enabled.Bug Fixes2v8Fixed an issue where the Play buttons were greyed out in the Overview tab after viewing the Quests.AudioFixed an issue where T"
+    },
+    {
+      "date": "2026-05-05",
+      "timestamp": 1777991546,
+      "title": "9.6.1 | Bugfix Patch",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1831432155580246",
+      "author": "Goblin_BHVR",
+      "feed_label": "Community Announcements",
+      "feed_type": "官方",
+      "is_patch": true,
+      "contents": "FeaturesDiminishing Returns UpdateDiminishing Returns section in the Game Manual updated.Now lists all Action Speeds and Modifiers affected by Diminishing Returns in a Trial.Progress Bar UpdateAdjuste"
+    }
+  ],
+  "trends": [
+    {
+      "month": "2026-01",
+      "avg_players": 49288,
+      "peak_players": 96633
+    },
+    {
+      "month": "2026-02",
+      "avg_players": 55296,
+      "peak_players": 93286
+    },
+    {
+      "month": "2026-03",
+      "avg_players": 46223,
+      "peak_players": 84502
+    },
+    {
+      "month": "2026-04",
+      "avg_players": 49104,
+      "peak_players": 77398
+    },
+    {
+      "month": "2026-05",
+      "avg_players": 51051,
+      "peak_players": 86738
+    },
+    {
+      "month": "2026-06",
+      "avg_players": 53145,
+      "peak_players": 104001
+    }
+  ],
+  "store": {
+    "name": "黎明杀机",
+    "name_en": "Dead by Daylight",
+    "short_description": "10年恐惧相伴。10年的惊吓与刺激体验。10年的残暴献祭与惊险逃脱。 永久困于邪恶的幻境之中，即使死亡也无法逃脱，这是一场需要勇气和智慧的较量，四名意志坚定的逃生者在残忍对局中面对嗜血杀手。选择一方，进入多人非对称竞技游戏世界，获得最佳恐怖游戏体验。",
+    "short_description_en": "10 years of horror. 10 years of jump scares and close calls. 10 years of brutal sacrifices and thrilling escapes. Trapped forever in a realm of eldritch evil where even death is not an escape, four determined Survivors face a bloodthirsty Killer in a vicious game of nerve and wits.",
+    "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/381210/8512297f0f02ec3e592f45b21779f61624941964/header_alt_assets_6.jpg?t=1778880603",
+    "developers": [
+      "Behaviour Interactive Inc."
+    ],
+    "publishers": [
+      "Behaviour Interactive Inc."
+    ],
+    "price": "¥ 93.75",
+    "price_en": "$19.99",
+    "release_date": "2016 年 6 月 14 日",
+    "platforms": {
+      "windows": true,
+      "mac": false,
+      "linux": false
+    },
+    "genres": [
+      "动作"
+    ]
+  },
+  "reviews": {
+    "total_reviews": 903761,
+    "positive": 709523,
+    "negative": 194238,
+    "positive_rate": 78.5
+  },
+  "ccu": 46103,
+  "crawled_at": "2026-06-15T15:08:23.197617"
+}
