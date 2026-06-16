@@ -249,7 +249,7 @@
       "is_official": true,
       "contents": "Hey hey semibots! Here is yet another small update with some fixes and balancing! CHANGES BALANCING FIXES CHANGES Item Melee Weapons - Handling now properly scales with strength and should feel firmer"
     },
-    "crawled_at": "2026-06-15T14:57:41.023747"
+    "crawled_at": "2026-06-16T10:04:12.547854"
   },
   "Lethal Company": {
     "appid": 1966720,
@@ -501,7 +501,7 @@
       "is_official": true,
       "contents": "Hello, long time no see! Version 80 is out in beta for you to test. You can access it by opting into the public beta branch for Lethal Company on Steam. V80 brings a complete rework of March's exterio"
     },
-    "crawled_at": "2026-06-15T14:57:42.960465"
+    "crawled_at": "2026-06-16T10:04:14.487013"
   },
   "Phasmophobia": {
     "appid": 739630,
@@ -753,7 +753,7 @@
       "is_official": true,
       "contents": "Welcome back, Ghost Hunters.Today we have released a hotfix for Phasmophobia, addressing two issues raised by the community this week. The update is now available across all platforms.Patch notes:Fixe"
     },
-    "crawled_at": "2026-06-15T14:57:47.780323"
+    "crawled_at": "2026-06-16T10:04:16.423580"
   },
   "Content Warning": {
     "appid": 2881650,
@@ -1005,7 +1005,7 @@
       "is_official": true,
       "contents": "Hello Spööktubers! Thank you for your patience as we're fixing bugs on all platforms.Here's a new patch fixing some stuff!For those of you wondering when crossplay between Switch 1 & 2 and other platf"
     },
-    "crawled_at": "2026-06-15T14:57:49.732866"
+    "crawled_at": "2026-06-16T10:04:18.347499"
   },
   "FEEDERS": {
     "appid": 4408510,
@@ -1256,7 +1256,7 @@
       "is_official": true,
       "contents": "Gave the HUD a fresh redesign. New look across the board — the status bars (Health, Stamina, Radiation) and the bottom belt all got reworked. Same info, cleaner read. More guns coming with new solo ex"
     },
-    "crawled_at": "2026-06-15T14:57:51.715917"
+    "crawled_at": "2026-06-16T10:04:20.267483"
   },
   "NARAKA: BLADEPOINT": {
     "appid": 1203220,
@@ -1497,12 +1497,34 @@
       "contents": "Dear players, NARAKA: BLADEPOINT is committed to creating a fair and healthy competitive environment. We have not only used new anti-cheat technologies, but also established special cheat-reporting re"
     },
     "latest_patch": null,
-    "crawled_at": "2026-06-15T14:57:55.656290"
+    "crawled_at": "2026-06-16T10:04:22.203576"
   },
   "Dead by Daylight": {
     "appid": 381210,
     "all": [
       {
+        "date": "2026-06-16",
+        "datetime": "2026-06-16T00:06:08",
+        "title": "Stats | Celebrating 10 Years In The Fog",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835236783570987",
+        "author": "Goblin_BHVR",
+        "feed_label": "Community Announcements",
+        "is_patch": false,
+        "is_official": true,
+        "contents": "Happy 10th Anniversary, everyone! Whether you visited us in Montreal or celebrated with us online, thank you from the bottom of our hearts for making this anniversary and the livestream a time to reme"
+      },
+      {
+        "date": "2026-06-15",
+        "datetime": "2026-06-15T21:21:19",
+        "title": "Dead by Daylight celebrates its 10 year anniversary by adding the most sought after horror icon and teasing 'a sweeping visual overhaul'",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/PC Gamer/1835236783570269",
+        "author": "Elie Gould",
+        "feed_label": "PC Gamer",
+        "is_patch": false,
+        "is_official": false,
+        "contents": "<a href=\"https://www.pcgamer.com/dead-by-daylight/\">Dead by Daylight</a> recently celebrated its 10 year anniversary with <a href=\"https://www.youtube.com/watch?v=2TseoyiHoP8\" target=\"_blank\">a day-lo"
+      },
+      {
         "date": "2026-06-15",
         "datetime": "2026-06-15T09:30:48",
         "title": "As Dead by Daylight turns 10, Behavior unveils game-changing overhaul that will \"make the next ten better than the first\"",
@@ -1589,33 +1611,33 @@
         "is_patch": false,
         "is_official": true,
         "contents": "Warm greetings, Fog Dwellers. The time has come once more for stats, with a spotlight this time on our 2026 Blood Moon Event! Let’s dive right in.The Blood Moon rose, and you all rose to the occasion "
-      },
-      {
-        "date": "2026-05-25",
-        "datetime": "2026-05-25T23:00:05",
-        "title": "Jason is finally coming to Dead by Daylight, and he goes invisible and tosses hooks at you",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/PCGamesN/1833334318577689",
-        "author": "editor@pcgamesn.com",
-        "feed_label": "PCGamesN",
-        "is_patch": false,
-        "is_official": false,
-        "contents": "\"It's so awesome and surreal to finally see this actually happening in the game,\" Behaviour's Head of Partnerships Mathieu Cote says during a press preview. \"We've made no secret of the fact that we'v"
-      },
-      {
-        "date": "2026-05-23",
-        "datetime": "2026-05-23T23:00:27",
-        "title": "Dead by Daylight finally confirms Jason Voorhees after an agonizing 13-hour livestream",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/PCGamesN/1833334318574194",
-        "author": "editor@pcgamesn.com",
-        "feed_label": "PCGamesN",
-        "is_patch": false,
-        "is_official": false,
-        "contents": "It's finally official: Jason Voorhees is the new Dead by Daylight Killer. One of the most iconic figures in horror history is finally stepping into The Fog to mark the tenth anniversary of DBD. Behavi"
       }
     ],
     "patches": [],
     "announcements": [
       {
+        "date": "2026-06-16",
+        "datetime": "2026-06-16T00:06:08",
+        "title": "Stats | Celebrating 10 Years In The Fog",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835236783570987",
+        "author": "Goblin_BHVR",
+        "feed_label": "Community Announcements",
+        "is_patch": false,
+        "is_official": true,
+        "contents": "Happy 10th Anniversary, everyone! Whether you visited us in Montreal or celebrated with us online, thank you from the bottom of our hearts for making this anniversary and the livestream a time to reme"
+      },
+      {
+        "date": "2026-06-15",
+        "datetime": "2026-06-15T21:21:19",
+        "title": "Dead by Daylight celebrates its 10 year anniversary by adding the most sought after horror icon and teasing 'a sweeping visual overhaul'",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/PC Gamer/1835236783570269",
+        "author": "Elie Gould",
+        "feed_label": "PC Gamer",
+        "is_patch": false,
+        "is_official": false,
+        "contents": "<a href=\"https://www.pcgamer.com/dead-by-daylight/\">Dead by Daylight</a> recently celebrated its 10 year anniversary with <a href=\"https://www.youtube.com/watch?v=2TseoyiHoP8\" target=\"_blank\">a day-lo"
+      },
+      {
         "date": "2026-06-15",
         "datetime": "2026-06-15T09:30:48",
         "title": "As Dead by Daylight turns 10, Behavior unveils game-changing overhaul that will \"make the next ten better than the first\"",
@@ -1702,42 +1724,20 @@
         "is_patch": false,
         "is_official": true,
         "contents": "Warm greetings, Fog Dwellers. The time has come once more for stats, with a spotlight this time on our 2026 Blood Moon Event! Let’s dive right in.The Blood Moon rose, and you all rose to the occasion "
-      },
-      {
-        "date": "2026-05-25",
-        "datetime": "2026-05-25T23:00:05",
-        "title": "Jason is finally coming to Dead by Daylight, and he goes invisible and tosses hooks at you",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/PCGamesN/1833334318577689",
-        "author": "editor@pcgamesn.com",
-        "feed_label": "PCGamesN",
-        "is_patch": false,
-        "is_official": false,
-        "contents": "\"It's so awesome and surreal to finally see this actually happening in the game,\" Behaviour's Head of Partnerships Mathieu Cote says during a press preview. \"We've made no secret of the fact that we'v"
-      },
-      {
-        "date": "2026-05-23",
-        "datetime": "2026-05-23T23:00:27",
-        "title": "Dead by Daylight finally confirms Jason Voorhees after an agonizing 13-hour livestream",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/PCGamesN/1833334318574194",
-        "author": "editor@pcgamesn.com",
-        "feed_label": "PCGamesN",
-        "is_patch": false,
-        "is_official": false,
-        "contents": "It's finally official: Jason Voorhees is the new Dead by Daylight Killer. One of the most iconic figures in horror history is finally stepping into The Fog to mark the tenth anniversary of DBD. Behavi"
       }
     ],
     "latest": {
-      "date": "2026-06-15",
-      "datetime": "2026-06-15T09:30:48",
-      "title": "As Dead by Daylight turns 10, Behavior unveils game-changing overhaul that will \"make the next ten better than the first\"",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PCGamesN/1835236783568929",
-      "author": "editor@pcgamesn.com",
-      "feed_label": "PCGamesN",
+      "date": "2026-06-16",
+      "datetime": "2026-06-16T00:06:08",
+      "title": "Stats | Celebrating 10 Years In The Fog",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835236783570987",
+      "author": "Goblin_BHVR",
+      "feed_label": "Community Announcements",
       "is_patch": false,
-      "is_official": false,
-      "contents": "It's hard to believe that we've had ten years of Dead by Daylight. From its humble origins with just The Trapper, The Wraith, and The Hillbilly, it now sports a roster of 43 terrors, some of which hai"
+      "is_official": true,
+      "contents": "Happy 10th Anniversary, everyone! Whether you visited us in Montreal or celebrated with us online, thank you from the bottom of our hearts for making this anniversary and the livestream a time to reme"
     },
     "latest_patch": null,
-    "crawled_at": "2026-06-15T14:57:57.581641"
+    "crawled_at": "2026-06-16T10:04:24.218666"
   }
 }

@@ -1,10 +1,10 @@
 {
-  "snapshot_date": "2026-06-15T15:08:23+08:00",
+  "snapshot_date": "2026-06-16T10:04:11+08:00",
   "hero": {
     "name": "黎明杀机",
-    "current_players": 46103,
+    "current_players": 66126,
     "positive_rate": 78.5,
-    "reviews_total": 903761,
+    "reviews_total": 903996,
     "price_label": "¥ 93.75",
     "release_date": "2016 年 6 月 14 日",
     "genres": [
@@ -12,6 +12,28 @@
     ]
   },
   "operations": [
+    {
+      "date": "2026-06-16",
+      "timestamp": 1781539568,
+      "title": "Stats | Celebrating 10 Years In The Fog",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835236783570987",
+      "author": "Goblin_BHVR",
+      "feed_label": "Community Announcements",
+      "feed_type": "官方",
+      "is_patch": false,
+      "contents": "Happy 10th Anniversary, everyone! Whether you visited us in Montreal or celebrated with us online, thank you from the bottom of our hearts for making this anniversary and the livestream a time to reme"
+    },
+    {
+      "date": "2026-06-15",
+      "timestamp": 1781529679,
+      "title": "Dead by Daylight celebrates its 10 year anniversary by adding the most sought after horror icon and teasing 'a sweeping visual overhaul'",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PC Gamer/1835236783570269",
+      "author": "Elie Gould",
+      "feed_label": "PC Gamer",
+      "feed_type": "媒体",
+      "is_patch": false,
+      "contents": "<a href=\"https://www.pcgamer.com/dead-by-daylight/\">Dead by Daylight</a> recently celebrated its 10 year anniversary with <a href=\"https://www.youtube.com/watch?v=2TseoyiHoP8\" target=\"_blank\">a day-lo"
+    },
     {
       "date": "2026-06-15",
       "timestamp": 1781487048,
@@ -77,28 +99,6 @@
       "feed_type": "官方",
       "is_patch": false,
       "contents": "ReminderAll characters you have unlocked via Steam will be unlocked on the PTB, including any new character(s) introduced in this update.If DLC content has been unlocked via a platform other than Stea"
-    },
-    {
-      "date": "2026-05-26",
-      "timestamp": 1779732308,
-      "title": "'We’re just thrilled the stars aligned': Less than 2 years after his own game fully shut down, Jason Voorhees is coming to Dead by Daylight",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PC Gamer/1833334318577799",
-      "author": "Justin Wagner",
-      "feed_label": "PC Gamer",
-      "feed_type": "媒体",
-      "is_patch": false,
-      "contents": "Saturday, Behaviour Interactive revealed the latest playable killer coming to asymmetrical PvP game Dead by Daylight: Jason Voorhees. If that has you wondering, 'How was he not in that game already?',"
-    },
-    {
-      "date": "2026-05-26",
-      "timestamp": 1779728511,
-      "title": "STATS | Bloodmoon Event 2026",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1833334318577661",
-      "author": "Donnary21st",
-      "feed_label": "Community Announcements",
-      "feed_type": "官方",
-      "is_patch": false,
-      "contents": "Warm greetings, Fog Dwellers. The time has come once more for stats, with a spotlight this time on our 2026 Blood Moon Event! Let’s dive right in.The Blood Moon rose, and you all rose to the occasion "
     }
   ],
   "patches": [
@@ -112,17 +112,6 @@
       "feed_type": "官方",
       "is_patch": true,
       "contents": "ImportantThe Pig's Amanda's Letter add-on has been re-enabled.Bug Fixes2v8Fixed an issue where the Play buttons were greyed out in the Overview tab after viewing the Quests.AudioFixed an issue where T"
-    },
-    {
-      "date": "2026-05-05",
-      "timestamp": 1777991546,
-      "title": "9.6.1 | Bugfix Patch",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1831432155580246",
-      "author": "Goblin_BHVR",
-      "feed_label": "Community Announcements",
-      "feed_type": "官方",
-      "is_patch": true,
-      "contents": "FeaturesDiminishing Returns UpdateDiminishing Returns section in the Game Manual updated.Now lists all Action Speeds and Modifiers affected by Diminishing Returns in a Trial.Progress Bar UpdateAdjuste"
     }
   ],
   "trends": [
@@ -182,11 +171,11 @@
     ]
   },
   "reviews": {
-    "total_reviews": 903761,
-    "positive": 709523,
-    "negative": 194238,
+    "total_reviews": 903996,
+    "positive": 709732,
+    "negative": 194264,
     "positive_rate": 78.5
   },
-  "ccu": 46103,
-  "crawled_at": "2026-06-15T15:08:23.197617"
+  "ccu": 66126,
+  "crawled_at": "2026-06-16T10:04:11.606763"
 }
