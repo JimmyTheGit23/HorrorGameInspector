@@ -14,6 +14,7 @@ from steam_crawler import crawl_steam
 from chaoziran_crawler import crawl_chaoziran, enrich_chaoziran_bilingual
 from dbd_crawler import crawl_dbd
 from steam_news_crawler import crawl_steam_news
+from chaoziran_overseas_crawler import crawl_overseas
 
 
 DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "docs", "data")
@@ -116,7 +117,7 @@ def main():
         steam_data = {}
 
     # 2. 采集超自然行动组数据
-    print("\n[2/5] 采集超自然行动组数据...")
+    print("\n[2/6] 采集超自然行动组数据...")
     try:
         czr_data = crawl_chaoziran()
         # 增量合并：新数据为空时保留旧数据
@@ -124,14 +125,24 @@ def main():
         old_czr_data = load_json(czr_path)
         czr_data = merge_chaoziran_data(czr_data, old_czr_data)
         czr_data = enrich_chaoziran_bilingual(czr_data)
+        # 采集海外数据并合并
+        try:
+            overseas_data = crawl_overseas()
+            if czr_data.get("chaoziran"):
+                czr_data["chaoziran"]["overseas"] = overseas_data
+            # 同时保存独立文件
+            save_json(overseas_data, os.path.join(DATA_DIR, "chaoziran_overseas.json"))
+            print("   海外数据已合并到超自然行动组数据")
+        except Exception as e:
+            print(f"   海外数据采集失败（非致命）: {e}")
         save_json(czr_data, czr_path)
         print("   超自然行动组数据采集完成")
     except Exception as e:
         print(f"   超自然行动组数据采集失败: {e}")
         czr_data = {}
 
-    # 3. 采集DBD数据（新增）
-    print("\n[3/5] 采集DBD数据...")
+    # 3. 采集DBD数据
+    print("\n[3/6] 采集DBD数据...")
     try:
         dbd_data = crawl_dbd()
         save_json(dbd_data, os.path.join(DATA_DIR, "dbd_data.json"))
@@ -139,8 +150,8 @@ def main():
     except Exception as e:
         print(f"   DBD数据采集失败: {e}")
 
-    # 4. 采集Steam新闻（新增）
-    print("\n[4/5] 采集Steam新闻...")
+    # 4. 采集Steam新闻
+    print("\n[4/6] 采集Steam新闻...")
     try:
         news_data = crawl_steam_news()
         save_json(news_data, os.path.join(DATA_DIR, "steam_news.json"))
@@ -149,10 +160,26 @@ def main():
         print(f"   Steam新闻采集失败: {e}")
 
     # 5. 更新历史数据
-    print("\n[5/5] 更新历史数据...")
+    print("\n[5/6] 更新历史数据...")
     history_path = os.path.join(DATA_DIR, "history.json")
     history = update_history(steam_data, history_path)
     print(f"   历史数据已更新（{len(history)}个游戏）")
+
+    # 6. 内联数据更新（将JSON数据写入HTML的inline变量）
+    print("\n[6/6] 更新HTML内联数据...")
+    try:
+        inline_script = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "docs", "inline_data.py")
+        if os.path.exists(inline_script):
+            import importlib.util
+            spec = importlib.util.spec_from_file_location("inline_data", inline_script)
+            mod = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(mod)
+            if hasattr(mod, "update_inline_data"):
+                html_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "docs", "index.html")
+                mod.update_inline_data(html_path)
+                print("   HTML内联数据已更新")
+    except Exception as e:
+        print(f"   HTML内联数据更新失败（非致命）: {e}")
 
     # 6. 输出摘要
     print("\n" + "=" * 50)

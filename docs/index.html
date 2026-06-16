@@ -661,6 +661,34 @@
                             <p class="text-sm mt-1" style="color:var(--text-muted);">"The unique thing is it changes tone depending on how many players are involved"</p>
                         </div>
                     </div>
+                    <!-- Google Play 数据 -->
+                    <div class="p-3 mb-2 rounded-lg" style="background:var(--accent-dim);">
+                        <div class="text-[10px] tracking-wider mb-2" style="color:var(--text-muted);">GOOGLE PLAY (ANDROID)</div>
+                        <div id="tb-google-play">
+                            <div class="text-[10px]" style="color:var(--text-muted);">LOADING...</div>
+                        </div>
+                    </div>
+                    <!-- 扩展App Store区域 -->
+                    <div class="p-3 mb-2 rounded-lg" style="background:var(--accent-dim);">
+                        <div class="text-[10px] tracking-wider mb-2" style="color:var(--text-muted);">APP STORE — EXTENDED REGIONS</div>
+                        <div id="tb-appstore-extended" class="grid grid-cols-3 md:grid-cols-4 gap-2">
+                            <div class="text-[10px]" style="color:var(--text-muted);">LOADING...</div>
+                        </div>
+                    </div>
+                    <!-- YouTube 海外视频 -->
+                    <div class="p-3 mb-2 rounded-lg" style="background:var(--accent-dim);">
+                        <div class="text-[10px] tracking-wider mb-2" style="color:var(--text-muted);">YOUTUBE — TRENDING</div>
+                        <div id="tb-youtube" class="space-y-1 max-h-48 overflow-y-auto">
+                            <div class="text-[10px]" style="color:var(--text-muted);">LOADING...</div>
+                        </div>
+                    </div>
+                    <!-- Reddit 讨论 -->
+                    <div class="p-3 mb-2 rounded-lg" style="background:var(--accent-dim);">
+                        <div class="text-[10px] tracking-wider mb-2" style="color:var(--text-muted);">REDDIT</div>
+                        <div id="tb-reddit" class="space-y-1 max-h-48 overflow-y-auto">
+                            <div class="text-[10px]" style="color:var(--text-muted);">LOADING...</div>
+                        </div>
+                    </div>
                     <div class="mt-3 text-[10px]" style="color:var(--text-muted);">
                         💬 Reddit：刚上线1天，暂无大规模讨论 · r/mobilegaming · r/horrorgaming
                     </div>
@@ -2778,6 +2806,17 @@ If you want to know what happened next, let’s listen to the explanation next t
                 if (isFileProtocol && typeof INLINE_STEAM_NEWS !== 'undefined') steamNewsData = INLINE_STEAM_NEWS;
             }
 
+            // 加载超自然行动组海外数据
+            try {
+                const overseasResp = await fetch('./data/chaoziran_overseas.json' + suffix);
+                const overseasFresh = await overseasResp.json();
+                if (overseasFresh && chaoziranData.chaoziran) {
+                    chaoziranData.chaoziran.overseas = overseasFresh;
+                }
+            } catch(e) {
+                console.warn('超自然海外数据加载失败:', e);
+            }
+
             renderAll();
         }
 
@@ -3890,6 +3929,91 @@ If you want to know what happened next, let’s listen to the explanation next t
                         if (krData && krData.rating && krData.rating < 4) parts.push(currentLang === 'zh' ? '<span class="text-red-600">⚠️ 韩国</span>：评分偏低(' + krData.rating.toFixed(1) + ')，需关注用户反馈' : '<span class="text-red-600">⚠️ South Korea</span>: rating is soft (' + krData.rating.toFixed(1) + '), watch player feedback closely');
                         if (!parts.length) parts.push(currentLang === 'zh' ? '<span class="text-amber-600">🔄</span> 数据采集中...' : '<span class="text-amber-600">🔄</span> Collecting more data...');
                         rankNoteEl.innerHTML = parts.join('<br>');
+                    }
+                }
+            }
+
+            // 海外版扩展数据：Google Play + YouTube + Reddit
+            if (czr.overseas) {
+                const ov = czr.overseas;
+                // Google Play 数据
+                if (ov.google_play) {
+                    const gp = ov.google_play;
+                    const gpEl = document.getElementById('tb-google-play');
+                    if (gpEl) {
+                        gpEl.innerHTML = `
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+                                <div class="text-center">
+                                    <div class="text-[10px] text-gray-500">Google Play</div>
+                                    <div class="text-sm font-bold ${gp.rating >= 4 ? 'text-green-600' : gp.rating >= 3 ? 'text-yellow-600' : 'text-red-600'}">${gp.rating ? gp.rating.toFixed(1) : '--'}</div>
+                                    <div class="text-[10px] text-gray-500">${gp.review_count ? gp.review_count.toLocaleString() + (currentLang === 'zh' ? '评' : ' reviews') : '--'}</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-[10px] text-gray-500">${currentLang === 'zh' ? '下载' : 'Downloads'}</div>
+                                    <div class="text-sm font-bold" style="color:#0F172A;">${gp.downloads || '--'}</div>
+                                    <div class="text-[10px] text-gray-500">${gp.version || ''}</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-[10px] text-gray-500">${currentLang === 'zh' ? '更新日期' : 'Updated'}</div>
+                                    <div class="text-sm font-bold" style="color:#0F172A;">${gp.updated || '--'}</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-[10px] text-gray-500">Android</div>
+                                    <a href="${gp.url || '#'}" target="_blank" rel="noopener" class="text-[10px] underline" style="color:var(--accent);">${currentLang === 'zh' ? '查看商店' : 'View Store'}</a>
+                                </div>
+                            </div>
+                        `;
+                    }
+                }
+                // YouTube 热门视频
+                if (ov.youtube && ov.youtube.length > 0) {
+                    const ytEl = document.getElementById('tb-youtube');
+                    if (ytEl) {
+                        ytEl.innerHTML = ov.youtube.slice(0, 5).map(v => `
+                            <a href="${v.url}" target="_blank" rel="noopener" class="block p-2 rounded hover:bg-gray-50 transition-colors group">
+                                <div class="flex items-start gap-2">
+                                    <span class="text-xs mt-0.5" style="color:var(--text-ghost);">▶</span>
+                                    <div class="min-w-0 flex-1">
+                                        <div class="text-xs font-medium truncate group-hover:underline" style="color:var(--text-primary);">${v.title}</div>
+                                        <div class="text-[10px] flex gap-2" style="color:var(--text-muted);"><span>${v.channel || ''}</span><span>${v.views || ''}</span><span>${v.published || ''}</span></div>
+                                    </div>
+                                </div>
+                            </a>
+                        `).join('');
+                    }
+                }
+                // Reddit 讨论摘要
+                if (ov.reddit && ov.reddit.length > 0) {
+                    const rdEl = document.getElementById('tb-reddit');
+                    if (rdEl) {
+                        rdEl.innerHTML = ov.reddit.slice(0, 5).map(p => `
+                            <a href="${p.url}" target="_blank" rel="noopener" class="block p-2 rounded hover:bg-gray-50 transition-colors group">
+                                <div class="text-xs font-medium group-hover:underline" style="color:var(--text-primary);">${p.title}</div>
+                                <div class="text-[10px]" style="color:var(--text-muted);">r/${p.subreddit} · ${p.score}↑ · ${p.num_comments}${currentLang === 'zh' ? '评' : ' comments'}</div>
+                            </a>
+                        `).join('');
+                    }
+                } else {
+                    const rdEl = document.getElementById('tb-reddit');
+                    if (rdEl) {
+                        rdEl.innerHTML = `<div class="text-[10px]" style="color:var(--text-muted);">${currentLang === 'zh' ? 'Reddit API受限，暂无数据' : 'Reddit API restricted, no data available'}</div>`;
+                    }
+                }
+                // 扩展App Store区域
+                if (ov.app_store_extended) {
+                    const extEl = document.getElementById('tb-appstore-extended');
+                    if (extEl) {
+                        const regions = Object.entries(ov.app_store_extended).filter(([, v]) => v.rating !== null && v.rating !== 0);
+                        if (regions.length > 0) {
+                            extEl.innerHTML = regions.map(([code, rd]) => {
+                                const color = rd.rating >= 4 ? 'text-green-600' : rd.rating >= 3 ? 'text-yellow-600' : 'text-red-600';
+                                return `<div class="bg-gray-50 rounded-lg p-2 text-center">
+                                    <div class="text-xs text-gray-500">${rd.name || code.toUpperCase()}</div>
+                                    <div class="text-sm font-bold ${color}">${rd.rating.toFixed(1)}</div>
+                                    <div class="text-[10px] text-gray-600">${rd.rating_count.toLocaleString()} ${currentLang === 'zh' ? '评' : 'reviews'}</div>
+                                </div>`;
+                            }).join('');
+                        }
                     }
                 }
             }
