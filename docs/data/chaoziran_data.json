@@ -2,49 +2,88 @@
   "chaoziran": {
     "bwiki_updates": [
       {
-        "title": "版本更新——怪物农场钓鱼玩法上线！荆州博物馆联动限定内容来啦",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/moment/811648122982761996",
-        "moment_id": "811648122982761996",
-        "link_status": "valid",
-        "category": "pr",
-        "content_tags": [
-          "品牌联动"
-        ],
-        "priority": "low",
-        "title_en": "Version update - Monster Farm fishing gameplay is online! Jingzhou Museum linkage limited content is here",
-        "source_en": "TapTap Official",
-        "content_tags_en": [
-          "Brand Collab"
-        ]
-      },
-      {
-        "title": "超自然行动组 x 果宝特攻 联动即将开启",
+        "title": "【逍遥-菠萝吹雪】与【爱丽丝-梨花诗】联动时装展示来啦",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/app/714123/topic?type=official",
         "link_status": "unknown",
-        "category": "pr",
+        "category": "cosmetic",
         "content_tags": [
-          "品牌联动"
+          "新时装"
         ],
-        "priority": "low",
-        "title_en": "Supernatural Action Team x Fruity Attack collaboration is about to begin",
+        "priority": "medium",
+        "title_en": "[Xiaoyao-Pineapple Blowing Snow] and [Alice-Pear Blossom Poetry] joint fashion show is here",
         "source_en": "TapTap Official",
         "content_tags_en": [
-          "Brand Collab"
+          "New Outfit"
         ]
       },
       {
-        "title": "6月18日0点，果宝机甲，归位！",
+        "title": "果宝一响，童年登场！\n6月18日0点，绘梦厅见~",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/app/714123/topic?type=official",
+        "link_status": "unknown",
+        "category": "new_content",
+        "content_tags": [],
+        "priority": "high",
+        "title_en": "As soon as the fruit pops up, childhood appears!\nSee you at the Dream Hall at 0:00 on June 18~",
+        "source_en": "TapTap Official",
+        "content_tags_en": []
+      },
+      {
+        "title": "一起来超自然划龙舟啦！【龙舟送吉】特殊效果展示~",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/app/714123/topic?type=official",
         "link_status": "unknown",
         "category": "other",
         "content_tags": [],
         "priority": "low",
-        "title_en": "At 0:00 on June 18th, the Guobao mecha returns!",
+        "title_en": "一起来超自然划龙舟啦！【龙舟送吉】特殊效果展示~",
         "source_en": "TapTap Official",
         "content_tags_en": []
+      },
+      {
+        "title": "不但带队友起飞，对手也能加入一起划！\n6月17日晚更新后一起来玩吧~",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/app/714123/topic?type=official",
+        "link_status": "unknown",
+        "category": "patch",
+        "content_tags": [
+          "版本更新"
+        ],
+        "priority": "low",
+        "title_en": "Not only can you take off with your teammates, your opponents can also join in and paddle together!\nLet’s play together after the update on the evening of June 17~",
+        "source_en": "TapTap Official",
+        "content_tags_en": [
+          "Version Update"
+        ]
+      },
+      {
+        "title": "新员工【月】即将入职！员工故事揭秘来啦！",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/app/714123/topic?type=official",
+        "link_status": "unknown",
+        "category": "other",
+        "content_tags": [],
+        "priority": "low",
+        "title_en": "New employee [month] is about to join! Employee stories are revealed!",
+        "source_en": "TapTap Official",
+        "content_tags_en": []
+      },
+      {
+        "title": "咦，好像又有新人来啦……？\n没错，超自然新员工【月】将于4月1日晚更新后正式入职！\n这位少年又是因为...",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/app/714123/topic?type=official",
+        "link_status": "unknown",
+        "category": "patch",
+        "content_tags": [
+          "版本更新"
+        ],
+        "priority": "low",
+        "title_en": "Hey, it seems like there's a new person here...?\nThat's right, Supernatural's new employee [Month] will officially join the team after the update on the evening of April 1st!\nThis young man is because...",
+        "source_en": "TapTap Official",
+        "content_tags_en": [
+          "Version Update"
+        ]
       },
       {
         "title": "超自然行动组 x 罗森 联动开启！",
@@ -87,46 +126,6 @@
         "content_tags_en": []
       },
       {
-        "title": "新地图最新影像释出，七月初海量内容来啦",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/app/714123/topic?type=official",
-        "link_status": "unknown",
-        "category": "new_content",
-        "content_tags": [
-          "新地图"
-        ],
-        "priority": "high",
-        "title_en": "The latest images of the new map are released, and a lot of content is coming in early July",
-        "source_en": "TapTap Official",
-        "content_tags_en": [
-          "New Map"
-        ]
-      },
-      {
-        "title": "瘴气弥漫遮山野，奇诡凶险谷中藏。\n且有那四人，跋山涉水。\n是斗异兽，破邪局，寻珍宝。\n欲知后事如何，且听下回分解......",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/app/714123/topic?type=official",
-        "link_status": "unknown",
-        "category": "other",
-        "content_tags": [],
-        "priority": "low",
-        "title_en": "Miasma pervades the mountains and fields, and strange and dangerous valleys hide in them.\nAnd there are those four people, traveling across mountains and rivers.\nIt's about fighting strange beasts, breaking evil situations, and looking for treasures.\nIf you want to know what happened next, let’s listen to the explanation next time...",
-        "source_en": "TapTap Official",
-        "content_tags_en": []
-      },
-      {
-        "title": "瘴气弥漫遮山野，奇诡凶险谷中藏。\n且有那四人，跋山涉水。\n是斗异兽，破邪局，寻珍宝。\n欲知后事如何，...",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/app/714123/topic?type=official",
-        "link_status": "unknown",
-        "category": "other",
-        "content_tags": [],
-        "priority": "low",
-        "title_en": "Miasma pervades the mountains and fields, and strange and dangerous valleys hide in them.\nAnd there are those four people, traveling across mountains and rivers.\nIt's about fighting strange beasts, breaking evil situations, and looking for treasures.\nIf you want to know what happened next,...",
-        "source_en": "TapTap Official",
-        "content_tags_en": []
-      },
-      {
         "title": "我的灵魂碎成两半，一半沉入雪夜，一半守望黎明。",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/app/714123/topic?type=official",
@@ -142,8 +141,8 @@
     "taptap": {
       "app_id": 714123,
       "source": "taptap_webpage",
-      "fans_count": 11346118,
-      "review_count": 31176,
+      "fans_count": 11352498,
+      "review_count": 31223,
       "score": "6.9",
       "description": "超自然行动组是一款合作游戏，TapTap 提供超自然行动组最新版官方正版下载，一个人玩是恐怖游戏，两个人玩是冒险游戏，三个人玩是寻宝游戏，...",
       "score_display": 6.9,
@@ -303,12 +302,21 @@
           "source_en": "TapTap Forum"
         },
         {
-          "title": "6月16日免费带打炼狱，不出大金一直打",
+          "title": "【逍遥-菠萝吹雪】与【爱丽丝-梨花诗】联动时装展示来啦",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
-          "sentiment": "positive",
-          "title_en": "You can play Purgatory for free on June 16th, and you can keep playing until you have a lot of money.",
+          "sentiment": "neutral",
+          "title_en": "[Xiaoyao-Pineapple Blowing Snow] and [Alice-Pear Blossom Poetry] joint fashion show is here",
+          "source_en": "TapTap Forum"
+        },
+        {
+          "title": "果宝一响，童年登场！\n6月18日0点，绘梦厅见~",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "neutral",
+          "title_en": "As soon as the fruit pops up, childhood appears!\nSee you at the Dream Hall at 0:00 on June 18~",
           "source_en": "TapTap Forum"
         },
         {
@@ -321,48 +329,39 @@
           "source_en": "TapTap Forum"
         },
         {
-          "title": "超自然行动组 x 果宝特攻 联动即将开启",
+          "title": "新地图最新影像释出，七月初海量内容来啦",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral",
-          "title_en": "Supernatural Action Team x Fruity Attack collaboration is about to begin",
+          "title_en": "The latest images of the new map are released, and a lot of content is coming in early July",
           "source_en": "TapTap Forum"
         },
         {
-          "title": "6月18日0点，果宝机甲，归位！",
+          "title": "瘴气弥漫遮山野，奇诡凶险谷中藏。\n且有那四人，跋山涉水。\n是斗异兽，破邪局，寻珍宝。\n欲知后事如何，且听下回分解......",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral",
-          "title_en": "At 0:00 on June 18th, the Guobao mecha returns!",
+          "title_en": "Miasma pervades the mountains and fields, and strange and dangerous valleys hide in them.\nAnd there are those four people, traveling across mountains and rivers.\nIt's about fighting strange beasts, breaking evil situations, and looking for treasures.\nIf you want to know what happened next, let’s listen to the explanation next time...",
           "source_en": "TapTap Forum"
         },
         {
-          "title": "超自然行动组 x 罗森 联动开启！",
+          "title": "瘴气弥漫遮山野，奇诡凶险谷中藏。\n且有那四人，跋山涉水。\n是斗异兽，破邪局，寻珍宝。\n欲知后事如何，...",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral",
-          "title_en": "Supernatural Action Team x Lawson collaboration begins!",
+          "title_en": "Miasma pervades the mountains and fields, and strange and dangerous valleys hide in them.\nAnd there are those four people, traveling across mountains and rivers.\nIt's about fighting strange beasts, breaking evil situations, and looking for treasures.\nIf you want to know what happened next,...",
           "source_en": "TapTap Forum"
         },
         {
-          "title": "超多周边，出片主题牛奶，食欲满满的小熊猫饭团，都等待工友们发现啦~\n（PS.附近有主题店的工友们可以去看看呀，还有一日店长活动正在路上ing~）",
+          "title": "鉴定能不能自己选啊？你知道轩辕剑有多难出吗？",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
-          "sentiment": "positive",
-          "title_en": "There are a lot of peripherals, including movie-themed milk and appetizing red panda rice balls, all waiting for the workers to discover~\n(PS. Workers who have a theme store nearby can go check it out. There is also a one-day store manager event on the way~)",
-          "source_en": "TapTap Forum"
-        },
-        {
-          "title": "超多周边，出片主题牛奶，食欲满满的小熊猫饭团，都等待工友们发现啦~\n（PS.附近有主题店的工友们可以...",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "positive",
-          "title_en": "There are a lot of peripherals, including movie-themed milk and appetizing red panda rice balls, all waiting for the workers to discover~\n(PS. Workers who have a theme store nearby can...",
+          "sentiment": "neutral",
+          "title_en": "Can I choose my own appraisal? Do you know how difficult it is to get the Xuanyuan Sword?",
           "source_en": "TapTap Forum"
         }
       ],
@@ -376,7 +375,7 @@
             "title": "南瓜入侵，幽魂大运来了！",
             "bvid": "BV1xCkfBjENz",
             "url": "https://www.bilibili.com/video/BV1xCkfBjENz",
-            "play": 5787525,
+            "play": 5787586,
             "like": 34705,
             "danmaku": 184,
             "author": "張某人ZSS",
@@ -389,8 +388,8 @@
             "title": "教会你们如何在超自然找到大佬",
             "bvid": "BV1d2tGz2E3Z",
             "url": "https://www.bilibili.com/video/BV1d2tGz2E3Z",
-            "play": 4728451,
-            "like": 31881,
+            "play": 4728542,
+            "like": 31884,
             "danmaku": 389,
             "author": "中二的小溢",
             "duration": "5:45",
@@ -402,9 +401,9 @@
             "title": "超自然行动组怪物图鉴第六期「小熊猫」",
             "bvid": "BV1QCjiz2Evq",
             "url": "https://www.bilibili.com/video/BV1QCjiz2Evq",
-            "play": 3698845,
-            "like": 16656,
-            "danmaku": 220,
+            "play": 3699474,
+            "like": 16658,
+            "danmaku": 222,
             "author": "就是黄大毛",
             "duration": "1:45",
             "pic": "https://i0.hdslb.com/bfs/archive/4ba15ff6746b6b7de0b85e932c041f18828ca30b.jpg",
@@ -415,9 +414,9 @@
             "title": "本来想卖掉大鹅、看到眼神心软了",
             "bvid": "BV1Wv6bBWEmn",
             "url": "https://www.bilibili.com/video/BV1Wv6bBWEmn",
-            "play": 3493779,
-            "like": 115029,
-            "danmaku": 1675,
+            "play": 3494852,
+            "like": 115071,
+            "danmaku": 1677,
             "author": "虎熊寺",
             "duration": "1:24",
             "pic": "https://i0.hdslb.com/bfs/archive/85eb76c39837c40ba46fd54b2eaef7c07194ce6c.jpg",
@@ -428,7 +427,7 @@
             "title": "搜打撤黑马？！《超自然行动组》凭什么能爆火？",
             "bvid": "BV11hsheJE5i",
             "url": "https://www.bilibili.com/video/BV11hsheJE5i",
-            "play": 2928114,
+            "play": 2928139,
             "like": 31662,
             "danmaku": 45,
             "author": "白馆长丶",
@@ -441,8 +440,8 @@
             "title": "为什么幸福的人不会来到超自然行动组？",
             "bvid": "BV1Zqu4z5ETn",
             "url": "https://www.bilibili.com/video/BV1Zqu4z5ETn",
-            "play": 2789670,
-            "like": 9004,
+            "play": 2789686,
+            "like": 9005,
             "danmaku": 146,
             "author": "白白鸭游戏",
             "duration": "2:7",
@@ -468,8 +467,8 @@
       "regions_data": {
         "us": {
           "name": "美国",
-          "rating": 4.53,
-          "rating_count": 604,
+          "rating": 4.54,
+          "rating_count": 616,
           "current_version": "1.29.30",
           "price": "Free",
           "genre": "Games",
@@ -478,7 +477,7 @@
         "jp": {
           "name": "日本",
           "rating": 4.43,
-          "rating_count": 1560,
+          "rating_count": 1588,
           "current_version": "1.29.30",
           "price": "無料",
           "genre": "Games",
@@ -486,8 +485,8 @@
         },
         "kr": {
           "name": "韩国",
-          "rating": 3.8,
-          "rating_count": 234,
+          "rating": 3.81,
+          "rating_count": 236,
           "current_version": "1.29.30",
           "price": "무료",
           "genre": "Games",
@@ -506,9 +505,9 @@
           "name_en": "Hong Kong, China"
         }
       },
-      "app_store_rating": 4.25,
-      "total_ratings": 2398,
-      "updated": "2026-06-16 10:02",
+      "app_store_rating": 4.26,
+      "total_ratings": 2440,
+      "updated": "2026-06-17 08:55",
       "name_en": "Tomb Busters"
     },
     "app_store_rankings": {
@@ -518,16 +517,16 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-16 10:02",
+        "updated": "2026-06-17 08:55",
         "name_en": "US"
       },
       "jp": {
         "name": "日本",
         "free_overall": null,
-        "free_games": 83,
+        "free_games": 94,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-16 10:02",
+        "updated": "2026-06-17 08:55",
         "name_en": "Japan"
       },
       "kr": {
@@ -536,7 +535,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-16 10:02",
+        "updated": "2026-06-17 08:55",
         "name_en": "South Korea"
       },
       "tw": {
@@ -545,7 +544,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-16 10:02",
+        "updated": "2026-06-17 08:55",
         "name_en": "Taiwan, China"
       },
       "hk": {
@@ -554,38 +553,39 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-06-16 10:02",
+        "updated": "2026-06-17 08:55",
         "name_en": "Hong Kong, China"
       }
     },
     "stock_price": {
       "code": "SZ002558",
       "name": "巨人网络",
-      "price": 24.56,
+      "price": 24.28,
       "prev_close": 24.31,
-      "change_pct": 1.03,
-      "change_amt": 0.25,
-      "updated": "2026-06-16 10:02",
+      "change_pct": -0.12,
+      "change_amt": -0.03,
+      "updated": "2026-06-17 08:55",
       "name_en": "Giant Network"
     },
     "new_content_tracker": [
       {
-        "id": "新地图",
-        "name": "新地图",
+        "id": "角色重做",
+        "name": "角色重做",
         "status": "announced",
-        "first_seen": "2026-06-16",
+        "first_seen": "2026-06-17",
         "launch_date": null,
         "tags": [
-          "新地图"
+          "角色重做"
         ],
         "announcements": [
           {
-            "title": "新地图最新影像释出，七月初海量内容来啦",
-            "date": "2026-06-16",
-            "source": "TapTap官方",
-            "url": "https://www.taptap.cn/app/714123/topic?type=official",
-            "title_en": "The latest images of the new map are released, and a lot of content is coming in early July",
-            "source_en": "TapTap Official"
+            "title": "阿念重做登场！",
+            "date": "2026-06-17",
+            "source": "官网",
+            "url": "https://www.chaoziran.com/news/538",
+            "title_en": "A Nian’s rework is here!",
+            "source_en": "Official Site",
+            "link_status": "valid"
           }
         ],
         "player_reactions": {
@@ -593,228 +593,42 @@
           "neutral": 0,
           "negative": 0
         },
-        "name_en": "New Map",
+        "name_en": "Character Rework",
         "tags_en": [
-          "New Map"
+          "Character Rework"
+        ]
+      },
+      {
+        "id": "新怪物",
+        "name": "新怪物",
+        "status": "teased",
+        "first_seen": "2026-06-17",
+        "launch_date": null,
+        "tags": [
+          "新怪物"
+        ],
+        "announcements": [
+          {
+            "title": "新怪物【鸭子】实机展示，追上了命都给你哦",
+            "date": "2026-06-17",
+            "source": "官网",
+            "url": "https://www.chaoziran.com/news/535",
+            "title_en": "The new monster [Duck] is shown in action. If you catch up, you will be given life.",
+            "source_en": "Official Site",
+            "link_status": "valid"
+          }
+        ],
+        "player_reactions": {
+          "positive": 0,
+          "neutral": 0,
+          "negative": 0
+        },
+        "name_en": "New Monster",
+        "tags_en": [
+          "New Monster"
         ]
       }
     ],
-    "crawled_at": "2026-06-16T10:02:38.707693",
-    "overseas": {
-      "google_play": {
-        "package_id": "com.game.tombbusters",
-        "source": "Google Play",
-        "url": "https://play.google.com/store/apps/details?id=com.game.tombbusters",
-        "rating": 3.6,
-        "review_count": 486,
-        "description": "Hilarious Co-op Horror Extraction",
-        "category": "FAMILY",
-        "crawled_at": "2026-06-16 10:03"
-      },
-      "google_play_reviews": [
-        {
-          "text": "Library &amp; devices",
-          "source": "Google Play"
-        },
-        {
-          "text": "Payments &amp; subscriptions",
-          "source": "Google Play"
-        },
-        {
-          "text": "Personalization in Play",
-          "source": "Google Play"
-        },
-        {
-          "text": "Ratings and reviews are verified",
-          "source": "Google Play"
-        }
-      ],
-      "reddit": [],
-      "youtube": [
-        {
-          "title": "TOMB RAIDER Gameplay Walkthrough Part 1 FULL GAME [4K 60FPS PC ULTRA] - No Commentary",
-          "video_id": "hT-LKGp-bMo",
-          "url": "https://www.youtube.com/watch?v=hT-LKGp-bMo",
-          "views": "2,635,381 views",
-          "channel": "MKIceAndFire",
-          "published": "2 years ago",
-          "duration": "6:26:06"
-        },
-        {
-          "title": "Tomb Busters - Nogla Won't Stay Away From Me!",
-          "video_id": "EnuSSZ8nN4I",
-          "url": "https://www.youtube.com/watch?v=EnuSSZ8nN4I",
-          "views": "428,958 views",
-          "channel": "VanossGaming",
-          "published": "2 weeks ago",
-          "duration": "27:18"
-        },
-        {
-          "title": "A game based on 'The Snapshot Serial Killer'",
-          "video_id": "2bIUhc95Orc",
-          "url": "https://www.youtube.com/watch?v=2bIUhc95Orc",
-          "views": "413,850 views",
-          "channel": "8-BitRyan",
-          "published": "1 year ago",
-          "duration": "54:50"
-        },
-        {
-          "title": "Tomb Busters | Launch Gameplay Trailer",
-          "video_id": "SozbL_ez72Y",
-          "url": "https://www.youtube.com/watch?v=SozbL_ez72Y",
-          "views": "424,283 views",
-          "channel": "Tomb Busters",
-          "published": "2 weeks ago",
-          "duration": "0:56"
-        },
-        {
-          "title": "Three Idiots VS Funniest New Horror Game",
-          "video_id": "m6ENmCcWhBc",
-          "url": "https://www.youtube.com/watch?v=m6ENmCcWhBc",
-          "views": "124,859 views",
-          "channel": "SeeReax",
-          "published": "12 days ago",
-          "duration": "43:39"
-        },
-        {
-          "title": "Goofy Gang Explores SCARY TOMBS... (Tomb Busters)",
-          "video_id": "l9WdUDC67bY",
-          "url": "https://www.youtube.com/watch?v=l9WdUDC67bY",
-          "views": "118,385 views",
-          "channel": "Goofy Gang",
-          "published": "8 days ago",
-          "duration": "20:27"
-        },
-        {
-          "title": "Tomb Raider apk download? #tombraider #gamingcommunity #tombraider2013gameplay #fpsgames ",
-          "video_id": "RatbS4ym8QM",
-          "url": "https://www.youtube.com/watch?v=RatbS4ym8QM",
-          "views": "108,737 views",
-          "channel": "Android Arena",
-          "published": "4 months ago",
-          "duration": "1:15"
-        },
-        {
-          "title": "Three Idiots vs Monster Game",
-          "video_id": "aLCnmer5Kcs",
-          "url": "https://www.youtube.com/watch?v=aLCnmer5Kcs",
-          "views": "101,017 views",
-          "channel": "Rhymestyle",
-          "published": "13 days ago",
-          "duration": "24:34"
-        },
-        {
-          "title": "Three Idiots VS Tomb Busters",
-          "video_id": "vkWatJzT3U0",
-          "url": "https://www.youtube.com/watch?v=vkWatJzT3U0",
-          "views": "92,938 views",
-          "channel": "DotoDoya",
-          "published": "13 days ago",
-          "duration": "21:44"
-        },
-        {
-          "title": "We Explored Cursed Tombs!",
-          "video_id": "vJXmp4iKiD0",
-          "url": "https://www.youtube.com/watch?v=vJXmp4iKiD0",
-          "views": "91,598 views",
-          "channel": "daukeytoo",
-          "published": "8 days ago",
-          "duration": "26:47"
-        }
-      ],
-      "official_news_en": [],
-      "twitter": [
-        {
-          "text": "Follow @TombBusters_EN on X for the latest Tomb Busters updates",
-          "url": "https://x.com/TombBusters_EN",
-          "source": "@TombBusters_EN"
-        }
-      ],
-      "app_store_extended": {
-        "us": {
-          "name": "美国",
-          "rating": 4.53,
-          "rating_count": 604,
-          "current_version": "1.29.30",
-          "price": "Free",
-          "genre": "Games"
-        },
-        "jp": {
-          "name": "日本",
-          "rating": 4.43,
-          "rating_count": 1560,
-          "current_version": "1.29.30",
-          "price": "無料",
-          "genre": "Games"
-        },
-        "kr": {
-          "name": "韩国",
-          "rating": 3.8,
-          "rating_count": 234,
-          "current_version": "1.29.30",
-          "price": "무료",
-          "genre": "Games"
-        },
-        "tw": {
-          "name": "台湾",
-          "rating": null,
-          "rating_count": 0
-        },
-        "hk": {
-          "name": "香港",
-          "rating": null,
-          "rating_count": 0
-        },
-        "gb": {
-          "name": "英国",
-          "rating": 4.45,
-          "rating_count": 20,
-          "current_version": "1.29.30",
-          "price": "Free",
-          "genre": "Games"
-        },
-        "de": {
-          "name": "德国",
-          "rating": 4.11,
-          "rating_count": 18,
-          "current_version": "1.29.30",
-          "price": "Gratis",
-          "genre": "Games"
-        },
-        "fr": {
-          "name": "法国",
-          "rating": 3.91,
-          "rating_count": 22,
-          "current_version": "1.29.30",
-          "price": "Gratuit",
-          "genre": "Games"
-        },
-        "au": {
-          "name": "澳大利亚",
-          "rating": 4.38,
-          "rating_count": 16,
-          "current_version": "1.29.30",
-          "price": "Free",
-          "genre": "Games"
-        },
-        "sg": {
-          "name": "新加坡",
-          "rating": null,
-          "rating_count": 0
-        },
-        "th": {
-          "name": "泰国",
-          "rating": null,
-          "rating_count": 0
-        },
-        "br": {
-          "name": "巴西",
-          "rating": null,
-          "rating_count": 0
-        }
-      },
-      "crawled_at": "2026-06-16T10:04:03.017479",
-      "crawled_date": "2026-06-16"
-    }
+    "crawled_at": "2026-06-17T08:55:54.297561"
   }
 }
