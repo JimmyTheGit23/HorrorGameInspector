@@ -1,17 +1,61 @@
 {
-  "snapshot_date": "2026-06-16T10:04:11+08:00",
+  "snapshot_date": "2026-06-19T10:13:57+08:00",
   "hero": {
     "name": "黎明杀机",
-    "current_players": 66126,
+    "current_players": 79835,
     "positive_rate": 78.5,
-    "reviews_total": 903996,
-    "price_label": "¥ 93.75",
+    "reviews_total": 906442,
+    "price_label": "¥ 37.50",
     "release_date": "2016 年 6 月 14 日",
     "genres": [
       "动作"
     ]
   },
   "operations": [
+    {
+      "date": "2026-06-18",
+      "timestamp": 1781792187,
+      "title": "Dead by Daylight | Jason launch stream, Featuring PaulieEsther (replay)",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835871199304397",
+      "author": "mahdi.roy",
+      "feed_label": "Community Announcements",
+      "feed_type": "官方",
+      "is_patch": false,
+      "contents": "Featuring PaulieEsther! Watch the full Twitch replay via this link: https://www.twitch.tv/videos/2798058939"
+    },
+    {
+      "date": "2026-06-17",
+      "timestamp": 1781691700,
+      "title": "Dead by Daylight hits new all-time peak player count, proving live service isn't dead",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PCGamesN/1835871199300390",
+      "author": "editor@pcgamesn.com",
+      "feed_label": "PCGamesN",
+      "feed_type": "媒体",
+      "is_patch": false,
+      "contents": "Dead by Daylight is a game developer's dream (or nightmare) come true. Akin to Warframe, it launched to somewhat lukewarm reviews, but has continued to expand as the years have gone on, cementing itse"
+    },
+    {
+      "date": "2026-06-17",
+      "timestamp": 1781633759,
+      "title": "The Jason Chapter is now available on Steam!",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835236783575227",
+      "author": "CatBHVR",
+      "feed_label": "Community Announcements",
+      "feed_type": "官方",
+      "is_patch": false,
+      "contents": "Dead by Daylight’s Jason includes a new Killer, The Slasher. Purchasing this add-on unlocks the Hockey Mask badge and the Misty Cabin banner.The new Killer is The Slasher. The Jason Chapter includes:N"
+    },
+    {
+      "date": "2026-06-16",
+      "timestamp": 1781620286,
+      "title": "10.0.0 | Jason Patch Notes",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835236783574550",
+      "author": "Goblin_BHVR",
+      "feed_label": "Community Announcements",
+      "feed_type": "官方",
+      "is_patch": false,
+      "contents": "ContentNEW KILLER: THE SLASHERPOWER: OMNIPRESENT EVILPress the Active Ability button to activate Omnipresent Evil. The Slasher becomes invisible and gains Undetectable, but cannot see Survivors or the"
+    },
     {
       "date": "2026-06-16",
       "timestamp": 1781539568,
@@ -55,65 +99,9 @@
       "feed_type": "官方",
       "is_patch": false,
       "contents": "Celebrate 10 years of Dead by Daylight with our biggest Anniversary broadcast ever. We’re pulling out all the stops with massive reveals, exciting Chapter announcements, incredible special guests, and"
-    },
-    {
-      "date": "2026-06-13",
-      "timestamp": 1781361025,
-      "title": "10 Years. 10 Items. One Limited Release. ",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835236783566010",
-      "author": "CatBHVR",
-      "feed_label": "Community Announcements",
-      "feed_type": "官方",
-      "is_patch": false,
-      "contents": "Ten treasures have emerged from The Fog, waiting to be claimed. In celebration of Dead by Daylight’s milestone 10th Anniversary, we’re unveiling an exclusive limited-edition merch collection, featurin"
-    },
-    {
-      "date": "2026-06-11",
-      "timestamp": 1781110907,
-      "title": "PTB to Live changes: The Slasher",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835236783558218",
-      "author": "Goblin_BHVR",
-      "feed_label": "Community Announcements",
-      "feed_type": "官方",
-      "is_patch": false,
-      "contents": "In late May, we brought the much-anticipated Jason chapter to the Public Test Build (PTB). Since then, we’ve been keeping a close eye on what you, the community, have had to say about it. We’re glad t"
-    },
-    {
-      "date": "2026-05-27",
-      "timestamp": 1779811758,
-      "title": "At long last, Dead by Daylight welcomes Friday the 13th's Jason Voorhees, and he's now available for some beta slashing",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/Rock, Paper, Shotgun/1833334318579881",
-      "author": "",
-      "feed_label": "Rock, Paper, Shotgun",
-      "feed_type": "媒体",
-      "is_patch": false,
-      "contents": "With all of the iconic horror villains <a href=\"https://www.rockpapershotgun.com/games/dead-by-daylight\">Dead by Daylight</a> has featured over the years, the one character's absence has stuck out lik"
-    },
-    {
-      "date": "2026-05-26",
-      "timestamp": 1779805808,
-      "title": "10.0.0 | Jason PTB Patch Notes",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1833334318579520",
-      "author": "Goblin_BHVR",
-      "feed_label": "Community Announcements",
-      "feed_type": "官方",
-      "is_patch": false,
-      "contents": "ReminderAll characters you have unlocked via Steam will be unlocked on the PTB, including any new character(s) introduced in this update.If DLC content has been unlocked via a platform other than Stea"
     }
   ],
-  "patches": [
-    {
-      "date": "2026-05-12",
-      "timestamp": 1778596206,
-      "title": "9.6.2 | Bugfix Patch",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1832065502824037",
-      "author": "Goblin_BHVR",
-      "feed_label": "Community Announcements",
-      "feed_type": "官方",
-      "is_patch": true,
-      "contents": "ImportantThe Pig's Amanda's Letter add-on has been re-enabled.Bug Fixes2v8Fixed an issue where the Play buttons were greyed out in the Overview tab after viewing the Quests.AudioFixed an issue where T"
-    }
-  ],
+  "patches": [],
   "trends": [
     {
       "month": "2026-01",
@@ -151,15 +139,15 @@
     "name_en": "Dead by Daylight",
     "short_description": "10年恐惧相伴。10年的惊吓与刺激体验。10年的残暴献祭与惊险逃脱。 永久困于邪恶的幻境之中，即使死亡也无法逃脱，这是一场需要勇气和智慧的较量，四名意志坚定的逃生者在残忍对局中面对嗜血杀手。选择一方，进入多人非对称竞技游戏世界，获得最佳恐怖游戏体验。",
     "short_description_en": "10 years of horror. 10 years of jump scares and close calls. 10 years of brutal sacrifices and thrilling escapes. Trapped forever in a realm of eldritch evil where even death is not an escape, four determined Survivors face a bloodthirsty Killer in a vicious game of nerve and wits.",
-    "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/381210/8512297f0f02ec3e592f45b21779f61624941964/header_alt_assets_6.jpg?t=1778880603",
+    "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/381210/66727e8249aae119400352d4b1d84928f924939c/header_alt_assets_8.jpg?t=1781795618",
     "developers": [
       "Behaviour Interactive Inc."
     ],
     "publishers": [
       "Behaviour Interactive Inc."
     ],
-    "price": "¥ 93.75",
-    "price_en": "$19.99",
+    "price": "¥ 37.50",
+    "price_en": "$7.99",
     "release_date": "2016 年 6 月 14 日",
     "platforms": {
       "windows": true,
@@ -171,11 +159,11 @@
     ]
   },
   "reviews": {
-    "total_reviews": 903996,
-    "positive": 709732,
-    "negative": 194264,
+    "total_reviews": 906442,
+    "positive": 711674,
+    "negative": 194768,
     "positive_rate": 78.5
   },
-  "ccu": 66126,
-  "crawled_at": "2026-06-16T10:04:11.606763"
+  "ccu": 79835,
+  "crawled_at": "2026-06-19T10:13:57.796422"
 }
