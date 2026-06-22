@@ -1,10 +1,10 @@
 {
-  "snapshot_date": "2026-06-19T10:13:57+08:00",
+  "snapshot_date": "2026-06-22T18:41:00+08:00",
   "hero": {
     "name": "黎明杀机",
-    "current_players": 79835,
+    "current_players": 53465,
     "positive_rate": 78.5,
-    "reviews_total": 906442,
+    "reviews_total": 908292,
     "price_label": "¥ 37.50",
     "release_date": "2016 年 6 月 14 日",
     "genres": [
@@ -13,92 +13,64 @@
   },
   "operations": [
     {
-      "date": "2026-06-18",
-      "timestamp": 1781792187,
-      "title": "Dead by Daylight | Jason launch stream, Featuring PaulieEsther (replay)",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835871199304397",
-      "author": "mahdi.roy",
-      "feed_label": "Community Announcements",
-      "feed_type": "官方",
-      "is_patch": false,
-      "contents": "Featuring PaulieEsther! Watch the full Twitch replay via this link: https://www.twitch.tv/videos/2798058939"
-    },
-    {
-      "date": "2026-06-17",
-      "timestamp": 1781691700,
-      "title": "Dead by Daylight hits new all-time peak player count, proving live service isn't dead",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PCGamesN/1835871199300390",
-      "author": "editor@pcgamesn.com",
-      "feed_label": "PCGamesN",
-      "feed_type": "媒体",
-      "is_patch": false,
-      "contents": "Dead by Daylight is a game developer's dream (or nightmare) come true. Akin to Warframe, it launched to somewhat lukewarm reviews, but has continued to expand as the years have gone on, cementing itse"
-    },
-    {
-      "date": "2026-06-17",
-      "timestamp": 1781633759,
-      "title": "The Jason Chapter is now available on Steam!",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835236783575227",
-      "author": "CatBHVR",
-      "feed_label": "Community Announcements",
-      "feed_type": "官方",
-      "is_patch": false,
-      "contents": "Dead by Daylight’s Jason includes a new Killer, The Slasher. Purchasing this add-on unlocks the Hockey Mask badge and the Misty Cabin banner.The new Killer is The Slasher. The Jason Chapter includes:N"
-    },
-    {
-      "date": "2026-06-16",
-      "timestamp": 1781620286,
-      "title": "10.0.0 | Jason Patch Notes",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835236783574550",
-      "author": "Goblin_BHVR",
-      "feed_label": "Community Announcements",
-      "feed_type": "官方",
-      "is_patch": false,
-      "contents": "ContentNEW KILLER: THE SLASHERPOWER: OMNIPRESENT EVILPress the Active Ability button to activate Omnipresent Evil. The Slasher becomes invisible and gains Undetectable, but cannot see Survivors or the"
-    },
-    {
-      "date": "2026-06-16",
-      "timestamp": 1781539568,
-      "title": "Stats | Celebrating 10 Years In The Fog",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835236783570987",
-      "author": "Goblin_BHVR",
-      "feed_label": "Community Announcements",
-      "feed_type": "官方",
-      "is_patch": false,
-      "contents": "Happy 10th Anniversary, everyone! Whether you visited us in Montreal or celebrated with us online, thank you from the bottom of our hearts for making this anniversary and the livestream a time to reme"
-    },
-    {
       "date": "2026-06-15",
-      "timestamp": 1781529679,
-      "title": "Dead by Daylight celebrates its 10 year anniversary by adding the most sought after horror icon and teasing 'a sweeping visual overhaul'",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PC Gamer/1835236783570269",
-      "author": "Elie Gould",
-      "feed_label": "PC Gamer",
-      "feed_type": "媒体",
-      "is_patch": false,
-      "contents": "<a href=\"https://www.pcgamer.com/dead-by-daylight/\">Dead by Daylight</a> recently celebrated its 10 year anniversary with <a href=\"https://www.youtube.com/watch?v=2TseoyiHoP8\" target=\"_blank\">a day-lo"
-    },
-    {
-      "date": "2026-06-15",
-      "timestamp": 1781487048,
-      "title": "As Dead by Daylight turns 10, Behavior unveils game-changing overhaul that will \"make the next ten better than the first\"",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PCGamesN/1835236783568929",
-      "author": "editor@pcgamesn.com",
-      "feed_label": "PCGamesN",
-      "feed_type": "媒体",
-      "is_patch": false,
-      "contents": "It's hard to believe that we've had ten years of Dead by Daylight. From its humble origins with just The Trapper, The Wraith, and The Hillbilly, it now sports a roster of 43 terrors, some of which hai"
-    },
-    {
-      "date": "2026-06-15",
-      "timestamp": 1781462525,
-      "title": "Dead by Daylight | 10th Anniversary Broadcast",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835236783568316",
-      "author": "mahdi.roy",
-      "feed_label": "Community Announcements",
+      "title": "Dead by Daylight 10th Anniversary Recap: Announcements & Celebrations",
+      "url": "https://deadbydaylight.com/news/dbd-10th-anniversary-recap-announcements-celebrations/",
+      "author": "Dead by Daylight",
+      "feed_label": "Official News",
       "feed_type": "官方",
       "is_patch": false,
-      "contents": "Celebrate 10 years of Dead by Daylight with our biggest Anniversary broadcast ever. We’re pulling out all the stops with massive reveals, exciting Chapter announcements, incredible special guests, and"
+      "contents": "Dead by Daylight’s 10th Anniversary recap collects the broadcast reveals, anniversary beats, and future roadmap highlights in one official summary."
+    },
+    {
+      "date": "2026-05-28",
+      "title": "Dead by Daylight’s Anniversary Party Is Almost Here",
+      "url": "https://deadbydaylight.com/news/dbd-anniversary-party-is-almost-here/",
+      "author": "Dead by Daylight",
+      "feed_label": "Official News",
+      "feed_type": "官方",
+      "is_patch": false,
+      "contents": "The official event post previews the 10th Anniversary Party schedule, meet-and-greets, broadcast beat, and on-site celebration plan."
+    },
+    {
+      "date": "2026-05-26",
+      "title": "Jason Has Finally Come To Dead by Daylight",
+      "url": "https://deadbydaylight.com/news/jason-comes-to-dbd/",
+      "author": "Dead by Daylight",
+      "feed_label": "Official News",
+      "feed_type": "官方",
+      "is_patch": false,
+      "contents": "The official news post announces Jason entering The Fog, framing the chapter reveal as the long-awaited tenth anniversary headline beat."
+    },
+    {
+      "date": "2026-05-18",
+      "title": "The Entity Unveiled: A Guide To Dead by Daylight’s Eldritch Horror",
+      "url": "https://deadbydaylight.com/news/the-entity-unveiled/",
+      "author": "Dead by Daylight",
+      "feed_label": "Official News",
+      "feed_type": "官方",
+      "is_patch": false,
+      "contents": "This lore feature explains The Entity and keeps the brand conversation tied to DBD’s core supernatural mythology."
+    },
+    {
+      "date": "2026-05-14",
+      "title": "Dead by Daylight Celebrates 10 Years In The Fog",
+      "url": "https://deadbydaylight.com/news/dbd-celebrates-10-years-in-the-fog/",
+      "author": "Dead by Daylight",
+      "feed_label": "Official News",
+      "feed_type": "官方",
+      "is_patch": false,
+      "contents": "The 10-year retrospective looks back on the roster, major milestones, and long-term brand growth heading into the anniversary window."
+    },
+    {
+      "date": "2026-04-28",
+      "title": "Dead by Daylight & Darkest Dungeon Delve Into Ruin",
+      "url": "https://deadbydaylight.com/news/dbd-darkest-dungeon-ruin-rift/",
+      "author": "Dead by Daylight",
+      "feed_label": "Official News",
+      "feed_type": "官方",
+      "is_patch": false,
+      "contents": "The Ruin Rift collaboration links Darkest Dungeon cosmetics and progression beats into DBD’s ongoing live-ops schedule."
     }
   ],
   "patches": [],
@@ -130,8 +102,8 @@
     },
     {
       "month": "2026-06",
-      "avg_players": 53145,
-      "peak_players": 104001
+      "avg_players": 61339,
+      "peak_players": 125059
     }
   ],
   "store": {
@@ -159,11 +131,11 @@
     ]
   },
   "reviews": {
-    "total_reviews": 906442,
-    "positive": 711674,
-    "negative": 194768,
+    "total_reviews": 908292,
+    "positive": 713103,
+    "negative": 195189,
     "positive_rate": 78.5
   },
-  "ccu": 79835,
-  "crawled_at": "2026-06-19T10:13:57.796422"
+  "ccu": 53465,
+  "crawled_at": "2026-06-22T18:37:05.733761"
 }
