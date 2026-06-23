@@ -47,7 +47,7 @@ def update_history(steam_data, history_path):
 
         entry = {
             "date": today,
-            "ccu": spy.get("ccu", 0),
+            "ccu": spy.get("ccu", data.get("ccu", 0)),
             "positive_rate": reviews.get("positive_rate", spy.get("positive_rate", 0)),
             "total_reviews": reviews.get("total_reviews", spy.get("positive", 0) + spy.get("negative", 0)),
         }

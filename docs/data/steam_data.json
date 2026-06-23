@@ -19,7 +19,7 @@
       "release_date": "2025 年 2 月 26 日",
       "release_date_en": "26 Feb, 2025",
       "metacritic": null,
-      "recommendations": 323993,
+      "recommendations": 324216,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -59,16 +59,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 21684
+      "ccu": 30920
     },
     "reviews": {
-      "total_reviews": 14867,
-      "positive": 13792,
-      "negative": 1075,
+      "total_reviews": 14883,
+      "positive": 13806,
+      "negative": 1077,
       "positive_rate": 92.8
     },
-    "ccu": 21684,
-    "crawled_at": "2026-06-22T18:34:17.599909"
+    "ccu": 30920,
+    "crawled_at": "2026-06-23T10:01:17.795350"
   },
   "Lethal Company": {
     "appid": 1966720,
@@ -90,7 +90,7 @@
       "release_date": "2023 年 10 月 23 日",
       "release_date_en": "23 Oct, 2023",
       "metacritic": null,
-      "recommendations": 410143,
+      "recommendations": 410162,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -130,16 +130,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 1621
+      "ccu": 3917
     },
     "reviews": {
-      "total_reviews": 17617,
-      "positive": 16370,
+      "total_reviews": 17618,
+      "positive": 16371,
       "negative": 1247,
       "positive_rate": 92.9
     },
-    "ccu": 1621,
-    "crawled_at": "2026-06-22T18:34:23.907956"
+    "ccu": 3917,
+    "crawled_at": "2026-06-23T10:01:24.077459"
   },
   "Phasmophobia": {
     "appid": 739630,
@@ -161,7 +161,7 @@
       "release_date": "2020 年 9 月 18 日",
       "release_date_en": "18 Sep, 2020",
       "metacritic": null,
-      "recommendations": 677992,
+      "recommendations": 678032,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -219,16 +219,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 4445
+      "ccu": 8018
     },
     "reviews": {
-      "total_reviews": 26814,
-      "positive": 24304,
+      "total_reviews": 26821,
+      "positive": 24311,
       "negative": 2510,
       "positive_rate": 90.6
     },
-    "ccu": 4445,
-    "crawled_at": "2026-06-22T18:34:30.185914"
+    "ccu": 8018,
+    "crawled_at": "2026-06-23T10:01:30.185345"
   },
   "Content Warning": {
     "appid": 2881650,
@@ -254,7 +254,7 @@
       "release_date": "2024 年 4 月 1 日",
       "release_date_en": "1 Apr, 2024",
       "metacritic": null,
-      "recommendations": 69792,
+      "recommendations": 69817,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -288,16 +288,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 515
+      "ccu": 1110
     },
     "reviews": {
-      "total_reviews": 6839,
-      "positive": 6143,
+      "total_reviews": 6841,
+      "positive": 6145,
       "negative": 696,
       "positive_rate": 89.8
     },
-    "ccu": 515,
-    "crawled_at": "2026-06-22T18:34:37.817596"
+    "ccu": 1110,
+    "crawled_at": "2026-06-23T10:01:36.288903"
   },
   "FEEDERS": {
     "appid": 4408510,
@@ -358,13 +358,13 @@
     },
     "steamspy": null,
     "reviews": {
-      "total_reviews": 0,
-      "positive": 0,
-      "negative": 0,
-      "positive_rate": 0.0
+      "total_reviews": 14,
+      "positive": 9,
+      "negative": 5,
+      "positive_rate": 64.3
     },
     "ccu": 0,
-    "crawled_at": "2026-06-22T18:34:49.288720"
+    "crawled_at": "2026-06-23T10:01:47.913845"
   },
   "NARAKA: BLADEPOINT": {
     "appid": 1203220,
@@ -386,7 +386,7 @@
       "release_date": "2021 年 8 月 11 日",
       "release_date_en": "11 Aug, 2021",
       "metacritic": null,
-      "recommendations": 197719,
+      "recommendations": 197724,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -426,15 +426,15 @@
       ]
     },
     "steamspy": {
-      "ccu": 33221
+      "ccu": 9712
     },
     "reviews": {
-      "total_reviews": 250759,
-      "positive": 180471,
-      "negative": 70288,
+      "total_reviews": 250774,
+      "positive": 180477,
+      "negative": 70297,
       "positive_rate": 72.0
     },
-    "ccu": 33221,
-    "crawled_at": "2026-06-22T18:34:55.739097"
+    "ccu": 9712,
+    "crawled_at": "2026-06-23T10:01:54.113483"
   }
 }
