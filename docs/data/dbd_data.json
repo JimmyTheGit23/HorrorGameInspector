@@ -92,7 +92,8 @@
       "feed_label": "Steam Mirror",
       "feed_type": "官方",
       "is_patch": true,
-      "contents": "The Jason PTB introduces The Slasher, Omnipresent Evil, Throwing Spikes, and a fresh round of perk and UI changes for public testing."
+      "contents": "The Jason PTB introduces The Slasher, Omnipresent Evil, Throwing Spikes, and a fresh round of perk and UI changes for public testing.",
+      "link_status": "valid"
     },
     {
       "date": "2026-05-12",
@@ -102,7 +103,8 @@
       "feed_label": "Steam Mirror",
       "feed_type": "官方",
       "is_patch": true,
-      "contents": "9.6.2 focuses on stability and bug fixes, covering 2v8 overview issues, audio problems, and multiple killer and system regressions."
+      "contents": "9.6.2 focuses on stability and bug fixes, covering 2v8 overview issues, audio problems, and multiple killer and system regressions.",
+      "link_status": "valid"
     },
     {
       "date": "2026-05-05",
@@ -112,7 +114,8 @@
       "feed_label": "Steam Mirror",
       "feed_type": "官方",
       "is_patch": true,
-      "contents": "9.6.1 continues cleanup around Diminishing Returns documentation, progress bar presentation, and numeric tuning for Doctor and Ghost Face."
+      "contents": "9.6.1 continues cleanup around Diminishing Returns documentation, progress bar presentation, and numeric tuning for Doctor and Ghost Face.",
+      "link_status": "valid"
     },
     {
       "date": "2026-04-28",
@@ -122,7 +125,8 @@
       "feed_label": "Steam Mirror",
       "feed_type": "官方",
       "is_patch": true,
-      "contents": "9.6.0 goes live with Diminishing Returns, visible teammate loadouts, spectator HUD upgrades, and a broader balance pass."
+      "contents": "9.6.0 goes live with Diminishing Returns, visible teammate loadouts, spectator HUD upgrades, and a broader balance pass.",
+      "link_status": "valid"
     },
     {
       "date": "2026-04-07",
@@ -132,7 +136,8 @@
       "feed_label": "Steam Mirror",
       "feed_type": "官方",
       "is_patch": true,
-      "contents": "The 9.6.0 PTB previews Diminishing Returns, the refreshed interaction progress bar, and expanded Match Details ahead of the mid-chapter release."
+      "contents": "The 9.6.0 PTB previews Diminishing Returns, the refreshed interaction progress bar, and expanded Match Details ahead of the mid-chapter release.",
+      "link_status": "valid"
     }
   ],
   "trends": [
