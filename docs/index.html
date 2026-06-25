@@ -4023,7 +4023,8 @@ If you want to know what happened next, let’s listen to the explanation next t
             // 保存到全局供筛选使用
             window._czrAllUpdates = [];
             if (czr.bwiki_updates && czr.bwiki_updates.length > 0) {
-                window._czrAllUpdates = czr.bwiki_updates.filter(u => u.link_status === 'valid');
+                // link_status === 'valid' 是TapTap moment帖子的字段；BWIKI/官网来源无此字段，不应被过滤
+                window._czrAllUpdates = czr.bwiki_updates.filter(u => !u.link_status || u.link_status === 'valid');
             }
             // 默认显示全部
             filterAnnouncements('all');
