@@ -3286,12 +3286,12 @@ If you want to know what happened next, let’s listen to the explanation next t
                 peakConcurrent: { zh: '100万+', en: '1M+' },
                 totalRevenue: { zh: '50亿+', en: '¥5B+' },
                 socialViews: { zh: '1,400亿次', en: '140B' },
-                iosTopGrossing: { zh: '#23', en: '#23' },
-                iosTopGrossingPeak: { zh: '（峰值#4）', en: '(Peak #4)' },
-                iosFree: { zh: 'Top 30', en: 'Top 30' },
+                iosTopGrossing: { zh: '--', en: '--' },
+                iosTopGrossingPeak: { zh: '', en: '' },
+                iosFree: { zh: '--', en: '--' },
                 updated: {
-                    zh: '更新于 2026-05-29 · 来源：iOS App Store',
-                    en: 'Updated 2026-05-29 · Source: iOS App Store'
+                    zh: '暂无排名数据',
+                    en: 'No ranking data'
                 }
             }
         };
@@ -3529,6 +3529,21 @@ If you want to know what happened next, let’s listen to the explanation next t
                     ? (currentLang === 'zh' ? formatCompactZh(czr.taptap.fans_count) : formatCompactEn(czr.taptap.fans_count))
                     : '--';
                 const metricsCopy = chaoziranStaticCopy.metrics;
+
+                // 国区App Store排名（实时数据）
+                const cnRank = czr && czr.cn_app_store_rankings && czr.cn_app_store_rankings.cn;
+                const grossingRank = cnRank && cnRank.grossing_games;
+                const freeRank = cnRank && (cnRank.free_overall || cnRank.free_games);
+                const peakGrossing = cnRank && cnRank.peak_grossing_games;
+                const rankUpdated = cnRank && cnRank.updated || '';
+
+                const grossingText = grossingRank ? `#${grossingRank}` : '200+';
+                const freeText = freeRank ? `#${freeRank}` : '200+';
+                const peakText = peakGrossing ? (currentLang === 'zh' ? `（峰值#${peakGrossing}）` : `(Peak #${peakGrossing})`) : '';
+                const updatedText = rankUpdated
+                    ? (currentLang === 'zh' ? `更新于 ${rankUpdated} · 来源：iOS App Store` : `Updated ${rankUpdated} · Source: iOS App Store`)
+                    : metricsCopy.updated[currentLang];
+
                 metricsEl.innerHTML = `
                     <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.reg_users[currentLang]}</span><span class="font-semibold" style="color:#0F172A;">${metricsCopy.registeredUsers[currentLang]}</span></div>
                     <div class="flex justify-between"><span style="color:var(--text-muted);">DAU</span><span class="font-semibold" style="color:#0F172A;">${metricsCopy.dau[currentLang]}</span></div>
@@ -3537,9 +3552,9 @@ If you want to know what happened next, let’s listen to the explanation next t
                     <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.social_views[currentLang]}</span><span class="font-semibold" style="color:#0F172A;">${metricsCopy.socialViews[currentLang]}</span></div>
                     <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.taptap_followers[currentLang]}</span><span id="taptap-fans" class="font-semibold" style="color:var(--accent);">${taptapFans}</span></div>
                     <div class="pt-2 mt-1" style="border-top:1px solid var(--divider);">
-                        <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.ios_top_grossing[currentLang]}</span><span class="font-semibold" style="color:#0F172A;">${metricsCopy.iosTopGrossing[currentLang]} <span style="color:var(--text-muted);" class="text-[10px]">${metricsCopy.iosTopGrossingPeak[currentLang]}</span></span></div>
-                        <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.ios_free[currentLang]}</span><span class="font-semibold" style="color:var(--data-green);">${metricsCopy.iosFree[currentLang]}</span></div>
-                        <div class="text-[10px] mt-1" style="color:var(--text-muted);">${metricsCopy.updated[currentLang]}</div>
+                        <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.ios_top_grossing[currentLang]}</span><span class="font-semibold" style="color:#0F172A;">${grossingText} <span style="color:var(--text-muted);" class="text-[10px]">${peakText}</span></span></div>
+                        <div class="flex justify-between"><span style="color:var(--text-muted);">${i18nDict.ios_free[currentLang]}</span><span class="font-semibold" style="color:var(--data-green);">${freeText}</span></div>
+                        <div class="text-[10px] mt-1" style="color:var(--text-muted);">${updatedText}</div>
                     </div>
                 `;
             }

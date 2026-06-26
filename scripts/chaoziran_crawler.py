@@ -899,6 +899,98 @@ def get_app_store_rankings():
     return result
 
 
+def get_cn_app_store_rankings(app_id=6544797261, peak_tracking_path="../docs/data/chaoziran_cn_rank_peak.json"):
+    """
+    从iTunes RSS获取超自然行动组国区（CN）App Store免费榜/畅销榜排名。
+    只拉取CN区域，覆盖总榜+游戏分类，同时追踪历史峰值排名。
+    """
+    target_id = str(app_id)
+    games_genre_id = 6014
+
+    result = {
+        "cn": {
+            "name": "中国",
+            "name_en": "China",
+            "free_overall": None,
+            "free_games": None,
+            "grossing_overall": None,
+            "grossing_games": None,
+            "updated": datetime.now().strftime("%Y-%m-%d %H:%M"),
+        }
+    }
+
+    charts = [
+        ("free_overall", f"https://itunes.apple.com/rss/topfreeapplications/limit=200/json?cc=cn"),
+        ("free_games", f"https://itunes.apple.com/rss/topfreeapplications/limit=200/genre={games_genre_id}/json?cc=cn"),
+        ("grossing_overall", f"https://itunes.apple.com/rss/topgrossingapplications/limit=200/json?cc=cn"),
+        ("grossing_games", f"https://itunes.apple.com/rss/topgrossingapplications/limit=200/genre={games_genre_id}/json?cc=cn"),
+    ]
+
+    for chart_key, url in charts:
+        try:
+            data = fetch_json(url)
+            if not data:
+                continue
+            entries = data.get("feed", {}).get("entry", [])
+            for idx, entry in enumerate(entries):
+                entry_id = entry.get("id", {})
+                if isinstance(entry_id, dict):
+                    eid = entry_id.get("attributes", {}).get("im:id", "")
+                else:
+                    eid = str(entry_id)
+                if eid == target_id:
+                    result["cn"][chart_key] = idx + 1
+                    break
+        except Exception as e:
+            print(f"    国区 {chart_key} 排名获取失败: {e}")
+
+    # 日志输出
+    parts = []
+    for key in ["free_overall", "free_games", "grossing_overall", "grossing_games"]:
+        v = result["cn"][key]
+        label = {"free_overall": "免费总榜", "free_games": "免费游戏榜",
+                 "grossing_overall": "畅销总榜", "grossing_games": "畅销游戏榜"}[key]
+        if v:
+            parts.append(f"{label}#{v}")
+        else:
+            parts.append(f"{label}200+")
+    print(f"  国区App Store: {', '.join(parts)}")
+
+    # ===== 峰值追踪 =====
+    peaks = {"grossing_games": None, "free_overall": None}
+    try:
+        if os.path.exists(peak_tracking_path):
+            with open(peak_tracking_path, "r", encoding="utf-8") as f:
+                old_peaks = json.load(f)
+        else:
+            old_peaks = {}
+    except Exception:
+        old_peaks = {}
+
+    for key in ["grossing_games", "free_overall"]:
+        current = result["cn"].get(key)
+        prev_peak = old_peaks.get(key)
+        if current is not None:
+            if prev_peak is None or current < prev_peak:
+                peaks[key] = current
+            else:
+                peaks[key] = prev_peak
+        else:
+            peaks[key] = prev_peak
+
+    # 保存峰值
+    peak_dir = os.path.dirname(peak_tracking_path)
+    if peak_dir:
+        os.makedirs(peak_dir, exist_ok=True)
+    with open(peak_tracking_path, "w", encoding="utf-8") as f:
+        json.dump(peaks, f, ensure_ascii=False, indent=2)
+
+    result["cn"]["peak_grossing_games"] = peaks["grossing_games"]
+    result["cn"]["peak_free_overall"] = peaks["free_overall"]
+
+    return result
+
+
 def classify_announcement(title):
     """
     根据标题关键词对公告进行分类。
@@ -1169,6 +1261,10 @@ def crawl_chaoziran():
     print("[超自然行动组] 获取海外App Store排名...")
     app_store_rankings = get_app_store_rankings()
 
+    # ===== 国区App Store排名 =====
+    print("[超自然行动组] 获取国区App Store排名...")
+    cn_app_store_rankings = get_cn_app_store_rankings()
+
     # ===== 新玩法专题追踪 =====
     print("[超自然行动组] 构建新玩法追踪...")
     content_tracker = build_content_tracker(update_announcements, official_news)
@@ -1185,6 +1281,7 @@ def crawl_chaoziran():
             },
             "tomb_busters": get_tomb_busters_info(),
             "app_store_rankings": app_store_rankings,
+            "cn_app_store_rankings": cn_app_store_rankings,
             "stock_price": stock_data,
             "new_content_tracker": content_tracker,
             "crawled_at": datetime.now().isoformat(),
@@ -1233,6 +1330,11 @@ if __name__ == "__main__":
                 if old_rankings:
                     data["chaoziran"]["app_store_rankings"] = old_rankings
                     print(f"  [MERGE] 保留旧App Store排名数据")
+            if not data["chaoziran"].get("cn_app_store_rankings"):
+                old_cn_rankings = old_data.get("chaoziran", {}).get("cn_app_store_rankings")
+                if old_cn_rankings:
+                    data["chaoziran"]["cn_app_store_rankings"] = old_cn_rankings
+                    print(f"  [MERGE] 保留旧国区App Store排名数据")
     except Exception as e:
         print(f"  [WARN] 合并旧数据失败: {e}")
 
