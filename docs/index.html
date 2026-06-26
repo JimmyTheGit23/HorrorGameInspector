@@ -3133,14 +3133,14 @@ If you want to know what happened next, let’s listen to the explanation next t
                 }
             }
 
-            // 最新动态 — 只显示官方内容（官网新闻+Steam发售信息）
+            // 最新动态 — 超自然官网新闻 + Steam各游戏最新公告
             const newsEl = document.getElementById('latest-news');
             let newsItems = [];
+            const czrIcon = 'images/czr-icon-sm.png';
 
             // 从超自然行动组官网取官方新闻
             if (chaoziranData.chaoziran) {
                 const czr = chaoziranData.chaoziran;
-                const czrIcon = 'images/czr-icon-sm.png';
                 if (czr.official_news) {
                     czr.official_news.slice(0, 5).forEach(n => {
                         newsItems.push({
@@ -3148,39 +3148,77 @@ If you want to know what happened next, let’s listen to the explanation next t
                             title: pickLang(n, 'title', ''),
                             source: pickLang(n, 'source', currentLang === 'zh' ? '官网' : 'Official Site'),
                             url: n.url,
-                            header_image: czrIcon
+                            header_image: czrIcon,
+                            date: n.date || ''
                         });
                     });
                 }
             }
 
-            // 从Steam取发售信息
-            Object.entries(steamData).forEach(([name, data]) => {
-                if (data.store) {
-                    const storeName = pickLang(data.store, 'name', name);
-                    const releaseDate = pickLang(data.store, 'release_date', '');
+            // 从Steam取各游戏最新新闻（替代硬编码发售信息）
+            if (steamNewsData) {
+                const steamGameIcons = {};
+                Object.entries(steamData).forEach(([name, data]) => {
+                    if (data.store && data.store.header_image) {
+                        steamGameIcons[name] = data.store.header_image;
+                    }
+                });
+                Object.entries(steamNewsData).forEach(([name, data]) => {
+                    if (!data.all || data.all.length === 0) return;
+                    const latestNews = data.all[0];
+                    // 优先匹配steamData中的同名游戏图标
+                    let icon = steamGameIcons[name];
+                    if (!icon) {
+                        // fallback: 用游戏名模糊匹配
+                        const matchKey = Object.keys(steamGameIcons).find(k =>
+                            k.toLowerCase().replace(/[^a-z]/g, '') === name.toLowerCase().replace(/[^a-z]/g, '')
+                        );
+                        if (matchKey) icon = steamGameIcons[matchKey];
+                    }
                     newsItems.push({
-                        tag: storeName,
-                        title: currentLang === 'zh' ? `${storeName} - ${releaseDate}发售` : `${storeName} launched on ${releaseDate}`,
+                        tag: name,
+                        title: latestNews.title,
                         source: 'Steam',
-                        url: data.store.store_url || `https://store.steampowered.com/search/?term=${encodeURIComponent(name)}`,
-                        header_image: data.store.header_image || null
+                        url: latestNews.url,
+                        header_image: icon || null,
+                        date: latestNews.date || ''
                     });
-                }
+                    // 最近7天的补丁也加上（避免和最新新闻重复）
+                    const patchDate = data.latest_patch ? new Date(data.latest_patch.date) : null;
+                    const weekAgo = new Date();
+                    weekAgo.setDate(weekAgo.getDate() - 7);
+                    if (patchDate && patchDate >= weekAgo && data.latest_patch.title !== latestNews.title) {
+                        newsItems.push({
+                            tag: name,
+                            title: (currentLang === 'zh' ? '[补丁] ' : '[Patch] ') + data.latest_patch.title,
+                            source: 'Steam',
+                            url: data.latest_patch.url,
+                            header_image: icon || null,
+                            date: data.latest_patch.date || ''
+                        });
+                    }
+                });
+            }
+
+            // 按日期倒序
+            newsItems.sort((a, b) => {
+                const da = new Date(a.date || '2000-01-01'), db = new Date(b.date || '2000-01-01');
+                return db - da;
             });
 
             if (newsItems.length === 0) {
                 newsEl.innerHTML = `<div class="text-gray-500">${i18nDict.no_news[currentLang]}</div>`;
             } else {
-                newsEl.innerHTML = newsItems.slice(0, 8).map(n => {
-                    const icon = n.header_image ? `<img src="${n.header_image}" class="game-icon-sm shrink-0" referrerpolicy="no-referrer">` : `<span class="text-xs bg-gray-100 text-accent-light px-1.5 py-0.5 rounded shrink-0">${n.tag}</span>`;
+                newsEl.innerHTML = newsItems.slice(0, 12).map(n => {
+                    const icon = n.header_image ? `<img src="${n.header_image}" class="game-icon-sm shrink-0" referrerpolicy="no-referrer" onerror="this.style.display='none'">` : `<span class="text-xs bg-gray-100 text-accent-light px-1.5 py-0.5 rounded shrink-0">${n.tag}</span>`;
+                    const dateLabel = n.date ? ` <span class="text-[10px] text-gray-400">${n.date}</span>` : '';
                     const titleHtml = n.url
                         ? `<a href="${n.url}" target="_blank" class="text-slate-700 hover:text-accent-light hover:underline text-sm">${n.title}</a>`
                         : `<span class="text-slate-700 text-sm">${n.title}</span>`;
                     return `<div class="flex items-start gap-2 py-1.5 border-b border-gray-200 last:border-0">
                         ${icon}
                         <div class="min-w-0 flex-1">
-                            ${titleHtml}
+                            ${titleHtml}${dateLabel}
                             <span class="text-xs text-gray-600 ml-2">${n.source}</span>
                         </div>
                     </div>`;
