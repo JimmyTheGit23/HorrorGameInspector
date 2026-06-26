@@ -14,12 +14,12 @@
       "publishers": [
         "semiwork"
       ],
-      "price": "¥ 24.50",
-      "price_en": "¥ 24.50",
+      "price": "¥ 22.75",
+      "price_en": "¥ 22.75",
       "release_date": "2025 年 2 月 26 日",
       "release_date_en": "26 Feb, 2025",
       "metacritic": null,
-      "recommendations": 324216,
+      "recommendations": 324970,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -59,16 +59,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 30920
+      "ccu": 27892
     },
     "reviews": {
-      "total_reviews": 14883,
-      "positive": 13806,
-      "negative": 1077,
+      "total_reviews": 14956,
+      "positive": 13873,
+      "negative": 1083,
       "positive_rate": 92.8
     },
-    "ccu": 30920,
-    "crawled_at": "2026-06-23T10:01:17.795350"
+    "ccu": 27892,
+    "crawled_at": "2026-06-26T09:54:29.345349"
   },
   "Lethal Company": {
     "appid": 1966720,
@@ -90,7 +90,7 @@
       "release_date": "2023 年 10 月 23 日",
       "release_date_en": "23 Oct, 2023",
       "metacritic": null,
-      "recommendations": 410162,
+      "recommendations": 410219,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -130,16 +130,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 3917
+      "ccu": 3414
     },
     "reviews": {
-      "total_reviews": 17618,
-      "positive": 16371,
-      "negative": 1247,
+      "total_reviews": 17623,
+      "positive": 16375,
+      "negative": 1248,
       "positive_rate": 92.9
     },
-    "ccu": 3917,
-    "crawled_at": "2026-06-23T10:01:24.077459"
+    "ccu": 3414,
+    "crawled_at": "2026-06-26T09:54:35.373125"
   },
   "Phasmophobia": {
     "appid": 739630,
@@ -149,19 +149,19 @@
       "type": "game",
       "short_description": "Phasmophobia is a 4 player online co-op psychological horror. Paranormal activity is on the rise and it’s up to you and your team to use all the ghost-hunting equipment at your disposal in order to gather as much evidence as you can.",
       "short_description_en": "Phasmophobia is a 4 player online co-op psychological horror. Paranormal activity is on the rise and it’s up to you and your team to use all the ghost-hunting equipment at your disposal in order to gather as much evidence as you can.",
-      "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/739630/c227a2855aba60f3657bc0c3a46515b8c41fb2b6/header.jpg?t=1780397989",
+      "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/739630/c227a2855aba60f3657bc0c3a46515b8c41fb2b6/header.jpg?t=1782311537",
       "developers": [
         "Kinetic Games"
       ],
       "publishers": [
         "Kinetic Games"
       ],
-      "price": "¥ 68.00",
-      "price_en": "¥ 68.00",
+      "price": "¥ 47.60",
+      "price_en": "¥ 47.60",
       "release_date": "2020 年 9 月 18 日",
       "release_date_en": "18 Sep, 2020",
       "metacritic": null,
-      "recommendations": 678032,
+      "recommendations": 678227,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -180,6 +180,10 @@
         "视角舒适度",
         "可调整难度",
         "无需应对快速反应事件",
+        "DUALSHOCK 控制器支持",
+        "DUALSHOCK 控制器支持",
+        "DUALSHOCK 控制器支持",
+        "DUALSHOCK 控制器支持",
         "立体声",
         "环绕声",
         "Steam 云",
@@ -200,6 +204,10 @@
         "Camera Comfort",
         "Adjustable Difficulty",
         "Playable without Timed Input",
+        "DualShock Controller Support",
+        "DualShock Controller Support",
+        "DualShock Controller Support",
+        "DualShock Controller Support",
         "Stereo Sound",
         "Surround Sound",
         "Steam Cloud",
@@ -219,16 +227,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 8018
+      "ccu": 7553
     },
     "reviews": {
-      "total_reviews": 26821,
-      "positive": 24311,
-      "negative": 2510,
+      "total_reviews": 26835,
+      "positive": 24320,
+      "negative": 2515,
       "positive_rate": 90.6
     },
-    "ccu": 8018,
-    "crawled_at": "2026-06-23T10:01:30.185345"
+    "ccu": 7553,
+    "crawled_at": "2026-06-26T09:54:41.468308"
   },
   "Content Warning": {
     "appid": 2881650,
@@ -249,12 +257,12 @@
       "publishers": [
         "Evil Landfall?"
       ],
-      "price": "¥ 33.00",
-      "price_en": "¥ 33.00",
+      "price": "¥ 20.46",
+      "price_en": "¥ 20.46",
       "release_date": "2024 年 4 月 1 日",
       "release_date_en": "1 Apr, 2024",
       "metacritic": null,
-      "recommendations": 69817,
+      "recommendations": 69893,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -264,6 +272,8 @@
         "多人",
         "合作",
         "在线合作",
+        "DUALSHOCK 控制器支持",
+        "DUALSHOCK 控制器支持",
         "部分支持控制器",
         "Steam 云",
         "家庭共享"
@@ -272,6 +282,8 @@
         "Multi-player",
         "Co-op",
         "Online Co-op",
+        "DualShock Controller Support",
+        "DualShock Controller Support",
         "Partial Controller Support",
         "Steam Cloud",
         "Family Sharing"
@@ -288,16 +300,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 1110
+      "ccu": 994
     },
     "reviews": {
-      "total_reviews": 6841,
-      "positive": 6145,
+      "total_reviews": 6845,
+      "positive": 6149,
       "negative": 696,
       "positive_rate": 89.8
     },
-    "ccu": 1110,
-    "crawled_at": "2026-06-23T10:01:36.288903"
+    "ccu": 994,
+    "crawled_at": "2026-06-26T09:54:47.404435"
   },
   "FEEDERS": {
     "appid": 4408510,
@@ -364,7 +376,7 @@
       "positive_rate": 64.3
     },
     "ccu": 0,
-    "crawled_at": "2026-06-23T10:01:47.913845"
+    "crawled_at": "2026-06-26T09:54:59.069463"
   },
   "NARAKA: BLADEPOINT": {
     "appid": 1203220,
@@ -386,7 +398,7 @@
       "release_date": "2021 年 8 月 11 日",
       "release_date_en": "11 Aug, 2021",
       "metacritic": null,
-      "recommendations": 197724,
+      "recommendations": 197728,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -426,15 +438,15 @@
       ]
     },
     "steamspy": {
-      "ccu": 9712
+      "ccu": 9269
     },
     "reviews": {
-      "total_reviews": 250774,
-      "positive": 180477,
-      "negative": 70297,
+      "total_reviews": 250818,
+      "positive": 180499,
+      "negative": 70319,
       "positive_rate": 72.0
     },
-    "ccu": 9712,
-    "crawled_at": "2026-06-23T10:01:54.113483"
+    "ccu": 9269,
+    "crawled_at": "2026-06-26T09:55:05.208551"
   }
 }

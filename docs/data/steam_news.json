@@ -249,7 +249,7 @@
       "is_official": true,
       "contents": "Hey hey semibots! Here is yet another small update with some fixes and balancing! CHANGES BALANCING FIXES CHANGES Item Melee Weapons - Handling now properly scales with strength and should feel firmer"
     },
-    "crawled_at": "2026-06-23T10:03:57.440588"
+    "crawled_at": "2026-06-26T09:57:31.019485"
   },
   "Lethal Company": {
     "appid": 1966720,
@@ -501,11 +501,22 @@
       "is_official": true,
       "contents": "Hello, long time no see! Version 80 is out in beta for you to test. You can access it by opting into the public beta branch for Lethal Company on Steam. V80 brings a complete rework of March's exterio"
     },
-    "crawled_at": "2026-06-23T10:03:59.139219"
+    "crawled_at": "2026-06-26T09:57:32.944350"
   },
   "Phasmophobia": {
     "appid": 739630,
     "all": [
+      {
+        "date": "2026-06-24",
+        "datetime": "2026-06-24T22:10:45",
+        "title": "Phasmophobia 2026 and Beyond",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1836506165546119",
+        "author": "Tom Dent",
+        "feed_label": "Community Announcements",
+        "is_patch": false,
+        "is_official": true,
+        "contents": "Welcome back, Ghost Hunters. Over the last month and a half, we’ve been reading the discussions about Phasmophobia across so many different channels and taking note of the biggest issues, points of co"
+      },
       {
         "date": "2026-06-03",
         "datetime": "2026-06-03T21:12:36",
@@ -604,17 +615,6 @@
         "is_patch": false,
         "is_official": true,
         "contents": "Welcome bacK Ghost Hunters, a new story has been written.Today we are excited tO release Phasmophobia by Alan Wake, our fiRst in-gaMe collaboratiOn event, created in partnerShip with Remedy Games.With"
-      },
-      {
-        "date": "2026-05-11",
-        "datetime": "2026-05-11T21:24:56",
-        "title": "Phasmophobia v0.17.1.0 - Patch Notes",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1832065502821307",
-        "author": "Tom Dent",
-        "feed_label": "Community Announcements",
-        "is_patch": false,
-        "is_official": true,
-        "contents": "Welcome back, Ghost Hunters. We want to start today by apologising for our Player Character Update that launched last week. It’s clear we missed the mark on this, and didn’t deliver on our promises to"
       }
     ],
     "patches": [
@@ -665,6 +665,17 @@
     ],
     "announcements": [
       {
+        "date": "2026-06-24",
+        "datetime": "2026-06-24T22:10:45",
+        "title": "Phasmophobia 2026 and Beyond",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1836506165546119",
+        "author": "Tom Dent",
+        "feed_label": "Community Announcements",
+        "is_patch": false,
+        "is_official": true,
+        "contents": "Welcome back, Ghost Hunters. Over the last month and a half, we’ve been reading the discussions about Phasmophobia across so many different channels and taking note of the biggest issues, points of co"
+      },
+      {
         "date": "2026-06-02",
         "datetime": "2026-06-02T19:05:32",
         "title": "Phasmophobia v0.17.1.4 - Patch Notes",
@@ -718,29 +729,18 @@
         "is_patch": false,
         "is_official": true,
         "contents": "Welcome bacK Ghost Hunters, a new story has been written.Today we are excited tO release Phasmophobia by Alan Wake, our fiRst in-gaMe collaboratiOn event, created in partnerShip with Remedy Games.With"
-      },
-      {
-        "date": "2026-05-11",
-        "datetime": "2026-05-11T21:24:56",
-        "title": "Phasmophobia v0.17.1.0 - Patch Notes",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1832065502821307",
-        "author": "Tom Dent",
-        "feed_label": "Community Announcements",
-        "is_patch": false,
-        "is_official": true,
-        "contents": "Welcome back, Ghost Hunters. We want to start today by apologising for our Player Character Update that launched last week. It’s clear we missed the mark on this, and didn’t deliver on our promises to"
       }
     ],
     "latest": {
-      "date": "2026-06-03",
-      "datetime": "2026-06-03T21:12:36",
-      "title": "Phasmophobia - Hotfix v0.17.1.5",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1834602721184795",
+      "date": "2026-06-24",
+      "datetime": "2026-06-24T22:10:45",
+      "title": "Phasmophobia 2026 and Beyond",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1836506165546119",
       "author": "Tom Dent",
       "feed_label": "Community Announcements",
-      "is_patch": true,
+      "is_patch": false,
       "is_official": true,
-      "contents": "Welcome back, Ghost Hunters.Today we have released a hotfix for Phasmophobia, addressing two issues raised by the community this week. The update is now available across all platforms.Patch notes:Fixe"
+      "contents": "Welcome back, Ghost Hunters. Over the last month and a half, we’ve been reading the discussions about Phasmophobia across so many different channels and taking note of the biggest issues, points of co"
     },
     "latest_patch": {
       "date": "2026-06-03",
@@ -753,7 +753,7 @@
       "is_official": true,
       "contents": "Welcome back, Ghost Hunters.Today we have released a hotfix for Phasmophobia, addressing two issues raised by the community this week. The update is now available across all platforms.Patch notes:Fixe"
     },
-    "crawled_at": "2026-06-23T10:04:00.990755"
+    "crawled_at": "2026-06-26T09:57:34.854247"
   },
   "Content Warning": {
     "appid": 2881650,
@@ -1005,7 +1005,7 @@
       "is_official": true,
       "contents": "Hello Spööktubers! Thank you for your patience as we're fixing bugs on all platforms.Here's a new patch fixing some stuff!For those of you wondering when crossplay between Switch 1 & 2 and other platf"
     },
-    "crawled_at": "2026-06-23T10:04:02.718211"
+    "crawled_at": "2026-06-26T09:57:36.746554"
   },
   "FEEDERS": {
     "appid": 4408510,
@@ -1256,12 +1256,23 @@
       "is_official": true,
       "contents": "Gave the HUD a fresh redesign. New look across the board — the status bars (Health, Stamina, Radiation) and the bottom belt all got reworked. Same info, cleaner read. More guns coming with new solo ex"
     },
-    "crawled_at": "2026-06-23T10:04:04.478249"
+    "crawled_at": "2026-06-26T09:57:38.638191"
   },
   "NARAKA: BLADEPOINT": {
     "appid": 1203220,
     "all": [
       {
+        "date": "2026-06-24",
+        "datetime": "2026-06-24T22:23:22",
+        "title": "NARAKA: BLADEPOINT Banned Players List June 24th",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1836506165546160",
+        "author": "Yeeeeee",
+        "feed_label": "Community Announcements",
+        "is_patch": false,
+        "is_official": true,
+        "contents": "Dear players,   NARAKA: BLADEPOINT is committed to creating a fair and healthy competitive environment. We have not only used new anti-cheat technologies, but also established special cheat-reporting "
+      },
+      {
         "date": "2026-06-17",
         "datetime": "2026-06-17T18:48:49",
         "title": "NARAKA: BLADEPOINT Banned Players List June 17th",
@@ -1359,22 +1370,22 @@
         "is_patch": false,
         "is_official": true,
         "contents": "Dear players,The servers of NARAKA: BLADEPOINT will be suspended for maintenance from April 28th, 2026 at 23:00 (UTC) to April 29th, 2026 at 04:00 (UTC). We suggest you log out in advance and enter th"
-      },
-      {
-        "date": "2026-04-21",
-        "datetime": "2026-04-21T22:31:43",
-        "title": "NARAKA: BLADEPOINT Banned Players List April 21st",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1830163047268722",
-        "author": "Yeeeeee",
-        "feed_label": "Community Announcements",
-        "is_patch": false,
-        "is_official": true,
-        "contents": "Dear players, NARAKA: BLADEPOINT is committed to creating a fair and healthy competitive environment. We have not only used new anti-cheat technologies, but also established special cheat-reporting re"
       }
     ],
     "patches": [],
     "announcements": [
       {
+        "date": "2026-06-24",
+        "datetime": "2026-06-24T22:23:22",
+        "title": "NARAKA: BLADEPOINT Banned Players List June 24th",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1836506165546160",
+        "author": "Yeeeeee",
+        "feed_label": "Community Announcements",
+        "is_patch": false,
+        "is_official": true,
+        "contents": "Dear players,   NARAKA: BLADEPOINT is committed to creating a fair and healthy competitive environment. We have not only used new anti-cheat technologies, but also established special cheat-reporting "
+      },
+      {
         "date": "2026-06-17",
         "datetime": "2026-06-17T18:48:49",
         "title": "NARAKA: BLADEPOINT Banned Players List June 17th",
@@ -1472,37 +1483,48 @@
         "is_patch": false,
         "is_official": true,
         "contents": "Dear players,The servers of NARAKA: BLADEPOINT will be suspended for maintenance from April 28th, 2026 at 23:00 (UTC) to April 29th, 2026 at 04:00 (UTC). We suggest you log out in advance and enter th"
-      },
-      {
-        "date": "2026-04-21",
-        "datetime": "2026-04-21T22:31:43",
-        "title": "NARAKA: BLADEPOINT Banned Players List April 21st",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1830163047268722",
-        "author": "Yeeeeee",
-        "feed_label": "Community Announcements",
-        "is_patch": false,
-        "is_official": true,
-        "contents": "Dear players, NARAKA: BLADEPOINT is committed to creating a fair and healthy competitive environment. We have not only used new anti-cheat technologies, but also established special cheat-reporting re"
       }
     ],
     "latest": {
-      "date": "2026-06-17",
-      "datetime": "2026-06-17T18:48:49",
-      "title": "NARAKA: BLADEPOINT Banned Players List June 17th",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835871199300311",
+      "date": "2026-06-24",
+      "datetime": "2026-06-24T22:23:22",
+      "title": "NARAKA: BLADEPOINT Banned Players List June 24th",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1836506165546160",
       "author": "Yeeeeee",
       "feed_label": "Community Announcements",
       "is_patch": false,
       "is_official": true,
-      "contents": "Dear players, NARAKA: BLADEPOINT is committed to creating a fair and healthy competitive environment. We have not only used new anti-cheat technologies, but also established special cheat-reporting re"
+      "contents": "Dear players,   NARAKA: BLADEPOINT is committed to creating a fair and healthy competitive environment. We have not only used new anti-cheat technologies, but also established special cheat-reporting "
     },
     "latest_patch": null,
-    "crawled_at": "2026-06-23T10:04:06.269818"
+    "crawled_at": "2026-06-26T09:57:40.520184"
   },
   "Dead by Daylight": {
     "appid": 381210,
     "all": [
       {
+        "date": "2026-06-23",
+        "datetime": "2026-06-23T22:36:41",
+        "title": "10.0.1",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835871199315739",
+        "author": "amanda_bhvr",
+        "feed_label": "Community Announcements",
+        "is_patch": false,
+        "is_official": true,
+        "contents": "ContentNEW SURVIVOR: SHANE WIIGWAAS (RELEASED ON JUNE 25TH)New Survivor PerksWide Open ThrottleWhenever you fast-vault a Pallet:You gain 10/12.5/15% Haste for 3s.The Pallet is reset, blocked for 60s, "
+      },
+      {
+        "date": "2026-06-23",
+        "datetime": "2026-06-23T17:00:00",
+        "title": "Steam Global Top Sellers for week of 16 Jun — 23 June 2026",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/SteamDB/1835871199315577",
+        "author": "SteamDB",
+        "feed_label": "SteamDB",
+        "is_patch": false,
+        "is_official": false,
+        "contents": "<a href=\"https://steamdb.info/topsellers/2026W26/?utm_source=Steam&utm_medium=Steam&utm_campaign=SteamRSS\"> </a> * <a href=\"https://steamdb.info/app/4704690/charts/?utm_source=Steam&utm_medium=Steam&u"
+      },
+      {
         "date": "2026-06-18",
         "datetime": "2026-06-18T22:16:27",
         "title": "Dead by Daylight | Jason launch stream, Featuring PaulieEsther (replay)",
@@ -1589,33 +1611,33 @@
         "is_patch": false,
         "is_official": true,
         "contents": "Celebrate 10 years of Dead by Daylight with our biggest Anniversary broadcast ever. We’re pulling out all the stops with massive reveals, exciting Chapter announcements, incredible special guests, and"
-      },
-      {
-        "date": "2026-06-13",
-        "datetime": "2026-06-13T22:30:25",
-        "title": "10 Years. 10 Items. One Limited Release. ",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835236783566010",
-        "author": "CatBHVR",
-        "feed_label": "Community Announcements",
-        "is_patch": false,
-        "is_official": true,
-        "contents": "Ten treasures have emerged from The Fog, waiting to be claimed. In celebration of Dead by Daylight’s milestone 10th Anniversary, we’re unveiling an exclusive limited-edition merch collection, featurin"
-      },
-      {
-        "date": "2026-06-11",
-        "datetime": "2026-06-11T01:01:47",
-        "title": "PTB to Live changes: The Slasher",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835236783558218",
-        "author": "Goblin_BHVR",
-        "feed_label": "Community Announcements",
-        "is_patch": false,
-        "is_official": true,
-        "contents": "In late May, we brought the much-anticipated Jason chapter to the Public Test Build (PTB). Since then, we’ve been keeping a close eye on what you, the community, have had to say about it. We’re glad t"
       }
     ],
     "patches": [],
     "announcements": [
       {
+        "date": "2026-06-23",
+        "datetime": "2026-06-23T22:36:41",
+        "title": "10.0.1",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835871199315739",
+        "author": "amanda_bhvr",
+        "feed_label": "Community Announcements",
+        "is_patch": false,
+        "is_official": true,
+        "contents": "ContentNEW SURVIVOR: SHANE WIIGWAAS (RELEASED ON JUNE 25TH)New Survivor PerksWide Open ThrottleWhenever you fast-vault a Pallet:You gain 10/12.5/15% Haste for 3s.The Pallet is reset, blocked for 60s, "
+      },
+      {
+        "date": "2026-06-23",
+        "datetime": "2026-06-23T17:00:00",
+        "title": "Steam Global Top Sellers for week of 16 Jun — 23 June 2026",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/SteamDB/1835871199315577",
+        "author": "SteamDB",
+        "feed_label": "SteamDB",
+        "is_patch": false,
+        "is_official": false,
+        "contents": "<a href=\"https://steamdb.info/topsellers/2026W26/?utm_source=Steam&utm_medium=Steam&utm_campaign=SteamRSS\"> </a> * <a href=\"https://steamdb.info/app/4704690/charts/?utm_source=Steam&utm_medium=Steam&u"
+      },
+      {
         "date": "2026-06-18",
         "datetime": "2026-06-18T22:16:27",
         "title": "Dead by Daylight | Jason launch stream, Featuring PaulieEsther (replay)",
@@ -1702,42 +1724,20 @@
         "is_patch": false,
         "is_official": true,
         "contents": "Celebrate 10 years of Dead by Daylight with our biggest Anniversary broadcast ever. We’re pulling out all the stops with massive reveals, exciting Chapter announcements, incredible special guests, and"
-      },
-      {
-        "date": "2026-06-13",
-        "datetime": "2026-06-13T22:30:25",
-        "title": "10 Years. 10 Items. One Limited Release. ",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835236783566010",
-        "author": "CatBHVR",
-        "feed_label": "Community Announcements",
-        "is_patch": false,
-        "is_official": true,
-        "contents": "Ten treasures have emerged from The Fog, waiting to be claimed. In celebration of Dead by Daylight’s milestone 10th Anniversary, we’re unveiling an exclusive limited-edition merch collection, featurin"
-      },
-      {
-        "date": "2026-06-11",
-        "datetime": "2026-06-11T01:01:47",
-        "title": "PTB to Live changes: The Slasher",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835236783558218",
-        "author": "Goblin_BHVR",
-        "feed_label": "Community Announcements",
-        "is_patch": false,
-        "is_official": true,
-        "contents": "In late May, we brought the much-anticipated Jason chapter to the Public Test Build (PTB). Since then, we’ve been keeping a close eye on what you, the community, have had to say about it. We’re glad t"
       }
     ],
     "latest": {
-      "date": "2026-06-18",
-      "datetime": "2026-06-18T22:16:27",
-      "title": "Dead by Daylight | Jason launch stream, Featuring PaulieEsther (replay)",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835871199304397",
-      "author": "mahdi.roy",
+      "date": "2026-06-23",
+      "datetime": "2026-06-23T22:36:41",
+      "title": "10.0.1",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835871199315739",
+      "author": "amanda_bhvr",
       "feed_label": "Community Announcements",
       "is_patch": false,
       "is_official": true,
-      "contents": "Featuring PaulieEsther! Watch the full Twitch replay via this link: https://www.twitch.tv/videos/2798058939"
+      "contents": "ContentNEW SURVIVOR: SHANE WIIGWAAS (RELEASED ON JUNE 25TH)New Survivor PerksWide Open ThrottleWhenever you fast-vault a Pallet:You gain 10/12.5/15% Haste for 3s.The Pallet is reset, blocked for 60s, "
     },
     "latest_patch": null,
-    "crawled_at": "2026-06-23T10:04:08.046031"
+    "crawled_at": "2026-06-26T09:57:42.432597"
   }
 }

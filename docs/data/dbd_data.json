@@ -1,10 +1,10 @@
 {
-  "snapshot_date": "2026-06-23T10:03:56+08:00",
+  "snapshot_date": "2026-06-26T09:57:30+08:00",
   "hero": {
     "name": "黎明杀机",
-    "current_players": 72764,
+    "current_players": 112420,
     "positive_rate": 78.5,
-    "reviews_total": 908721,
+    "reviews_total": 910492,
     "price_label": "¥ 37.50",
     "release_date": "2016 年 6 月 14 日",
     "genres": [
@@ -12,6 +12,28 @@
     ]
   },
   "operations": [
+    {
+      "date": "2026-06-23",
+      "timestamp": 1782225401,
+      "title": "10.0.1",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835871199315739",
+      "author": "amanda_bhvr",
+      "feed_label": "Community Announcements",
+      "feed_type": "官方",
+      "is_patch": false,
+      "contents": "ContentNEW SURVIVOR: SHANE WIIGWAAS (RELEASED ON JUNE 25TH)New Survivor PerksWide Open ThrottleWhenever you fast-vault a Pallet:You gain 10/12.5/15% Haste for 3s.The Pallet is reset, blocked for 60s, "
+    },
+    {
+      "date": "2026-06-23",
+      "timestamp": 1782205200,
+      "title": "Steam Global Top Sellers for week of 16 Jun — 23 June 2026",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/SteamDB/1835871199315577",
+      "author": "SteamDB",
+      "feed_label": "SteamDB",
+      "feed_type": "媒体",
+      "is_patch": false,
+      "contents": "<a href=\"https://steamdb.info/topsellers/2026W26/?utm_source=Steam&utm_medium=Steam&utm_campaign=SteamRSS\"> </a> * <a href=\"https://steamdb.info/app/4704690/charts/?utm_source=Steam&utm_medium=Steam&u"
+    },
     {
       "date": "2026-06-18",
       "timestamp": 1781792187,
@@ -77,28 +99,6 @@
       "feed_type": "媒体",
       "is_patch": false,
       "contents": "<a href=\"https://www.pcgamer.com/dead-by-daylight/\">Dead by Daylight</a> recently celebrated its 10 year anniversary with <a href=\"https://www.youtube.com/watch?v=2TseoyiHoP8\" target=\"_blank\">a day-lo"
-    },
-    {
-      "date": "2026-06-15",
-      "timestamp": 1781487048,
-      "title": "As Dead by Daylight turns 10, Behavior unveils game-changing overhaul that will \"make the next ten better than the first\"",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PCGamesN/1835236783568929",
-      "author": "editor@pcgamesn.com",
-      "feed_label": "PCGamesN",
-      "feed_type": "媒体",
-      "is_patch": false,
-      "contents": "It's hard to believe that we've had ten years of Dead by Daylight. From its humble origins with just The Trapper, The Wraith, and The Hillbilly, it now sports a roster of 43 terrors, some of which hai"
-    },
-    {
-      "date": "2026-06-15",
-      "timestamp": 1781462525,
-      "title": "Dead by Daylight | 10th Anniversary Broadcast",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835236783568316",
-      "author": "mahdi.roy",
-      "feed_label": "Community Announcements",
-      "feed_type": "官方",
-      "is_patch": false,
-      "contents": "Celebrate 10 years of Dead by Daylight with our biggest Anniversary broadcast ever. We’re pulling out all the stops with massive reveals, exciting Chapter announcements, incredible special guests, and"
     }
   ],
   "patches": [],
@@ -139,7 +139,7 @@
     "name_en": "Dead by Daylight",
     "short_description": "10年恐惧相伴。10年的惊吓与刺激体验。10年的残暴献祭与惊险逃脱。 永久困于邪恶的幻境之中，即使死亡也无法逃脱，这是一场需要勇气和智慧的较量，四名意志坚定的逃生者在残忍对局中面对嗜血杀手。选择一方，进入多人非对称竞技游戏世界，获得最佳恐怖游戏体验。",
     "short_description_en": "10 years of horror. 10 years of jump scares and close calls. 10 years of brutal sacrifices and thrilling escapes. Trapped forever in a realm of eldritch evil where even death is not an escape, four determined Survivors face a bloodthirsty Killer in a vicious game of nerve and wits.",
-    "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/381210/66727e8249aae119400352d4b1d84928f924939c/header_alt_assets_8.jpg?t=1781795618",
+    "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/381210/66727e8249aae119400352d4b1d84928f924939c/header_alt_assets_8.jpg?t=1782395976",
     "developers": [
       "Behaviour Interactive Inc."
     ],
@@ -159,11 +159,11 @@
     ]
   },
   "reviews": {
-    "total_reviews": 908721,
-    "positive": 713441,
-    "negative": 195280,
+    "total_reviews": 910492,
+    "positive": 714900,
+    "negative": 195592,
     "positive_rate": 78.5
   },
-  "ccu": 72764,
-  "crawled_at": "2026-06-23T10:03:56.654576"
+  "ccu": 112420,
+  "crawled_at": "2026-06-26T09:57:30.134144"
 }
