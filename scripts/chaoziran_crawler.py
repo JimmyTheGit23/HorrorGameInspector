@@ -1259,16 +1259,28 @@ def crawl_chaoziran():
 
     # ===== 海外App Store排名 =====
     print("[超自然行动组] 获取海外App Store排名...")
-    app_store_rankings = get_app_store_rankings()
+    try:
+        app_store_rankings = get_app_store_rankings()
+    except Exception as e:
+        print(f"  海外App Store排名获取异常: {e}")
+        app_store_rankings = {"us": {"name": "美国"}, "jp": {"name": "日本"}, "kr": {"name": "韩国"}, "tw": {"name": "台湾"}, "hk": {"name": "香港"}}
 
     # ===== 国区App Store排名 =====
     print("[超自然行动组] 获取国区App Store排名...")
-    cn_app_store_rankings = get_cn_app_store_rankings()
+    try:
+        cn_app_store_rankings = get_cn_app_store_rankings()
+    except Exception as e:
+        print(f"  国区App Store排名获取异常: {e}")
+        cn_app_store_rankings = {"cn": {"name": "中国", "name_en": "China"}}
 
     # ===== 新玩法专题追踪 =====
     print("[超自然行动组] 构建新玩法追踪...")
-    content_tracker = build_content_tracker(update_announcements, official_news)
-    print(f"  追踪到 {len(content_tracker)} 个新玩法/新内容项目")
+    try:
+        content_tracker = build_content_tracker(update_announcements, official_news)
+        print(f"  追踪到 {len(content_tracker)} 个新玩法/新内容项目")
+    except Exception as e:
+        print(f"  新玩法追踪构建异常: {e}")
+        content_tracker = []
 
     result = {
         "chaoziran": {
@@ -1292,7 +1304,13 @@ def crawl_chaoziran():
 
 
 if __name__ == "__main__":
-    data = crawl_chaoziran()
+    try:
+        data = crawl_chaoziran()
+    except Exception as e:
+        print(f"\n[FATAL] crawl_chaoziran() 异常退出: {e}")
+        import traceback
+        traceback.print_exc()
+        sys.exit(1)
     output_path = "../docs/data/chaoziran_data.json"
 
     # 加载旧数据，增量合并 official_news（官网反爬时常失败）
