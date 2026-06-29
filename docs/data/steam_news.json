@@ -249,7 +249,7 @@
       "is_official": true,
       "contents": "Hey hey semibots! Here is yet another small update with some fixes and balancing! CHANGES BALANCING FIXES CHANGES Item Melee Weapons - Handling now properly scales with strength and should feel firmer"
     },
-    "crawled_at": "2026-06-26T10:33:17.693088"
+    "crawled_at": "2026-06-29T09:57:06.510580"
   },
   "Lethal Company": {
     "appid": 1966720,
@@ -501,7 +501,7 @@
       "is_official": true,
       "contents": "Hello, long time no see! Version 80 is out in beta for you to test. You can access it by opting into the public beta branch for Lethal Company on Steam. V80 brings a complete rework of March's exterio"
     },
-    "crawled_at": "2026-06-26T10:33:19.435292"
+    "crawled_at": "2026-06-29T09:57:08.478562"
   },
   "Phasmophobia": {
     "appid": 739630,
@@ -753,7 +753,7 @@
       "is_official": true,
       "contents": "Welcome back, Ghost Hunters.Today we have released a hotfix for Phasmophobia, addressing two issues raised by the community this week. The update is now available across all platforms.Patch notes:Fixe"
     },
-    "crawled_at": "2026-06-26T10:33:21.161901"
+    "crawled_at": "2026-06-29T09:57:10.425009"
   },
   "Content Warning": {
     "appid": 2881650,
@@ -1005,7 +1005,7 @@
       "is_official": true,
       "contents": "Hello Spööktubers! Thank you for your patience as we're fixing bugs on all platforms.Here's a new patch fixing some stuff!For those of you wondering when crossplay between Switch 1 & 2 and other platf"
     },
-    "crawled_at": "2026-06-26T10:33:22.890561"
+    "crawled_at": "2026-06-29T09:57:12.454782"
   },
   "FEEDERS": {
     "appid": 4408510,
@@ -1256,7 +1256,7 @@
       "is_official": true,
       "contents": "Gave the HUD a fresh redesign. New look across the board — the status bars (Health, Stamina, Radiation) and the bottom belt all got reworked. Same info, cleaner read. More guns coming with new solo ex"
     },
-    "crawled_at": "2026-06-26T10:33:24.590617"
+    "crawled_at": "2026-06-29T09:57:14.460041"
   },
   "NARAKA: BLADEPOINT": {
     "appid": 1203220,
@@ -1497,12 +1497,23 @@
       "contents": "Dear players,   NARAKA: BLADEPOINT is committed to creating a fair and healthy competitive environment. We have not only used new anti-cheat technologies, but also established special cheat-reporting "
     },
     "latest_patch": null,
-    "crawled_at": "2026-06-26T10:33:26.321818"
+    "crawled_at": "2026-06-29T09:57:16.417082"
   },
   "Dead by Daylight": {
     "appid": 381210,
     "all": [
       {
+        "date": "2026-06-27",
+        "datetime": "2026-06-27T05:34:01",
+        "title": "Ice Nine Kills X Dead by Daylight Merch",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1836506165555270",
+        "author": "amanda_bhvr",
+        "feed_label": "Community Announcements",
+        "is_patch": false,
+        "is_official": true,
+        "contents": "The Dead by Daylight x Ice Nine Kills collection doesn't stop in-game. We've teamed up to bring the collaboration into the real world, and it's everything you'd expect from two icons of horror.Pre-ord"
+      },
+      {
         "date": "2026-06-23",
         "datetime": "2026-06-23T22:36:41",
         "title": "10.0.1",
@@ -1600,22 +1611,22 @@
         "is_patch": false,
         "is_official": false,
         "contents": "It's hard to believe that we've had ten years of Dead by Daylight. From its humble origins with just The Trapper, The Wraith, and The Hillbilly, it now sports a roster of 43 terrors, some of which hai"
-      },
-      {
-        "date": "2026-06-15",
-        "datetime": "2026-06-15T02:42:05",
-        "title": "Dead by Daylight | 10th Anniversary Broadcast",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835236783568316",
-        "author": "mahdi.roy",
-        "feed_label": "Community Announcements",
-        "is_patch": false,
-        "is_official": true,
-        "contents": "Celebrate 10 years of Dead by Daylight with our biggest Anniversary broadcast ever. We’re pulling out all the stops with massive reveals, exciting Chapter announcements, incredible special guests, and"
       }
     ],
     "patches": [],
     "announcements": [
       {
+        "date": "2026-06-27",
+        "datetime": "2026-06-27T05:34:01",
+        "title": "Ice Nine Kills X Dead by Daylight Merch",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1836506165555270",
+        "author": "amanda_bhvr",
+        "feed_label": "Community Announcements",
+        "is_patch": false,
+        "is_official": true,
+        "contents": "The Dead by Daylight x Ice Nine Kills collection doesn't stop in-game. We've teamed up to bring the collaboration into the real world, and it's everything you'd expect from two icons of horror.Pre-ord"
+      },
+      {
         "date": "2026-06-23",
         "datetime": "2026-06-23T22:36:41",
         "title": "10.0.1",
@@ -1713,31 +1724,20 @@
         "is_patch": false,
         "is_official": false,
         "contents": "It's hard to believe that we've had ten years of Dead by Daylight. From its humble origins with just The Trapper, The Wraith, and The Hillbilly, it now sports a roster of 43 terrors, some of which hai"
-      },
-      {
-        "date": "2026-06-15",
-        "datetime": "2026-06-15T02:42:05",
-        "title": "Dead by Daylight | 10th Anniversary Broadcast",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835236783568316",
-        "author": "mahdi.roy",
-        "feed_label": "Community Announcements",
-        "is_patch": false,
-        "is_official": true,
-        "contents": "Celebrate 10 years of Dead by Daylight with our biggest Anniversary broadcast ever. We’re pulling out all the stops with massive reveals, exciting Chapter announcements, incredible special guests, and"
       }
     ],
     "latest": {
-      "date": "2026-06-23",
-      "datetime": "2026-06-23T22:36:41",
-      "title": "10.0.1",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835871199315739",
+      "date": "2026-06-27",
+      "datetime": "2026-06-27T05:34:01",
+      "title": "Ice Nine Kills X Dead by Daylight Merch",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1836506165555270",
       "author": "amanda_bhvr",
       "feed_label": "Community Announcements",
       "is_patch": false,
       "is_official": true,
-      "contents": "ContentNEW SURVIVOR: SHANE WIIGWAAS (RELEASED ON JUNE 25TH)New Survivor PerksWide Open ThrottleWhenever you fast-vault a Pallet:You gain 10/12.5/15% Haste for 3s.The Pallet is reset, blocked for 60s, "
+      "contents": "The Dead by Daylight x Ice Nine Kills collection doesn't stop in-game. We've teamed up to bring the collaboration into the real world, and it's everything you'd expect from two icons of horror.Pre-ord"
     },
     "latest_patch": null,
-    "crawled_at": "2026-06-26T10:33:28.065095"
+    "crawled_at": "2026-06-29T09:57:18.385816"
   }
 }
