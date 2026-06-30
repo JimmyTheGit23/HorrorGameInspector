@@ -107,7 +107,8 @@
       "feed_label": "Official Patch",
       "feed_type": "官方",
       "is_patch": true,
-      "contents": "Jason PTB 首次开放测试，提前验证新 Killer、技能组与配套 UI。"
+      "contents": "Jason PTB 首次开放测试，提前验证新 Killer、技能组与配套 UI。",
+      "link_status": "valid"
     },
     {
       "date": "2026-05-12",
@@ -117,7 +118,8 @@
       "feed_label": "Official Patch",
       "feed_type": "官方",
       "is_patch": true,
-      "contents": "9.6.2 聚焦 2v8 与跨平台稳定性修复。"
+      "contents": "9.6.2 聚焦 2v8 与跨平台稳定性修复。",
+      "link_status": "valid"
     },
     {
       "date": "2026-05-05",
@@ -127,7 +129,8 @@
       "feed_label": "Official Patch",
       "feed_type": "官方",
       "is_patch": true,
-      "contents": "9.6.1 继续清理 Diminishing Returns 和进度条表现，并做杀手平衡微调。"
+      "contents": "9.6.1 继续清理 Diminishing Returns 和进度条表现，并做杀手平衡微调。",
+      "link_status": "valid"
     },
     {
       "date": "2026-04-28",
@@ -137,7 +140,8 @@
       "feed_label": "Official Patch",
       "feed_type": "官方",
       "is_patch": true,
-      "contents": "9.6.0 是近期中版本主更新，集中在配装信息、HUD 和整体平衡。"
+      "contents": "9.6.0 是近期中版本主更新，集中在配装信息、HUD 和整体平衡。",
+      "link_status": "valid"
     }
   ],
   "trends": [

@@ -3,11 +3,11 @@
     "package_id": "com.game.tombbusters",
     "source": "Google Play",
     "url": "https://play.google.com/store/apps/details?id=com.game.tombbusters",
-    "rating": 3.6,
-    "review_count": 539,
+    "rating": 3.5,
+    "review_count": 544,
     "description": "Hilarious Co-op Horror Extraction",
     "category": "FAMILY",
-    "crawled_at": "2026-06-26 09:56"
+    "crawled_at": "2026-06-29 09:56"
   },
   "google_play_reviews": [
     {
@@ -33,7 +33,7 @@
       "title": "TOMB RAIDER Gameplay Walkthrough Part 1 FULL GAME [4K 60FPS PC ULTRA] - No Commentary",
       "video_id": "hT-LKGp-bMo",
       "url": "https://www.youtube.com/watch?v=hT-LKGp-bMo",
-      "views": "2,672,698 views",
+      "views": "2,685,624 views",
       "channel": "MKIceAndFire",
       "published": "2 years ago",
       "duration": "6:26:06"
@@ -42,16 +42,16 @@
       "title": "Tomb Busters - Nogla Won't Stay Away From Me!",
       "video_id": "EnuSSZ8nN4I",
       "url": "https://www.youtube.com/watch?v=EnuSSZ8nN4I",
-      "views": "450,988 views",
+      "views": "455,114 views",
       "channel": "VanossGaming",
-      "published": "3 weeks ago",
+      "published": "4 weeks ago",
       "duration": "27:18"
     },
     {
       "title": "A game based on 'The Snapshot Serial Killer'",
       "video_id": "2bIUhc95Orc",
       "url": "https://www.youtube.com/watch?v=2bIUhc95Orc",
-      "views": "414,682 views",
+      "views": "415,289 views",
       "channel": "8-BitRyan",
       "published": "1 year ago",
       "duration": "54:50"
@@ -60,34 +60,43 @@
       "title": "Tomb Busters | Launch Gameplay Trailer",
       "video_id": "SozbL_ez72Y",
       "url": "https://www.youtube.com/watch?v=SozbL_ez72Y",
-      "views": "424,754 views",
+      "views": "424,868 views",
       "channel": "Tomb Busters",
-      "published": "4 weeks ago",
+      "published": "1 month ago",
       "duration": "0:56"
-    },
-    {
-      "title": "Three Idiots VS Funniest New Horror Game",
-      "video_id": "m6ENmCcWhBc",
-      "url": "https://www.youtube.com/watch?v=m6ENmCcWhBc",
-      "views": "132,922 views",
-      "channel": "SeeReax",
-      "published": "3 weeks ago",
-      "duration": "43:39"
     },
     {
       "title": "Goofy Gang Explores SCARY TOMBS... (Tomb Busters)",
       "video_id": "l9WdUDC67bY",
       "url": "https://www.youtube.com/watch?v=l9WdUDC67bY",
-      "views": "136,268 views",
+      "views": "139,791 views",
       "channel": "Goofy Gang",
-      "published": "2 weeks ago",
+      "published": "3 weeks ago",
       "duration": "20:27"
+    },
+    {
+      "title": "Three Idiots VS Funniest New Horror Game",
+      "video_id": "m6ENmCcWhBc",
+      "url": "https://www.youtube.com/watch?v=m6ENmCcWhBc",
+      "views": "134,536 views",
+      "channel": "SeeReax",
+      "published": "3 weeks ago",
+      "duration": "43:39"
+    },
+    {
+      "title": "MARCEL KNOWS HIS FRIENDS TOO WELL!",
+      "video_id": "QPOYv5LH884",
+      "url": "https://www.youtube.com/watch?v=QPOYv5LH884",
+      "views": "219,304 views",
+      "channel": "Terroriser",
+      "published": "9 days ago",
+      "duration": "23:43"
     },
     {
       "title": "Tomb Raider apk download? #tombraider #gamingcommunity #tombraider2013gameplay #fpsgames ",
       "video_id": "RatbS4ym8QM",
       "url": "https://www.youtube.com/watch?v=RatbS4ym8QM",
-      "views": "112,429 views",
+      "views": "113,779 views",
       "channel": "Android Arena",
       "published": "4 months ago",
       "duration": "1:15"
@@ -96,25 +105,16 @@
       "title": "Three Idiots vs Monster Game",
       "video_id": "aLCnmer5Kcs",
       "url": "https://www.youtube.com/watch?v=aLCnmer5Kcs",
-      "views": "103,827 views",
+      "views": "104,337 views",
       "channel": "Rhymestyle",
       "published": "3 weeks ago",
       "duration": "24:34"
     },
     {
-      "title": "We Explored Cursed Tombs!",
-      "video_id": "vJXmp4iKiD0",
-      "url": "https://www.youtube.com/watch?v=vJXmp4iKiD0",
-      "views": "100,347 views",
-      "channel": "daukeytoo",
-      "published": "2 weeks ago",
-      "duration": "26:47"
-    },
-    {
       "title": "Three Idiots VS Tomb Busters",
       "video_id": "vkWatJzT3U0",
       "url": "https://www.youtube.com/watch?v=vkWatJzT3U0",
-      "views": "96,276 views",
+      "views": "96,868 views",
       "channel": "DotoDoya",
       "published": "3 weeks ago",
       "duration": "21:44"
@@ -131,8 +131,8 @@
   "app_store_extended": {
     "us": {
       "name": "美国",
-      "rating": 4.54,
-      "rating_count": 674,
+      "rating": 4.55,
+      "rating_count": 678,
       "current_version": "1.30.2",
       "price": "Free",
       "genre": "Games"
@@ -140,15 +140,15 @@
     "jp": {
       "name": "日本",
       "rating": 4.43,
-      "rating_count": 1778,
+      "rating_count": 1819,
       "current_version": "1.30.2",
       "price": "無料",
       "genre": "Games"
     },
     "kr": {
       "name": "韩国",
-      "rating": 3.87,
-      "rating_count": 257,
+      "rating": 3.86,
+      "rating_count": 259,
       "current_version": "1.30.2",
       "price": "무료",
       "genre": "Games"
@@ -211,6 +211,6 @@
       "rating_count": 0
     }
   },
-  "crawled_at": "2026-06-26T09:57:22.258159",
-  "crawled_date": "2026-06-26"
+  "crawled_at": "2026-06-29T09:56:56.954147",
+  "crawled_date": "2026-06-29"
 }
