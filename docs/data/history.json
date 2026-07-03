@@ -119,6 +119,18 @@
       "ccu": 31628,
       "positive_rate": 92.8,
       "total_reviews": 15024
+    },
+    {
+      "date": "2026-06-30",
+      "ccu": 27816,
+      "positive_rate": 92.8,
+      "total_reviews": 15056
+    },
+    {
+      "date": "2026-07-03",
+      "ccu": 26788,
+      "positive_rate": 92.7,
+      "total_reviews": 15111
     }
   ],
   "Lethal Company": [
@@ -241,6 +253,18 @@
       "ccu": 4113,
       "positive_rate": 92.9,
       "total_reviews": 17630
+    },
+    {
+      "date": "2026-06-30",
+      "ccu": 3475,
+      "positive_rate": 92.9,
+      "total_reviews": 17633
+    },
+    {
+      "date": "2026-07-03",
+      "ccu": 3460,
+      "positive_rate": 92.9,
+      "total_reviews": 17647
     }
   ],
   "Phasmophobia": [
@@ -363,6 +387,18 @@
       "ccu": 9410,
       "positive_rate": 90.6,
       "total_reviews": 26859
+    },
+    {
+      "date": "2026-06-30",
+      "ccu": 8234,
+      "positive_rate": 90.6,
+      "total_reviews": 26863
+    },
+    {
+      "date": "2026-07-03",
+      "ccu": 7842,
+      "positive_rate": 90.6,
+      "total_reviews": 26878
     }
   ],
   "Content Warning": [
@@ -485,6 +521,18 @@
       "ccu": 1259,
       "positive_rate": 89.9,
       "total_reviews": 6849
+    },
+    {
+      "date": "2026-06-30",
+      "ccu": 1239,
+      "positive_rate": 89.9,
+      "total_reviews": 6848
+    },
+    {
+      "date": "2026-07-03",
+      "ccu": 1199,
+      "positive_rate": 89.8,
+      "total_reviews": 6854
     }
   ],
   "FEEDERS": [
@@ -607,6 +655,18 @@
       "ccu": 0,
       "positive_rate": 64.3,
       "total_reviews": 14
+    },
+    {
+      "date": "2026-06-30",
+      "ccu": 0,
+      "positive_rate": 64.3,
+      "total_reviews": 14
+    },
+    {
+      "date": "2026-07-03",
+      "ccu": 0,
+      "positive_rate": 64.3,
+      "total_reviews": 14
     }
   ],
   "NARAKA: BLADEPOINT": [
@@ -723,6 +783,18 @@
       "ccu": 9661,
       "positive_rate": 72.0,
       "total_reviews": 250892
+    },
+    {
+      "date": "2026-06-30",
+      "ccu": 9198,
+      "positive_rate": 72.0,
+      "total_reviews": 250913
+    },
+    {
+      "date": "2026-07-03",
+      "ccu": 23180,
+      "positive_rate": 72.0,
+      "total_reviews": 251034
     }
   ]
 }

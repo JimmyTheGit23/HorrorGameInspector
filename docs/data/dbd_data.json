@@ -1,149 +1,107 @@
 {
-  "snapshot_date": "2026-06-29T09:57:10+08:00",
+  "snapshot_date": "2026-07-03T09:55:09+08:00",
   "hero": {
     "name": "黎明杀机",
-    "current_players": 88726,
+    "current_players": 79780,
     "positive_rate": 78.5,
-    "reviews_total": 912163,
+    "reviews_total": 913915,
     "price_label": "¥ 37.50",
     "release_date": "2016 年 6 月 14 日",
     "genres": [
       "动作"
-    ],
-    "peak_24h": 126407,
-    "avg_30d": 69558,
-    "recent_reviews": 10071,
-    "recent_positive_rate": 76,
-    "all_time_peak": 168845
+    ]
   },
   "operations": [
     {
-      "date": "2026-06-25",
-      "title": "Dead by Daylight’s Black Banquet Has Begun: Everything To Know",
-      "url": "https://deadbydaylight.com/news/dbd-black-banquet-everything-to-know/",
-      "author": "deadbydaylight.com",
-      "feed_label": "Official News",
+      "date": "2026-06-30",
+      "timestamp": 1782810000,
+      "title": "Steam Global Top Sellers for week of 23 Jun — 30 June 2026",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/SteamDB/1836506165562533",
+      "author": "SteamDB",
+      "feed_label": "SteamDB",
+      "feed_type": "媒体",
+      "is_patch": false,
+      "contents": "<a href=\"https://steamdb.info/topsellers/2026W27/?utm_source=Steam&utm_medium=Steam&utm_campaign=SteamRSS\"> </a> * <a href=\"https://steamdb.info/app/4704690/charts/?utm_source=Steam&utm_medium=Steam&u"
+    },
+    {
+      "date": "2026-06-27",
+      "timestamp": 1782509641,
+      "title": "Ice Nine Kills X Dead by Daylight Merch",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1836506165555270",
+      "author": "amanda_bhvr",
+      "feed_label": "Community Announcements",
       "feed_type": "官方",
       "is_patch": false,
-      "contents": "十周年 Black Banquet 周年活动正式开启，活动局加入 Main Course / Dessert 双阶段与 Menu of the Day 机制。"
+      "contents": "The Dead by Daylight x Ice Nine Kills collection doesn't stop in-game. We've teamed up to bring the collaboration into the real world, and it's everything you'd expect from two icons of horror.Pre-ord"
+    },
+    {
+      "date": "2026-06-23",
+      "timestamp": 1782225401,
+      "title": "10.0.1",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835871199315739",
+      "author": "amanda_bhvr",
+      "feed_label": "Community Announcements",
+      "feed_type": "官方",
+      "is_patch": false,
+      "contents": "ContentNEW SURVIVOR: SHANE WIIGWAAS (RELEASED ON JUNE 25TH)New Survivor PerksWide Open ThrottleWhenever you fast-vault a Pallet:You gain 10/12.5/15% Haste for 3s.The Pallet is reset, blocked for 60s, "
+    },
+    {
+      "date": "2026-06-23",
+      "timestamp": 1782205200,
+      "title": "Steam Global Top Sellers for week of 16 Jun — 23 June 2026",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/SteamDB/1835871199315577",
+      "author": "SteamDB",
+      "feed_label": "SteamDB",
+      "feed_type": "媒体",
+      "is_patch": false,
+      "contents": "<a href=\"https://steamdb.info/topsellers/2026W26/?utm_source=Steam&utm_medium=Steam&utm_campaign=SteamRSS\"> </a> * <a href=\"https://steamdb.info/app/4704690/charts/?utm_source=Steam&utm_medium=Steam&u"
+    },
+    {
+      "date": "2026-06-18",
+      "timestamp": 1781792187,
+      "title": "Dead by Daylight | Jason launch stream, Featuring PaulieEsther (replay)",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835871199304397",
+      "author": "mahdi.roy",
+      "feed_label": "Community Announcements",
+      "feed_type": "官方",
+      "is_patch": false,
+      "contents": "Featuring PaulieEsther! Watch the full Twitch replay via this link: https://www.twitch.tv/videos/2798058939"
     },
     {
       "date": "2026-06-17",
-      "title": "Shane Wiigwaas Is Dead By Daylight’s Latest Survivor",
-      "url": "https://deadbydaylight.com/news/shane-wiigwaas-dbd-new-survivor/",
-      "author": "deadbydaylight.com",
-      "feed_label": "Official News",
-      "feed_type": "官方",
+      "timestamp": 1781691700,
+      "title": "Dead by Daylight hits new all-time peak player count, proving live service isn't dead",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PCGamesN/1835871199300390",
+      "author": "editor@pcgamesn.com",
+      "feed_label": "PCGamesN",
+      "feed_type": "媒体",
       "is_patch": false,
-      "contents": "新逃生者 Shane Wiigwaas 公布，围绕追击、治疗和视野博弈设计三项 Survivor Perks。"
+      "contents": "Dead by Daylight is a game developer's dream (or nightmare) come true. Akin to Warframe, it launched to somewhat lukewarm reviews, but has continued to expand as the years have gone on, cementing itse"
     },
     {
-      "date": "2026-06-15",
-      "title": "Dead by Daylight 10th Anniversary Recap: Announcements & Celebrations",
-      "url": "https://deadbydaylight.com/news/dbd-10th-anniversary-recap-announcements-celebrations/",
-      "author": "deadbydaylight.com",
-      "feed_label": "Official News",
+      "date": "2026-06-17",
+      "timestamp": 1781633759,
+      "title": "The Jason Chapter is now available on Steam!",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835236783575227",
+      "author": "CatBHVR",
+      "feed_label": "Community Announcements",
       "feed_type": "官方",
       "is_patch": false,
-      "contents": "十周年直播回顾集中梳理 Year 10 路线、周年庆节点和后续内容节奏。"
-    },
-    {
-      "date": "2026-05-28",
-      "title": "Dead by Daylight’s Anniversary Party Is Almost Here",
-      "url": "https://deadbydaylight.com/news/dbd-anniversary-party-is-almost-here/",
-      "author": "deadbydaylight.com",
-      "feed_label": "Official News",
-      "feed_type": "官方",
-      "is_patch": false,
-      "contents": "周年 Party 预告公开 Panels、Meet & Greets 与直播排期，为 10 周年传播预热。"
-    },
-    {
-      "date": "2026-05-26",
-      "title": "Jason Has Finally Come To Dead by Daylight",
-      "url": "https://deadbydaylight.com/news/jason-comes-to-dbd/",
-      "author": "deadbydaylight.com",
-      "feed_label": "Official News",
-      "feed_type": "官方",
-      "is_patch": false,
-      "contents": "Jason 正式进入 The Fog，成为 10 周年最强的拉新与讨论驱动点。"
-    },
-    {
-      "date": "2026-05-18",
-      "title": "The Entity Unveiled: A Guide To Dead by Daylight’s Eldritch Horror",
-      "url": "https://deadbydaylight.com/news/the-entity-unveiled/",
-      "author": "deadbydaylight.com",
-      "feed_label": "Official News",
-      "feed_type": "官方",
-      "is_patch": false,
-      "contents": "官方世界观文章继续强化 Entity 神话设定，补足品牌叙事内容。"
-    }
-  ],
-  "patches": [
-    {
-      "date": "2026-06-23",
-      "title": "10.0.1 | Event + Bugfix Update",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835871199315739",
-      "author": "Behaviour Interactive",
-      "feed_label": "Official Patch",
-      "feed_type": "官方",
-      "is_patch": true,
-      "contents": "10.0.1 为 Black Banquet 活动和 Shane Wiigwaas 上线做准备，并附带大规模 bugfix。"
+      "contents": "Dead by Daylight’s Jason includes a new Killer, The Slasher. Purchasing this add-on unlocks the Hockey Mask badge and the Misty Cabin banner.The new Killer is The Slasher. The Jason Chapter includes:N"
     },
     {
       "date": "2026-06-16",
+      "timestamp": 1781620286,
       "title": "10.0.0 | Jason Patch Notes",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835236783574550",
-      "author": "Behaviour Interactive",
-      "feed_label": "Official Patch",
+      "author": "Goblin_BHVR",
+      "feed_label": "Community Announcements",
       "feed_type": "官方",
-      "is_patch": true,
-      "contents": "Jason 章节正式服上线，The Slasher 与多个系统 UI / bugfix 一并落地。"
-    },
-    {
-      "date": "2026-05-26",
-      "title": "10.0.0 | Jason PTB Patch Notes",
-      "url": "https://store.steampowered.com/news/app/381210/view/662736579634135748",
-      "author": "Behaviour Interactive",
-      "feed_label": "Official Patch",
-      "feed_type": "官方",
-      "is_patch": true,
-      "contents": "Jason PTB 首次开放测试，提前验证新 Killer、技能组与配套 UI。",
-      "link_status": "valid"
-    },
-    {
-      "date": "2026-05-12",
-      "title": "9.6.2 | Bugfix Patch",
-      "url": "https://store.steampowered.com/news/app/381210/view/697638207931549226",
-      "author": "Behaviour Interactive",
-      "feed_label": "Official Patch",
-      "feed_type": "官方",
-      "is_patch": true,
-      "contents": "9.6.2 聚焦 2v8 与跨平台稳定性修复。",
-      "link_status": "valid"
-    },
-    {
-      "date": "2026-05-05",
-      "title": "9.6.1 | Bugfix Patch",
-      "url": "https://store.steampowered.com/news/app/381210/view/697637574580110163",
-      "author": "Behaviour Interactive",
-      "feed_label": "Official Patch",
-      "feed_type": "官方",
-      "is_patch": true,
-      "contents": "9.6.1 继续清理 Diminishing Returns 和进度条表现，并做杀手平衡微调。",
-      "link_status": "valid"
-    },
-    {
-      "date": "2026-04-28",
-      "title": "9.6.0 | Patch Notes",
-      "url": "https://store.steampowered.com/news/app/381210/view/494974956983026768",
-      "author": "Behaviour Interactive",
-      "feed_label": "Official Patch",
-      "feed_type": "官方",
-      "is_patch": true,
-      "contents": "9.6.0 是近期中版本主更新，集中在配装信息、HUD 和整体平衡。",
-      "link_status": "valid"
+      "is_patch": false,
+      "contents": "ContentNEW KILLER: THE SLASHERPOWER: OMNIPRESENT EVILPress the Active Ability button to activate Omnipresent Evil. The Slasher becomes invisible and gains Undetectable, but cannot see Survivors or the"
     }
   ],
+  "patches": [],
   "trends": [
     {
       "month": "2026-01",
@@ -172,8 +130,8 @@
     },
     {
       "month": "2026-06",
-      "avg_players": 69558,
-      "peak_players": 168845
+      "avg_players": 53145,
+      "peak_players": 104001
     }
   ],
   "store": {
@@ -201,11 +159,11 @@
     ]
   },
   "reviews": {
-    "total_reviews": 912163,
-    "positive": 715825,
-    "negative": 196338,
+    "total_reviews": 913915,
+    "positive": 717079,
+    "negative": 196836,
     "positive_rate": 78.5
   },
-  "ccu": 88726,
-  "crawled_at": "2026-06-29T09:57:05.494851"
+  "ccu": 79780,
+  "crawled_at": "2026-07-03T09:55:09.763441"
 }
