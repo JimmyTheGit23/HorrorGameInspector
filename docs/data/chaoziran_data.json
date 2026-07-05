@@ -50,26 +50,62 @@
         "content_tags_en": []
       },
       {
-        "title": "集齐三个面具，已经进入过一次时间不够来不及截图",
+        "title": "精绝女王棺前点起了蜡烛，但这次吹灯的会是谁？",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/app/714123/topic?type=official",
         "link_status": "unknown",
         "category": "other",
         "content_tags": [],
         "priority": "low",
-        "title_en": "Collected three masks. I have already entered once and did not have enough time to take a screenshot.",
+        "title_en": "Candles were lit in front of Queen Jingjue's coffin, but who would blow out the candle this time?",
         "source_en": "TapTap Official",
         "content_tags_en": []
       },
       {
-        "title": "当我在虫谷最深处的房间看到十个宝箱时....",
+        "title": "【蝎灵儿】与【纸娃娃】确认于云南虫谷出没",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/app/714123/topic?type=official",
         "link_status": "unknown",
         "category": "other",
         "content_tags": [],
         "priority": "low",
-        "title_en": "When I saw ten treasure chests in the deepest room of Worm Valley....",
+        "title_en": "[Scorpion Ling'er] and [Paper Doll] are confirmed to be present in Yunnan Worm Valley",
+        "source_en": "TapTap Official",
+        "content_tags_en": []
+      },
+      {
+        "title": "纸娃娃，蛊惑抱起放关上就可以吸了",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/app/714123/topic?type=official",
+        "link_status": "unknown",
+        "category": "other",
+        "content_tags": [],
+        "priority": "low",
+        "title_en": "Paper doll, you can pick it up, close it and suck it",
+        "source_en": "TapTap Official",
+        "content_tags_en": []
+      },
+      {
+        "title": "千万不要攻击他，千万......",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/app/714123/topic?type=official",
+        "link_status": "unknown",
+        "category": "other",
+        "content_tags": [],
+        "priority": "low",
+        "title_en": "Never attack him, never...",
+        "source_en": "TapTap Official",
+        "content_tags_en": []
+      },
+      {
+        "title": "我们为工友们搭建了全新的大厅场景并优化光影效果啦~",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/app/714123/topic?type=official",
+        "link_status": "unknown",
+        "category": "new_content",
+        "content_tags": [],
+        "priority": "high",
+        "title_en": "We built a new lobby scene and optimized the light and shadow effects for the workers~",
         "source_en": "TapTap Official",
         "content_tags_en": []
       },
@@ -90,65 +126,23 @@
         ]
       },
       {
-        "title": "果然，官方吐槽最为致命。还是回到原话吧，一充钱就原形毕露，玩屁呀，又降爆率，有意思吗？非要我天天在这说你什么。",
+        "title": "当我在虫谷最深处的房间看到十个宝箱时....",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/app/714123/topic?type=official",
         "link_status": "unknown",
         "category": "other",
         "content_tags": [],
         "priority": "low",
-        "title_en": "Sure enough, official complaints are the most deadly. Let’s go back to the original story. As soon as you recharge, your true colors will be revealed. It’s a joke and the explosion rate will be reduced. Is it interesting? Do you want me to say something to you here every day?",
+        "title_en": "When I saw ten treasure chests in the deepest room of Worm Valley....",
         "source_en": "TapTap Official",
         "content_tags_en": []
-      },
-      {
-        "title": "这次请到了专业的动作与音乐老师来还原这份【中式恐怖】",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/app/714123/topic?type=official",
-        "link_status": "unknown",
-        "category": "other",
-        "content_tags": [],
-        "priority": "low",
-        "title_en": "This time, we invited professional action and music teachers to restore this [Chinese horror]",
-        "source_en": "TapTap Official",
-        "content_tags_en": []
-      },
-      {
-        "title": "出一个变卖物自动巡回功能100万价值以上的东西因为自动出售或者自己卖掉增加一个。用对应的铲铲币或者增加10%的利息来换回自己的变卖物，求求了。",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/app/714123/topic?type=official",
-        "link_status": "unknown",
-        "category": "other",
-        "content_tags": [],
-        "priority": "low",
-        "title_en": "There is an automatic tour function for selling items. Things worth more than 1 million will be increased by one because they are automatically sold or sold by themselves. Please use the corresponding shovel coins or increase the interest by 10% to exchange for your sold items.",
-        "source_en": "TapTap Official",
-        "content_tags_en": []
-      },
-      {
-        "title": "7月2日更新——鬼吹灯联动地图【云南虫谷】上线！",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/app/714123/topic?type=official",
-        "link_status": "unknown",
-        "category": "pr",
-        "content_tags": [
-          "品牌联动",
-          "IP授权"
-        ],
-        "priority": "low",
-        "title_en": "Updated on July 2nd - The Ghost Blowing Lantern linkage map [Yunnan Worm Valley] is online!",
-        "source_en": "TapTap Official",
-        "content_tags_en": [
-          "Brand Collab",
-          "IP License"
-        ]
       }
     ],
     "taptap": {
       "app_id": 714123,
       "source": "taptap_webpage",
-      "fans_count": 11594758,
-      "review_count": 33131,
+      "fans_count": 11618841,
+      "review_count": 33256,
       "score": "7.0",
       "description": "超自然行动组是一款合作游戏，TapTap 提供超自然行动组最新版官方正版下载，一个人玩是恐怖游戏，两个人玩是冒险游戏，三个人玩是寻宝游戏，...",
       "score_display": 7.0,
@@ -281,93 +275,93 @@
     "community": {
       "taptap_forum": [
         {
-          "title": "鬼吹灯联动地图【云南虫谷】定于7月2日更新后上线！",
+          "title": "精绝女王棺前点起了蜡烛，但这次吹灯的会是谁？",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral",
-          "title_en": "The Ghost Blowing Lantern linkage map [Yunnan Worm Valley] is scheduled to be launched after the update on July 2!",
+          "title_en": "Candles were lit in front of Queen Jingjue's coffin, but who would blow out the candle this time?",
           "source_en": "TapTap Forum"
         },
         {
-          "title": "诡异的戏台，散落的傩面，门后世界究竟隐藏着什么？一切谜底，等你来揭晓",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral",
-          "title_en": "The weird stage, the scattered Nuo noodles, what is hidden in the world behind the door? All the answers are waiting for you to reveal them",
-          "source_en": "TapTap Forum"
-        },
-        {
-          "title": "当我在虫谷最深处的房间看到十个宝箱时....",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral",
-          "title_en": "When I saw ten treasure chests in the deepest room of Worm Valley....",
-          "source_en": "TapTap Forum"
-        },
-        {
-          "title": "祭祀时数名工友跟跳扰乱公共秩序，电击枪还有新玩法？",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral",
-          "title_en": "During the sacrifice, several workers jumped and disturbed public order. Is there a new way to use the stun gun?",
-          "source_en": "TapTap Forum"
-        },
-        {
-          "title": "果然，官方吐槽最为致命。还是回到原话吧，一充钱就原形毕露，玩屁呀，又降爆率，有意思吗？非要我天天在这说你什么。",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral",
-          "title_en": "Sure enough, official complaints are the most deadly. Let’s go back to the original story. As soon as you recharge, your true colors will be revealed. It’s a joke and the explosion rate will be reduced. Is it interesting? Do you want me to say something to you here every day?",
-          "source_en": "TapTap Forum"
-        },
-        {
-          "title": "这次请到了专业的动作与音乐老师来还原这份【中式恐怖】",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral",
-          "title_en": "This time, we invited professional action and music teachers to restore this [Chinese horror]",
-          "source_en": "TapTap Forum"
-        },
-        {
-          "title": "出一个变卖物自动巡回功能100万价值以上的东西因为自动出售或者自己卖掉增加一个。用对应的铲铲币或者增加10%的利息来换回自己的变卖物，求求了。",
+          "title": "emm…就是我手机能卡进去，所以就保存发出来了，希望能帮助到你们",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "negative",
-          "title_en": "There is an automatic tour function for selling items. Things worth more than 1 million will be increased by one because they are automatically sold or sold by themselves. Please use the corresponding shovel coins or increase the interest by 10% to exchange for your sold items.",
+          "title_en": "emm... my phone can get stuck, so I saved it and posted it. I hope it can help you.",
           "source_en": "TapTap Forum"
         },
         {
-          "title": "7月2日晚更新后，叫上你的亲密好友，一起美美出片吧~",
+          "title": "游戏圈记者上线，带#今天游戏圈发生了啥 话题分享游戏新鲜事，万元奖池等你瓜分！详情可加入资讯记者2群：1103610961",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral",
-          "title_en": "After the update on the evening of July 2nd, call your close friends and let’s make a beautiful movie together~",
+          "title_en": "Reporters from the game circle are online, sharing the latest news about games with the topic #What’s happening in the game circle today, and a 10,000-yuan prize pool is waiting for you to share! For details, please join the information reporter group 2: 1103610961",
           "source_en": "TapTap Forum"
         },
         {
-          "title": "我以为昨天晚上啊气死我了，熬了一夜",
+          "title": "楼梯里有一个金棺，金棺边上有一个石碑，上面是需要点亮的灯，点亮七个七星灯就能下楼然后出去。少点一个灯都会继续循环。",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral",
-          "title_en": "I thought I was so angry last night that I stayed up all night",
+          "title_en": "There is a golden coffin in the stairs. There is a stone tablet next to the golden coffin. On it are the lamps that need to be lit. You can go downstairs and go out by lighting seven seven-star lamps. If one less light is turned on, the cycle will continue.",
           "source_en": "TapTap Forum"
         },
         {
-          "title": "鬼吹灯联动地图【云南虫谷】上线！爬楼送京东卡，福利层层加码！",
+          "title": "为啥每次下身之后有一两秒是不能动的，一动就会跟踩着冰块一样直接滑出去，特别是龙宫红门里面的那个四个角...",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral",
-          "title_en": "The Ghost Blowing Lantern linkage map [Yunnan Worm Valley] is online! Climb the stairs to get a Jingdong card, and the benefits will be increased layer by layer!",
+          "title_en": "Why is it that every time you get down, you can't move for a second or two? If you move, you will slide out like stepping on ice, especially the four corners inside the red door of Dragon Palace...",
+          "source_en": "TapTap Forum"
+        },
+        {
+          "title": "今天也是很开心，补全了所有怪物的遗憾，虽然烧光了大量铲铲币，却也在相同道路上遇见了很多好心的人，坚持到最后的曙光总是温暖的(♡>𖥦<)/♥",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "positive",
+          "title_en": "I am also very happy today. I have made up for the regrets of all the monsters. Although I have burned a lot of shovel coins, I have also met many kind-hearted people on the same road. It is always warm to persist until the last dawn (♡>𖥦<)/♥",
+          "source_en": "TapTap Forum"
+        },
+        {
+          "title": "今天也是很开心，补全了所有怪物的遗憾，虽然烧光了大量铲铲币，却也在相同道路上遇见了很多好心的人，坚持...",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "positive",
+          "title_en": "I am also very happy today. I have made up for the regrets of all the monsters. Although I burned a lot of shovel coins, I also met many kind-hearted people on the same road. I persisted...",
+          "source_en": "TapTap Forum"
+        },
+        {
+          "title": "我只要一下这游戏，就让我跳转应用市场，跳转应用市场，又不是我以前那个号。我就算登了以前的号，我只要大退游戏之后，他就又会退出我以前的号，就这样反反复复的很麻烦",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "negative",
+          "title_en": "As long as I click on this game, it will redirect me to the App Market. The account I redirected to the App Market is not the same as before. Even if I log in to my previous account, as soon as I log out of the game, he will log out of my previous account again, which is very troublesome.",
+          "source_en": "TapTap Forum"
+        },
+        {
+          "title": "我只要一下这游戏，就让我跳转应用市场，跳转应用市场，又不是我以前那个号。我就算登了以前的号，我只要大...",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "neutral",
+          "title_en": "As long as I click on this game, it will redirect me to the App Market. The account I redirected to the App Market is not the same as before. Even if I log in with my previous account, all I need is...",
+          "source_en": "TapTap Forum"
+        },
+        {
+          "title": "#云南虫谷 #超自然行动组爆料 #超自然行动组",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "neutral",
+          "title_en": "#云南 insect谷 # supernatural action group broke the news # supernatural action group",
           "source_en": "TapTap Forum"
         }
       ],
@@ -381,7 +375,7 @@
             "title": "南瓜入侵，幽魂大运来了！",
             "bvid": "BV1xCkfBjENz",
             "url": "https://www.bilibili.com/video/BV1xCkfBjENz",
-            "play": 5789090,
+            "play": 5789201,
             "like": 34712,
             "danmaku": 186,
             "author": "張某人ZSS",
@@ -394,8 +388,8 @@
             "title": "教会你们如何在超自然找到大佬",
             "bvid": "BV1d2tGz2E3Z",
             "url": "https://www.bilibili.com/video/BV1d2tGz2E3Z",
-            "play": 4731597,
-            "like": 31941,
+            "play": 4731827,
+            "like": 31945,
             "danmaku": 393,
             "author": "中二的小溢",
             "duration": "5:45",
@@ -407,8 +401,8 @@
             "title": "超自然行动组怪物图鉴第六期「小熊猫」",
             "bvid": "BV1QCjiz2Evq",
             "url": "https://www.bilibili.com/video/BV1QCjiz2Evq",
-            "play": 3710619,
-            "like": 16711,
+            "play": 3711185,
+            "like": 16713,
             "danmaku": 222,
             "author": "就是黄大毛",
             "duration": "1:45",
@@ -420,8 +414,8 @@
             "title": "本来想卖掉大鹅、看到眼神心软了",
             "bvid": "BV1Wv6bBWEmn",
             "url": "https://www.bilibili.com/video/BV1Wv6bBWEmn",
-            "play": 3508200,
-            "like": 115427,
+            "play": 3508398,
+            "like": 115432,
             "danmaku": 1687,
             "author": "虎熊寺",
             "duration": "1:24",
@@ -433,7 +427,7 @@
             "title": "搜打撤黑马？！《超自然行动组》凭什么能爆火？",
             "bvid": "BV11hsheJE5i",
             "url": "https://www.bilibili.com/video/BV11hsheJE5i",
-            "play": 2928366,
+            "play": 2928377,
             "like": 31659,
             "danmaku": 45,
             "author": "白馆长丶",
@@ -446,8 +440,8 @@
             "title": "为什么幸福的人不会来到超自然行动组？",
             "bvid": "BV1Zqu4z5ETn",
             "url": "https://www.bilibili.com/video/BV1Zqu4z5ETn",
-            "play": 2790356,
-            "like": 9005,
+            "play": 2790406,
+            "like": 9006,
             "danmaku": 146,
             "author": "白白鸭游戏",
             "duration": "2:7",
@@ -474,7 +468,7 @@
         "us": {
           "name": "美国",
           "rating": 4.55,
-          "rating_count": 714,
+          "rating_count": 718,
           "current_version": "1.30.3",
           "price": "Free",
           "genre": "Games",
@@ -483,7 +477,7 @@
         "jp": {
           "name": "日本",
           "rating": 4.43,
-          "rating_count": 1899,
+          "rating_count": 1910,
           "current_version": "1.30.3",
           "price": "無料",
           "genre": "Games",
@@ -512,8 +506,8 @@
         }
       },
       "app_store_rating": 4.28,
-      "total_ratings": 2878,
-      "updated": "2026-07-04 08:53",
+      "total_ratings": 2893,
+      "updated": "2026-07-05 08:53",
       "name_en": "Tomb Busters"
     },
     "app_store_rankings": {
@@ -523,7 +517,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-07-04 08:53",
+        "updated": "2026-07-05 08:53",
         "name_en": "US"
       },
       "jp": {
@@ -532,7 +526,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-07-04 08:53",
+        "updated": "2026-07-05 08:53",
         "name_en": "Japan"
       },
       "kr": {
@@ -541,7 +535,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-07-04 08:53",
+        "updated": "2026-07-05 08:53",
         "name_en": "South Korea"
       },
       "tw": {
@@ -550,7 +544,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-07-04 08:53",
+        "updated": "2026-07-05 08:53",
         "name_en": "Taiwan, China"
       },
       "hk": {
@@ -559,7 +553,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-07-04 08:53",
+        "updated": "2026-07-05 08:53",
         "name_en": "Hong Kong, China"
       }
     },
@@ -568,10 +562,10 @@
         "name": "中国",
         "name_en": "China",
         "free_overall": null,
-        "free_games": 18,
-        "grossing_overall": 49,
-        "grossing_games": 26,
-        "updated": "2026-07-04 08:53",
+        "free_games": 17,
+        "grossing_overall": 47,
+        "grossing_games": 25,
+        "updated": "2026-07-05 08:53",
         "peak_grossing_games": 19,
         "peak_free_overall": null
       }
@@ -583,7 +577,7 @@
       "prev_close": 27.71,
       "change_pct": -2.02,
       "change_amt": -0.56,
-      "updated": "2026-07-04 08:52",
+      "updated": "2026-07-05 08:53",
       "name_en": "Giant Network"
     },
     "new_content_tracker": [
@@ -591,7 +585,7 @@
         "id": "新地图",
         "name": "新地图",
         "status": "live",
-        "first_seen": "2026-07-04",
+        "first_seen": "2026-07-05",
         "launch_date": null,
         "tags": [
           "新地图",
@@ -601,7 +595,7 @@
         "announcements": [
           {
             "title": "工友们，虫谷大门已开！\n鬼吹灯 x 超自然行动组 正版联动地图【云南虫谷】已正式上线！全新S4赛季也...",
-            "date": "2026-07-04",
+            "date": "2026-07-05",
             "source": "TapTap官方",
             "url": "https://www.taptap.cn/app/714123/topic?type=official",
             "title_en": "Fellow workers, the door to Worm Valley is open!\nThe official collaboration map of Gui Chuu Deng x Supernatural Action Team [Yunnan Worm Valley] has been officially launched! The new S4 season also...",
@@ -624,7 +618,7 @@
         "id": "新玩法",
         "name": "新玩法",
         "status": "announced",
-        "first_seen": "2026-07-04",
+        "first_seen": "2026-07-05",
         "launch_date": null,
         "tags": [
           "新玩法"
@@ -632,7 +626,7 @@
         "announcements": [
           {
             "title": "祭祀时数名工友跟跳扰乱公共秩序，电击枪还有新玩法？",
-            "date": "2026-07-04",
+            "date": "2026-07-05",
             "source": "TapTap官方",
             "url": "https://www.taptap.cn/app/714123/topic?type=official",
             "title_en": "During the sacrifice, several workers jumped and disturbed public order. Is there a new way to use the stun gun?",
@@ -653,7 +647,7 @@
         "id": "角色重做",
         "name": "角色重做",
         "status": "announced",
-        "first_seen": "2026-07-04",
+        "first_seen": "2026-07-05",
         "launch_date": null,
         "tags": [
           "角色重做"
@@ -661,7 +655,7 @@
         "announcements": [
           {
             "title": "阿念重做登场！",
-            "date": "2026-07-04",
+            "date": "2026-07-05",
             "source": "官网",
             "url": "https://www.chaoziran.com/news/538",
             "title_en": "A Nian’s rework is here!",
@@ -683,7 +677,7 @@
         "id": "新怪物",
         "name": "新怪物",
         "status": "teased",
-        "first_seen": "2026-07-04",
+        "first_seen": "2026-07-05",
         "launch_date": null,
         "tags": [
           "新怪物"
@@ -691,7 +685,7 @@
         "announcements": [
           {
             "title": "新怪物【鸭子】实机展示，追上了命都给你哦",
-            "date": "2026-07-04",
+            "date": "2026-07-05",
             "source": "官网",
             "url": "https://www.chaoziran.com/news/535",
             "title_en": "The new monster [Duck] is shown in action. If you catch up, you will be given life.",
@@ -710,6 +704,6 @@
         ]
       }
     ],
-    "crawled_at": "2026-07-04T08:53:26.749751"
+    "crawled_at": "2026-07-05T08:53:37.785089"
   }
 }
