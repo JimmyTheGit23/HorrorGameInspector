@@ -137,8 +137,8 @@
     "taptap": {
       "app_id": 714123,
       "source": "taptap_webpage",
-      "fans_count": 11805349,
-      "review_count": 34476,
+      "fans_count": 11805931,
+      "review_count": 34481,
       "score": "7.0",
       "description": "超自然行动组是一款合作游戏，TapTap 提供超自然行动组最新版官方正版下载，一个人玩是恐怖游戏，两个人玩是冒险游戏，三个人玩是寻宝游戏，...",
       "score_display": 7.0,
@@ -298,12 +298,12 @@
           "source_en": "TapTap Forum"
         },
         {
-          "title": "游戏圈记者上线，带#今天游戏圈发生了啥 话题分享游戏新鲜事，万元奖池等你瓜分！详情可加入资讯记者2群：1103610961",
+          "title": "红色物品不可能是野生的，只能开出来，或者炼出来。",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral",
-          "title_en": "Reporters from the game circle are online, sharing the latest news about games with the topic #What’s happening in the game circle today, and a 10,000-yuan prize pool is waiting for you to share! For details, please join the information reporter group 2: 1103610961",
+          "title_en": "Red items cannot be wild, they can only be found or refined.",
           "source_en": "TapTap Forum"
         },
         {
@@ -316,6 +316,24 @@
           "source_en": "TapTap Forum"
         },
         {
+          "title": "游戏圈记者上线，带#今天游戏圈发生了啥 话题分享游戏新鲜事，万元奖池等你瓜分！详情可加入资讯记者2群：1103610961",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "neutral",
+          "title_en": "Reporters from the game circle are online, sharing the latest news about games with the topic #What’s happening in the game circle today, and a 10,000-yuan prize pool is waiting for you to share! For details, please join the information reporter group 2: 1103610961",
+          "source_en": "TapTap Forum"
+        },
+        {
+          "title": "朋友高中生以后大概不会在充钱了两位都是主摸金四队不会打。找兔子唯一要求:开智。有意者去游戏搜工号就行",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "neutral",
+          "title_en": "My friend, who is a high school student, probably won't charge money anymore. Both of them are the main gold-touching team and they don't know how to play. The only requirement for finding a rabbit is to be smart. If you are interested, just go to the game and search for a job number.",
+          "source_en": "TapTap Forum"
+        },
+        {
           "title": "有人一起玩吗？刚下载 新手求带。",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
@@ -325,39 +343,21 @@
           "source_en": "TapTap Forum"
         },
         {
-          "title": "公司兴起三人摸金风，薇薇安荣膺时尚之星~",
+          "title": "今日的口令是：一剑封神 吉星高照 蒸蒸日上",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral",
-          "title_en": "Three people in the company have prospered, and Vivian is honored as a fashion star~",
+          "title_en": "Today’s password is: Conquer the gods with one sword, auspicious stars shine, and prosperity",
           "source_en": "TapTap Forum"
         },
         {
-          "title": "#超自然行动组 #发现好游戏 #游戏日常 #超自然行动组新皮肤 #超自然行动组精绝女王",
+          "title": "能一直玩的，没有技术要求，但别嫌我菜",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral",
-          "title_en": "#Supernatural Action Group #Discover Good Games #Game Daily #Supernatural Action Group New Skin #Supernatural Action Group Jingjue Queen",
-          "source_en": "TapTap Forum"
-        },
-        {
-          "title": "即日起，✍️图文打卡你的游戏日常，👍阅读互动讨论相关动态，有机会抽取百元现金💰",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "negative",
-          "title_en": "From now on, ✍️check in your game routine with pictures and texts, 👍read interactive discussions and relevant updates, and have a chance to win a hundred yuan in cash💰",
-          "source_en": "TapTap Forum"
-        },
-        {
-          "title": "幸好我退得快，这游戏现在的皮肤是越出越花了充了3000多块钱的号只能卖个600多。",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral",
-          "title_en": "Fortunately, I quit quickly. The current skins in this game are getting more and more expensive. The account that cost more than 3,000 yuan can only be sold for more than 600 yuan.",
+          "title_en": "You can play all the time, there are no technical requirements, but don’t think I’m a loser",
           "source_en": "TapTap Forum"
         }
       ],
@@ -371,7 +371,7 @@
             "title": "南瓜入侵，幽魂大运来了！",
             "bvid": "BV1xCkfBjENz",
             "url": "https://www.bilibili.com/video/BV1xCkfBjENz",
-            "play": 5790362,
+            "play": 5790378,
             "like": 34717,
             "danmaku": 186,
             "author": "張某人ZSS",
@@ -384,7 +384,7 @@
             "title": "教会你们如何在超自然找到大佬",
             "bvid": "BV1d2tGz2E3Z",
             "url": "https://www.bilibili.com/video/BV1d2tGz2E3Z",
-            "play": 4733602,
+            "play": 4733609,
             "like": 31976,
             "danmaku": 399,
             "author": "中二的小溢",
@@ -397,8 +397,8 @@
             "title": "超自然行动组怪物图鉴第六期「小熊猫」",
             "bvid": "BV1QCjiz2Evq",
             "url": "https://www.bilibili.com/video/BV1QCjiz2Evq",
-            "play": 3717975,
-            "like": 16746,
+            "play": 3718019,
+            "like": 16747,
             "danmaku": 222,
             "author": "就是黄大毛",
             "duration": "1:45",
@@ -410,7 +410,7 @@
             "title": "本来想卖掉大鹅、看到眼神心软了",
             "bvid": "BV1Wv6bBWEmn",
             "url": "https://www.bilibili.com/video/BV1Wv6bBWEmn",
-            "play": 3510177,
+            "play": 3510194,
             "like": 115479,
             "danmaku": 1687,
             "author": "虎熊寺",
@@ -436,7 +436,7 @@
             "title": "为什么幸福的人不会来到超自然行动组？",
             "bvid": "BV1Zqu4z5ETn",
             "url": "https://www.bilibili.com/video/BV1Zqu4z5ETn",
-            "play": 2790903,
+            "play": 2790905,
             "like": 9008,
             "danmaku": 146,
             "author": "白白鸭游戏",
@@ -473,7 +473,7 @@
         "jp": {
           "name": "日本",
           "rating": 4.43,
-          "rating_count": 2063,
+          "rating_count": 2045,
           "current_version": "1.30.4",
           "price": "無料",
           "genre": "Games",
@@ -502,8 +502,8 @@
         }
       },
       "app_store_rating": 4.27,
-      "total_ratings": 3074,
-      "updated": "2026-07-14 08:51",
+      "total_ratings": 3056,
+      "updated": "2026-07-14 09:53",
       "name_en": "Tomb Busters"
     },
     "app_store_rankings": {
@@ -513,7 +513,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-07-14 08:51",
+        "updated": "2026-07-14 09:53",
         "name_en": "US"
       },
       "jp": {
@@ -522,7 +522,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-07-14 08:51",
+        "updated": "2026-07-14 09:53",
         "name_en": "Japan"
       },
       "kr": {
@@ -531,7 +531,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-07-14 08:51",
+        "updated": "2026-07-14 09:53",
         "name_en": "South Korea"
       },
       "tw": {
@@ -540,7 +540,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-07-14 08:51",
+        "updated": "2026-07-14 09:53",
         "name_en": "Taiwan, China"
       },
       "hk": {
@@ -549,7 +549,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-07-14 08:51",
+        "updated": "2026-07-14 09:53",
         "name_en": "Hong Kong, China"
       }
     },
@@ -561,83 +561,238 @@
         "free_games": 16,
         "grossing_overall": 25,
         "grossing_games": 11,
-        "updated": "2026-07-14 08:51",
-        "peak_grossing_games": 11,
+        "updated": "2026-07-14 09:53",
+        "peak_grossing_games": 10,
         "peak_free_overall": null
       }
     },
     "stock_price": {
       "code": "SZ002558",
       "name": "巨人网络",
-      "price": 28.48,
-      "prev_close": 29.56,
-      "change_pct": -3.65,
-      "change_amt": -1.08,
-      "updated": "2026-07-14 08:51",
+      "price": 27.43,
+      "prev_close": 28.48,
+      "change_pct": -3.69,
+      "change_amt": -1.05,
+      "updated": "2026-07-14 09:52",
       "name_en": "Giant Network"
     },
-    "new_content_tracker": [
-      {
-        "id": "角色重做",
-        "name": "角色重做",
-        "status": "announced",
-        "first_seen": "2026-07-14",
-        "launch_date": null,
-        "tags": [
-          "角色重做"
-        ],
-        "announcements": [
-          {
-            "title": "阿念重做登场！",
-            "date": "2026-07-14",
-            "source": "官网",
-            "url": "https://www.chaoziran.com/news/538",
-            "title_en": "A Nian’s rework is here!",
-            "source_en": "Official Site",
-            "link_status": "valid"
-          }
-        ],
-        "player_reactions": {
-          "positive": 0,
-          "neutral": 0,
-          "negative": 0
-        },
-        "name_en": "Character Rework",
-        "tags_en": [
-          "Character Rework"
-        ]
+    "new_content_tracker": [],
+    "crawled_at": "2026-07-14T09:53:36.824127",
+    "overseas": {
+      "google_play": {
+        "package_id": "com.game.tombbusters",
+        "source": "Google Play",
+        "url": "https://play.google.com/store/apps/details?id=com.game.tombbusters",
+        "rating": 4.1,
+        "review_count": 754,
+        "description": "Hilarious Co-op Horror Extraction",
+        "category": "FAMILY",
+        "crawled_at": "2026-07-14 09:54"
       },
-      {
-        "id": "新怪物",
-        "name": "新怪物",
-        "status": "teased",
-        "first_seen": "2026-07-14",
-        "launch_date": null,
-        "tags": [
-          "新怪物"
-        ],
-        "announcements": [
-          {
-            "title": "新怪物【鸭子】实机展示，追上了命都给你哦",
-            "date": "2026-07-14",
-            "source": "官网",
-            "url": "https://www.chaoziran.com/news/535",
-            "title_en": "The new monster [Duck] is shown in action. If you catch up, you will be given life.",
-            "source_en": "Official Site",
-            "link_status": "valid"
-          }
-        ],
-        "player_reactions": {
-          "positive": 0,
-          "neutral": 0,
-          "negative": 0
+      "google_play_reviews": [
+        {
+          "text": "Library &amp; devices",
+          "source": "Google Play"
         },
-        "name_en": "New Monster",
-        "tags_en": [
-          "New Monster"
-        ]
-      }
-    ],
-    "crawled_at": "2026-07-14T08:51:45.735810"
+        {
+          "text": "Payments &amp; subscriptions",
+          "source": "Google Play"
+        },
+        {
+          "text": "Personalization in Play",
+          "source": "Google Play"
+        },
+        {
+          "text": "Ratings and reviews are verified",
+          "source": "Google Play"
+        }
+      ],
+      "reddit": [],
+      "youtube": [
+        {
+          "title": "TOMB RAIDER Gameplay Walkthrough Part 1 FULL GAME [4K 60FPS PC ULTRA] - No Commentary",
+          "video_id": "hT-LKGp-bMo",
+          "url": "https://www.youtube.com/watch?v=hT-LKGp-bMo",
+          "views": "2,744,089 views",
+          "channel": "MKIceAndFire",
+          "published": "2 years ago",
+          "duration": "6:26:06"
+        },
+        {
+          "title": "Ghost Buster Pakdenge Bhoot in Phasmophobia🛑",
+          "video_id": "MhvKYidexA8",
+          "url": "https://www.youtube.com/watch?v=MhvKYidexA8",
+          "views": "2,682,193 views",
+          "channel": "Live Insaan",
+          "published": "Streamed 9 months ago",
+          "duration": "3:49:16"
+        },
+        {
+          "title": "Tomb Busters - Nogla Won't Stay Away From Me!",
+          "video_id": "EnuSSZ8nN4I",
+          "url": "https://www.youtube.com/watch?v=EnuSSZ8nN4I",
+          "views": "467,473 views",
+          "channel": "VanossGaming",
+          "published": "1 month ago",
+          "duration": "27:18"
+        },
+        {
+          "title": "A game based on 'The Snapshot Serial Killer'",
+          "video_id": "2bIUhc95Orc",
+          "url": "https://www.youtube.com/watch?v=2bIUhc95Orc",
+          "views": "417,940 views",
+          "channel": "8-BitRyan",
+          "published": "1 year ago",
+          "duration": "54:50"
+        },
+        {
+          "title": "THIS MOBILE LETHAL-LIKE IS ACTUALLY HILARIOUS!!! | Tomb Busters (w/ Kyle & Squirrel)",
+          "video_id": "O_JjLJQdGh0",
+          "url": "https://www.youtube.com/watch?v=O_JjLJQdGh0",
+          "views": "422,107 views",
+          "channel": "CaRtOoNz",
+          "published": "2 weeks ago",
+          "duration": "1:26:18"
+        },
+        {
+          "title": "Tomb Busters | Launch Gameplay Trailer",
+          "video_id": "SozbL_ez72Y",
+          "url": "https://www.youtube.com/watch?v=SozbL_ez72Y",
+          "views": "425,181 views",
+          "channel": "Tomb Busters",
+          "published": "1 month ago",
+          "duration": "0:56"
+        },
+        {
+          "title": "Don't get caught! Steal the treasure from this dangerous place!【 Paranormal Squad 】",
+          "video_id": "uf49EB_S4rc",
+          "url": "https://www.youtube.com/watch?v=uf49EB_S4rc",
+          "views": "186,189 views",
+          "channel": "ちろぴの",
+          "published": "9 days ago",
+          "duration": "32:10"
+        },
+        {
+          "title": "Goofy Gang Explores SCARY TOMBS... (Tomb Busters)",
+          "video_id": "l9WdUDC67bY",
+          "url": "https://www.youtube.com/watch?v=l9WdUDC67bY",
+          "views": "149,704 views",
+          "channel": "Goofy Gang",
+          "published": "1 month ago",
+          "duration": "20:27"
+        },
+        {
+          "title": "Three Idiots VS Funniest New Horror Game",
+          "video_id": "m6ENmCcWhBc",
+          "url": "https://www.youtube.com/watch?v=m6ENmCcWhBc",
+          "views": "139,954 views",
+          "channel": "SeeReax",
+          "published": "1 month ago",
+          "duration": "43:39"
+        },
+        {
+          "title": "MARCEL KNOWS HIS FRIENDS TOO WELL!",
+          "video_id": "QPOYv5LH884",
+          "url": "https://www.youtube.com/watch?v=QPOYv5LH884",
+          "views": "221,745 views",
+          "channel": "Terroriser",
+          "published": "3 weeks ago",
+          "duration": "23:43"
+        }
+      ],
+      "official_news_en": [],
+      "twitter": [
+        {
+          "text": "Follow @TombBusters_EN on X for the latest Tomb Busters updates",
+          "url": "https://x.com/TombBusters_EN",
+          "source": "@TombBusters_EN"
+        }
+      ],
+      "app_store_extended": {
+        "us": {
+          "name": "美国",
+          "rating": 4.54,
+          "rating_count": 746,
+          "current_version": "1.30.4",
+          "price": "Free",
+          "genre": "Games"
+        },
+        "jp": {
+          "name": "日本",
+          "rating": 4.43,
+          "rating_count": 2045,
+          "current_version": "1.30.4",
+          "price": "無料",
+          "genre": "Games"
+        },
+        "kr": {
+          "name": "韩国",
+          "rating": 3.85,
+          "rating_count": 265,
+          "current_version": "1.30.4",
+          "price": "무료",
+          "genre": "Games"
+        },
+        "tw": {
+          "name": "台湾",
+          "rating": null,
+          "rating_count": 0
+        },
+        "hk": {
+          "name": "香港",
+          "rating": null,
+          "rating_count": 0
+        },
+        "gb": {
+          "name": "英国",
+          "rating": 4.41,
+          "rating_count": 27,
+          "current_version": "1.30.4",
+          "price": "Free",
+          "genre": "Games"
+        },
+        "de": {
+          "name": "德国",
+          "rating": 4.14,
+          "rating_count": 21,
+          "current_version": "1.30.4",
+          "price": "Gratis",
+          "genre": "Games"
+        },
+        "fr": {
+          "name": "法国",
+          "rating": 4.04,
+          "rating_count": 25,
+          "current_version": "1.30.4",
+          "price": "Gratuit",
+          "genre": "Games"
+        },
+        "au": {
+          "name": "澳大利亚",
+          "rating": 4.5,
+          "rating_count": 20,
+          "current_version": "1.30.4",
+          "price": "Free",
+          "genre": "Games"
+        },
+        "sg": {
+          "name": "新加坡",
+          "rating": null,
+          "rating_count": 0
+        },
+        "th": {
+          "name": "泰国",
+          "rating": null,
+          "rating_count": 0
+        },
+        "br": {
+          "name": "巴西",
+          "rating": null,
+          "rating_count": 0
+        }
+      },
+      "crawled_at": "2026-07-14T09:54:57.299024",
+      "crawled_date": "2026-07-14"
+    }
   }
 }
