@@ -123,13 +123,13 @@ def get_steam_current_players(appid):
 
 
 def get_steam_reviews(appid):
-    """从Steam Review API获取评测摘要"""
-    url = f"https://store.steampowered.com/appreviews/{appid}?json=1&purchase_type=all&language=schinese&review_type=all"
+    """从Steam Review API获取全量评测摘要，失败时回退到简中口径"""
+    url = f"https://store.steampowered.com/appreviews/{appid}?json=1&purchase_type=all&language=all&review_type=all&filter=summary&num_per_page=0"
     data = fetch_json(url)
     summary = data.get("query_summary", {}) if data and data.get("success") else {}
 
     if not data or not data.get("success") or summary.get("total_reviews", 0) == 0:
-        url = f"https://store.steampowered.com/appreviews/{appid}?json=1&purchase_type=all&language=all&review_type=all"
+        url = f"https://store.steampowered.com/appreviews/{appid}?json=1&purchase_type=all&language=schinese&review_type=all&filter=summary&num_per_page=0"
         fallback = fetch_json(url)
         fallback_summary = fallback.get("query_summary", {}) if fallback and fallback.get("success") else {}
         if fallback and fallback.get("success") and fallback_summary.get("total_reviews", 0) > 0:

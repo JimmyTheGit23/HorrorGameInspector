@@ -1,10 +1,15 @@
 {
-  "snapshot_date": "2026-07-14T09:55:05+08:00",
+  "snapshot_date": "2026-07-20T10:24:15+08:00",
   "hero": {
     "name": "黎明杀机",
-    "current_players": 75523,
-    "positive_rate": 78.5,
-    "reviews_total": 918861,
+    "current_players": 60899,
+    "peak_24h": 80950,
+    "avg_30d": 80516,
+    "positive_rate": 78.4,
+    "reviews_total": 920627,
+    "recent_reviews": 11674,
+    "recent_positive_rate": 77,
+    "all_time_peak": 168845,
     "price_label": "¥ 93.75",
     "release_date": "2016 年 6 月 14 日",
     "genres": [
@@ -13,101 +18,153 @@
   },
   "operations": [
     {
-      "date": "2026-07-10",
-      "timestamp": 1783696538,
-      "title": "Unkillable: inside Dead by Daylight's incredible decade of scares",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PCGamesN/1837955055357223",
-      "author": "editor@pcgamesn.com",
-      "feed_label": "PCGamesN",
-      "feed_type": "媒体",
-      "is_patch": false,
-      "contents": "Dead by Daylight has been terrifying players for ten years now, so I caught up with Behaviour to chat about DBD's legacy, and its future. Read the full story on PCGamesN: <a href=\"https://www.pcgamesn"
-    },
-    {
-      "date": "2026-07-07",
-      "timestamp": 1783414800,
-      "title": "Steam Global Top Sellers for week of 30 Jun — 7 July 2026",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/SteamDB/1836506165578059",
-      "author": "SteamDB",
-      "feed_label": "SteamDB",
-      "feed_type": "媒体",
-      "is_patch": false,
-      "contents": "<a href=\"https://steamdb.info/topsellers/2026W28/?utm_source=Steam&utm_medium=Steam&utm_campaign=SteamRSS\"> </a> * <a href=\"https://steamdb.info/app/4704690/charts/?utm_source=Steam&utm_medium=Steam&u"
-    },
-    {
-      "date": "2026-07-06",
-      "timestamp": 1783348216,
-      "title": "10.0.2 | Bugfix Patch",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1836506165576085",
-      "author": "Donnary21st",
-      "feed_label": "Community Announcements",
+      "date": "2026-06-25",
+      "type_zh": "活动",
+      "type_en": "Event",
+      "title": "Dead by Daylight’s Black Banquet Has Begun: Everything To Know",
+      "source": "Official News",
+      "feed_label": "Official News",
       "feed_type": "官方",
       "is_patch": false,
-      "contents": "ImportantThe Doctor has been re-enabled in the 10th Anniversary Event queue.ContentKiller Add-on UpdatesThe Slasher's add-onsDeputy's Badge (Very Rare)While in Omnipresent Evil, passing within 2m of a"
+      "url": "https://deadbydaylight.com/news/dbd-black-banquet-everything-to-know/",
+      "contents": "Black Banquet is now live with the two-phase 10th anniversary event structure, event-exclusive interactions, and a clear call to re-engage the existing player base."
     },
     {
-      "date": "2026-07-06",
-      "timestamp": 1783333363,
-      "title": "Limmy has finally been banned from Dead by Daylight, but he'll be back very soon",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PCGamesN/1836506165575869",
-      "author": "editor@pcgamesn.com",
-      "feed_label": "PCGamesN",
-      "feed_type": "媒体",
-      "is_patch": false,
-      "contents": "\"It has finally happened,\" Limmy says. \"Hello everybody; I have been banned from Dead by Daylight for having a laugh.\" It's official: Limmy has, indeed, been banned from playing Behaviour's iconic hor"
-    },
-    {
-      "date": "2026-06-30",
-      "timestamp": 1782810000,
-      "title": "Steam Global Top Sellers for week of 23 Jun — 30 June 2026",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/SteamDB/1836506165562533",
-      "author": "SteamDB",
-      "feed_label": "SteamDB",
-      "feed_type": "媒体",
-      "is_patch": false,
-      "contents": "<a href=\"https://steamdb.info/topsellers/2026W27/?utm_source=Steam&utm_medium=Steam&utm_campaign=SteamRSS\"> </a> * <a href=\"https://steamdb.info/app/4704690/charts/?utm_source=Steam&utm_medium=Steam&u"
-    },
-    {
-      "date": "2026-06-27",
-      "timestamp": 1782509641,
-      "title": "Ice Nine Kills X Dead by Daylight Merch",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1836506165555270",
-      "author": "amanda_bhvr",
-      "feed_label": "Community Announcements",
+      "date": "2026-06-17",
+      "type_zh": "角色",
+      "type_en": "Character",
+      "title": "Shane Wiigwaas Is Dead By Daylight’s Latest Survivor",
+      "source": "Official News",
+      "feed_label": "Official News",
       "feed_type": "官方",
       "is_patch": false,
-      "contents": "The Dead by Daylight x Ice Nine Kills collection doesn't stop in-game. We've teamed up to bring the collaboration into the real world, and it's everything you'd expect from two icons of horror.Pre-ord"
+      "url": "https://deadbydaylight.com/news/shane-wiigwaas-dbd-new-survivor/",
+      "contents": "Behaviour introduced Shane Wiigwaas as the latest survivor and highlighted his chase, healing, and pressure-swing perks as part of the Life Road release beat."
     },
     {
-      "date": "2026-06-23",
-      "timestamp": 1782225401,
-      "title": "10.0.1",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835871199315739",
-      "author": "amanda_bhvr",
-      "feed_label": "Community Announcements",
+      "date": "2026-06-15",
+      "type_zh": "更新",
+      "type_en": "Update",
+      "title": "Dead by Daylight 10th Anniversary Recap: Announcements & Celebrations",
+      "source": "Official News",
+      "feed_label": "Official News",
       "feed_type": "官方",
       "is_patch": false,
-      "contents": "ContentNEW SURVIVOR: SHANE WIIGWAAS (RELEASED ON JUNE 25TH)New Survivor PerksWide Open ThrottleWhenever you fast-vault a Pallet:You gain 10/12.5/15% Haste for 3s.The Pallet is reset, blocked for 60s, "
+      "url": "https://deadbydaylight.com/news/dbd-10th-anniversary-recap-announcements-celebrations/",
+      "contents": "The 10th anniversary recap rolls up the key reveals, celebration moments, and forward roadmap messaging Behaviour used to frame Year 10."
     },
     {
-      "date": "2026-06-23",
-      "timestamp": 1782205200,
-      "title": "Steam Global Top Sellers for week of 16 Jun — 23 June 2026",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/SteamDB/1835871199315577",
-      "author": "SteamDB",
-      "feed_label": "SteamDB",
-      "feed_type": "媒体",
+      "date": "2026-05-28",
+      "type_zh": "活动",
+      "type_en": "Event",
+      "title": "Dead by Daylight’s Anniversary Party Is Almost Here",
+      "source": "Official News",
+      "feed_label": "Official News",
+      "feed_type": "官方",
       "is_patch": false,
-      "contents": "<a href=\"https://steamdb.info/topsellers/2026W26/?utm_source=Steam&utm_medium=Steam&utm_campaign=SteamRSS\"> </a> * <a href=\"https://steamdb.info/app/4704690/charts/?utm_source=Steam&utm_medium=Steam&u"
+      "url": "https://deadbydaylight.com/news/dbd-anniversary-party-is-almost-here/",
+      "contents": "Behaviour used the anniversary party post to amplify offline celebration activities and warm the audience up for the Year 10 live broadcast."
+    },
+    {
+      "date": "2026-05-26",
+      "type_zh": "更新",
+      "type_en": "Release",
+      "title": "Jason Has Finally Come To Dead by Daylight",
+      "source": "Official News",
+      "feed_label": "Official News",
+      "feed_type": "官方",
+      "is_patch": false,
+      "url": "https://deadbydaylight.com/news/jason-comes-to-dbd/",
+      "contents": "The Jason reveal confirms DBD’s biggest anniversary chapter beat and remains the clearest acquisition and awareness driver for the current cycle."
+    },
+    {
+      "date": "2026-05-18",
+      "type_zh": "世界观",
+      "type_en": "Lore",
+      "title": "The Entity Unveiled: A Guide To Dead by Daylight’s Eldritch Horror",
+      "source": "Official News",
+      "feed_label": "Official News",
+      "feed_type": "官方",
+      "is_patch": false,
+      "url": "https://deadbydaylight.com/news/the-entity-unveiled/",
+      "contents": "The lore explainer reinforces DBD’s horror identity and gives Behaviour a lower-cost narrative beat between feature-heavy release posts."
     }
   ],
-  "patches": [],
-  "trends": [
+  "patches": [
     {
-      "month": "2026-01",
-      "avg_players": 49288,
-      "peak_players": 96633
+      "date": "2026-07-06",
+      "title": "10.0.2 | Bugfix Patch",
+      "version": "10.0.2 | Bugfix Patch",
+      "note_zh": "10.0.2 重新启用周年活动队列中的 Doctor，下调 The Slasher 的 Deputy’s Badge 触发范围，并集中修复 Black Banquet、音频、角色与地图问题。",
+      "note_en": "10.0.2 re-enables The Doctor in the anniversary queue, nerfs The Slasher’s Deputy’s Badge trigger range, and fixes a broad set of Black Banquet, audio, character, and map issues.",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1836506165576085",
+      "feed_label": "Community Announcements",
+      "feed_type": "官方",
+      "is_patch": true,
+      "contents": "10.0.2 re-enables The Doctor in the anniversary queue, narrows Deputy’s Badge to 2m, and fixes a wide set of Black Banquet, audio, character, perk, and map issues."
     },
+    {
+      "date": "2026-06-23",
+      "title": "10.0.1",
+      "version": "10.0.1 | Bugfix Patch",
+      "note_zh": "10.0.1 为 6 月 25 日上线的 Black Banquet 活动预热，同时实装 Shane Wiigwaas、调整 Cross-Examination，并修复大量音频、角色、地图、Perk 与 UI 问题。",
+      "note_en": "10.0.1 prepares the June 25 Black Banquet event, ships Shane Wiigwaas, tunes Cross-Examination, and delivers a broad bug-fix pass across audio, characters, maps, perks, and UI.",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835871199315739",
+      "feed_label": "Community Announcements",
+      "feed_type": "官方",
+      "is_patch": true,
+      "contents": "10.0.1 adds Shane Wiigwaas, sets up the Black Banquet anniversary event, and fixes audio, characters, maps, perks, UI, and event-related issues."
+    },
+    {
+      "date": "2026-06-16",
+      "title": "10.0.0 | Jason Patch Notes",
+      "version": "10.0.0 | Jason Patch Notes",
+      "note_zh": "10.0.0 正式服上线 Jason 章节与 The Slasher，同步加入 Aura 自定义、Killer Power Match Details 页，并修复大量角色、音频与地图问题。",
+      "note_en": "10.0.0 brings the live Jason chapter and The Slasher, plus aura customization, a Killer Power Match Details tab, and a large bug-fix pass across characters, audio, and maps.",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835236783574550",
+      "feed_label": "Community Announcements",
+      "feed_type": "官方",
+      "is_patch": true,
+      "contents": "10.0.0 launches the Jason chapter with The Slasher, Omnipresent Evil, aura customization, new killer details UI, and a large stability and balance pass."
+    },
+    {
+      "date": "2026-05-26",
+      "title": "10.0.0 | Jason PTB Patch Notes",
+      "version": "10.0.0 | Jason PTB Patch Notes",
+      "note_zh": "10.0.0 PTB 开放 Jason 章节测试，带来 The Slasher、Omnipresent Evil / Throwing Spikes 能力，以及新一轮 Perk 与 UI 变更。",
+      "note_en": "10.0.0 PTB opens the Jason chapter test with The Slasher, Omnipresent Evil / Throwing Spikes, and a fresh round of perk and UI changes.",
+      "url": "https://store.steampowered.com/news/app/381210/view/662736579634135748",
+      "feed_label": "Steam News",
+      "feed_type": "官方",
+      "is_patch": true,
+      "contents": "The 10.0.0 PTB opens Jason testing, introduces The Slasher and Omnipresent Evil, and starts the latest perk and UI iteration cycle."
+    },
+    {
+      "date": "2026-05-12",
+      "title": "9.6.2 | Bugfix Patch",
+      "version": "9.6.2 | Bugfix Patch",
+      "note_zh": "9.6.2 以稳定性与错误修复为主，覆盖 2v8、音频、角色、地图、Perk、平台兼容和闪烁灯光问题。",
+      "note_en": "9.6.2 is a stability-focused hotfix covering 2v8, audio, characters, maps, perks, platform compatibility, and flashing-light fixes.",
+      "url": "https://store.steampowered.com/news/app/381210/view/697638207931549226",
+      "feed_label": "Steam News",
+      "feed_type": "官方",
+      "is_patch": true,
+      "contents": "9.6.2 focuses on stability, covering 2v8, audio, characters, maps, perks, platform compatibility, and flashing-light fixes."
+    },
+    {
+      "date": "2026-05-05",
+      "title": "9.6.1 | Bugfix Patch",
+      "version": "9.6.1 | Bugfix Patch",
+      "note_zh": "9.6.1 继续修正 Diminishing Returns 文档、进度条表现，并对 Doctor 与 Ghost Face 做数值调优。",
+      "note_en": "9.6.1 continues cleanup around Diminishing Returns documentation, progress bar presentation, and numeric tuning for Doctor and Ghost Face.",
+      "url": "https://store.steampowered.com/news/app/381210/view/697637574580110163",
+      "feed_label": "Steam News",
+      "feed_type": "官方",
+      "is_patch": true,
+      "contents": "9.6.1 continues cleanup around Diminishing Returns documentation, progress bar presentation, and numeric tuning for Doctor and Ghost Face."
+    }
+  ],
+  "trends": [
     {
       "month": "2026-02",
       "avg_players": 55296,
@@ -130,8 +187,13 @@
     },
     {
       "month": "2026-06",
-      "avg_players": 53145,
-      "peak_players": 104001
+      "avg_players": 71077,
+      "peak_players": 168845
+    },
+    {
+      "month": "2026-07",
+      "avg_players": 80516,
+      "peak_players": 168845
     }
   ],
   "store": {
@@ -139,7 +201,7 @@
     "name_en": "Dead by Daylight",
     "short_description": "10年恐惧相伴。10年的惊吓与刺激体验。10年的残暴献祭与惊险逃脱。 永久困于邪恶的幻境之中，即使死亡也无法逃脱，这是一场需要勇气和智慧的较量，四名意志坚定的逃生者在残忍对局中面对嗜血杀手。选择一方，进入多人非对称竞技游戏世界，获得最佳恐怖游戏体验。",
     "short_description_en": "10 years of horror. 10 years of jump scares and close calls. 10 years of brutal sacrifices and thrilling escapes. Trapped forever in a realm of eldritch evil where even death is not an escape, four determined Survivors face a bloodthirsty Killer in a vicious game of nerve and wits.",
-    "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/381210/header.jpg?t=1783618189",
+    "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/381210/header.jpg?t=1784216454",
     "developers": [
       "Behaviour Interactive Inc."
     ],
@@ -159,11 +221,11 @@
     ]
   },
   "reviews": {
-    "total_reviews": 918861,
-    "positive": 720847,
-    "negative": 198014,
-    "positive_rate": 78.5
+    "total_reviews": 920627,
+    "positive": 722133,
+    "negative": 198494,
+    "positive_rate": 78.4
   },
-  "ccu": 75523,
-  "crawled_at": "2026-07-14T09:55:05.491330"
+  "ccu": 60899,
+  "crawled_at": "2026-07-20T10:24:15+08:00"
 }
