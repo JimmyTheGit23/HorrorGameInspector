@@ -137,7 +137,8 @@
       "feed_label": "Steam News",
       "feed_type": "官方",
       "is_patch": true,
-      "contents": "The 10.0.0 PTB opens Jason testing, introduces The Slasher and Omnipresent Evil, and starts the latest perk and UI iteration cycle."
+      "contents": "The 10.0.0 PTB opens Jason testing, introduces The Slasher and Omnipresent Evil, and starts the latest perk and UI iteration cycle.",
+      "link_status": "valid"
     },
     {
       "date": "2026-05-12",
@@ -149,7 +150,8 @@
       "feed_label": "Steam News",
       "feed_type": "官方",
       "is_patch": true,
-      "contents": "9.6.2 focuses on stability, covering 2v8, audio, characters, maps, perks, platform compatibility, and flashing-light fixes."
+      "contents": "9.6.2 focuses on stability, covering 2v8, audio, characters, maps, perks, platform compatibility, and flashing-light fixes.",
+      "link_status": "valid"
     },
     {
       "date": "2026-05-05",
@@ -161,7 +163,8 @@
       "feed_label": "Steam News",
       "feed_type": "官方",
       "is_patch": true,
-      "contents": "9.6.1 continues cleanup around Diminishing Returns documentation, progress bar presentation, and numeric tuning for Doctor and Ghost Face."
+      "contents": "9.6.1 continues cleanup around Diminishing Returns documentation, progress bar presentation, and numeric tuning for Doctor and Ghost Face.",
+      "link_status": "valid"
     }
   ],
   "trends": [
