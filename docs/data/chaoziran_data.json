@@ -2,42 +2,6 @@
   "chaoziran": {
     "bwiki_updates": [
       {
-        "title": "超自然行动组官服下载,超自然行动组非渠道服下载,超自然行动组官网",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/app/714123/topic?type=official",
-        "link_status": "unknown",
-        "category": "other",
-        "content_tags": [],
-        "priority": "low",
-        "title_en": "Supernatural Action Team official server download, Supernatural Action Team off-channel server download, Supernatural Action Team official website",
-        "source_en": "TapTap Official",
-        "content_tags_en": []
-      },
-      {
-        "title": " (35,631 人评价)\r\n合作,密室,盗墓",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/app/714123/topic?type=official",
-        "link_status": "unknown",
-        "category": "pr",
-        "content_tags": [],
-        "priority": "low",
-        "title_en": "(35,631 reviews)\r\nCooperation, secret room, tomb robbing",
-        "source_en": "TapTap Official",
-        "content_tags_en": []
-      },
-      {
-        "title": "签到得灵契！海量铲铲币&舞蹈宝箱等你领！",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/app/714123/topic?type=official",
-        "link_status": "unknown",
-        "category": "event",
-        "content_tags": [],
-        "priority": "medium",
-        "title_en": "Sign in to get a spiritual contract! Massive shoveling coins and dancing treasure chests are waiting for you!",
-        "source_en": "TapTap Official",
-        "content_tags_en": []
-      },
-      {
         "title": "橙留香和上官子怡的故事，这次一起来绘梦厅看吧~",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/app/714123/topic?type=official",
@@ -136,13 +100,57 @@
           "Version Update",
           "Bug Fix"
         ]
+      },
+      {
+        "title": "云南虫谷摸金模式新怪物【巨型戏偶】信息爆料",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/app/714123/topic?type=official",
+        "link_status": "unknown",
+        "category": "new_content",
+        "content_tags": [
+          "新怪物"
+        ],
+        "priority": "high",
+        "title_en": "Information about the new monster [Giant Puppet] in Yunnan Worm Valley’s Gold Hunting Mode has been revealed",
+        "source_en": "TapTap Official",
+        "content_tags_en": [
+          "New Monster"
+        ]
+      },
+      {
+        "title": "7月23日晚更新后，千万不要和它对视...",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/app/714123/topic?type=official",
+        "link_status": "unknown",
+        "category": "patch",
+        "content_tags": [
+          "版本更新"
+        ],
+        "priority": "low",
+        "title_en": "After the update on the evening of July 23, don’t look at it...",
+        "source_en": "TapTap Official",
+        "content_tags_en": [
+          "Version Update"
+        ]
+      },
+      {
+        "title": "为什么还不能更新，昨天晚上我朋友拉我玩，结果说我资源没更新，我想重下不就行了，结果还是不能",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/app/714123/topic?type=official",
+        "link_status": "unknown",
+        "category": "other",
+        "content_tags": [],
+        "priority": "low",
+        "title_en": "Why can't I update? Last night my friend asked me to play, and it turned out that my resources were not updated. I thought I could just download it again, but it still didn't work.",
+        "source_en": "TapTap Official",
+        "content_tags_en": []
       }
     ],
     "taptap": {
       "app_id": 714123,
       "source": "taptap_webpage",
-      "fans_count": 12012509,
-      "review_count": 35631,
+      "fans_count": 12013076,
+      "review_count": 35633,
       "score": "7.0",
       "description": "超自然行动组是一款合作游戏，TapTap 提供超自然行动组最新版官方正版下载，一个人玩是恐怖游戏，两个人玩是冒险游戏，三个人玩是寻宝游戏，...",
       "score_display": 7.0,
@@ -275,6 +283,33 @@
     "community": {
       "taptap_forum": [
         {
+          "title": "超自然行动组官服下载,超自然行动组非渠道服下载,超自然行动组官网",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "neutral",
+          "title_en": "Supernatural Action Team official server download, Supernatural Action Team off-channel server download, Supernatural Action Team official website",
+          "source_en": "TapTap Forum"
+        },
+        {
+          "title": " (35,633 人评价)\r\n合作,密室,盗墓",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "neutral",
+          "title_en": "(35,633 reviews)\r\nCooperation, secret room, tomb robbing",
+          "source_en": "TapTap Forum"
+        },
+        {
+          "title": "签到得灵契！海量铲铲币&舞蹈宝箱等你领！",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "neutral",
+          "title_en": "Sign in to get a spiritual contract! Massive shoveling coins and dancing treasure chests are waiting for you!",
+          "source_en": "TapTap Forum"
+        },
+        {
           "title": "精绝女王棺前点起了蜡烛，但这次吹灯的会是谁？",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
@@ -293,75 +328,48 @@
           "source_en": "TapTap Forum"
         },
         {
-          "title": "希望游戏官方能把莉莉削弱，不是因为他不好玩，在组队里边，几乎全部都是要莉莉背包的其他的角色压根进不了...",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral",
-          "title_en": "I hope the game official can weaken Lily, not because he is not fun. In the team, almost all other characters who need Lily's backpack cannot enter...",
-          "source_en": "TapTap Forum"
-        },
-        {
-          "title": "版更速递！小地图优化后能边走边看，阿念脖子拯救计划也已开启！",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral",
-          "title_en": "Updates delivered quickly! The mini map has been optimized so that you can view it while walking, and the A Nian Neck Rescue Plan has also been launched!",
-          "source_en": "TapTap Forum"
-        },
-        {
-          "title": "云南虫谷摸金模式新怪物【巨型戏偶】信息爆料",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral",
-          "title_en": "Information about the new monster [Giant Puppet] in Yunnan Worm Valley’s Gold Hunting Mode has been revealed",
-          "source_en": "TapTap Forum"
-        },
-        {
-          "title": "7月23日晚更新后，千万不要和它对视...",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral",
-          "title_en": "After the update on the evening of July 23, don’t look at it...",
-          "source_en": "TapTap Forum"
-        },
-        {
-          "title": "为什么还不能更新，昨天晚上我朋友拉我玩，结果说我资源没更新，我想重下不就行了，结果还是不能",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral",
-          "title_en": "Why can't I update? Last night my friend asked me to play, and it turned out that my resources were not updated. I thought I could just download it again, but it still didn't work.",
-          "source_en": "TapTap Forum"
-        },
-        {
-          "title": "不但能远程攻击，还能复活人偶与召唤巨型傩女。\n7月23日晚更新后，虫谷多队龙珠房见！",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral",
-          "title_en": "Not only can it attack from a distance, but it can also resurrect dolls and summon giant Nuo girls.\nAfter the update on the evening of July 23, see you in the Dragon Ball Room of multiple teams in Bug Valley!",
-          "source_en": "TapTap Forum"
-        },
-        {
-          "title": "骗你的 你还没有到终点房就在路上被贵哥踹死了",
+          "title": "回坑不久，目前啥都不懂，主玩摸金，希望有大佬教",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "negative",
-          "title_en": "I lied to you. You were kicked to death by your brother on the road before you even got to the terminal room.",
+          "title_en": "I haven’t been back in the game for a long time. I don’t understand anything at the moment. I mainly play gold-making. I hope someone can teach me.",
           "source_en": "TapTap Forum"
         },
         {
-          "title": "橙留香和上官子怡的故事，这次一起来绘梦厅看吧~",
+          "title": "求超自然和蛋仔联动然后再出一个蛋仔的怪物求\n非yc",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral",
-          "title_en": "Let’s watch the story of Chengliuxiang and Shangguan Ziyi in the Dream Hall together this time~",
+          "title_en": "Please link up Supernatural and Eggboy and create another Eggboy monster.\nNot yc",
+          "source_en": "TapTap Forum"
+        },
+        {
+          "title": "仅仅从我看到的广告来看，这个超自然行动组连道具都完全照搬peak给我的感觉真的很奇妙，因为没有玩过，...",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "neutral",
+          "title_en": "Judging from the advertisements I saw, this supernatural action team completely copied the props from Peak, which made me feel really amazing, because I have never played it before...",
+          "source_en": "TapTap Forum"
+        },
+        {
+          "title": "这游戏能火是靠的广告打的多，还有游戏确实是有点可玩性",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "neutral",
+          "title_en": "This game is popular because of the large amount of advertising, and the fact that the game is indeed somewhat fun to play.",
+          "source_en": "TapTap Forum"
+        },
+        {
+          "title": "爱玩这个游戏的才不管你游戏雷不雷同，好玩就对了",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "neutral",
+          "title_en": "If you love playing this game, it doesn’t matter if the game is similar or not, as long as it’s fun",
           "source_en": "TapTap Forum"
         }
       ],
@@ -375,7 +383,7 @@
             "title": "南瓜入侵，幽魂大运来了！",
             "bvid": "BV1xCkfBjENz",
             "url": "https://www.bilibili.com/video/BV1xCkfBjENz",
-            "play": 5791762,
+            "play": 5791773,
             "like": 34726,
             "danmaku": 186,
             "author": "張某人ZSS",
@@ -388,7 +396,7 @@
             "title": "教会你们如何在超自然找到大佬",
             "bvid": "BV1d2tGz2E3Z",
             "url": "https://www.bilibili.com/video/BV1d2tGz2E3Z",
-            "play": 4735167,
+            "play": 4735172,
             "like": 32001,
             "danmaku": 401,
             "author": "中二的小溢",
@@ -401,7 +409,7 @@
             "title": "超自然行动组怪物图鉴第六期「小熊猫」",
             "bvid": "BV1QCjiz2Evq",
             "url": "https://www.bilibili.com/video/BV1QCjiz2Evq",
-            "play": 3723293,
+            "play": 3723308,
             "like": 16776,
             "danmaku": 223,
             "author": "就是黄大毛",
@@ -414,7 +422,7 @@
             "title": "本来想卖掉大鹅、看到眼神心软了",
             "bvid": "BV1Wv6bBWEmn",
             "url": "https://www.bilibili.com/video/BV1Wv6bBWEmn",
-            "play": 3512576,
+            "play": 3512578,
             "like": 115543,
             "danmaku": 1689,
             "author": "虎熊寺",
@@ -427,7 +435,7 @@
             "title": "搜打撤黑马？！《超自然行动组》凭什么能爆火？",
             "bvid": "BV11hsheJE5i",
             "url": "https://www.bilibili.com/video/BV11hsheJE5i",
-            "play": 2928675,
+            "play": 2928676,
             "like": 31667,
             "danmaku": 45,
             "author": "白馆长丶",
@@ -440,7 +448,7 @@
             "title": "为什么幸福的人不会来到超自然行动组？",
             "bvid": "BV1Zqu4z5ETn",
             "url": "https://www.bilibili.com/video/BV1Zqu4z5ETn",
-            "play": 2791267,
+            "play": 2791270,
             "like": 9010,
             "danmaku": 146,
             "author": "白白鸭游戏",
@@ -507,7 +515,7 @@
       },
       "app_store_rating": 4.28,
       "total_ratings": 3248,
-      "updated": "2026-07-24 08:51",
+      "updated": "2026-07-24 09:55",
       "name_en": "Tomb Busters"
     },
     "app_store_rankings": {
@@ -517,7 +525,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-07-24 08:51",
+        "updated": "2026-07-24 09:54",
         "name_en": "US"
       },
       "jp": {
@@ -526,7 +534,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-07-24 08:51",
+        "updated": "2026-07-24 09:54",
         "name_en": "Japan"
       },
       "kr": {
@@ -535,7 +543,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-07-24 08:51",
+        "updated": "2026-07-24 09:55",
         "name_en": "South Korea"
       },
       "tw": {
@@ -544,7 +552,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-07-24 08:51",
+        "updated": "2026-07-24 09:55",
         "name_en": "Taiwan, China"
       },
       "hk": {
@@ -553,7 +561,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-07-24 08:51",
+        "updated": "2026-07-24 09:55",
         "name_en": "Hong Kong, China"
       }
     },
@@ -563,9 +571,9 @@
         "name_en": "China",
         "free_overall": null,
         "free_games": 20,
-        "grossing_overall": 41,
-        "grossing_games": 24,
-        "updated": "2026-07-24 08:51",
+        "grossing_overall": 42,
+        "grossing_games": 25,
+        "updated": "2026-07-24 09:55",
         "peak_grossing_games": 10,
         "peak_free_overall": null
       }
@@ -573,11 +581,11 @@
     "stock_price": {
       "code": "SZ002558",
       "name": "巨人网络",
-      "price": 25.26,
-      "prev_close": 28.02,
-      "change_pct": -9.85,
-      "change_amt": -2.76,
-      "updated": "2026-07-24 08:51",
+      "price": 24.56,
+      "prev_close": 25.26,
+      "change_pct": -2.77,
+      "change_amt": -0.7,
+      "updated": "2026-07-24 09:54",
       "name_en": "Giant Network"
     },
     "new_content_tracker": [
@@ -613,39 +621,9 @@
         ]
       },
       {
-        "id": "角色重做",
-        "name": "角色重做",
-        "status": "announced",
-        "first_seen": "2026-07-24",
-        "launch_date": null,
-        "tags": [
-          "角色重做"
-        ],
-        "announcements": [
-          {
-            "title": "阿念重做登场！",
-            "date": "2026-07-24",
-            "source": "官网",
-            "url": "https://www.chaoziran.com/news/538",
-            "title_en": "A Nian’s rework is here!",
-            "source_en": "Official Site",
-            "link_status": "valid"
-          }
-        ],
-        "player_reactions": {
-          "positive": 0,
-          "neutral": 0,
-          "negative": 0
-        },
-        "name_en": "Character Rework",
-        "tags_en": [
-          "Character Rework"
-        ]
-      },
-      {
         "id": "新怪物",
         "name": "新怪物",
-        "status": "teased",
+        "status": "announced",
         "first_seen": "2026-07-24",
         "launch_date": null,
         "tags": [
@@ -653,13 +631,12 @@
         ],
         "announcements": [
           {
-            "title": "新怪物【鸭子】实机展示，追上了命都给你哦",
+            "title": "云南虫谷摸金模式新怪物【巨型戏偶】信息爆料",
             "date": "2026-07-24",
-            "source": "官网",
-            "url": "https://www.chaoziran.com/news/535",
-            "title_en": "The new monster [Duck] is shown in action. If you catch up, you will be given life.",
-            "source_en": "Official Site",
-            "link_status": "valid"
+            "source": "TapTap官方",
+            "url": "https://www.taptap.cn/app/714123/topic?type=official",
+            "title_en": "Information about the new monster [Giant Puppet] in Yunnan Worm Valley’s Gold Hunting Mode has been revealed",
+            "source_en": "TapTap Official"
           }
         ],
         "player_reactions": {
@@ -673,6 +650,226 @@
         ]
       }
     ],
-    "crawled_at": "2026-07-24T08:51:54.039599"
+    "crawled_at": "2026-07-24T09:55:15.583969",
+    "overseas": {
+      "google_play": {
+        "package_id": "com.game.tombbusters",
+        "source": "Google Play",
+        "url": "https://play.google.com/store/apps/details?id=com.game.tombbusters",
+        "rating": 4.2,
+        "review_count": 897,
+        "description": "Hilarious Co-op Horror Extraction",
+        "category": "FAMILY",
+        "crawled_at": "2026-07-24 09:55"
+      },
+      "google_play_reviews": [
+        {
+          "text": "Library &amp; devices",
+          "source": "Google Play"
+        },
+        {
+          "text": "Payments &amp; subscriptions",
+          "source": "Google Play"
+        },
+        {
+          "text": "Third-party app stores",
+          "source": "Google Play"
+        },
+        {
+          "text": "Personalization in Play",
+          "source": "Google Play"
+        },
+        {
+          "text": "Ratings and reviews are verified",
+          "source": "Google Play"
+        }
+      ],
+      "reddit": [],
+      "youtube": [
+        {
+          "title": "Raiding Ancient Tombs was a Mistake",
+          "video_id": "Keonsv7ZCf8",
+          "url": "https://www.youtube.com/watch?v=Keonsv7ZCf8",
+          "views": "4,281,947 views",
+          "channel": "SMii7Yplus",
+          "published": "3 years ago",
+          "duration": "25:59"
+        },
+        {
+          "title": "TOMB RAIDER Gameplay Walkthrough Part 1 FULL GAME [4K 60FPS PC ULTRA] - No Commentary",
+          "video_id": "hT-LKGp-bMo",
+          "url": "https://www.youtube.com/watch?v=hT-LKGp-bMo",
+          "views": "2,782,219 views",
+          "channel": "MKIceAndFire",
+          "published": "2 years ago",
+          "duration": "6:26:06"
+        },
+        {
+          "title": "Tomb Busters - Nogla Won't Stay Away From Me!",
+          "video_id": "EnuSSZ8nN4I",
+          "url": "https://www.youtube.com/watch?v=EnuSSZ8nN4I",
+          "views": "473,103 views",
+          "channel": "VanossGaming",
+          "published": "1 month ago",
+          "duration": "27:18"
+        },
+        {
+          "title": "A game based on 'The Snapshot Serial Killer'",
+          "video_id": "2bIUhc95Orc",
+          "url": "https://www.youtube.com/watch?v=2bIUhc95Orc",
+          "views": "418,681 views",
+          "channel": "8-BitRyan",
+          "published": "1 year ago",
+          "duration": "54:50"
+        },
+        {
+          "title": "THIS MOBILE LETHAL-LIKE IS ACTUALLY HILARIOUS!!! | Tomb Busters (w/ Kyle & Squirrel)",
+          "video_id": "O_JjLJQdGh0",
+          "url": "https://www.youtube.com/watch?v=O_JjLJQdGh0",
+          "views": "424,920 views",
+          "channel": "CaRtOoNz",
+          "published": "3 weeks ago",
+          "duration": "1:26:18"
+        },
+        {
+          "title": "Don't get caught! Steal the treasure from this dangerous place!【 Paranormal Squad 】",
+          "video_id": "uf49EB_S4rc",
+          "url": "https://www.youtube.com/watch?v=uf49EB_S4rc",
+          "views": "212,770 views",
+          "channel": "ちろぴの",
+          "published": "2 weeks ago",
+          "duration": "32:10"
+        },
+        {
+          "title": "Tomb Busters | Launch Gameplay Trailer",
+          "video_id": "SozbL_ez72Y",
+          "url": "https://www.youtube.com/watch?v=SozbL_ez72Y",
+          "views": "425,393 views",
+          "channel": "Tomb Busters",
+          "published": "1 month ago",
+          "duration": "0:56"
+        },
+        {
+          "title": "Goofy Gang Explores SCARY TOMBS... (Tomb Busters)",
+          "video_id": "l9WdUDC67bY",
+          "url": "https://www.youtube.com/watch?v=l9WdUDC67bY",
+          "views": "154,627 views",
+          "channel": "Goofy Gang",
+          "published": "1 month ago",
+          "duration": "20:27"
+        },
+        {
+          "title": "Three Idiots VS Funniest New Horror Game",
+          "video_id": "m6ENmCcWhBc",
+          "url": "https://www.youtube.com/watch?v=m6ENmCcWhBc",
+          "views": "142,438 views",
+          "channel": "SeeReax",
+          "published": "1 month ago",
+          "duration": "43:39"
+        },
+        {
+          "title": "MARCEL KNOWS HIS FRIENDS TOO WELL!",
+          "video_id": "QPOYv5LH884",
+          "url": "https://www.youtube.com/watch?v=QPOYv5LH884",
+          "views": "222,226 views",
+          "channel": "Terroriser",
+          "published": "1 month ago",
+          "duration": "23:43"
+        }
+      ],
+      "official_news_en": [],
+      "twitter": [
+        {
+          "text": "Follow @TombBusters_EN on X for the latest Tomb Busters updates",
+          "url": "https://x.com/TombBusters_EN",
+          "source": "@TombBusters_EN"
+        }
+      ],
+      "app_store_extended": {
+        "us": {
+          "name": "美国",
+          "rating": 4.54,
+          "rating_count": 776,
+          "current_version": "1.31.7",
+          "price": "Free",
+          "genre": "Games"
+        },
+        "jp": {
+          "name": "日本",
+          "rating": 4.43,
+          "rating_count": 2201,
+          "current_version": "1.31.7",
+          "price": "無料",
+          "genre": "Games"
+        },
+        "kr": {
+          "name": "韩国",
+          "rating": 3.86,
+          "rating_count": 271,
+          "current_version": "1.31.7",
+          "price": "무료",
+          "genre": "Games"
+        },
+        "tw": {
+          "name": "台湾",
+          "rating": null,
+          "rating_count": 0
+        },
+        "hk": {
+          "name": "香港",
+          "rating": null,
+          "rating_count": 0
+        },
+        "gb": {
+          "name": "英国",
+          "rating": 4.41,
+          "rating_count": 29,
+          "current_version": "1.31.7",
+          "price": "Free",
+          "genre": "Games"
+        },
+        "de": {
+          "name": "德国",
+          "rating": 4.14,
+          "rating_count": 21,
+          "current_version": "1.31.7",
+          "price": "Gratis",
+          "genre": "Games"
+        },
+        "fr": {
+          "name": "法国",
+          "rating": 4.04,
+          "rating_count": 26,
+          "current_version": "1.31.7",
+          "price": "Gratuit",
+          "genre": "Games"
+        },
+        "au": {
+          "name": "澳大利亚",
+          "rating": 4.5,
+          "rating_count": 20,
+          "current_version": "1.31.7",
+          "price": "Free",
+          "genre": "Games"
+        },
+        "sg": {
+          "name": "新加坡",
+          "rating": null,
+          "rating_count": 0
+        },
+        "th": {
+          "name": "泰国",
+          "rating": null,
+          "rating_count": 0
+        },
+        "br": {
+          "name": "巴西",
+          "rating": null,
+          "rating_count": 0
+        }
+      },
+      "crawled_at": "2026-07-24T09:56:30.848596",
+      "crawled_date": "2026-07-24"
+    }
   }
 }
