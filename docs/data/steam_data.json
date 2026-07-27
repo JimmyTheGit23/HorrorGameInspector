@@ -14,12 +14,12 @@
       "publishers": [
         "semiwork"
       ],
-      "price": "¥ 35.00",
-      "price_en": "¥ 35.00",
+      "price": "¥ 22.75",
+      "price_en": "¥ 22.75",
       "release_date": "2025 年 2 月 26 日",
       "release_date_en": "26 Feb, 2025",
       "metacritic": null,
-      "recommendations": 331221,
+      "recommendations": 331733,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -59,16 +59,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 20399
+      "ccu": 24644
     },
     "reviews": {
-      "total_reviews": 411975,
-      "positive": 395731,
-      "negative": 16244,
+      "total_reviews": 412611,
+      "positive": 396347,
+      "negative": 16264,
       "positive_rate": 96.1
     },
-    "ccu": 20399,
-    "crawled_at": "2026-07-24T09:53:54.901131"
+    "ccu": 24644,
+    "crawled_at": "2026-07-27T09:51:40.363171"
   },
   "Lethal Company": {
     "appid": 1966720,
@@ -90,7 +90,7 @@
       "release_date": "2023 年 10 月 23 日",
       "release_date_en": "23 Oct, 2023",
       "metacritic": null,
-      "recommendations": 410688,
+      "recommendations": 410729,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -130,16 +130,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 3560
+      "ccu": 4244
     },
     "reviews": {
-      "total_reviews": 509794,
-      "positive": 494399,
-      "negative": 15395,
+      "total_reviews": 509842,
+      "positive": 494435,
+      "negative": 15407,
       "positive_rate": 97.0
     },
-    "ccu": 3560,
-    "crawled_at": "2026-07-24T09:54:01.029606"
+    "ccu": 4244,
+    "crawled_at": "2026-07-27T09:51:47.986337"
   },
   "Phasmophobia": {
     "appid": 739630,
@@ -161,7 +161,7 @@
       "release_date": "2020 年 9 月 18 日",
       "release_date_en": "18 Sep, 2020",
       "metacritic": null,
-      "recommendations": 680373,
+      "recommendations": 680663,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -227,16 +227,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 13175
+      "ccu": 13938
     },
     "reviews": {
-      "total_reviews": 834995,
-      "positive": 788337,
-      "negative": 46658,
+      "total_reviews": 835329,
+      "positive": 788613,
+      "negative": 46716,
       "positive_rate": 94.4
     },
-    "ccu": 13175,
-    "crawled_at": "2026-07-24T09:54:07.547628"
+    "ccu": 13938,
+    "crawled_at": "2026-07-27T09:51:54.322398"
   },
   "Content Warning": {
     "appid": 2881650,
@@ -257,12 +257,12 @@
       "publishers": [
         "Evil Landfall?"
       ],
-      "price": "¥ 16.50",
-      "price_en": "¥ 16.50",
+      "price": "¥ 33.00",
+      "price_en": "¥ 33.00",
       "release_date": "2024 年 4 月 1 日",
       "release_date_en": "1 Apr, 2024",
       "metacritic": null,
-      "recommendations": 70961,
+      "recommendations": 71096,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -300,16 +300,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 1860
+      "ccu": 1692
     },
     "reviews": {
-      "total_reviews": 161702,
-      "positive": 151828,
-      "negative": 9874,
+      "total_reviews": 161873,
+      "positive": 151973,
+      "negative": 9900,
       "positive_rate": 93.9
     },
-    "ccu": 1860,
-    "crawled_at": "2026-07-24T09:54:13.898140"
+    "ccu": 1692,
+    "crawled_at": "2026-07-27T09:52:00.477916"
   },
   "FEEDERS": {
     "appid": 4408510,
@@ -376,7 +376,7 @@
       "positive_rate": 69.2
     },
     "ccu": 0,
-    "crawled_at": "2026-07-24T09:54:25.306006"
+    "crawled_at": "2026-07-27T09:52:11.895703"
   },
   "NARAKA: BLADEPOINT": {
     "appid": 1203220,
@@ -398,7 +398,7 @@
       "release_date": "2021 年 8 月 11 日",
       "release_date_en": "11 Aug, 2021",
       "metacritic": null,
-      "recommendations": 197826,
+      "recommendations": 197843,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -438,15 +438,15 @@
       ]
     },
     "steamspy": {
-      "ccu": 22421
+      "ccu": 18129
     },
     "reviews": {
-      "total_reviews": 301439,
-      "positive": 221215,
-      "negative": 80224,
+      "total_reviews": 301533,
+      "positive": 221275,
+      "negative": 80258,
       "positive_rate": 73.4
     },
-    "ccu": 22421,
-    "crawled_at": "2026-07-24T09:54:31.445279"
+    "ccu": 18129,
+    "crawled_at": "2026-07-27T09:52:18.180932"
   }
 }
