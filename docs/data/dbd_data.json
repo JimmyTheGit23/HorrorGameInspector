@@ -100,14 +100,16 @@
       "version": "10.0.0 | Jason PTB Patch Notes",
       "note_zh": "10.0.0 PTB 开放 Jason 章节测试，带来 The Slasher、Omnipresent Evil / Throwing Spikes 能力，以及新一轮 Perk 与 UI 变更。",
       "note_en": "10.0.0 PTB opens the Jason chapter test with The Slasher, Omnipresent Evil / Throwing Spikes, and a fresh round of perk and UI changes.",
-      "url": "https://store.steampowered.com/news/app/381210/view/662736579634135748"
+      "url": "https://store.steampowered.com/news/app/381210/view/662736579634135748",
+      "link_status": "valid"
     },
     {
       "date": "2026-05-12",
       "version": "9.6.2 | Bugfix Patch",
       "note_zh": "9.6.2 以稳定性与错误修复为主，覆盖 2v8、音频、角色、地图、Perk、平台兼容和闪烁灯光问题。",
       "note_en": "9.6.2 is a stability-focused hotfix covering 2v8, audio, characters, maps, perks, platform compatibility, and flashing-light fixes.",
-      "url": "https://store.steampowered.com/news/app/381210/view/697638207931549226"
+      "url": "https://store.steampowered.com/news/app/381210/view/697638207931549226",
+      "link_status": "valid"
     }
   ],
   "trends": [
