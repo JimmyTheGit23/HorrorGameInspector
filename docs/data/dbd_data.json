@@ -1,113 +1,131 @@
 {
-  "snapshot_date": "2026-07-28T09:55:10+08:00",
+  "snapshot_date": "2026-08-03T11:18:40+08:00",
   "hero": {
-    "name": "黎明杀机",
-    "current_players": 60971,
+    "name": "Dead by Daylight",
+    "subtitle_zh": "Behaviour Interactive · 4v1 非对称竞技恐怖",
+    "subtitle_en": "Behaviour Interactive · 4v1 Asymmetric Horror",
+    "file_tag": "FILE-003",
+    "release_date": "2016-06-14",
+    "years_live": 10,
+    "current_players": 57242,
+    "peak_24h": 84690,
+    "avg_30d": 69205,
+    "reviews_total": 924382,
     "positive_rate": 78.4,
-    "reviews_total": 922866,
+    "recent_reviews": 9011,
+    "recent_positive_rate": 78,
+    "all_time_peak": 168845,
     "price_label": "¥ 93.75",
-    "release_date": "2016 年 6 月 14 日",
-    "genres": [
-      "动作"
+    "platforms": [
+      "Steam",
+      "Epic",
+      "PlayStation",
+      "Xbox",
+      "Nintendo Switch"
+    ],
+    "tags": [
+      "4v1",
+      "Asymmetric",
+      "Horror",
+      "LiveOps",
+      "Licensed IP"
     ]
   },
   "operations": [
     {
-      "date": "2026-07-21",
-      "timestamp": 1784644290,
-      "title": "10.0.3 | Bugfix Patch",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1838407329269139",
-      "author": "Donnary21st",
-      "feed_label": "Community Announcements",
-      "feed_type": "官方",
-      "is_patch": false,
-      "contents": "ContentKiller UpdatesThe SlasherJump Scare anti-camp penalty no longer applies across multiple floorsPerk UpdatesNew Survivor PerksCross-ExaminationWhile in the Killer's Terror Radius and not being ch"
+      "date": "2026-07-30",
+      "type_zh": "更新",
+      "type_en": "Update",
+      "title": "The Grimoire: Early Access",
+      "source": "Official News",
+      "url": "https://deadbydaylight.com/news/the-grimoire-early-access/"
+    },
+    {
+      "date": "2026-07-29",
+      "type_zh": "活动",
+      "type_en": "Event",
+      "title": "Dead by Daylight Turns Up the Heat with Summer Screams",
+      "source": "Official News",
+      "url": "https://deadbydaylight.com/news/dbd-turns-up-the-heat-with-summer-screams/"
+    },
+    {
+      "date": "2026-07-28",
+      "type_zh": "活动",
+      "type_en": "Event",
+      "title": "Into The Rainbow: Celebrating Pride in The Fog",
+      "source": "Official News",
+      "url": "https://deadbydaylight.com/news/into-the-rainbow-celebrating-pride-in-the-fog/"
     },
     {
       "date": "2026-07-21",
-      "timestamp": 1784624400,
-      "title": "Steam Global Top Sellers for week of 14 Jul — 21 July 2026",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/SteamDB/1838407329269011",
-      "author": "SteamDB",
-      "feed_label": "SteamDB",
-      "feed_type": "媒体",
-      "is_patch": false,
-      "contents": "<a href=\"https://steamdb.info/topsellers/2026W30/?utm_source=Steam&utm_medium=Steam&utm_campaign=SteamRSS\"> </a> * <a href=\"https://steamdb.info/app/1623730/charts/?utm_source=Steam&utm_medium=Steam&u"
+      "type_zh": "更新",
+      "type_en": "Update",
+      "title": "Feel the Burn with Dead by Daylight’s Sunflesh Rift",
+      "source": "Official News",
+      "url": "https://deadbydaylight.com/news/sunflesh-rift/"
     },
     {
-      "date": "2026-07-16",
-      "timestamp": 1784208682,
-      "title": "Important Developer Update",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1838407329256675",
-      "author": "amanda_bhvr",
-      "feed_label": "Community Announcements",
-      "feed_type": "官方",
-      "is_patch": false,
-      "contents": "We have an update from our Security team that we’d like to share with you regarding some upcoming changes that could impact players ability to launch the game: Following internal investigations and co"
+      "date": "2026-06-25",
+      "type_zh": "活动",
+      "type_en": "Event",
+      "title": "Dead by Daylight’s Black Banquet Has Begun: Everything To Know",
+      "source": "Official News",
+      "url": "https://deadbydaylight.com/news/dbd-black-banquet-everything-to-know/"
     },
     {
-      "date": "2026-07-14",
-      "timestamp": 1784019600,
-      "title": "Steam Global Top Sellers for week of 7 Jul — 14 July 2026",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/SteamDB/1837955055366147",
-      "author": "SteamDB",
-      "feed_label": "SteamDB",
-      "feed_type": "媒体",
-      "is_patch": false,
-      "contents": "<a href=\"https://steamdb.info/topsellers/2026W29/?utm_source=Steam&utm_medium=Steam&utm_campaign=SteamRSS\"> </a> * <a href=\"https://steamdb.info/app/3751950/charts/?utm_source=Steam&utm_medium=Steam&u"
-    },
-    {
-      "date": "2026-07-10",
-      "timestamp": 1783696538,
-      "title": "Unkillable: inside Dead by Daylight's incredible decade of scares",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PCGamesN/1837955055357223",
-      "author": "editor@pcgamesn.com",
-      "feed_label": "PCGamesN",
-      "feed_type": "媒体",
-      "is_patch": false,
-      "contents": "Dead by Daylight has been terrifying players for ten years now, so I caught up with Behaviour to chat about DBD's legacy, and its future. Read the full story on PCGamesN: <a href=\"https://www.pcgamesn"
-    },
-    {
-      "date": "2026-07-07",
-      "timestamp": 1783414800,
-      "title": "Steam Global Top Sellers for week of 30 Jun — 7 July 2026",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/SteamDB/1836506165578059",
-      "author": "SteamDB",
-      "feed_label": "SteamDB",
-      "feed_type": "媒体",
-      "is_patch": false,
-      "contents": "<a href=\"https://steamdb.info/topsellers/2026W28/?utm_source=Steam&utm_medium=Steam&utm_campaign=SteamRSS\"> </a> * <a href=\"https://steamdb.info/app/4704690/charts/?utm_source=Steam&utm_medium=Steam&u"
-    },
-    {
-      "date": "2026-07-06",
-      "timestamp": 1783348216,
-      "title": "10.0.2 | Bugfix Patch",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1836506165576085",
-      "author": "Donnary21st",
-      "feed_label": "Community Announcements",
-      "feed_type": "官方",
-      "is_patch": false,
-      "contents": "ImportantThe Doctor has been re-enabled in the 10th Anniversary Event queue.ContentKiller Add-on UpdatesThe Slasher's add-onsDeputy's Badge (Very Rare)While in Omnipresent Evil, passing within 2m of a"
-    },
-    {
-      "date": "2026-07-06",
-      "timestamp": 1783333363,
-      "title": "Limmy has finally been banned from Dead by Daylight, but he'll be back very soon",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PCGamesN/1836506165575869",
-      "author": "editor@pcgamesn.com",
-      "feed_label": "PCGamesN",
-      "feed_type": "媒体",
-      "is_patch": false,
-      "contents": "\"It has finally happened,\" Limmy says. \"Hello everybody; I have been banned from Dead by Daylight for having a laugh.\" It's official: Limmy has, indeed, been banned from playing Behaviour's iconic hor"
+      "date": "2026-06-17",
+      "type_zh": "角色",
+      "type_en": "Character",
+      "title": "Shane Wiigwaas Is Dead By Daylight’s Latest Survivor",
+      "source": "Official News",
+      "url": "https://deadbydaylight.com/news/shane-wiigwaas-dbd-new-survivor/"
     }
   ],
-  "patches": [],
-  "trends": [
+  "patches": [
     {
-      "month": "2026-01",
-      "avg_players": 49288,
-      "peak_players": 96633
+      "date": "2026-07-21",
+      "version": "10.0.3 | Bugfix Patch",
+      "note_zh": "10.0.3 调整 The Slasher 反蹲守与多项附加组件、更新 Cross-Examination，并为 7 月 28 日至 8 月 18 日的 Summer Screams 三周轮换（Chaos Shuffle / Lights Out / 2v8）做准备，同时集中修复 2v8、音频、角色、地图、Perk 与 UI 问题。",
+      "note_en": "10.0.3 tunes The Slasher anti-camp rules and add-ons, updates Cross-Examination, sets up the Jul 28-Aug 18 Summer Screams rotation (Chaos Shuffle / Lights Out / 2v8), and ships a broad bug-fix pass across 2v8, audio, characters, maps, perks, and UI.",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1838407329269139"
     },
+    {
+      "date": "2026-07-06",
+      "version": "10.0.2 | Bugfix Patch",
+      "note_zh": "10.0.2 重新启用周年活动队列中的 Doctor，下调 The Slasher 的 Deputy’s Badge 触发范围，并集中修复 Black Banquet、音频、角色与地图问题。",
+      "note_en": "10.0.2 re-enables The Doctor in the anniversary queue, nerfs The Slasher’s Deputy’s Badge trigger range, and fixes a broad set of Black Banquet, audio, character, and map issues.",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1836506165576085"
+    },
+    {
+      "date": "2026-06-23",
+      "version": "10.0.1 | Bugfix Patch",
+      "note_zh": "10.0.1 为 6 月 25 日上线的 Black Banquet 活动预热，同时实装 Shane Wiigwaas、调整 Cross-Examination，并修复大量音频、角色、地图、Perk 与 UI 问题。",
+      "note_en": "10.0.1 prepares the June 25 Black Banquet event, ships Shane Wiigwaas, tunes Cross-Examination, and delivers a broad bug-fix pass across audio, characters, maps, perks, and UI.",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835871199315739"
+    },
+    {
+      "date": "2026-06-16",
+      "version": "10.0.0 | Jason Patch Notes",
+      "note_zh": "10.0.0 正式服上线 Jason 章节与 The Slasher，同步加入 Aura 自定义、Killer Power Match Details 页，并修复大量角色、音频与地图问题。",
+      "note_en": "10.0.0 brings the live Jason chapter and The Slasher, plus aura customization, a Killer Power Match Details tab, and a large bug-fix pass across characters, audio, and maps.",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835236783574550"
+    },
+    {
+      "date": "2026-05-26",
+      "version": "10.0.0 | Jason PTB Patch Notes",
+      "note_zh": "10.0.0 PTB 开放 Jason 章节测试，带来 The Slasher、Omnipresent Evil / Throwing Spikes 能力，以及新一轮 Perk 与 UI 变更。",
+      "note_en": "10.0.0 PTB opens the Jason chapter test with The Slasher, Omnipresent Evil / Throwing Spikes, and a fresh round of perk and UI changes.",
+      "url": "https://store.steampowered.com/news/app/381210/view/662736579634135748"
+    },
+    {
+      "date": "2026-05-12",
+      "version": "9.6.2 | Bugfix Patch",
+      "note_zh": "9.6.2 以稳定性与错误修复为主，覆盖 2v8、音频、角色、地图、Perk、平台兼容和闪烁灯光问题。",
+      "note_en": "9.6.2 is a stability-focused hotfix covering 2v8, audio, characters, maps, perks, platform compatibility, and flashing-light fixes.",
+      "url": "https://store.steampowered.com/news/app/381210/view/697638207931549226"
+    }
+  ],
+  "trends": [
     {
       "month": "2026-02",
       "avg_players": 55296,
@@ -130,16 +148,21 @@
     },
     {
       "month": "2026-06",
-      "avg_players": 53145,
-      "peak_players": 104001
+      "avg_players": 71077,
+      "peak_players": 168845
+    },
+    {
+      "month": "2026-07",
+      "avg_players": 70813,
+      "peak_players": 121937
     }
   ],
   "store": {
     "name": "黎明杀机",
     "name_en": "Dead by Daylight",
-    "short_description": "10年恐惧相伴。10年的惊吓与刺激体验。10年的残暴献祭与惊险逃脱。 永久困于邪恶的幻境之中，即使死亡也无法逃脱，这是一场需要勇气和智慧的较量，四名意志坚定的逃生者在残忍对局中面对嗜血杀手。选择一方，进入多人非对称竞技游戏世界，获得最佳恐怖游戏体验。",
+    "short_description": "10年恐惧相伴。10年的惊吓与刺激体验。10年的残暴献祭与惊险逃脱。永久困于邪恶的幻境之中，即使死亡也无法逃脱，这是一场需要勇气和智慧的较量，四名意志坚定的逃生者在残忍对局中面对嗜血杀手。选择一方，进入多人非对称竞技游戏世界，获得最佳恐怖游戏体验。",
     "short_description_en": "10 years of horror. 10 years of jump scares and close calls. 10 years of brutal sacrifices and thrilling escapes. Trapped forever in a realm of eldritch evil where even death is not an escape, four determined Survivors face a bloodthirsty Killer in a vicious game of nerve and wits.",
-    "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/381210/header.jpg?t=1784216454",
+    "header_image": "https://shared.akamaihd.net/store_item_assets/steam/apps/381210/header.jpg?t=1784216454",
     "developers": [
       "Behaviour Interactive Inc."
     ],
@@ -159,11 +182,120 @@
     ]
   },
   "reviews": {
-    "total_reviews": 922866,
-    "positive": 723869,
-    "negative": 198997,
+    "total_reviews": 924382,
+    "positive": 725043,
+    "negative": 199339,
     "positive_rate": 78.4
   },
-  "ccu": 60971,
-  "crawled_at": "2026-07-28T09:55:10.295139"
+  "ccu": 57242,
+  "crawled_at": "2026-08-03T11:10:57.554629",
+  "store_url": "https://store.steampowered.com/app/381210/Dead_by_Daylight/",
+  "news_url": "https://deadbydaylight.com/en/news/",
+  "patch_url": "https://forums.bhvr.com/dead-by-daylight/kb/patchnotes",
+  "collaborations": [
+    {
+      "name": "Friday the 13th / Jason",
+      "type_zh": "角色 / 章节",
+      "type_en": "Character / Chapter",
+      "note_zh": "Jason 正式落地十周年节点，仍是当前最强拉新与话题驱动点。",
+      "note_en": "Jason landing on the 10th anniversary remains the clearest current acquisition and conversation driver."
+    },
+    {
+      "name": "Attack on Titan",
+      "type_zh": "Collection / 模式联动",
+      "type_en": "Collection / Mode Beat",
+      "note_zh": "2v8 回归叠加 Attack on Titan 主题装扮，强化短期活动话题。",
+      "note_en": "The 2v8 return paired with Attack on Titan cosmetics reinforces short-term event buzz."
+    },
+    {
+      "name": "Darkest Dungeon",
+      "type_zh": "Rift / 皮肤联动",
+      "type_en": "Rift / Cosmetic Beat",
+      "note_zh": "Ruin Rift 把外部黑暗奇幻 IP 接入 Rift 商业化循环。",
+      "note_en": "The Ruin Rift connects an external dark-fantasy IP directly into DBD's Rift monetization loop."
+    },
+    {
+      "name": "Resident Evil",
+      "type_zh": "角色 / 章节",
+      "type_en": "Characters / Chapter",
+      "note_zh": "头部游戏 IP，持续覆盖动作恐怖用户。",
+      "note_en": "A flagship game IP that keeps DBD relevant to action-horror players."
+    },
+    {
+      "name": "Stranger Things",
+      "type_zh": "角色 / 章节",
+      "type_en": "Characters / Chapter",
+      "note_zh": "长期高认知影视联动，适合回流与社媒传播。",
+      "note_en": "A long-running mainstream crossover with strong return-user and social-media value."
+    },
+    {
+      "name": "Silent Hill",
+      "type_zh": "角色 / 地图",
+      "type_en": "Character / Map",
+      "note_zh": "经典恐怖 IP，稳定强化品牌调性。",
+      "note_en": "A classic horror IP that consistently reinforces the game's tone."
+    }
+  ],
+  "sentiment": {
+    "positives_zh": [
+      "过去 30 天均值约 6.92 万、24 小时峰值 8.47 万，十周年高点回落后仍维持头部活跃盘。",
+      "总评测约 92.44 万、总体好评率 78.4%，长期口碑仍稳在 Mostly Positive 档位。",
+      "7 月 30 日 Chorus of Sin Early Access、7 月 29 日 Summer Screams 与 7 月 28 日 Pride 活动连续上新，LiveOps 节奏依旧密集。",
+      "10.0.3 已开始集中修复周年后 The Slasher、活动模式、角色、地图、音频与 UI 问题。"
+    ],
+    "negatives_zh": [
+      "当前在线约 5.72 万，低于 SteamCharts 最近 30 天均值 6.92 万与 24 小时峰值 8.47 万。",
+      "近 30 天评测为 9011 条、78% 好评，短期口碑仍受活动 bug、平衡和兼容性摩擦影响。",
+      "BHVR patch notes 列表页当前抓取异常：patchnotes URL 仅稳定返回 10.0.2 页面标题，最新 10.0.3 仍需依赖 Steam 官方公告镜像交叉确认。",
+      "Steam 国区 appdetails API 继续出现 429，价格需要回退商店页 HTML 校对。"
+    ],
+    "focus_zh": [
+      "Chorus of Sin",
+      "Summer Screams",
+      "Into The Rainbow",
+      "10.0.3"
+    ],
+    "positives_en": [
+      "The last-30-day average is still about 69.2k with an 84.7k 24-hour peak, so DBD remains a large-scale live game after the anniversary spike.",
+      "Total reviews are now about 924.4k at 78.4% positive, keeping the long-term rating firmly in the Mostly Positive band.",
+      "Chorus of Sin Early Access on Jul 30, Summer Screams on Jul 29, and the Jul 28 Pride beat keep the live-ops cadence packed.",
+      "Patch 10.0.3 has started cleaning up post-anniversary issues across The Slasher, event modes, characters, maps, audio, and UI."
+    ],
+    "negatives_en": [
+      "Current concurrency is about 57.2k, below the 69.2k last-30-day average and the 84.7k 24-hour peak shown on SteamCharts.",
+      "Recent reviews are 78% across 9,011 reviews, so short-term sentiment is still being dragged down by event bugs, balance friction, and compatibility issues.",
+      "The BHVR patch-notes listing remains unstable: the patchnotes URL only reliably exposes a 10.0.2 page title, so the latest 10.0.3 details still need Steam official-announcement cross-checking.",
+      "The CN appdetails API keeps returning 429, so price validation still has to fall back to the store HTML."
+    ],
+    "focus_en": [
+      "Chorus of Sin",
+      "Summer Screams",
+      "Into The Rainbow",
+      "10.0.3"
+    ]
+  },
+  "monetization": {
+    "core_zh": [
+      "本体买断 + 章节 DLC",
+      "Gold Edition / 章节整包提升客单价",
+      "Rift Pass / 通行证",
+      "联动 Collection 与限时活动皮肤"
+    ],
+    "core_en": [
+      "Premium base game + chapter DLC",
+      "Gold Edition / bundle upsell",
+      "Rift Pass / battle pass",
+      "Licensed collections and limited-time cosmetics"
+    ],
+    "notes_zh": [
+      "Steam 国区标准版现价 ¥ 93.75，美区标准版现价 $19.99，当前均无折扣",
+      "Sunflesh Rift 为 Taurie Cain 与 The Wraith 上新 Ascended Outfits，继续拉动外观消费",
+      "Summer Screams、Black Banquet 与 Jason 章节仍在共同支撑活动、DLC 与皮肤转化"
+    ],
+    "notes_en": [
+      "Steam CN base price is still ¥93.75 and the US base price is $19.99, with no active discount observed",
+      "Sunflesh Rift adds new Ascended Outfits for Taurie Cain and The Wraith, extending cosmetic monetization",
+      "Summer Screams, Black Banquet, and the Jason chapter are still supporting the event + DLC + cosmetic conversion chain"
+    ]
+  }
 }

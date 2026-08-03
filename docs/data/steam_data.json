@@ -19,7 +19,7 @@
       "release_date": "2025 年 2 月 26 日",
       "release_date_en": "26 Feb, 2025",
       "metacritic": null,
-      "recommendations": 331921,
+      "recommendations": 333156,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -59,16 +59,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 22866
+      "ccu": 23290
     },
     "reviews": {
-      "total_reviews": 412830,
-      "positive": 396551,
-      "negative": 16279,
-      "positive_rate": 96.1
+      "total_reviews": 414310,
+      "positive": 397940,
+      "negative": 16370,
+      "positive_rate": 96.0
     },
-    "ccu": 22866,
-    "crawled_at": "2026-07-28T09:52:26.474815"
+    "ccu": 23290,
+    "crawled_at": "2026-08-03T11:07:17.593872"
   },
   "Lethal Company": {
     "appid": 1966720,
@@ -90,7 +90,7 @@
       "release_date": "2023 年 10 月 23 日",
       "release_date_en": "23 Oct, 2023",
       "metacritic": null,
-      "recommendations": 410745,
+      "recommendations": 410862,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -130,16 +130,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 3725
+      "ccu": 4148
     },
     "reviews": {
-      "total_reviews": 509862,
-      "positive": 494451,
-      "negative": 15411,
+      "total_reviews": 510011,
+      "positive": 494586,
+      "negative": 15425,
       "positive_rate": 97.0
     },
-    "ccu": 3725,
-    "crawled_at": "2026-07-28T09:52:33.622348"
+    "ccu": 4148,
+    "crawled_at": "2026-08-03T11:07:24.078174"
   },
   "Phasmophobia": {
     "appid": 739630,
@@ -156,12 +156,12 @@
       "publishers": [
         "Kinetic Games"
       ],
-      "price": "¥ 47.60",
-      "price_en": "¥ 47.60",
+      "price": "¥ 68.00",
+      "price_en": "¥ 68.00",
       "release_date": "2020 年 9 月 18 日",
       "release_date_en": "18 Sep, 2020",
       "metacritic": null,
-      "recommendations": 680734,
+      "recommendations": 681247,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -227,16 +227,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 12764
+      "ccu": 11635
     },
     "reviews": {
-      "total_reviews": 835415,
-      "positive": 788680,
-      "negative": 46735,
+      "total_reviews": 836048,
+      "positive": 789239,
+      "negative": 46809,
       "positive_rate": 94.4
     },
-    "ccu": 12764,
-    "crawled_at": "2026-07-28T09:52:39.764243"
+    "ccu": 11635,
+    "crawled_at": "2026-08-03T11:07:30.594325"
   },
   "Content Warning": {
     "appid": 2881650,
@@ -262,7 +262,7 @@
       "release_date": "2024 年 4 月 1 日",
       "release_date_en": "1 Apr, 2024",
       "metacritic": null,
-      "recommendations": 71137,
+      "recommendations": 71337,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -302,16 +302,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 1396
+      "ccu": 1003
     },
     "reviews": {
-      "total_reviews": 161914,
-      "positive": 152004,
-      "negative": 9910,
+      "total_reviews": 162146,
+      "positive": 152187,
+      "negative": 9959,
       "positive_rate": 93.9
     },
-    "ccu": 1396,
-    "crawled_at": "2026-07-28T09:52:46.227527"
+    "ccu": 1003,
+    "crawled_at": "2026-08-03T11:07:37.110924"
   },
   "FEEDERS": {
     "appid": 4408510,
@@ -378,7 +378,7 @@
       "positive_rate": 69.2
     },
     "ccu": 0,
-    "crawled_at": "2026-07-28T09:52:57.410090"
+    "crawled_at": "2026-08-03T11:07:49.322807"
   },
   "NARAKA: BLADEPOINT": {
     "appid": 1203220,
@@ -388,7 +388,7 @@
       "type": "game",
       "short_description": "风靡全球的中式竞技大作！来这里舞利刃、端火枪，享受远近结合的华丽战斗！驾驭风沙、机甲，化身野兽、大佛，体验风格迥异的英雄能力！",
       "short_description_en": "Dive into the legends of the Far East in NARAKA: BLADEPOINT; team up with friends in fast-paced melee fights for a Battle Royale experience unlike any other. Find your playstyle with a varied cast of heroes with unique skills. More than 40 million players have already joined the fray, play free now!",
-      "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1203220/2272894267520c46470064cc4b9e86e7957499bb/header_schinese.jpg?t=1783344476",
+      "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1203220/64ac5c56d95a510ae56c7dace46fdafd0881642b/header_schinese.jpg?t=1785376833",
       "developers": [
         "24 Entertainment"
       ],
@@ -400,7 +400,7 @@
       "release_date": "2021 年 8 月 11 日",
       "release_date_en": "11 Aug, 2021",
       "metacritic": null,
-      "recommendations": 197850,
+      "recommendations": 197897,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -440,15 +440,15 @@
       ]
     },
     "steamspy": {
-      "ccu": 18921
+      "ccu": 21705
     },
     "reviews": {
-      "total_reviews": 301566,
-      "positive": 221297,
-      "negative": 80269,
+      "total_reviews": 301867,
+      "positive": 221468,
+      "negative": 80399,
       "positive_rate": 73.4
     },
-    "ccu": 18921,
-    "crawled_at": "2026-07-28T09:53:03.880138"
+    "ccu": 21705,
+    "crawled_at": "2026-08-03T11:07:55.792160"
   }
 }

@@ -173,6 +173,12 @@
       "ccu": 22866,
       "positive_rate": 96.1,
       "total_reviews": 412830
+    },
+    {
+      "date": "2026-08-03",
+      "ccu": 23290,
+      "positive_rate": 96.0,
+      "total_reviews": 414310
     }
   ],
   "Lethal Company": [
@@ -349,6 +355,12 @@
       "ccu": 3725,
       "positive_rate": 97.0,
       "total_reviews": 509862
+    },
+    {
+      "date": "2026-08-03",
+      "ccu": 4148,
+      "positive_rate": 97.0,
+      "total_reviews": 510011
     }
   ],
   "Phasmophobia": [
@@ -525,6 +537,12 @@
       "ccu": 12764,
       "positive_rate": 94.4,
       "total_reviews": 835415
+    },
+    {
+      "date": "2026-08-03",
+      "ccu": 11635,
+      "positive_rate": 94.4,
+      "total_reviews": 836048
     }
   ],
   "Content Warning": [
@@ -701,6 +719,12 @@
       "ccu": 1396,
       "positive_rate": 93.9,
       "total_reviews": 161914
+    },
+    {
+      "date": "2026-08-03",
+      "ccu": 1003,
+      "positive_rate": 93.9,
+      "total_reviews": 162146
     }
   ],
   "FEEDERS": [
@@ -877,6 +901,12 @@
       "ccu": 0,
       "positive_rate": 69.2,
       "total_reviews": 13
+    },
+    {
+      "date": "2026-08-03",
+      "ccu": 0,
+      "positive_rate": 69.2,
+      "total_reviews": 13
     }
   ],
   "NARAKA: BLADEPOINT": [
@@ -1047,6 +1077,12 @@
       "ccu": 18921,
       "positive_rate": 73.4,
       "total_reviews": 301566
+    },
+    {
+      "date": "2026-08-03",
+      "ccu": 21705,
+      "positive_rate": 73.4,
+      "total_reviews": 301867
     }
   ]
 }
