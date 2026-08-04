@@ -1,12 +1,6 @@
 {
   "R.E.P.O.": [
     {
-      "date": "2026-05-28",
-      "ccu": 40801,
-      "positive_rate": 92.9,
-      "total_reviews": 14368
-    },
-    {
       "date": "2026-06-01",
       "ccu": 39940,
       "positive_rate": 92.9,
@@ -179,15 +173,15 @@
       "ccu": 23290,
       "positive_rate": 96.0,
       "total_reviews": 414310
+    },
+    {
+      "date": "2026-08-04",
+      "ccu": 21513,
+      "positive_rate": 96.0,
+      "total_reviews": 414535
     }
   ],
   "Lethal Company": [
-    {
-      "date": "2026-05-28",
-      "ccu": 5612,
-      "positive_rate": 93.0,
-      "total_reviews": 17577
-    },
     {
       "date": "2026-06-01",
       "ccu": 5395,
@@ -361,15 +355,15 @@
       "ccu": 4148,
       "positive_rate": 97.0,
       "total_reviews": 510011
+    },
+    {
+      "date": "2026-08-04",
+      "ccu": 3629,
+      "positive_rate": 97.0,
+      "total_reviews": 510033
     }
   ],
   "Phasmophobia": [
-    {
-      "date": "2026-05-28",
-      "ccu": 10527,
-      "positive_rate": 90.7,
-      "total_reviews": 26671
-    },
     {
       "date": "2026-06-01",
       "ccu": 10565,
@@ -543,15 +537,15 @@
       "ccu": 11635,
       "positive_rate": 94.4,
       "total_reviews": 836048
+    },
+    {
+      "date": "2026-08-04",
+      "ccu": 10943,
+      "positive_rate": 94.4,
+      "total_reviews": 836124
     }
   ],
   "Content Warning": [
-    {
-      "date": "2026-05-28",
-      "ccu": 1094,
-      "positive_rate": 89.9,
-      "total_reviews": 6814
-    },
     {
       "date": "2026-06-01",
       "ccu": 1274,
@@ -725,15 +719,15 @@
       "ccu": 1003,
       "positive_rate": 93.9,
       "total_reviews": 162146
+    },
+    {
+      "date": "2026-08-04",
+      "ccu": 984,
+      "positive_rate": 93.9,
+      "total_reviews": 162179
     }
   ],
   "FEEDERS": [
-    {
-      "date": "2026-05-28",
-      "ccu": 0,
-      "positive_rate": 0.0,
-      "total_reviews": 0
-    },
     {
       "date": "2026-06-01",
       "ccu": 0,
@@ -904,6 +898,12 @@
     },
     {
       "date": "2026-08-03",
+      "ccu": 0,
+      "positive_rate": 69.2,
+      "total_reviews": 13
+    },
+    {
+      "date": "2026-08-04",
       "ccu": 0,
       "positive_rate": 69.2,
       "total_reviews": 13
@@ -1083,6 +1083,12 @@
       "ccu": 21705,
       "positive_rate": 73.4,
       "total_reviews": 301867
+    },
+    {
+      "date": "2026-08-04",
+      "ccu": 15278,
+      "positive_rate": 73.4,
+      "total_reviews": 301890
     }
   ]
 }
