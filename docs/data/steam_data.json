@@ -19,7 +19,7 @@
       "release_date": "2025 年 2 月 26 日",
       "release_date_en": "26 Feb, 2025",
       "metacritic": null,
-      "recommendations": 333332,
+      "recommendations": 334036,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -59,16 +59,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 21513
+      "ccu": 14898
     },
     "reviews": {
-      "total_reviews": 414535,
-      "positive": 398154,
-      "negative": 16381,
+      "total_reviews": 415404,
+      "positive": 398968,
+      "negative": 16436,
       "positive_rate": 96.0
     },
-    "ccu": 21513,
-    "crawled_at": "2026-08-04T09:53:50.947144"
+    "ccu": 14898,
+    "crawled_at": "2026-08-07T16:44:14.010357"
   },
   "Lethal Company": {
     "appid": 1966720,
@@ -90,7 +90,7 @@
       "release_date": "2023 年 10 月 23 日",
       "release_date_en": "23 Oct, 2023",
       "metacritic": null,
-      "recommendations": 410873,
+      "recommendations": 410939,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -130,16 +130,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 3629
+      "ccu": 1509
     },
     "reviews": {
-      "total_reviews": 510033,
-      "positive": 494606,
-      "negative": 15427,
+      "total_reviews": 510109,
+      "positive": 494671,
+      "negative": 15438,
       "positive_rate": 97.0
     },
-    "ccu": 3629,
-    "crawled_at": "2026-08-04T09:53:57.487700"
+    "ccu": 1509,
+    "crawled_at": "2026-08-07T16:44:21.001695"
   },
   "Phasmophobia": {
     "appid": 739630,
@@ -149,7 +149,7 @@
       "type": "game",
       "short_description": "Phasmophobia is a 4 player online co-op psychological horror. Paranormal activity is on the rise and it’s up to you and your team to use all the ghost-hunting equipment at your disposal in order to gather as much evidence as you can.",
       "short_description_en": "Phasmophobia is a 4 player online co-op psychological horror. Paranormal activity is on the rise and it’s up to you and your team to use all the ghost-hunting equipment at your disposal in order to gather as much evidence as you can.",
-      "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/739630/c7db4897b9905cfc91da2a46383f716338a48bdd/header_alt_assets_11.jpg?t=1784637253",
+      "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/739630/c227a2855aba60f3657bc0c3a46515b8c41fb2b6/header.jpg?t=1785937507",
       "developers": [
         "Kinetic Games"
       ],
@@ -161,7 +161,7 @@
       "release_date": "2020 年 9 月 18 日",
       "release_date_en": "18 Sep, 2020",
       "metacritic": null,
-      "recommendations": 681304,
+      "recommendations": 681488,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -227,16 +227,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 10943
+      "ccu": 5393
     },
     "reviews": {
-      "total_reviews": 836124,
-      "positive": 789294,
-      "negative": 46830,
+      "total_reviews": 836348,
+      "positive": 789498,
+      "negative": 46850,
       "positive_rate": 94.4
     },
-    "ccu": 10943,
-    "crawled_at": "2026-08-04T09:54:04.452274"
+    "ccu": 5393,
+    "crawled_at": "2026-08-07T16:44:27.923096"
   },
   "Content Warning": {
     "appid": 2881650,
@@ -262,7 +262,7 @@
       "release_date": "2024 年 4 月 1 日",
       "release_date_en": "1 Apr, 2024",
       "metacritic": null,
-      "recommendations": 71365,
+      "recommendations": 71428,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -302,16 +302,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 984
+      "ccu": 484
     },
     "reviews": {
-      "total_reviews": 162179,
-      "positive": 152213,
-      "negative": 9966,
+      "total_reviews": 162249,
+      "positive": 152280,
+      "negative": 9969,
       "positive_rate": 93.9
     },
-    "ccu": 984,
-    "crawled_at": "2026-08-04T09:54:10.985061"
+    "ccu": 484,
+    "crawled_at": "2026-08-07T16:44:35.064389"
   },
   "FEEDERS": {
     "appid": 4408510,
@@ -378,7 +378,7 @@
       "positive_rate": 69.2
     },
     "ccu": 0,
-    "crawled_at": "2026-08-04T09:54:23.360083"
+    "crawled_at": "2026-08-07T16:44:47.502938"
   },
   "NARAKA: BLADEPOINT": {
     "appid": 1203220,
@@ -400,7 +400,7 @@
       "release_date": "2021 年 8 月 11 日",
       "release_date_en": "11 Aug, 2021",
       "metacritic": null,
-      "recommendations": 197897,
+      "recommendations": 197917,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -440,15 +440,15 @@
       ]
     },
     "steamspy": {
-      "ccu": 15278
+      "ccu": 37927
     },
     "reviews": {
-      "total_reviews": 301890,
-      "positive": 221479,
-      "negative": 80411,
+      "total_reviews": 301981,
+      "positive": 221528,
+      "negative": 80453,
       "positive_rate": 73.4
     },
-    "ccu": 15278,
-    "crawled_at": "2026-08-04T09:54:30.106720"
+    "ccu": 37927,
+    "crawled_at": "2026-08-07T16:44:54.476821"
   }
 }
