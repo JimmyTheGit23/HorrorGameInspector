@@ -7,19 +7,19 @@
       "type": "game",
       "short_description": "An online co-op horror game with up to 6 players. Locate valuable, fully physics-based objects and handle them with care as you retrieve and extract to satisfy your creator's desires.",
       "short_description_en": "An online co-op horror game with up to 6 players. Locate valuable, fully physics-based objects and handle them with care as you retrieve and extract to satisfy your creator's desires.",
-      "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3241660/a12c92856b71315da885924ea5e1d5290c8025b8/header_alt_assets_2.jpg?t=1778158882",
+      "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3241660/1ea445e044a2d5b09cfa8291350b63ebed6e5741/header.jpg?t=1778158882",
       "developers": [
         "semiwork"
       ],
       "publishers": [
         "semiwork"
       ],
-      "price": "¥ 22.75",
-      "price_en": "¥ 22.75",
+      "price": "¥ 35.00",
+      "price_en": "¥ 35.00",
       "release_date": "2025 年 2 月 26 日",
       "release_date_en": "26 Feb, 2025",
       "metacritic": null,
-      "recommendations": 334036,
+      "recommendations": 334701,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -59,16 +59,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 14898
+      "ccu": 21734
     },
     "reviews": {
-      "total_reviews": 415404,
-      "positive": 398968,
-      "negative": 16436,
+      "total_reviews": 416201,
+      "positive": 399714,
+      "negative": 16487,
       "positive_rate": 96.0
     },
-    "ccu": 14898,
-    "crawled_at": "2026-08-07T16:44:14.010357"
+    "ccu": 21734,
+    "crawled_at": "2026-08-10T09:53:05.514123"
   },
   "Lethal Company": {
     "appid": 1966720,
@@ -90,7 +90,7 @@
       "release_date": "2023 年 10 月 23 日",
       "release_date_en": "23 Oct, 2023",
       "metacritic": null,
-      "recommendations": 410939,
+      "recommendations": 410973,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -130,16 +130,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 1509
+      "ccu": 4049
     },
     "reviews": {
-      "total_reviews": 510109,
-      "positive": 494671,
-      "negative": 15438,
+      "total_reviews": 510155,
+      "positive": 494712,
+      "negative": 15443,
       "positive_rate": 97.0
     },
-    "ccu": 1509,
-    "crawled_at": "2026-08-07T16:44:21.001695"
+    "ccu": 4049,
+    "crawled_at": "2026-08-10T09:53:11.886008"
   },
   "Phasmophobia": {
     "appid": 739630,
@@ -161,7 +161,7 @@
       "release_date": "2020 年 9 月 18 日",
       "release_date_en": "18 Sep, 2020",
       "metacritic": null,
-      "recommendations": 681488,
+      "recommendations": 681652,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -227,16 +227,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 5393
+      "ccu": 11672
     },
     "reviews": {
-      "total_reviews": 836348,
-      "positive": 789498,
-      "negative": 46850,
+      "total_reviews": 836550,
+      "positive": 789675,
+      "negative": 46875,
       "positive_rate": 94.4
     },
-    "ccu": 5393,
-    "crawled_at": "2026-08-07T16:44:27.923096"
+    "ccu": 11672,
+    "crawled_at": "2026-08-10T09:53:18.446576"
   },
   "Content Warning": {
     "appid": 2881650,
@@ -262,7 +262,7 @@
       "release_date": "2024 年 4 月 1 日",
       "release_date_en": "1 Apr, 2024",
       "metacritic": null,
-      "recommendations": 71428,
+      "recommendations": 71499,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -302,16 +302,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 484
+      "ccu": 1007
     },
     "reviews": {
-      "total_reviews": 162249,
-      "positive": 152280,
-      "negative": 9969,
+      "total_reviews": 162346,
+      "positive": 152372,
+      "negative": 9974,
       "positive_rate": 93.9
     },
-    "ccu": 484,
-    "crawled_at": "2026-08-07T16:44:35.064389"
+    "ccu": 1007,
+    "crawled_at": "2026-08-10T09:53:25.519749"
   },
   "FEEDERS": {
     "appid": 4408510,
@@ -378,7 +378,7 @@
       "positive_rate": 69.2
     },
     "ccu": 0,
-    "crawled_at": "2026-08-07T16:44:47.502938"
+    "crawled_at": "2026-08-10T09:53:37.657337"
   },
   "NARAKA: BLADEPOINT": {
     "appid": 1203220,
@@ -400,7 +400,7 @@
       "release_date": "2021 年 8 月 11 日",
       "release_date_en": "11 Aug, 2021",
       "metacritic": null,
-      "recommendations": 197917,
+      "recommendations": 197924,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -440,15 +440,15 @@
       ]
     },
     "steamspy": {
-      "ccu": 37927
+      "ccu": 12963
     },
     "reviews": {
-      "total_reviews": 301981,
-      "positive": 221528,
-      "negative": 80453,
+      "total_reviews": 302067,
+      "positive": 221577,
+      "negative": 80490,
       "positive_rate": 73.4
     },
-    "ccu": 37927,
-    "crawled_at": "2026-08-07T16:44:54.476821"
+    "ccu": 12963,
+    "crawled_at": "2026-08-10T09:53:44.435447"
   }
 }
