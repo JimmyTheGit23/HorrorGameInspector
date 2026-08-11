@@ -14,14 +14,14 @@
         "content_tags_en": []
       },
       {
-        "title": " (38,024 人评价)\r\n搜打撤,盗墓,恐怖",
+        "title": " (38,138 人评价)\r\n搜打撤,盗墓,恐怖",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/app/714123/topic?type=official",
         "link_status": "unknown",
         "category": "other",
         "content_tags": [],
         "priority": "low",
-        "title_en": "(38,024 reviews)\r\nSearch and rescue, tomb robbing, horror",
+        "title_en": "(38,138 reviews)\r\nSearch and rescue, tomb robbing, horror",
         "source_en": "TapTap Official",
         "content_tags_en": []
       },
@@ -34,6 +34,34 @@
         "content_tags": [],
         "priority": "medium",
         "title_en": "Sign in to get a spiritual contract! Massive shoveling coins and dancing treasure chests are waiting for you!",
+        "source_en": "TapTap Official",
+        "content_tags_en": []
+      },
+      {
+        "title": "米娅加强速递！与队友共享负重，双人无敌回血，还能提供加速？！",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/app/714123/topic?type=official",
+        "link_status": "unknown",
+        "category": "patch",
+        "content_tags": [
+          "版本更新"
+        ],
+        "priority": "low",
+        "title_en": "Mia strengthens express delivery! Share the load with teammates, both of you have invincible health recovery, and can also provide acceleration? !",
+        "source_en": "TapTap Official",
+        "content_tags_en": [
+          "Version Update"
+        ]
+      },
+      {
+        "title": "你录这个视频我只感到好笑。你什么时候把爆率提高到两把大剑再说吧。你踢不到你录这个就相当于讽刺玩家。哦，不对，应该是打脸自己。",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/app/714123/topic?type=official",
+        "link_status": "unknown",
+        "category": "other",
+        "content_tags": [],
+        "priority": "low",
+        "title_en": "I just find it funny that you recorded this video. Let’s talk about when you increase the explosion rate to two big swords. If you can't get kicked out, recording this is equivalent to mocking the players. Oh, no, it should be a slap in the face.",
         "source_en": "TapTap Official",
         "content_tags_en": []
       },
@@ -106,37 +134,13 @@
           "Version Update",
           "Bug Fix"
         ]
-      },
-      {
-        "title": "心魔非外敌，她生即我生......",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/app/714123/topic?type=official",
-        "link_status": "unknown",
-        "category": "other",
-        "content_tags": [],
-        "priority": "low",
-        "title_en": "The inner demon is not an external enemy, her life is my life...",
-        "source_en": "TapTap Official",
-        "content_tags_en": []
-      },
-      {
-        "title": "【莉莉-凤归澜】局内演示爆料，将神话中的【凤】与水墨融为一体",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/app/714123/topic?type=official",
-        "link_status": "unknown",
-        "category": "other",
-        "content_tags": [],
-        "priority": "low",
-        "title_en": "[Lily-Feng Guilan] The in-game demonstration broke the news, integrating the mythical [Feng] with ink painting",
-        "source_en": "TapTap Official",
-        "content_tags_en": []
       }
     ],
     "taptap": {
       "app_id": 714123,
       "source": "taptap_webpage",
-      "fans_count": 12310966,
-      "review_count": 38024,
+      "fans_count": 12326330,
+      "review_count": 38138,
       "score": "7.1",
       "description": "超自然行动组是一款搜打撤游戏，TapTap 提供超自然行动组最新版官方正版下载，一个人玩是恐怖游戏，两个人玩是冒险游戏，三个人玩是寻宝游戏，...",
       "score_display": 7.1,
@@ -296,57 +300,66 @@
           "source_en": "TapTap Forum"
         },
         {
-          "title": "排行榜上前两名 前一晚12点8分的时候看就是一亿多 8分钟一亿 断层领先后面的人 早上起来一看 还是一亿多",
+          "title": "本人女，是个菜狗，不会四队，摸金也很菜，图片是买的小号，找个搭子可以把号给你玩，下午4到到凌晨4点可...",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral",
-          "title_en": "The top two on the ranking list were over 100 million at 12:08 the night before, and 100 million in 8 minutes. Fault was ahead of the people behind them. When I woke up in the morning, they were still over 100 million.",
+          "title_en": "I'm a girl, but I'm a noob. I don't know how to play four teams, and I'm also very good at making money. The picture is a small account I bought. If you find a partner, I can give you the account to play with. From 4pm to 4am...",
           "source_en": "TapTap Forum"
         },
         {
-          "title": "排行榜上前两名 前一晚12点8分的时候看就是一亿多 8分钟一亿 断层领先后面的人 早上起来一看 还是...",
+          "title": "因为要上学没空玩所以找个人好好对它 以后都不玩了 你想怎么玩就怎么玩",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "negative",
+          "title_en": "Because I have to go to school and have no time to play, I found someone to play with it properly. I won’t play with it anymore. You can play with it however you want.",
+          "source_en": "TapTap Forum"
+        },
+        {
+          "title": "本人女有靠山[表情_酷]，白天晚上都可以玩，可以开麦，绿玩，卡女生[表情_流口水]，卡绿玩。可以当固排，就这些，我也不知道说啥，有人愿意一起吗[表情_开心]",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral",
-          "title_en": "The top two on the ranking list were over 100 million at 12:08 the night before, and 100 million in 8 minutes. They were ahead of the people behind them. When I woke up in the morning, they were still...",
+          "title_en": "I am a girl who has a backer [expression_cool], so I can play during the day and night. I can turn on the mic, play green, be stuck with girls [expression_drooling], and play green. It can be a fixed arrangement, that's it. I don't know what to say. Is anyone willing to join me? [expression_happy]",
           "source_en": "TapTap Forum"
         },
         {
-          "title": "今日的口令是：学业有成 平安喜乐 一马当先",
+          "title": "本人女有靠山[表情_酷]，白天晚上都可以玩，可以开麦，绿玩，卡女生[表情_流口水]，卡绿玩。可以当固...",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "negative",
+          "title_en": "I am a girl who has a backer [expression_cool], so I can play during the day and night. I can turn on the mic, play green, be stuck with girls [expression_drooling], and play green. Can be used as solid...",
+          "source_en": "TapTap Forum"
+        },
+        {
+          "title": "“偶尔吃吃甜食也不错。”艾伦，生日快乐",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral",
-          "title_en": "Today’s password is: academic success, peace and joy, lead the way",
+          "title_en": "“It’s nice to have something sweet once in a while.” Happy birthday, Ellen",
           "source_en": "TapTap Forum"
         },
         {
-          "title": "南瓜棒棒糖跟狐狸艾草团除外，这个限时的\n铜镜牛角巧克力放大镜那些也除外，感觉应该无关\n如果齐了我就慢慢收集了，还差20多个",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "positive",
-          "title_en": "Except for pumpkin lollipops and fox mugwort balls, this is a limited time only\nBronze mirrors, ox horn chocolate magnifying glasses are also excluded, I feel like they have nothing to do with them.\nIf it's all there, I'll collect it slowly. There are still more than 20 left.",
-          "source_en": "TapTap Forum"
-        },
-        {
-          "title": "南瓜棒棒糖跟狐狸艾草团除外，这个限时的\n铜镜牛角巧克力放大镜那些也除外，感觉应该无关\n如果齐了我就慢...",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "positive",
-          "title_en": "Except for pumpkin lollipops and fox mugwort balls, this is a limited time only\nBronze mirrors, ox horn chocolate magnifying glasses are also excluded, I feel like they have nothing to do with them.\nIf it's all together, I'll slow down...",
-          "source_en": "TapTap Forum"
-        },
-        {
-          "title": "想先集着，感觉有一部分应该是没开放的档案回收物",
+          "title": "新员工【九儿】背景故事预热！算卦这一块手拿把掐！",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral",
-          "title_en": "I want to collect them first, but I feel like some of them should be recycled files that have not been opened.",
+          "title_en": "New employee [Jiuer] background story warm-up! This piece of fortune-telling can be grasped with all your hands!",
+          "source_en": "TapTap Forum"
+        },
+        {
+          "title": "8月13日晚更新后，中式恐怖大典最强外援入职啦！",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "neutral",
+          "title_en": "After the update on the evening of August 13, the strongest foreign aid in the Chinese Horror Ceremony has joined the team!",
           "source_en": "TapTap Forum"
         }
       ],
@@ -360,7 +373,7 @@
             "title": "南瓜入侵，幽魂大运来了！",
             "bvid": "BV1xCkfBjENz",
             "url": "https://www.bilibili.com/video/BV1xCkfBjENz",
-            "play": 5794320,
+            "play": 5794460,
             "like": 34746,
             "danmaku": 186,
             "author": "張某人ZSS",
@@ -373,8 +386,8 @@
             "title": "教会你们如何在超自然找到大佬",
             "bvid": "BV1d2tGz2E3Z",
             "url": "https://www.bilibili.com/video/BV1d2tGz2E3Z",
-            "play": 4738057,
-            "like": 32052,
+            "play": 4738229,
+            "like": 32058,
             "danmaku": 408,
             "author": "中二的小溢",
             "duration": "5:45",
@@ -386,21 +399,21 @@
             "title": "超自然行动组怪物图鉴第六期「小熊猫」",
             "bvid": "BV1QCjiz2Evq",
             "url": "https://www.bilibili.com/video/BV1QCjiz2Evq",
-            "play": 3729870,
-            "like": 16815,
+            "play": 3730244,
+            "like": 16818,
             "danmaku": 226,
             "author": "就是黄大毛",
             "duration": "1:45",
             "pic": "https://i0.hdslb.com/bfs/archive/4ba15ff6746b6b7de0b85e932c041f18828ca30b.jpg",
             "pubdate": "2025-05-30",
-            "title_en": "Supernatural Action Team Monster Manual Issue 6 \"Red Panda\""
+            "title_en": "Supernatural Action Group Monster Manual Issue 6 \"Red Panda\""
           },
           {
             "title": "本来想卖掉大鹅、看到眼神心软了",
             "bvid": "BV1Wv6bBWEmn",
             "url": "https://www.bilibili.com/video/BV1Wv6bBWEmn",
-            "play": 3514749,
-            "like": 115599,
+            "play": 3514793,
+            "like": 115600,
             "danmaku": 1698,
             "author": "虎熊寺",
             "duration": "1:24",
@@ -412,8 +425,8 @@
             "title": "搜打撤黑马？！《超自然行动组》凭什么能爆火？",
             "bvid": "BV11hsheJE5i",
             "url": "https://www.bilibili.com/video/BV11hsheJE5i",
-            "play": 2928964,
-            "like": 31669,
+            "play": 2928990,
+            "like": 31670,
             "danmaku": 45,
             "author": "白馆长丶",
             "duration": "4:39",
@@ -425,8 +438,8 @@
             "title": "为什么幸福的人不会来到超自然行动组？",
             "bvid": "BV1Zqu4z5ETn",
             "url": "https://www.bilibili.com/video/BV1Zqu4z5ETn",
-            "play": 2792012,
-            "like": 9013,
+            "play": 2792063,
+            "like": 9014,
             "danmaku": 147,
             "author": "白白鸭游戏",
             "duration": "2:7",
@@ -452,8 +465,8 @@
       "regions_data": {
         "us": {
           "name": "美国",
-          "rating": 4.55,
-          "rating_count": 824,
+          "rating": 4.56,
+          "rating_count": 825,
           "current_version": "1.31.11",
           "price": "Free",
           "genre": "Games",
@@ -462,7 +475,7 @@
         "jp": {
           "name": "日本",
           "rating": 4.41,
-          "rating_count": 2518,
+          "rating_count": 2533,
           "current_version": "1.31.11",
           "price": "無料",
           "genre": "Games",
@@ -491,8 +504,8 @@
         }
       },
       "app_store_rating": 4.28,
-      "total_ratings": 3624,
-      "updated": "2026-08-10 08:52",
+      "total_ratings": 3640,
+      "updated": "2026-08-11 08:53",
       "name_en": "Tomb Busters"
     },
     "app_store_rankings": {
@@ -502,7 +515,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-08-10 08:52",
+        "updated": "2026-08-11 08:52",
         "name_en": "US"
       },
       "jp": {
@@ -511,7 +524,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-08-10 08:52",
+        "updated": "2026-08-11 08:53",
         "name_en": "Japan"
       },
       "kr": {
@@ -520,7 +533,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-08-10 08:52",
+        "updated": "2026-08-11 08:53",
         "name_en": "South Korea"
       },
       "tw": {
@@ -529,7 +542,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-08-10 08:52",
+        "updated": "2026-08-11 08:53",
         "name_en": "Taiwan, China"
       },
       "hk": {
@@ -538,7 +551,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-08-10 08:52",
+        "updated": "2026-08-11 08:53",
         "name_en": "Hong Kong, China"
       }
     },
@@ -547,10 +560,10 @@
         "name": "中国",
         "name_en": "China",
         "free_overall": null,
-        "free_games": 18,
-        "grossing_overall": 25,
-        "grossing_games": 11,
-        "updated": "2026-08-10 08:52",
+        "free_games": 19,
+        "grossing_overall": 29,
+        "grossing_games": 13,
+        "updated": "2026-08-11 08:53",
         "peak_grossing_games": 6,
         "peak_free_overall": null
       }
@@ -558,11 +571,11 @@
     "stock_price": {
       "code": "SZ002558",
       "name": "巨人网络",
-      "price": 29.34,
-      "prev_close": 29.26,
-      "change_pct": 0.27,
-      "change_amt": 0.08,
-      "updated": "2026-08-10 08:52",
+      "price": 29.79,
+      "prev_close": 29.34,
+      "change_pct": 1.53,
+      "change_amt": 0.45,
+      "updated": "2026-08-11 08:52",
       "name_en": "Giant Network"
     },
     "new_content_tracker": [
@@ -570,7 +583,7 @@
         "id": "角色重做",
         "name": "角色重做",
         "status": "announced",
-        "first_seen": "2026-08-10",
+        "first_seen": "2026-08-11",
         "launch_date": null,
         "tags": [
           "角色重做"
@@ -578,7 +591,7 @@
         "announcements": [
           {
             "title": "阿念重做登场！",
-            "date": "2026-08-10",
+            "date": "2026-08-11",
             "source": "官网",
             "url": "https://www.chaoziran.com/news/538",
             "title_en": "A Nian’s rework is here!",
@@ -600,7 +613,7 @@
         "id": "新怪物",
         "name": "新怪物",
         "status": "teased",
-        "first_seen": "2026-08-10",
+        "first_seen": "2026-08-11",
         "launch_date": null,
         "tags": [
           "新怪物"
@@ -608,7 +621,7 @@
         "announcements": [
           {
             "title": "新怪物【鸭子】实机展示，追上了命都给你哦",
-            "date": "2026-08-10",
+            "date": "2026-08-11",
             "source": "官网",
             "url": "https://www.chaoziran.com/news/535",
             "title_en": "The new monster [Duck] is shown in action. If you catch up, you will be given life.",
@@ -627,6 +640,6 @@
         ]
       }
     ],
-    "crawled_at": "2026-08-10T08:52:55.906116"
+    "crawled_at": "2026-08-11T08:53:23.943980"
   }
 }
