@@ -2,40 +2,48 @@
   "chaoziran": {
     "bwiki_updates": [
       {
-        "title": "超自然行动组官服下载,超自然行动组非渠道服下载,超自然行动组官网",
+        "title": "丝绸之路限定时装【薇薇安-碧月砂歌】爆料",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/app/714123/topic?type=official",
         "link_status": "unknown",
-        "category": "other",
-        "content_tags": [],
-        "priority": "low",
-        "title_en": "Supernatural Action Team official server download, Supernatural Action Team off-channel server download, Supernatural Action Team official website",
-        "source_en": "TapTap Official",
-        "content_tags_en": []
-      },
-      {
-        "title": " (40,678 人评价)\r\n搜打撤,盗墓,恐怖",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/app/714123/topic?type=official",
-        "link_status": "unknown",
-        "category": "other",
-        "content_tags": [],
-        "priority": "low",
-        "title_en": "(40,678 reviews)\r\nSearch and rescue, tomb robbing, horror",
-        "source_en": "TapTap Official",
-        "content_tags_en": []
-      },
-      {
-        "title": "签到得灵契！海量铲铲币&舞蹈宝箱等你领！",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/app/714123/topic?type=official",
-        "link_status": "unknown",
-        "category": "event",
-        "content_tags": [],
+        "category": "cosmetic",
+        "content_tags": [
+          "新时装"
+        ],
         "priority": "medium",
-        "title_en": "Sign in to get a spiritual contract! Massive shoveling coins and dancing treasure chests are waiting for you!",
+        "title_en": "丝绸之路限定时装【薇薇安-碧月砂歌】爆料",
+        "source_en": "TapTap Official",
+        "content_tags_en": [
+          "New Outfit"
+        ]
+      },
+      {
+        "title": "9月4日0点上架珍宝阁，首两周还有八五折优惠~",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/app/714123/topic?type=official",
+        "link_status": "unknown",
+        "category": "other",
+        "content_tags": [],
+        "priority": "low",
+        "title_en": "9月4日0点上架珍宝阁，首两周还有八五折优惠~",
         "source_en": "TapTap Official",
         "content_tags_en": []
+      },
+      {
+        "title": "薇薇安你亲女儿是吗？临云的排期呢！？临云上一个皮肤还是四月底的魔盒，4个月了还不出皮。真嫌薇妈皮肤不够多啊。",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/app/714123/topic?type=official",
+        "link_status": "unknown",
+        "category": "cosmetic",
+        "content_tags": [
+          "新皮肤"
+        ],
+        "priority": "medium",
+        "title_en": "薇薇安你亲女儿是吗？临云的排期呢！？临云上一个皮肤还是四月底的魔盒，4个月了还不出皮。真嫌薇妈皮肤不够多啊。",
+        "source_en": "TapTap Official",
+        "content_tags_en": [
+          "New Skin"
+        ]
       },
       {
         "title": "超自然异常BUG处理周报：四队诡异工友驱魔完成，天王BUG也修复了",
@@ -47,7 +55,7 @@
           "BUG修复"
         ],
         "priority": "low",
-        "title_en": "Supernatural anomaly BUG handling weekly report: Four teams of strange workers have completed the exorcism, and the King of Heaven BUG has also been fixed",
+        "title_en": "超自然异常BUG处理周报：四队诡异工友驱魔完成，天王BUG也修复了",
         "source_en": "TapTap Official",
         "content_tags_en": [
           "Bug Fix"
@@ -63,7 +71,7 @@
           "BUG修复"
         ],
         "priority": "low",
-        "title_en": "This week, many strange bugs appeared in the company, but they have also worked hard to fix them!",
+        "title_en": "这周公司又出现了好多离奇BUG，但也都狠狠努力修复了！",
         "source_en": "TapTap Official",
         "content_tags_en": [
           "Bug Fix"
@@ -77,7 +85,7 @@
         "category": "other",
         "content_tags": [],
         "priority": "low",
-        "title_en": "When I left, the wind sounded like a bell, and wherever the red leaves rose, there was no trace of evil spirits.",
+        "title_en": "去时风声如铃，赤叶起处，邪祟无踪。",
         "source_en": "TapTap Official",
         "content_tags_en": []
       },
@@ -91,7 +99,7 @@
           "新时装"
         ],
         "priority": "medium",
-        "title_en": "Updated on August 27th - Magic Box S11 is open! Wuxin fashion \"Shuangfengzhaoye\" appears",
+        "title_en": "8月27日更新——魔盒 S11 开启！无心时装「霜枫照夜」登场",
         "source_en": "TapTap Official",
         "content_tags_en": [
           "New Outfit"
@@ -107,7 +115,7 @@
           "新时装"
         ],
         "priority": "medium",
-        "title_en": "Season limited collection fashion \"Wuxin-Shuangfeng Zhaoye\" is here!\nThere is also a folding fan - \"Qiulubai\", a super cute Chang'e back ornament, and the dance \"I really want to be with you...\"",
+        "title_en": "赛季限定典藏时装「无心-霜枫照夜」来啦！\n还有折扇-「秋露白」，超可爱的嫦娥背饰，以及舞蹈「好想跟你...",
         "source_en": "TapTap Official",
         "content_tags_en": [
           "New Outfit"
@@ -123,7 +131,7 @@
           "限时活动"
         ],
         "priority": "medium",
-        "title_en": "Stop, stop, stop! You said [Red Panda Milk Tea] is back for a limited time? !",
+        "title_en": "停停停！你说【小熊猫奶茶】限时返场啦？！",
         "source_en": "TapTap Official",
         "content_tags_en": [
           "Limited Event"
@@ -137,7 +145,7 @@
         "category": "other",
         "content_tags": [],
         "priority": "low",
-        "title_en": "S11 magic box props display, the most suitable dance for confession is here! There is also [Qiulubai] folding fan~",
+        "title_en": "S11魔盒道具展示，最适合表白的舞蹈来啦！还有【秋露白】折扇~",
         "source_en": "TapTap Official",
         "content_tags_en": []
       }
@@ -145,14 +153,14 @@
     "taptap": {
       "app_id": 714123,
       "source": "taptap_webpage",
-      "fans_count": 12633037,
-      "review_count": 40678,
+      "fans_count": 12640924,
+      "review_count": 40743,
       "score": "7.1",
       "description": "超自然行动组是一款搜打撤游戏，TapTap 提供超自然行动组最新版官方正版下载，一个人玩是恐怖游戏，两个人玩是冒险游戏，三个人玩是寻宝游戏，...",
       "score_display": 7.1,
       "rating_value": 7.1,
       "source_en": "taptap_webpage",
-      "description_en": "Paranormal Action Team is a search and rescue game. TapTap provides the latest official version of Paranormal Action Team for download. One person plays it as a horror game, two people play it as an adventure game, and three people play it as a treasure hunt game..."
+      "description_en": "超自然行动组是一款搜打撤游戏，TapTap 提供超自然行动组最新版官方正版下载，一个人玩是恐怖游戏，两个人玩是冒险游戏，三个人玩是寻宝游戏，..."
     },
     "official_news": [
       {
@@ -163,7 +171,7 @@
         "content_tags": [],
         "priority": "low",
         "link_status": "valid",
-        "title_en": "\"Supernatural Action Team\" has exceeded 10 million daily active users!",
+        "title_en": "《超自然行动组》日活跃用户突破一千万啦！",
         "source_en": "Official Site",
         "content_tags_en": []
       },
@@ -175,7 +183,7 @@
         "content_tags": [],
         "priority": "medium",
         "link_status": "valid",
-        "title_en": "[A Nian-Looking for Stars] Details of the game are displayed!",
+        "title_en": "【阿念-寻星记】局内细节展示！",
         "source_en": "Official Site",
         "content_tags_en": []
       },
@@ -189,7 +197,7 @@
         ],
         "priority": "medium",
         "link_status": "valid",
-        "title_en": "Red panda glow stick skin revealed~",
+        "title_en": "小熊猫荧光棒皮肤爆料~",
         "source_en": "Official Site",
         "content_tags_en": [
           "New Skin"
@@ -205,7 +213,7 @@
         ],
         "priority": "medium",
         "link_status": "valid",
-        "title_en": "Children's Day benefit broadcast!",
+        "title_en": "六一儿童节福利放送！",
         "source_en": "Official Site",
         "content_tags_en": [
           "Reward Event"
@@ -221,7 +229,7 @@
         ],
         "priority": "medium",
         "link_status": "valid",
-        "title_en": "Explosive Bow [Heartstrings Direction] skin revealed!",
+        "title_en": "爆炸弓【心弦所向】皮肤爆料！",
         "source_en": "Official Site",
         "content_tags_en": [
           "New Skin"
@@ -237,7 +245,7 @@
         ],
         "priority": "low",
         "link_status": "valid",
-        "title_en": "Updates delivered quickly! A new [cooling off period] is added to the dissolution of intimate relationships!",
+        "title_en": "版更速递！亲密关系解除新增【冷静期】！",
         "source_en": "Official Site",
         "content_tags_en": [
           "Version Update"
@@ -253,7 +261,7 @@
         ],
         "priority": "high",
         "link_status": "valid",
-        "title_en": "A Nian’s rework is here!",
+        "title_en": "阿念重做登场！",
         "source_en": "Official Site",
         "content_tags_en": [
           "Character Rework"
@@ -269,7 +277,7 @@
         ],
         "priority": "high",
         "link_status": "valid",
-        "title_en": "The new monster [Duck] is shown in action. If you catch up, you will be given life.",
+        "title_en": "新怪物【鸭子】实机展示，追上了命都给你哦",
         "source_en": "Official Site",
         "content_tags_en": [
           "New Monster"
@@ -279,12 +287,39 @@
     "community": {
       "taptap_forum": [
         {
+          "title": "超自然行动组官服下载,超自然行动组非渠道服下载,超自然行动组官网",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "neutral",
+          "title_en": "超自然行动组官服下载,超自然行动组非渠道服下载,超自然行动组官网",
+          "source_en": "TapTap Forum"
+        },
+        {
+          "title": " (40,743 人评价)\r\n搜打撤,盗墓,恐怖",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "neutral",
+          "title_en": "(40,743 人评价)\r\n搜打撤,盗墓,恐怖",
+          "source_en": "TapTap Forum"
+        },
+        {
+          "title": "签到得灵契！海量铲铲币&舞蹈宝箱等你领！",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "neutral",
+          "title_en": "签到得灵契！海量铲铲币&舞蹈宝箱等你领！",
+          "source_en": "TapTap Forum"
+        },
+        {
           "title": "超自然【中式恐怖大典】重磅福利放送！",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "positive",
-          "title_en": "Supernatural 【Chinese Horror Ceremony】Breaking benefit broadcast!",
+          "title_en": "超自然【中式恐怖大典】重磅福利放送！",
           "source_en": "TapTap Forum"
         },
         {
@@ -293,7 +328,7 @@
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "positive",
-          "title_en": "After the update on July 30, you can receive the [Exorcist Bow] and the linked headgear for free, and the linked gameplay [Infinite Dreamland] will be launched simultaneously. In the future, mysterious foreign players will also join the team, and more mysterious linkage free skins are on the way~",
+          "title_en": "7月30日更新后免费领【驱邪弓】与联动头套，还有联动玩法【无限梦境】同步上线。后续神秘外援也将入职，更有神秘联动免费皮肤正在路上~",
           "source_en": "TapTap Forum"
         },
         {
@@ -302,70 +337,43 @@
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "positive",
-          "title_en": "After the update on July 30, you can receive the [Exorcist Bow] and the linked headgear for free, and the linked gameplay [Infinite Dreamland] will be launched simultaneously. Mysterious foreign players will also join the team in the future...",
+          "title_en": "7月30日更新后免费领【驱邪弓】与联动头套，还有联动玩法【无限梦境】同步上线。后续神秘外援也将入职，...",
           "source_en": "TapTap Forum"
         },
         {
-          "title": "超自然竟然偷偷出新怪物了，今天正常开了一局游戏，局内突然听见心跳声和急促脚步声，本以为是鬼新娘来了，...",
+          "title": "丝绸之路限定时装【薇薇安-碧月砂歌】爆料",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral",
-          "title_en": "Supernatural has secretly released a new monster. I started a game today and suddenly heard the sound of heartbeats and rapid footsteps. I thought it was the Ghost Bride coming...",
+          "title_en": "丝绸之路限定时装【薇薇安-碧月砂歌】爆料",
           "source_en": "TapTap Forum"
         },
         {
-          "title": "游戏圈记者上线，带#今天游戏圈发生了啥 话题分享游戏新鲜事，万元奖池等你瓜分！详情可加入资讯记者2群：1103610961",
+          "title": "9月4日0点上架珍宝阁，首两周还有八五折优惠~",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral",
-          "title_en": "Reporters from the game circle are online, sharing the latest news about games with the topic #What’s happening in the game circle today, and a 10,000-yuan prize pool is waiting for you to share! For details, please join the information reporter group 2: 1103610961",
+          "title_en": "9月4日0点上架珍宝阁，首两周还有八五折优惠~",
           "source_en": "TapTap Forum"
         },
         {
-          "title": "即日起，✍️图文打卡你的游戏日常，👍阅读互动讨论相关动态，有机会抽取百元现金💰",
+          "title": "薇薇安你亲女儿是吗？临云的排期呢！？临云上一个皮肤还是四月底的魔盒，4个月了还不出皮。真嫌薇妈皮肤不够多啊。",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "neutral",
+          "title_en": "薇薇安你亲女儿是吗？临云的排期呢！？临云上一个皮肤还是四月底的魔盒，4个月了还不出皮。真嫌薇妈皮肤不够多啊。",
+          "source_en": "TapTap Forum"
+        },
+        {
+          "title": "来个原皮萌新莉莉当我独生兔，熟了会让你登我号。有实力了把你宠成娇兔子，手把手带大，别嫌弃我号黑，其他...",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "negative",
-          "title_en": "From now on, ✍️check in your game routine with pictures and texts, 👍read interactive discussions and relevant updates, and have a chance to win a hundred yuan in cash💰",
-          "source_en": "TapTap Forum"
-        },
-        {
-          "title": "#超自然行动组 #超自然行动组创作激励计划 #摸金就玩超自然",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral",
-          "title_en": "#Supernatural Action Group #Supernatural Action Group Creation Incentive Plan #touch gold and play supernatural",
-          "source_en": "TapTap Forum"
-        },
-        {
-          "title": "你路过了一只小狗，是发现了不捡，还是没看到",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral",
-          "title_en": "You passed by a puppy, did you find it and didn’t pick it up, or did you not see it?",
-          "source_en": "TapTap Forum"
-        },
-        {
-          "title": "靠自然行动组。#他这靠自然行动组 。",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral",
-          "title_en": "By Nature Action Group. #He relies on the natural action group.",
-          "source_en": "TapTap Forum"
-        },
-        {
-          "title": "近几天是红丸解封了吗，怎么一堆高参红？",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral",
-          "title_en": "Have the red pills been unblocked in recent days? Why are there so many high ginseng red pills?",
+          "title_en": "来个原皮萌新莉莉当我独生兔，熟了会让你登我号。有实力了把你宠成娇兔子，手把手带大，别嫌弃我号黑，其他...",
           "source_en": "TapTap Forum"
         }
       ],
@@ -379,83 +387,83 @@
             "title": "南瓜入侵，幽魂大运来了！",
             "bvid": "BV1xCkfBjENz",
             "url": "https://www.bilibili.com/video/BV1xCkfBjENz",
-            "play": 5797391,
+            "play": 5797528,
             "like": 34758,
             "danmaku": 186,
             "author": "張某人ZSS",
             "duration": "1:27",
             "pic": "https://i2.hdslb.com/bfs/archive/ea07fe0b8e48607d072ec800412f85b811687c92.jpg",
             "pubdate": "2025-11-10",
-            "title_en": "The pumpkins invade, and the ghosts have their luck!"
+            "title_en": "南瓜入侵，幽魂大运来了！"
           },
           {
             "title": "教会你们如何在超自然找到大佬",
             "bvid": "BV1d2tGz2E3Z",
             "url": "https://www.bilibili.com/video/BV1d2tGz2E3Z",
-            "play": 4741447,
+            "play": 4741551,
             "like": 32119,
             "danmaku": 414,
             "author": "中二的小溢",
             "duration": "5:45",
             "pic": "https://i2.hdslb.com/bfs/archive/d70e085a135fbe95fd9d6413a3cde6264ad72960.jpg",
             "pubdate": "2025-08-04",
-            "title_en": "Teach you how to find the boss in Supernatural"
+            "title_en": "教会你们如何在超自然找到大佬"
           },
           {
             "title": "超自然行动组怪物图鉴第六期「小熊猫」",
             "bvid": "BV1QCjiz2Evq",
             "url": "https://www.bilibili.com/video/BV1QCjiz2Evq",
-            "play": 3741410,
-            "like": 16859,
+            "play": 3742265,
+            "like": 16865,
             "danmaku": 230,
             "author": "就是黄大毛",
             "duration": "1:45",
             "pic": "https://i0.hdslb.com/bfs/archive/4ba15ff6746b6b7de0b85e932c041f18828ca30b.jpg",
             "pubdate": "2025-05-30",
-            "title_en": "Supernatural Action Group Monster Manual Issue 6 \"Red Panda\""
+            "title_en": "超自然行动组怪物图鉴第六期「小熊猫」"
           },
           {
             "title": "本来想卖掉大鹅、看到眼神心软了",
             "bvid": "BV1Wv6bBWEmn",
             "url": "https://www.bilibili.com/video/BV1Wv6bBWEmn",
-            "play": 3515796,
-            "like": 115610,
+            "play": 3515850,
+            "like": 115609,
             "danmaku": 1698,
             "author": "虎熊寺",
             "duration": "1:24",
             "pic": "https://i0.hdslb.com/bfs/archive/85eb76c39837c40ba46fd54b2eaef7c07194ce6c.jpg",
             "pubdate": "2026-02-01",
-            "title_en": "I originally wanted to sell the big goose, but my heart softened when I saw the look in my eyes."
+            "title_en": "本来想卖掉大鹅、看到眼神心软了"
           },
           {
             "title": "深呼吸紧张是正常的！",
             "bvid": "BV1ASwtz6Eqp",
             "url": "https://www.bilibili.com/video/BV1ASwtz6Eqp",
-            "play": 3295190,
-            "like": 8647,
-            "danmaku": 1336,
+            "play": 3317939,
+            "like": 8698,
+            "danmaku": 1350,
             "author": "三月兔的兔",
             "duration": "18:25",
             "pic": "https://i2.hdslb.com/bfs/archive/c023fdc27b64f718d075c71fa8aadb981d87e2f1.jpg",
             "pubdate": "2026-03-14",
-            "title_en": "Taking a deep breath and feeling nervous is normal!"
+            "title_en": "深呼吸紧张是正常的！"
           },
           {
             "title": "『666 居然是隐藏款』",
             "bvid": "BV1TtK96LEFv",
             "url": "https://www.bilibili.com/video/BV1TtK96LEFv",
-            "play": 3183505,
-            "like": 13450,
+            "play": 3199409,
+            "like": 13480,
             "danmaku": 58,
             "author": "Gacha奈雪",
             "duration": "1:0",
             "pic": "https://i2.hdslb.com/bfs/archive/2e5367c4638e16788370d7ec9b59489743a86da7.jpg",
             "pubdate": "2026-06-29",
-            "title_en": "\"666 is actually a hidden model\""
+            "title_en": "『666 居然是隐藏款』"
           }
         ],
         "source_en": "Bilibili",
-        "keyword_en": "paranormal action team"
+        "keyword_en": "超自然行动组"
       }
     },
     "tomb_busters": {
@@ -481,7 +489,7 @@
         "jp": {
           "name": "日本",
           "rating": 4.41,
-          "rating_count": 2772,
+          "rating_count": 2780,
           "current_version": "1.31.30",
           "price": "無料",
           "genre": "Games",
@@ -510,8 +518,8 @@
         }
       },
       "app_store_rating": 4.28,
-      "total_ratings": 3951,
-      "updated": "2026-08-31 08:53",
+      "total_ratings": 3959,
+      "updated": "2026-09-01 08:52",
       "name_en": "Tomb Busters"
     },
     "app_store_rankings": {
@@ -521,7 +529,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-08-31 08:53",
+        "updated": "2026-09-01 08:52",
         "name_en": "US"
       },
       "jp": {
@@ -530,7 +538,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-08-31 08:53",
+        "updated": "2026-09-01 08:52",
         "name_en": "Japan"
       },
       "kr": {
@@ -539,7 +547,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-08-31 08:53",
+        "updated": "2026-09-01 08:52",
         "name_en": "South Korea"
       },
       "tw": {
@@ -548,7 +556,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-08-31 08:53",
+        "updated": "2026-09-01 08:52",
         "name_en": "Taiwan, China"
       },
       "hk": {
@@ -557,7 +565,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-08-31 08:53",
+        "updated": "2026-09-01 08:52",
         "name_en": "Hong Kong, China"
       }
     },
@@ -567,9 +575,9 @@
         "name_en": "China",
         "free_overall": null,
         "free_games": 24,
-        "grossing_overall": 36,
-        "grossing_games": 18,
-        "updated": "2026-08-31 08:53",
+        "grossing_overall": 34,
+        "grossing_games": 17,
+        "updated": "2026-09-01 08:52",
         "peak_grossing_games": 6,
         "peak_free_overall": null
       }
@@ -577,11 +585,11 @@
     "stock_price": {
       "code": "SZ002558",
       "name": "巨人网络",
-      "price": 27.28,
-      "prev_close": 27.24,
-      "change_pct": 0.15,
-      "change_amt": 0.04,
-      "updated": "2026-08-31 08:52",
+      "price": 27.45,
+      "prev_close": 27.28,
+      "change_pct": 0.62,
+      "change_amt": 0.17,
+      "updated": "2026-09-01 08:52",
       "name_en": "Giant Network"
     },
     "new_content_tracker": [
@@ -589,7 +597,7 @@
         "id": "角色重做",
         "name": "角色重做",
         "status": "announced",
-        "first_seen": "2026-08-31",
+        "first_seen": "2026-09-01",
         "launch_date": null,
         "tags": [
           "角色重做"
@@ -597,10 +605,10 @@
         "announcements": [
           {
             "title": "阿念重做登场！",
-            "date": "2026-08-31",
+            "date": "2026-09-01",
             "source": "官网",
             "url": "https://www.chaoziran.com/news/538",
-            "title_en": "A Nian’s rework is here!",
+            "title_en": "阿念重做登场！",
             "source_en": "Official Site",
             "link_status": "valid"
           }
@@ -619,7 +627,7 @@
         "id": "新怪物",
         "name": "新怪物",
         "status": "teased",
-        "first_seen": "2026-08-31",
+        "first_seen": "2026-09-01",
         "launch_date": null,
         "tags": [
           "新怪物"
@@ -627,10 +635,10 @@
         "announcements": [
           {
             "title": "新怪物【鸭子】实机展示，追上了命都给你哦",
-            "date": "2026-08-31",
+            "date": "2026-09-01",
             "source": "官网",
             "url": "https://www.chaoziran.com/news/535",
-            "title_en": "The new monster [Duck] is shown in action. If you catch up, you will be given life.",
+            "title_en": "新怪物【鸭子】实机展示，追上了命都给你哦",
             "source_en": "Official Site",
             "link_status": "valid"
           }
@@ -646,6 +654,6 @@
         ]
       }
     ],
-    "crawled_at": "2026-08-31T08:53:32.261749"
+    "crawled_at": "2026-09-01T08:52:41.564450"
   }
 }
