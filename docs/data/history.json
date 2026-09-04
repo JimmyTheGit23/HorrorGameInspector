@@ -1,12 +1,6 @@
 {
   "R.E.P.O.": [
     {
-      "date": "2026-06-15",
-      "ccu": 38103,
-      "positive_rate": 92.8,
-      "total_reviews": 14669
-    },
-    {
       "date": "2026-06-16",
       "ccu": 33935,
       "positive_rate": 92.8,
@@ -179,15 +173,15 @@
       "ccu": 14390,
       "positive_rate": 96.0,
       "total_reviews": 421005
+    },
+    {
+      "date": "2026-09-04",
+      "ccu": 13535,
+      "positive_rate": 96.0,
+      "total_reviews": 421445
     }
   ],
   "Lethal Company": [
-    {
-      "date": "2026-06-15",
-      "ccu": 4494,
-      "positive_rate": 92.9,
-      "total_reviews": 17607
-    },
     {
       "date": "2026-06-16",
       "ccu": 3918,
@@ -361,15 +355,15 @@
       "ccu": 3195,
       "positive_rate": 97.0,
       "total_reviews": 510618
+    },
+    {
+      "date": "2026-09-04",
+      "ccu": 3060,
+      "positive_rate": 97.0,
+      "total_reviews": 510663
     }
   ],
   "Phasmophobia": [
-    {
-      "date": "2026-06-15",
-      "ccu": 9000,
-      "positive_rate": 90.7,
-      "total_reviews": 26772
-    },
     {
       "date": "2026-06-16",
       "ccu": 8368,
@@ -543,15 +537,15 @@
       "ccu": 10060,
       "positive_rate": 94.4,
       "total_reviews": 838308
+    },
+    {
+      "date": "2026-09-04",
+      "ccu": 9420,
+      "positive_rate": 94.4,
+      "total_reviews": 838525
     }
   ],
   "Content Warning": [
-    {
-      "date": "2026-06-15",
-      "ccu": 1220,
-      "positive_rate": 89.9,
-      "total_reviews": 6830
-    },
     {
       "date": "2026-06-16",
       "ccu": 1019,
@@ -725,15 +719,15 @@
       "ccu": 973,
       "positive_rate": 93.8,
       "total_reviews": 162986
+    },
+    {
+      "date": "2026-09-04",
+      "ccu": 902,
+      "positive_rate": 93.8,
+      "total_reviews": 163100
     }
   ],
   "FEEDERS": [
-    {
-      "date": "2026-06-15",
-      "ccu": 0,
-      "positive_rate": 0.0,
-      "total_reviews": 0
-    },
     {
       "date": "2026-06-16",
       "ccu": 0,
@@ -907,15 +901,15 @@
       "ccu": 0,
       "positive_rate": 69.2,
       "total_reviews": 13
+    },
+    {
+      "date": "2026-09-04",
+      "ccu": 0,
+      "positive_rate": 69.2,
+      "total_reviews": 13
     }
   ],
   "NARAKA: BLADEPOINT": [
-    {
-      "date": "2026-06-15",
-      "ccu": 8750,
-      "positive_rate": 72.0,
-      "total_reviews": 250613
-    },
     {
       "date": "2026-06-16",
       "ccu": 9241,
@@ -1089,6 +1083,12 @@
       "ccu": 9632,
       "positive_rate": 73.3,
       "total_reviews": 302536
+    },
+    {
+      "date": "2026-09-04",
+      "ccu": 12416,
+      "positive_rate": 73.3,
+      "total_reviews": 302596
     }
   ]
 }

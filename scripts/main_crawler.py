@@ -33,6 +33,23 @@ def save_json(data, path):
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
+def merge_steam_data(new_data, old_data):
+    """增量合并Steam数据：限流/失败时保留旧的商店与评测元数据，不伪造实时在线。"""
+    if not old_data:
+        return new_data
+
+    for name, data in new_data.items():
+        old_item = old_data.get(name) or {}
+        if not data.get("store") and old_item.get("store"):
+            data["store"] = old_item["store"]
+            print(f"   [MERGE] {name}.store: 新采集为空，保留旧数据")
+        if not data.get("reviews") and old_item.get("reviews"):
+            data["reviews"] = old_item["reviews"]
+            print(f"   [MERGE] {name}.reviews: 新采集为空，保留旧数据")
+
+    return new_data
+
+
 def update_history(steam_data, history_path):
     """将当日数据追加到历史记录（用于趋势图）"""
     history = load_json(history_path)
@@ -109,8 +126,11 @@ def main():
     # 1. 采集Steam数据
     print("\n[1/5] 采集Steam数据...")
     try:
+        steam_path = os.path.join(DATA_DIR, "steam_data.json")
+        old_steam_data = load_json(steam_path)
         steam_data = crawl_steam()
-        save_json(steam_data, os.path.join(DATA_DIR, "steam_data.json"))
+        steam_data = merge_steam_data(steam_data, old_steam_data)
+        save_json(steam_data, steam_path)
         print("   Steam数据采集完成")
     except Exception as e:
         print(f"   Steam数据采集失败: {e}")
