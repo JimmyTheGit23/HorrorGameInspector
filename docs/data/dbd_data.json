@@ -1,10 +1,10 @@
 {
-  "snapshot_date": "2026-09-07T10:01:16+08:00",
+  "snapshot_date": "2026-09-08T09:56:23+08:00",
   "hero": {
     "name": "黎明杀机",
-    "current_players": 44711,
+    "current_players": 45532,
     "positive_rate": 78.3,
-    "reviews_total": 933043,
+    "reviews_total": 933257,
     "price_label": "¥ 93.75",
     "release_date": "2016 年 6 月 14 日",
     "genres": [
@@ -13,99 +13,111 @@
   },
   "operations": [
     {
-      "date": "2026-07-30",
-      "type_zh": "更新",
-      "type_en": "Update",
-      "title": "The Grimoire: Early Access",
-      "source": "Official News",
-      "url": "https://deadbydaylight.com/news/the-grimoire-early-access/"
+      "date": "2026-09-05",
+      "timestamp": 1788541216,
+      "title": "Dress to the Divines with the Dead by Daylight: Chorus of Sin Merch Collection",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1842846814447263",
+      "author": "Goblin_BHVR",
+      "feed_label": "Community Announcements",
+      "feed_type": "官方",
+      "is_patch": false,
+      "contents": "Celebrate Dead by Daylight: Chorus of Sin with a limited-edition merch collection inspired by the divine horror of The Judgment. Ephemeral as the whims of the divine, the Chorus of Sin collection will"
     },
     {
-      "date": "2026-07-28",
-      "type_zh": "更新",
-      "type_en": "Update",
-      "title": "Dead by Daylight Turns Up the Heat with Summer Screams",
-      "source": "Official News",
-      "url": "https://deadbydaylight.com/news/dbd-turns-up-the-heat-with-summer-screams/"
+      "date": "2026-09-03",
+      "timestamp": 1788432328,
+      "title": "Dead by Daylight is now testing Denuvo, but \"will not include\" its anti-piracy DRM",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PCGamesN/1842846814443069",
+      "author": "editor@pcgamesn.com",
+      "feed_label": "PCGamesN",
+      "feed_type": "媒体",
+      "is_patch": false,
+      "contents": "A new Dead by Daylight anti-cheat trial is testing Denuvo's protection tool, but Behaviour Interactive makes clear there will be no DRM. Read the full story on PCGamesN: <a href=\"https://www.pcgamesn."
     },
     {
-      "date": "2026-07-27",
-      "type_zh": "活动",
-      "type_en": "Event",
-      "title": "Into The Rainbow: Celebrating Pride in The Fog",
-      "source": "Official News",
-      "url": "https://deadbydaylight.com/news/into-the-rainbow-celebrating-pride-in-the-fog/"
+      "date": "2026-09-02",
+      "timestamp": 1788361209,
+      "title": "Anti-Cheat Trials are now Live",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1842846814440602",
+      "author": "Goblin_BHVR",
+      "feed_label": "Community Announcements",
+      "feed_type": "官方",
+      "is_patch": false,
+      "contents": "Last week, we announced our plans to kick off our Anti-Cheat Trials initiative, and today it's here!Starting today, we will be trialing Denuvo's Anti-Cheat solution. Note that this does not and will n"
     },
-    {
-      "date": "2026-07-21",
-      "type_zh": "更新",
-      "type_en": "Update",
-      "title": "Feel the Burn with Dead by Daylight’s Sunflesh Rift",
-      "source": "Official News",
-      "url": "https://deadbydaylight.com/news/sunflesh-rift/"
-    },
-    {
-      "date": "2026-06-25",
-      "type_zh": "更新",
-      "type_en": "Update",
-      "title": "Dead by Daylight’s Black Banquet Has Begun: Everything To Know",
-      "source": "Official News",
-      "url": "https://deadbydaylight.com/news/dbd-black-banquet-everything-to-know/"
-    },
-    {
-      "date": "2026-06-17",
-      "type_zh": "角色",
-      "type_en": "Character",
-      "title": "Shane Wiigwaas Is Dead By Daylight’s Latest Survivor",
-      "source": "Official News",
-      "url": "https://deadbydaylight.com/news/shane-wiigwaas-dbd-new-survivor/"
-    }
-  ],
-  "patches": [
     {
       "date": "2026-09-01",
-      "version": "10.1.1 | Bugfix Patch",
-      "note_zh": "10.1.1 重点修正 10.1.0 上线后的平衡与稳定性：增强 The Judgment 的 Divine Light 转向窗口，重做 The Knight 与木板的追猎交互，下调 Vigil、提前 Repressed Alliance 启动，并集中修复角色、地图、UI 与音频问题。",
-      "note_en": "10.1.1 is a post-10.1.0 stabilization patch: it widens The Judgment's Divine Light curve window, reworks The Knight's pallet chase interactions, retunes Vigil and Repressed Alliance, and fixes a broad set of character, map, UI, and audio issues.",
-      "url": "https://forums.bhvr.com/dead-by-daylight/kb/patchnotes"
+      "timestamp": 1788273025,
+      "title": "10.1.1 | Bugfix Patch",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1842212951313573",
+      "author": "Goblin_BHVR",
+      "feed_label": "Community Announcements",
+      "feed_type": "官方",
+      "is_patch": false,
+      "contents": "ContentKiller UpdatesThe JudgmentIncreased the Divine Light curve window while Zealous to 0.6s (was 0.3s) Dev note: The decoupling of the curve window from the delay phase was good, but the duration o"
+    },
+    {
+      "date": "2026-09-01",
+      "timestamp": 1788253200,
+      "title": "Steam Global Top Sellers for week of 25 Aug — 1 September 2026",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/SteamDB/1842212951313418",
+      "author": "SteamDB",
+      "feed_label": "SteamDB",
+      "feed_type": "媒体",
+      "is_patch": false,
+      "contents": "<a href=\"https://steamdb.info/topsellers/2026W36/?utm_source=Steam&utm_medium=Steam&utm_campaign=SteamRSS\"> </a> * <a href=\"https://steamdb.info/app/2075800/charts/?utm_source=Steam&utm_medium=Steam&u"
+    },
+    {
+      "date": "2026-08-27",
+      "timestamp": 1787764165,
+      "title": "Dead by Daylight will be testing out Denuvo Anti-Cheat and other systems soon",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/GamingOnLinux/1842212951297629",
+      "author": "",
+      "feed_label": "GamingOnLinux",
+      "feed_type": "媒体",
+      "is_patch": false,
+      "contents": "Dead by Daylight, my current online co-op fixation to play with the partner, is set for some changes with the anti-cheat systems. Read the full article here: https://www.gamingonlinux.com/2026/08/dead"
+    },
+    {
+      "date": "2026-08-26",
+      "timestamp": 1787752791,
+      "title": "Anti-Cheat Trials",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1842212951296959",
+      "author": "amanda_bhvr",
+      "feed_label": "Community Announcements",
+      "feed_type": "官方",
+      "is_patch": false,
+      "contents": "Greetings Fog Dwellers! Recently, we shared a survey asking for your thoughts on anti-cheat in Dead by Daylight. One message came through loud and clear: you feel we could be doing more. We hear you a"
     },
     {
       "date": "2026-08-25",
-      "version": "10.1.0 | Chorus of Sin",
-      "note_zh": "10.1.0 正式服上线 Chorus of Sin：新杀手 The Judgment、新幸存者 Aurora、Gameplay Showcase 教学入口、更多 MMR 行为计分、Exile/Heresy 机制与大范围平衡修复一并落地。",
-      "note_en": "10.1.0 launches Chorus of Sin on live servers with The Judgment, Aurora, the Gameplay Showcase, broader MMR action tracking, Exile/Heresy systems, and a wide balance-and-fix pass.",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1841579228678469"
-    },
-    {
-      "date": "2026-08-04",
-      "version": "10.1.0 | PTB Patch Notes",
-      "note_zh": "10.1.0 PTB 带来 Chorus of Sin 测试内容：新杀手 The Judgment、新幸存者 Aurora、Gameplay Showcase 教学入口、救援保护改动，以及覆盖技能、地图、机器人与 UI 的大范围平衡和修复。",
-      "note_en": "10.1.0 PTB introduces Chorus of Sin testing with new Killer The Judgment, new Survivor Aurora, the Gameplay Showcase learning hub, revised unhook protections, and a broad balance-and-fix pass across perks, maps, bots, and UI.",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1839676055897511"
-    },
-    {
-      "date": "2026-07-21",
-      "version": "10.0.3 | Bugfix Patch",
-      "note_zh": "10.0.3 修正 The Slasher 跨楼层反蹲守判定，调整 Cross-Examination 与多项附加组件，并为 Summer Screams 的 Chaos Shuffle、Lights Out、2v8 周轮换做准备。",
-      "note_en": "10.0.3 fixes The Slasher cross-floor anti-camp logic, tunes Cross-Examination and several add-ons, and prepares the Summer Screams rotation of Chaos Shuffle, Lights Out, and 2v8.",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1838407329269139"
-    },
-    {
-      "date": "2026-07-06",
-      "version": "10.0.2 | Bugfix Patch",
-      "note_zh": "10.0.2 重新启用周年活动队列中的 Doctor，下调 The Slasher 的 Deputy's Badge 触发范围，并集中修复 Black Banquet、音频、角色、地图与技能问题。",
-      "note_en": "10.0.2 re-enables The Doctor in the anniversary queue, nerfs The Slasher Deputy's Badge trigger range, and ships a focused bug-fix pass across Black Banquet, audio, characters, maps, and perks.",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1836506165576085"
-    },
-    {
-      "date": "2026-06-23",
-      "version": "10.0.1",
-      "note_zh": "10.0.1 上线 Shane Wiigwaas 与其 3 个新技能，并为 6 月 25 日开启的 Black Banquet 十周年活动做准备，同时修复大量音频、角色、地图、技能与 UI 问题。",
-      "note_en": "10.0.1 ships Shane Wiigwaas and his 3 perks, prepares the June 25 Black Banquet anniversary event, and fixes a large set of audio, character, map, perk, and UI issues.",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835871199315739"
+      "timestamp": 1787668216,
+      "title": "10.1.0 | Chorus of Sin",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1841579228678469",
+      "author": "Goblin_BHVR",
+      "feed_label": "Community Announcements",
+      "feed_type": "官方",
+      "is_patch": false,
+      "contents": "ContentNew Killer: The JudgmentPOWER: WILL OF THE GODSDIVINE LIGHTPress and hold the Power Button to summon Divine Light for up to 3s.Divine Light moves away from The Judgment and is controlled with c"
     }
   ],
+  "patches": [],
   "trends": [
+    {
+      "month": "2026-01",
+      "avg_players": 49288,
+      "peak_players": 96633
+    },
+    {
+      "month": "2026-02",
+      "avg_players": 55296,
+      "peak_players": 93286
+    },
+    {
+      "month": "2026-03",
+      "avg_players": 46223,
+      "peak_players": 84502
+    },
     {
       "month": "2026-04",
       "avg_players": 49104,
@@ -118,23 +130,8 @@
     },
     {
       "month": "2026-06",
-      "avg_players": 71077,
-      "peak_players": 168845
-    },
-    {
-      "month": "2026-07",
-      "avg_players": 70813,
-      "peak_players": 121937
-    },
-    {
-      "month": "2026-08",
-      "avg_players": 57800,
-      "peak_players": 99887
-    },
-    {
-      "month": "2026-09",
-      "avg_players": 55280,
-      "peak_players": 99887
+      "avg_players": 53145,
+      "peak_players": 104001
     }
   ],
   "store": {
@@ -162,11 +159,11 @@
     ]
   },
   "reviews": {
-    "total_reviews": 933043,
-    "positive": 730940,
-    "negative": 202103,
+    "total_reviews": 933257,
+    "positive": 731045,
+    "negative": 202212,
     "positive_rate": 78.3
   },
-  "ccu": 44711,
-  "crawled_at": "2026-09-07T10:01:16+08:00"
+  "ccu": 45532,
+  "crawled_at": "2026-09-08T09:56:23.978616"
 }
