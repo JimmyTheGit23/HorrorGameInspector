@@ -19,7 +19,7 @@
       "release_date": "2025 年 2 月 26 日",
       "release_date_en": "26 Feb, 2025",
       "metacritic": null,
-      "recommendations": 340017,
+      "recommendations": 340608,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -59,16 +59,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 14850
+      "ccu": 18751
     },
     "reviews": {
-      "total_reviews": 422684,
-      "positive": 405800,
-      "negative": 16884,
+      "total_reviews": 423405,
+      "positive": 406486,
+      "negative": 16919,
       "positive_rate": 96.0
     },
-    "ccu": 14850,
-    "crawled_at": "2026-09-11T09:54:51.849176"
+    "ccu": 18751,
+    "crawled_at": "2026-09-14T09:52:44.352845"
   },
   "Lethal Company": {
     "appid": 1966720,
@@ -90,7 +90,7 @@
       "release_date": "2023 年 10 月 23 日",
       "release_date_en": "23 Oct, 2023",
       "metacritic": null,
-      "recommendations": 411446,
+      "recommendations": 411511,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -130,16 +130,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 2722
+      "ccu": 4189
     },
     "reviews": {
-      "total_reviews": 510783,
-      "positive": 495266,
-      "negative": 15517,
+      "total_reviews": 510851,
+      "positive": 495329,
+      "negative": 15522,
       "positive_rate": 97.0
     },
-    "ccu": 2722,
-    "crawled_at": "2026-09-11T09:54:57.953635"
+    "ccu": 4189,
+    "crawled_at": "2026-09-14T09:52:50.194343"
   },
   "Phasmophobia": {
     "appid": 739630,
@@ -156,12 +156,12 @@
       "publishers": [
         "Kinetic Games"
       ],
-      "price": "¥ 47.60",
-      "price_en": "¥ 47.60",
+      "price": "¥ 68.00",
+      "price_en": "¥ 68.00",
       "release_date": "2020 年 9 月 18 日",
       "release_date_en": "18 Sep, 2020",
       "metacritic": null,
-      "recommendations": 683673,
+      "recommendations": 683875,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -227,16 +227,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 8657
+      "ccu": 10734
     },
     "reviews": {
-      "total_reviews": 839085,
-      "positive": 791876,
-      "negative": 47209,
+      "total_reviews": 839341,
+      "positive": 792101,
+      "negative": 47240,
       "positive_rate": 94.4
     },
-    "ccu": 8657,
-    "crawled_at": "2026-09-11T09:55:04.358690"
+    "ccu": 10734,
+    "crawled_at": "2026-09-14T09:52:56.131030"
   },
   "Content Warning": {
     "appid": 2881650,
@@ -262,7 +262,7 @@
       "release_date": "2024 年 4 月 1 日",
       "release_date_en": "1 Apr, 2024",
       "metacritic": null,
-      "recommendations": 72304,
+      "recommendations": 72397,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -302,16 +302,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 626
+      "ccu": 851
     },
     "reviews": {
-      "total_reviews": 163272,
-      "positive": 153156,
-      "negative": 10116,
+      "total_reviews": 163372,
+      "positive": 153247,
+      "negative": 10125,
       "positive_rate": 93.8
     },
-    "ccu": 626,
-    "crawled_at": "2026-09-11T09:55:10.578762"
+    "ccu": 851,
+    "crawled_at": "2026-09-14T09:53:02.176408"
   },
   "FEEDERS": {
     "appid": 4408510,
@@ -328,8 +328,8 @@
       "publishers": [
         "Luvi Technologies"
       ],
-      "price": "¥ 26.00",
-      "price_en": "¥ 26.00",
+      "price": "¥ 18.00",
+      "price_en": "¥ 18.00",
       "release_date": "2026 年 3 月 30 日",
       "release_date_en": "30 Mar, 2026",
       "metacritic": null,
@@ -378,7 +378,7 @@
       "positive_rate": 69.2
     },
     "ccu": 0,
-    "crawled_at": "2026-09-11T09:55:21.761443"
+    "crawled_at": "2026-09-14T09:53:13.246049"
   },
   "NARAKA: BLADEPOINT": {
     "appid": 1203220,
@@ -400,7 +400,7 @@
       "release_date": "2021 年 8 月 11 日",
       "release_date_en": "11 Aug, 2021",
       "metacritic": null,
-      "recommendations": 197942,
+      "recommendations": 197950,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -440,15 +440,15 @@
       ]
     },
     "steamspy": {
-      "ccu": 8971
+      "ccu": 7361
     },
     "reviews": {
-      "total_reviews": 302710,
-      "positive": 221950,
-      "negative": 80760,
+      "total_reviews": 302725,
+      "positive": 221946,
+      "negative": 80779,
       "positive_rate": 73.3
     },
-    "ccu": 8971,
-    "crawled_at": "2026-09-11T09:55:27.517341"
+    "ccu": 7361,
+    "crawled_at": "2026-09-14T09:53:19.239991"
   }
 }
