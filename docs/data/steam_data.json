@@ -19,7 +19,7 @@
       "release_date": "2025 年 2 月 26 日",
       "release_date_en": "26 Feb, 2025",
       "metacritic": null,
-      "recommendations": 341692,
+      "recommendations": 341828,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -59,16 +59,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 17976
+      "ccu": 14126
     },
     "reviews": {
-      "total_reviews": 424727,
-      "positive": 407752,
-      "negative": 16975,
+      "total_reviews": 424894,
+      "positive": 407913,
+      "negative": 16981,
       "positive_rate": 96.0
     },
-    "ccu": 17976,
-    "crawled_at": "2026-09-21T09:51:53.414921"
+    "ccu": 14126,
+    "crawled_at": "2026-09-22T09:53:23.720973"
   },
   "Lethal Company": {
     "appid": 1966720,
@@ -90,7 +90,7 @@
       "release_date": "2023 年 10 月 23 日",
       "release_date_en": "23 Oct, 2023",
       "metacritic": null,
-      "recommendations": 411600,
+      "recommendations": 411616,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -130,16 +130,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 4349
+      "ccu": 3064
     },
     "reviews": {
-      "total_reviews": 510971,
-      "positive": 495440,
-      "negative": 15531,
+      "total_reviews": 510992,
+      "positive": 495462,
+      "negative": 15530,
       "positive_rate": 97.0
     },
-    "ccu": 4349,
-    "crawled_at": "2026-09-21T09:52:00.283952"
+    "ccu": 3064,
+    "crawled_at": "2026-09-22T09:53:30.427199"
   },
   "Phasmophobia": {
     "appid": 739630,
@@ -161,7 +161,7 @@
       "release_date": "2020 年 9 月 18 日",
       "release_date_en": "18 Sep, 2020",
       "metacritic": null,
-      "recommendations": 684227,
+      "recommendations": 684264,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -227,16 +227,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 11677
+      "ccu": 9019
     },
     "reviews": {
-      "total_reviews": 839774,
-      "positive": 792501,
-      "negative": 47273,
+      "total_reviews": 839817,
+      "positive": 792543,
+      "negative": 47274,
       "positive_rate": 94.4
     },
-    "ccu": 11677,
-    "crawled_at": "2026-09-21T09:52:07.094824"
+    "ccu": 9019,
+    "crawled_at": "2026-09-22T09:53:36.843144"
   },
   "Content Warning": {
     "appid": 2881650,
@@ -262,7 +262,7 @@
       "release_date": "2024 年 4 月 1 日",
       "release_date_en": "1 Apr, 2024",
       "metacritic": null,
-      "recommendations": 72496,
+      "recommendations": 72518,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -302,16 +302,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 801
+      "ccu": 604
     },
     "reviews": {
-      "total_reviews": 163485,
-      "positive": 153333,
-      "negative": 10152,
+      "total_reviews": 163507,
+      "positive": 153352,
+      "negative": 10155,
       "positive_rate": 93.8
     },
-    "ccu": 801,
-    "crawled_at": "2026-09-21T09:52:14.040763"
+    "ccu": 604,
+    "crawled_at": "2026-09-22T09:53:43.129227"
   },
   "FEEDERS": {
     "appid": 4408510,
@@ -378,7 +378,7 @@
       "positive_rate": 69.2
     },
     "ccu": 0,
-    "crawled_at": "2026-09-21T09:52:26.415558"
+    "crawled_at": "2026-09-22T09:53:55.240673"
   },
   "NARAKA: BLADEPOINT": {
     "appid": 1203220,
@@ -400,7 +400,7 @@
       "release_date": "2021 年 8 月 11 日",
       "release_date_en": "11 Aug, 2021",
       "metacritic": null,
-      "recommendations": 197956,
+      "recommendations": 197959,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -440,15 +440,15 @@
       ]
     },
     "steamspy": {
-      "ccu": 7535
+      "ccu": 8213
     },
     "reviews": {
-      "total_reviews": 302850,
-      "positive": 222032,
-      "negative": 80818,
+      "total_reviews": 302867,
+      "positive": 222042,
+      "negative": 80825,
       "positive_rate": 73.3
     },
-    "ccu": 7535,
-    "crawled_at": "2026-09-21T09:52:33.548876"
+    "ccu": 8213,
+    "crawled_at": "2026-09-22T09:54:02.071830"
   }
 }
