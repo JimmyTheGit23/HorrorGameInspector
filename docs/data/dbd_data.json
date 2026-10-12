@@ -1,22 +1,38 @@
 {
-  "snapshot_date": "2026-09-28T09:57:07+08:00",
+  "snapshot_date": "2026-10-12T10:00:25+08:00",
   "hero": {
     "name": "Dead by Daylight",
-    "current_players": 43581,
+    "current_players": 45649,
     "positive_rate": 78.3,
-    "reviews_total": 936415,
+    "reviews_total": 939300,
     "price_label": "¥ 93.75",
     "release_date": "2016 年 6 月 14 日",
     "genres": [
       "动作"
     ],
-    "peak_24h": 66029,
-    "avg_30d": 49703,
-    "recent_reviews": 5387,
-    "recent_positive_rate": 70,
+    "peak_24h": 70525,
+    "avg_30d": 46086,
+    "recent_reviews": 4990,
+    "recent_positive_rate": 74,
     "all_time_peak": 168845
   },
   "operations": [
+    {
+      "date": "2026-10-08",
+      "type_zh": "活动",
+      "type_en": "Event",
+      "title": "Dead by Daylight x ARK/8: The Campfire Tour Hits L.A.",
+      "source": "Official News",
+      "url": "https://deadbydaylight.com/news/dbd-ark-8-campfire-tour-la/"
+    },
+    {
+      "date": "2026-10-06",
+      "type_zh": "联动",
+      "type_en": "Collab",
+      "title": "NieR:Automata Is Coming to Dead by Daylight",
+      "source": "Official News",
+      "url": "https://deadbydaylight.com/news/nier-automata-dbd/"
+    },
     {
       "date": "2026-09-15",
       "type_zh": "公益",
@@ -34,7 +50,7 @@
       "url": "https://deadbydaylight.com/news/the-grimoire-early-access/"
     },
     {
-      "date": "2026-07-28",
+      "date": "2026-07-29",
       "type_zh": "活动",
       "type_en": "Event",
       "title": "Dead by Daylight Turns Up the Heat with Summer Screams",
@@ -42,31 +58,29 @@
       "url": "https://deadbydaylight.com/news/dbd-turns-up-the-heat-with-summer-screams/"
     },
     {
-      "date": "2026-07-27",
+      "date": "2026-07-28",
       "type_zh": "活动",
       "type_en": "Event",
       "title": "Into The Rainbow: Celebrating Pride in The Fog",
       "source": "Official News",
       "url": "https://deadbydaylight.com/news/into-the-rainbow-celebrating-pride-in-the-fog/"
-    },
-    {
-      "date": "2026-07-21",
-      "type_zh": "更新",
-      "type_en": "Update",
-      "title": "Feel the Burn with Dead by Daylight’s Sunflesh Rift",
-      "source": "Official News",
-      "url": "https://deadbydaylight.com/news/sunflesh-rift/"
-    },
-    {
-      "date": "2026-06-25",
-      "type_zh": "活动",
-      "type_en": "Event",
-      "title": "Dead by Daylight’s Black Banquet Has Begun: Everything To Know",
-      "source": "Official News",
-      "url": "https://deadbydaylight.com/news/dbd-black-banquet-everything-to-know/"
     }
   ],
   "patches": [
+    {
+      "date": "2026-10-06",
+      "version": "10.2.0 | Mid-Chapter",
+      "note_zh": "10.2.0 正式服上线 Survivor Intent System 文本沟通轮盘、Abandon / Surrender / End Trial 提前结束机制重构，以及一轮覆盖新手与通用技能的大范围平衡调整；同时加入 Academia Rift、Bots 对意图消息的响应，并修复大量角色、地图、UI 与音频问题。",
+      "note_en": "10.2.0 lands on live with the Survivor Intent System text wheel, a reworked Abandon / Surrender / End Trial flow, and a broad perk-balance pass focused on beginner and general-use perks; it also adds the Academia Rift, bot responses to intent pings, and a large batch of character, map, UI, and audio fixes.",
+      "url": "https://steamcommunity.com/games/381210/announcements/detail/716791824502491335"
+    },
+    {
+      "date": "2026-10-06",
+      "version": "Developer Update | 10.2.0 PTB to Live Changes",
+      "note_zh": "开发者更新解释了 10.2.0 从 PTB 到正式服的定稿改动：继续微调 Shoulder the Burden、No One Left Behind、Premonition、Spine Chill、Stake Out 等技能，说明哪些 PTB 试验项会实装、哪些会被撤回。",
+      "note_en": "This developer update outlines the final PTB-to-live changes for 10.2.0, including additional tuning to perks such as Shoulder the Burden, No One Left Behind, Premonition, Spine Chill, and Stake Out, while clarifying which PTB experiments will ship and which will be rolled back.",
+      "url": "https://steamcommunity.com/games/381210/announcements/detail/716791824502491131"
+    },
     {
       "date": "2026-09-17",
       "version": "10.1.2a | Patch Notes",
@@ -94,28 +108,9 @@
       "note_zh": "10.1.1 重点修正 10.1.0 上线后的平衡与稳定性：增强 The Judgment 的 Divine Light 转向窗口，重做 The Knight 与木板的追猎交互，下调 Vigil、提前 Repressed Alliance 启动，并集中修复角色、地图、UI 与音频问题。",
       "note_en": "10.1.1 is a post-10.1.0 stabilization patch: it widens The Judgment's Divine Light curve window, reworks The Knight's pallet chase interactions, retunes Vigil and Repressed Alliance, and fixes a broad set of character, map, UI, and audio issues.",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1842212951313573"
-    },
-    {
-      "date": "2026-08-25",
-      "version": "10.1.0 | Chorus of Sin",
-      "note_zh": "10.1.0 正式服上线 Chorus of Sin：新杀手 The Judgment、新幸存者 Aurora、Gameplay Showcase 教学入口、更多 MMR 行为计分、Exile/Heresy 机制与大范围平衡修复一并落地。",
-      "note_en": "10.1.0 launches Chorus of Sin on live servers with The Judgment, Aurora, the Gameplay Showcase, broader MMR action tracking, Exile/Heresy systems, and a wide balance-and-fix pass.",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1841579228678469"
-    },
-    {
-      "date": "2026-07-21",
-      "version": "10.0.3 | Bugfix Patch",
-      "note_zh": "10.0.3 修正 The Slasher 跨楼层反蹲守判定，调整 Cross-Examination 与多项附加组件，并为 Summer Screams 的 Chaos Shuffle、Lights Out、2v8 周轮换做准备。",
-      "note_en": "10.0.3 fixes The Slasher cross-floor anti-camp logic, tunes Cross-Examination and several add-ons, and prepares the Summer Screams rotation of Chaos Shuffle, Lights Out, and 2v8.",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1838407329269139"
     }
   ],
   "trends": [
-    {
-      "month": "2026-04",
-      "avg_players": 49104,
-      "peak_players": 77398
-    },
     {
       "month": "2026-05",
       "avg_players": 51051,
@@ -138,8 +133,13 @@
     },
     {
       "month": "2026-09",
-      "avg_players": 49703,
-      "peak_players": 81470
+      "avg_players": 47610,
+      "peak_players": 75951
+    },
+    {
+      "month": "2026-10",
+      "avg_players": 46086,
+      "peak_players": 75951
     }
   ],
   "store": {
@@ -147,7 +147,7 @@
     "name_en": "Dead by Daylight",
     "short_description": "10年恐惧相伴。10年的惊吓与刺激体验。10年的残暴献祭与惊险逃脱。 永久困于邪恶的幻境之中，即使死亡也无法逃脱，这是一场需要勇气和智慧的较量，四名意志坚定的逃生者在残忍对局中面对嗜血杀手。选择一方，进入多人非对称竞技游戏世界，获得最佳恐怖游戏体验。",
     "short_description_en": "10 years of horror. 10 years of jump scares and close calls. 10 years of brutal sacrifices and thrilling escapes. Trapped forever in a realm of eldritch evil where even death is not an escape, four determined Survivors face a bloodthirsty Killer in a vicious game of nerve and wits.",
-    "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/381210/header.jpg?t=1787769494",
+    "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/381210/23fed9f741423413769ad1617e41519d1a466cdc/header_alt_assets_10.jpg?t=1791302579",
     "developers": [
       "Behaviour Interactive Inc."
     ],
@@ -167,11 +167,11 @@
     ]
   },
   "reviews": {
-    "total_reviews": 936415,
-    "positive": 733092,
-    "negative": 203323,
+    "total_reviews": 939300,
+    "positive": 735203,
+    "negative": 204097,
     "positive_rate": 78.3
   },
-  "ccu": 43581,
-  "crawled_at": "2026-09-28T09:57:07.460021"
+  "ccu": 45649,
+  "crawled_at": "2026-10-12T10:00:25"
 }
