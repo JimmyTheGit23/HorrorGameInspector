@@ -1,10 +1,10 @@
 {
-  "snapshot_date": "2026-10-13T09:55:39+08:00",
+  "snapshot_date": "2026-10-16T10:00:09+08:00",
   "hero": {
     "name": "黎明杀机",
-    "current_players": 43221,
+    "current_players": 45451,
     "positive_rate": 78.3,
-    "reviews_total": 939456,
+    "reviews_total": 939998,
     "price_label": "¥ 93.75",
     "release_date": "2016 年 6 月 14 日",
     "genres": [
@@ -12,6 +12,17 @@
     ]
   },
   "operations": [
+    {
+      "date": "2026-10-13",
+      "timestamp": 1791882000,
+      "title": "Steam Global Top Sellers for week of 6 Oct — 13 October 2026",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/SteamDB/1846018067944049",
+      "author": "SteamDB",
+      "feed_label": "SteamDB",
+      "feed_type": "媒体",
+      "is_patch": false,
+      "contents": "<a href=\"https://steamdb.info/topsellers/2026W42/?utm_source=Steam&utm_medium=Steam&utm_campaign=SteamRSS\"> </a> * <a href=\"https://steamdb.info/app/4078430/charts/?utm_source=Steam&utm_medium=Steam&u"
+    },
     {
       "date": "2026-10-10",
       "timestamp": 1791634405,
@@ -88,20 +99,20 @@
       "feed_type": "媒体",
       "is_patch": false,
       "contents": "Похоже, Square Enix заинтересована в выпуске новой игры серии Nier, однако компания также активно использует огромную популярность своих героинь для создания коллабораций с самыми разными проектами. С"
-    },
-    {
-      "date": "2026-10-03",
-      "timestamp": 1791027944,
-      "title": "Dead by Daylight тизерит кроссовер с NieR: Automata - намёки указывают на новых выживших",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1845383656389005",
-      "author": "",
-      "feed_label": "PlayGround.ru - официальная группа",
-      "feed_type": "媒体",
-      "is_patch": false,
-      "contents": "Dead by Daylight, похоже, готовит кроссовер с NieR: Automata. Официальный аккаунт игры в X сначала опубликовал загадочный тизер, намекающий на новую косметику для четырёх выживших. Поклонники быстро р"
     }
   ],
   "patches": [
+    {
+      "date": "2026-10-14",
+      "timestamp": 1791990061,
+      "title": "10.2.1 | Bugfix Patch",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1846651706674577",
+      "author": "Goblin_BHVR",
+      "feed_label": "Community Announcements",
+      "feed_type": "官方",
+      "is_patch": true,
+      "contents": "FeaturesSurrender and End TrialSurrender OptionSurvivor Condition - When there are no other human survivors, and at least one bot, the remaining player gets the option to Surrender. (was Abandon)Survi"
+    },
     {
       "date": "2026-09-17",
       "timestamp": 1789657207,
@@ -182,11 +193,11 @@
     ]
   },
   "reviews": {
-    "total_reviews": 939456,
-    "positive": 735303,
-    "negative": 204153,
+    "total_reviews": 939998,
+    "positive": 735679,
+    "negative": 204319,
     "positive_rate": 78.3
   },
-  "ccu": 43221,
-  "crawled_at": "2026-10-13T09:55:39.909292"
+  "ccu": 45451,
+  "crawled_at": "2026-10-16T10:00:09.923406"
 }
