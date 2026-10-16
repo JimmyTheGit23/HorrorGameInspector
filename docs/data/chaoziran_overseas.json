@@ -136,16 +136,16 @@
     "us": {
       "name": "美国",
       "rating": 4.56,
-      "rating_count": 1004,
-      "current_version": "1.32.30",
+      "rating_count": 1005,
+      "current_version": "1.33.17",
       "price": "Free",
       "genre": "Games"
     },
     "jp": {
       "name": "日本",
       "rating": 4.42,
-      "rating_count": 3063,
-      "current_version": "1.32.30",
+      "rating_count": 3064,
+      "current_version": "1.33.17",
       "price": "無料",
       "genre": "Games"
     },
@@ -153,7 +153,7 @@
       "name": "韩国",
       "rating": 3.87,
       "rating_count": 295,
-      "current_version": "1.32.30",
+      "current_version": "1.33.17",
       "price": "무료",
       "genre": "Games"
     },
@@ -171,7 +171,7 @@
       "name": "英国",
       "rating": 4.53,
       "rating_count": 40,
-      "current_version": "1.32.30",
+      "current_version": "1.33.17",
       "price": "Free",
       "genre": "Games"
     },
@@ -179,7 +179,7 @@
       "name": "德国",
       "rating": 4.26,
       "rating_count": 27,
-      "current_version": "1.32.30",
+      "current_version": "1.33.17",
       "price": "Gratis",
       "genre": "Games"
     },
@@ -187,7 +187,7 @@
       "name": "法国",
       "rating": 4.14,
       "rating_count": 29,
-      "current_version": "1.32.30",
+      "current_version": "1.33.17",
       "price": "Gratuit",
       "genre": "Games"
     },
@@ -195,7 +195,7 @@
       "name": "澳大利亚",
       "rating": 4.45,
       "rating_count": 29,
-      "current_version": "1.32.30",
+      "current_version": "1.33.17",
       "price": "Free",
       "genre": "Games"
     },
@@ -215,6 +215,6 @@
       "rating_count": 0
     }
   },
-  "crawled_at": "2026-10-15T08:55:24.173245",
-  "crawled_date": "2026-10-15"
+  "crawled_at": "2026-10-16T09:16:43.920286",
+  "crawled_date": "2026-10-16"
 }
