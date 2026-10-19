@@ -19,7 +19,7 @@
       "release_date": "2025 年 2 月 26 日",
       "release_date_en": "26 Feb, 2025",
       "metacritic": null,
-      "recommendations": 345059,
+      "recommendations": 345475,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -59,16 +59,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 12696
+      "ccu": 15187
     },
     "reviews": {
-      "total_reviews": 428888,
-      "positive": 411698,
-      "negative": 17190,
+      "total_reviews": 429380,
+      "positive": 412154,
+      "negative": 17226,
       "positive_rate": 96.0
     },
-    "ccu": 12696,
-    "crawled_at": "2026-10-16T09:56:16.404859"
+    "ccu": 15187,
+    "crawled_at": "2026-10-19T09:59:01.966084"
   },
   "Lethal Company": {
     "appid": 1966720,
@@ -90,7 +90,7 @@
       "release_date": "2023 年 10 月 23 日",
       "release_date_en": "23 Oct, 2023",
       "metacritic": null,
-      "recommendations": 411927,
+      "recommendations": 411977,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -130,16 +130,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 3258
+      "ccu": 4221
     },
     "reviews": {
-      "total_reviews": 511396,
-      "positive": 495802,
-      "negative": 15594,
-      "positive_rate": 97.0
+      "total_reviews": 511450,
+      "positive": 495847,
+      "negative": 15603,
+      "positive_rate": 96.9
     },
-    "ccu": 3258,
-    "crawled_at": "2026-10-16T09:56:22.061982"
+    "ccu": 4221,
+    "crawled_at": "2026-10-19T09:59:10.921981"
   },
   "Phasmophobia": {
     "appid": 739630,
@@ -161,7 +161,7 @@
       "release_date": "2020 年 9 月 18 日",
       "release_date_en": "18 Sep, 2020",
       "metacritic": null,
-      "recommendations": 685573,
+      "recommendations": 685741,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -227,16 +227,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 12632
+      "ccu": 14697
     },
     "reviews": {
-      "total_reviews": 841385,
-      "positive": 793893,
-      "negative": 47492,
+      "total_reviews": 841583,
+      "positive": 794062,
+      "negative": 47521,
       "positive_rate": 94.4
     },
-    "ccu": 12632,
-    "crawled_at": "2026-10-16T09:56:28.338828"
+    "ccu": 14697,
+    "crawled_at": "2026-10-19T09:59:20.022545"
   },
   "Content Warning": {
     "appid": 2881650,
@@ -262,7 +262,7 @@
       "release_date": "2024 年 4 月 1 日",
       "release_date_en": "1 Apr, 2024",
       "metacritic": null,
-      "recommendations": 72894,
+      "recommendations": 72970,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -302,16 +302,16 @@
       ]
     },
     "steamspy": {
-      "ccu": 818
+      "ccu": 970
     },
     "reviews": {
-      "total_reviews": 163904,
-      "positive": 153695,
-      "negative": 10209,
+      "total_reviews": 163997,
+      "positive": 153781,
+      "negative": 10216,
       "positive_rate": 93.8
     },
-    "ccu": 818,
-    "crawled_at": "2026-10-16T09:56:34.655361"
+    "ccu": 970,
+    "crawled_at": "2026-10-19T09:59:27.896715"
   },
   "FEEDERS": {
     "appid": 4408510,
@@ -378,7 +378,7 @@
       "positive_rate": 69.2
     },
     "ccu": 0,
-    "crawled_at": "2026-10-16T09:56:45.720416"
+    "crawled_at": "2026-10-19T09:59:46.397685"
   },
   "NARAKA: BLADEPOINT": {
     "appid": 1203220,
@@ -400,7 +400,7 @@
       "release_date": "2021 年 8 月 11 日",
       "release_date_en": "11 Aug, 2021",
       "metacritic": null,
-      "recommendations": 198011,
+      "recommendations": 198009,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -440,15 +440,15 @@
       ]
     },
     "steamspy": {
-      "ccu": 9514
+      "ccu": 8333
     },
     "reviews": {
-      "total_reviews": 303293,
-      "positive": 222346,
-      "negative": 80947,
+      "total_reviews": 303340,
+      "positive": 222375,
+      "negative": 80965,
       "positive_rate": 73.3
     },
-    "ccu": 9514,
-    "crawled_at": "2026-10-16T09:56:52.114344"
+    "ccu": 8333,
+    "crawled_at": "2026-10-19T09:59:53.189411"
   }
 }
