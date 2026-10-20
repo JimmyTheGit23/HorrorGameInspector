@@ -4,10 +4,10 @@
     "source": "Google Play",
     "url": "https://play.google.com/store/apps/details?id=com.game.tombbusters",
     "rating": 4.2,
-    "review_count": 1399,
+    "review_count": 1398,
     "description": "Hilarious Co-op Horror Extraction",
     "category": "FAMILY",
-    "crawled_at": "2026-10-20 09:14"
+    "crawled_at": "2026-10-20 10:04"
   },
   "google_play_reviews": [
     {
@@ -37,7 +37,7 @@
       "title": "Raiding Ancient Tombs was a Mistake",
       "video_id": "Keonsv7ZCf8",
       "url": "https://www.youtube.com/watch?v=Keonsv7ZCf8",
-      "views": "4,350,056 views",
+      "views": "4,350,060 views",
       "channel": "SMii7Yplus",
       "published": "3y ago",
       "duration": "25:59"
@@ -64,7 +64,7 @@
       "title": "Tomb Busters - Nogla Won't Stay Away From Me!",
       "video_id": "EnuSSZ8nN4I",
       "url": "https://www.youtube.com/watch?v=EnuSSZ8nN4I",
-      "views": "509,952 views",
+      "views": "509,955 views",
       "channel": "VanossGaming",
       "published": "4mo ago",
       "duration": "27:18"
@@ -109,7 +109,7 @@
       "title": "Three Idiots VS Funniest New Horror Game",
       "video_id": "m6ENmCcWhBc",
       "url": "https://www.youtube.com/watch?v=m6ENmCcWhBc",
-      "views": "185,192 views",
+      "views": "185,196 views",
       "channel": "SeeReax",
       "published": "4mo ago",
       "duration": "43:39"
@@ -118,7 +118,7 @@
       "title": "Tomb Raider apk download? #tombraider #gamingcommunity #tombraider2013gameplay #fpsgames ",
       "video_id": "RatbS4ym8QM",
       "url": "https://www.youtube.com/watch?v=RatbS4ym8QM",
-      "views": "157,923 views",
+      "views": "157,961 views",
       "channel": "Android Arena",
       "published": "8mo ago",
       "duration": "1:15"
@@ -215,6 +215,6 @@
       "rating_count": 0
     }
   },
-  "crawled_at": "2026-10-20T09:15:30.410835",
+  "crawled_at": "2026-10-20T10:05:44.785135",
   "crawled_date": "2026-10-20"
 }
