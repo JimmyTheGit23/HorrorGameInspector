@@ -14,14 +14,14 @@
         "content_tags_en": []
       },
       {
-        "title": " (44,035 人评价)\r\n搜打撤,盗墓,恐怖",
+        "title": " (44,079 人评价)\r\n搜打撤,盗墓,恐怖",
         "source": "TapTap官方",
         "url": "https://www.taptap.cn/app/714123/topic?type=official",
         "link_status": "unknown",
         "category": "other",
         "content_tags": [],
         "priority": "low",
-        "title_en": "(44,035 reviews)\r\nSearch and rescue, tomb robbing, horror",
+        "title_en": "(44,079 reviews)\r\nSearch and rescue, tomb robbing, horror",
         "source_en": "TapTap Official",
         "content_tags_en": []
       },
@@ -34,6 +34,30 @@
         "content_tags": [],
         "priority": "medium",
         "title_en": "Sign in to get a spiritual contract! Massive shoveling coins and dancing treasure chests are waiting for you!",
+        "source_en": "TapTap Official",
+        "content_tags_en": []
+      },
+      {
+        "title": "快来吧，这里有你想要的所有梦想和幸福......",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/app/714123/topic?type=official",
+        "link_status": "unknown",
+        "category": "other",
+        "content_tags": [],
+        "priority": "low",
+        "title_en": "Come, here are all the dreams and happiness you want...",
+        "source_en": "TapTap Official",
+        "content_tags_en": []
+      },
+      {
+        "title": "\t巨鲶伤害40HP/次，疯狂的鸽子伤害60HP/次？建议鸽子降为30HP/次",
+        "source": "TapTap官方",
+        "url": "https://www.taptap.cn/app/714123/topic?type=official",
+        "link_status": "unknown",
+        "category": "other",
+        "content_tags": [],
+        "priority": "low",
+        "title_en": "The giant catfish damages 40HP/time, and the crazy pigeon damages 60HP/time? It is recommended that the pigeons be reduced to 30HP/time",
         "source_en": "TapTap Official",
         "content_tags_en": []
       },
@@ -112,37 +136,13 @@
         "title_en": "[Can’t Hold the Band]’s feedback questionnaire on playing experience is here!\nHow do the workers feel after experiencing the gameplay of [Can't Hold the Band]? Are there any places...",
         "source_en": "TapTap Official",
         "content_tags_en": []
-      },
-      {
-        "title": "我的天哪，竟然是500灵契，而且还要用抽奖，那么这个东西一定很贵重吧",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/app/714123/topic?type=official",
-        "link_status": "unknown",
-        "category": "other",
-        "content_tags": [],
-        "priority": "low",
-        "title_en": "Oh my god, it’s actually 500 spiritual contracts, and it also requires a lottery, so this thing must be very valuable.",
-        "source_en": "TapTap Official",
-        "content_tags_en": []
-      },
-      {
-        "title": "大妈我都给你充钱了，我的摸金爆率怎么还那么低",
-        "source": "TapTap官方",
-        "url": "https://www.taptap.cn/app/714123/topic?type=official",
-        "link_status": "unknown",
-        "category": "other",
-        "content_tags": [],
-        "priority": "low",
-        "title_en": "Auntie, I've already given you money, why is my gold-explosion rate still so low?",
-        "source_en": "TapTap Official",
-        "content_tags_en": []
       }
     ],
     "taptap": {
       "app_id": 714123,
       "source": "taptap_webpage",
-      "fans_count": 13021132,
-      "review_count": 44035,
+      "fans_count": 13025693,
+      "review_count": 44079,
       "score": "7.1",
       "description": "超自然行动组是一款搜打撤游戏，TapTap 提供超自然行动组最新版官方正版下载，一个人玩是恐怖游戏，两个人玩是冒险游戏，三个人玩是寻宝游戏，...",
       "score_display": 7.1,
@@ -284,12 +284,12 @@
           "source_en": "TapTap Forum"
         },
         {
-          "title": " (44,035 人评价)\r\n搜打撤,盗墓,恐怖",
+          "title": " (44,079 人评价)\r\n搜打撤,盗墓,恐怖",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral",
-          "title_en": "(44,035 reviews)\r\nSearch and rescue, tomb robbing, horror",
+          "title_en": "(44,079 reviews)\r\nSearch and rescue, tomb robbing, horror",
           "source_en": "TapTap Forum"
         },
         {
@@ -302,66 +302,66 @@
           "source_en": "TapTap Forum"
         },
         {
-          "title": "超自然行动组被扣费/家长怎么申请客服申诉",
-          "source": "TapTap论坛",
-          "url": "https://www.taptap.cn/app/714123/topic",
-          "link_status": "unknown",
-          "sentiment": "neutral",
-          "title_en": "The Supernatural Action Team was deducted/How do parents apply for a customer service complaint?",
-          "source_en": "TapTap Forum"
-        },
-        {
-          "title": "从四月开始玩 终于出了🎉🎉🎉记录下🎉🎉🎉",
+          "title": "【爱德华-高泰明】联动免费时装爆料！8月20日晚更新后登录就领~",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "positive",
-          "title_en": "Started playing in April and finally released🎉🎉🎉recorded🎉🎉🎉",
+          "title_en": "[Edward-Ko Taiming] Linked-up free fashion news! Log in to get it after the update on the evening of August 20~",
           "source_en": "TapTap Forum"
         },
         {
-          "title": "这个小药非常的呆萌 但是呢，一切顺利进行，直到要撤的时候，我被地龙撞飞了……好的。[表情_泪目]",
+          "title": "超自然行动组 x 精灵梦叶罗丽第三弹也在路上，两位神秘员工即将与【冷漠罗丽】&【灵公主】签订耀世与典藏级契约，敬请期待啦~",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral",
-          "title_en": "This little medicine is very cute. However, everything went smoothly until it was time to withdraw, and I was knocked away by an earth dragon... Okay. [expression_tears]",
+          "title_en": "The third episode of Supernatural Action Team",
           "source_en": "TapTap Forum"
         },
         {
-          "title": "今日的口令是：平安喜乐 红红火火 鸿运当头",
+          "title": "超自然行动组 x 精灵梦叶罗丽第三弹也在路上，两位神秘员工即将与【冷漠罗丽】&【灵公主】签订耀世与典...",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral",
-          "title_en": "Today’s password is: Peace, joy, prosperity, and good luck.",
+          "title_en": "The third episode of Supernatural Action Team",
           "source_en": "TapTap Forum"
         },
         {
-          "title": "奔着做面具图鉴去的，居然能出剑，最后土堆挖了兔月饼，扣龙珠又炼了一个兔月饼，前面那一局也是，因为不熟...",
+          "title": "结束时间：2026-10-21 10:31:52 自动开奖",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral",
-          "title_en": "I was rushing to make a mask illustration, but I was able to draw a sword. In the end, I dug up a rabbit moon cake from the dirt pile, and made another rabbit moon cake by dunking the dragon ball. The same happened in the previous game, because I was not familiar with it...",
+          "title_en": "End time: 2026-10-21 10:31:52 Automatic lottery draw",
           "source_en": "TapTap Forum"
         },
         {
-          "title": "本人摸金靠山，任何单队摸金地图均熟，氪条3900+，是个夜猫子，上学期间能熬到两三点，周末长假可以通...",
+          "title": "今日的口令是：五谷丰登 财源滚滚 吉星高照",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral",
-          "title_en": "I am a gold-finding supporter, and I am familiar with any single-team gold-finding map. I have a krypton bar of 3900+. I am a night owl. I can stay up until two or three o'clock during school hours. I can pass...",
+          "title_en": "Today’s password is: good harvests, abundant wealth, and good fortune.",
           "source_en": "TapTap Forum"
         },
         {
-          "title": "不要嫌弃(っ╥╯﹏╰╥c)想要一个CP，有点小氪",
+          "title": "一步一跪一磕头， 我那素未谋面的家长呀995995995",
           "source": "TapTap论坛",
           "url": "https://www.taptap.cn/app/714123/topic",
           "link_status": "unknown",
           "sentiment": "neutral",
-          "title_en": "Don’t dislike it (っ╥╯﹏╰╥c) I want a CP, it’s a little fun",
+          "title_en": "Kneel down and kowtow step by step, my parents I have never met before 995995995",
+          "source_en": "TapTap Forum"
+        },
+        {
+          "title": "找一个四队靠山跑刀飞天都可以，本人也算是个青飞 青跑 摸金四队都会没钱我可以包装备，希望有一个长期，...",
+          "source": "TapTap论坛",
+          "url": "https://www.taptap.cn/app/714123/topic",
+          "link_status": "unknown",
+          "sentiment": "neutral",
+          "title_en": "I can find a supporter from the fourth team to run with my sword and fly into the sky. I am also a green flyer. Even the fourth team will have no money. I can buy equipment. I hope there will be a long-term...",
           "source_en": "TapTap Forum"
         }
       ],
@@ -375,8 +375,8 @@
             "title": "南瓜入侵，幽魂大运来了！",
             "bvid": "BV1xCkfBjENz",
             "url": "https://www.bilibili.com/video/BV1xCkfBjENz",
-            "play": 5801544,
-            "like": 34787,
+            "play": 5801564,
+            "like": 34788,
             "danmaku": 188,
             "author": "張某人ZSS",
             "duration": "1:27",
@@ -388,7 +388,7 @@
             "title": "教会你们如何在超自然找到大佬",
             "bvid": "BV1d2tGz2E3Z",
             "url": "https://www.bilibili.com/video/BV1d2tGz2E3Z",
-            "play": 4745408,
+            "play": 4745451,
             "like": 32187,
             "danmaku": 421,
             "author": "中二的小溢",
@@ -401,8 +401,8 @@
             "title": "超自然行动组怪物图鉴第六期「小熊猫」",
             "bvid": "BV1QCjiz2Evq",
             "url": "https://www.bilibili.com/video/BV1QCjiz2Evq",
-            "play": 3754471,
-            "like": 16914,
+            "play": 3754560,
+            "like": 16916,
             "danmaku": 232,
             "author": "就是黄大毛",
             "duration": "1:45",
@@ -414,8 +414,8 @@
             "title": "『666 居然是隐藏款』",
             "bvid": "BV1TtK96LEFv",
             "url": "https://www.bilibili.com/video/BV1TtK96LEFv",
-            "play": 3581230,
-            "like": 14797,
+            "play": 3583682,
+            "like": 14810,
             "danmaku": 65,
             "author": "Gacha奈雪",
             "duration": "1:0",
@@ -427,7 +427,7 @@
             "title": "本来想卖掉大鹅、看到眼神心软了",
             "bvid": "BV1Wv6bBWEmn",
             "url": "https://www.bilibili.com/video/BV1Wv6bBWEmn",
-            "play": 3518676,
+            "play": 3518710,
             "like": 115632,
             "danmaku": 1701,
             "author": "虎熊寺",
@@ -440,7 +440,7 @@
             "title": "深呼吸紧张是正常的！",
             "bvid": "BV1ASwtz6Eqp",
             "url": "https://www.bilibili.com/video/BV1ASwtz6Eqp",
-            "play": 3373778,
+            "play": 3373787,
             "like": 8871,
             "danmaku": 1418,
             "author": "一兔兔爱吃肉一",
@@ -468,7 +468,7 @@
         "us": {
           "name": "美国",
           "rating": 4.56,
-          "rating_count": 1008,
+          "rating_count": 1013,
           "current_version": "1.33.19",
           "price": "Free",
           "genre": "Games",
@@ -477,7 +477,7 @@
         "jp": {
           "name": "日本",
           "rating": 4.42,
-          "rating_count": 3082,
+          "rating_count": 3089,
           "current_version": "1.33.19",
           "price": "無料",
           "genre": "Games",
@@ -506,8 +506,8 @@
         }
       },
       "app_store_rating": 4.28,
-      "total_ratings": 4386,
-      "updated": "2026-10-19 09:09",
+      "total_ratings": 4398,
+      "updated": "2026-10-20 09:13",
       "name_en": "Tomb Busters"
     },
     "app_store_rankings": {
@@ -517,7 +517,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-10-19 09:08",
+        "updated": "2026-10-20 09:12",
         "name_en": "US"
       },
       "jp": {
@@ -526,7 +526,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-10-19 09:08",
+        "updated": "2026-10-20 09:12",
         "name_en": "Japan"
       },
       "kr": {
@@ -535,7 +535,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-10-19 09:08",
+        "updated": "2026-10-20 09:12",
         "name_en": "South Korea"
       },
       "tw": {
@@ -544,7 +544,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-10-19 09:08",
+        "updated": "2026-10-20 09:12",
         "name_en": "Taiwan, China"
       },
       "hk": {
@@ -553,7 +553,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-10-19 09:08",
+        "updated": "2026-10-20 09:12",
         "name_en": "Hong Kong, China"
       }
     },
@@ -562,10 +562,10 @@
         "name": "中国",
         "name_en": "China",
         "free_overall": null,
-        "free_games": 25,
-        "grossing_overall": 39,
-        "grossing_games": 18,
-        "updated": "2026-10-19 09:08",
+        "free_games": 33,
+        "grossing_overall": 49,
+        "grossing_games": 23,
+        "updated": "2026-10-20 09:12",
         "peak_grossing_games": 6,
         "peak_free_overall": null
       }
@@ -573,11 +573,11 @@
     "stock_price": {
       "code": "SZ002558",
       "name": "巨人网络",
-      "price": 20.95,
-      "prev_close": 21.62,
-      "change_pct": -3.1,
-      "change_amt": -0.67,
-      "updated": "2026-10-19 09:08",
+      "price": 21.27,
+      "prev_close": 21.27,
+      "change_pct": 0.0,
+      "change_amt": 0.0,
+      "updated": "2026-10-20 09:12",
       "name_en": "Giant Network"
     },
     "new_content_tracker": [
@@ -585,7 +585,7 @@
         "id": "新玩法",
         "name": "新玩法",
         "status": "announced",
-        "first_seen": "2026-10-19",
+        "first_seen": "2026-10-20",
         "launch_date": null,
         "tags": [
           "新玩法"
@@ -593,7 +593,7 @@
         "announcements": [
           {
             "title": "新玩法体验调研！完成问卷送灵契~",
-            "date": "2026-10-19",
+            "date": "2026-10-20",
             "source": "TapTap官方",
             "url": "https://www.taptap.cn/app/714123/topic?type=official",
             "title_en": "New gameplay experience survey! Complete the questionnaire and receive a spiritual deed~",
@@ -614,7 +614,7 @@
         "id": "角色重做",
         "name": "角色重做",
         "status": "announced",
-        "first_seen": "2026-10-19",
+        "first_seen": "2026-10-20",
         "launch_date": null,
         "tags": [
           "角色重做"
@@ -622,7 +622,7 @@
         "announcements": [
           {
             "title": "阿念重做登场！",
-            "date": "2026-10-19",
+            "date": "2026-10-20",
             "source": "官网",
             "url": "https://www.chaoziran.com/news/538",
             "title_en": "A Nian’s rework is here!",
@@ -644,7 +644,7 @@
         "id": "新怪物",
         "name": "新怪物",
         "status": "teased",
-        "first_seen": "2026-10-19",
+        "first_seen": "2026-10-20",
         "launch_date": null,
         "tags": [
           "新怪物"
@@ -652,7 +652,7 @@
         "announcements": [
           {
             "title": "新怪物【鸭子】实机展示，追上了命都给你哦",
-            "date": "2026-10-19",
+            "date": "2026-10-20",
             "source": "官网",
             "url": "https://www.chaoziran.com/news/535",
             "title_en": "The new monster [Duck] is shown in action. If you catch up, you will be given life.",
@@ -671,17 +671,17 @@
         ]
       }
     ],
-    "crawled_at": "2026-10-19T09:09:01.435878",
+    "crawled_at": "2026-10-20T09:13:00.154406",
     "overseas": {
       "google_play": {
         "package_id": "com.game.tombbusters",
         "source": "Google Play",
         "url": "https://play.google.com/store/apps/details?id=com.game.tombbusters",
         "rating": 4.2,
-        "review_count": 1417,
+        "review_count": 1399,
         "description": "Hilarious Co-op Horror Extraction",
         "category": "FAMILY",
-        "crawled_at": "2026-10-19 09:10"
+        "crawled_at": "2026-10-20 09:14"
       },
       "google_play_reviews": [
         {
@@ -708,19 +708,55 @@
       "reddit": [],
       "youtube": [
         {
+          "title": "Raiding Ancient Tombs was a Mistake",
+          "video_id": "Keonsv7ZCf8",
+          "url": "https://www.youtube.com/watch?v=Keonsv7ZCf8",
+          "views": "4,350,056 views",
+          "channel": "SMii7Yplus",
+          "published": "3y ago",
+          "duration": "25:59"
+        },
+        {
+          "title": "A New Tomb! (Game Fails #110)",
+          "video_id": "0BtVzLlrv3M",
+          "url": "https://www.youtube.com/watch?v=0BtVzLlrv3M",
+          "views": "2,153,596 views",
+          "channel": "GameSprout",
+          "published": "10y ago",
+          "duration": "5:23"
+        },
+        {
+          "title": "TOMB RAIDER: ADDITIONAL DEATHS DLC FOR LARA CROFT",
+          "video_id": "Ku1a1uNknCc",
+          "url": "https://www.youtube.com/watch?v=Ku1a1uNknCc",
+          "views": "750,920 views",
+          "channel": "Animation Domination High Def",
+          "published": "13y ago",
+          "duration": "1:06"
+        },
+        {
           "title": "Tomb Busters - Nogla Won't Stay Away From Me!",
           "video_id": "EnuSSZ8nN4I",
           "url": "https://www.youtube.com/watch?v=EnuSSZ8nN4I",
-          "views": "509,667 views",
+          "views": "509,952 views",
           "channel": "VanossGaming",
           "published": "4mo ago",
           "duration": "27:18"
         },
         {
+          "title": "Don't get caught! Steal the treasure from this dangerous place!【 Paranormal Squad 】",
+          "video_id": "uf49EB_S4rc",
+          "url": "https://www.youtube.com/watch?v=uf49EB_S4rc",
+          "views": "291,065 views",
+          "channel": "ちろぴの",
+          "published": "3mo ago",
+          "duration": "32:10"
+        },
+        {
           "title": "THIS MOBILE LETHAL-LIKE IS ACTUALLY HILARIOUS!!! | Tomb Busters (w/ Kyle & Squirrel)",
           "video_id": "O_JjLJQdGh0",
           "url": "https://www.youtube.com/watch?v=O_JjLJQdGh0",
-          "views": "434,201 views",
+          "views": "434,257 views",
           "channel": "CaRtOoNz",
           "published": "3mo ago",
           "duration": "1:26:18"
@@ -729,7 +765,7 @@
           "title": "Tomb Busters | Launch Gameplay Trailer",
           "video_id": "SozbL_ez72Y",
           "url": "https://www.youtube.com/watch?v=SozbL_ez72Y",
-          "views": "427,042 views",
+          "views": "427,055 views",
           "channel": "Tomb Busters",
           "published": "4mo ago",
           "duration": "0:56"
@@ -738,7 +774,7 @@
           "title": "Goofy Gang Explores SCARY TOMBS... (Tomb Busters)",
           "video_id": "l9WdUDC67bY",
           "url": "https://www.youtube.com/watch?v=l9WdUDC67bY",
-          "views": "187,031 views",
+          "views": "187,274 views",
           "channel": "Goofy Gang",
           "published": "4mo ago",
           "duration": "20:27"
@@ -747,55 +783,19 @@
           "title": "Three Idiots VS Funniest New Horror Game",
           "video_id": "m6ENmCcWhBc",
           "url": "https://www.youtube.com/watch?v=m6ENmCcWhBc",
-          "views": "184,719 views",
+          "views": "185,192 views",
           "channel": "SeeReax",
           "published": "4mo ago",
           "duration": "43:39"
         },
         {
-          "title": "MARCEL KNOWS HIS FRIENDS TOO WELL!",
-          "video_id": "QPOYv5LH884",
-          "url": "https://www.youtube.com/watch?v=QPOYv5LH884",
-          "views": "225,366 views",
-          "channel": "Terroriser",
-          "published": "3mo ago",
-          "duration": "23:43"
-        },
-        {
-          "title": "Three Idiots vs Monster Game",
-          "video_id": "aLCnmer5Kcs",
-          "url": "https://www.youtube.com/watch?v=aLCnmer5Kcs",
-          "views": "118,846 views",
-          "channel": "Rhymestyle",
-          "published": "4mo ago",
-          "duration": "24:34"
-        },
-        {
-          "title": "Three Idiots VS Tomb Busters",
-          "video_id": "vkWatJzT3U0",
-          "url": "https://www.youtube.com/watch?v=vkWatJzT3U0",
-          "views": "109,904 views",
-          "channel": "DotoDoya",
-          "published": "4mo ago",
-          "duration": "21:44"
-        },
-        {
-          "title": "Tomb Busters Moments That Shouldn’t Have Been Uploaded on Juneteenth",
-          "video_id": "HOjmTX0rmbw",
-          "url": "https://www.youtube.com/watch?v=HOjmTX0rmbw",
-          "views": "117,908 views",
-          "channel": "WILDCAT",
-          "published": "3mo ago",
-          "duration": "17:32"
-        },
-        {
-          "title": "this game actually SCARED us..",
-          "video_id": "1alXtOSqYBQ",
-          "url": "https://www.youtube.com/watch?v=1alXtOSqYBQ",
-          "views": "85,584 views",
-          "channel": "steak",
-          "published": "Streamed 4mo ago",
-          "duration": "1:02:43"
+          "title": "Tomb Raider apk download? #tombraider #gamingcommunity #tombraider2013gameplay #fpsgames ",
+          "video_id": "RatbS4ym8QM",
+          "url": "https://www.youtube.com/watch?v=RatbS4ym8QM",
+          "views": "157,923 views",
+          "channel": "Android Arena",
+          "published": "8mo ago",
+          "duration": "1:15"
         }
       ],
       "official_news_en": [],
@@ -810,7 +810,7 @@
         "us": {
           "name": "美国",
           "rating": 4.56,
-          "rating_count": 1008,
+          "rating_count": 1013,
           "current_version": "1.33.19",
           "price": "Free",
           "genre": "Games"
@@ -818,7 +818,7 @@
         "jp": {
           "name": "日本",
           "rating": 4.42,
-          "rating_count": 3082,
+          "rating_count": 3089,
           "current_version": "1.33.19",
           "price": "無料",
           "genre": "Games"
@@ -889,8 +889,8 @@
           "rating_count": 0
         }
       },
-      "crawled_at": "2026-10-19T09:10:50.509369",
-      "crawled_date": "2026-10-19"
+      "crawled_at": "2026-10-20T09:15:30.410835",
+      "crawled_date": "2026-10-20"
     }
   }
 }
