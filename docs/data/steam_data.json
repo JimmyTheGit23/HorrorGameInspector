@@ -7,19 +7,19 @@
       "type": "game",
       "short_description": "An online co-op horror game with up to 6 players. Locate valuable, fully physics-based objects and handle them with care as you retrieve and extract to satisfy your creator's desires.",
       "short_description_en": "An online co-op horror game with up to 6 players. Locate valuable, fully physics-based objects and handle them with care as you retrieve and extract to satisfy your creator's desires.",
-      "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3241660/1ea445e044a2d5b09cfa8291350b63ebed6e5741/header.jpg?t=1791817973",
+      "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3241660/62177765c05399116f0453fe1177b00ceed698c4/header_alt_assets_3.jpg?t=1793278962",
       "developers": [
         "semiwork"
       ],
       "publishers": [
         "semiwork"
       ],
-      "price": "¥ 35.00",
-      "price_en": "¥ 35.00",
+      "price": "¥ 22.75",
+      "price_en": "¥ 22.75",
       "release_date": "2025 年 2 月 26 日",
       "release_date_en": "26 Feb, 2025",
       "metacritic": null,
-      "recommendations": 345572,
+      "recommendations": 347043,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -30,9 +30,14 @@
         "多人",
         "合作",
         "在线合作",
+        "完全支持控制器",
         "视角舒适度",
         "自定义音量控制",
         "无需应对快速反应事件",
+        "DUALSHOCK 控制器支持",
+        "DUALSHOCK 控制器支持",
+        "DualSense 控制器支持",
+        "DualSense 控制器支持",
         "立体声",
         "Steam 云",
         "家庭共享"
@@ -42,9 +47,14 @@
         "Multi-player",
         "Co-op",
         "Online Co-op",
+        "Full controller support",
         "Camera Comfort",
         "Custom Volume Controls",
         "Playable without Timed Input",
+        "DualShock Controller Support",
+        "DualShock Controller Support",
+        "DualSense Controller Support",
+        "DualSense Controller Support",
         "Stereo Sound",
         "Steam Cloud",
         "Family Sharing"
@@ -59,7 +69,7 @@
       ]
     },
     "steamspy": {
-      "ccu": 12126
+      "ccu": 38420
     },
     "reviews": {
       "total_reviews": 429515,
@@ -67,8 +77,8 @@
       "negative": 17225,
       "positive_rate": 96.0
     },
-    "ccu": 12126,
-    "crawled_at": "2026-10-20T10:02:25.443526"
+    "ccu": 38420,
+    "crawled_at": "2026-10-30T10:08:29.815975"
   },
   "Lethal Company": {
     "appid": 1966720,
@@ -90,7 +100,7 @@
       "release_date": "2023 年 10 月 23 日",
       "release_date_en": "23 Oct, 2023",
       "metacritic": null,
-      "recommendations": 411982,
+      "recommendations": 412105,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -130,7 +140,7 @@
       ]
     },
     "steamspy": {
-      "ccu": 3428
+      "ccu": 3258
     },
     "reviews": {
       "total_reviews": 511467,
@@ -138,8 +148,8 @@
       "negative": 15602,
       "positive_rate": 96.9
     },
-    "ccu": 3428,
-    "crawled_at": "2026-10-20T10:02:32.298777"
+    "ccu": 3258,
+    "crawled_at": "2026-10-30T10:08:49.173630"
   },
   "Phasmophobia": {
     "appid": 739630,
@@ -161,7 +171,7 @@
       "release_date": "2020 年 9 月 18 日",
       "release_date_en": "18 Sep, 2020",
       "metacritic": null,
-      "recommendations": 685790,
+      "recommendations": 686360,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -227,7 +237,7 @@
       ]
     },
     "steamspy": {
-      "ccu": 13015
+      "ccu": 12375
     },
     "reviews": {
       "total_reviews": 841640,
@@ -235,8 +245,8 @@
       "negative": 47529,
       "positive_rate": 94.4
     },
-    "ccu": 13015,
-    "crawled_at": "2026-10-20T10:02:39.001446"
+    "ccu": 12375,
+    "crawled_at": "2026-10-30T10:09:09.840574"
   },
   "Content Warning": {
     "appid": 2881650,
@@ -257,12 +267,12 @@
       "publishers": [
         "Evil Landfall?"
       ],
-      "price": "¥ 20.46",
-      "price_en": "¥ 20.46",
+      "price": "¥ 33.00",
+      "price_en": "¥ 33.00",
       "release_date": "2024 年 4 月 1 日",
       "release_date_en": "1 Apr, 2024",
       "metacritic": null,
-      "recommendations": 72990,
+      "recommendations": 73144,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -302,7 +312,7 @@
       ]
     },
     "steamspy": {
-      "ccu": 684
+      "ccu": 514
     },
     "reviews": {
       "total_reviews": 164025,
@@ -310,8 +320,8 @@
       "negative": 10221,
       "positive_rate": 93.8
     },
-    "ccu": 684,
-    "crawled_at": "2026-10-20T10:02:45.633356"
+    "ccu": 514,
+    "crawled_at": "2026-10-30T10:09:30.194864"
   },
   "FEEDERS": {
     "appid": 4408510,
@@ -378,7 +388,7 @@
       "positive_rate": 69.2
     },
     "ccu": 0,
-    "crawled_at": "2026-10-20T10:02:57.843177"
+    "crawled_at": "2026-10-30T10:09:54.620680"
   },
   "NARAKA: BLADEPOINT": {
     "appid": 1203220,
@@ -388,7 +398,7 @@
       "type": "game",
       "short_description": "风靡全球的中式竞技大作！来这里舞利刃、端火枪，享受远近结合的华丽战斗！驾驭风沙、机甲，化身野兽、大佛，体验风格迥异的英雄能力！",
       "short_description_en": "Dive into the legends of the Far East in NARAKA: BLADEPOINT; team up with friends in fast-paced melee fights for a Battle Royale experience unlike any other. Find your playstyle with a varied cast of heroes with unique skills. More than 40 million players have already joined the fray, play free now!",
-      "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1203220/1ec8fcd6f37ae4021b61ba72a14a60530ddab875/header_schinese.jpg?t=1791518965",
+      "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1203220/b13b538aad63711855dbeb2c5e5b64c3465f46bd/header_schinese.jpg?t=1792651021",
       "developers": [
         "24 Entertainment"
       ],
@@ -400,7 +410,7 @@
       "release_date": "2021 年 8 月 11 日",
       "release_date_en": "11 Aug, 2021",
       "metacritic": null,
-      "recommendations": 198006,
+      "recommendations": 198020,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -440,7 +450,7 @@
       ]
     },
     "steamspy": {
-      "ccu": 8245
+      "ccu": 8745
     },
     "reviews": {
       "total_reviews": 303351,
@@ -448,7 +458,7 @@
       "negative": 80975,
       "positive_rate": 73.3
     },
-    "ccu": 8245,
-    "crawled_at": "2026-10-20T10:03:04.365935"
+    "ccu": 8745,
+    "crawled_at": "2026-10-30T10:10:15.321339"
   }
 }
