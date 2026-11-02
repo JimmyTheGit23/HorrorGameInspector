@@ -3,7 +3,9 @@ Steam数据爬虫 - 采集恐怖撤离/合作恐怖游戏数据
 数据源：Steam Store API + Steam Review API + Steam Player Count API
 """
 
+import html
 import json
+import re
 import urllib.request
 import urllib.error
 import time
@@ -42,7 +44,8 @@ def fetch_html(url, retries=3):
     for attempt in range(retries):
         try:
             req = urllib.request.Request(url, headers={
-                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+                "Cookie": "birthtime=568022401; mature_content=1; wants_mature_content=1; lastagecheckage=1-January-1988",
             })
             with urllib.request.urlopen(req, timeout=15) as resp:
                 return resp.read().decode("utf-8", errors="replace")
@@ -52,6 +55,56 @@ def fetch_html(url, retries=3):
             else:
                 print(f"  [FAIL] {url}: {e}")
                 return None
+
+
+APPREVIEWS_PROPS_RE = re.compile(r'data-featuretarget="appreviews"[^>]*data-props="([^"]+)"')
+
+
+def extract_store_review_summary(html_text):
+    """从商店页内嵌 appreviews data-props 提取全站评测摘要。"""
+    if not html_text:
+        return None
+
+    match = APPREVIEWS_PROPS_RE.search(html_text)
+    if not match:
+        return None
+
+    try:
+        props = json.loads(html.unescape(match.group(1)))
+    except Exception as e:
+        print(f"  [FAIL] 解析商店页评测摘要失败: {e}")
+        return None
+
+    filter_options = props.get("filter_options") or {}
+    summary_options = props.get("summary_options") or {}
+    summary_global = summary_options.get("summaryGlobalNoOutliers") or {}
+    summary_recent = summary_options.get("summaryRecent") or {}
+
+    positive = filter_options.get("nReviewsPositive")
+    negative = filter_options.get("nReviewsNegative")
+    total = None
+    if positive is not None and negative is not None:
+        total = positive + negative
+    else:
+        total = summary_global.get("nReviews")
+        positive = summary_global.get("nReviewsPositive")
+        negative = (total - positive) if total is not None and positive is not None else None
+
+    if total in (None, 0) or positive is None:
+        return None
+
+    recent_total = summary_recent.get("nReviews")
+    recent_positive = summary_recent.get("nReviewsPositive")
+
+    return {
+        "total_reviews": total,
+        "positive": positive,
+        "negative": negative if negative is not None else max(total - positive, 0),
+        "positive_rate": round(positive / max(total, 1) * 100, 1),
+        "recent_reviews": recent_total,
+        "recent_positive_rate": round(recent_positive / max(recent_total, 1) * 100, 1)
+        if recent_total and recent_positive is not None else None,
+    }
 
 
 def get_store_payload(appid, lang="schinese"):
@@ -123,7 +176,7 @@ def get_steam_current_players(appid):
 
 
 def get_steam_reviews(appid):
-    """从Steam Review API获取全量评测摘要，失败时回退到简中口径"""
+    """从Steam Review API获取全量评测摘要，失败时回退到商店页内嵌摘要。"""
     url = f"https://store.steampowered.com/appreviews/{appid}?json=1&purchase_type=all&language=all&review_type=all&filter=summary&num_per_page=0"
     data = fetch_json(url)
     summary = data.get("query_summary", {}) if data and data.get("success") else {}
@@ -136,17 +189,23 @@ def get_steam_reviews(appid):
             data = fallback
             summary = fallback_summary
 
-    if not data or not data.get("success"):
-        return None
+    if data and data.get("success") and summary.get("total_reviews", 0) > 0:
+        return {
+            "total_reviews": summary.get("total_reviews", 0),
+            "positive": summary.get("total_positive", 0),
+            "negative": summary.get("total_negative", 0),
+            "positive_rate": round(
+                summary.get("total_positive", 0) / max(summary.get("total_reviews", 1), 1) * 100, 1
+            ),
+        }
 
-    return {
-        "total_reviews": summary.get("total_reviews", 0),
-        "positive": summary.get("total_positive", 0),
-        "negative": summary.get("total_negative", 0),
-        "positive_rate": round(
-            summary.get("total_positive", 0) / max(summary.get("total_reviews", 1), 1) * 100, 1
-        ),
-    }
+    html_text = fetch_html(f"https://store.steampowered.com/app/{appid}/")
+    html_summary = extract_store_review_summary(html_text)
+    if html_summary:
+        print(f"  [FALLBACK] app {appid} 评测摘要改用商店页内嵌数据")
+        return html_summary
+
+    return None
 
 
 def get_steamcharts_ccu(appid):

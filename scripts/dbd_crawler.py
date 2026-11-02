@@ -6,7 +6,9 @@ DBD数据爬虫 - 采集Dead by Daylight的Steam数据+最新动向
 替代HTML中硬编码的 DBD_DATA，实现数据自动更新
 """
 
+import html
 import json
+import re
 import urllib.request
 import urllib.error
 import time
@@ -29,6 +31,70 @@ def fetch_json(url, retries=3):
             else:
                 print(f"  [FAIL] {url}: {e}")
                 return None
+
+
+def fetch_html(url, retries=3):
+    for attempt in range(retries):
+        try:
+            req = urllib.request.Request(url, headers={
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+                "Cookie": "birthtime=568022401; mature_content=1; wants_mature_content=1; lastagecheckage=1-January-1988",
+            })
+            with urllib.request.urlopen(req, timeout=15) as resp:
+                return resp.read().decode("utf-8", errors="replace")
+        except Exception as e:
+            if attempt < retries - 1:
+                time.sleep(2 ** attempt)
+            else:
+                print(f"  [FAIL] {url}: {e}")
+                return None
+
+
+APPREVIEWS_PROPS_RE = re.compile(r'data-featuretarget="appreviews"[^>]*data-props="([^"]+)"')
+
+
+def extract_store_review_summary(html_text):
+    if not html_text:
+        return None
+
+    match = APPREVIEWS_PROPS_RE.search(html_text)
+    if not match:
+        return None
+
+    try:
+        props = json.loads(html.unescape(match.group(1)))
+    except Exception as e:
+        print(f"  [FAIL] 解析DBD商店页评测摘要失败: {e}")
+        return None
+
+    filter_options = props.get("filter_options") or {}
+    summary_options = props.get("summary_options") or {}
+    summary_recent = summary_options.get("summaryRecent") or {}
+
+    positive = filter_options.get("nReviewsPositive")
+    negative = filter_options.get("nReviewsNegative")
+    if positive is None or negative is None:
+        summary_global = summary_options.get("summaryGlobalNoOutliers") or {}
+        total = summary_global.get("nReviews")
+        positive = summary_global.get("nReviewsPositive")
+        negative = (total - positive) if total is not None and positive is not None else None
+    else:
+        total = positive + negative
+
+    if total in (None, 0) or positive is None:
+        return None
+
+    recent_total = summary_recent.get("nReviews")
+    recent_positive = summary_recent.get("nReviewsPositive")
+    return {
+        "total_reviews": total,
+        "positive": positive,
+        "negative": negative if negative is not None else max(total - positive, 0),
+        "positive_rate": round(positive / max(total, 1) * 100, 1),
+        "recent_reviews": recent_total,
+        "recent_positive_rate": round(recent_positive / max(recent_total, 1) * 100, 1)
+        if recent_total and recent_positive is not None else None,
+    }
 
 
 def get_dbd_store():
@@ -59,20 +125,26 @@ def get_dbd_store():
 
 
 def get_dbd_reviews():
-    """获取DBD评测摘要"""
-    data = fetch_json(f"https://store.steampowered.com/appreviews/{DBD_APPID}?json=1&purchase_type=all&language=all&review_type=all")
-    if not data or not data.get("success"):
-        return None
-    
-    summary = data.get("query_summary", {})
-    total = summary.get("total_reviews", 0)
-    positive = summary.get("total_positive", 0)
-    return {
-        "total_reviews": total,
-        "positive": positive,
-        "negative": total - positive,
-        "positive_rate": round(positive / max(total, 1) * 100, 1),
-    }
+    """获取DBD评测摘要，优先 Review API，失败时回退到商店页内嵌摘要。"""
+    data = fetch_json(f"https://store.steampowered.com/appreviews/{DBD_APPID}?json=1&purchase_type=all&language=all&review_type=all&filter=summary&num_per_page=0")
+    if data and data.get("success"):
+        summary = data.get("query_summary", {})
+        total = summary.get("total_reviews", 0)
+        positive = summary.get("total_positive", 0)
+        if total > 0:
+            return {
+                "total_reviews": total,
+                "positive": positive,
+                "negative": total - positive,
+                "positive_rate": round(positive / max(total, 1) * 100, 1),
+            }
+
+    html_text = fetch_html(f"https://store.steampowered.com/app/{DBD_APPID}/Dead_by_Daylight/")
+    html_summary = extract_store_review_summary(html_text)
+    if html_summary:
+        print("  [FALLBACK] DBD评测摘要改用商店页内嵌数据")
+        return html_summary
+    return None
 
 
 def get_dbd_ccu():
@@ -162,6 +234,8 @@ def crawl_dbd(preserve_trends=True):
             "current_players": ccu,
             "positive_rate": reviews.get("positive_rate", 78.5) if reviews else 78.5,
             "reviews_total": reviews.get("total_reviews", 903715) if reviews else 903715,
+            "recent_reviews": reviews.get("recent_reviews") if reviews else None,
+            "recent_positive_rate": reviews.get("recent_positive_rate") if reviews else None,
             "price_label": store.get("price", "¥ 93.75"),
             "release_date": store.get("release_date", "2016-06-14"),
             "genres": store.get("genres", []),
