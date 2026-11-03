@@ -1,13 +1,13 @@
 {
-  "snapshot_date": "2026-11-02T10:51:51+08:00",
+  "snapshot_date": "2026-11-03T10:12:18+08:00",
   "hero": {
     "name": "黎明杀机",
-    "current_players": 50082,
+    "current_players": 47234,
     "positive_rate": 78.2,
-    "reviews_total": 944387,
-    "recent_reviews": 6391,
-    "recent_positive_rate": 74.1,
-    "price_label": "¥ 37.50",
+    "reviews_total": 945003,
+    "recent_reviews": 6653,
+    "recent_positive_rate": 72.0,
+    "price_label": "¥ 93.75",
     "release_date": "2016 年 6 月 14 日",
     "genres": [
       "动作"
@@ -15,85 +15,150 @@
   },
   "operations": [
     {
+      "date": "2026-11-02",
+      "timestamp": 1793603147,
+      "title": "Разработчики Dead by Daylight подарили все DLC популярному стримеру и извинились перед игроками после негативной реакции",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1847920302247226",
+      "author": "",
+      "feed_label": "PlayGround.ru - официальная группа",
+      "feed_type": "媒体",
+      "is_patch": false,
+      "contents": "Студия Behaviour Interactive, разработчик хоррор-игры Dead by Daylight, извинилась перед сообществом после того, как популярному Twitch-стримеру TheBurntPeanut во время трансляции бесплатно выдали вес"
+    },
+    {
+      "date": "2026-10-31",
+      "timestamp": 1793389938,
+      "title": "Custom Alienware Laptop Sweepstakes",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1847920302240241",
+      "author": "Steven_BHVR",
+      "feed_label": "Community Announcements",
+      "feed_type": "官方",
+      "is_patch": false,
+      "contents": "To celebrate the Halloween season, our partners at Alienware have a sweet treat for you! From now until November 22nd, enter for a chance to win a custom-skinned Alienware 16X Aurora gaming laptop, co"
+    },
+    {
       "date": "2026-10-28",
-      "type_zh": "联动",
-      "type_en": "Collab",
-      "title": "Laugh Until You Cry in Dead by Daylight: Terrifier | Everything to Know",
-      "source": "Official News",
-      "url": "https://deadbydaylight.com/news/dbd-terrifier-everything-to-know/"
+      "timestamp": 1793202665,
+      "title": "Dead by Daylight пополнится безжалостным убийцей Terrifier 17 ноября",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1847920302231915",
+      "author": "",
+      "feed_label": "PlayGround.ru - официальная группа",
+      "feed_type": "媒体",
+      "is_patch": false,
+      "contents": "Behaviour Interactive представила тизер Terrifier для асимметричного многопользовательского хоррора Dead by Daylight. Ролик демонстрирует нового жестокого убийцу, который принесёт в туманные владения "
     },
     {
-      "date": "2026-10-07",
-      "type_zh": "活动",
-      "type_en": "Event",
-      "title": "Dead by Daylight x ARK/8: The Campfire Tour Hits L.A.",
-      "source": "Official News",
-      "url": "https://deadbydaylight.com/news/dbd-ark-8-campfire-tour-la/"
+      "date": "2026-10-28",
+      "timestamp": 1793202031,
+      "title": "В Dead by Daylight появится клоун Арт из \"Ужасающего\" - с мешком оружия и собственными добиваниями",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1847920302231537",
+      "author": "",
+      "feed_label": "PlayGround.ru - официальная группа",
+      "feed_type": "媒体",
+      "is_patch": false,
+      "contents": "Behaviour Interactive объявила о сотрудничестве Dead by Daylight с хоррор-франшизой «Ужасающий». 24 ноября в асимметричном сетевом хорроре появятся клоун Арт в роли убийцы и Сиенна Шоу в качестве выжи"
     },
     {
-      "date": "2026-10-06",
-      "type_zh": "联动",
-      "type_en": "Collab",
-      "title": "NieR:Automata Is Coming to Dead by Daylight",
-      "source": "Official News",
-      "url": "https://deadbydaylight.com/news/nier-automata-dbd/"
+      "date": "2026-10-28",
+      "timestamp": 1793199609,
+      "title": "10.3.0 | Terrifier PTB Patch Notes",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1847920302231335",
+      "author": "Goblin_BHVR",
+      "feed_label": "Community Announcements",
+      "feed_type": "官方",
+      "is_patch": false,
+      "contents": "ContentNew Killer: The TerrifierPower: Bag of Toys Hold the Ability button to open your Bag of Toys and select one of two random Toys. The Bag of Toys enters a cooldown state and cannot be opened agai"
     },
     {
-      "date": "2026-09-15",
-      "type_zh": "公益",
-      "type_en": "Charity",
-      "title": "Dead by Daylight Announces New Initiatives Supporting IM4 Media Lab and The Douglas Foundation",
-      "source": "Official News",
-      "url": "https://deadbydaylight.com/news/dbd-new-initiatives-im4lab-douglas-foundation/"
+      "date": "2026-10-27",
+      "timestamp": 1793091600,
+      "title": "Steam Global Top Sellers for week of 20 Oct — 27 October 2026",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/SteamDB/1847286114048931",
+      "author": "SteamDB",
+      "feed_label": "SteamDB",
+      "feed_type": "媒体",
+      "is_patch": false,
+      "contents": "<a href=\"https://steamdb.info/topsellers/2026W44/?utm_source=Steam&utm_medium=Steam&utm_campaign=SteamRSS\"> </a> * <a href=\"https://steamdb.info/app/4435490/charts/?utm_source=Steam&utm_medium=Steam&u"
     },
     {
-      "date": "2026-07-30",
-      "type_zh": "更新",
-      "type_en": "Update",
-      "title": "The Grimoire: Early Access",
-      "source": "Official News",
-      "url": "https://deadbydaylight.com/news/the-grimoire-early-access/"
+      "date": "2026-10-27",
+      "timestamp": 1793086130,
+      "title": "Behaviour Interactive объяснила уход Чаки из Dead by Daylight и допустила его возвращение",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1847286114047962",
+      "author": "",
+      "feed_label": "PlayGround.ru - официальная группа",
+      "feed_type": "媒体",
+      "is_patch": false,
+      "contents": "Студия Behaviour Interactive, разработчик Dead by Daylight, прокомментировала предстоящее удаление Чаки из магазина игры и заверила поклонников, что культовые персонажи хорроров смогут вернуться в буд"
     },
     {
-      "date": "2026-07-28",
-      "type_zh": "活动",
-      "type_en": "Event",
-      "title": "Dead by Daylight Turns Up the Heat with Summer Screams",
-      "source": "Official News",
-      "url": "https://deadbydaylight.com/news/dbd-turns-up-the-heat-with-summer-screams/"
+      "date": "2026-10-24",
+      "timestamp": 1792778450,
+      "title": "Dead By Daylight x Diablo Collection OUT NOW",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1847286114037461",
+      "author": "Goblin_BHVR",
+      "feed_label": "Community Announcements",
+      "feed_type": "官方",
+      "is_patch": false,
+      "contents": "Mother of Sanctuary. Lord of Hatred. Lord of Lies. Hell is coming to The Fog.Even in the Burning Hells, nothing escapes The Entity’s reach. With 30 years of soul-shattering horrors at its disposal, Th"
     }
   ],
   "patches": [
     {
       "date": "2026-10-29",
-      "version": "10.2.2a | Backend Bugfix Patch",
-      "note_zh": "10.2.2a 是 10.2.2 后的后端热修，继续通过 Backend Tunables 快速下发小幅平衡与问题修正，无需等待完整客户端补丁。BHVR patchnotes 入口当前仍未稳定挂出该条，故此处摘要取自 Steam 官方公告。",
-      "note_en": "10.2.2a is a backend hotfix follow-up to 10.2.2, using Backend Tunables to ship smaller balance and issue fixes without waiting for a full client patch. The BHVR patchnotes landing page is not reliably surfacing this entry yet, so this summary comes from Steam's official announcement feed.",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1847920302235142"
-    },
-    {
-      "date": "2026-10-28",
-      "version": "10.3.0 | Terrifier PTB Patch Notes",
-      "note_zh": "10.3.0 PTB 公开了 Terrifier 章节测试服内容：新杀手 The Terrifier、配套技能与机制调整进入下一轮版本验证，说明 10 月底已开始为 11 月新章节预热。该条同样来自 Steam 官方公告。",
-      "note_en": "10.3.0 PTB reveals the Terrifier chapter on the test branch, including the new Killer, related perks, and follow-up mechanical tuning, showing that DBD has already shifted into November content pre-launch by late October. This entry is also sourced from Steam's official announcement feed.",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1847920302231335"
+      "timestamp": 1793286360,
+      "title": "10.2.2a Backend Bugfix Patch",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1847920302235142",
+      "author": "Goblin_BHVR",
+      "feed_label": "Community Announcements",
+      "feed_type": "官方",
+      "is_patch": true,
+      "contents": "Last week, we introduced the Backend Tunables system as a way to get small balance changes in your hands quicker without having to wait for patch releases. We mentioned having changes planned for a nu"
     },
     {
       "date": "2026-10-20",
-      "version": "10.2.2 | Bugfix Patch",
-      "note_zh": "10.2.2 延续 10.2.x 的收口节奏，集中处理 Killer Perk（如 Dark Arrogance）与一批角色、地图、交互问题，是 10 月中下旬的主要正式服修复节点。",
-      "note_en": "10.2.2 continues the 10.2.x stabilization cycle, focusing on Killer Perk tuning (including Dark Arrogance) plus a batch of character, map, and interaction fixes for the live build.",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1846651706695628"
+      "timestamp": 1792508499,
+      "title": "10.2.2 | Bugfix Patch",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1846651706695628",
+      "author": "rblanchard_bhvr",
+      "feed_label": "Community Announcements",
+      "feed_type": "官方",
+      "is_patch": true,
+      "contents": "ContentKiller Perk UpdatesDark ArroganceYou basic-vault Windows 15/20/25% faster.Your basic-attack cooldown is 10% shorter. (was only missed, and 15/20/25%)Whenever you are blinded or Pallet-stunned, "
     },
     {
       "date": "2026-10-14",
-      "version": "10.2.1 | Bugfix Patch",
-      "note_zh": "10.2.1 主要收口 10.2.0 上线后的提前结束流程：当场上仅剩 1 名人类幸存者且其余为 Bot 时，幸存者可直接选择 Surrender；当剩余幸存者全部为 Bot 时，屠夫可直接 End Trial，并移除了原先对倒地状态的限制。当前 BHVR patchnotes 落地页仍主要暴露这一篇。",
-      "note_en": "10.2.1 focuses on the post-10.2.0 end-of-match flow: the last remaining human Survivor can Surrender when only bots remain on their side, and the Killer can End Trial once all remaining Survivors are bots, removing the previous dying-state restriction. This is still the article most visibly exposed by the current BHVR patchnotes landing page.",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1846651706674577"
+      "timestamp": 1791990061,
+      "title": "10.2.1 | Bugfix Patch",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1846651706674577",
+      "author": "Goblin_BHVR",
+      "feed_label": "Community Announcements",
+      "feed_type": "官方",
+      "is_patch": true,
+      "contents": "FeaturesSurrender and End TrialSurrender OptionSurvivor Condition - When there are no other human survivors, and at least one bot, the remaining player gets the option to Surrender. (was Abandon)Survi"
     }
   ],
   "trends": [
+    {
+      "month": "2026-01",
+      "avg_players": 49288,
+      "peak_players": 96633
+    },
+    {
+      "month": "2026-02",
+      "avg_players": 55296,
+      "peak_players": 93286
+    },
+    {
+      "month": "2026-03",
+      "avg_players": 46223,
+      "peak_players": 84502
+    },
+    {
+      "month": "2026-04",
+      "avg_players": 49104,
+      "peak_players": 77398
+    },
     {
       "month": "2026-05",
       "avg_players": 51051,
@@ -101,28 +166,8 @@
     },
     {
       "month": "2026-06",
-      "avg_players": 71077,
-      "peak_players": 168845
-    },
-    {
-      "month": "2026-07",
-      "avg_players": 70813,
-      "peak_players": 121937
-    },
-    {
-      "month": "2026-08",
-      "avg_players": 57800,
-      "peak_players": 99887
-    },
-    {
-      "month": "2026-09",
-      "avg_players": 47610,
-      "peak_players": 75951
-    },
-    {
-      "month": "2026-10",
-      "avg_players": 47884,
-      "peak_players": 79512
+      "avg_players": 53145,
+      "peak_players": 104001
     }
   ],
   "store": {
@@ -137,8 +182,8 @@
     "publishers": [
       "Behaviour Interactive Inc."
     ],
-    "price": "¥ 37.50",
-    "price_en": "$7.99",
+    "price": "¥ 93.75",
+    "price_en": "$19.99",
     "release_date": "2016 年 6 月 14 日",
     "platforms": {
       "windows": true,
@@ -150,13 +195,13 @@
     ]
   },
   "reviews": {
-    "total_reviews": 944387,
-    "positive": 738792,
-    "negative": 205595,
+    "total_reviews": 945003,
+    "positive": 738893,
+    "negative": 206110,
     "positive_rate": 78.2,
-    "recent_reviews": 6391,
-    "recent_positive_rate": 74.1
+    "recent_reviews": 6653,
+    "recent_positive_rate": 72.0
   },
-  "ccu": 50082,
-  "crawled_at": "2026-11-02T10:51:51.930242"
+  "ccu": 47234,
+  "crawled_at": "2026-11-03T10:12:18.122017"
 }
