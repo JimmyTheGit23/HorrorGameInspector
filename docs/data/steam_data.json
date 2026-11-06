@@ -19,7 +19,7 @@
       "release_date": "2025 年 2 月 26 日",
       "release_date_en": "26 Feb, 2025",
       "metacritic": null,
-      "recommendations": 348338,
+      "recommendations": 349064,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -69,18 +69,18 @@
       ]
     },
     "steamspy": {
-      "ccu": 33163
+      "ccu": 25541
     },
     "reviews": {
-      "total_reviews": 434060,
-      "positive": 416621,
-      "negative": 17439,
+      "total_reviews": 434995,
+      "positive": 417506,
+      "negative": 17489,
       "positive_rate": 96.0,
-      "recent_reviews": 5594,
-      "recent_positive_rate": 94.2
+      "recent_reviews": 5844,
+      "recent_positive_rate": 94.1
     },
-    "ccu": 33163,
-    "crawled_at": "2026-11-03T10:07:32.832788"
+    "ccu": 25541,
+    "crawled_at": "2026-11-06T10:14:09.861353"
   },
   "Lethal Company": {
     "appid": 1966720,
@@ -102,7 +102,7 @@
       "release_date": "2023 年 10 月 23 日",
       "release_date_en": "23 Oct, 2023",
       "metacritic": null,
-      "recommendations": 412144,
+      "recommendations": 412177,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -142,18 +142,18 @@
       ]
     },
     "steamspy": {
-      "ccu": 3423
+      "ccu": 2919
     },
     "reviews": {
-      "total_reviews": 511775,
-      "positive": 496095,
-      "negative": 15680,
+      "total_reviews": 511818,
+      "positive": 496135,
+      "negative": 15683,
       "positive_rate": 96.9,
-      "recent_reviews": 944,
-      "recent_positive_rate": 89.3
+      "recent_reviews": 929,
+      "recent_positive_rate": 89.8
     },
-    "ccu": 3423,
-    "crawled_at": "2026-11-03T10:07:54.146286"
+    "ccu": 2919,
+    "crawled_at": "2026-11-06T10:14:30.976568"
   },
   "Phasmophobia": {
     "appid": 739630,
@@ -175,7 +175,7 @@
       "release_date": "2020 年 9 月 18 日",
       "release_date_en": "18 Sep, 2020",
       "metacritic": null,
-      "recommendations": 686618,
+      "recommendations": 686722,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -241,18 +241,18 @@
       ]
     },
     "steamspy": {
-      "ccu": 10628
+      "ccu": 8398
     },
     "reviews": {
-      "total_reviews": 842974,
-      "positive": 795234,
-      "negative": 47740,
+      "total_reviews": 843099,
+      "positive": 795346,
+      "negative": 47753,
       "positive_rate": 94.3,
-      "recent_reviews": 2747,
-      "recent_positive_rate": 86.4
+      "recent_reviews": 2676,
+      "recent_positive_rate": 86.3
     },
-    "ccu": 10628,
-    "crawled_at": "2026-11-03T10:08:15.907018"
+    "ccu": 8398,
+    "crawled_at": "2026-11-06T10:14:51.785592"
   },
   "Content Warning": {
     "appid": 2881650,
@@ -278,7 +278,7 @@
       "release_date": "2024 年 4 月 1 日",
       "release_date_en": "1 Apr, 2024",
       "metacritic": null,
-      "recommendations": 73208,
+      "recommendations": 73256,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -318,18 +318,18 @@
       ]
     },
     "steamspy": {
-      "ccu": 526
+      "ccu": 475
     },
     "reviews": {
-      "total_reviews": 164354,
-      "positive": 154090,
-      "negative": 10264,
+      "total_reviews": 164405,
+      "positive": 154130,
+      "negative": 10275,
       "positive_rate": 93.8,
-      "recent_reviews": 670,
-      "recent_positive_rate": 89.9
+      "recent_reviews": 650,
+      "recent_positive_rate": 89.4
     },
-    "ccu": 526,
-    "crawled_at": "2026-11-03T10:08:37.216405"
+    "ccu": 475,
+    "crawled_at": "2026-11-06T10:15:12.775997"
   },
   "FEEDERS": {
     "appid": 4408510,
@@ -398,7 +398,7 @@
       "recent_positive_rate": null
     },
     "ccu": 0,
-    "crawled_at": "2026-11-03T10:09:04.244337"
+    "crawled_at": "2026-11-06T10:15:40.720213"
   },
   "NARAKA: BLADEPOINT": {
     "appid": 1203220,
@@ -408,7 +408,7 @@
       "type": "game",
       "short_description": "风靡全球的中式竞技大作！来这里舞利刃、端火枪，享受远近结合的华丽战斗！驾驭风沙、机甲，化身野兽、大佛，体验风格迥异的英雄能力！",
       "short_description_en": "Dive into the legends of the Far East in NARAKA: BLADEPOINT; team up with friends in fast-paced melee fights for a Battle Royale experience unlike any other. Find your playstyle with a varied cast of heroes with unique skills. More than 40 million players have already joined the fray, play free now!",
-      "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1203220/b13b538aad63711855dbeb2c5e5b64c3465f46bd/header_schinese.jpg?t=1792651021",
+      "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1203220/2ebf769e1f5b8d210500c1b9675ca2be06673c54/header_schinese.jpg?t=1793846487",
       "developers": [
         "24 Entertainment"
       ],
@@ -420,7 +420,7 @@
       "release_date": "2021 年 8 月 11 日",
       "release_date_en": "11 Aug, 2021",
       "metacritic": null,
-      "recommendations": 198027,
+      "recommendations": 198031,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -460,17 +460,17 @@
       ]
     },
     "steamspy": {
-      "ccu": 8044
+      "ccu": 11858
     },
     "reviews": {
-      "total_reviews": 343954,
-      "positive": 237954,
-      "negative": 106000,
+      "total_reviews": 344020,
+      "positive": 237999,
+      "negative": 106021,
       "positive_rate": 69.2,
-      "recent_reviews": 636,
-      "recent_positive_rate": 62.1
+      "recent_reviews": 663,
+      "recent_positive_rate": 62.0
     },
-    "ccu": 8044,
-    "crawled_at": "2026-11-03T10:09:24.919053"
+    "ccu": 11858,
+    "crawled_at": "2026-11-06T10:16:01.725642"
   }
 }
