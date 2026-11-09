@@ -1,12 +1,12 @@
 {
-  "snapshot_date": "2026-11-06T10:19:10+08:00",
+  "snapshot_date": "2026-11-09T15:37:49+08:00",
   "hero": {
     "name": "黎明杀机",
-    "current_players": 41190,
+    "current_players": 25013,
     "positive_rate": 77.9,
-    "reviews_total": 948442,
-    "recent_reviews": 5067,
-    "recent_positive_rate": 74.5,
+    "reviews_total": 949361,
+    "recent_reviews": 4297,
+    "recent_positive_rate": 74.2,
     "price_label": "¥ 93.75",
     "release_date": "2016 年 6 月 14 日",
     "genres": [
@@ -14,6 +14,17 @@
     ]
   },
   "operations": [
+    {
+      "date": "2026-11-07",
+      "timestamp": 1793994667,
+      "title": "В Dead by Daylight появились новые облики героев \"Очень странных дел\" - представлен трейлер коллекции",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1848664643347990",
+      "author": "",
+      "feed_label": "PlayGround.ru - официальная группа",
+      "feed_type": "媒体",
+      "is_patch": false,
+      "contents": "Студия Behaviour Interactive представила новый трейлер Dead by Daylight, посвящённый сотрудничеству с популярным сериалом «Очень странные дела» (Stranger Things). В честь Stranger Things Day разработч"
+    },
     {
       "date": "2026-11-05",
       "timestamp": 1793808893,
@@ -90,17 +101,6 @@
       "feed_type": "官方",
       "is_patch": false,
       "contents": "ContentNew Killer: The TerrifierPower: Bag of Toys Hold the Ability button to open your Bag of Toys and select one of two random Toys. The Bag of Toys enters a cooldown state and cannot be opened agai"
-    },
-    {
-      "date": "2026-10-27",
-      "timestamp": 1793091600,
-      "title": "Steam Global Top Sellers for week of 20 Oct — 27 October 2026",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/SteamDB/1847286114048931",
-      "author": "SteamDB",
-      "feed_label": "SteamDB",
-      "feed_type": "媒体",
-      "is_patch": false,
-      "contents": "<a href=\"https://steamdb.info/topsellers/2026W44/?utm_source=Steam&utm_medium=Steam&utm_campaign=SteamRSS\"> </a> * <a href=\"https://steamdb.info/app/4435490/charts/?utm_source=Steam&utm_medium=Steam&u"
     }
   ],
   "patches": [
@@ -184,13 +184,13 @@
     ]
   },
   "reviews": {
-    "total_reviews": 948442,
-    "positive": 738869,
-    "negative": 209573,
+    "total_reviews": 949361,
+    "positive": 739219,
+    "negative": 210142,
     "positive_rate": 77.9,
-    "recent_reviews": 5067,
-    "recent_positive_rate": 74.5
+    "recent_reviews": 4297,
+    "recent_positive_rate": 74.2
   },
-  "ccu": 41190,
-  "crawled_at": "2026-11-06T10:19:10.625007"
+  "ccu": 25013,
+  "crawled_at": "2026-11-09T15:37:49.662213"
 }
