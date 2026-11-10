@@ -129,7 +129,7 @@
     "taptap": {
       "app_id": 714123,
       "source": "taptap_webpage",
-      "fans_count": 13228519,
+      "fans_count": 13228640,
       "review_count": 45484,
       "score": "7.1",
       "description": "超自然行动组是一款搜打撤游戏，TapTap 提供超自然行动组最新版官方正版下载，一个人玩是恐怖游戏，两个人玩是冒险游戏，三个人玩是寻宝游戏，...",
@@ -389,7 +389,7 @@
             "title": "《低血糖》",
             "bvid": "BV1Z3p46FEKG",
             "url": "https://www.bilibili.com/video/BV1Z3p46FEKG",
-            "play": 4250913,
+            "play": 4251335,
             "like": 1343,
             "danmaku": 3,
             "author": "蛋仔-是暖冬啊",
@@ -402,7 +402,7 @@
             "title": "超自然行动组怪物图鉴第六期「小熊猫」",
             "bvid": "BV1QCjiz2Evq",
             "url": "https://www.bilibili.com/video/BV1QCjiz2Evq",
-            "play": 3759202,
+            "play": 3759204,
             "like": 16927,
             "danmaku": 233,
             "author": "就是黄大毛",
@@ -415,7 +415,7 @@
             "title": "『666 居然是隐藏款』",
             "bvid": "BV1TtK96LEFv",
             "url": "https://www.bilibili.com/video/BV1TtK96LEFv",
-            "play": 3682282,
+            "play": 3682311,
             "like": 15203,
             "danmaku": 69,
             "author": "Gacha奈雪",
@@ -428,7 +428,7 @@
             "title": "本来想卖掉大鹅、看到眼神心软了",
             "bvid": "BV1Wv6bBWEmn",
             "url": "https://www.bilibili.com/video/BV1Wv6bBWEmn",
-            "play": 3520631,
+            "play": 3520639,
             "like": 115646,
             "danmaku": 1702,
             "author": "虎熊寺",
@@ -455,8 +455,8 @@
       "regions_data": {
         "us": {
           "name": "美国",
-          "rating": 4.56,
-          "rating_count": 1054,
+          "rating": 4.55,
+          "rating_count": 1049,
           "current_version": "1.33.22",
           "price": "Free",
           "genre": "Games",
@@ -493,9 +493,9 @@
           "name_en": "Hong Kong, China"
         }
       },
-      "app_store_rating": 4.29,
-      "total_ratings": 4517,
-      "updated": "2026-11-10 09:04",
+      "app_store_rating": 4.28,
+      "total_ratings": 4512,
+      "updated": "2026-11-10 10:20",
       "name_en": "Tomb Busters"
     },
     "app_store_rankings": {
@@ -505,7 +505,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-11-10 09:04",
+        "updated": "2026-11-10 10:20",
         "name_en": "US"
       },
       "jp": {
@@ -514,7 +514,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-11-10 09:04",
+        "updated": "2026-11-10 10:20",
         "name_en": "Japan"
       },
       "kr": {
@@ -523,7 +523,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-11-10 09:04",
+        "updated": "2026-11-10 10:20",
         "name_en": "South Korea"
       },
       "tw": {
@@ -532,7 +532,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-11-10 09:04",
+        "updated": "2026-11-10 10:20",
         "name_en": "Taiwan, China"
       },
       "hk": {
@@ -541,7 +541,7 @@
         "free_games": null,
         "grossing_overall": null,
         "grossing_games": null,
-        "updated": "2026-11-10 09:04",
+        "updated": "2026-11-10 10:20",
         "name_en": "Hong Kong, China"
       }
     },
@@ -550,10 +550,10 @@
         "name": "中国",
         "name_en": "China",
         "free_overall": null,
-        "free_games": 32,
-        "grossing_overall": 80,
-        "grossing_games": 45,
-        "updated": "2026-11-10 09:04",
+        "free_games": 33,
+        "grossing_overall": 82,
+        "grossing_games": 46,
+        "updated": "2026-11-10 10:20",
         "peak_grossing_games": 6,
         "peak_free_overall": null
       }
@@ -561,76 +561,15 @@
     "stock_price": {
       "code": "SZ002558",
       "name": "巨人网络",
-      "price": 20.76,
-      "prev_close": 21.29,
-      "change_pct": -2.49,
-      "change_amt": -0.53,
-      "updated": "2026-11-10 09:04",
+      "price": 21.29,
+      "prev_close": 20.76,
+      "change_pct": 2.55,
+      "change_amt": 0.53,
+      "updated": "2026-11-10 10:20",
       "name_en": "Giant Network"
     },
-    "new_content_tracker": [
-      {
-        "id": "角色重做",
-        "name": "角色重做",
-        "status": "announced",
-        "first_seen": "2026-11-10",
-        "launch_date": null,
-        "tags": [
-          "角色重做"
-        ],
-        "announcements": [
-          {
-            "title": "阿念重做登场！",
-            "date": "2026-11-10",
-            "source": "官网",
-            "url": "https://www.chaoziran.com/news/538",
-            "title_en": "阿念重做登场！",
-            "source_en": "Official Site",
-            "link_status": "valid"
-          }
-        ],
-        "player_reactions": {
-          "positive": 0,
-          "neutral": 0,
-          "negative": 0
-        },
-        "name_en": "Character Rework",
-        "tags_en": [
-          "Character Rework"
-        ]
-      },
-      {
-        "id": "新怪物",
-        "name": "新怪物",
-        "status": "teased",
-        "first_seen": "2026-11-10",
-        "launch_date": null,
-        "tags": [
-          "新怪物"
-        ],
-        "announcements": [
-          {
-            "title": "新怪物【鸭子】实机展示，追上了命都给你哦",
-            "date": "2026-11-10",
-            "source": "官网",
-            "url": "https://www.chaoziran.com/news/535",
-            "title_en": "新怪物【鸭子】实机展示，追上了命都给你哦",
-            "source_en": "Official Site",
-            "link_status": "valid"
-          }
-        ],
-        "player_reactions": {
-          "positive": 0,
-          "neutral": 0,
-          "negative": 0
-        },
-        "name_en": "New Monster",
-        "tags_en": [
-          "New Monster"
-        ]
-      }
-    ],
-    "crawled_at": "2026-11-10T09:04:37.440960",
+    "new_content_tracker": [],
+    "crawled_at": "2026-11-10T10:20:43.954359",
     "overseas": {
       "google_play": {
         "package_id": "com.game.tombbusters",
@@ -640,7 +579,7 @@
         "review_count": 1441,
         "description": "Hilarious Co-op Horror Extraction",
         "category": "FAMILY",
-        "crawled_at": "2026-11-10 09:06"
+        "crawled_at": "2026-11-10 10:21"
       },
       "google_play_reviews": [
         {
@@ -670,7 +609,7 @@
           "title": "Raiding Ancient Tombs was a Mistake",
           "video_id": "Keonsv7ZCf8",
           "url": "https://www.youtube.com/watch?v=Keonsv7ZCf8",
-          "views": "4,373,511 views",
+          "views": "4,373,569 views",
           "channel": "SMii7Yplus",
           "published": "4y ago",
           "duration": "25:59"
@@ -688,7 +627,7 @@
           "title": "Tomb Busters - Nogla Won't Stay Away From Me!",
           "video_id": "EnuSSZ8nN4I",
           "url": "https://www.youtube.com/watch?v=EnuSSZ8nN4I",
-          "views": "514,934 views",
+          "views": "514,981 views",
           "channel": "VanossGaming",
           "published": "5mo ago",
           "duration": "27:18"
@@ -697,7 +636,7 @@
           "title": "Don't get caught! Steal the treasure from this dangerous place!【 Paranormal Squad 】",
           "video_id": "uf49EB_S4rc",
           "url": "https://www.youtube.com/watch?v=uf49EB_S4rc",
-          "views": "302,334 views",
+          "views": "302,362 views",
           "channel": "ちろぴの",
           "published": "4mo ago",
           "duration": "32:10"
@@ -724,7 +663,7 @@
           "title": "Three Idiots VS Funniest New Horror Game",
           "video_id": "m6ENmCcWhBc",
           "url": "https://www.youtube.com/watch?v=m6ENmCcWhBc",
-          "views": "191,915 views",
+          "views": "191,957 views",
           "channel": "SeeReax",
           "published": "5mo ago",
           "duration": "43:39"
@@ -742,7 +681,7 @@
           "title": "Tomb Raider apk download? #tombraider #gamingcommunity #tombraider2013gameplay #fpsgames ",
           "video_id": "RatbS4ym8QM",
           "url": "https://www.youtube.com/watch?v=RatbS4ym8QM",
-          "views": "167,186 views",
+          "views": "167,227 views",
           "channel": "Android Arena",
           "published": "8mo ago",
           "duration": "1:15"
@@ -777,7 +716,7 @@
         "jp": {
           "name": "日本",
           "rating": 4.43,
-          "rating_count": 3165,
+          "rating_count": 3173,
           "current_version": "1.33.22",
           "price": "無料",
           "genre": "Games"
@@ -848,7 +787,7 @@
           "rating_count": 0
         }
       },
-      "crawled_at": "2026-11-10T09:06:52.855247",
+      "crawled_at": "2026-11-10T10:22:43.750365",
       "crawled_date": "2026-11-10"
     }
   }

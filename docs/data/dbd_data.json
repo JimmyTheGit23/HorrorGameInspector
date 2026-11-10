@@ -1,12 +1,12 @@
 {
-  "snapshot_date": "2026-11-09T15:37:49+08:00",
+  "snapshot_date": "2026-11-10T10:23:00+08:00",
   "hero": {
     "name": "黎明杀机",
-    "current_players": 25013,
+    "current_players": 37746,
     "positive_rate": 77.9,
-    "reviews_total": 949361,
-    "recent_reviews": 4297,
-    "recent_positive_rate": 74.2,
+    "reviews_total": 949496,
+    "recent_reviews": 4063,
+    "recent_positive_rate": 73.9,
     "price_label": "¥ 93.75",
     "release_date": "2016 年 6 月 14 日",
     "genres": [
@@ -105,6 +105,17 @@
   ],
   "patches": [
     {
+      "date": "2026-11-10",
+      "timestamp": 1794251336,
+      "title": "10.2.2b Backend Patch",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1848664643356687",
+      "author": "rblanchard_bhvr",
+      "feed_label": "Community Announcements",
+      "feed_type": "官方",
+      "is_patch": true,
+      "contents": "Towards the end of October, we released a small balance patch using our new Backend Tunables system, adjusting The Executioner and The Good Guy. After working through your feedback and watching both o"
+    },
+    {
       "date": "2026-10-29",
       "timestamp": 1793286360,
       "title": "10.2.2a Backend Bugfix Patch",
@@ -114,17 +125,6 @@
       "feed_type": "官方",
       "is_patch": true,
       "contents": "Last week, we introduced the Backend Tunables system as a way to get small balance changes in your hands quicker without having to wait for patch releases. We mentioned having changes planned for a nu"
-    },
-    {
-      "date": "2026-10-20",
-      "timestamp": 1792508499,
-      "title": "10.2.2 | Bugfix Patch",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1846651706695628",
-      "author": "rblanchard_bhvr",
-      "feed_label": "Community Announcements",
-      "feed_type": "官方",
-      "is_patch": true,
-      "contents": "ContentKiller Perk UpdatesDark ArroganceYou basic-vault Windows 15/20/25% faster.Your basic-attack cooldown is 10% shorter. (was only missed, and 15/20/25%)Whenever you are blinded or Pallet-stunned, "
     }
   ],
   "trends": [
@@ -184,13 +184,13 @@
     ]
   },
   "reviews": {
-    "total_reviews": 949361,
-    "positive": 739219,
-    "negative": 210142,
+    "total_reviews": 949496,
+    "positive": 739299,
+    "negative": 210197,
     "positive_rate": 77.9,
-    "recent_reviews": 4297,
-    "recent_positive_rate": 74.2
+    "recent_reviews": 4063,
+    "recent_positive_rate": 73.9
   },
-  "ccu": 25013,
-  "crawled_at": "2026-11-09T15:37:49.662213"
+  "ccu": 37746,
+  "crawled_at": "2026-11-10T10:23:00.261459"
 }
