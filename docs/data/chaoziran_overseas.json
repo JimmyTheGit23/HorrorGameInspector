@@ -136,7 +136,7 @@
     "us": {
       "name": "美国",
       "rating": 4.56,
-      "rating_count": 1057,
+      "rating_count": 1058,
       "current_version": "1.33.22",
       "price": "Free",
       "genre": "Games"
@@ -144,7 +144,7 @@
     "jp": {
       "name": "日本",
       "rating": 4.43,
-      "rating_count": 3180,
+      "rating_count": 3185,
       "current_version": "1.33.22",
       "price": "無料",
       "genre": "Games"
@@ -215,6 +215,6 @@
       "rating_count": 0
     }
   },
-  "crawled_at": "2026-11-13T10:39:43.894047",
-  "crawled_date": "2026-11-13"
+  "crawled_at": "2026-11-14T09:24:26.955695",
+  "crawled_date": "2026-11-14"
 }
