@@ -7,7 +7,7 @@
     "review_count": 1463,
     "description": "Hilarious Co-op Horror Extraction",
     "category": "FAMILY",
-    "crawled_at": "2026-11-17 09:22"
+    "crawled_at": "2026-11-17 10:21"
   },
   "google_play_reviews": [
     {
@@ -37,19 +37,10 @@
       "title": "Raiding Ancient Tombs was a Mistake",
       "video_id": "Keonsv7ZCf8",
       "url": "https://www.youtube.com/watch?v=Keonsv7ZCf8",
-      "views": "4,378,074 views",
+      "views": "4,378,107 views",
       "channel": "SMii7Yplus",
       "published": "4y ago",
       "duration": "25:59"
-    },
-    {
-      "title": "TOMB RAIDER: ADDITIONAL DEATHS DLC FOR LARA CROFT",
-      "video_id": "Ku1a1uNknCc",
-      "url": "https://www.youtube.com/watch?v=Ku1a1uNknCc",
-      "views": "751,531 views",
-      "channel": "Animation Domination High Def",
-      "published": "13y ago",
-      "duration": "1:06"
     },
     {
       "title": "I Shouldn’t Have Went To This Tomb…",
@@ -68,15 +59,6 @@
       "channel": "VanossGaming",
       "published": "5mo ago",
       "duration": "27:18"
-    },
-    {
-      "title": "Don't get caught! Steal the treasure from this dangerous place!【 Paranormal Squad 】",
-      "video_id": "uf49EB_S4rc",
-      "url": "https://www.youtube.com/watch?v=uf49EB_S4rc",
-      "views": "305,505 views",
-      "channel": "ちろぴの",
-      "published": "4mo ago",
-      "duration": "32:10"
     },
     {
       "title": "THIS MOBILE LETHAL-LIKE IS ACTUALLY HILARIOUS!!! | Tomb Busters (w/ Kyle & Squirrel)",
@@ -122,6 +104,24 @@
       "channel": "Android Arena",
       "published": "9mo ago",
       "duration": "1:15"
+    },
+    {
+      "title": "MARCEL KNOWS HIS FRIENDS TOO WELL!",
+      "video_id": "QPOYv5LH884",
+      "url": "https://www.youtube.com/watch?v=QPOYv5LH884",
+      "views": "226,278 views",
+      "channel": "Terroriser",
+      "published": "4mo ago",
+      "duration": "23:43"
+    },
+    {
+      "title": "Three Idiots vs Monster Game",
+      "video_id": "aLCnmer5Kcs",
+      "url": "https://www.youtube.com/watch?v=aLCnmer5Kcs",
+      "views": "121,075 views",
+      "channel": "Rhymestyle",
+      "published": "5mo ago",
+      "duration": "24:34"
     }
   ],
   "official_news_en": [],
@@ -144,7 +144,7 @@
     "jp": {
       "name": "日本",
       "rating": 4.43,
-      "rating_count": 3191,
+      "rating_count": 3194,
       "current_version": "1.33.22",
       "price": "無料",
       "genre": "Games"
@@ -215,6 +215,6 @@
       "rating_count": 0
     }
   },
-  "crawled_at": "2026-11-17T09:23:12.710707",
+  "crawled_at": "2026-11-17T10:22:05.460320",
   "crawled_date": "2026-11-17"
 }
