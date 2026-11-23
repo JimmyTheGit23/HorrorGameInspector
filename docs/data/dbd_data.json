@@ -1,12 +1,12 @@
 {
-  "snapshot_date": "2026-11-17T10:22:22+08:00",
+  "snapshot_date": "2026-11-23T10:24:47+08:00",
   "hero": {
-    "name": "黎明杀机",
-    "current_players": 36071,
+    "name": "Dead by Daylight",
+    "current_players": 34891,
     "positive_rate": 77.8,
-    "reviews_total": 950625,
-    "recent_reviews": 2815,
-    "recent_positive_rate": 74.2,
+    "reviews_total": 951389,
+    "recent_reviews": 1875,
+    "recent_positive_rate": 75.7,
     "price_label": "¥ 93.75",
     "release_date": "2016 年 6 月 14 日",
     "genres": [
@@ -15,148 +15,175 @@
   },
   "operations": [
     {
-      "date": "2026-11-07",
-      "timestamp": 1793994667,
-      "title": "В Dead by Daylight появились новые облики героев \"Очень странных дел\" - представлен трейлер коллекции",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1848664643347990",
-      "author": "",
-      "feed_label": "PlayGround.ru - официальная группа",
-      "feed_type": "媒体",
-      "is_patch": false,
-      "contents": "Студия Behaviour Interactive представила новый трейлер Dead by Daylight, посвящённый сотрудничеству с популярным сериалом «Очень странные дела» (Stranger Things). В честь Stranger Things Day разработч"
-    },
-    {
-      "date": "2026-11-05",
-      "timestamp": 1793808893,
-      "title": "Dead by Daylight apologises to fans after gifting DLC to TheBurntPeanut and has since 'removed the content that was granted'",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PC Gamer/1848557880479806",
-      "author": "Elie Gould",
-      "feed_label": "PC Gamer",
-      "feed_type": "媒体",
-      "is_patch": false,
-      "contents": "<a href=\"https://www.pcgamer.com/dead-by-daylight/\">Dead by Daylight's</a> devs have found themselves in hot water and in the middle of quite a mess. In short, over the Halloween weekend a team member"
-    },
-    {
-      "date": "2026-11-03",
-      "timestamp": 1793696400,
-      "title": "Steam Global Top Sellers for week of 27 Oct — 3 November 2026",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/SteamDB/1847920302252093",
-      "author": "SteamDB",
-      "feed_label": "SteamDB",
-      "feed_type": "媒体",
-      "is_patch": false,
-      "contents": "<a href=\"https://steamdb.info/topsellers/2026W45/?utm_source=Steam&utm_medium=Steam&utm_campaign=SteamRSS\"> </a> * <a href=\"https://steamdb.info/app/4115450/charts/?utm_source=Steam&utm_medium=Steam&u"
-    },
-    {
-      "date": "2026-11-02",
-      "timestamp": 1793603147,
-      "title": "Разработчики Dead by Daylight подарили все DLC популярному стримеру и извинились перед игроками после негативной реакции",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1847920302247226",
-      "author": "",
-      "feed_label": "PlayGround.ru - официальная группа",
-      "feed_type": "媒体",
-      "is_patch": false,
-      "contents": "Студия Behaviour Interactive, разработчик хоррор-игры Dead by Daylight, извинилась перед сообществом после того, как популярному Twitch-стримеру TheBurntPeanut во время трансляции бесплатно выдали вес"
-    },
-    {
-      "date": "2026-10-31",
-      "timestamp": 1793389938,
-      "title": "Custom Alienware Laptop Sweepstakes",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1847920302240241",
-      "author": "Steven_BHVR",
-      "feed_label": "Community Announcements",
+      "date": "2026-11-17",
+      "title": "The Future of Dead by Daylight: Deep Dive Recap",
+      "url": "https://deadbydaylight.com/news/future-dbd-deep-dive-recap",
+      "source": "Official News",
+      "type_zh": "前瞻",
+      "type_en": "Roadmap",
       "feed_type": "官方",
+      "feed_label": "Official News",
       "is_patch": false,
-      "contents": "To celebrate the Halloween season, our partners at Alienware have a sweet treat for you! From now until November 22nd, enter for a chance to win a custom-skinned Alienware 16X Aurora gaming laptop, co"
+      "contents": "The Future of Dead by Daylight: Deep Dive Recap"
     },
     {
       "date": "2026-10-28",
-      "timestamp": 1793202665,
-      "title": "Dead by Daylight пополнится безжалостным убийцей Terrifier 17 ноября",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1847920302231915",
-      "author": "",
-      "feed_label": "PlayGround.ru - официальная группа",
-      "feed_type": "媒体",
-      "is_patch": false,
-      "contents": "Behaviour Interactive представила тизер Terrifier для асимметричного многопользовательского хоррора Dead by Daylight. Ролик демонстрирует нового жестокого убийцу, который принесёт в туманные владения "
-    },
-    {
-      "date": "2026-10-28",
-      "timestamp": 1793202031,
-      "title": "В Dead by Daylight появится клоун Арт из \"Ужасающего\" - с мешком оружия и собственными добиваниями",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1847920302231537",
-      "author": "",
-      "feed_label": "PlayGround.ru - официальная группа",
-      "feed_type": "媒体",
-      "is_patch": false,
-      "contents": "Behaviour Interactive объявила о сотрудничестве Dead by Daylight с хоррор-франшизой «Ужасающий». 24 ноября в асимметричном сетевом хорроре появятся клоун Арт в роли убийцы и Сиенна Шоу в качестве выжи"
-    },
-    {
-      "date": "2026-10-28",
-      "timestamp": 1793199609,
-      "title": "10.3.0 | Terrifier PTB Patch Notes",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1847920302231335",
-      "author": "Goblin_BHVR",
-      "feed_label": "Community Announcements",
+      "title": "Laugh Until You Cry in Dead by Daylight: Terrifier | Everything to Know",
+      "url": "https://deadbydaylight.com/news/dbd-terrifier-everything-to-know/",
+      "source": "Official News",
+      "type_zh": "联动",
+      "type_en": "Collab",
       "feed_type": "官方",
+      "feed_label": "Official News",
       "is_patch": false,
-      "contents": "ContentNew Killer: The TerrifierPower: Bag of Toys Hold the Ability button to open your Bag of Toys and select one of two random Toys. The Bag of Toys enters a cooldown state and cannot be opened agai"
+      "contents": "Laugh Until You Cry in Dead by Daylight: Terrifier | Everything to Know"
+    },
+    {
+      "date": "2026-10-07",
+      "title": "Dead by Daylight x ARK/8: The Campfire Tour Hits L.A.",
+      "url": "https://deadbydaylight.com/news/dbd-ark-8-campfire-tour-la/",
+      "source": "Official News",
+      "type_zh": "活动",
+      "type_en": "Event",
+      "feed_type": "官方",
+      "feed_label": "Official News",
+      "is_patch": false,
+      "contents": "Dead by Daylight x ARK/8: The Campfire Tour Hits L.A."
+    },
+    {
+      "date": "2026-10-06",
+      "title": "NieR:Automata Is Coming to Dead by Daylight",
+      "url": "https://deadbydaylight.com/news/nier-automata-dbd/",
+      "source": "Official News",
+      "type_zh": "联动",
+      "type_en": "Collab",
+      "feed_type": "官方",
+      "feed_label": "Official News",
+      "is_patch": false,
+      "contents": "NieR:Automata Is Coming to Dead by Daylight"
+    },
+    {
+      "date": "2026-09-15",
+      "title": "Dead by Daylight Announces New Initiatives Supporting IM4 Media Lab and The Douglas Foundation",
+      "url": "https://deadbydaylight.com/news/dbd-new-initiatives-im4lab-douglas-foundation/",
+      "source": "Official News",
+      "type_zh": "公益",
+      "type_en": "Charity",
+      "feed_type": "官方",
+      "feed_label": "Official News",
+      "is_patch": false,
+      "contents": "Dead by Daylight Announces New Initiatives Supporting IM4 Media Lab and The Douglas Foundation"
+    },
+    {
+      "date": "2026-07-30",
+      "title": "The Grimoire: Early Access",
+      "url": "https://deadbydaylight.com/news/the-grimoire-early-access/",
+      "source": "Official News",
+      "type_zh": "更新",
+      "type_en": "Update",
+      "feed_type": "官方",
+      "feed_label": "Official News",
+      "is_patch": false,
+      "contents": "The Grimoire: Early Access"
     }
   ],
   "patches": [
     {
-      "date": "2026-11-10",
-      "timestamp": 1794251336,
-      "title": "10.2.2b Backend Patch",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1848664643356687",
-      "author": "rblanchard_bhvr",
-      "feed_label": "Community Announcements",
+      "date": "2026-11-20",
+      "title": "PTB-to-Live Update | The Terrifier",
+      "version": "PTB-to-Live Update | The Terrifier",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1849827110432541",
+      "source": "Official",
       "feed_type": "官方",
+      "feed_label": "Official",
       "is_patch": true,
-      "contents": "Towards the end of October, we released a small balance patch using our new Backend Tunables system, adjusting The Executioner and The Good Guy. After working through your feedback and watching both o"
+      "note_zh": "官方在正式上线前公布 The Terrifier 的 PTB-to-Live 调整，重点围绕 Bike Horn、Acid Bottle、Handgun、Torture 时长与若干插件数值，明确 11 月 24 日上线前的最终平衡方向。",
+      "note_en": "Behaviour outlined the PTB-to-live Terrifier adjustments ahead of launch, focusing on Bike Horn, Acid Bottle, Handgun, Torture duration, and several add-on values as the final balance pass before the November 24 release.",
+      "contents": "官方在正式上线前公布 The Terrifier 的 PTB-to-Live 调整，重点围绕 Bike Horn、Acid Bottle、Handgun、Torture 时长与若干插件数值，明确 11 月 24 日上线前的最终平衡方向。"
     },
     {
-      "date": "2026-10-29",
-      "timestamp": 1793286360,
-      "title": "10.2.2a Backend Bugfix Patch",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1847920302235142",
-      "author": "Goblin_BHVR",
-      "feed_label": "Community Announcements",
+      "date": "2026-11-10",
+      "title": "10.2.2b | Backend Patch",
+      "version": "10.2.2b | Backend Patch",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1848664643356687",
+      "source": "Official",
       "feed_type": "官方",
+      "feed_label": "Official",
       "is_patch": true,
-      "contents": "Last week, we introduced the Backend Tunables system as a way to get small balance changes in your hands quicker without having to wait for patch releases. We mentioned having changes planned for a nu"
+      "note_zh": "10.2.2b 延续 Backend Tunables 的快速热修节奏，官方继续围绕 The Executioner 与 The Good Guy 做小步平衡调整，不等待完整客户端补丁。",
+      "note_en": "10.2.2b continues the Backend Tunables hotfix cadence, with Behaviour making another round of small balance adjustments for The Executioner and The Good Guy without waiting for a full client patch.",
+      "contents": "10.2.2b 延续 Backend Tunables 的快速热修节奏，官方继续围绕 The Executioner 与 The Good Guy 做小步平衡调整，不等待完整客户端补丁。"
+    },
+    {
+      "date": "2026-10-28",
+      "title": "10.3.0 | Terrifier PTB Patch Notes",
+      "version": "10.3.0 | Terrifier PTB Patch Notes",
+      "url": "https://dbd.game/4yHAt1T",
+      "source": "Official",
+      "feed_type": "官方",
+      "feed_label": "Official",
+      "is_patch": true,
+      "note_zh": "10.3.0 PTB 公布 Terrifier 章节测试服内容：新杀手 The Terrifier、新幸存者 Sienna Shaw、新地图 Hartshorne Mall，以及 gore 自定义和 Mori 系统更新。",
+      "note_en": "The 10.3.0 PTB introduces the Terrifier chapter with The Terrifier, Sienna Shaw, Hartshorne Mall, and the new gore customization and Mori-system updates.",
+      "contents": "10.3.0 PTB 公布 Terrifier 章节测试服内容：新杀手 The Terrifier、新幸存者 Sienna Shaw、新地图 Hartshorne Mall，以及 gore 自定义和 Mori 系统更新。"
+    },
+    {
+      "date": "2026-10-20",
+      "title": "10.2.2 | Bugfix Patch",
+      "version": "10.2.2 | Bugfix Patch",
+      "url": "https://bugreport.deadbydaylight.com/projects/pr-5642738318/releases/6352",
+      "source": "Official",
+      "feed_type": "官方",
+      "feed_label": "Official",
+      "is_patch": true,
+      "note_zh": "10.2.2 延续 10.2.x 的收口节奏，调整 Dark Arrogance，并配套 Lights Out: Stranger Things Edition 及一批地图、角色、UI、活动问题修复。",
+      "note_en": "10.2.2 continues the 10.2.x stabilization cycle with a Dark Arrogance retune, the Lights Out: Stranger Things Edition beat, and a broad batch of map, character, UI, and event fixes.",
+      "contents": "10.2.2 延续 10.2.x 的收口节奏，调整 Dark Arrogance，并配套 Lights Out: Stranger Things Edition 及一批地图、角色、UI、活动问题修复。"
+    },
+    {
+      "date": "2026-10-14",
+      "title": "10.2.1 | Patch Notes",
+      "version": "10.2.1 | Patch Notes",
+      "url": "https://bugreport.deadbydaylight.com/projects/pr-5642738318/releases/6209",
+      "source": "Official",
+      "feed_type": "官方",
+      "feed_label": "Official",
+      "is_patch": true,
+      "note_zh": "BHVR patchnotes 落地页当前仍最稳定地指向 10.2.1；该版本加入 Survivor Surrender / Killer End Trial 流程，并配套 Haunted by Daylight 2026 活动规则更新。",
+      "note_en": "The BHVR patchnotes landing page still most reliably points to 10.2.1, which added the Survivor Surrender / Killer End Trial flow and folded in the Haunted by Daylight 2026 event rules.",
+      "contents": "BHVR patchnotes 落地页当前仍最稳定地指向 10.2.1；该版本加入 Survivor Surrender / Killer End Trial 流程，并配套 Haunted by Daylight 2026 活动规则更新。"
     }
   ],
   "trends": [
     {
-      "month": "2026-01",
-      "avg_players": 49288,
-      "peak_players": 96633
-    },
-    {
-      "month": "2026-02",
-      "avg_players": 55296,
-      "peak_players": 93286
-    },
-    {
-      "month": "2026-03",
-      "avg_players": 46223,
-      "peak_players": 84502
-    },
-    {
-      "month": "2026-04",
-      "avg_players": 49104,
-      "peak_players": 77398
-    },
-    {
-      "month": "2026-05",
-      "avg_players": 51051,
-      "peak_players": 86738
-    },
-    {
       "month": "2026-06",
-      "avg_players": 53145,
-      "peak_players": 104001
+      "avg_players": 71077,
+      "peak_players": 168845
+    },
+    {
+      "month": "2026-07",
+      "avg_players": 70813,
+      "peak_players": 121937
+    },
+    {
+      "month": "2026-08",
+      "avg_players": 57800,
+      "peak_players": 99887
+    },
+    {
+      "month": "2026-09",
+      "avg_players": 47610,
+      "peak_players": 75951
+    },
+    {
+      "month": "2026-10",
+      "avg_players": 47884,
+      "peak_players": 79512
+    },
+    {
+      "month": "2026-11",
+      "avg_players": 49099,
+      "peak_players": 79512
     }
   ],
   "store": {
@@ -164,7 +191,7 @@
     "name_en": "Dead by Daylight",
     "short_description": "10年恐惧相伴。10年的惊吓与刺激体验。10年的残暴献祭与惊险逃脱。 永久困于邪恶的幻境之中，即使死亡也无法逃脱，这是一场需要勇气和智慧的较量，四名意志坚定的逃生者在残忍对局中面对嗜血杀手。选择一方，进入多人非对称竞技游戏世界，获得最佳恐怖游戏体验。",
     "short_description_en": "10 years of horror. 10 years of jump scares and close calls. 10 years of brutal sacrifices and thrilling escapes. Trapped forever in a realm of eldritch evil where even death is not an escape, four determined Survivors face a bloodthirsty Killer in a vicious game of nerve and wits.",
-    "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/381210/header.jpg?t=1793724618",
+    "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/381210/header.jpg?t=1795112227",
     "developers": [
       "Behaviour Interactive Inc."
     ],
@@ -184,13 +211,13 @@
     ]
   },
   "reviews": {
-    "total_reviews": 950625,
-    "positive": 740011,
-    "negative": 210614,
+    "total_reviews": 951389,
+    "positive": 740552,
+    "negative": 210837,
     "positive_rate": 77.8,
-    "recent_reviews": 2815,
-    "recent_positive_rate": 74.2
+    "recent_reviews": 1875,
+    "recent_positive_rate": 75.7
   },
-  "ccu": 36071,
-  "crawled_at": "2026-11-17T10:22:22.424771"
+  "ccu": 34891,
+  "crawled_at": "2026-11-23T10:24:47.166087"
 }

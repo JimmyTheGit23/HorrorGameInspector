@@ -3,6 +3,17 @@
     "appid": 3241660,
     "all": [
       {
+        "date": "2026-11-18",
+        "datetime": "2026-11-18T18:35:07",
+        "title": "R.E.P.O. v0.5.2",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1849827110423646",
+        "author": "semiwork",
+        "feed_label": "Community Announcements",
+        "is_patch": true,
+        "is_official": true,
+        "contents": "Hey hey semibots! Here is another small update with some fixes for our latest content update! NEW CHANGES BALANCING FIXES NEW Object Shadow Quality - Added a new graphics setting to disable shadows ca"
+      },
+      {
         "date": "2026-11-05",
         "datetime": "2026-11-05T17:07:09",
         "title": "R.E.P.O. v0.5.1",
@@ -100,20 +111,20 @@
         "is_patch": false,
         "is_official": true,
         "contents": "Hey hey semibots! Our third major update is now live, The Cosmetic Update! Hope you guys have fun with all the new content, and please share your fresh outfits! ❤️ NEW CHANGES BALANCING FIXES NEW Cosm"
-      },
-      {
-        "date": "2026-05-01",
-        "datetime": "2026-05-01T21:00:50",
-        "title": "Let's talk about the COSMETICS!",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1831432155571308",
-        "author": "Axel",
-        "feed_label": "Community Announcements",
-        "is_patch": false,
-        "is_official": true,
-        "contents": "Hey hey semibots! And now, for the FINAL DEVLOG before the update launches on May 7th, we’re giving you a rundown of the cosmetics so that you’re well prepared and ready! Check out the Devlog here: If"
       }
     ],
     "patches": [
+      {
+        "date": "2026-11-18",
+        "datetime": "2026-11-18T18:35:07",
+        "title": "R.E.P.O. v0.5.2",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1849827110423646",
+        "author": "semiwork",
+        "feed_label": "Community Announcements",
+        "is_patch": true,
+        "is_official": true,
+        "contents": "Hey hey semibots! Here is another small update with some fixes for our latest content update! NEW CHANGES BALANCING FIXES NEW Object Shadow Quality - Added a new graphics setting to disable shadows ca"
+      },
       {
         "date": "2026-11-05",
         "datetime": "2026-11-05T17:07:09",
@@ -214,42 +225,31 @@
         "is_patch": false,
         "is_official": true,
         "contents": "Hey hey semibots! Our third major update is now live, The Cosmetic Update! Hope you guys have fun with all the new content, and please share your fresh outfits! ❤️ NEW CHANGES BALANCING FIXES NEW Cosm"
-      },
-      {
-        "date": "2026-05-01",
-        "datetime": "2026-05-01T21:00:50",
-        "title": "Let's talk about the COSMETICS!",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1831432155571308",
-        "author": "Axel",
-        "feed_label": "Community Announcements",
-        "is_patch": false,
-        "is_official": true,
-        "contents": "Hey hey semibots! And now, for the FINAL DEVLOG before the update launches on May 7th, we’re giving you a rundown of the cosmetics so that you’re well prepared and ready! Check out the Devlog here: If"
       }
     ],
     "latest": {
-      "date": "2026-11-05",
-      "datetime": "2026-11-05T17:07:09",
-      "title": "R.E.P.O. v0.5.1",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1848664643340421",
+      "date": "2026-11-18",
+      "datetime": "2026-11-18T18:35:07",
+      "title": "R.E.P.O. v0.5.2",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1849827110423646",
       "author": "semiwork",
       "feed_label": "Community Announcements",
       "is_patch": true,
       "is_official": true,
-      "contents": "Hey hey semibots! Here is a small update with some fixes for our latest content update! NEW CHANGES BALANCING FIXES NEW Keybinding - Added the ability to unbind optional keybinds (chat, expressions, a"
+      "contents": "Hey hey semibots! Here is another small update with some fixes for our latest content update! NEW CHANGES BALANCING FIXES NEW Object Shadow Quality - Added a new graphics setting to disable shadows ca"
     },
     "latest_patch": {
-      "date": "2026-11-05",
-      "datetime": "2026-11-05T17:07:09",
-      "title": "R.E.P.O. v0.5.1",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1848664643340421",
+      "date": "2026-11-18",
+      "datetime": "2026-11-18T18:35:07",
+      "title": "R.E.P.O. v0.5.2",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1849827110423646",
       "author": "semiwork",
       "feed_label": "Community Announcements",
       "is_patch": true,
       "is_official": true,
-      "contents": "Hey hey semibots! Here is a small update with some fixes for our latest content update! NEW CHANGES BALANCING FIXES NEW Keybinding - Added the ability to unbind optional keybinds (chat, expressions, a"
+      "contents": "Hey hey semibots! Here is another small update with some fixes for our latest content update! NEW CHANGES BALANCING FIXES NEW Object Shadow Quality - Added a new graphics setting to disable shadows ca"
     },
-    "crawled_at": "2026-11-17T10:22:23.606289"
+    "crawled_at": "2026-11-23T10:24:47.736383"
   },
   "Lethal Company": {
     "appid": 1966720,
@@ -501,12 +501,34 @@
       "is_official": true,
       "contents": "Hello, long time no see! Version 80 is out in beta for you to test. You can access it by opting into the public beta branch for Lethal Company on Steam. V80 brings a complete rework of March's exterio"
     },
-    "crawled_at": "2026-11-17T10:22:25.845446"
+    "crawled_at": "2026-11-23T10:24:49.399102"
   },
   "Phasmophobia": {
     "appid": 739630,
     "all": [
       {
+        "date": "2026-11-18",
+        "datetime": "2026-11-18T00:36:51",
+        "title": "Phasmophobia перейдёт на Unity 6 и получит новое оборудование - обновление Resonance выйдет 24 ноября",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1849458702694452",
+        "author": "",
+        "feed_label": "PlayGround.ru - официальная группа",
+        "is_patch": false,
+        "is_official": false,
+        "contents": "Kinetic Games объявила дату выхода Resonance — одного из крупнейших обновлений Phasmophobia. Оно появится 24 ноября и объединит новый контент с переходом на Unity 6. Игроков ждут дополнительные инстру"
+      },
+      {
+        "date": "2026-11-17",
+        "datetime": "2026-11-17T23:00:10",
+        "title": "Announcing - Phasmophobia's Resonance Update Releases November 24th, 2026",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1849458702694051",
+        "author": "Tom Dent",
+        "feed_label": "Community Announcements",
+        "is_patch": false,
+        "is_official": true,
+        "contents": "Welcome back, Ghost Hunters.Today, we are excited to announce that Resonance, our next major update for Phasmophobia, releases November 24th, 2026 across all platforms.Along with our transition to Uni"
+      },
+      {
         "date": "2026-11-11",
         "datetime": "2026-11-11T15:41:01",
         "title": "Фанаты Phasmophobia собрали рекордные $200 тысяч на благотворительность - Kinetic Games приготовила им подарки",
@@ -593,45 +615,33 @@
         "is_patch": false,
         "is_official": true,
         "contents": "Once more, Ghost Hunters, we pay homage to the Blood Moon. Our dear Crimson Eye.Today, we’re excited to reveal that this year’s Crimson Eye event will begin on October 8th, 2026, and run until Novembe"
-      },
-      {
-        "date": "2026-09-19",
-        "datetime": "2026-09-19T00:00:12",
-        "title": "6th Anniversary Twitch Drop & Double XP",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1844115010495294",
-        "author": "Tom Dent",
-        "feed_label": "Community Announcements",
-        "is_patch": false,
-        "is_official": true,
-        "contents": "Welcome back, Ghost Hunters. This week marks 6 years of #Phasmophobia. Thank you to each & every Ghost Hunter that has joined us so far. To celebrate, a Twitch Drop campaign will be live between Septe"
-      },
-      {
-        "date": "2026-09-17",
-        "datetime": "2026-09-17T00:05:27",
-        "title": "Phasmophobia v0.19.0.2 - Patch Notes",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1844115010489571",
-        "author": "Tom Dent",
-        "feed_label": "Community Announcements",
-        "is_patch": true,
-        "is_official": true,
-        "contents": "Welcome back, Ghost Hunters. We’ve got an update for you.Today, we have released an update for Phasmophobia to address two issues that have been raised by the community since the release of our last u"
       }
     ],
-    "patches": [
-      {
-        "date": "2026-09-17",
-        "datetime": "2026-09-17T00:05:27",
-        "title": "Phasmophobia v0.19.0.2 - Patch Notes",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1844115010489571",
-        "author": "Tom Dent",
-        "feed_label": "Community Announcements",
-        "is_patch": true,
-        "is_official": true,
-        "contents": "Welcome back, Ghost Hunters. We’ve got an update for you.Today, we have released an update for Phasmophobia to address two issues that have been raised by the community since the release of our last u"
-      }
-    ],
+    "patches": [],
     "announcements": [
       {
+        "date": "2026-11-18",
+        "datetime": "2026-11-18T00:36:51",
+        "title": "Phasmophobia перейдёт на Unity 6 и получит новое оборудование - обновление Resonance выйдет 24 ноября",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1849458702694452",
+        "author": "",
+        "feed_label": "PlayGround.ru - официальная группа",
+        "is_patch": false,
+        "is_official": false,
+        "contents": "Kinetic Games объявила дату выхода Resonance — одного из крупнейших обновлений Phasmophobia. Оно появится 24 ноября и объединит новый контент с переходом на Unity 6. Игроков ждут дополнительные инстру"
+      },
+      {
+        "date": "2026-11-17",
+        "datetime": "2026-11-17T23:00:10",
+        "title": "Announcing - Phasmophobia's Resonance Update Releases November 24th, 2026",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1849458702694051",
+        "author": "Tom Dent",
+        "feed_label": "Community Announcements",
+        "is_patch": false,
+        "is_official": true,
+        "contents": "Welcome back, Ghost Hunters.Today, we are excited to announce that Resonance, our next major update for Phasmophobia, releases November 24th, 2026 across all platforms.Along with our transition to Uni"
+      },
+      {
         "date": "2026-11-11",
         "datetime": "2026-11-11T15:41:01",
         "title": "Фанаты Phasmophobia собрали рекордные $200 тысяч на благотворительность - Kinetic Games приготовила им подарки",
@@ -718,42 +728,21 @@
         "is_patch": false,
         "is_official": true,
         "contents": "Once more, Ghost Hunters, we pay homage to the Blood Moon. Our dear Crimson Eye.Today, we’re excited to reveal that this year’s Crimson Eye event will begin on October 8th, 2026, and run until Novembe"
-      },
-      {
-        "date": "2026-09-19",
-        "datetime": "2026-09-19T00:00:12",
-        "title": "6th Anniversary Twitch Drop & Double XP",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1844115010495294",
-        "author": "Tom Dent",
-        "feed_label": "Community Announcements",
-        "is_patch": false,
-        "is_official": true,
-        "contents": "Welcome back, Ghost Hunters. This week marks 6 years of #Phasmophobia. Thank you to each & every Ghost Hunter that has joined us so far. To celebrate, a Twitch Drop campaign will be live between Septe"
       }
     ],
     "latest": {
-      "date": "2026-11-11",
-      "datetime": "2026-11-11T15:41:01",
-      "title": "Фанаты Phasmophobia собрали рекордные $200 тысяч на благотворительность - Kinetic Games приготовила им подарки",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1849192144177635",
+      "date": "2026-11-18",
+      "datetime": "2026-11-18T00:36:51",
+      "title": "Phasmophobia перейдёт на Unity 6 и получит новое оборудование - обновление Resonance выйдет 24 ноября",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1849458702694452",
       "author": "",
       "feed_label": "PlayGround.ru - официальная группа",
       "is_patch": false,
       "is_official": false,
-      "contents": "Сообщество Phasmophobia собрало более 200 тысяч долларов в рамках благотворительной акции Ghost Hunts for Hearts. Все средства направят American Heart Association, которая занимается борьбой с сердечн"
+      "contents": "Kinetic Games объявила дату выхода Resonance — одного из крупнейших обновлений Phasmophobia. Оно появится 24 ноября и объединит новый контент с переходом на Unity 6. Игроков ждут дополнительные инстру"
     },
-    "latest_patch": {
-      "date": "2026-09-17",
-      "datetime": "2026-09-17T00:05:27",
-      "title": "Phasmophobia v0.19.0.2 - Patch Notes",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1844115010489571",
-      "author": "Tom Dent",
-      "feed_label": "Community Announcements",
-      "is_patch": true,
-      "is_official": true,
-      "contents": "Welcome back, Ghost Hunters. We’ve got an update for you.Today, we have released an update for Phasmophobia to address two issues that have been raised by the community since the release of our last u"
-    },
-    "crawled_at": "2026-11-17T10:22:28.060643"
+    "latest_patch": null,
+    "crawled_at": "2026-11-23T10:24:50.998341"
   },
   "Content Warning": {
     "appid": 2881650,
@@ -1005,7 +994,7 @@
       "is_official": true,
       "contents": "Hello Spööktubers! Thank you for your patience as we're fixing bugs on all platforms.Here's a new patch fixing some stuff!For those of you wondering when crossplay between Switch 1 & 2 and other platf"
     },
-    "crawled_at": "2026-11-17T10:22:30.270240"
+    "crawled_at": "2026-11-23T10:24:52.602156"
   },
   "FEEDERS": {
     "appid": 4408510,
@@ -1256,11 +1245,55 @@
       "is_official": true,
       "contents": "Gave the HUD a fresh redesign. New look across the board — the status bars (Health, Stamina, Radiation) and the bottom belt all got reworked. Same info, cleaner read. More guns coming with new solo ex"
     },
-    "crawled_at": "2026-11-17T10:22:32.496372"
+    "crawled_at": "2026-11-23T10:24:54.199007"
   },
   "NARAKA: BLADEPOINT": {
     "appid": 1203220,
     "all": [
+      {
+        "date": "2026-11-23",
+        "datetime": "2026-11-23T00:31:12",
+        "title": "NARAKA: BLADEPOINT Maintenance Notice - November 22",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1849827110438887",
+        "author": "Misty",
+        "feed_label": "Community Announcements",
+        "is_patch": false,
+        "is_official": true,
+        "contents": "Dear Players,Due to a network issue, the servers will be taken offline for temporary maintenance expected to last approximately 3 hours at 9:00 11/22 PT. We sincerely apologize for the inconvenience t"
+      },
+      {
+        "date": "2026-11-19",
+        "datetime": "2026-11-19T21:52:47",
+        "title": "NARAKA: BLADEPOINT отправилась в Антарктиду: новое событие добавило экспедицию, рыбалку и десятки наград",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1849827110428442",
+        "author": "",
+        "feed_label": "PlayGround.ru - официальная группа",
+        "is_patch": false,
+        "is_official": false,
+        "contents": "19 ноября NARAKA: BLADEPOINT получила крупное обновление с несколькими временными событиями, изменениями баланса и расширением игрового контента. Главной новинкой стала «Полярная экспедиция» — совмест"
+      },
+      {
+        "date": "2026-11-18",
+        "datetime": "2026-11-18T21:35:43",
+        "title": "NARAKA: BLADEPOINT Update – November 19th, 2026",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1849827110424239",
+        "author": "Yeeeeee",
+        "feed_label": "Community Announcements",
+        "is_patch": false,
+        "is_official": true,
+        "contents": "Dear players,The servers of NARAKA: BLADEPOINT will be suspended for maintenance from Nov. 18th, 2026 23:00 (UTC) to Nov. 19th, 2026 04:00 (UTC). We suggest you log out in advance and enter the game a"
+      },
+      {
+        "date": "2026-11-17",
+        "datetime": "2026-11-17T17:33:09",
+        "title": "NARAKA: BLADEPOINT Banned Players List November 17th",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1849458702692939",
+        "author": "Yeeeeee",
+        "feed_label": "Community Announcements",
+        "is_patch": false,
+        "is_official": true,
+        "contents": "Dear players,NARAKA: BLADEPOINT is committed to creating a fair and healthy competitive environment. We have not only used new anti-cheat technologies, but also established special cheat-reporting rew"
+      },
       {
         "date": "2026-11-10",
         "datetime": "2026-11-10T20:53:44",
@@ -1321,50 +1354,6 @@
         "datetime": "2026-10-20T22:16:17",
         "title": "NARAKA: BLADEPOINT Banned Players List Oct 20th",
         "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1846651706695473",
-        "author": "Yeeeeee",
-        "feed_label": "Community Announcements",
-        "is_patch": false,
-        "is_official": true,
-        "contents": "Dear players,NARAKA: BLADEPOINT is committed to creating a fair and healthy competitive environment. We have not only used new anti-cheat technologies, but also established special cheat-reporting rew"
-      },
-      {
-        "date": "2026-10-13",
-        "datetime": "2026-10-13T20:18:34",
-        "title": "NARAKA: BLADEPOINT Banned Players List October 13th",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1846018067943855",
-        "author": "Yeeeeee",
-        "feed_label": "Community Announcements",
-        "is_patch": false,
-        "is_official": true,
-        "contents": "Dear players,NARAKA: BLADEPOINT is committed to creating a fair and healthy competitive environment. We have not only used new anti-cheat technologies, but also established special cheat-reporting rew"
-      },
-      {
-        "date": "2026-10-08",
-        "datetime": "2026-10-08T22:48:57",
-        "title": "NARAKA: BLADEPOINT Update –October 8th, 2026",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1846018067929989",
-        "author": "Yeeeeee",
-        "feed_label": "Community Announcements",
-        "is_patch": false,
-        "is_official": true,
-        "contents": "Dear players, The servers of NARAKA： BLADEPOINT will be suspended for maintenance from Oct. 8th, 2026 23：00 (UTC) to Oct. 9th, 2026 04：00 (UTC). We suggest you log out in advance and enter the game ag"
-      },
-      {
-        "date": "2026-09-30",
-        "datetime": "2026-09-30T13:55:18",
-        "title": "NARAKA: BLADEPOINT Banned Players List September 29th",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1845383656376400",
-        "author": "Yeeeeee",
-        "feed_label": "Community Announcements",
-        "is_patch": false,
-        "is_official": true,
-        "contents": "Dear players,NARAKA: BLADEPOINT is committed to creating a fair and healthy competitive environment. We have not only used new anti-cheat technologies, but also established special cheat-reporting rew"
-      },
-      {
-        "date": "2026-09-23",
-        "datetime": "2026-09-23T21:32:17",
-        "title": "NARAKA: BLADEPOINT Banned Players List September 23rd",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1844751498218431",
         "author": "Yeeeeee",
         "feed_label": "Community Announcements",
         "is_patch": false,
@@ -1375,6 +1364,50 @@
     "patches": [],
     "announcements": [
       {
+        "date": "2026-11-23",
+        "datetime": "2026-11-23T00:31:12",
+        "title": "NARAKA: BLADEPOINT Maintenance Notice - November 22",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1849827110438887",
+        "author": "Misty",
+        "feed_label": "Community Announcements",
+        "is_patch": false,
+        "is_official": true,
+        "contents": "Dear Players,Due to a network issue, the servers will be taken offline for temporary maintenance expected to last approximately 3 hours at 9:00 11/22 PT. We sincerely apologize for the inconvenience t"
+      },
+      {
+        "date": "2026-11-19",
+        "datetime": "2026-11-19T21:52:47",
+        "title": "NARAKA: BLADEPOINT отправилась в Антарктиду: новое событие добавило экспедицию, рыбалку и десятки наград",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1849827110428442",
+        "author": "",
+        "feed_label": "PlayGround.ru - официальная группа",
+        "is_patch": false,
+        "is_official": false,
+        "contents": "19 ноября NARAKA: BLADEPOINT получила крупное обновление с несколькими временными событиями, изменениями баланса и расширением игрового контента. Главной новинкой стала «Полярная экспедиция» — совмест"
+      },
+      {
+        "date": "2026-11-18",
+        "datetime": "2026-11-18T21:35:43",
+        "title": "NARAKA: BLADEPOINT Update – November 19th, 2026",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1849827110424239",
+        "author": "Yeeeeee",
+        "feed_label": "Community Announcements",
+        "is_patch": false,
+        "is_official": true,
+        "contents": "Dear players,The servers of NARAKA: BLADEPOINT will be suspended for maintenance from Nov. 18th, 2026 23:00 (UTC) to Nov. 19th, 2026 04:00 (UTC). We suggest you log out in advance and enter the game a"
+      },
+      {
+        "date": "2026-11-17",
+        "datetime": "2026-11-17T17:33:09",
+        "title": "NARAKA: BLADEPOINT Banned Players List November 17th",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1849458702692939",
+        "author": "Yeeeeee",
+        "feed_label": "Community Announcements",
+        "is_patch": false,
+        "is_official": true,
+        "contents": "Dear players,NARAKA: BLADEPOINT is committed to creating a fair and healthy competitive environment. We have not only used new anti-cheat technologies, but also established special cheat-reporting rew"
+      },
+      {
         "date": "2026-11-10",
         "datetime": "2026-11-10T20:53:44",
         "title": "NARAKA: BLADEPOINT Banned Players List November 10th",
@@ -1439,69 +1472,113 @@
         "is_patch": false,
         "is_official": true,
         "contents": "Dear players,NARAKA: BLADEPOINT is committed to creating a fair and healthy competitive environment. We have not only used new anti-cheat technologies, but also established special cheat-reporting rew"
-      },
-      {
-        "date": "2026-10-13",
-        "datetime": "2026-10-13T20:18:34",
-        "title": "NARAKA: BLADEPOINT Banned Players List October 13th",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1846018067943855",
-        "author": "Yeeeeee",
-        "feed_label": "Community Announcements",
-        "is_patch": false,
-        "is_official": true,
-        "contents": "Dear players,NARAKA: BLADEPOINT is committed to creating a fair and healthy competitive environment. We have not only used new anti-cheat technologies, but also established special cheat-reporting rew"
-      },
-      {
-        "date": "2026-10-08",
-        "datetime": "2026-10-08T22:48:57",
-        "title": "NARAKA: BLADEPOINT Update –October 8th, 2026",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1846018067929989",
-        "author": "Yeeeeee",
-        "feed_label": "Community Announcements",
-        "is_patch": false,
-        "is_official": true,
-        "contents": "Dear players, The servers of NARAKA： BLADEPOINT will be suspended for maintenance from Oct. 8th, 2026 23：00 (UTC) to Oct. 9th, 2026 04：00 (UTC). We suggest you log out in advance and enter the game ag"
-      },
-      {
-        "date": "2026-09-30",
-        "datetime": "2026-09-30T13:55:18",
-        "title": "NARAKA: BLADEPOINT Banned Players List September 29th",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1845383656376400",
-        "author": "Yeeeeee",
-        "feed_label": "Community Announcements",
-        "is_patch": false,
-        "is_official": true,
-        "contents": "Dear players,NARAKA: BLADEPOINT is committed to creating a fair and healthy competitive environment. We have not only used new anti-cheat technologies, but also established special cheat-reporting rew"
-      },
-      {
-        "date": "2026-09-23",
-        "datetime": "2026-09-23T21:32:17",
-        "title": "NARAKA: BLADEPOINT Banned Players List September 23rd",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1844751498218431",
-        "author": "Yeeeeee",
-        "feed_label": "Community Announcements",
-        "is_patch": false,
-        "is_official": true,
-        "contents": "Dear players,NARAKA: BLADEPOINT is committed to creating a fair and healthy competitive environment. We have not only used new anti-cheat technologies, but also established special cheat-reporting rew"
       }
     ],
     "latest": {
-      "date": "2026-11-10",
-      "datetime": "2026-11-10T20:53:44",
-      "title": "NARAKA: BLADEPOINT Banned Players List November 10th",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1848664643359279",
-      "author": "Yeeeeee",
+      "date": "2026-11-23",
+      "datetime": "2026-11-23T00:31:12",
+      "title": "NARAKA: BLADEPOINT Maintenance Notice - November 22",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1849827110438887",
+      "author": "Misty",
       "feed_label": "Community Announcements",
       "is_patch": false,
       "is_official": true,
-      "contents": "Dear players,NARAKA: BLADEPOINT is committed to creating a fair and healthy competitive environment. We have not only used new anti-cheat technologies, but also established special cheat-reporting rew"
+      "contents": "Dear Players,Due to a network issue, the servers will be taken offline for temporary maintenance expected to last approximately 3 hours at 9:00 11/22 PT. We sincerely apologize for the inconvenience t"
     },
     "latest_patch": null,
-    "crawled_at": "2026-11-17T10:22:34.693282"
+    "crawled_at": "2026-11-23T10:24:55.814148"
   },
   "Dead by Daylight": {
     "appid": 381210,
     "all": [
+      {
+        "date": "2026-11-21",
+        "datetime": "2026-11-21T06:50:20",
+        "title": "Клоун Арт доберётся до Dead by Daylight - представлен трейлер кроссовера с \"Ужасающим\"",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1849827110434155",
+        "author": "",
+        "feed_label": "PlayGround.ru - официальная группа",
+        "is_patch": false,
+        "is_official": false,
+        "contents": "Студия Behaviour Interactive представила новый трейлер Dead by Daylight, посвящённый предстоящему кроссоверу с хоррор-франшизой «Ужасающий» (Terrifier). Тематический контент появится в асимметричном м"
+      },
+      {
+        "date": "2026-11-21",
+        "datetime": "2026-11-21T04:01:03",
+        "title": "Black Friday Arrives in The Fog",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1849827110433575",
+        "author": "rblanchard_bhvr",
+        "feed_label": "Community Announcements",
+        "is_patch": false,
+        "is_official": true,
+        "contents": "No need to bleed your wallet dry. Black Friday arrives in The Fog from November 13th, 12PM EST to December 1st, 12PM EST. Save up to 50% on select items while supplies last.Check out the sale here!"
+      },
+      {
+        "date": "2026-11-21",
+        "datetime": "2026-11-21T01:22:51",
+        "title": "Dead by Daylight confirms Terrifier changes after its new Killer's PTB debut",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/PCGamesN/1849827110433416",
+        "author": "editor@pcgamesn.com",
+        "feed_label": "PCGamesN",
+        "is_patch": false,
+        "is_official": false,
+        "contents": "Behaviour Interactive confirms The Terrifier changes in Dead by Daylight update 10.3.0, responding to the PTB for new Killer Art the Clown. Read the full story on PCGamesN: <a href=\"https://www.pcgame"
+      },
+      {
+        "date": "2026-11-20",
+        "datetime": "2026-11-20T23:00:35",
+        "title": "PTB-to-Live Update | The Terrifier",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1849827110432541",
+        "author": "Donnary21st",
+        "feed_label": "Community Announcements",
+        "is_patch": false,
+        "is_official": true,
+        "contents": "Coming away from the 10.3.0 PTB, we saw how much of a blast you had testing out (and coming face-to-face with) The Terrifier's Bag of Toys! With the release of 10.3.0 right around the corner, we wante"
+      },
+      {
+        "date": "2026-11-20",
+        "datetime": "2026-11-20T12:30:00",
+        "title": "Динамическая погода, лицевая анимация и моды: авторы Dead by Daylight поделились планами на 2027 год",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1849827110430854",
+        "author": "",
+        "feed_label": "PlayGround.ru - официальная группа",
+        "is_patch": false,
+        "is_official": false,
+        "contents": "Студия Behaviour Interactive представила детали крупного обновления для Dead by Daylight, которое выйдет в 2027 году и кардинально преобразит асимметричный хоррор. После первого анонса на трансляции в"
+      },
+      {
+        "date": "2026-11-19",
+        "datetime": "2026-11-19T07:55:11",
+        "title": "Dead by Daylight намекнула на возможную коллаборацию с Годзиллой в новом тизере",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1849827110426461",
+        "author": "",
+        "feed_label": "PlayGround.ru - официальная группа",
+        "is_patch": false,
+        "is_official": false,
+        "contents": "Разработчики Dead by Daylight опубликовали короткий тизер под названием «Опасность от незнакомцев». В ролике Дуайт сталкивается с чем-то пугающим, а в самом конце звучит рев, который фанаты мгновенно "
+      },
+      {
+        "date": "2026-11-18",
+        "datetime": "2026-11-18T05:33:50",
+        "title": "The siren call of user-generated content has caught Dead by Daylight in its snare, as Behaviour Interactive outline a big revamp update slated for next year",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/Rock, Paper, Shotgun/1849458702695702",
+        "author": "",
+        "feed_label": "Rock, Paper, Shotgun",
+        "is_patch": false,
+        "is_official": false,
+        "contents": "The promise of user-generated content, this idea that you could host a platform that grows infinitely because the people that interact with it make things for it and you don't even have to pay anyone,"
+      },
+      {
+        "date": "2026-11-18",
+        "datetime": "2026-11-18T01:51:09",
+        "title": "Dead by Daylight показали будущие визуальные переработки и динамическую погоду",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1849458702694885",
+        "author": "",
+        "feed_label": "PlayGround.ru - официальная группа",
+        "is_patch": false,
+        "is_official": false,
+        "contents": "Behaviour Interactive показала будущее асимметричного хоррора Dead by Daylight: крупное обновление принесёт визуальные переработки, динамическую погоду, новые анимации и другие изменения. Разработчики"
+      },
       {
         "date": "2026-11-10",
         "datetime": "2026-11-10T03:08:56",
@@ -1523,94 +1600,6 @@
         "is_patch": false,
         "is_official": false,
         "contents": "Студия Behaviour Interactive представила новый трейлер Dead by Daylight, посвящённый сотрудничеству с популярным сериалом «Очень странные дела» (Stranger Things). В честь Stranger Things Day разработч"
-      },
-      {
-        "date": "2026-11-05",
-        "datetime": "2026-11-05T00:14:53",
-        "title": "Dead by Daylight apologises to fans after gifting DLC to TheBurntPeanut and has since 'removed the content that was granted'",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/PC Gamer/1848557880479806",
-        "author": "Elie Gould",
-        "feed_label": "PC Gamer",
-        "is_patch": false,
-        "is_official": false,
-        "contents": "<a href=\"https://www.pcgamer.com/dead-by-daylight/\">Dead by Daylight's</a> devs have found themselves in hot water and in the middle of quite a mess. In short, over the Halloween weekend a team member"
-      },
-      {
-        "date": "2026-11-03",
-        "datetime": "2026-11-03T17:00:00",
-        "title": "Steam Global Top Sellers for week of 27 Oct — 3 November 2026",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/SteamDB/1847920302252093",
-        "author": "SteamDB",
-        "feed_label": "SteamDB",
-        "is_patch": false,
-        "is_official": false,
-        "contents": "<a href=\"https://steamdb.info/topsellers/2026W45/?utm_source=Steam&utm_medium=Steam&utm_campaign=SteamRSS\"> </a> * <a href=\"https://steamdb.info/app/4115450/charts/?utm_source=Steam&utm_medium=Steam&u"
-      },
-      {
-        "date": "2026-11-02",
-        "datetime": "2026-11-02T15:05:47",
-        "title": "Разработчики Dead by Daylight подарили все DLC популярному стримеру и извинились перед игроками после негативной реакции",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1847920302247226",
-        "author": "",
-        "feed_label": "PlayGround.ru - официальная группа",
-        "is_patch": false,
-        "is_official": false,
-        "contents": "Студия Behaviour Interactive, разработчик хоррор-игры Dead by Daylight, извинилась перед сообществом после того, как популярному Twitch-стримеру TheBurntPeanut во время трансляции бесплатно выдали вес"
-      },
-      {
-        "date": "2026-10-31",
-        "datetime": "2026-10-31T03:52:18",
-        "title": "Custom Alienware Laptop Sweepstakes",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1847920302240241",
-        "author": "Steven_BHVR",
-        "feed_label": "Community Announcements",
-        "is_patch": false,
-        "is_official": true,
-        "contents": "To celebrate the Halloween season, our partners at Alienware have a sweet treat for you! From now until November 22nd, enter for a chance to win a custom-skinned Alienware 16X Aurora gaming laptop, co"
-      },
-      {
-        "date": "2026-10-29",
-        "datetime": "2026-10-29T23:06:00",
-        "title": "10.2.2a Backend Bugfix Patch",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1847920302235142",
-        "author": "Goblin_BHVR",
-        "feed_label": "Community Announcements",
-        "is_patch": true,
-        "is_official": true,
-        "contents": "Last week, we introduced the Backend Tunables system as a way to get small balance changes in your hands quicker without having to wait for patch releases. We mentioned having changes planned for a nu"
-      },
-      {
-        "date": "2026-10-28",
-        "datetime": "2026-10-28T23:51:05",
-        "title": "Dead by Daylight пополнится безжалостным убийцей Terrifier 17 ноября",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1847920302231915",
-        "author": "",
-        "feed_label": "PlayGround.ru - официальная группа",
-        "is_patch": false,
-        "is_official": false,
-        "contents": "Behaviour Interactive представила тизер Terrifier для асимметричного многопользовательского хоррора Dead by Daylight. Ролик демонстрирует нового жестокого убийцу, который принесёт в туманные владения "
-      },
-      {
-        "date": "2026-10-28",
-        "datetime": "2026-10-28T23:40:31",
-        "title": "В Dead by Daylight появится клоун Арт из \"Ужасающего\" - с мешком оружия и собственными добиваниями",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1847920302231537",
-        "author": "",
-        "feed_label": "PlayGround.ru - официальная группа",
-        "is_patch": false,
-        "is_official": false,
-        "contents": "Behaviour Interactive объявила о сотрудничестве Dead by Daylight с хоррор-франшизой «Ужасающий». 24 ноября в асимметричном сетевом хорроре появятся клоун Арт в роли убийцы и Сиенна Шоу в качестве выжи"
-      },
-      {
-        "date": "2026-10-28",
-        "datetime": "2026-10-28T23:00:09",
-        "title": "10.3.0 | Terrifier PTB Patch Notes",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1847920302231335",
-        "author": "Goblin_BHVR",
-        "feed_label": "Community Announcements",
-        "is_patch": false,
-        "is_official": true,
-        "contents": "ContentNew Killer: The TerrifierPower: Bag of Toys Hold the Ability button to open your Bag of Toys and select one of two random Toys. The Bag of Toys enters a cooldown state and cannot be opened agai"
       }
     ],
     "patches": [
@@ -1624,20 +1613,97 @@
         "is_patch": true,
         "is_official": true,
         "contents": "Towards the end of October, we released a small balance patch using our new Backend Tunables system, adjusting The Executioner and The Good Guy. After working through your feedback and watching both o"
-      },
-      {
-        "date": "2026-10-29",
-        "datetime": "2026-10-29T23:06:00",
-        "title": "10.2.2a Backend Bugfix Patch",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1847920302235142",
-        "author": "Goblin_BHVR",
-        "feed_label": "Community Announcements",
-        "is_patch": true,
-        "is_official": true,
-        "contents": "Last week, we introduced the Backend Tunables system as a way to get small balance changes in your hands quicker without having to wait for patch releases. We mentioned having changes planned for a nu"
       }
     ],
     "announcements": [
+      {
+        "date": "2026-11-21",
+        "datetime": "2026-11-21T06:50:20",
+        "title": "Клоун Арт доберётся до Dead by Daylight - представлен трейлер кроссовера с \"Ужасающим\"",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1849827110434155",
+        "author": "",
+        "feed_label": "PlayGround.ru - официальная группа",
+        "is_patch": false,
+        "is_official": false,
+        "contents": "Студия Behaviour Interactive представила новый трейлер Dead by Daylight, посвящённый предстоящему кроссоверу с хоррор-франшизой «Ужасающий» (Terrifier). Тематический контент появится в асимметричном м"
+      },
+      {
+        "date": "2026-11-21",
+        "datetime": "2026-11-21T04:01:03",
+        "title": "Black Friday Arrives in The Fog",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1849827110433575",
+        "author": "rblanchard_bhvr",
+        "feed_label": "Community Announcements",
+        "is_patch": false,
+        "is_official": true,
+        "contents": "No need to bleed your wallet dry. Black Friday arrives in The Fog from November 13th, 12PM EST to December 1st, 12PM EST. Save up to 50% on select items while supplies last.Check out the sale here!"
+      },
+      {
+        "date": "2026-11-21",
+        "datetime": "2026-11-21T01:22:51",
+        "title": "Dead by Daylight confirms Terrifier changes after its new Killer's PTB debut",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/PCGamesN/1849827110433416",
+        "author": "editor@pcgamesn.com",
+        "feed_label": "PCGamesN",
+        "is_patch": false,
+        "is_official": false,
+        "contents": "Behaviour Interactive confirms The Terrifier changes in Dead by Daylight update 10.3.0, responding to the PTB for new Killer Art the Clown. Read the full story on PCGamesN: <a href=\"https://www.pcgame"
+      },
+      {
+        "date": "2026-11-20",
+        "datetime": "2026-11-20T23:00:35",
+        "title": "PTB-to-Live Update | The Terrifier",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1849827110432541",
+        "author": "Donnary21st",
+        "feed_label": "Community Announcements",
+        "is_patch": false,
+        "is_official": true,
+        "contents": "Coming away from the 10.3.0 PTB, we saw how much of a blast you had testing out (and coming face-to-face with) The Terrifier's Bag of Toys! With the release of 10.3.0 right around the corner, we wante"
+      },
+      {
+        "date": "2026-11-20",
+        "datetime": "2026-11-20T12:30:00",
+        "title": "Динамическая погода, лицевая анимация и моды: авторы Dead by Daylight поделились планами на 2027 год",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1849827110430854",
+        "author": "",
+        "feed_label": "PlayGround.ru - официальная группа",
+        "is_patch": false,
+        "is_official": false,
+        "contents": "Студия Behaviour Interactive представила детали крупного обновления для Dead by Daylight, которое выйдет в 2027 году и кардинально преобразит асимметричный хоррор. После первого анонса на трансляции в"
+      },
+      {
+        "date": "2026-11-19",
+        "datetime": "2026-11-19T07:55:11",
+        "title": "Dead by Daylight намекнула на возможную коллаборацию с Годзиллой в новом тизере",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1849827110426461",
+        "author": "",
+        "feed_label": "PlayGround.ru - официальная группа",
+        "is_patch": false,
+        "is_official": false,
+        "contents": "Разработчики Dead by Daylight опубликовали короткий тизер под названием «Опасность от незнакомцев». В ролике Дуайт сталкивается с чем-то пугающим, а в самом конце звучит рев, который фанаты мгновенно "
+      },
+      {
+        "date": "2026-11-18",
+        "datetime": "2026-11-18T05:33:50",
+        "title": "The siren call of user-generated content has caught Dead by Daylight in its snare, as Behaviour Interactive outline a big revamp update slated for next year",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/Rock, Paper, Shotgun/1849458702695702",
+        "author": "",
+        "feed_label": "Rock, Paper, Shotgun",
+        "is_patch": false,
+        "is_official": false,
+        "contents": "The promise of user-generated content, this idea that you could host a platform that grows infinitely because the people that interact with it make things for it and you don't even have to pay anyone,"
+      },
+      {
+        "date": "2026-11-18",
+        "datetime": "2026-11-18T01:51:09",
+        "title": "Dead by Daylight показали будущие визуальные переработки и динамическую погоду",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1849458702694885",
+        "author": "",
+        "feed_label": "PlayGround.ru - официальная группа",
+        "is_patch": false,
+        "is_official": false,
+        "contents": "Behaviour Interactive показала будущее асимметричного хоррора Dead by Daylight: крупное обновление принесёт визуальные переработки, динамическую погоду, новые анимации и другие изменения. Разработчики"
+      },
       {
         "date": "2026-11-07",
         "datetime": "2026-11-07T03:51:07",
@@ -1648,95 +1714,18 @@
         "is_patch": false,
         "is_official": false,
         "contents": "Студия Behaviour Interactive представила новый трейлер Dead by Daylight, посвящённый сотрудничеству с популярным сериалом «Очень странные дела» (Stranger Things). В честь Stranger Things Day разработч"
-      },
-      {
-        "date": "2026-11-05",
-        "datetime": "2026-11-05T00:14:53",
-        "title": "Dead by Daylight apologises to fans after gifting DLC to TheBurntPeanut and has since 'removed the content that was granted'",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/PC Gamer/1848557880479806",
-        "author": "Elie Gould",
-        "feed_label": "PC Gamer",
-        "is_patch": false,
-        "is_official": false,
-        "contents": "<a href=\"https://www.pcgamer.com/dead-by-daylight/\">Dead by Daylight's</a> devs have found themselves in hot water and in the middle of quite a mess. In short, over the Halloween weekend a team member"
-      },
-      {
-        "date": "2026-11-03",
-        "datetime": "2026-11-03T17:00:00",
-        "title": "Steam Global Top Sellers for week of 27 Oct — 3 November 2026",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/SteamDB/1847920302252093",
-        "author": "SteamDB",
-        "feed_label": "SteamDB",
-        "is_patch": false,
-        "is_official": false,
-        "contents": "<a href=\"https://steamdb.info/topsellers/2026W45/?utm_source=Steam&utm_medium=Steam&utm_campaign=SteamRSS\"> </a> * <a href=\"https://steamdb.info/app/4115450/charts/?utm_source=Steam&utm_medium=Steam&u"
-      },
-      {
-        "date": "2026-11-02",
-        "datetime": "2026-11-02T15:05:47",
-        "title": "Разработчики Dead by Daylight подарили все DLC популярному стримеру и извинились перед игроками после негативной реакции",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1847920302247226",
-        "author": "",
-        "feed_label": "PlayGround.ru - официальная группа",
-        "is_patch": false,
-        "is_official": false,
-        "contents": "Студия Behaviour Interactive, разработчик хоррор-игры Dead by Daylight, извинилась перед сообществом после того, как популярному Twitch-стримеру TheBurntPeanut во время трансляции бесплатно выдали вес"
-      },
-      {
-        "date": "2026-10-31",
-        "datetime": "2026-10-31T03:52:18",
-        "title": "Custom Alienware Laptop Sweepstakes",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1847920302240241",
-        "author": "Steven_BHVR",
-        "feed_label": "Community Announcements",
-        "is_patch": false,
-        "is_official": true,
-        "contents": "To celebrate the Halloween season, our partners at Alienware have a sweet treat for you! From now until November 22nd, enter for a chance to win a custom-skinned Alienware 16X Aurora gaming laptop, co"
-      },
-      {
-        "date": "2026-10-28",
-        "datetime": "2026-10-28T23:51:05",
-        "title": "Dead by Daylight пополнится безжалостным убийцей Terrifier 17 ноября",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1847920302231915",
-        "author": "",
-        "feed_label": "PlayGround.ru - официальная группа",
-        "is_patch": false,
-        "is_official": false,
-        "contents": "Behaviour Interactive представила тизер Terrifier для асимметричного многопользовательского хоррора Dead by Daylight. Ролик демонстрирует нового жестокого убийцу, который принесёт в туманные владения "
-      },
-      {
-        "date": "2026-10-28",
-        "datetime": "2026-10-28T23:40:31",
-        "title": "В Dead by Daylight появится клоун Арт из \"Ужасающего\" - с мешком оружия и собственными добиваниями",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1847920302231537",
-        "author": "",
-        "feed_label": "PlayGround.ru - официальная группа",
-        "is_patch": false,
-        "is_official": false,
-        "contents": "Behaviour Interactive объявила о сотрудничестве Dead by Daylight с хоррор-франшизой «Ужасающий». 24 ноября в асимметричном сетевом хорроре появятся клоун Арт в роли убийцы и Сиенна Шоу в качестве выжи"
-      },
-      {
-        "date": "2026-10-28",
-        "datetime": "2026-10-28T23:00:09",
-        "title": "10.3.0 | Terrifier PTB Patch Notes",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1847920302231335",
-        "author": "Goblin_BHVR",
-        "feed_label": "Community Announcements",
-        "is_patch": false,
-        "is_official": true,
-        "contents": "ContentNew Killer: The TerrifierPower: Bag of Toys Hold the Ability button to open your Bag of Toys and select one of two random Toys. The Bag of Toys enters a cooldown state and cannot be opened agai"
       }
     ],
     "latest": {
-      "date": "2026-11-10",
-      "datetime": "2026-11-10T03:08:56",
-      "title": "10.2.2b Backend Patch",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1848664643356687",
-      "author": "rblanchard_bhvr",
-      "feed_label": "Community Announcements",
-      "is_patch": true,
-      "is_official": true,
-      "contents": "Towards the end of October, we released a small balance patch using our new Backend Tunables system, adjusting The Executioner and The Good Guy. After working through your feedback and watching both o"
+      "date": "2026-11-21",
+      "datetime": "2026-11-21T06:50:20",
+      "title": "Клоун Арт доберётся до Dead by Daylight - представлен трейлер кроссовера с \"Ужасающим\"",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1849827110434155",
+      "author": "",
+      "feed_label": "PlayGround.ru - официальная группа",
+      "is_patch": false,
+      "is_official": false,
+      "contents": "Студия Behaviour Interactive представила новый трейлер Dead by Daylight, посвящённый предстоящему кроссоверу с хоррор-франшизой «Ужасающий» (Terrifier). Тематический контент появится в асимметричном м"
     },
     "latest_patch": {
       "date": "2026-11-10",
@@ -1749,6 +1738,6 @@
       "is_official": true,
       "contents": "Towards the end of October, we released a small balance patch using our new Backend Tunables system, adjusting The Executioner and The Good Guy. After working through your feedback and watching both o"
     },
-    "crawled_at": "2026-11-17T10:22:36.984706"
+    "crawled_at": "2026-11-23T10:24:57.541307"
   }
 }
