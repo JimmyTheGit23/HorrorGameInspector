@@ -19,7 +19,7 @@
       "release_date": "2025 年 2 月 26 日",
       "release_date_en": "26 Feb, 2025",
       "metacritic": null,
-      "recommendations": 352344,
+      "recommendations": 353205,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -69,18 +69,18 @@
       ]
     },
     "steamspy": {
-      "ccu": 21400
+      "ccu": 17583
     },
     "reviews": {
-      "total_reviews": 439079,
-      "positive": 421324,
-      "negative": 17755,
+      "total_reviews": 440212,
+      "positive": 422446,
+      "negative": 17766,
       "positive_rate": 96.0,
-      "recent_reviews": 6998,
-      "recent_positive_rate": 93.6
+      "recent_reviews": 7670,
+      "recent_positive_rate": 94.1
     },
-    "ccu": 21400,
-    "crawled_at": "2026-11-23T10:19:32.109564"
+    "ccu": 17583,
+    "crawled_at": "2026-11-24T10:11:41.036009"
   },
   "Lethal Company": {
     "appid": 1966720,
@@ -102,7 +102,7 @@
       "release_date": "2023 年 10 月 23 日",
       "release_date_en": "23 Oct, 2023",
       "metacritic": null,
-      "recommendations": 412410,
+      "recommendations": 412419,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -142,18 +142,18 @@
       ]
     },
     "steamspy": {
-      "ccu": 4127
+      "ccu": 3209
     },
     "reviews": {
-      "total_reviews": 512141,
-      "positive": 496425,
-      "negative": 15716,
+      "total_reviews": 512160,
+      "positive": 496440,
+      "negative": 15720,
       "positive_rate": 96.9,
-      "recent_reviews": 927,
-      "recent_positive_rate": 89.9
+      "recent_reviews": 925,
+      "recent_positive_rate": 89.7
     },
-    "ccu": 4127,
-    "crawled_at": "2026-11-23T10:19:56.750914"
+    "ccu": 3209,
+    "crawled_at": "2026-11-24T10:12:02.762977"
   },
   "Phasmophobia": {
     "appid": 739630,
@@ -175,7 +175,7 @@
       "release_date": "2020 年 9 月 18 日",
       "release_date_en": "18 Sep, 2020",
       "metacritic": null,
-      "recommendations": 687292,
+      "recommendations": 687486,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -241,18 +241,18 @@
       ]
     },
     "steamspy": {
-      "ccu": 8337
+      "ccu": 7244
     },
     "reviews": {
-      "total_reviews": 843860,
-      "positive": 796004,
-      "negative": 47856,
+      "total_reviews": 844119,
+      "positive": 796267,
+      "negative": 47852,
       "positive_rate": 94.3,
-      "recent_reviews": 2060,
-      "recent_positive_rate": 87.7
+      "recent_reviews": 2182,
+      "recent_positive_rate": 88.9
     },
-    "ccu": 8337,
-    "crawled_at": "2026-11-23T10:20:18.085009"
+    "ccu": 7244,
+    "crawled_at": "2026-11-24T10:12:24.748752"
   },
   "Content Warning": {
     "appid": 2881650,
@@ -278,7 +278,7 @@
       "release_date": "2024 年 4 月 1 日",
       "release_date_en": "1 Apr, 2024",
       "metacritic": null,
-      "recommendations": 73443,
+      "recommendations": 73470,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -318,18 +318,18 @@
       ]
     },
     "steamspy": {
-      "ccu": 648
+      "ccu": 567
     },
     "reviews": {
-      "total_reviews": 164609,
-      "positive": 154280,
-      "negative": 10329,
+      "total_reviews": 164649,
+      "positive": 154315,
+      "negative": 10334,
       "positive_rate": 93.7,
-      "recent_reviews": 517,
-      "recent_positive_rate": 86.1
+      "recent_reviews": 528,
+      "recent_positive_rate": 86.0
     },
-    "ccu": 648,
-    "crawled_at": "2026-11-23T10:20:40.244544"
+    "ccu": 567,
+    "crawled_at": "2026-11-24T10:12:45.680140"
   },
   "FEEDERS": {
     "appid": 4408510,
@@ -398,7 +398,7 @@
       "recent_positive_rate": null
     },
     "ccu": 0,
-    "crawled_at": "2026-11-23T10:21:07.604170"
+    "crawled_at": "2026-11-24T10:13:13.129121"
   },
   "NARAKA: BLADEPOINT": {
     "appid": 1203220,
@@ -420,7 +420,7 @@
       "release_date": "2021 年 8 月 11 日",
       "release_date_en": "11 Aug, 2021",
       "metacritic": null,
-      "recommendations": 198062,
+      "recommendations": 198066,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -460,17 +460,17 @@
       ]
     },
     "steamspy": {
-      "ccu": 8914
+      "ccu": 8145
     },
     "reviews": {
-      "total_reviews": 344280,
-      "positive": 238169,
-      "negative": 106111,
+      "total_reviews": 344321,
+      "positive": 238204,
+      "negative": 106117,
       "positive_rate": 69.2,
-      "recent_reviews": 621,
-      "recent_positive_rate": 59.9
+      "recent_reviews": 636,
+      "recent_positive_rate": 62.4
     },
-    "ccu": 8914,
-    "crawled_at": "2026-11-23T10:21:29.983233"
+    "ccu": 8145,
+    "crawled_at": "2026-11-24T10:13:34.278896"
   }
 }

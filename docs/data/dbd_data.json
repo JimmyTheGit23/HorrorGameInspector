@@ -1,11 +1,11 @@
 {
-  "snapshot_date": "2026-11-23T10:24:47+08:00",
+  "snapshot_date": "2026-11-24T10:16:06+08:00",
   "hero": {
-    "name": "Dead by Daylight",
-    "current_players": 34891,
-    "positive_rate": 77.8,
-    "reviews_total": 951389,
-    "recent_reviews": 1875,
+    "name": "黎明杀机",
+    "current_players": 34197,
+    "positive_rate": 77.9,
+    "reviews_total": 952389,
+    "recent_reviews": 1682,
     "recent_positive_rate": 75.7,
     "price_label": "¥ 93.75",
     "release_date": "2016 年 6 月 14 日",
@@ -15,175 +15,148 @@
   },
   "operations": [
     {
-      "date": "2026-11-17",
-      "title": "The Future of Dead by Daylight: Deep Dive Recap",
-      "url": "https://deadbydaylight.com/news/future-dbd-deep-dive-recap",
-      "source": "Official News",
-      "type_zh": "前瞻",
-      "type_en": "Roadmap",
-      "feed_type": "官方",
-      "feed_label": "Official News",
+      "date": "2026-11-21",
+      "timestamp": 1795215020,
+      "title": "Клоун Арт доберётся до Dead by Daylight - представлен трейлер кроссовера с \"Ужасающим\"",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1849827110434155",
+      "author": "",
+      "feed_label": "PlayGround.ru - официальная группа",
+      "feed_type": "媒体",
       "is_patch": false,
-      "contents": "The Future of Dead by Daylight: Deep Dive Recap"
+      "contents": "Студия Behaviour Interactive представила новый трейлер Dead by Daylight, посвящённый предстоящему кроссоверу с хоррор-франшизой «Ужасающий» (Terrifier). Тематический контент появится в асимметричном м"
     },
     {
-      "date": "2026-10-28",
-      "title": "Laugh Until You Cry in Dead by Daylight: Terrifier | Everything to Know",
-      "url": "https://deadbydaylight.com/news/dbd-terrifier-everything-to-know/",
-      "source": "Official News",
-      "type_zh": "联动",
-      "type_en": "Collab",
+      "date": "2026-11-21",
+      "timestamp": 1795204863,
+      "title": "Black Friday Arrives in The Fog",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1849827110433575",
+      "author": "rblanchard_bhvr",
+      "feed_label": "Community Announcements",
       "feed_type": "官方",
-      "feed_label": "Official News",
       "is_patch": false,
-      "contents": "Laugh Until You Cry in Dead by Daylight: Terrifier | Everything to Know"
+      "contents": "No need to bleed your wallet dry. Black Friday arrives in The Fog from November 13th, 12PM EST to December 1st, 12PM EST. Save up to 50% on select items while supplies last.Check out the sale here!"
     },
     {
-      "date": "2026-10-07",
-      "title": "Dead by Daylight x ARK/8: The Campfire Tour Hits L.A.",
-      "url": "https://deadbydaylight.com/news/dbd-ark-8-campfire-tour-la/",
-      "source": "Official News",
-      "type_zh": "活动",
-      "type_en": "Event",
-      "feed_type": "官方",
-      "feed_label": "Official News",
+      "date": "2026-11-21",
+      "timestamp": 1795195371,
+      "title": "Dead by Daylight confirms Terrifier changes after its new Killer's PTB debut",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PCGamesN/1849827110433416",
+      "author": "editor@pcgamesn.com",
+      "feed_label": "PCGamesN",
+      "feed_type": "媒体",
       "is_patch": false,
-      "contents": "Dead by Daylight x ARK/8: The Campfire Tour Hits L.A."
+      "contents": "Behaviour Interactive confirms The Terrifier changes in Dead by Daylight update 10.3.0, responding to the PTB for new Killer Art the Clown. Read the full story on PCGamesN: <a href=\"https://www.pcgame"
     },
     {
-      "date": "2026-10-06",
-      "title": "NieR:Automata Is Coming to Dead by Daylight",
-      "url": "https://deadbydaylight.com/news/nier-automata-dbd/",
-      "source": "Official News",
-      "type_zh": "联动",
-      "type_en": "Collab",
+      "date": "2026-11-20",
+      "timestamp": 1795186835,
+      "title": "PTB-to-Live Update | The Terrifier",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1849827110432541",
+      "author": "Donnary21st",
+      "feed_label": "Community Announcements",
       "feed_type": "官方",
-      "feed_label": "Official News",
       "is_patch": false,
-      "contents": "NieR:Automata Is Coming to Dead by Daylight"
+      "contents": "Coming away from the 10.3.0 PTB, we saw how much of a blast you had testing out (and coming face-to-face with) The Terrifier's Bag of Toys! With the release of 10.3.0 right around the corner, we wante"
     },
     {
-      "date": "2026-09-15",
-      "title": "Dead by Daylight Announces New Initiatives Supporting IM4 Media Lab and The Douglas Foundation",
-      "url": "https://deadbydaylight.com/news/dbd-new-initiatives-im4lab-douglas-foundation/",
-      "source": "Official News",
-      "type_zh": "公益",
-      "type_en": "Charity",
-      "feed_type": "官方",
-      "feed_label": "Official News",
+      "date": "2026-11-20",
+      "timestamp": 1795149000,
+      "title": "Динамическая погода, лицевая анимация и моды: авторы Dead by Daylight поделились планами на 2027 год",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1849827110430854",
+      "author": "",
+      "feed_label": "PlayGround.ru - официальная группа",
+      "feed_type": "媒体",
       "is_patch": false,
-      "contents": "Dead by Daylight Announces New Initiatives Supporting IM4 Media Lab and The Douglas Foundation"
+      "contents": "Студия Behaviour Interactive представила детали крупного обновления для Dead by Daylight, которое выйдет в 2027 году и кардинально преобразит асимметричный хоррор. После первого анонса на трансляции в"
     },
     {
-      "date": "2026-07-30",
-      "title": "The Grimoire: Early Access",
-      "url": "https://deadbydaylight.com/news/the-grimoire-early-access/",
-      "source": "Official News",
-      "type_zh": "更新",
-      "type_en": "Update",
-      "feed_type": "官方",
-      "feed_label": "Official News",
+      "date": "2026-11-19",
+      "timestamp": 1795046111,
+      "title": "Dead by Daylight намекнула на возможную коллаборацию с Годзиллой в новом тизере",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1849827110426461",
+      "author": "",
+      "feed_label": "PlayGround.ru - официальная группа",
+      "feed_type": "媒体",
       "is_patch": false,
-      "contents": "The Grimoire: Early Access"
+      "contents": "Разработчики Dead by Daylight опубликовали короткий тизер под названием «Опасность от незнакомцев». В ролике Дуайт сталкивается с чем-то пугающим, а в самом конце звучит рев, который фанаты мгновенно "
+    },
+    {
+      "date": "2026-11-18",
+      "timestamp": 1794951230,
+      "title": "The siren call of user-generated content has caught Dead by Daylight in its snare, as Behaviour Interactive outline a big revamp update slated for next year",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/Rock, Paper, Shotgun/1849458702695702",
+      "author": "",
+      "feed_label": "Rock, Paper, Shotgun",
+      "feed_type": "媒体",
+      "is_patch": false,
+      "contents": "The promise of user-generated content, this idea that you could host a platform that grows infinitely because the people that interact with it make things for it and you don't even have to pay anyone,"
+    },
+    {
+      "date": "2026-11-18",
+      "timestamp": 1794937869,
+      "title": "Dead by Daylight показали будущие визуальные переработки и динамическую погоду",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1849458702694885",
+      "author": "",
+      "feed_label": "PlayGround.ru - официальная группа",
+      "feed_type": "媒体",
+      "is_patch": false,
+      "contents": "Behaviour Interactive показала будущее асимметричного хоррора Dead by Daylight: крупное обновление принесёт визуальные переработки, динамическую погоду, новые анимации и другие изменения. Разработчики"
     }
   ],
   "patches": [
     {
-      "date": "2026-11-20",
-      "title": "PTB-to-Live Update | The Terrifier",
-      "version": "PTB-to-Live Update | The Terrifier",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1849827110432541",
-      "source": "Official",
-      "feed_type": "官方",
-      "feed_label": "Official",
-      "is_patch": true,
-      "note_zh": "官方在正式上线前公布 The Terrifier 的 PTB-to-Live 调整，重点围绕 Bike Horn、Acid Bottle、Handgun、Torture 时长与若干插件数值，明确 11 月 24 日上线前的最终平衡方向。",
-      "note_en": "Behaviour outlined the PTB-to-live Terrifier adjustments ahead of launch, focusing on Bike Horn, Acid Bottle, Handgun, Torture duration, and several add-on values as the final balance pass before the November 24 release.",
-      "contents": "官方在正式上线前公布 The Terrifier 的 PTB-to-Live 调整，重点围绕 Bike Horn、Acid Bottle、Handgun、Torture 时长与若干插件数值，明确 11 月 24 日上线前的最终平衡方向。"
-    },
-    {
       "date": "2026-11-10",
-      "title": "10.2.2b | Backend Patch",
-      "version": "10.2.2b | Backend Patch",
+      "timestamp": 1794251336,
+      "title": "10.2.2b Backend Patch",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1848664643356687",
-      "source": "Official",
+      "author": "rblanchard_bhvr",
+      "feed_label": "Community Announcements",
       "feed_type": "官方",
-      "feed_label": "Official",
       "is_patch": true,
-      "note_zh": "10.2.2b 延续 Backend Tunables 的快速热修节奏，官方继续围绕 The Executioner 与 The Good Guy 做小步平衡调整，不等待完整客户端补丁。",
-      "note_en": "10.2.2b continues the Backend Tunables hotfix cadence, with Behaviour making another round of small balance adjustments for The Executioner and The Good Guy without waiting for a full client patch.",
-      "contents": "10.2.2b 延续 Backend Tunables 的快速热修节奏，官方继续围绕 The Executioner 与 The Good Guy 做小步平衡调整，不等待完整客户端补丁。"
+      "contents": "Towards the end of October, we released a small balance patch using our new Backend Tunables system, adjusting The Executioner and The Good Guy. After working through your feedback and watching both o"
     },
     {
-      "date": "2026-10-28",
-      "title": "10.3.0 | Terrifier PTB Patch Notes",
-      "version": "10.3.0 | Terrifier PTB Patch Notes",
-      "url": "https://dbd.game/4yHAt1T",
-      "source": "Official",
+      "date": "2026-10-29",
+      "timestamp": 1793286360,
+      "title": "10.2.2a Backend Bugfix Patch",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1847920302235142",
+      "author": "Goblin_BHVR",
+      "feed_label": "Community Announcements",
       "feed_type": "官方",
-      "feed_label": "Official",
       "is_patch": true,
-      "note_zh": "10.3.0 PTB 公布 Terrifier 章节测试服内容：新杀手 The Terrifier、新幸存者 Sienna Shaw、新地图 Hartshorne Mall，以及 gore 自定义和 Mori 系统更新。",
-      "note_en": "The 10.3.0 PTB introduces the Terrifier chapter with The Terrifier, Sienna Shaw, Hartshorne Mall, and the new gore customization and Mori-system updates.",
-      "contents": "10.3.0 PTB 公布 Terrifier 章节测试服内容：新杀手 The Terrifier、新幸存者 Sienna Shaw、新地图 Hartshorne Mall，以及 gore 自定义和 Mori 系统更新。"
-    },
-    {
-      "date": "2026-10-20",
-      "title": "10.2.2 | Bugfix Patch",
-      "version": "10.2.2 | Bugfix Patch",
-      "url": "https://bugreport.deadbydaylight.com/projects/pr-5642738318/releases/6352",
-      "source": "Official",
-      "feed_type": "官方",
-      "feed_label": "Official",
-      "is_patch": true,
-      "note_zh": "10.2.2 延续 10.2.x 的收口节奏，调整 Dark Arrogance，并配套 Lights Out: Stranger Things Edition 及一批地图、角色、UI、活动问题修复。",
-      "note_en": "10.2.2 continues the 10.2.x stabilization cycle with a Dark Arrogance retune, the Lights Out: Stranger Things Edition beat, and a broad batch of map, character, UI, and event fixes.",
-      "contents": "10.2.2 延续 10.2.x 的收口节奏，调整 Dark Arrogance，并配套 Lights Out: Stranger Things Edition 及一批地图、角色、UI、活动问题修复。"
-    },
-    {
-      "date": "2026-10-14",
-      "title": "10.2.1 | Patch Notes",
-      "version": "10.2.1 | Patch Notes",
-      "url": "https://bugreport.deadbydaylight.com/projects/pr-5642738318/releases/6209",
-      "source": "Official",
-      "feed_type": "官方",
-      "feed_label": "Official",
-      "is_patch": true,
-      "note_zh": "BHVR patchnotes 落地页当前仍最稳定地指向 10.2.1；该版本加入 Survivor Surrender / Killer End Trial 流程，并配套 Haunted by Daylight 2026 活动规则更新。",
-      "note_en": "The BHVR patchnotes landing page still most reliably points to 10.2.1, which added the Survivor Surrender / Killer End Trial flow and folded in the Haunted by Daylight 2026 event rules.",
-      "contents": "BHVR patchnotes 落地页当前仍最稳定地指向 10.2.1；该版本加入 Survivor Surrender / Killer End Trial 流程，并配套 Haunted by Daylight 2026 活动规则更新。"
+      "contents": "Last week, we introduced the Backend Tunables system as a way to get small balance changes in your hands quicker without having to wait for patch releases. We mentioned having changes planned for a nu"
     }
   ],
   "trends": [
     {
+      "month": "2026-01",
+      "avg_players": 49288,
+      "peak_players": 96633
+    },
+    {
+      "month": "2026-02",
+      "avg_players": 55296,
+      "peak_players": 93286
+    },
+    {
+      "month": "2026-03",
+      "avg_players": 46223,
+      "peak_players": 84502
+    },
+    {
+      "month": "2026-04",
+      "avg_players": 49104,
+      "peak_players": 77398
+    },
+    {
+      "month": "2026-05",
+      "avg_players": 51051,
+      "peak_players": 86738
+    },
+    {
       "month": "2026-06",
-      "avg_players": 71077,
-      "peak_players": 168845
-    },
-    {
-      "month": "2026-07",
-      "avg_players": 70813,
-      "peak_players": 121937
-    },
-    {
-      "month": "2026-08",
-      "avg_players": 57800,
-      "peak_players": 99887
-    },
-    {
-      "month": "2026-09",
-      "avg_players": 47610,
-      "peak_players": 75951
-    },
-    {
-      "month": "2026-10",
-      "avg_players": 47884,
-      "peak_players": 79512
-    },
-    {
-      "month": "2026-11",
-      "avg_players": 49099,
-      "peak_players": 79512
+      "avg_players": 53145,
+      "peak_players": 104001
     }
   ],
   "store": {
@@ -211,13 +184,13 @@
     ]
   },
   "reviews": {
-    "total_reviews": 951389,
-    "positive": 740552,
-    "negative": 210837,
-    "positive_rate": 77.8,
-    "recent_reviews": 1875,
+    "total_reviews": 952389,
+    "positive": 741498,
+    "negative": 210891,
+    "positive_rate": 77.9,
+    "recent_reviews": 1682,
     "recent_positive_rate": 75.7
   },
-  "ccu": 34891,
-  "crawled_at": "2026-11-23T10:24:47.166087"
+  "ccu": 34197,
+  "crawled_at": "2026-11-24T10:16:06.594671"
 }
