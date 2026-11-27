@@ -4,10 +4,10 @@
     "source": "Google Play",
     "url": "https://play.google.com/store/apps/details?id=com.game.tombbusters",
     "rating": 4.2,
-    "review_count": 1513,
+    "review_count": 1514,
     "description": "Hilarious Co-op Horror Extraction",
     "category": "FAMILY",
-    "crawled_at": "2026-11-27 09:14"
+    "crawled_at": "2026-11-27 10:21"
   },
   "google_play_reviews": [
     {
@@ -55,7 +55,7 @@
       "title": "Don't get caught! Steal the treasure from this dangerous place!【 Paranormal Squad 】",
       "video_id": "uf49EB_S4rc",
       "url": "https://www.youtube.com/watch?v=uf49EB_S4rc",
-      "views": "311,052 views",
+      "views": "311,092 views",
       "channel": "ちろぴの",
       "published": "4mo ago",
       "duration": "32:10"
@@ -91,7 +91,7 @@
       "title": "Goofy Gang Explores SCARY TOMBS... (Tomb Busters)",
       "video_id": "l9WdUDC67bY",
       "url": "https://www.youtube.com/watch?v=l9WdUDC67bY",
-      "views": "194,937 views",
+      "views": "194,950 views",
       "channel": "Goofy Gang",
       "published": "5mo ago",
       "duration": "20:27"
@@ -215,6 +215,6 @@
       "rating_count": 0
     }
   },
-  "crawled_at": "2026-11-27T09:15:23.403509",
+  "crawled_at": "2026-11-27T10:22:36.114238",
   "crawled_date": "2026-11-27"
 }

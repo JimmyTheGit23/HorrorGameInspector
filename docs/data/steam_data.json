@@ -19,7 +19,7 @@
       "release_date": "2025 年 2 月 26 日",
       "release_date_en": "26 Feb, 2025",
       "metacritic": null,
-      "recommendations": 353205,
+      "recommendations": 356784,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -69,18 +69,18 @@
       ]
     },
     "steamspy": {
-      "ccu": 17583
+      "ccu": 15112
     },
     "reviews": {
-      "total_reviews": 440212,
-      "positive": 422446,
-      "negative": 17766,
+      "total_reviews": 444748,
+      "positive": 426948,
+      "negative": 17800,
       "positive_rate": 96.0,
-      "recent_reviews": 7670,
-      "recent_positive_rate": 94.1
+      "recent_reviews": 10800,
+      "recent_positive_rate": 95.7
     },
-    "ccu": 17583,
-    "crawled_at": "2026-11-24T10:11:41.036009"
+    "ccu": 15112,
+    "crawled_at": "2026-11-27T10:18:03.545161"
   },
   "Lethal Company": {
     "appid": 1966720,
@@ -102,7 +102,7 @@
       "release_date": "2023 年 10 月 23 日",
       "release_date_en": "23 Oct, 2023",
       "metacritic": null,
-      "recommendations": 412419,
+      "recommendations": 412468,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -142,18 +142,18 @@
       ]
     },
     "steamspy": {
-      "ccu": 3209
+      "ccu": 2675
     },
     "reviews": {
-      "total_reviews": 512160,
-      "positive": 496440,
-      "negative": 15720,
+      "total_reviews": 512212,
+      "positive": 496483,
+      "negative": 15729,
       "positive_rate": 96.9,
-      "recent_reviews": 925,
-      "recent_positive_rate": 89.7
+      "recent_reviews": 952,
+      "recent_positive_rate": 90.7
     },
-    "ccu": 3209,
-    "crawled_at": "2026-11-24T10:12:02.762977"
+    "ccu": 2675,
+    "crawled_at": "2026-11-27T10:18:29.188594"
   },
   "Phasmophobia": {
     "appid": 739630,
@@ -163,7 +163,7 @@
       "type": "game",
       "short_description": "Phasmophobia is a 4 player online co-op psychological horror. Paranormal activity is on the rise and it’s up to you and your team to use all the ghost-hunting equipment at your disposal in order to gather as much evidence as you can.",
       "short_description_en": "Phasmophobia is a 4 player online co-op psychological horror. Paranormal activity is on the rise and it’s up to you and your team to use all the ghost-hunting equipment at your disposal in order to gather as much evidence as you can.",
-      "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/739630/c227a2855aba60f3657bc0c3a46515b8c41fb2b6/header.jpg?t=1794312564",
+      "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/739630/8fc6642a091321343695b2273f8f7137c5d26483/header_alt_assets_14.jpg?t=1795522435",
       "developers": [
         "Kinetic Games"
       ],
@@ -175,7 +175,7 @@
       "release_date": "2020 年 9 月 18 日",
       "release_date_en": "18 Sep, 2020",
       "metacritic": null,
-      "recommendations": 687486,
+      "recommendations": 688525,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -241,18 +241,18 @@
       ]
     },
     "steamspy": {
-      "ccu": 7244
+      "ccu": 7934
     },
     "reviews": {
-      "total_reviews": 844119,
-      "positive": 796267,
-      "negative": 47852,
+      "total_reviews": 845445,
+      "positive": 797552,
+      "negative": 47893,
       "positive_rate": 94.3,
-      "recent_reviews": 2182,
-      "recent_positive_rate": 88.9
+      "recent_reviews": 3014,
+      "recent_positive_rate": 91.3
     },
-    "ccu": 7244,
-    "crawled_at": "2026-11-24T10:12:24.748752"
+    "ccu": 7934,
+    "crawled_at": "2026-11-27T10:18:54.776631"
   },
   "Content Warning": {
     "appid": 2881650,
@@ -278,7 +278,7 @@
       "release_date": "2024 年 4 月 1 日",
       "release_date_en": "1 Apr, 2024",
       "metacritic": null,
-      "recommendations": 73470,
+      "recommendations": 73547,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -318,18 +318,18 @@
       ]
     },
     "steamspy": {
-      "ccu": 567
+      "ccu": 580
     },
     "reviews": {
-      "total_reviews": 164649,
-      "positive": 154315,
-      "negative": 10334,
+      "total_reviews": 164755,
+      "positive": 154417,
+      "negative": 10338,
       "positive_rate": 93.7,
-      "recent_reviews": 528,
-      "recent_positive_rate": 86.0
+      "recent_reviews": 556,
+      "recent_positive_rate": 87.2
     },
-    "ccu": 567,
-    "crawled_at": "2026-11-24T10:12:45.680140"
+    "ccu": 580,
+    "crawled_at": "2026-11-27T10:19:21.293750"
   },
   "FEEDERS": {
     "appid": 4408510,
@@ -398,7 +398,7 @@
       "recent_positive_rate": null
     },
     "ccu": 0,
-    "crawled_at": "2026-11-24T10:13:13.129121"
+    "crawled_at": "2026-11-27T10:19:52.473444"
   },
   "NARAKA: BLADEPOINT": {
     "appid": 1203220,
@@ -420,7 +420,7 @@
       "release_date": "2021 年 8 月 11 日",
       "release_date_en": "11 Aug, 2021",
       "metacritic": null,
-      "recommendations": 198066,
+      "recommendations": 198127,
       "platforms": {
         "windows": true,
         "mac": false,
@@ -460,17 +460,17 @@
       ]
     },
     "steamspy": {
-      "ccu": 8145
+      "ccu": 8896
     },
     "reviews": {
-      "total_reviews": 344321,
-      "positive": 238204,
-      "negative": 106117,
+      "total_reviews": 344658,
+      "positive": 238496,
+      "negative": 106162,
       "positive_rate": 69.2,
-      "recent_reviews": 636,
-      "recent_positive_rate": 62.4
+      "recent_reviews": 921,
+      "recent_positive_rate": 70.4
     },
-    "ccu": 8145,
-    "crawled_at": "2026-11-24T10:13:34.278896"
+    "ccu": 8896,
+    "crawled_at": "2026-11-27T10:20:18.231128"
   }
 }
